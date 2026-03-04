@@ -19,18 +19,18 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
 
       - name: Install dependencies
         run: npm install cheerio
 
-      - name: Run crawler
+      - name: Build index
         run: node scripts/build-index.mjs
 
-      - name: Commit index.json
+      - name: Commit index
         run: |
-          git config --global user.name "odpc-bot"
-          git config --global user.email "bot@odpc.de"
+          git config user.name "odpc-bot"
+          git config user.email "bot@odpc.de"
           git add index.json
-          git commit -m "update website index" || echo "no changes"
+          git commit -m "update index" || echo "no changes"
           git push
