@@ -35,10 +35,8 @@ async function run() {
     pages: [page]
   };
 
-  fs.mkdirSync("public", { recursive: true });
-
   fs.writeFileSync(
-    "public/index.json",
+    "index.json",
     JSON.stringify(data, null, 2)
   );
 
