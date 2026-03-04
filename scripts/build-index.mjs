@@ -40,7 +40,7 @@ async function run() {
     JSON.stringify(data, null, 2)
   );
 
-  console.log("Index built successfully");
+  console.log("Index created");
 }
 
 run().catch(err => {
