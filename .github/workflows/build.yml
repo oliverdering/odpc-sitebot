@@ -2,24 +2,35 @@ name: Build ODPC Index
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: "0 */6 * * *"
+
+permissions:
+  contents: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 18
 
-      - run: npm install node-fetch cheerio
+      - name: Install dependencies
+        run: npm install cheerio
 
-      - run: node scripts/build-index.mjs
+      - name: Run crawler
+        run: node scripts/build-index.mjs
 
-      - name: Upload index
-        uses: actions/upload-artifact@v4
-        with:
-          name: odpc-index
-          path: public/index.json
+      - name: Commit index.json
+        run: |
+          git config --global user.name "odpc-bot"
+          git config --global user.email "bot@odpc.de"
+          git add index.json
+          git commit -m "update website index" || echo "no changes"
+          git push
