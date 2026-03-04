@@ -1,33 +1,26 @@
 import fs from "fs";
-import * as cheerio from "cheerio";
+import cheerio from "cheerio";
 
 const BASE = "https://odpc.de";
 
 async function crawl(url) {
-
-  const res = await fetch(url);
+  const res = await fetch(url, {
+    headers: { "user-agent": "odpc-sitebot/1.0 (+https://odpc.de)" }
+  });
 
   if (!res.ok) {
-    throw new Error("HTTP Fehler: " + res.status);
+    throw new Error(`Fetch failed: ${res.status} ${res.statusText} (${url})`);
   }
 
   const html = await res.text();
-
   const $ = cheerio.load(html);
 
-  const text = $("body")
-    .text()
-    .replace(/\s+/g, " ")
-    .trim();
+  const text = $("body").text().replace(/\s+/g, " ").trim();
 
-  return {
-    url,
-    text
-  };
+  return { url, text };
 }
 
-async function run() {
-
+(async () => {
   const page = await crawl(BASE);
 
   const data = {
@@ -35,15 +28,6 @@ async function run() {
     pages: [page]
   };
 
-  fs.writeFileSync(
-    "index.json",
-    JSON.stringify(data, null, 2)
-  );
-
-  console.log("Index created");
-}
-
-run().catch(err => {
-  console.error(err);
-  process.exit(1);
-});
+  fs.writeFileSync("index.json", JSON.stringify(data, null, 2), "utf8");
+  console.log("Index built -> index.json");
+})();
