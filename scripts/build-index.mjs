@@ -1,6 +1,6 @@
 import fs from "fs";
 import fetch from "node-fetch";
-import cheerio from "cheerio";
+import * as cheerio from "cheerio";
 
 const BASE = "https://odpc.de";
 
@@ -21,12 +21,12 @@ async function crawl(url) {
   const page = await crawl(BASE);
 
   const data = {
-    built: new Date(),
+    built: new Date().toISOString(),
     pages: [page]
   };
 
   fs.mkdirSync("public", { recursive: true });
-  fs.writeFileSync("public/index.json", JSON.stringify(data));
+  fs.writeFileSync("public/index.json", JSON.stringify(data, null, 2));
 
   console.log("Index built");
 })();
