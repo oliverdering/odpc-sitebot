@@ -1,0 +1,40 @@
+name: ODPC / Premium mobile header release
+on:
+  push:
+    paths:
+      - 'deployment/odpc-header-release.txt'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: odpc-premium-header
+  cancel-in-progress: false
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Static preflight checks
+        run: |
+          php -l site-deploy/odpc.de/odpc-premium-header.php
+          python -m py_compile scripts/deploy_odpc_premium_header.py
+          grep -q 'odpc-nav-panel' site-deploy/odpc.de/odpc-premium-header.php
+          grep -q 'wp_nav_menu' site-deploy/odpc.de/odpc-premium-header.php
+      - name: Install SFTP client
+        run: python -m pip install 'paramiko>=3.4,<5'
+      - name: Deploy only ODPC navigation module and test live page
+        env:
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+        run: python scripts/deploy_odpc_premium_header.py
+      - name: Retain previous version for manual restoration
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: odpc-header-previous-file
+          path: odpc-header-backup/
+          if-no-files-found: ignore
+          retention-days: 15
