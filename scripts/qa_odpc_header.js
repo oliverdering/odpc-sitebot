@@ -16,6 +16,30 @@ const { chromium } = require('playwright');
         headerImagePresent:!!document.querySelector('#masthead .custom-logo'),
         navListCount:document.querySelectorAll('#odpc-nav-panel .odpc-menu-list a').length
       }));
+      const redesigned=await page.evaluate(()=>{
+        const css=e=>e?getComputedStyle(e):null;
+        const sections=[...document.querySelectorAll('#odpc-referenzen .oh-card h3')].map(x=>x.textContent.trim());
+        const search=document.querySelector('#odpc-navigation .search-submit');
+        const top=document.querySelector('#ast-scroll-top');
+        return {
+          redesignPresent:!!document.querySelector('#odpc-home .oh-hero'),
+          references:sections,
+          products:document.querySelectorAll('#odpc-leistungen .oh-product').length,
+          oldGreenHero:!!document.querySelector('section[style*="#0b2c1b"]'),
+          duplicatePageTitle:[...document.querySelectorAll('.entry-title')].filter(x=>css(x)?.display!=='none').length,
+          menuButtonColor:css(document.querySelector('#odpc-navigation .odpc-nav-toggle'))?.backgroundColor,
+          searchButtonColor:css(search)?.backgroundColor,
+          topButtonColor:css(top)?.backgroundColor,
+          headlineColor:css(document.querySelector('#odpc-home .oh-hero h1'))?.color,
+          headlineFont:css(document.querySelector('#odpc-home .oh-hero h1'))?.fontSize,
+          headerImageSrc:document.querySelector('#masthead .custom-logo')?.getAttribute('src')
+        };
+      });
+      console.log('REDESIGN '+width+' '+JSON.stringify(redesigned));
+      if(!redesigned.redesignPresent||redesigned.references.length!==4||redesigned.products!==6||redesigned.oldGreenHero)throw Error('Homepage reference/offer layout missing at '+width);
+      if(redesigned.duplicatePageTitle!==0)throw Error('Duplicate WordPress page title visible on homepage '+width);
+      if(!redesigned.references.some(x=>x.includes('Bahnhof Grenzau'))||!redesigned.references.some(x=>x.includes('ATRIUM')))throw Error('Client references missing '+width);
+      if(!redesigned.searchButtonColor||redesigned.searchButtonColor==='rgb(0, 102, 204)')throw Error('Search button styling unresolved '+width);
       console.log('CLOSED '+width+' '+JSON.stringify(before));
       if(before.outer>width+4)throw Error('Horizontal overflow at width '+width+' : '+before.outer);
       if(before.menuVisible||!before.toggleVisible||before.navListCount<10||before.oldMenuDisplay!=='none')throw Error('Header state incorrect at '+width);
