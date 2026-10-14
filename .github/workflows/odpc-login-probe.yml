@@ -1,0 +1,31 @@
+name: ODPC / Authenticated read-only SFTP discovery
+on:
+  push:
+    paths:
+      - 'deployment/odpc-connection-probe.txt'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: odpc-readonly-discovery
+  cancel-in-progress: false
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install 'paramiko>=3.4,<5'
+      - name: Login with pinned SSH host key and find WordPress theme paths (read-only)
+        env:
+          ODPC_SFTP_MODE: discover
+          ODPC_TARGET_SITE: odpc.de
+          ODPC_SFTP_HOST: ${{ secrets.ODPC_SFTP_HOST || 'home119567219.1and1-data.host' }}
+          ODPC_SFTP_PORT: '22'
+          ODPC_SFTP_USER: ${{ secrets.ODPC_SFTP_USER }}
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+          ODPC_SFTP_HOSTKEY_SHA256: ${{ secrets.ODPC_SFTP_HOSTKEY_SHA256 || 'SHA256:1gx2w8Rtv3wCgi7Jh8myf/KVd72cRQbow03UP8P095Q' }}
+        run: python scripts/check_wordpress_sftp.py
