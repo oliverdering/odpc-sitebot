@@ -44,7 +44,7 @@ jobs:
           ODPC_TARGET_SITE: ${{ github.event_name == 'push' && 'odpc.de' || inputs.site }}
           ODPC_SFTP_HOST: ${{ secrets.ODPC_SFTP_HOST || 'home119567219.1and1-data.host' }}
           ODPC_SFTP_PORT: "22"
-          ODPC_SFTP_USER: ${{ secrets.ODPC_SFTP_USER }}
+          ODPC_SFTP_USER: ${{ secrets.ODPC_SFTP_USER || 'acc1461323326' }}
           ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
           ODPC_SFTP_HOSTKEY_SHA256: ${{ secrets.ODPC_SFTP_HOSTKEY_SHA256 || 'SHA256:1gx2w8Rtv3wCgi7Jh8myf/KVd72cRQbow03UP8P095Q' }}
           ODPC_THEME_PATH: ${{ secrets.ODPC_THEME_PATH }}
