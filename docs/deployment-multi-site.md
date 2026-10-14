@@ -22,6 +22,12 @@ Neu in diesem Repository:
 - `scripts/check_wordpress_sftp.py` – verifiziert den unabhängig geprüften SSH-Serverfingerprint und kann anschließend **nur lesend** prüfen, ob das gewünschte Theme-Verzeichnis erreichbar ist.
 - `.github/workflows/odpc-sftp-check.yml` – manueller GitHub-Actions-Aufruf, keine automatische Ausführung bei Push, **kein Upload und keine Löschung**.
 
+**Bereits durch einen echten GitHub-Actions-Test am 14.10.2026 geprüft:** Der IONOS-SFTP-Server `home119567219.1and1-data.host` ist von GitHub aus erreichbar. Der SSH-Serverfingerprint lautet exakt `SHA256:1gx2w8Rtv3wCgi7Jh8myf/KVd72cRQbow03UP8P095Q` und entspricht dem zuvor dokumentierten IONOS-Server-Schlüssel. Der zugehörige Workflow-Lauf [38609738206](https://github.com/oliverdering/odpc-sitebot/actions/runs/38609738206) war erfolgreich. Die Benutzeranmeldung konnte noch nicht getestet werden, da noch keine Zugangsdaten als GitHub-Secrets hinterlegt sind.
+
+**Für den ersten authentifizierten Lese-Test sind jetzt nur ZWEI manuell einzutragende GitHub-Secrets notwendig:** `ODPC_SFTP_USER` und `ODPC_SFTP_PASSWORD`. Die öffentliche bekannte IONOS-Serveradresse sowie dessen unabhängig bestätigter Host-Key liegen als überprüfbare Fallbackwerte im Workflow vor; vorhandene GitHub-Secrets `ODPC_SFTP_HOST`/`ODPC_SFTP_HOSTKEY_SHA256` können sie überschreiben. Die Fallbackadresse ist nur korrekt, wenn beide Sites tatsächlich auf diesem gemeinsamen IONOS-Webspace liegen.
+
+Im **Actions → ODPC / WordPress SFTP connection check → Run workflow** zuerst Operation `discover` auswählen: der Workflow authentifiziert sich und zeigt read-only an, welche WordPress-Theme-Verzeichnisse unter den konkret bekannten Kandidaten `/wordpress` und `/ai-odpc` vorliegen. Anschließend die daraus abgeleiteten separaten absoluten Theme-Pfade in `ODPC_THEME_PATH` und `AI_ODPC_THEME_PATH` als Secrets hinterlegen und je Site `check` ausführen. Es werden keine Dateien geändert.
+
 Einmalig auf der [GitHub-Actions-Secrets-Seite](https://github.com/oliverdering/odpc-sitebot/settings/secrets/actions) (Repository Secrets) hinterlegen:
 
 | Secret | Beschreibung |
