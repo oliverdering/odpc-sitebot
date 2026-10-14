@@ -24,7 +24,7 @@ Neu in diesem Repository:
 
 **Bereits durch einen echten GitHub-Actions-Test am 14.10.2026 geprüft:** Der IONOS-SFTP-Server `home119567219.1and1-data.host` ist von GitHub aus erreichbar. Der SSH-Serverfingerprint lautet exakt `SHA256:1gx2w8Rtv3wCgi7Jh8myf/KVd72cRQbow03UP8P095Q` und entspricht dem zuvor dokumentierten IONOS-Server-Schlüssel. Der zugehörige Workflow-Lauf [38609738206](https://github.com/oliverdering/odpc-sitebot/actions/runs/38609738206) war erfolgreich. Die Benutzeranmeldung konnte noch nicht getestet werden, da noch keine Zugangsdaten als GitHub-Secrets hinterlegt sind.
 
-**Für den ersten authentifizierten Lese-Test sind jetzt nur ZWEI manuell einzutragende GitHub-Secrets notwendig:** `ODPC_SFTP_USER` und `ODPC_SFTP_PASSWORD`. Die öffentliche bekannte IONOS-Serveradresse sowie dessen unabhängig bestätigter Host-Key liegen als überprüfbare Fallbackwerte im Workflow vor; vorhandene GitHub-Secrets `ODPC_SFTP_HOST`/`ODPC_SFTP_HOSTKEY_SHA256` können sie überschreiben. Die Fallbackadresse ist nur korrekt, wenn beide Sites tatsächlich auf diesem gemeinsamen IONOS-Webspace liegen.
+**Für den ersten authentifizierten Lese-Test ist jetzt nur EIN manuell einzutragendes GitHub-Secret notwendig:** `ODPC_SFTP_PASSWORD`. Der in IONOS bestätigte gemeinsame Benutzername `acc1461323326` ist als Standardwert in beiden Workflows hinterlegt (`ODPC_SFTP_USER` kann ihn bei Bedarf überschreiben). Die öffentliche bekannte IONOS-Serveradresse sowie dessen unabhängig bestätigter Host-Key liegen als überprüfbare Fallbackwerte im Workflow vor; vorhandene GitHub-Secrets `ODPC_SFTP_HOST`/`ODPC_SFTP_HOSTKEY_SHA256` können sie überschreiben. Die Fallbackadresse ist nur korrekt, wenn beide Sites tatsächlich auf diesem gemeinsamen IONOS-Webspace liegen.
 
 Im **Actions → ODPC / WordPress SFTP connection check → Run workflow** zuerst Operation `discover` auswählen: der Workflow authentifiziert sich und zeigt read-only an, welche WordPress-Theme-Verzeichnisse unter den konkret bekannten Kandidaten `/wordpress` und `/ai-odpc` vorliegen. Anschließend die daraus abgeleiteten separaten absoluten Theme-Pfade in `ODPC_THEME_PATH` und `AI_ODPC_THEME_PATH` als Secrets hinterlegen und je Site `check` ausführen. Es werden keine Dateien geändert.
 
@@ -33,7 +33,7 @@ Einmalig auf der [GitHub-Actions-Secrets-Seite](https://github.com/oliverdering/
 | Secret | Beschreibung |
 |---|---|
 | `ODPC_SFTP_HOST` | Vom **ODPC-Webhosting** bestätigter SFTP-Hostname, nicht automatisch vom ATRIUM-Hosting übernehmen |
-| `ODPC_SFTP_USER` | Dedizierter SFTP-Benutzer mit möglichst beschränkten Dateirechten |
+| `ODPC_SFTP_USER` | Optionaler Überschreibwert; Standard ist der bestätigte IONOS-Benutzer `acc1461323326` für beide Domains |
 | `ODPC_SFTP_PASSWORD` | Dessen SFTP-Passwort, nur als verschlüsseltes Secret; **niemals in Code, Chats oder README kopieren** |
 | `ODPC_SFTP_HOSTKEY_SHA256` | Vom Hoster oder anderweitig **unabhängig** bestätigter SSH-Host-Key-Fingerprint |
 | `ODPC_THEME_PATH` | Exakter absoluter Theme-Pfad der Hauptwebsite **odpc.de**, einschließlich `/wp-content/themes/<themename>` |
