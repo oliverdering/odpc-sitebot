@@ -1,0 +1,35 @@
+name: ODPC live header audit
+on:
+  push:
+    paths:
+      - .github/workflows/odpc-header-audit.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Inspect public mobile header markup
+        run: |
+          python - <<'PY'
+          import urllib.request, html.parser
+          class Audit(html.parser.HTMLParser):
+              def __init__(self):
+                  super().__init__(); self.in_header=0; self.n=0
+              def handle_starttag(self,tag,attrs):
+                  d=dict(attrs)
+                  if tag=="header" or d.get("id")=="masthead": self.in_header+=1
+                  if self.in_header and self.n<105:
+                      att=" ".join(f"{k}={str(v)[:130]}" for k,v in d.items() if k in ("id","class","src","aria-expanded","aria-controls","role","type"))
+                      print("HEADER",self.n,tag,att); self.n+=1
+              def handle_endtag(self,tag):
+                  if tag=="header" and self.in_header:self.in_header-=1
+          req=urllib.request.Request("https://odpc.de/",headers={"User-Agent":"Mozilla/5.0 (Android 16; Mobile) AppleWebKit/537.36 Chrome/132.0.0.0 Mobile Safari/537.36"})
+          with urllib.request.urlopen(req,timeout=25) as r: data=r.read().decode("utf-8","replace")
+          print("HTML bytes",len(data),"Astra?",'ast-' in data)
+          Audit().feed(data)
+          for term in ("menu-toggle","ast-mobile-header-wrap","main-header-menu","site-branding","wp-custom-header","custom-header","site-title"):
+              p=data.find(term);print("TOKEN",term,"found",p>=0,"near",data[max(0,p-170):p+240].replace("\n"," ") if p>=0 else "")
+          PY
