@@ -70,28 +70,41 @@ def main():
         try:
             if mode == "discover":
                 root = sftp.normalize(".")
-                candidates = []
-                for folder in (".", "wordpress", "ai-odpc"):
-                    full = posixpath.normpath(posixpath.join(root, folder, "wp-content", "themes"))
-                    if full not in candidates:
-                        candidates.append(full)
-                for folder in ("wordpress", "ai-odpc"):
-                    full = "/"+folder+"/wp-content/themes"
-                    if full not in candidates:
-                        candidates.append(full)
-                matches = 0
-                for directory in candidates:
+                targets = [root]
+                visited = set()
+                matches = []
+                scan_limit = 100
+                count = 0
+                while targets and count < scan_limit:
+                    folder, depth = targets.pop(0) if isinstance(targets[0], tuple) else (targets.pop(0), 0)
+                    folder = posixpath.normpath(folder)
+                    if folder in visited:
+                        continue
+                    visited.add(folder)
+                    count += 1
+                    theme_dir = posixpath.join(folder, "wp-content", "themes")
                     try:
-                        if not stat.S_ISDIR(sftp.stat(directory).st_mode):
-                            continue
-                        names = sorted(x.filename for x in sftp.listdir_attr(directory) if stat.S_ISDIR(x.st_mode))
-                        print("WORDPRESS THEMES FOUND:", directory, "candidate themes:", ", ".join(names[:30]))
-                        matches += 1
+                        if stat.S_ISDIR(sftp.stat(theme_dir).st_mode):
+                            names = sorted(e.filename for e in sftp.listdir_attr(theme_dir) if stat.S_ISDIR(e.st_mode))
+                            print("WORDPRESS THEMES FOUND:", theme_dir, "candidate themes:", ", ".join(names[:30]))
+                            matches.append(theme_dir)
                     except OSError:
                         pass
+                    if depth >= 2:
+                        continue
+                    try:
+                        entries = sftp.listdir_attr(folder)
+                    except OSError:
+                        continue
+                    for e in entries[:100]:
+                        if not stat.S_ISDIR(e.st_mode) or e.filename.startswith("."):
+                            continue
+                        if e.filename.lower() in {"logs", "log", "cache", "tmp", "vendor", "node_modules", "uploads", "backup", "backups"}:
+                            continue
+                        targets.append((posixpath.join(folder, e.filename), depth + 1))
                 if not matches:
-                    raise RuntimeError("No WordPress theme directory found in approved candidate paths")
-                print("PASS: authenticated read-only discovery; no file writes.")
+                    raise RuntimeError("No WordPress theme directory found in approved depth-limited discovery")
+                print("PASS: authenticated read-only discovery, theme directories:", len(matches), "no file writes.")
                 return
             metadata = sftp.stat(theme)
             if not stat.S_ISDIR(metadata.st_mode):
