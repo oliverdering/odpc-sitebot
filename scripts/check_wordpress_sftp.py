@@ -26,8 +26,8 @@ def required(name):
 
 def main():
     mode = os.environ.get("ODPC_SFTP_MODE", "fingerprint")
-    if mode not in {"fingerprint", "check"}:
-        raise RuntimeError("Unsupported mode (fingerprint/check only)")
+    if mode not in {"fingerprint", "discover", "check"}:
+        raise RuntimeError("Unsupported mode (fingerprint/discover/check only)")
     host = required("ODPC_SFTP_HOST")
     port = int(os.environ.get("ODPC_SFTP_PORT", "22"))
     if not 1 <= port <= 65535:
@@ -55,18 +55,44 @@ def main():
         }
         if target not in target_secrets:
             raise RuntimeError("Target must be odpc.de or ai.odpc.de")
-        theme = required(target_secrets[target])
-        if not theme.startswith("/") or "/../" in theme or not posixpath.isabs(theme):
-            raise RuntimeError("Theme path must be an absolute path without traversal")
-        theme = posixpath.normpath(theme)
-        if "/wp-content/themes/" not in theme or theme.endswith("/themes"):
-            raise RuntimeError("Refusing access outside one WordPress theme directory")
+        theme = required(target_secrets[target]) if mode == "check" else ""
+        if theme:
+            if not theme.startswith("/") or "/../" in theme or not posixpath.isabs(theme):
+                raise RuntimeError("Theme path must be an absolute path without traversal")
+            theme = posixpath.normpath(theme)
+            if "/wp-content/themes/" not in theme or theme.endswith("/themes"):
+                raise RuntimeError("Refusing access outside one WordPress theme directory")
         transport.auth_password(username, password)
         if not transport.is_authenticated():
             raise RuntimeError("SFTP authentication failed")
 
         sftp = paramiko.SFTPClient.from_transport(transport)
         try:
+            if mode == "discover":
+                root = sftp.normalize(".")
+                candidates = []
+                for folder in (".", "wordpress", "ai-odpc"):
+                    full = posixpath.normpath(posixpath.join(root, folder, "wp-content", "themes"))
+                    if full not in candidates:
+                        candidates.append(full)
+                for folder in ("wordpress", "ai-odpc"):
+                    full = "/"+folder+"/wp-content/themes"
+                    if full not in candidates:
+                        candidates.append(full)
+                matches = 0
+                for directory in candidates:
+                    try:
+                        if not stat.S_ISDIR(sftp.stat(directory).st_mode):
+                            continue
+                        names = sorted(x.filename for x in sftp.listdir_attr(directory) if stat.S_ISDIR(x.st_mode))
+                        print("WORDPRESS THEMES FOUND:", directory, "candidate themes:", ", ".join(names[:30]))
+                        matches += 1
+                    except OSError:
+                        pass
+                if not matches:
+                    raise RuntimeError("No WordPress theme directory found in approved candidate paths")
+                print("PASS: authenticated read-only discovery; no file writes.")
+                return
             metadata = sftp.stat(theme)
             if not stat.S_ISDIR(metadata.st_mode):
                 raise RuntimeError("Configured theme path is not a directory")
