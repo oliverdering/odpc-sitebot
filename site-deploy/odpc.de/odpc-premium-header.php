@@ -2,7 +2,7 @@
 /**
  * Plugin Name: ODPC Premium Header
  * Description: Responsive header presentation and compact navigation; no content changes.
- * Version: 1.1.0
+ * Version: 1.2.0
  */
 if (!defined('ABSPATH')) { exit; }
 
@@ -129,6 +129,12 @@ add_action('wp_head', function () {
   .odpc-home .oh-card:hover{border-color:#bba08a;box-shadow:0 10px 33px rgba(20,27,35,.09)}
   .odpc-home .oh-card-head{display:flex;align-items:center;gap:12px;min-width:0}
   .odpc-home .oh-monogram{flex:none;display:flex;align-items:center;justify-content:center;width:47px;height:47px;border-radius:11px;background:#242d38;color:#e7d2bd;font-size:15px;font-weight:840;letter-spacing:-.03em}
+  .odpc-home .oh-logo{flex:0 0 72px;width:72px;height:72px;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:14px;border:1px solid #e6e2dd;background:#fff;box-shadow:0 2px 8px rgba(25,32,44,.06)}
+  .odpc-home .oh-logo img{display:block;width:100%!important;height:100%!important;max-width:100%!important;max-height:100%!important;object-fit:contain;object-position:center;padding:3px;margin:0!important;border-radius:10px}
+  .odpc-home .oh-logo-station{background:#26303b;color:#e9d1bb;border-color:#26303b}
+  .odpc-home .oh-logo-station svg{display:block;width:52px;height:52px}
+  .odpc-home .oh-card-head>div{flex:1;min-width:0}
+  @media(max-width:390px){.odpc-home .oh-logo{flex-basis:64px;width:64px;height:64px}.odpc-home .oh-logo-station svg{width:46px;height:46px}}
   .odpc-home .oh-label{color:#826b5b;text-transform:uppercase;font-weight:800;font-size:10.5px;letter-spacing:.09em}
   .odpc-home .oh-card h3{font-size:clamp(17px,2.1vw,21px)!important;color:#1c2836!important;line-height:1.2;margin:2px 0 0}
   .odpc-home .oh-card p{font-size:14px;line-height:1.59;color:#56616d;margin:0;flex:1}
