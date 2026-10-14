@@ -1,0 +1,32 @@
+name: ODPC live-theme path verification
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - deployment/check-paths.txt
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        site: [odpc.de, ai.odpc.de]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install paramiko
+      - name: Verify theme directory
+        env:
+          ODPC_SFTP_MODE: check
+          ODPC_TARGET_SITE: ${{ matrix.site }}
+          ODPC_SFTP_HOST: home119567219.1and1-data.host
+          ODPC_SFTP_USER: acc1461323326
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+          ODPC_SFTP_HOSTKEY_SHA256: SHA256:1gx2w8Rtv3wCgi7Jh8myf/KVd72cRQbow03UP8P095Q
+          ODPC_THEME_PATH: /clickandbuilds/Dering/wp-content/themes/astra
+          AI_ODPC_THEME_PATH: /ai-odpc/wp-content/themes/helpermonkey-business-v34-child
+        run: python scripts/check_wordpress_sftp.py
