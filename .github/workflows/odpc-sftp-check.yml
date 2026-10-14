@@ -20,6 +20,7 @@ on:
         default: fingerprint
         options:
           - fingerprint
+          - discover
           - check
 permissions:
   contents: read
@@ -45,7 +46,7 @@ jobs:
           ODPC_SFTP_PORT: "22"
           ODPC_SFTP_USER: ${{ secrets.ODPC_SFTP_USER }}
           ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
-          ODPC_SFTP_HOSTKEY_SHA256: ${{ secrets.ODPC_SFTP_HOSTKEY_SHA256 }}
+          ODPC_SFTP_HOSTKEY_SHA256: ${{ secrets.ODPC_SFTP_HOSTKEY_SHA256 || 'SHA256:1gx2w8Rtv3wCgi7Jh8myf/KVd72cRQbow03UP8P095Q' }}
           ODPC_THEME_PATH: ${{ secrets.ODPC_THEME_PATH }}
           AI_ODPC_THEME_PATH: ${{ secrets.AI_ODPC_THEME_PATH }}
         run: python scripts/check_wordpress_sftp.py
