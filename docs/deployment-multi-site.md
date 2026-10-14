@@ -9,7 +9,13 @@ Stand: 14.10.2026. Dieser Plan verwendet nur vorhandene kostenlose GitHub-/WordP
 - ODPC: vorhandenes **öffentliches** Repository [oliverdering/odpc-sitebot](https://github.com/oliverdering/odpc-sitebot), bestehender automatischer Seitenindex in `build.yml`; noch **kein bestätigtes produktives ODPC-Deployment**.
 - Rechtsanwaltskanzlei Justen: `https://ra-justen.de/`, WordPress mit Theme `akj-kanzlei-v1`; kein dediziertes GitHub-SFTP-Deployment verifiziert.
 
-## Phase 1 – ODPC: vorbereiteter, nur lesender Verbindungstest
+## Phase 1 – ODPC und ai.odpc.de: ein IONOS-Login, getrennte Theme-Zielpfade
+
+Auf ausdrücklichen Wunsch sollen **odpc.de und ai.odpc.de denselben dedizierten IONOS-SFTP-Benutzer** nutzen. Das funktioniert nur, wenn beide WordPress-Installationen im **gleichen IONOS-Webspace/Zugriffsbereich** dieses Benutzers liegen. Das Home-Verzeichnis des SFTP-Benutzers muss beide Document-Roots erreichbar machen; keinesfalls den auf `/Atrium` beschränkten ATRIUM-Benutzer verwenden.
+
+Im Workflow `ODPC / WordPress SFTP connection check` gibt es jetzt eine Auswahl `odpc.de` oder `ai.odpc.de`. Host, Benutzer, Passwort und geprüfter Fingerprint sind gemeinsam; nur der freigegebene Theme-Pfad ist je Website unterschiedlich. Beide Pfade erst **nach Prüfung der tatsächlichen Verzeichnisstruktur** hinterlegen. Ein SFTP-Login allein vermittelt keinen WordPress-Administratorzugang oder Datenbankzugriff.
+
+## Vorbereiteter, nur lesender Verbindungstest
 
 Neu in diesem Repository:
 
@@ -24,11 +30,12 @@ Einmalig auf der [GitHub-Actions-Secrets-Seite](https://github.com/oliverdering/
 | `ODPC_SFTP_USER` | Dedizierter SFTP-Benutzer mit möglichst beschränkten Dateirechten |
 | `ODPC_SFTP_PASSWORD` | Dessen SFTP-Passwort, nur als verschlüsseltes Secret; **niemals in Code, Chats oder README kopieren** |
 | `ODPC_SFTP_HOSTKEY_SHA256` | Vom Hoster oder anderweitig **unabhängig** bestätigter SSH-Host-Key-Fingerprint |
-| `ODPC_THEME_PATH` | Exakter, auf dem SFTP-Server gültiger absoluter Ordnerpfad zur **aktiven ODPC-Theme-Direktorie**, einschließlich `/wp-content/themes/<themename>` |
+| `ODPC_THEME_PATH` | Exakter absoluter Theme-Pfad der Hauptwebsite **odpc.de**, einschließlich `/wp-content/themes/<themename>` |
+| `AI_ODPC_THEME_PATH` | Separater absoluter Theme-Pfad für **ai.odpc.de**; bisher verwendeter Theme-Slug `helpermonkey-business-v34-child` – aktuellen Stand vor Einsatz kontrollieren |
 
 `ODPC_SFTP_PORT` ist im Workflow auf Standardport 22 eingestellt. Falls der Hoster einen anderen Port zuweist, Workflow **vor** dem Check anpassen.
 
-Im Tab **Actions** den Workflow **ODPC / WordPress SFTP connection check** starten: zuerst `fingerprint` (nur Server-Key auslesen, **keine Authentifizierung**), extern beim Hoster verifizieren, dann `check` (geprüfter Host-Key, Login, nur lesende Theme-Prüfung). Erst nach `PASS` dürfen wir einen **separaten** Deploy-Workflow vorbereiten.
+Im Tab **Actions** den Workflow **ODPC / WordPress SFTP connection check** starten: zuerst `fingerprint` (nur Server-Key auslesen, **keine Authentifizierung**), extern beim Hoster verifizieren, dann `check` für **odpc.de** und separat `check` für **ai.odpc.de** (geprüfter Host-Key, derselbe Login, unterschiedliche Theme-Verzeichnisse). Erst wenn **beide Tests PASS** melden, dürfen wir separate, allowlist-gebundene Deploy-Workflows vorbereiten. Die GitHub-Secrets sind im Repository derzeit nicht unabhängig auf Vollständigkeit prüfbar; fehlende Werte müssen durch berechtigte Personen hinterlegt werden.
 
 Der später zu erstellende Deploy-Workflow muss WordPress-Kern, Medien, Plugins, Datenbank und andere Verzeichnisse unangetastet lassen. Er soll ausschließlich bestätigte Theme-Dateien atomar schreiben, vorher einen gesicherten Snapshot ausführen, die Website testen und bei Fehlern den Ausgangszustand wiederherstellen.
 
@@ -46,4 +53,4 @@ Die produktive Kanzlei-Website hat das Theme `akj-kanzlei-v1`. Ein ODPC-Partnerh
 
 GitHub Actions + SFTP kann **WordPress-Theme-Dateien** ohne WPVibe bereitstellen. WordPress-Seiten, Medien, Nutzer, Menüs oder Pluginkonfigurationen liegen in der **Datenbank** und benötigen eine separate authentifizierte WordPress-REST-/WP-CLI- oder Datenbank-Strategie. Ein SFTP-Deploy ist kein universeller WordPress-Adminzugang.
 
-**Status:** GitHub-Vorbereitung für ODPC erstellt; **ODPC-SFTP noch nicht authentifiziert**. Für Kanzlei Justen noch kein separates privates Repository und kein SFTP-Test. Kein aktives ODPC-/Kanzlei-Produktivdeployment über diese neuen Workflows.
+**Status:** GitHub-Vorbereitung für beide ODPC-Domains erstellt; **gemeinsamer SFTP-Benutzer noch nicht für beide Document-Roots authentifiziert**. Für Kanzlei Justen noch kein separates privates Repository und kein SFTP-Test. Kein aktives ODPC-/Kanzlei-Produktivdeployment über diese neuen Workflows.
