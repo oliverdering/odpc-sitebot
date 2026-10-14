@@ -48,7 +48,14 @@ def main():
 
         username = required("ODPC_SFTP_USER")
         password = required("ODPC_SFTP_PASSWORD")
-        theme = required("ODPC_THEME_PATH")
+        target = os.environ.get("ODPC_TARGET_SITE", "odpc.de").strip().lower()
+        target_secrets = {
+            "odpc.de": "ODPC_THEME_PATH",
+            "ai.odpc.de": "AI_ODPC_THEME_PATH",
+        }
+        if target not in target_secrets:
+            raise RuntimeError("Target must be odpc.de or ai.odpc.de")
+        theme = required(target_secrets[target])
         if not theme.startswith("/") or "/../" in theme or not posixpath.isabs(theme):
             raise RuntimeError("Theme path must be an absolute path without traversal")
         theme = posixpath.normpath(theme)
@@ -66,7 +73,7 @@ def main():
             entries = sftp.listdir(theme)
             if not {"functions.php", "style.css"} <= set(entries):
                 raise RuntimeError("Configured directory does not look like a WordPress theme")
-            print("PASS: pinned-key authenticated read-only connection to configured WordPress theme.")
+            print("PASS: pinned-key authenticated read-only connection for", target)
             print("Top-level theme file count:", len(entries))
             print("No files written, uploaded, or modified.")
         finally:
