@@ -2,6 +2,14 @@ name: ODPC / WordPress SFTP connection check
 on:
   workflow_dispatch:
     inputs:
+      site:
+        description: "WordPress-Ziel: Hauptwebsite oder Helper Monkey"
+        required: true
+        type: choice
+        default: odpc.de
+        options:
+          - odpc.de
+          - ai.odpc.de
       operation:
         description: "Fingerprint only (no login), or authenticated read-only theme check"
         required: true
@@ -29,10 +37,12 @@ jobs:
       - name: Verify server fingerprint and optionally authenticate (read-only)
         env:
           ODPC_SFTP_MODE: ${{ inputs.operation }}
+          ODPC_TARGET_SITE: ${{ inputs.site }}
           ODPC_SFTP_HOST: ${{ secrets.ODPC_SFTP_HOST }}
           ODPC_SFTP_PORT: "22"
           ODPC_SFTP_USER: ${{ secrets.ODPC_SFTP_USER }}
           ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
           ODPC_SFTP_HOSTKEY_SHA256: ${{ secrets.ODPC_SFTP_HOSTKEY_SHA256 }}
           ODPC_THEME_PATH: ${{ secrets.ODPC_THEME_PATH }}
+          AI_ODPC_THEME_PATH: ${{ secrets.AI_ODPC_THEME_PATH }}
         run: python scripts/check_wordpress_sftp.py
