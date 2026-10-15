@@ -2,12 +2,17 @@
 /**
  * Plugin Name: ODPC Helper Monkey V4 Bridge
  * Description: Links ODPC services to the multilingual Helper Monkey start guide and preserves the existing WhatsApp Business button.
- * Version: 4.0.1
+ * Version: 4.0.2
  */
 if(!defined('ABSPATH'))exit;
 add_action('wp_head',function(){
  if(is_admin())return;
  echo '<style id="odpc-hm-v4-style">
+ /* ODPC uses navy/sand branding; the Helper Monkey product site alone uses green. */
+ #odpc-home aside[aria-label="Helper Monkey V4 kostenlos starten"]{background:#202e39!important;border-color:#a9917e!important;color:#f5e7d8!important}
+ #odpc-home aside[aria-label="Helper Monkey V4 kostenlos starten"] strong{color:#f5e7d8!important}
+ #odpc-home aside[aria-label="Helper Monkey V4 kostenlos starten"] p{color:#e7dfd6!important}
+ #odpc-home aside[aria-label="Helper Monkey V4 kostenlos starten"] a{color:#24313e!important;background:#f5e7d8!important}
  .odpc-hm-v4-top{display:flex;align-items:center;justify-content:space-between;gap:11px;flex-wrap:wrap;padding:9px clamp(14px,3vw,29px);background:#222b36;color:#eee5d9;font:700 14px/1.45 system-ui,sans-serif;border-bottom:1px solid #ad9177}
  .odpc-hm-v4-top a{color:#f5e7d8!important;text-decoration:none!important}.odpc-hm-v4-top .odpc-hm-v4-flags{display:flex;align-items:center;gap:5px;flex-wrap:wrap}
  .odpc-hm-v4-flags a{display:inline-flex;align-items:center;justify-content:center;border:1px solid #927865;border-radius:8px;min-height:39px;min-width:36px;font-size:20px}
