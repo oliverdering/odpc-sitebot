@@ -53,3 +53,22 @@ add_action('wp_footer',function(){
  echo '<a class="hm-v4-floating" id="hm-v4-wa" href="'.esc_url($wa).'" rel="noopener noreferrer" target="_blank" aria-label="WhatsApp Business – persönliche Unterstützung">✆ WhatsApp Business</a>';
  echo '<script id="hm-v4-global-js">(function(){var b=document.getElementById("hm-v4-helpbtn"),p=document.getElementById("hm-v4-help");if(!b||!p)return;function open(v){p.classList.toggle("is-open",v);b.setAttribute("aria-expanded",String(v))}b.addEventListener("click",function(){open(!p.classList.contains("is-open"))});document.getElementById("hm-v4-close").addEventListener("click",function(){open(false);b.focus()});document.addEventListener("keydown",function(e){if(e.key==="Escape")open(false)});if(document.getElementById("hmv4-wa"))document.getElementById("hm-v4-wa").remove();var l=new URLSearchParams(location.search).get("lang"),s=document.getElementById("hmv4-lang");if(l&&s&&s.querySelector("option[value="+l+"]")){s.value=l;s.dispatchEvent(new Event("change",{bubbles:true}))}})();</script>';
 },30);
+
+add_action('wp_head',function(){
+ if(is_admin())return;
+ if(is_front_page()){
+   $d='Helper Monkey: kostenlose KI-Agenten, persönliches Startinterview, Connector, Browser-Werkstatt und professionelle Fachpakete. Einfach starten auf Android, iPhone und PC.';
+ }elseif(is_page('helper-monkey-einfach-starten-sprachassistent')){
+   $d='Helper Monkey begleitet dich Schritt für Schritt: kostenloses Interview mit sechs Sprachen, Geräte- und Kontencheck, Vorlesen und Spracheingabe.';
+ }elseif(is_page('helper-monkey-fuer-unternehmen-ki-kollegen')){
+   $d='KI für Unternehmen: Helper Monkey unterstützt Mitarbeitende in Büro, Webdesign, Marketing, Personal und Buchhaltung. Kostenloses Erstinterview und ODPC-Beratung.';
+ }else{
+   $name=is_singular()?get_the_title():'Helper Monkey';
+   $d='Helper Monkey – '.wp_strip_all_tags($name).'. Entdecke unsere verständlichen KI-Anleitungen, kostenlosen Tools und professionellen Angebote mit persönlicher ODPC-Hilfe.';
+ }
+ echo '<meta name="description" content="'.esc_attr($d).'">';
+},8);
+add_action('wp_footer',function(){
+ if(is_admin())return;
+ echo '<script id="hm-v4-accessibility-patch">(function(){var ts=document.querySelectorAll(".hm3-tab-buttons[role=tablist] button[aria-selected]");ts.forEach(function(t){t.setAttribute("role","tab")})})()</script>';
+},97);
