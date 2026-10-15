@@ -1,0 +1,40 @@
+name: Helper Monkey V4 / Global UI Deploy
+on:
+  push:
+    paths:
+      - 'site-deploy/ai.odpc.de/odpc-helpermonkey-v4.php'
+      - 'scripts/deploy_helpermonkey_v4.py'
+      - '.github/workflows/helpermonkey-v4-deploy.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: helpermonkey-v4-live-release
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify PHP and deployment script
+        run: |
+          php -l site-deploy/ai.odpc.de/odpc-helpermonkey-v4.php
+          python3 -m py_compile scripts/deploy_helpermonkey_v4.py
+          grep -q 'hm-v4-global-js' site-deploy/ai.odpc.de/odpc-helpermonkey-v4.php
+          grep -q 'hm-v4-helpbtn' site-deploy/ai.odpc.de/odpc-helpermonkey-v4.php
+      - name: Install pinned SFTP client
+        run: python3 -m pip install 'paramiko>=3.4,<5'
+      - name: Deploy Helper Monkey global UI with backup and smoke verification
+        env:
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+          AI_ODPC_THEME_PATH: ${{ secrets.AI_ODPC_THEME_PATH }}
+        run: python3 scripts/deploy_helpermonkey_v4.py
+      - name: Preserve previous plugin for recovery
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: helpermonkey-v4-previous-file
+          path: backup-helpermonkey-v4/
+          if-no-files-found: ignore
+          retention-days: 15
