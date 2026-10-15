@@ -20,11 +20,19 @@ for(const viewport of [{width:390,height:844},{width:1440,height:900}]){
  out.hasQualification=!!root.querySelector('a[href*="Gesellenbrief.pdf"]');
  out.hasAdapter=!!root.querySelector('a[href*="obdlink.com/products/obdlink-mxp"]');
  out.hasWizard=!!root.querySelector("#obd-copy");
+ out.hasVisibleMXplus=!!root.querySelector("#am-rot .am-connector-equipment img");
+ out.hasOfficialLinks=[...root.querySelectorAll("#am-rot .am-connector-equipment a[href]")].filter(a=>/obdlink\.com/.test(a.href)).length;
+ out.hardwareSelectors=["am-voltage-check","am-software-check","am-bluetooth-check","am-internet-check"].every(id=>!!root.querySelector("#"+id));
  return out;
  });
  if(!initial.red.visible||!initial.orange.visible||!initial.green.visible)throw Error("Missing visible traffic-light stage");
  if(initial.scrollWidth>initial.viewport+12)throw Error("Horizontal viewport overflow "+JSON.stringify(initial));
- if(!initial.hasQualification||!initial.hasAdapter||!initial.hasWizard||initial.camera!=="environment")throw Error("Prerequisite missing "+JSON.stringify(initial));
+ if(!initial.hasQualification||!initial.hasAdapter||!initial.hasWizard||initial.camera!=="environment"||!initial.hasVisibleMXplus||!initial.hardwareSelectors||initial.hasOfficialLinks<5)throw Error("Prerequisite missing "+JSON.stringify(initial));
+ const adapterImage=page.locator("#am-rot .am-connector-equipment img");
+ await adapterImage.scrollIntoViewIfNeeded();
+ await page.waitForTimeout(250);
+ const imageLoaded=await adapterImage.evaluate(img=>img.complete&&img.naturalWidth>40);
+ if(!imageLoaded)throw Error("MX+ product photo broken / not loaded in visible connector area");
  await page.locator("#am-brand").selectOption({label:"BMW / MINI"});
  await page.locator("#obd-os").selectOption("android");
  let reco=await page.locator("#am-app-result").textContent();
@@ -35,6 +43,15 @@ for(const viewport of [{width:390,height:844},{width:1440,height:900}]){
  await page.locator("#am-year").fill("2017");
  await page.locator("#am-port-check").selectOption("found");
  await page.locator("#am-connect-check").selectOption("ready");
+ await page.locator("#am-voltage-check").selectOption("24v");
+ let stop=await page.locator("#am-red-status").textContent();
+ if(!stop.includes("STOPP"))throw Error("24V guard missing: "+stop);
+ await page.locator("#am-voltage-check").selectOption("12v");
+ let notReady=await page.locator("#am-red-status").textContent();
+ if(!notReady.includes("Hersteller-App") && !notReady.includes("OBDLink-App"))throw Error("App prerequisite missing: "+notReady);
+ await page.locator("#am-software-check").selectOption("ready");
+ await page.locator("#am-bluetooth-check").selectOption("ready");
+ await page.locator("#am-internet-check").selectOption("ready");
  const ready=await page.locator("#am-red-status").textContent();
  if(!/Nutzer bestätigt/i.test(ready))throw Error("Red connection manual verification missing: "+ready);
  const access=await page.locator("#am-green-status").textContent();
@@ -59,7 +76,7 @@ for(const viewport of [{width:390,height:844},{width:1440,height:900}]){
  if(hsn!=="0603"||tsn!=="BPG00000"||!make.includes("Volkswagen"))throw Error("Simulated OCR extraction failed: "+JSON.stringify({hsn,tsn,make}));
  await page.locator("#obd-copy").click();
  const copied=await page.evaluate(()=>navigator.clipboard.readText());
- if(!copied.includes("HSN: 0603")||!copied.includes("TSN: BPG00000")||!copied.includes("ORANGE")||!copied.includes("port located: found")||!copied.includes("connection in diagnostic app: ready"))throw Error("AI prompt missing vehicle / connector context");
+ if(!copied.includes("HSN: 0603")||!copied.includes("TSN: BPG00000")||!copied.includes("ORANGE")||!copied.includes("port located: found")||!copied.includes("connection in diagnostic app: ready")||!copied.includes("Bordnetz 12v")||!copied.includes("Hersteller-App ready"))throw Error("AI prompt missing vehicle / connector context");
  await page.locator("#am-scan-type").selectOption("vin");
  await page.evaluate(() => {
    window.Tesseract.createWorker=async()=>({
