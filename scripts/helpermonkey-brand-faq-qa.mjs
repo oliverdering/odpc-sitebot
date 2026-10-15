@@ -16,6 +16,11 @@ page.on("pageerror",e=>errors.push(e.message));
 try{
 const res=await page.goto(s.url,{waitUntil:"domcontentloaded",timeout:50000});
 await page.waitForTimeout(350);
+if(s.kind==="ai"){
+ const img=page.locator(".hm-unified-extras img[src*='helper-monkey-rundsiegel-original.webp']").first();
+ await img.scrollIntoViewIfNeeded();
+ await img.evaluate(async element=>{if(!element.complete)await new Promise(resolve=>{element.addEventListener("load",resolve,{once:true});element.addEventListener("error",resolve,{once:true});setTimeout(resolve,4000)});});
+}
 const obj=await page.evaluate(kind=>{
 const root=kind==="web"?document.querySelector(".hm-service-brand"):kind==="auto"?document.querySelector(".hm-service-brand"):document.querySelector(".hm-unified-extras");
 const imgs=[...root.querySelectorAll('img[src*="helper-monkey-rundsiegel-original.webp"]')];
