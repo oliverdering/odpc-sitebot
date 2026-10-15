@@ -2,7 +2,7 @@
 /**
  * Plugin Name: ODPC Helper Monkey V4 Bridge
  * Description: Links ODPC services to the multilingual Helper Monkey start guide and preserves the existing WhatsApp Business button.
- * Version: 4.0.0
+ * Version: 4.0.1
  */
 if(!defined('ABSPATH'))exit;
 add_action('wp_head',function(){
@@ -20,17 +20,10 @@ add_action('wp_head',function(){
  @media(max-width:580px){.odpc-hm-v4-wa{right:9px;bottom:9px;font-size:13px}.odpc-hm-v4-helpbtn{right:9px;bottom:65px}.odpc-hm-v4-help{right:9px;bottom:117px}}
  </style>';
 },97);
-add_action('wp_body_open',function(){
- if(is_admin())return;
- echo '<div class="odpc-hm-v4-top" role="navigation" aria-label="ODPC Helper Monkey Spracheinstieg"><a href="https://ai.odpc.de/helper-monkey-einfach-starten-sprachassistent/">🐵 Helper Monkey – Kostenlos mit KI starten ↗</a><div class="odpc-hm-v4-flags"><span>Interview:</span>';
- foreach(['de'=>['🇩🇪','Deutsch'],'en'=>['🇬🇧','English'],'fr'=>['🇫🇷','Français'],'es'=>['🇪🇸','Español'],'tr'=>['🇹🇷','Türkçe'],'ar'=>['🇸🇦','العربية']] as $k=>$v){
- echo '<a href="'.esc_url(add_query_arg('lang',$k,'https://ai.odpc.de/helper-monkey-einfach-starten-sprachassistent/')).'" aria-label="Interview: '.esc_attr($v[1]).'" hreflang="'.esc_attr($k).'" title="'.esc_attr($v[1]).'">'.esc_html($v[0]).'</a>';
- }echo '</div></div>';
-},7);
 add_action('wp_footer',function(){
  if(is_admin())return;
  echo '<button id="odpc-hm-v4-helpbtn" class="odpc-hm-v4-helpbtn" type="button" aria-expanded="false" aria-controls="odpc-hm-v4-help">❔ Fragen &amp; Hilfe</button>';
- echo '<section id="odpc-hm-v4-help" class="odpc-hm-v4-help" aria-label="ODPC Selbsthilfe"><h2>ODPC hilft dir weiter</h2><p>Du musst nicht wissen, wie KI funktioniert. Beginne mit einem kurzen Interview oder wähle dein Thema.</p><a href="https://ai.odpc.de/helper-monkey-einfach-starten-sprachassistent/">🎙 Einfach starten – per Sprache oder Klick</a><a href="https://ai.odpc.de/start/">🐵 Kostenlose und professionelle Agenten</a><a href="https://odpc.de/initiq">🏢 KI für Firmen – initIQ</a><a href="https://odpc.de/l-i-f-e-mpu-selbstlernkurs-neun-lernmodule/">🌱 L.I.F.E. – MPU-Selbstlernbereich</a><a href="https://odpc.de/contact-me">✉ Kontakt zu ODPC</a><p>Über WhatsApp Business kannst du persönlich um Hilfe bitten.</p><button id="odpc-hm-v4-close" type="button">Schließen</button></section>';
+ echo '<section id="odpc-hm-v4-help" class="odpc-hm-v4-help" aria-label="ODPC Selbsthilfe"><h2>ODPC hilft dir weiter</h2><p>Du musst nicht wissen, wie KI funktioniert. Beginne mit einem kurzen Interview oder wähle dein Thema.</p><a href="https://ai.odpc.de/helper-monkey-einfach-starten-sprachassistent/">🎙 Einfach starten – Interview mit sechs Sprachen</a><a href="https://ai.odpc.de/start/">🐵 Kostenlose und professionelle Agenten</a><a href="https://odpc.de/initiq">🏢 KI für Firmen – initIQ</a><a href="https://odpc.de/l-i-f-e-mpu-selbstlernkurs-neun-lernmodule/">🌱 L.I.F.E. – MPU-Selbstlernbereich</a><a href="https://odpc.de/contact-me">✉ Kontakt zu ODPC</a><p>Über WhatsApp Business kannst du persönlich um Hilfe bitten.</p><button id="odpc-hm-v4-close" type="button">Schließen</button></section>';
  echo '<a id="odpc-hm-v4-wa" class="odpc-hm-v4-wa" href="'.esc_url('https://wa.me/492654882183?text='.rawurlencode('Hallo Oliver, ich brauche Unterstützung auf odpc.de.')).'" target="_blank" rel="noopener noreferrer" aria-label="ODPC WhatsApp Business kontaktieren">✆ WhatsApp Business</a>';
  echo '<script id="odpc-hm-v4-js">(function(){var b=document.getElementById("odpc-hm-v4-helpbtn"),p=document.getElementById("odpc-hm-v4-help");if(!b||!p)return;function open(v){p.classList.toggle("is-open",v);b.setAttribute("aria-expanded",String(v))}b.addEventListener("click",function(){open(!p.classList.contains("is-open"))});document.getElementById("odpc-hm-v4-close").addEventListener("click",function(){open(false);b.focus()});document.addEventListener("keydown",function(e){if(e.key==="Escape")open(false)});if(document.querySelector(".odpc-wa-sticky")){document.getElementById("odpc-hm-v4-wa").remove()}})();</script>';
 },35);
