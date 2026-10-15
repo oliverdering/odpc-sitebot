@@ -2,7 +2,7 @@
 /**
  * Plugin Name: ODPC Helper Monkey V4 Global Guide
  * Description: Reusable cross-page self-service, language entry, traffic lights and WhatsApp Business.
- * Version: 4.0.2
+ * Version: 4.0.3
  */
 if (!defined('ABSPATH')) exit;
 function hm_v4_url(){return 'https://ai.odpc.de/helper-monkey-einfach-starten-sprachassistent/';}
@@ -51,7 +51,7 @@ add_action('wp_footer',function(){
  echo '<button class="hm-v4-helpbtn" id="hm-v4-helpbtn" aria-controls="hm-v4-help" aria-expanded="false" type="button">❔ Fragen &amp; Hilfe</button>';
  echo '<aside class="hm-v4-help" id="hm-v4-help" aria-label="Helper Monkey Selbsthilfe"><h2>Wie kann ich helfen?</h2><p>Hier findest du die passenden nächsten Schritte.</p><a href="'.esc_url(hm_v4_url()).'">🎙 Persönliches Start-Interview</a><a href="'.esc_url(home_url('/connector-einrichten/')).'">🔗 Konten und Connector</a><a href="'.esc_url(home_url('/start/#downloads')).'">🐵 Agenten und Downloads</a><a href="'.esc_url(home_url('/praxis/')).'">📖 Anleitung und FAQ</a><a href="'.esc_url('https://ai.odpc.de/helper-monkey-fuer-unternehmen-ki-kollegen/').'">🏢 Für Firmen und Teams</a><p>Du kommst nicht weiter? Über WhatsApp Business erreichst du ODPC direkt.</p><button id="hm-v4-close" type="button">Schließen</button></aside>';
  echo '<a class="hm-v4-floating" id="hm-v4-wa" href="'.esc_url($wa).'" rel="noopener noreferrer" target="_blank" aria-label="WhatsApp Business – persönliche Unterstützung">✆ WhatsApp Business</a>';
- echo '<script id="hm-v4-global-js">(function(){var b=document.getElementById("hm-v4-helpbtn"),p=document.getElementById("hm-v4-help");if(!b||!p)return;function open(v){p.classList.toggle("is-open",v);b.setAttribute("aria-expanded",String(v))}b.addEventListener("click",function(){open(!p.classList.contains("is-open"))});document.getElementById("hm-v4-close").addEventListener("click",function(){open(false);b.focus()});document.addEventListener("keydown",function(e){if(e.key==="Escape")open(false)});if(document.getElementById("hmv4-wa"))document.getElementById("hm-v4-wa").remove();var l=new URLSearchParams(location.search).get("lang"),s=document.getElementById("hmv4-lang");if(l&&s&&s.querySelector("option[value="+l+"]")){s.value=l;s.dispatchEvent(new Event("change",{bubbles:true}))}})();</script>';
+ echo '<script id="hm-v4-global-js">(function(){var b=document.getElementById("hm-v4-helpbtn"),p=document.getElementById("hm-v4-help");if(!b||!p)return;function open(v){p.classList.toggle("is-open",v);b.setAttribute("aria-expanded",String(v))}b.addEventListener("click",function(){open(!p.classList.contains("is-open"))});document.getElementById("hm-v4-close").addEventListener("click",function(){open(false);b.focus()});document.addEventListener("keydown",function(e){if(e.key==="Escape")open(false)});/* Preserve the existing WhatsApp Business button and styling. */var l=new URLSearchParams(location.search).get("lang"),s=document.getElementById("hmv4-lang");if(l&&s&&s.querySelector("option[value="+l+"]")){s.value=l;s.dispatchEvent(new Event("change",{bubbles:true}))}})();</script>';
 },30);
 
 add_action('wp_head',function(){
