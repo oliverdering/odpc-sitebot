@@ -32,9 +32,16 @@ for(const viewport of [{width:390,height:844},{width:1440,height:900}]){
  const img=Buffer.from("iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+jIn8AAAAASUVORK5CYII=","base64");
  await page.locator("#am-regphoto").setInputFiles({name:"fahrzeugschein-test.png",mimeType:"image/png",buffer:img});
  if(await page.locator("#am-ocr").isDisabled())throw Error("Scan button not enabled");
- await page.evaluate(()=>{window.Tesseract={createWorker:async()=>({recognize:async()=>({data:{text:"2.1 0603 2.2 BPG00000 VOLKSWAGEN"}}),terminate:async()=>{}})}};});
+ await page.evaluate(() => {
+   window.Tesseract = {
+     createWorker: async () => ({
+       recognize: async () => ({data:{text:"2.1 0603 2.2 BPG00000 VOLKSWAGEN"}}),
+       terminate: async () => {}
+     })
+   };
+ });
  await page.locator("#am-ocr").click();
- await page.waitForFunction(()=>document.querySelector("#am-hsn").value==="0603",{timeout:20000});
+ await page.waitForFunction(()=>document.querySelector("#am-hsn").value==="0603",null,{timeout:20000});
  const hsn=await page.locator("#am-hsn").inputValue();
  const tsn=await page.locator("#am-tsn").inputValue();
  const make=await page.locator("#am-brand").inputValue();
