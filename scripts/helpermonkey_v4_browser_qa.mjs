@@ -40,7 +40,7 @@ try{
   await page.waitForTimeout(800);
   summary.answer=await page.locator("#hm-v4-response").textContent();
   expect(summary.answer.trim().length>12,"Search assistant produced no answer");
-  const resp=await page.goto("https://odpc.de/",{waitUntil:"domcontentloaded",timeout:60000});
+  const resp=await page.goto("https://odpc.de/?odpc_hm_v4_qa="+Date.now(),{waitUntil:"domcontentloaded",timeout:60000});
   await page.waitForTimeout(1000);
   summary.odpc={status:resp?.status(),url:page.url(),title:await page.title(),bodyHead:(await page.locator("body").innerText()).slice(0,360),help:await page.locator("#odpc-hm-v4-helpbtn").count(),marker:await page.locator("script#odpc-hm-v4-js").count()};
   expect(summary.odpc.help===1,"ODPC global help missing; browser snapshot: "+JSON.stringify(summary.odpc));
