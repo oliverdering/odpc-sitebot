@@ -1,0 +1,40 @@
+name: ODPC Gemini Gmail Worker Syntax QA
+on:
+  push:
+    paths:
+      - 'integrations/gemini-mail-worker/**'
+      - '.github/workflows/odpc-gemini-worker-qa.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  syntax-and-policy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate Google Apps Script parses as JavaScript
+        run: |
+          cp integrations/gemini-mail-worker/Code.gs /tmp/odpc-gemini-worker.js
+          node --check /tmp/odpc-gemini-worker.js
+      - name: Verify manifest and worker boundaries
+        run: |
+          node - <<'JS'
+          const fs=require('fs');
+          const source=fs.readFileSync('integrations/gemini-mail-worker/Code.gs','utf8');
+          const manifest=JSON.parse(fs.readFileSync('integrations/gemini-mail-worker/appsscript.json','utf8'));
+          for(const fn of ['setupOdpcKiTeam','testOdpcKiTeam','runOdpcKiTeam','odpcGemini_']) {
+            if(!source.includes('function '+fn+'(')) throw new Error('Missing '+fn);
+          }
+          for(const prop of ['GEMINI_API_KEY','ODPC_DOC_ID','ODPC_ALLOWED_SENDER','ODPC_WORKER_ACCOUNT']) {
+            if(!source.includes(prop)) throw new Error('Missing script property '+prop);
+          }
+          if(!source.includes('maxPerRun:2'))throw Error('Missing processing limit');
+          if(!source.includes('odpcExactSender_'))throw Error('Missing sender allowlist');
+          if(!source.includes('odpcContainsSecrets_'))throw Error('Missing sensitive-pattern check');
+          if(manifest.runtimeVersion!=='V8')throw Error('Wrong runtime');
+          console.log('PASS Apps Script syntax and bounded Gmail-Gemini-DOC worker architecture');
+          JS
