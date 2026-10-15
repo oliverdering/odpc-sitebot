@@ -68,6 +68,9 @@ function runOdpcKiTeam() {
   if(!lock.tryLock(10000))return {skipped:"locked"};
   try{
     const c=odpcSettings_();
+    if(Date.now()<Number(c.p.getProperty("ODPC_PAUSE_UNTIL")||"0")){
+      return {skipped:"free_tier_quota_cooldown"};
+    }
     const queue=odpcLabel_(ODPC_KI.queue);
     const done=odpcLabel_(ODPC_KI.done);
     const failed=odpcLabel_(ODPC_KI.error);
