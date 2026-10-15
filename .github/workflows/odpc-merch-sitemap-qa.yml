@@ -1,0 +1,20 @@
+name: ODPC Merchandise and Sitemaps QA
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/odpc-merch-sitemap-audit.mjs'
+      - '.github/workflows/odpc-merch-sitemap-qa.yml'
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify merchandise, internal links and both domain sitemaps
+        run: node scripts/odpc-merch-sitemap-audit.mjs
