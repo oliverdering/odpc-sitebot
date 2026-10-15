@@ -1,0 +1,42 @@
+[
+  {
+    "agent": "connector",
+    "source": "https://ai.odpc.de/wp-content/themes/helpermonkey-business-v3/assets/downloads/helpermonkey-connector-3.0.0.zip",
+    "source_sha256": "79daf0401d7c29b23072e5a230f873c4bc9056e3e8329c81aaaa7b01de0dff9b",
+    "source_file_count": 6,
+    "masterprompts_patched": 1,
+    "output": "helpermonkey-connector-multilingual-v3.1.zip",
+    "output_sha256": "d219dfd77e0b2f886047b631468227d86a2b7501807dbe9da3b80226e2fcb909",
+    "bytes": 7586
+  },
+  {
+    "agent": "lebenslauf",
+    "source": "https://ai.odpc.de/wp-content/themes/helpermonkey-business-v3/assets/downloads/helpermonkey-lebenslauf-3.0.0.zip",
+    "source_sha256": "6e8b93b361a482969522087deeedfe0521fa3bbb1e96264b8f001a30e0437be3",
+    "source_file_count": 6,
+    "masterprompts_patched": 1,
+    "output": "helpermonkey-lebenslauf-multilingual-v3.1.zip",
+    "output_sha256": "2765dc14c8e62de37119dc7f933e644c6adb8f48c6ce1c2a9b8f374c3218bbb3",
+    "bytes": 7542
+  },
+  {
+    "agent": "bewerbung",
+    "source": "https://ai.odpc.de/wp-content/themes/helpermonkey-business-v3/assets/downloads/helpermonkey-bewerbung-3.0.0.zip",
+    "source_sha256": "b4eaea4c7b9eed2f2f4c7f99f1b7dcbde7b07facb604ad96713c1fa2a97f5f19",
+    "source_file_count": 6,
+    "masterprompts_patched": 1,
+    "output": "helpermonkey-bewerbung-multilingual-v3.1.zip",
+    "output_sha256": "1a8302d82cbf9f1d1ce1142d76c5e3dd7ed330f67e803a7f9cf51fd1d3fc4f94",
+    "bytes": 7581
+  },
+  {
+    "agent": "postfach",
+    "source": "https://ai.odpc.de/wp-content/themes/helpermonkey-business-v3/assets/downloads/helpermonkey-postfach-demo-3.0.0.zip",
+    "source_sha256": "42ce122b3ef2b84822911fd3c3d5eea6d9ad5a0073ea6dca7779dae66447a4b1",
+    "source_file_count": 6,
+    "masterprompts_patched": 1,
+    "output": "helpermonkey-postfach-multilingual-v3.1.zip",
+    "output_sha256": "920e566003bc3c19d8d550b11bf2a8521b49646f3be102c57474945485353b63",
+    "bytes": 7545
+  }
+]
