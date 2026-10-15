@@ -72,3 +72,36 @@ add_action('wp_footer',function(){
  if(is_admin())return;
  echo '<script id="hm-v4-accessibility-patch">(function(){var ts=document.querySelectorAll(".hm3-tab-buttons[role=tablist] button[aria-selected]");ts.forEach(function(t){t.setAttribute("role","tab")})})()</script>';
 },97);
+
+add_action('wp_footer',function(){ if(is_admin())return; ?>
+<script id="hm-v4-chat-search">
+(function(){
+"use strict";
+var panel=document.getElementById("hm-v4-help");if(!panel||document.getElementById("hm-v4-chat"))return;
+var wrap=document.createElement("div");wrap.id="hm-v4-chat";wrap.innerHTML='<label for="hm-v4-query" style="display:block;font-weight:800;margin-top:8px">Was möchtest du wissen?</label><div style="display:flex;gap:5px;flex-wrap:wrap"><input id="hm-v4-query" type="search" maxlength="220" placeholder="z.B. Connector einrichten" style="flex:1;min-width:150px;padding:9px;border:1px solid #a9cbb8;border-radius:8px"><button type="button" id="hm-v4-ask">Suchen</button><button type="button" id="hm-v4-mic" aria-label="Frage sprechen">🎙</button><button type="button" id="hm-v4-listen" aria-label="Antwort vorlesen">🔊</button></div><p style="font-size:12px;margin:6px 0">Dieser Helfer sucht geprüfte Seiten und FAQ. Er ist kein frei sprechender KI-Chatbot. Keine Passwörter oder persönlichen Gesundheitsdaten eingeben.</p><div id="hm-v4-response" aria-live="polite" style="border-left:4px solid #268251;background:#f4faf6;padding:9px;margin:8px 0;min-height:36px"></div>';
+panel.querySelector("p").insertAdjacentElement("afterend",wrap);
+var input=document.getElementById("hm-v4-query"),response=document.getElementById("hm-v4-response");
+function result(title,body,url){var box=document.createElement("div");box.style.margin="7px 0";var strong=document.createElement("strong");strong.textContent=title;box.appendChild(strong);if(body){var p=document.createElement("p");p.style.margin="3px 0";p.textContent=body.slice(0,340);box.appendChild(p)}if(url){var a=document.createElement("a");a.href=url;a.textContent="Dazu die Anleitung öffnen ↗";a.rel="noopener";box.appendChild(a)}response.appendChild(box)}
+function score(s,words){var text=s.toLocaleLowerCase(),n=0;words.forEach(function(w){if(w.length>2&&text.indexOf(w)>=0)n++});return n}
+async function run(){
+var q=input.value.trim();response.replaceChildren();if(!q)return;
+var words=q.toLocaleLowerCase().split(/[^\p{L}\p{N}]+/u).filter(function(x){return x.length>2}).slice(0,8);
+var faq=Array.from(document.querySelectorAll("main details,article details,.hm-v4-faq details")).map(function(d){return {question:d.querySelector("summary")?.textContent||"",answer:d.querySelector("p")?.textContent||"",text:d.textContent||""}}).map(function(d){return Object.assign(d,{weight:score(d.text,words)})}).filter(function(x){return x.weight>0}).sort(function(a,b){return b.weight-a.weight}).slice(0,3);
+if(faq.length){faq.forEach(function(x){result(x.question,x.answer,"")});return}
+response.textContent="Ich suche passende Inhalte auf dieser Webseite …";
+try{
+ var u=new URL("/wp-json/wp/v2/search",location.origin);u.searchParams.set("search",q);u.searchParams.set("per_page","5");
+ var res=await fetch(u.toString(),{credentials:"omit",headers:{Accept:"application/json"}});
+ if(!res.ok)throw Error("Search not available");
+ var entries=await res.json();response.replaceChildren();
+ if(!Array.isArray(entries)||!entries.length){result("Noch keine passende Antwort","Probiere einen kürzeren Suchbegriff oder starte das persönliche Interview.","https://ai.odpc.de/helper-monkey-einfach-starten-sprachassistent/");return}
+ entries.forEach(function(x){var link=typeof x.url==="string"&&x.url.startsWith(location.origin)?x.url:"";result(x.title||"Passende Seite","",link)})
+}catch(e){response.replaceChildren();result("Bitte nutze den geführten Einstieg","Die Seitensuche ist gerade nicht verfügbar. Persönliche Hilfe findest du jederzeit über WhatsApp.","https://ai.odpc.de/helper-monkey-einfach-starten-sprachassistent/")}
+}
+document.getElementById("hm-v4-ask").addEventListener("click",run);
+input.addEventListener("keydown",function(e){if(e.key==="Enter"){e.preventDefault();run()}});
+document.getElementById("hm-v4-mic").addEventListener("click",function(){var SR=window.SpeechRecognition||window.webkitSpeechRecognition;if(!SR){response.textContent="Die Spracheingabe ist in diesem Browser nicht verfügbar. Bitte die Frage eintippen.";return}var r=new SR();r.lang="de-DE";r.onresult=function(e){input.value=e.results[0][0].transcript;run()};r.onerror=function(){response.textContent="Die Sprache wurde nicht erkannt. Bitte erneut versuchen oder schreiben."};try{r.start()}catch(e){response.textContent="Mikrofon kann nicht gestartet werden."}});
+document.getElementById("hm-v4-listen").addEventListener("click",function(){if(!("speechSynthesis" in window))return;window.speechSynthesis.cancel();var v=new SpeechSynthesisUtterance(response.textContent.slice(0,900));v.lang="de-DE";v.rate=.9;window.speechSynthesis.speak(v)});
+})();
+</script>
+<?php },98);
