@@ -1,0 +1,35 @@
+name: Helper Monkey V4 / Live Acceptance
+on:
+  push:
+    paths:
+      - 'scripts/qa_helpermonkey_v4_live.py'
+      - 'scripts/helpermonkey_v4_browser_qa.mjs'
+      - '.github/workflows/helpermonkey-v4-live-acceptance.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  endpoints:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify all public V4 pages, SEO and safe navigation
+        run: python scripts/qa_helpermonkey_v4_live.py
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 11
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Chrome automation dependencies
+        run: |
+          npm install --no-save playwright@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Perform mobile interactive acceptance tests
+        run: node scripts/helpermonkey_v4_browser_qa.mjs
