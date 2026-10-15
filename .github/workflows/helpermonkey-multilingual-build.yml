@@ -1,0 +1,39 @@
+name: Helper Monkey / Build multilingual free ZIPs
+on:
+  push:
+    paths:
+      - 'scripts/build_helpermonkey_multilingual.py'
+      - '.github/workflows/helpermonkey-multilingual-build.yml'
+      - 'downloads/helpermonkey-sprachmodul-v1.0.txt'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: helpermonkey-multilingual-zips
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Fetch original public archives, add language first step, validate ZIPs
+        run: python scripts/build_helpermonkey_multilingual.py
+      - name: Verify build manifest and output names
+        run: |
+          python -m json.tool downloads/multilingual-v3.1-build-manifest.json > /dev/null
+          ls -lh downloads/helpermonkey-*-multilingual-v3.1.zip
+      - name: Commit public multilingual free downloads only
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add downloads/helpermonkey-*-multilingual-v3.1.zip downloads/multilingual-v3.1-build-manifest.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'build(helpermonkey): multilingual V3.1 original-preserving ZIPs'
+            git push origin HEAD:main
+          fi
