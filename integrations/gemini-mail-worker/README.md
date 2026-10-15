@@ -1,6 +1,6 @@
 # ODPC KI-Team – Gemini-Mail-Worker
 
-Status: installierbarer Pilot (Google Apps Script) | 15.10.2026
+Status: installierbarer Pilot (Google Apps Script) | 15.10.2026 – direkter Thread-Rückkanal und Nachrecherche korrigiert
 
 ChatGPT ↔ autorisierte Gmail-Konten ↔ Gemini Developer API ↔ gemeinsames Google-Dokument.
 
@@ -19,9 +19,10 @@ ChatGPT ↔ autorisierte Gmail-Konten ↔ Gemini Developer API ↔ gemeinsames G
    - ODPC_ALLOWED_SENDER = E-Mail-Adresse des ChatGPT-Absenderpostfachs
    - ODPC_WORKER_ACCOUNT = E-Mail-Adresse, in deren Konto das Script ausgeführt wird
    - Optional: GEMINI_MODEL = gemini-2.5-flash-lite
+   - Optional: ODPC_SEARCH_GROUNDING = true (Google-Suche für beleggestützte Recherche; vorab Free-Tier-Quoten und Abrechnung prüfen, standardmäßig AUS)
 7. Wähle die Funktion **testOdpcKiTeam** aus und klicke **Ausführen**. Beim ersten Start die Google-OAuth-Berechtigungen ausdrücklich bestätigen. Das Testprotokoll nennt Modell und Docs-Erreichbarkeit; niemals den Schlüssel.
 8. Erst wenn der Test erfolgreich ist, **setupOdpcKiTeam** einmal ausführen. Damit wird **ein** zeitgesteuerter Trigger eingerichtet, der die Queue alle 15 Minuten überprüft. Du musst den Chat danach nicht ständig öffnen.
-9. Sende einen ersten freigegebenen Arbeitsauftrag vom definierten ChatGPT-Postfach an dieses Gemini-Worker-Postfach. Der Betreff muss mindestens **[ODPC-KI-TEAM][TEST-202610][AN-GEMINI]** enthalten. Der Worker markiert den Auftrag, erstellt über das Gemini-API-Modell einen Bericht, ergänzt das Google-Dokument und sendet eine E-Mail mit **[GEMINI-FERTIG]** zurück.
+9. Sende einen ersten freigegebenen Arbeitsauftrag vom definierten ChatGPT-Postfach an dieses Gemini-Worker-Postfach. Der Betreff muss mindestens **[ODPC-KI-TEAM][TEST-202610][AN-GEMINI]** enthalten. Für Folgerecherchen akzeptiert der Worker auch **[NACHRECHERCHE]**. Der Worker markiert den Auftrag, erstellt über das Gemini-API-Modell einen Bericht, ergänzt das Google-Dokument und antwortet im bestehenden Gmail-Thread; der Text enthält **[GEMINI-FERTIG]**. Der Absender bleibt das Google-Konto des Workers.
 
 ## Funktionsumfang
 
@@ -30,7 +31,7 @@ ChatGPT ↔ autorisierte Gmail-Konten ↔ Gemini Developer API ↔ gemeinsames G
 - Begrenzt Aufträge auf maximal **2 pro Durchlauf** und die Nachrichtengröße.
 - Liest zum Faktenabgleich nur drei **fest hinterlegte öffentliche** ODPC-Seiten, keine fremden privaten Websites.
 - Übergibt **keine Gmail-Anhänge** und erkennt typische Geheimnismuster, um solche Nachrichten auszusondern.
-- Kennzeichnet abgeschlossene, wartende und fehlerhafte Aufträge mit Gmail-Labels.
+- Kennzeichnet abgeschlossene, wartende und fehlerhafte Aufträge mit Gmail-Labels. Ein neuer Auftrag im selben Thread wird anhand seiner einzelnen Nachrichten-ID erneut berücksichtigt. Fehlerhafte Nachrichten können erst nach manueller Prüfung/Zurücksetzung der entsprechenden Script Property erneut verarbeitet werden.
 - Kein eigenmächtiger WordPress-Zugriff, keine beliebigen Änderungen an GitHub, kein Zugriff auf fremde Adressen, keine Kundendaten-Exports.
 - Die Rückantwort stammt von der **Gemini Developer API**, nicht automatisch vom laufenden Gemini-Chat beziehungsweise der Persona Claire. Beide können auf dasselbe Dokument zurückgreifen.
 
@@ -58,5 +59,6 @@ In Google Apps Script unter **Trigger** den Eintrag für runOdpcKiTeam löschen.
 
 - https://ai.google.dev/gemini-api/docs/pricing
 - https://ai.google.dev/gemini-api/docs/text-generation
+- https://ai.google.dev/gemini-api/docs/google-search/
 - https://developers.google.com/apps-script/guides/triggers/installable
 - https://developers.google.com/apps-script/guides/services/quotas
