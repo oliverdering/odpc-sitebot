@@ -40,8 +40,10 @@ try{
   await page.waitForTimeout(800);
   summary.answer=await page.locator("#hm-v4-response").textContent();
   expect(summary.answer.trim().length>12,"Search assistant produced no answer");
-  await page.goto("https://odpc.de/",{waitUntil:"domcontentloaded",timeout:60000});
-  expect(await page.locator("#odpc-hm-v4-helpbtn").count()===1,"ODPC global help missing");
+  const resp=await page.goto("https://odpc.de/",{waitUntil:"domcontentloaded",timeout:60000});
+  await page.waitForTimeout(1000);
+  summary.odpc={status:resp?.status(),url:page.url(),title:await page.title(),bodyHead:(await page.locator("body").innerText()).slice(0,360),help:await page.locator("#odpc-hm-v4-helpbtn").count(),marker:await page.locator("script#odpc-hm-v4-js").count()};
+  expect(summary.odpc.help===1,"ODPC global help missing; browser snapshot: "+JSON.stringify(summary.odpc));
   expect(await page.locator(".odpc-hm-v4-flags a").count()>=6,"ODPC language entry missing");
   await page.goto("https://odpc.de/l-i-f-e-mpu-selbstlernkurs-neun-lernmodule/",{waitUntil:"domcontentloaded",timeout:60000});
   expect((await page.locator("body").textContent()).includes("Modul 9"),"L.I.F.E. lesson 9 missing");
