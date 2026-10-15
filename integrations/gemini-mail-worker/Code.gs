@@ -62,6 +62,15 @@ function testOdpcKiTeam() {
   return {ready:true,document:doc.getName(),model:c.model};
 }
 
+/** On-demand start from Apps Script editor. Runs the same bounded queue worker.
+ * This does not change or remove the scheduled trigger.
+ */
+function runOdpcKiTeamNow() {
+  const result=runOdpcKiTeam();
+  Logger.log("Manual ODPC KI-Team run: "+JSON.stringify(result));
+  return result;
+}
+
 /** Polls only permitted internal messages, with bounded processing and no write access to websites. */
 function runOdpcKiTeam() {
   const lock=LockService.getScriptLock();
