@@ -1,0 +1,24 @@
+name: Auto Monkey / Three-stage camera and vehicle QA
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/auto-monkey-ampel-qa.mjs'
+      - '.github/workflows/auto-monkey-ampel-qa.yml'
+permissions:
+  contents: read
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install headless browser
+        run: |
+          npm install --no-save playwright@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Verify responsive ampels, camera, scan parsing and connector prompt
+        run: node scripts/auto-monkey-ampel-qa.mjs
