@@ -1,0 +1,37 @@
+name: ODPC / Helper Monkey V4 Cross-Site Bridge
+on:
+  push:
+    paths:
+      - 'site-deploy/odpc.de/odpc-helpermonkey-v4-bridge.php'
+      - 'scripts/deploy_odpc_helpermonkey_v4_bridge.py'
+      - '.github/workflows/odpc-helpermonkey-v4-bridge.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: odpc-helpermonkey-v4-bridge
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify PHP and deployment script
+        run: |
+          php -l site-deploy/odpc.de/odpc-helpermonkey-v4-bridge.php
+          python3 -m py_compile scripts/deploy_odpc_helpermonkey_v4_bridge.py
+      - name: Install SFTP dependency
+        run: python3 -m pip install 'paramiko>=3.4,<5'
+      - name: Deploy with atomic backup and live smoke test
+        env:
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+        run: python3 scripts/deploy_odpc_helpermonkey_v4_bridge.py
+      - name: Save prior module
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: odpc-v4-bridge-previous-file
+          path: backup-odpc-v4-bridge/
+          if-no-files-found: ignore
+          retention-days: 15
