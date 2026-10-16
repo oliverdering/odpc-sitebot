@@ -14,7 +14,7 @@ URL="https://ra-justen.odpc.de/kanzlei-layout-preview.html"
 def verify():
     with urlopen(Request(URL+"?v="+str(int(time.time())),headers={"Cache-Control":"no-cache","User-Agent":"ODPC-Justen-Preview-QA"}),timeout=25) as resp:
         html=resp.read(300000).decode("utf-8","replace")
-    return all(s in html for s in ("akj", "Anne-Kathrin Justen", "profile", "PraeLex.ai", "ra-justen.de/impressum/"))
+    return all(s in html for s in ("Anne-Kathrin Justen", "class=\"profile\"", "PraeLex.ai", "ra-justen.de/impressum/"))
 def main():
     password=os.environ.get("ODPC_SFTP_PASSWORD","")
     if not password: raise RuntimeError("ODPC_SFTP_PASSWORD secret missing")
