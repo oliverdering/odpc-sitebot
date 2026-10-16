@@ -27,7 +27,7 @@ def main():
         if not tr.is_authenticated():raise RuntimeError("IONOS SFTP authentication failed")
         sftp=paramiko.SFTPClient.from_transport(tr)
         try:
-            candidates=["/justen","/clickandbuilds/Dering/justen","/clickandbuilds/justen","/justen/","/homepages/justen"]
+            candidates=["/Justen"]
             print("SFTP current directory:",sftp.getcwd() or "(server default)")
             try:
                 print("SFTP root entries:",[e.filename for e in sftp.listdir_attr(".") if e.filename.lower() in ("justen","clickandbuilds","htdocs","html","www")])
