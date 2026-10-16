@@ -27,7 +27,19 @@ def main():
         if not tr.is_authenticated():raise RuntimeError("IONOS SFTP authentication failed")
         sftp=paramiko.SFTPClient.from_transport(tr)
         try:
-            if not stat.S_ISDIR(sftp.stat(ROOT).st_mode):raise RuntimeError("Expected /justen folder missing")
+            candidates=["/justen","/clickandbuilds/Dering/justen","/clickandbuilds/justen","/justen/","/homepages/justen"]
+            print("SFTP current directory:",sftp.getcwd() or "(server default)")
+            try:
+                print("SFTP root entries:",[e.filename for e in sftp.listdir_attr(".") if e.filename.lower() in ("justen","clickandbuilds","htdocs","html","www")])
+            except OSError as exc: print("Root listing unavailable:",type(exc).__name__)
+            available=[]
+            for candidate in candidates:
+                try:
+                    if stat.S_ISDIR(sftp.stat(candidate).st_mode):available.append(candidate)
+                except OSError:pass
+            print("Matching known directory candidates:",available)
+            if len(available)!=1:raise RuntimeError("Cannot safely determine unique Kanzlei subdomain target; no files modified")
+            ROOT=available[0]
             remote=posixpath.join(ROOT,"index.html")
             temp=remote+".uploading"
             BACKUP.mkdir(exist_ok=True)
