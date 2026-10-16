@@ -1,0 +1,43 @@
+name: ODPC / Kanzlei Justen Layout Preview Deploy
+on:
+  push:
+    paths:
+      - 'site-deploy/ra-justen.odpc.de/kanzlei-layout-preview.html'
+      - 'scripts/deploy_justen_odpc_preview.py'
+      - '.github/workflows/justen-odpc-preview-deploy.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: justen-odpc-preview
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate standalone preview and deployment code
+        run: |
+          python3 -m py_compile scripts/deploy_justen_odpc_preview.py
+          python3 - <<'PY'
+          from pathlib import Path
+          s=Path('site-deploy/ra-justen.odpc.de/kanzlei-layout-preview.html').read_text()
+          for marker in ('name="robots" content="noindex,nofollow"','border-radius:50%','ra-justen.de/impressum/','PraeLex.ai'):
+              assert marker in s, marker
+          print('Preview markup passed static checks')
+          PY
+      - name: Install SFTP client
+        run: python3 -m pip install 'paramiko>=3.4,<5'
+      - name: Deploy isolated preview and verify public URL
+        env:
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+        run: python3 scripts/deploy_justen_odpc_preview.py
+      - name: Preserve previous preview for rollback
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: justen-odpc-preview-previous
+          path: backup-justen-preview/
+          if-no-files-found: ignore
+          retention-days: 15
