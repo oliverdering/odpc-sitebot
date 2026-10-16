@@ -1,0 +1,42 @@
+name: ODPC Helper Monkey Featured Image Release
+on:
+  push:
+    paths:
+      - 'site-deploy/odpc.de/odpc-helpermonkey-featured-image.php'
+      - 'scripts/deploy_odpc_helpermonkey_featured_image.py'
+      - '.github/workflows/odpc-helpermonkey-featured-image.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate PHP and Python
+        run: |
+          php -l site-deploy/odpc.de/odpc-helpermonkey-featured-image.php
+          python3 -m py_compile scripts/deploy_odpc_helpermonkey_featured_image.py
+      - name: Install SFTP dependency
+        run: python3 -m pip install 'paramiko>=3.4,<5'
+      - name: Deploy scoped WordPress correction
+        env:
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+        run: python3 scripts/deploy_odpc_helpermonkey_featured_image.py
+      - name: Verify public WordPress REST API
+        run: |
+          python3 - <<'PY'
+          import json,urllib.request,time
+          url='https://odpc.de/wp-json/wp/v2/posts/3454?_fields=id,featured_media'
+          for attempt in range(6):
+              req=urllib.request.Request(url+'&_t='+str(time.time()),headers={'Cache-Control':'no-cache'})
+              try:
+                  with urllib.request.urlopen(req,timeout=25) as response: post=json.load(response)
+                  if post.get('featured_media')==3052:
+                      print('PASS: featured_media=3052 on live WordPress post 3454')
+                      break
+              except Exception as exc:print('Verification pending:',exc)
+              time.sleep(5)
+          else:raise SystemExit('FAIL: WordPress featured image not verified')
+          PY
