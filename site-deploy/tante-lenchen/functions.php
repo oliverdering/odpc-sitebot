@@ -1,7 +1,7 @@
 <?php
 if(!defined('ABSPATH'))exit;
 add_action('after_setup_theme',function(){add_theme_support('title-tag');add_theme_support('post-thumbnails');});
-add_action('wp_enqueue_scripts',function(){wp_enqueue_style('tl-full',get_stylesheet_uri(),[],'1.0.0');});
+add_action('wp_enqueue_scripts',function(){wp_enqueue_style('tl-full',get_stylesheet_uri(),[],wp_get_theme()->get('Version'));});
 add_action('after_switch_theme',function(){
 foreach(['Speisekarte'=>'speisekarte','Tisch anfragen'=>'tisch-anfragen','Kontakt'=>'kontakt','Anfahrt'=>'anfahrt','Galerie'=>'galerie'] as $title=>$slug){if(!get_page_by_path($slug))wp_insert_post(['post_title'=>$title,'post_name'=>$slug,'post_type'=>'page','post_status'=>'publish']);}
 foreach(['Impressum'=>'impressum','Datenschutz'=>'datenschutz'] as $title=>$slug){if(!get_page_by_path($slug))wp_insert_post(['post_title'=>$title,'post_name'=>$slug,'post_type'=>'page','post_status'=>'draft']);}
