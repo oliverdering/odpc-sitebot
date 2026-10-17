@@ -1,0 +1,23 @@
+name: Tante Lenchen / IONOS read-only discovery
+on:
+  push:
+    paths:
+      - scripts/check_lenchen_sftp.py
+      - .github/workflows/tante-lenchen-discovery.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m pip install 'paramiko>=3.4,<5'
+      - name: Inspect Lenchen path without writing
+        env:
+          ODPC_SFTP_HOST: ${{ secrets.ODPC_SFTP_HOST || 'home119567219.1and1-data.host' }}
+          ODPC_SFTP_USER: ${{ secrets.ODPC_SFTP_USER || 'acc1461323326' }}
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+          ODPC_SFTP_HOSTKEY_SHA256: ${{ secrets.ODPC_SFTP_HOSTKEY_SHA256 || 'SHA256:1gx2w8Rtv3wCgi7Jh8myf/KVd72cRQbow03UP8P095Q' }}
+        run: python3 scripts/check_lenchen_sftp.py
