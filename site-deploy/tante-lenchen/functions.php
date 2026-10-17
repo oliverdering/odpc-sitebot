@@ -9,7 +9,42 @@ foreach(['Impressum'=>'impressum','Datenschutz'=>'datenschutz'] as $title=>$slug
 add_action('init',function(){register_post_type('tl_dish',['labels'=>['name'=>'Speisekarte','singular_name'=>'Gericht','add_new_item'=>'Gericht hinzufügen','edit_item'=>'Gericht bearbeiten'],'public'=>true,'show_in_rest'=>true,'show_in_menu'=>true,'menu_icon'=>'dashicons-food','supports'=>['title','editor','page-attributes']]);});
 add_action('add_meta_boxes',function(){add_meta_box('tl_dish_data','Gericht – Kategorie und Preis',function($post){wp_nonce_field('tl_save_dish','tl_dish_nonce');echo '<p><label>Kategorie <select name="tl_category">';foreach(['Kleine Gerichte & Spezialitäten','Frische Salate','Schnitzel','Ofenkartoffeln'] as $c)echo '<option value="'.esc_attr($c).'" '.selected(get_post_meta($post->ID,'_tl_category',true),$c,false).'>'.esc_html($c).'</option>';echo '</select></label></p><p><label>Preis in Euro <input type="text" name="tl_price" value="'.esc_attr(get_post_meta($post->ID,'_tl_price',true)).'"></label></p>';},'tl_dish');});
 add_action('save_post_tl_dish',function($id){if(!isset($_POST['tl_dish_nonce'])||!wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['tl_dish_nonce'])),'tl_save_dish')||!current_user_can('edit_post',$id)||wp_is_post_revision($id))return;foreach(['tl_category'=>'_tl_category','tl_price'=>'_tl_price'] as $key=>$meta)if(isset($_POST[$key]))update_post_meta($id,$meta,sanitize_text_field(wp_unslash($_POST[$key])));});
-function tl_menu(){ $q=new WP_Query(['post_type'=>'tl_dish','posts_per_page'=>100,'orderby'=>'menu_order title','order'=>'ASC']);$groups=[];foreach($q->posts as $p){$category=get_post_meta($p->ID,'_tl_category',true)?:'Weitere Gerichte';$groups[$category][]=$p;}foreach($groups as $category=>$items){echo '<section class="menu-group"><h2>'.esc_html($category).'</h2>';foreach($items as $p){$price=get_post_meta($p->ID,'_tl_price',true);echo '<article class="dish"><div><strong>'.esc_html($p->post_title).'</strong><p>'.wp_kses_post($p->post_content).'</p></div><b>'.($price!==''?esc_html($price).' €':'Preis auf Anfrage').'</b></article>';}echo '</section>';}wp_reset_postdata();}
+function tl_menu_legacy(){ $q=new WP_Query(['post_type'=>'tl_dish','posts_per_page'=>100,'orderby'=>'menu_order title','order'=>'ASC']);$groups=[];foreach($q->posts as $p){$category=get_post_meta($p->ID,'_tl_category',true)?:'Weitere Gerichte';$groups[$category][]=$p;}foreach($groups as $category=>$items){echo '<section class="menu-group"><h2>'.esc_html($category).'</h2>';foreach($items as $p){$price=get_post_meta($p->ID,'_tl_price',true);echo '<article class="dish"><div><strong>'.esc_html($p->post_title).'</strong><p>'.wp_kses_post($p->post_content).'</p></div><b>'.($price!==''?esc_html($price).' €':'Preis auf Anfrage').'</b></article>';}echo '</section>';}wp_reset_postdata();}
+
+function tl_menu(){
+  $today=current_time('Y-m-d');
+  if($today<'2026-11-01'){tl_menu_legacy();return;}
+  $groups=[
+    'Vorspeisen & Suppen'=>[
+      ['Kürbis-Ingwer-Suppe','9,50'],['Gulaschsuppe','10,50'],['Maronensuppe','9,50'],
+      ['Avocado mit Cherrytomaten und gehobeltem Parmesan','13,50','Auf hausgemachtem Salatbett']
+    ],
+    'Hauptgerichte'=>[
+      ['Schweineschnitzel Wiener Art','18,50','Mit Bratkartoffeln oder Pommes; Salat vom Buffet'],
+      ['Schweineschnitzel mit Schmorzwiebeln','18,50','Mit Bratkartoffeln oder Pommes; Salat vom Buffet'],
+      ['Schweineschnitzel mit Jalapeño und Paprika','18,50','Mit Bratkartoffeln oder Pommes; Salat vom Buffet'],
+      ['Schweineschnitzel mit frischen Champignons','19,50','In Weißwein-Cognac-Sauce, mit Bratkartoffeln oder Pommes; Salat vom Buffet'],
+      ['Schweineschnitzel mit Blumenkohl','19,50','Mit Käse überbacken; Bratkartoffeln oder Pommes'],
+      ['Zürcher Kalbsgeschnetzeltes','21,50','Mit Rösti und Salat vom Buffet'],
+      ['Schweinebraten in Biersoße','18,50','Mit Semmelknödel und Blaukraut']
+    ],
+    'Vegetarische Gerichte'=>[
+      ['Semmelknödel in Champignon-Cognac-Sahnesauce','14,50','Mit frischen Kräutern'],
+      ['Kartoffelauflauf mit Brokkoli und Blumenkohl','16,50','Mit Käse überbacken']
+    ]
+  ];
+  echo '<p class="notice"><strong>Winterkarte · gültig ab 1. November 2026</strong></p>';
+  foreach($groups as $category=>$items){
+    echo '<section class="menu-group"><h2>'.esc_html($category).'</h2>';
+    foreach($items as $item){
+      echo '<article class="dish"><div><strong>'.esc_html($item[0]).'</strong>';
+      if(isset($item[2]))echo '<p>'.esc_html($item[2]).'</p>';
+      echo '</div><b>'.esc_html($item[1]).' €</b></article>';
+    }
+    echo '</section>';
+  }
+}
+
 function tl_seed_menu(){if(get_option('tl_seeded'))return;$rows=[
 ['Kleine Gerichte & Spezialitäten','Bayerischer Wurstsalat','12,50'],['Kleine Gerichte & Spezialitäten','Käseliebhaberteller','16,80'],['Kleine Gerichte & Spezialitäten','Ofenkartoffel mit Frühlingsquark','12,50'],['Kleine Gerichte & Spezialitäten','Pikanter Rindfleischsalat','14,80'],['Kleine Gerichte & Spezialitäten','Käsesalat mit Mandarinen','14,50'],['Kleine Gerichte & Spezialitäten','Reibekuchen mit Lachs','14,50'],['Frische Salate','Kleiner Salat',''],['Frische Salate','Bunter Salat mit Putenstreifen','19,50'],['Frische Salate','Salat mit Ziegenkäse','18,50'],['Frische Salate','Salat mit Riesengarnelen','20,50'],['Frische Salate','Salat mit Schinken und Ananas','18,50'],['Schnitzel','Schnitzel Wiener Art','17,80'],['Schnitzel','Zwiebelschnitzel','18,50'],['Schnitzel','Champignonschnitzel','18,50'],['Schnitzel','Schnitzel Teufelszauber','18,50'],['Ofenkartoffeln','Ofenkartoffel mit Putenstreifen','18,50'],['Ofenkartoffeln','Ofenkartoffel mit gebratenen Scampi','20,50']];
 foreach($rows as $i=>$r){$id=wp_insert_post(['post_type'=>'tl_dish','post_status'=>'publish','post_title'=>$r[1],'menu_order'=>$i]);if(!is_wp_error($id)){update_post_meta($id,'_tl_category',$r[0]);update_post_meta($id,'_tl_price',$r[2]);}}update_option('tl_seeded',1);}
