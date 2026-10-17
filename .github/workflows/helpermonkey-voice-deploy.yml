@@ -1,0 +1,38 @@
+name: Helper Monkey Voice / Live Deploy
+on:
+  push:
+    paths:
+      - 'site-deploy/ai.odpc.de/odpc-monkey-voice-interview.php'
+      - 'scripts/deploy_helpermonkey_voice.py'
+      - '.github/workflows/helpermonkey-voice-deploy.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: helpermonkey-voice-live-release
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify code
+        run: |
+          php -l site-deploy/ai.odpc.de/odpc-monkey-voice-interview.php
+          python3 -m py_compile scripts/deploy_helpermonkey_voice.py
+      - name: Install SFTP client
+        run: python3 -m pip install 'paramiko>=3.4,<5'
+      - name: Publish with backup and live smoke test
+        env:
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+          AI_ODPC_THEME_PATH: ${{ secrets.AI_ODPC_THEME_PATH }}
+        run: python3 scripts/deploy_helpermonkey_voice.py
+      - name: Retain rollback backup
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: helpermonkey-voice-previous
+          path: backup-helpermonkey-voice/
+          if-no-files-found: ignore
+          retention-days: 15
