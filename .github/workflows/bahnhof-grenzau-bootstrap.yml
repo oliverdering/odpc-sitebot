@@ -1,0 +1,29 @@
+name: Bahnhof Grenzau / WordPress bootstrap
+on:
+  push:
+    paths:
+      - 'site-deploy/bahnhof-grenzau/install.php'
+      - 'scripts/deploy_bahnhof_grenzau_bootstrap.py'
+      - '.github/workflows/bahnhof-grenzau-bootstrap.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: bahnhof-grenzau-bootstrap
+  cancel-in-progress: false
+jobs:
+  bootstrap:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate PHP and Python
+        run: |
+          php -l site-deploy/bahnhof-grenzau/install.php
+          python3 -m py_compile scripts/deploy_bahnhof_grenzau_bootstrap.py
+      - name: Install SFTP client
+        run: python3 -m pip install 'paramiko>=3.4,<5'
+      - name: Upload official WordPress ZIP and one-time browser extractor
+        env:
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+        run: python3 scripts/deploy_bahnhof_grenzau_bootstrap.py
