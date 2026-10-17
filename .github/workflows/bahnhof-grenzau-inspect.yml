@@ -1,0 +1,19 @@
+name: Bahnhof Grenzau / Read-only inventory
+on:
+  push:
+    paths:
+      - 'scripts/inspect_bahnhof_grenzau.py'
+      - '.github/workflows/bahnhof-grenzau-inspect.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m pip install 'paramiko>=3.4,<5'
+      - name: Inspect existing WordPress installation without modifying files
+        env:
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+        run: python3 scripts/inspect_bahnhof_grenzau.py
