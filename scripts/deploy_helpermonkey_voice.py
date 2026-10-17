@@ -25,7 +25,9 @@ def main():
             folder=root+"/wp-content/mu-plugins"
             try:
                 if not stat.S_ISDIR(sftp.stat(folder).st_mode): raise RuntimeError("Unsafe mu-plugins path")
-            except FileNotFoundError: sftp.mkdir(folder)
+            except OSError as exc:
+                if getattr(exc,"errno",None) == 2: sftp.mkdir(folder)
+                else: raise
             target=posixpath.join(folder,"odpc-monkey-voice-interview.php")
             temp=target+".uploading"
             backup=Path("backup-helpermonkey-voice/previous.php")
@@ -36,7 +38,8 @@ def main():
                 backup.parent.mkdir(exist_ok=True)
                 sftp.get(target,str(backup))
                 existed=True
-            except FileNotFoundError: pass
+            except OSError as exc:
+                if getattr(exc,"errno",None) != 2: raise
             try:
                 sftp.put(str(SRC),temp,confirm=True)
                 sftp.posix_rename(temp,target)
@@ -60,7 +63,7 @@ def main():
                     sftp.posix_rename(target+".rollback",target)
                 else:
                     try: sftp.remove(target)
-                    except FileNotFoundError: pass
+                    except OSError: pass
                 raise
             finally:
                 try: sftp.remove(temp)
