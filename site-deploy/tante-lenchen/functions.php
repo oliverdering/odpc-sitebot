@@ -12,8 +12,9 @@ add_action('save_post_tl_dish',function($id){if(!isset($_POST['tl_dish_nonce'])|
 function tl_menu_legacy(){ $q=new WP_Query(['post_type'=>'tl_dish','posts_per_page'=>100,'orderby'=>'menu_order title','order'=>'ASC']);$groups=[];foreach($q->posts as $p){$category=get_post_meta($p->ID,'_tl_category',true)?:'Weitere Gerichte';$groups[$category][]=$p;}foreach($groups as $category=>$items){echo '<section class="menu-group"><h2>'.esc_html($category).'</h2>';foreach($items as $p){$price=get_post_meta($p->ID,'_tl_price',true);echo '<article class="dish"><div><strong>'.esc_html($p->post_title).'</strong><p>'.wp_kses_post($p->post_content).'</p></div><b>'.($price!==''?esc_html($price).' €':'Preis auf Anfrage').'</b></article>';}echo '</section>';}wp_reset_postdata();}
 
 function tl_menu(){
-  $today=current_time('Y-m-d');
-  if($today<'2026-11-01'){tl_menu_legacy();return;}
+  echo '<section id="sommerkarte"><h2>Sommerkarte · 1. April bis 31. Oktober</h2>';
+  tl_menu_legacy();
+  echo '</section><section id="winterkarte"><h2>Winterkarte · ab 1. November</h2>';
   $groups=[
     'Vorspeisen & Suppen'=>[
       ['Kürbis-Ingwer-Suppe','9,50'],['Gulaschsuppe','10,50'],['Maronensuppe','9,50'],
@@ -33,7 +34,7 @@ function tl_menu(){
       ['Kartoffelauflauf mit Brokkoli und Blumenkohl','16,50','Mit Käse überbacken']
     ]
   ];
-  echo '<p class="notice"><strong>Winterkarte · gültig ab 1. November 2026</strong></p>';
+  echo '<p class="notice">Gültig ab 1. November 2026. Beide Saisonkarten bleiben zur Information sichtbar.</p>';
   foreach($groups as $category=>$items){
     echo '<section class="menu-group"><h2>'.esc_html($category).'</h2>';
     foreach($items as $item){
@@ -43,6 +44,7 @@ function tl_menu(){
     }
     echo '</section>';
   }
+  echo '</section>';
 }
 
 function tl_seed_menu(){if(get_option('tl_seeded'))return;$rows=[
