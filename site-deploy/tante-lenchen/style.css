@@ -1,7 +1,23 @@
 /*
 Theme Name: Café Tante Lenchen – Vollversion
 Author: ODPC
-Version: 1.1.0
+Version: 1.2.0
 Description: Café-Webseite mit editierbarer Speisekarte, Kuchen, Veranstaltungen, Tischanfrage, Kontakt und Anfahrt.
 */
 :root{--mint:#e8eee3;--paper:#faf4eb;--brown:#57372b;--ink:#34251e;--accent:#9b5b3c;--cream:#fffaf3}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.65 system-ui,sans-serif}a{color:var(--brown)}.site-head,.site-foot{background:var(--mint);padding:18px max(4vw,18px)}.site-head{display:flex;align-items:center;justify-content:space-between;gap:22px;flex-wrap:wrap}.brand{display:flex;align-items:center;gap:12px;font-family:Georgia,serif;font-size:1.35rem;font-weight:700;color:var(--brown);text-decoration:none}.brand img{width:55px;height:55px;object-fit:contain;border-radius:50%}.nav{display:flex;flex-wrap:wrap;gap:14px}.nav a{text-decoration:none;color:var(--brown);font-weight:600}.wrap{max-width:1080px;margin:auto;padding:34px 20px;min-height:65vh}.hero,.panel,.menu-group{background:var(--cream);border:1px solid #e1d1c0;border-radius:20px;padding:26px;margin-bottom:24px;box-shadow:0 8px 24px #57372b0c}.hero{display:grid;grid-template-columns:1fr 1.3fr;gap:25px;align-items:center}.hero img{max-width:100%;border-radius:14px}h1,h2,h3{font-family:Georgia,serif;color:var(--brown);line-height:1.2}.eyebrow{text-transform:uppercase;letter-spacing:.13em;color:var(--accent);font-size:.8rem}.buttons{display:flex;flex-wrap:wrap;gap:12px;margin:18px 0}.btn{display:inline-block;background:var(--brown);color:white;padding:11px 17px;border-radius:10px;text-decoration:none;border:0;cursor:pointer;font:inherit}.btn.alt{background:var(--accent)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}.dish{display:flex;justify-content:space-between;gap:20px;border-bottom:1px dashed #ccc;padding:13px 0}.dish:last-child{border:0}.dish p{margin:0;color:#6b5a52}.dish b{white-space:nowrap;color:var(--brown)}.notice{font-size:.9rem;color:#655}.site-foot{font-size:.95rem}.site-foot a{margin-right:12px}.highlight{background:#f4e4d2;border-left:5px solid var(--accent)}@media(max-width:700px){.hero{grid-template-columns:1fr}.wrap{padding:18px 12px}.site-head{display:block}.nav{margin-top:12px}.brand img{width:42px;height:42px}.brand{font-size:1.15rem}}
+
+/* ODPC Tante Lenchen master design: mint, paper, cocoa and handwritten branding */
+:root{--mint:#DDECE2;--paper:#FAF6EC;--brown:#593B2C;--ink:#352A23;--accent:#8A6348;--cream:#FFFCF6;--tl-line:#D7C9B8;--tl-script:"Segoe Script","Bradley Hand","Brush Script MT","Snell Roundhand",cursive}
+body{font-family:"Trebuchet MS",Verdana,Arial,sans-serif;background:var(--paper);color:var(--ink)}
+.site-head{background:var(--mint);border-bottom:2px solid #c5d9ca;box-shadow:0 4px 16px #593b2c12}
+.site-foot{background:var(--mint);border-top:2px solid #c5d9ca}
+.brand{font-family:var(--tl-script);font-weight:600;font-size:clamp(1.5rem,2.8vw,2.25rem);letter-spacing:-.02em}
+.brand img{width:54px;height:54px;object-fit:contain;border-radius:50%;background:var(--paper);border:2px solid #ffffffa6}
+.nav{gap:6px 14px}.nav a{padding:7px 3px;border-bottom:2px solid transparent}.nav a:hover,.nav a:focus-visible{border-bottom-color:var(--brown)}
+.wrap{max-width:1160px}.hero,.panel,.menu-group{background:var(--cream);border:1px solid var(--tl-line);border-radius:18px;box-shadow:0 7px 22px #593b2c0a}
+.hero{background:linear-gradient(125deg,var(--mint),var(--cream) 70%);border-color:#c8d9cd;padding:clamp(22px,4vw,42px)}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;color:var(--brown)}h1{font-size:clamp(2rem,4.3vw,3.3rem)}h2{font-size:clamp(1.45rem,2.6vw,2rem)}
+.eyebrow{color:var(--accent);font-weight:700;letter-spacing:.12em}
+.btn{background:var(--brown);color:#fff;border-radius:999px;padding:12px 21px;font-weight:700;transition:transform .15s,background .15s}.btn:hover{background:#704e3a;transform:translateY(-1px)}.btn.alt{background:#e5eee5;color:var(--brown);border:1px solid #b5cbbd}.btn.alt:hover{background:#d3e5d8}
+.highlight{background:#f2ece1;border-left:5px solid var(--brown)}.dish{border-bottom-color:var(--tl-line)}a:focus-visible,.btn:focus-visible{outline:3px solid #9d7a5c;outline-offset:3px}
+@media(max-width:700px){.site-head{padding:16px}.nav{gap:4px 10px}.brand{font-size:1.55rem}.brand img{width:46px;height:46px}.hero{padding:22px}}
