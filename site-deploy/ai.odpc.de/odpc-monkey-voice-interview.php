@@ -2,7 +2,7 @@
 /**
  * Plugin Name: ODPC Monkey Voice Interview
  * Description: Accessible opt-in voice interview and guided setup for Helper Monkey.
- * Version: 0.2.0
+ * Version: 0.3.0
  */
 if (!defined('ABSPATH')) exit;
 add_action('wp_footer', function () {
@@ -20,6 +20,8 @@ add_action('wp_footer', function () {
    <button type="button" id="odpc-voice-mic">🎙 Sprechen</button>
    <button type="button" id="odpc-voice-send">Antwort senden</button>
    <button type="button" id="odpc-voice-repeat">🔊 Wiederholen</button>
+   <button type="button" id="odpc-voice-stop">■ Stopp</button>
+   <button type="button" id="odpc-voice-reset">↻ Neu starten</button>
    <button type="button" id="odpc-voice-back">Zurück</button>
    <button type="button" id="odpc-voice-close">Schließen</button>
   </div>
@@ -46,9 +48,10 @@ add_action('wp_footer', function () {
   ['mode','Möchtest du zuerst kostenlos testen oder direkt die verfügbaren Einrichtungsschritte sehen?']
  ];
  function say(t){speaking=t;if(!$('odpc-voice-audio').checked)return;if(!('speechSynthesis' in window)||!window.SpeechSynthesisUtterance){status.textContent='Sprachausgabe nicht verfügbar. Text bleibt lesbar.';return}try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang=$('odpc-voice-language').value;u.rate=.94;u.onerror=()=>{status.textContent='Sprachausgabe fehlgeschlagen. Bitte Text lesen.'};speechSynthesis.speak(u)}catch(e){status.textContent='Sprachausgabe nicht verfügbar. Bitte Text lesen.'}}
+ function stopAudio(){session++;if(recognition){try{recognition.abort()}catch(e){}recognition=null}if('speechSynthesis' in window)speechSynthesis.cancel()}
  function append(role,t){const p=document.createElement('p');const b=document.createElement('strong');b.textContent=role+': ';p.append(b,document.createTextNode(t));log.append(p);log.scrollTop=log.scrollHeight}
  function ask(){if(panel.hidden)return;if(step>=questions.length){finish();return}const q=questions[step][1];status.textContent='Frage '+(step+1)+' von '+questions.length;append('Monkey',q);say(q)}
- function finish(){const goal=(answers.goal||'').toLowerCase();let path='/start/';if(/auto|fahrzeug|obd|motor/.test(goal))path='/start/';else if(/web|homepage|wordpress|seite/.test(goal))path='/webmaster-agent/';else if(/konto|connector|gmail|google/.test(goal))path='/connector-einrichten/';else if(/recht|anwalt|kanzlei/.test(goal))path='/konfliktlotse-anwaltsvorarbeit/';
+ function finish(){if(panel.dataset.finished==='yes')return;panel.dataset.finished='yes';const goal=(answers.goal||'').toLowerCase();let path='/start/';if(/auto|fahrzeug|obd|motor/.test(goal))path='/start/';else if(/web|homepage|wordpress|seite/.test(goal))path='/webmaster-agent/';else if(/konto|connector|gmail|google/.test(goal))path='/connector-einrichten/';else if(/recht|anwalt|kanzlei/.test(goal))path='/konfliktlotse-anwaltsvorarbeit/';
  const summary='Danke. Ich habe deine Angaben aufgenommen. Ich zeige dir jetzt den passenden nächsten Schritt. Konten und Berechtigungen müssen ausdrücklich von dir freigegeben werden.';
  append('Monkey',summary);say(summary);
  const a=document.createElement('a');a.href=path;a.textContent='Passenden Einrichtungsweg öffnen →';a.style.display='block';a.style.marginTop='12px';log.append(a);
@@ -57,11 +60,13 @@ add_action('wp_footer', function () {
  }
  function submit(){if(step>=questions.length)return;const value=input.value.trim().slice(0,1000);if(!value)return;append('Du',value);answers[questions[step][0]]=value;step++;input.value='';ask()}
  $('odpc-voice-open').addEventListener('click',()=>{returnFocus=document.activeElement;panel.hidden=false;$('odpc-voice-open').setAttribute('aria-expanded','true');if(!active){active=true;ask()}input.focus()});
- $('odpc-voice-close').addEventListener('click',()=>{panel.hidden=true;$('odpc-voice-open').setAttribute('aria-expanded','false');session++;if(recognition){try{recognition.abort()}catch(e){}recognition=null}if('speechSynthesis' in window)speechSynthesis.cancel();(returnFocus&&returnFocus.isConnected?returnFocus:$('odpc-voice-open')).focus()});
+ $('odpc-voice-close').addEventListener('click',()=>{panel.hidden=true;$('odpc-voice-open').setAttribute('aria-expanded','false');stopAudio();(returnFocus&&returnFocus.isConnected?returnFocus:$('odpc-voice-open')).focus()});
  $('odpc-voice-send').addEventListener('click',submit);
+ $('odpc-voice-stop').addEventListener('click',()=>{stopAudio();status.textContent='Audio gestoppt. Texteingabe ist weiterhin möglich.'});
+ $('odpc-voice-reset').addEventListener('click',()=>{stopAudio();step=0;answers={};active=true;panel.dataset.finished='no';log.replaceChildren();input.value='';input.disabled=false;$('odpc-voice-send').disabled=false;$('odpc-voice-mic').disabled=false;ask();input.focus()});
  input.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();submit()}});
  $('odpc-voice-repeat').addEventListener('click',()=>say(speaking));
- $('odpc-voice-back').addEventListener('click',()=>{if(step===0)return;step--;delete answers[questions[step][0]];input.disabled=false;$('odpc-voice-send').disabled=false;$('odpc-voice-mic').disabled=false;ask()});
+ $('odpc-voice-back').addEventListener('click',()=>{if(step===0)return;stopAudio();if(panel.dataset.finished==='yes'){panel.dataset.finished='no';log.querySelectorAll('a[href]').forEach(a=>a.remove())}step--;delete answers[questions[step][0]];input.disabled=false;$('odpc-voice-send').disabled=false;$('odpc-voice-mic').disabled=false;ask()});
  $('odpc-voice-mic').addEventListener('click',()=>{
   if(!SpeechRecognition){status.textContent='Spracheingabe wird hier nicht unterstützt. Bitte tippe deine Antwort.';input.focus();return}
   if(recognition){try{recognition.abort()}catch(e){}}if('speechSynthesis' in window)speechSynthesis.cancel();
@@ -71,7 +76,7 @@ add_action('wp_footer', function () {
   recognition.onend=()=>{if(ticket===session)recognition=null};try{recognition.start();status.textContent='Ich höre zu …'}catch(e){status.textContent='Mikrofon konnte nicht gestartet werden.'}
  });
  document.addEventListener('keydown',e=>{if(panel.hidden)return;if(e.key==='Escape'){$('odpc-voice-close').click();return}if(e.key==='Tab'){const nodes=Array.from(panel.querySelectorAll('button:not([disabled]),input:not([disabled]),select,a[href]')).filter(el=>el.getClientRects().length);if(!nodes.length)return;const first=nodes[0],last=nodes[nodes.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}}});
- document.addEventListener('visibilitychange',()=>{if(document.hidden){session++;if(recognition){try{recognition.abort()}catch(e){}recognition=null}if('speechSynthesis' in window)speechSynthesis.cancel()}});
+ document.addEventListener('visibilitychange',()=>{if(document.hidden)stopAudio()});
  })();
  </script>
  <?php
