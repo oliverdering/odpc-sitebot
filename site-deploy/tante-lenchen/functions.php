@@ -53,3 +53,20 @@ foreach($rows as $i=>$r){$id=wp_insert_post(['post_type'=>'tl_dish','post_status
 add_action('after_switch_theme','tl_seed_menu');
 
 add_action('init',function(){if(!get_option('tl_legal_page_seed_v1')){foreach(['Impressum'=>'impressum','Datenschutz'=>'datenschutz'] as $title=>$slug){if(!get_page_by_path($slug))wp_insert_post(['post_title'=>$title,'post_name'=>$slug,'post_type'=>'page','post_status'=>'publish']);}update_option('tl_legal_page_seed_v1',1);}});
+
+function tl_booking_request_handler(){
+ if(!isset($_POST['tl_booking_nonce']) || !wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['tl_booking_nonce'])),'tl_booking_request'))wp_die('Ungültige Anfrage.');
+ $date=sanitize_text_field(wp_unslash($_POST['tl_date']??''));
+ $time=sanitize_text_field(wp_unslash($_POST['tl_time']??''));
+ $guests=absint($_POST['tl_guests']??0);
+ $name=sanitize_text_field(wp_unslash($_POST['tl_name']??''));
+ $email=sanitize_email(wp_unslash($_POST['tl_email']??''));
+ $phone=sanitize_text_field(wp_unslash($_POST['tl_phone']??''));
+ $dt=DateTimeImmutable::createFromFormat('!Y-m-d H:i',$date.' '.$time,wp_timezone());
+ if(!$dt || $dt->format('Y-m-d H:i')!==$date.' '.$time || $dt->getTimestamp()<time() || $guests<1 || $guests>30 || !$name || !is_email($email) || empty($_POST['tl_consent']))wp_die('Bitte Eingaben prüfen.');
+ $message=implode("\n",array('Neue unverbindliche Tischanfrage','Datum: '.$date,'Uhrzeit: '.$time,'Personen: '.$guests,'Name: '.$name,'E-Mail: '.$email,'Telefon: '.$phone,'Bitte persönlich bestätigen.'));
+ $sent=wp_mail('info@tante-lenchen.odpc.de','Neue Tischanfrage',$message,array('Reply-To: '.$email));
+ wp_safe_redirect(add_query_arg('anfrage',$sent?'gesendet':'fehler',home_url('/tisch-anfragen/')));exit;
+}
+add_action('admin_post_nopriv_tl_booking_request','tl_booking_request_handler');
+add_action('admin_post_tl_booking_request','tl_booking_request_handler');
