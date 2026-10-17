@@ -1,0 +1,25 @@
+name: Tante Lenchen / WordPress first install
+on:
+  push:
+    paths:
+      - .github/workflows/tante-lenchen-wordpress-install.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: tante-lenchen-wordpress-first-install
+  cancel-in-progress: false
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install 'paramiko>=3.4,<5'
+      - name: Install official WordPress core only if Lenchen is empty
+        env:
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+        run: python scripts/install_lenchen_wordpress.py
