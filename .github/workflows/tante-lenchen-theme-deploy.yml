@@ -1,0 +1,26 @@
+name: Tante Lenchen / Theme deploy
+on:
+  push:
+    paths:
+      - 'scripts/deploy_lenchen_theme.py'
+      - '.github/workflows/tante-lenchen-theme-deploy.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: tante-lenchen-theme
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate Python
+        run: python3 -m py_compile scripts/deploy_lenchen_theme.py
+      - name: Install SFTP client
+        run: python3 -m pip install 'paramiko>=3.4,<5'
+      - name: Upload Tante Lenchen theme to existing WordPress
+        env:
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+        run: python3 scripts/deploy_lenchen_theme.py
