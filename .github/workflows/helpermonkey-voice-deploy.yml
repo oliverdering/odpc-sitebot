@@ -5,6 +5,7 @@ on:
     paths:
       - 'site-deploy/ai.odpc.de/odpc-monkey-voice-interview.php'
       - 'scripts/deploy_helpermonkey_voice.py'
+      - 'scripts/test_helpermonkey_voice.py'
       - '.github/workflows/helpermonkey-voice-deploy.yml'
   workflow_dispatch:
 permissions:
@@ -21,7 +22,8 @@ jobs:
       - name: Verify code
         run: |
           php -l site-deploy/ai.odpc.de/odpc-monkey-voice-interview.php
-          python3 -m py_compile scripts/deploy_helpermonkey_voice.py
+          python3 -m py_compile scripts/deploy_helpermonkey_voice.py scripts/test_helpermonkey_voice.py
+          python3 scripts/test_helpermonkey_voice.py
       - name: Install SFTP client
         run: python3 -m pip install 'paramiko>=3.4,<5'
       - name: Publish with backup and live smoke test
