@@ -53,7 +53,7 @@ add_action('wp_footer', function () {
  };
  const uiIds=['odpc-voice-title','label-language','label-persona','odpc-voice-preview','label-audio','label-answer','odpc-voice-mic','odpc-voice-send','odpc-voice-repeat','odpc-voice-stop','odpc-voice-reset','odpc-voice-back','odpc-voice-close','odpc-voice-open'];
  const questions=()=>languages[$('odpc-voice-language').value].questions.map((q,i)=>[['goal','device','account','mode'][i],q]);
- function localize(){const l=languages[$('odpc-voice-language').value];uiIds.forEach((id,i)=>{const el=$(id);if(el)el.textContent=(i===0?'🐵 ':i===13?'🎙 ':'')+l.ui[i]});$('odpc-voice-topclose').setAttribute('aria-label',l.ui[12]);document.documentElement.lang=document.documentElement.lang||'de';if(active){stopAudio();step=0;answers={};log.replaceChildren();panel.dataset.finished='no';input.disabled=false;$('odpc-voice-send').disabled=false;$('odpc-voice-mic').disabled=false;ask();}}
+ function localize(){const l=languages[$('odpc-voice-language').value];uiIds.forEach((id,i)=>{const el=$(id);if(el){if(id==='label-audio'){const cb=$('odpc-voice-audio');el.replaceChildren(cb,document.createTextNode(' '+l.ui[i]))}else el.textContent=(i===0?'🐵 ':i===13?'🎙 ':'')+l.ui[i]}});$('odpc-voice-topclose').setAttribute('aria-label',l.ui[12]);document.documentElement.lang=document.documentElement.lang||'de';if(active){stopAudio();step=0;answers={};log.replaceChildren();panel.dataset.finished='no';input.disabled=false;$('odpc-voice-send').disabled=false;$('odpc-voice-mic').disabled=false;ask();}}
 
  let voiceCatalog=[],speechTicket=0;
  function refreshVoices(){if(!('speechSynthesis' in window))return;const select=$('odpc-voice-persona'),lang=$('odpc-voice-language').value.slice(0,2).toLowerCase(),prior=select.value;voiceCatalog=speechSynthesis.getVoices().filter(v=>(v.lang||'').toLowerCase().startsWith(lang));select.replaceChildren(new Option('Standard / System','auto'));voiceCatalog.forEach((v,i)=>{const name=v.name||('Stimme '+(i+1));select.add(new Option(name+' ('+v.lang+')',String(i)))});select.value=prior==='auto'||voiceCatalog[Number(prior)]?prior:'auto';$('odpc-voice-voicehelp').textContent=voiceCatalog.length?voiceCatalog.length+' Stimmen für '+$('odpc-voice-language').selectedOptions[0].text+' auf diesem Gerät verfügbar.':'Keine auswählbare Stimme für diese Sprache auf diesem Gerät. Standard/System kann funktionieren; für weitere Stimmen müssen passende Android-Stimmen installiert sein.';$('odpc-voice-preview').disabled=false;}
@@ -65,15 +65,15 @@ add_action('wp_footer', function () {
 
  function stopAudio(){session++;speechTicket++;if(recognition){try{recognition.abort()}catch(e){}recognition=null}if('speechSynthesis' in window)speechSynthesis.cancel()}
  function append(role,t){const p=document.createElement('p');const b=document.createElement('strong');b.textContent=role+': ';p.append(b,document.createTextNode(t));log.append(p);log.scrollTop=log.scrollHeight}
- function ask(){if(panel.hidden)return;if(step>=questions().length){finish();return}const q=questions()[step][1];status.textContent='Frage '+(step+1)+' von '+questions.length;append('Monkey',q);say(q)}
+ function ask(){if(panel.hidden)return;if(step>=questions().length){finish();return}const q=questions()[step][1];status.textContent='Frage '+(step+1)+' von '+questions().length;append('Monkey',q);say(q)}
  function finish(){if(panel.dataset.finished==='yes')return;panel.dataset.finished='yes';const goal=(answers.goal||'').toLowerCase();let path='/start/';if(/auto|fahrzeug|obd|motor/.test(goal))path='/start/';else if(/web|homepage|wordpress|seite/.test(goal))path='/webmaster-agent/';else if(/konto|connector|gmail|google/.test(goal))path='/connector-einrichten/';else if(/recht|anwalt|kanzlei/.test(goal))path='/konfliktlotse-anwaltsvorarbeit/';
  const summary=languages[$('odpc-voice-language').value].summary;
  append('Monkey',summary);say(summary);
  const a=document.createElement('a');a.href=path;a.textContent=languages[$('odpc-voice-language').value].next;a.style.display='block';a.style.marginTop='12px';log.append(a);
- const pre=document.createElement('p');pre.textContent='Dein Gespräch bleibt in diesem Browserfenster und wird von diesem Modul nicht an einen Server gesendet.';log.append(pre);
+ const pre=document.createElement('p');pre.textContent='Your answers remain in this browser window; this module does not send them to a server.';log.append(pre);
  status.textContent='Interview abgeschlossen';input.disabled=true;$('odpc-voice-send').disabled=true;$('odpc-voice-mic').disabled=true;
  }
- function submit(){if(step>=questions.length)return;const value=input.value.trim().slice(0,1000);if(!value)return;append('Du',value);answers[questions()[step][0]]=value;step++;input.value='';ask()}
+ function submit(){if(step>=questions().length)return;const value=input.value.trim().slice(0,1000);if(!value)return;append('Du',value);answers[questions()[step][0]]=value;step++;input.value='';ask()}
  $('odpc-voice-open').addEventListener('click',()=>{returnFocus=document.activeElement;panel.hidden=false;$('odpc-voice-open').setAttribute('aria-expanded','true');if(!active){active=true;ask()}refreshVoices();input.focus()});
  $('odpc-voice-topclose').addEventListener('click',()=>$('odpc-voice-close').click());
  $('odpc-voice-close').addEventListener('click',()=>{panel.hidden=true;$('odpc-voice-open').setAttribute('aria-expanded','false');stopAudio();(returnFocus&&returnFocus.isConnected?returnFocus:$('odpc-voice-open')).focus()});
@@ -82,7 +82,7 @@ add_action('wp_footer', function () {
  $('odpc-voice-reset').addEventListener('click',()=>{stopAudio();step=0;answers={};active=true;panel.dataset.finished='no';log.replaceChildren();input.value='';input.disabled=false;$('odpc-voice-send').disabled=false;$('odpc-voice-mic').disabled=false;ask();input.focus()});
  input.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();submit()}});
  $('odpc-voice-repeat').addEventListener('click',()=>say(speaking));
- $('odpc-voice-back').addEventListener('click',()=>{if(step===0)return;stopAudio();if(panel.dataset.finished==='yes'){panel.dataset.finished='no';log.querySelectorAll('a[href]').forEach(a=>a.remove())}step--;delete answers[questions[step][0]];input.disabled=false;$('odpc-voice-send').disabled=false;$('odpc-voice-mic').disabled=false;ask()});
+ $('odpc-voice-back').addEventListener('click',()=>{if(step===0)return;stopAudio();if(panel.dataset.finished==='yes'){panel.dataset.finished='no';log.querySelectorAll('a[href]').forEach(a=>a.remove())}step--;delete answers[questions()[step][0]];input.disabled=false;$('odpc-voice-send').disabled=false;$('odpc-voice-mic').disabled=false;ask()});
  $('odpc-voice-mic').addEventListener('click',()=>{
   if(!SpeechRecognition){status.textContent='Spracheingabe wird hier nicht unterstützt. Bitte tippe deine Antwort.';input.focus();return}
   if(recognition){try{recognition.abort()}catch(e){}}if('speechSynthesis' in window)speechSynthesis.cancel();
