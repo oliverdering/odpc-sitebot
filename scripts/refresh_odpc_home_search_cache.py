@@ -73,7 +73,11 @@ def main():
                     if item.filename in {'.','..'} or '/' in item.filename:
                         continue
                     if stat.S_ISDIR(item.st_mode) and depth < 3:
-                        queue.append((path,depth+1))
+                        relative = next(posixpath.relpath(path, base) for base in bases if path.startswith(base+'/'))
+                        relative = relative.removeprefix('odpc.de/').rstrip('/')
+                        slugs = [url.removeprefix('https://odpc.de/').strip('/') for url in TARGETS if url != 'https://odpc.de']
+                        if relative == 'odpc.de' or any(relative == slug or slug.startswith(relative+'/') for slug in slugs):
+                            queue.append((path,depth+1))
                     if not stat.S_ISREG(item.st_mode) or item.st_size > 2000000:
                         continue
                     if not re.search(r'\.html(?:[._-](?:gz|gzip))?$',item.filename):
