@@ -2,7 +2,7 @@
 /**
  * Plugin Name: ODPC Helper Monkey V4 Global Guide
  * Description: Reusable cross-page self-service, language entry, traffic lights and WhatsApp Business.
- * Version: 4.0.4
+ * Version: 4.0.5
  */
 if (!defined('ABSPATH')) exit;
 function hm_v4_url(){return 'https://ai.odpc.de/helper-monkey-einfach-starten-sprachassistent/';}
@@ -105,3 +105,8 @@ document.getElementById("hm-v4-listen").addEventListener("click",function(){if(!
 })();
 </script>
 <?php },98);
+
+add_action('wp_footer', function(){
+ if (is_admin()) return;
+ echo '<div id="odpc-universal-credit" style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:28px auto 0;padding:18px max(20px,4vw);border-top:1px solid #c5d9ca;font:inherit"><a href="https://odpc.de/" target="_blank" rel="noopener noreferrer" aria-label="odpc.de – Oliver Dering"><img src="https://odpc.de/wp-content/uploads/2026/08/1786371119667.png.webp" alt="Oliver Dering" width="64" height="64" loading="lazy" style="width:64px;height:64px;object-fit:cover;border-radius:50%;border:2px solid #fff"></a><div><span style="display:block;font-size:.8rem">Webdesign, Technik &amp; KI-Integration</span><a href="https://odpc.de/" target="_blank" rel="noopener noreferrer" style="font-weight:700">Powered by odpc.de · Oliver Dering</a></div></div>';
+}, 99);
