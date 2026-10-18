@@ -41,10 +41,18 @@ def main():
             for path in [ROOT+'/wp-config.php', ROOT+'/wp-content/themes/astra/style.css']:
                 if not stat.S_ISREG(sftp.stat(path).st_mode):
                     raise RuntimeError('Unexpected WordPress installation')
-            base = ROOT+'/wp-content/cache/wpo-cache'
-            if not stat.S_ISDIR(sftp.lstat(base).st_mode):
-                raise RuntimeError('Unexpected WPO cache location')
-            queue = [(base,0)]
+            cache_root = ROOT+'/wp-content/cache'
+            bases = []
+            for name in ['all', 'wpfc-mobile-cache']:
+                candidate = cache_root+'/'+name
+                try:
+                    if stat.S_ISDIR(sftp.lstat(candidate).st_mode):
+                        bases.append(candidate)
+                except FileNotFoundError:
+                    pass
+            if not bases:
+                raise RuntimeError('WP Fastest Cache HTML directories not found')
+            queue = [(folder,0) for folder in bases]
             inspected = 0
             removed = 0
             while queue and inspected < 400:
@@ -82,7 +90,7 @@ def main():
                     backup.write_bytes(raw)
                     sftp.remove(path)
                     removed += 1
-                    print('EXPIRED: verified stale homepage cache',posixpath.relpath(path,base))
+                    print('EXPIRED: verified stale homepage cache',posixpath.relpath(path,cache_root))
             print('Homepage cache variants expired:',removed)
     finally:
         transport.close()
