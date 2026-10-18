@@ -1,5 +1,8 @@
 name: Kanzlei Justen / STRATO SFTP preflight
 on:
+  push:
+    paths:
+      - '.github/workflows/kanzlei-justen-strato-preflight.yml'
   workflow_dispatch:
 permissions:
   contents: read
