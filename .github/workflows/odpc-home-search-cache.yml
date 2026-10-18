@@ -8,7 +8,7 @@ on:
 permissions:
   contents: read
 concurrency:
-  group: odpc-home-search-cache
+  group: odpc-wpfc-seo-refresh
   cancel-in-progress: true
 jobs:
   refresh:
