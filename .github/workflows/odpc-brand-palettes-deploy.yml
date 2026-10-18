@@ -1,0 +1,40 @@
+name: ODPC / Brand palettes blue and green
+on:
+  push:
+    paths:
+      - 'site-deploy/odpc.de/odpc-brand-palette.php'
+      - 'site-deploy/ai.odpc.de/odpc-brand-palette.php'
+      - 'scripts/deploy_odpc_brand_palettes.py'
+      - '.github/workflows/odpc-brand-palettes-deploy.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: odpc-brand-palettes
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate syntax
+        run: |
+          php -l site-deploy/odpc.de/odpc-brand-palette.php
+          php -l site-deploy/ai.odpc.de/odpc-brand-palette.php
+          python3 -m py_compile scripts/deploy_odpc_brand_palettes.py
+      - name: Install SFTP client
+        run: python3 -m pip install 'paramiko>=3.4,<5'
+      - name: Deploy with rollback and public checks
+        env:
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+          AI_ODPC_THEME_PATH: ${{ secrets.AI_ODPC_THEME_PATH }}
+        run: python3 scripts/deploy_odpc_brand_palettes.py
+      - name: Preserve backups
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: odpc-brand-previous-files
+          path: brand-backups/
+          if-no-files-found: ignore
+          retention-days: 15
