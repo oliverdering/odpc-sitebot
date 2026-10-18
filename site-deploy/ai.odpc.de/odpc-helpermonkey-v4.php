@@ -2,7 +2,7 @@
 /**
  * Plugin Name: ODPC Helper Monkey V4 Global Guide
  * Description: Reusable cross-page self-service, language entry, traffic lights and WhatsApp Business.
- * Version: 4.0.5
+ * Version: 4.0.6
  */
 if (!defined('ABSPATH')) exit;
 function hm_v4_url(){return 'https://ai.odpc.de/helper-monkey-einfach-starten-sprachassistent/';}
