@@ -39,7 +39,7 @@ class VoiceRegression(unittest.TestCase):
     def test_multilingual_release(self):
         for locale in ("de-DE", "en-US", "es-ES", "fr-FR", "it-IT", "pt-PT", "pl-PL", "tr-TR"):
             with self.subTest(locale=locale):
-                self.assertIn("value=\\""+locale+"\\"", self.source)
+                self.assertIn('value="' + locale + '"', self.source)
                 self.assertIn("'"+locale+"':{ui:", self.source)
         self.assertIn("const questions=()=>", self.source)
         self.assertNotIn("questions.length", self.source)
