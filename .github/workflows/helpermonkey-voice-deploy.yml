@@ -1,5 +1,5 @@
 name: Helper Monkey Voice / Live Deploy
-# Release 0.5.2: executable regression tests and exact live verification
+# Release 0.6.0: independent local male/female synthesis
 on:
   push:
     branches: [main]
@@ -8,6 +8,9 @@ on:
       - 'scripts/deploy_helpermonkey_voice.py'
       - 'scripts/test_helpermonkey_voice.py'
       - 'scripts/test_helpermonkey_voice_runtime.mjs'
+      - 'scripts/test_helpermonkey_local_speech.mjs'
+      - 'scripts/prepare_voice_assets.py'
+      - 'site-deploy/ai.odpc.de/voice-assets/**'
       - '.github/workflows/helpermonkey-voice-deploy.yml'
   workflow_dispatch:
 permissions:
@@ -27,6 +30,8 @@ jobs:
           python3 -m py_compile scripts/deploy_helpermonkey_voice.py scripts/test_helpermonkey_voice.py
           python3 scripts/test_helpermonkey_voice.py
           node --test scripts/test_helpermonkey_voice_runtime.mjs
+          python3 scripts/prepare_voice_assets.py
+          node scripts/test_helpermonkey_local_speech.mjs
       - name: Install SFTP client
         run: python3 -m pip install 'paramiko>=3.4,<5'
       - name: Publish with backup and live smoke test
