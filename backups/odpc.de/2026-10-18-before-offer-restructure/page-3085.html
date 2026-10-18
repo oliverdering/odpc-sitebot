@@ -1,0 +1,120 @@
+<main id="odpc-home" class="odpc-home">
+  <script id="odpc-home-visible-brand-fix">
+  (function(){
+    function setPersonalBrand(){
+      var it=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT),node;
+      while((node=it.nextNode())){
+        if(/^\s*ODPC\s*[·•]\s*IT\s*,\s*KI\s*&\s*PROJEKTE\s*$/i.test(node.nodeValue)){
+          node.nodeValue="Oliver Dering · IT, KI & Projekte";
+        }
+      }
+    }
+    if(document.readyState==="loading"){
+      document.addEventListener("DOMContentLoaded",setPersonalBrand,{once:true});
+    }else{setPersonalBrand();}
+  })();
+  </script>
+  <style>
+    #odpc-home{padding-bottom:68px}
+    #odpc-home .odpc-wa-sticky{position:fixed;right:16px;bottom:16px;z-index:9998;display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 17px;border-radius:999px;background:#25d366;color:#09351a!important;font-size:15px;font-weight:800;line-height:1.2;box-shadow:0 6px 22px rgba(0,0,0,.26);text-decoration:none!important;border:2px solid #effff4}
+    #odpc-home .odpc-wa-sticky:hover,#odpc-home .odpc-wa-sticky:focus-visible{background:#39e27a;transform:translateY(-2px)}
+    @media(max-width:420px){#odpc-home .odpc-wa-sticky{right:12px;bottom:14px;font-size:14px;padding:12px 15px}}
+  </style>
+  <a class="odpc-wa-sticky" href="https://wa.me/492654882183?text=Hallo%20Oliver%2C%20ich%20komme%20%C3%BCber%20odpc.de%20und%20m%C3%B6chte%20ein%20Projekt%20mit%20dir%20besprechen." target="_blank" rel="noopener" aria-label="WhatsApp Business von ODPC öffnen">✆ WhatsApp Business ↗</a>
+  <aside aria-label="Helper Monkey V4 kostenlos starten" style="background:#154b38;border:1px solid #75b78d;border-radius:14px;padding:16px 19px;margin:14px 0 16px;color:#fff;display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap">
+  <div style="flex:1 1 260px"><strong style="color:#fff">Neu: Helper Monkey – Dein persönlicher KI-Einstieg</strong><p style="margin:4px 0;color:#ebfaee">Vier Fragen zu Gerät, Erfahrung, Konten und deinem Ziel. Auf Wunsch per Sprache – ohne Anmeldung.</p></div>
+  <a href="https://ai.odpc.de/helper-monkey-einfach-starten-sprachassistent/" style="display:inline-block;background:#fff;color:#155239;font-weight:800;border-radius:9px;padding:11px 16px;text-decoration:none;min-height:44px">Kostenloses Interview starten ↗</a>
+  </aside>
+  <section class="oh-hero" aria-labelledby="oh-headline">
+    <p class="oh-eyebrow">ODPC.DE / Consulting · Digitales · KI</p>
+    <h1 id="oh-headline">Von der Technik zur <em>funktionierenden Lösung.</em></h1>
+    <p class="oh-lead">Über 25 Jahre IT-Praxis, kombiniert mit Applied AI und digitalen Projekten. Ich betreue WordPress-Websites, unterstütze bei der Vermarktung von Immobilien und Beherbergungsangeboten und entwickle nachvollziehbare KI-Workflows für den Alltag von Unternehmen.</p>
+    <div class="oh-actions">
+      <a class="oh-button oh-button-primary" href="https://wa.me/492654882183?text=Hallo%20Oliver%2C%20ich%20komme%20%C3%BCber%20odpc.de%20und%20m%C3%B6chte%20ein%20Projekt%20mit%20dir%20besprechen." target="_blank" rel="noopener" aria-label="ODPC auf WhatsApp Business kontaktieren">Jetzt per WhatsApp Business anfragen ↗</a>
+      <a class="oh-button oh-button-outline" href="#odpc-referenzen">Referenzprojekte entdecken ↓</a>
+    </div>
+    <div class="oh-stats"><span>25+ Jahre IT-Erfahrung</span><span>WordPress &amp; digitale Vermarktung</span><span>KI-Agenten &amp; Prozesse</span></div>
+  </section>
+
+  <section class="oh-section" id="odpc-regional" aria-labelledby="oh-regional-heading">
+    <div class="oh-section-head">
+      <div>
+        <p class="oh-section-kicker">Standort Polch-Kaan · Region Koblenz · Remote deutschlandweit</p>
+        <h2 id="oh-regional-heading">IT-Beratung und KI-Integration für Unternehmen rund um Koblenz.</h2>
+        <p class="oh-section-sub">ODPC begleitet Unternehmen im Raum Koblenz, Mayen-Koblenz und im Westerwald bei der Modernisierung ihrer IT- und Arbeitsprozesse. Dazu gehören WordPress-Websites, digitale Kundenkommunikation, strukturierte Dokumentenabläufe und der sinnvolle Einsatz von KI-Agenten. Überregionale Projekte lassen sich auch digital betreuen.</p>
+      </div>
+    </div>
+    <div class="oh-products">
+      <article class="oh-product"><small>WordPress &amp; Online-Sichtbarkeit</small><h3>Websites und lokale Auffindbarkeit</h3><p>WordPress-Betreuung, technische Website-Pflege, Google-Business-Anbindung, SEO-Grundlagen und direkte WhatsApp-Kontaktwege.</p><a href="https://odpc.de/webdesign">WordPress-Webdesign ansehen ↗</a></article>
+      <article class="oh-product"><small>Prozesse &amp; KI</small><h3>KI in vorhandene Abläufe integrieren</h3><p>Arbeitsabläufe analysieren, geeignete KI-Werkzeuge auswählen und automatisierte Prozesse mit klaren Verantwortlichkeiten aufbauen.</p><a href="https://odpc.de/initiq">initIQ kennenlernen ↗</a></article>
+      <article class="oh-product"><small>Persönlicher Ansprechpartner</small><h3>IT-Consulting mit direktem Kontakt</h3><p>Über 25 Jahre Erfahrung in IT-Infrastruktur und Digitalisierung. Projektanfragen laufen bevorzugt direkt über WhatsApp Business.</p><a href="https://odpc.de/contact-me">Kontakt zu Oliver Dering ↗</a></article>
+    </div>
+  </section>
+
+  <section class="oh-section" id="odpc-referenzen" aria-labelledby="oh-ref-heading"><div class="oh-section-head"><div><p class="oh-section-kicker">ODPC · Plattformen · Kundenreferenzen</p><h2 id="oh-ref-heading">Unsere laufenden Projekte und Referenzen.</h2><p class="oh-section-sub">ODPC-Hauptauftritt, eigene KI-Plattform und Kundenprojekte – in klarer Reihenfolge und mit transparentem Projektstatus.</p></div></div><div class="oh-cards">
+<!-- ODPC-Hauptseite ist keine Projektkarte. -->
+  <article class="oh-card"><div class="oh-card-head"><span class="oh-logo"><img src="https://odpc.de/wp-content/uploads/2026/10/helper-monkey-rundsiegel-original.webp" alt="Helper-Monkey-Original-Logo" width="72" height="72" loading="lazy" decoding="async"></span><div><div class="oh-label">Eigene KI-Plattform · ODPC</div><h3>ODPC AI · Helper Monkey</h3></div></div><p>Eigenständige Plattform für KI-Assistenten, Agenten und digitale Werkzeuge. Merchandise und NFC gehören ausschließlich zu dieser Produktwelt.</p><span class="oh-status">KI-Plattform · in Betrieb</span><a class="oh-card-link" href="https://ai.odpc.de/">KI-Plattform öffnen ↗</a></article>
+  <article class="oh-card"><div class="oh-card-head"><span class="oh-logo"><img src="https://odpc.de/wp-content/uploads/2026/06/file_00000000a1b872468ea63cf3173fb3eb.png" alt="Logo Anwaltskanzlei Justen" width="72" height="72" loading="lazy" decoding="async"></span><div><div class="oh-label">Praxisreferenz · Kanzlei</div><h3>Anwaltskanzlei Justen</h3></div></div><p>WordPress, digitale Erreichbarkeit, Google-Dienste und strukturierte Kanzleiprozesse; weitere PraeLex.ai-Integration im Aufbau.</p><span class="oh-status">Kundenprojekt · Website in Betrieb</span><a class="oh-card-link" href="https://ra-justen.de/">Website der Anwaltskanzlei öffnen ↗</a></article>
+  <article class="oh-card"><div class="oh-card-head"><span class="oh-logo"><img src="https://odpc.de/wp-content/uploads/2026/02/FB_IMG_1771601697384.jpg" alt="Original-Logo Café Tante Lenchen" width="72" height="72" loading="lazy" decoding="async"></span><div><div class="oh-label">Praxisreferenz · Gastronomie</div><h3>Café Tante Lenchen</h3></div></div><p>Eigenständige Café-Webseite mit Speisekarten, Kontakt, Anfahrt und Reservierungsanfragen; digitale Betreuung durch ODPC.</p><span class="oh-status">Kundenprojekt · Website in Betrieb</span><a class="oh-card-link" href="https://tante-lenchen.odpc.de/">Café-Webseite öffnen ↗</a></article>
+  <article class="oh-card"><div class="oh-card-head"><span class="oh-logo"><img src="https://odpc.de/wp-content/uploads/2026/10/atrium191-original-logo.webp" alt="Original-Logo ATRIUM 191" width="72" height="72" loading="lazy" decoding="async"></span><div><div class="oh-label">Praxisreferenz · Immobilien</div><h3>ATRIUM 191</h3></div></div><p>Eigenständige WordPress-Projektwebsite für Immobilienpräsentation und Vermarktung in Ransbach-Baumbach.</p><span class="oh-status">Kundenprojekt · ODPC-Demoumgebung</span><a class="oh-card-link" href="https://atrium191-rb.odpc.de/">Projektwebsite öffnen ↗</a></article>
+  <article class="oh-card"><div class="oh-card-head"><span class="oh-logo oh-logo-station" aria-label="Bahnhof Grenzau – vorläufiges Bahnhofssymbol"><svg viewBox="0 0 64 64" width="55" height="55" role="img" aria-label="Vorläufiges Bahnhofssymbol" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 25 32 9 57 25V55H7V25Z"/><path d="M20 55V36a12 12 0 0 1 24 0v19"/><path d="M20 24h4m16 0h4M16 55h32M32 11v10"/><circle cx="32" cy="35" r="4"/><path d="M23 46h18"/></svg></span><div><div class="oh-label">Kundenprojekt · Beherbergung</div><h3>Bahnhof Grenzau</h3></div></div><p>Digitalisierung und Zimmervermarktung. Der Webspace ist vorbereitet; die eigenständige Website und Buchungsintegration befinden sich im Aufbau.</p><span class="oh-status">Projekt im Aufbau · Website noch nicht veröffentlicht</span><a class="oh-card-link" href="https://odpc.de/praedium">Digitalisierungskonzept öffnen ↗</a></article>
+  <article class="oh-card"><div class="oh-card-head"><span class="oh-logo"><img src="https://odpc.de/wp-content/uploads/2026/03/file_000000007f9871fdbabcfa59434e9d6d.png" alt="Campingplatz Runkel – VW-Bus-Logo" width="72" height="72" loading="lazy" decoding="async"></span><div><div class="oh-label">Kundenreferenz · Camping und Tourismus</div><h3>Campingplatz Runkel</h3></div></div><p>Camping direkt an der Lahn in Lahnstein. Informationen zum Platz, zur Umgebung und zu Kontaktmöglichkeiten im eigenständigen Projektauftritt.</p><span class="oh-status">Kundenprojekt · Referenzseite veröffentlicht</span><a class="oh-card-link" href="https://odpc.de/camping-runkel-lahnstein">Campingplatz-Projekt öffnen ↗</a></article>
+</div><p style="margin:18px 0"><a class="oh-button oh-button-soft" href="https://odpc.de/kunden-referenzen">Alle Kundenreferenzen ↗</a></p></section>
+
+  <section class="oh-section" id="odpc-leistungen" aria-labelledby="oh-services-heading">
+    <div class="oh-section-head">
+      <div><p class="oh-section-kicker">Leistungen · Produkte · Agenten</p><h2 id="oh-services-heading">Angebote, aus denen konkrete Arbeit wird.</h2><p class="oh-section-sub">Einzelne Werkzeuge oder vollständige Digitalisierungsprojekte – die Lösung richtet sich nach der tatsächlichen Aufgabe.</p></div>
+      <a class="oh-button oh-button-soft" href="https://odpc.de/struktur-portfolio">Gesamtes Portfolio ↗</a>
+    </div>
+    <div class="oh-products">
+  <article class="oh-product"><small>Juristische Fachvorarbeit</small><h3>PraeLex.ai</h3><p>Dokumente erfassen, Informationen strukturieren und anwaltliche Arbeit vorbereiten – mit menschlicher Prüfung.</p><a href="https://odpc.de/praelex-ai">Produkt &amp; Fachkonzept ↗</a></article>
+  <article class="oh-product"><small>IT- und Prozessintegration</small><h3>initIQ</h3><p>Systeme, Daten und KI-gestützte Arbeitsabläufe sinnvoll zu einer betrieblichen Lösung verbinden.</p><a href="https://odpc.de/initiq">Dienstleistung entdecken ↗</a></article>
+  <article class="oh-product"><small>Immobilien &amp; Betrieb</small><h3>PRAEDIUM</h3><p>Objektanalyse, Präsentation, digitale Vermarktung und betriebliche Abläufe für Immobilien und Beherbergung.</p><a href="https://odpc.de/praedium">PRAEDIUM ansehen ↗</a></article>
+  <article class="oh-product"><small>Dokumentendigitalisierung</small><h3>PraeDoc.ai</h3><p>Scan- und Dokumentenprozesse als strukturierte Grundlage für Suche, Automatisierung und KI.</p><a href="https://odpc.de/praedoc">PraeDoc ansehen ↗</a></article>
+  <article class="oh-product"><small>Webmaster &amp; Websites</small><h3>WordPress &amp; Webdesign</h3><p>Technisch pflegbare Websites, Hosting-Verknüpfung, Inhalte, lokale Auffindbarkeit und nachvollziehbare Releases.</p><a href="https://odpc.de/webdesign">Webdesign ansehen ↗</a></article>
+  <article class="oh-product"><small>Kostenloser KI-Einstieg</small><h3>KI-Bewerbungsagent</h3><p>Jobsuche und Bewerbungsentwürfe strukturiert vorbereiten; Aktionen auf verbundenen Konten nur mit entsprechender Autorisierung.</p><a href="https://odpc.de/dein-persoenlicher-ki-bewerbungsagent-jobs-finden-bewerbungen-schreiben-und-zeit-sparen">Praxisfall ansehen ↗</a></article>
+    </div>
+  </section>
+
+  <section class="oh-wide" aria-label="Helper Monkey Einstieg">
+    <div>
+      <p class="oh-section-kicker" style="color:#d8bba2;margin-bottom:7px">KI praktisch erleben</p>
+      <h2>Helper Monkey: erst ausprobieren, dann ausbauen.</h2>
+      <p>Vier kostenlose Starterpakete und Browser-Werkzeuge bilden den Einstieg. Wer Unterstützung möchte, kann die Einrichtung bestehender Kontoverbindungen und eines ersten Workflows persönlich begleiten lassen. Die eigenständige Helper-Monkey-Seite und ihre Angebote bleiben unverändert.</p>
+    </div>
+    <div class="oh-actions">
+      <a class="oh-button oh-button-primary" href="https://ai.odpc.de/">Gratis-Starter ansehen ↗</a>
+      <a class="oh-button oh-button-outline" href="https://odpc.de/ki-agenten-persoenlich-einrichten-45-minuten">Einrichtung · 89 € ↗</a>
+    </div>
+  </section>
+
+  <section class="oh-section" id="odpc-weitere-projekte" aria-labelledby="oh-other-heading">
+    <div class="oh-section-head">
+      <div><p class="oh-section-kicker">Forschung · Dokumentation · Entwicklung</p><h2 id="oh-other-heading">Weitere Projekte und Fachbereiche.</h2><p class="oh-section-sub">Neben Kundenarbeit entstehen technische Produkte, dokumentierte Recherchen und experimentelle Systeme. Entwicklungsstände werden nicht mit marktreifen Dienstleistungen gleichgesetzt.</p></div>
+    </div>
+    <div class="oh-links">
+  <a href="https://odpc.de/tontoftgard-ein-haus-und-seine-geschichte">Historische Gebäudedokumentation · Tontoftgård ↗</a>
+  <a href="https://odpc.de/praetax">PraeTax · steuerliche Arbeitsabläufe ↗</a>
+  <a href="https://odpc.de/l-i-f-e-lebenshilfe-intuitiv-fokussiert-empathisch">L.I.F.E. · persönliche Unterstützungsangebote ↗</a>
+  <a href="https://odpc.de/struktur-portfolio">one.eye / one.home / N.E.S.T · Systemkonzepte ↗</a>
+  <a href="https://odpc.de/struktur-portfolio">SinkGuard &amp; FireScale · technische Produktentwicklung ↗</a>
+  <a href="https://odpc.de/struktur-portfolio">Kreativprojekte &amp; Werkstatt ↗</a>
+    </div>
+  </section>
+
+  <section class="oh-section" id="odpc-aktuelles" aria-labelledby="oh-news-heading">
+    <div class="oh-section-head"><div><p class="oh-section-kicker">Erfahrungen aus dem laufenden Betrieb</p><h2 id="oh-news-heading">Praxisberichte und Einblicke.</h2></div></div>
+    <div class="oh-links">
+      <a href="https://odpc.de/mein-buero-ist-ueberall-smartphone-browser-ki-team">Mein Büro ist überall – Smartphone, Browser und KI-Team ↗</a>
+      <a href="https://odpc.de/helper-monkey-ki-agents-whatsapp-email-sofort-nutzen">Helper Monkey: wiederholbare KI-Arbeitsabläufe ↗</a>
+      <a href="https://odpc.de/referenz-ra-justen-helper-monkey">Kanzlei Justen – fortlaufender Referenzbericht ↗</a>
+      <a href="https://odpc.de/aktuelles/">Alle Beiträge und Veröffentlichungen ↗</a>
+    </div>
+  </section>
+
+  <section class="oh-wide" aria-label="Kontakt zu ODPC">
+    <div><p class="oh-section-kicker" style="color:#d8bba2;margin-bottom:7px">Zusammenarbeit</p><h2>Ein Ansprechpartner. Ein klarer nächster Schritt.</h2><p>Von einer WordPress-Verbesserung bis zu einer betrieblichen KI-Integration: Wir beginnen mit dem konkreten Bedarf und einem überprüfbaren Umsetzungsplan.</p></div>
+    <div class="oh-actions"><a class="oh-button oh-button-primary" href="https://wa.me/492654882183?text=Hallo%20Oliver%2C%20ich%20komme%20%C3%BCber%20odpc.de%20und%20m%C3%B6chte%20ein%20Projekt%20mit%20dir%20besprechen." target="_blank" rel="noopener">Projekt direkt per WhatsApp anfragen ↗</a><a class="oh-button oh-button-outline" href="mailto:oliver.dering@odpc.de?subject=ODPC%20%E2%80%93%20Projektanfrage">Alternativ per E-Mail ↗</a></div>
+  </section>
+  <p class="oh-transparency">Transparenz: Die genannten Kundenprojekte, Produktplattformen und Entwicklungskonzepte haben unterschiedliche Reifegrade. Kostenlose Agenten-Starter sind keine automatische Vollzugriffssoftware. Kontoanbindungen und produktive Automatisierungen benötigen Berechtigungen, technische Prüfung und menschliche Kontrolle. ODPC erbringt keine Rechts- oder Steuerberatung.</p>
+</main>
