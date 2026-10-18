@@ -2,7 +2,7 @@
 /**
  * Plugin Name: ODPC Monkey Voice Interview
  * Description: Accessible opt-in voice interview and guided setup for Helper Monkey.
- * Version: 0.3.0
+ * Version: 0.4.0
  */
 if (!defined('ABSPATH')) exit;
 add_action('wp_footer', function () {
@@ -13,7 +13,7 @@ add_action('wp_footer', function () {
   <p id="odpc-voice-status" role="status" aria-live="polite">Bereit. Starte das Interview.</p>
   <div id="odpc-voice-log" role="log" aria-label="Gesprächsverlauf" aria-live="polite"></div>
   <label for="odpc-voice-language">Sprache</label><select id="odpc-voice-language"><option value="de-DE">Deutsch</option><option value="en-US">English</option></select>
-  <label for="odpc-voice-persona">Stimme</label><select id="odpc-voice-persona"><option value="auto">Automatisch</option><option value="female">Frau</option><option value="male">Mann (Verfügbarkeit prüfen)</option></select><button type="button" id="odpc-voice-preview">🔊 Stimme testen</button><label for="odpc-voice-audio"><input id="odpc-voice-audio" type="checkbox" checked> Sprachausgabe verwenden</label>
+  <label for="odpc-voice-persona">Stimmprofil</label><select id="odpc-voice-persona"><option value="auto">Standardstimme</option></select><p id="odpc-voice-voicehelp">Verfügbare Stimmen werden geladen.</p><button type="button" id="odpc-voice-preview">🔊 Stimme testen</button><label for="odpc-voice-audio"><input id="odpc-voice-audio" type="checkbox" checked> Sprachausgabe verwenden</label>
   <label for="odpc-voice-answer">Deine Antwort</label>
   <input id="odpc-voice-answer" type="text" autocomplete="off">
   <div class="odpc-voice-actions">
@@ -29,8 +29,8 @@ add_action('wp_footer', function () {
  <button id="odpc-voice-open" type="button" aria-controls="odpc-voice" aria-expanded="false">🎙 Monkey sprechen</button>
  <style>
  #odpc-voice-open{position:fixed;left:12px;bottom:12px;z-index:9998;border:2px solid #fff;border-radius:28px;background:#164735;color:#fff;padding:12px 18px;cursor:pointer;font:700 15px system-ui}
- .odpc-voice{position:fixed;left:12px;bottom:72px;z-index:9998;width:min(430px,calc(100vw - 24px));max-height:75vh;overflow:auto;background:#fff;color:#193b2c;border:2px solid #8dbca5;border-radius:14px;padding:18px;box-shadow:0 8px 36px #0004;font:15px/1.5 system-ui}
- .odpc-voice[hidden]{display:none}.odpc-voice h2{margin:0 0 8px;font-size:21px}.odpc-voice input{width:100%;box-sizing:border-box;padding:11px;border:1px solid #777;border-radius:7px;font:inherit}
+ .odpc-voice{position:fixed;left:12px;bottom:72px;z-index:9998;width:min(430px,calc(100vw - 24px));max-height:min(78dvh,700px);overflow:auto;overscroll-behavior:contain;background:#fff;color:#193b2c;border:2px solid #8dbca5;border-radius:14px;padding:18px;box-shadow:0 8px 36px #0004;font:15px/1.5 system-ui}
+ .odpc-voice[hidden]{display:none}#odpc-voice-voicehelp{font-size:13px;margin:3px 0 10px;color:#426653}.odpc-voice #odpc-voice-preview{padding:9px 12px;border:0;border-radius:7px;background:#164735;color:#fff;cursor:pointer}.odpc-voice #odpc-voice-preview:disabled{opacity:.5}.odpc-voice[hidden]{display:none}.odpc-voice h2{margin:0 0 8px;font-size:21px}.odpc-voice input{width:100%;box-sizing:border-box;padding:11px;border:1px solid #777;border-radius:7px;font:inherit}
  .odpc-voice select{width:100%;padding:8px;margin-bottom:8px}.odpc-voice label{display:block;margin-top:8px}.odpc-voice-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}.odpc-voice-actions button{padding:10px;border-radius:7px;background:#164735;color:white;border:0;cursor:pointer}
  #odpc-voice-log{max-height:190px;overflow:auto;margin:8px 0}#odpc-voice-log p{margin:5px 0}#odpc-voice-open:focus-visible,.odpc-voice button:focus-visible,.odpc-voice input:focus-visible{outline:3px solid #e6b83f;outline-offset:2px}
  </style>
@@ -47,15 +47,15 @@ add_action('wp_footer', function () {
   ['account','Hast du bereits ein Google-Konto oder ein anderes Konto, das du verbinden möchtest? Bitte nenne niemals Passwörter.'],
   ['mode','Möchtest du zuerst kostenlos testen oder direkt die verfügbaren Einrichtungsschritte sehen?']
  ];
- function voiceChoice(){const lang=$('odpc-voice-language').value,persona=$('odpc-voice-persona').value;const voices=speechSynthesis.getVoices().filter(v=>v.lang.toLowerCase().startsWith(lang.slice(0,2).toLowerCase()));const female=/katja|hedda|anna|petra|helena|marlene|vicki|female|weiblich|sophie/i,male=/stefan|conrad|markus|male|männlich|thomas|daniel|martin|ralf|hans|klaus|christoph/i;const matches=voices.filter(v=>persona==='auto'||(persona==='female'?female:male).test(v.name));const score=v=>(/natural|neural|premium/i.test(v.name)?40:0)+(/google|microsoft/i.test(v.name)?15:0)+(v.localService?5:0);matches.sort((a,b)=>score(b)-score(a));return {voice:matches[0]||null,available:matches.length>0};}
- function updateVoiceAvailability(){if(!('speechSynthesis' in window))return;const chosen=$('odpc-voice-persona').value,choice=voiceChoice();const preview=$('odpc-voice-preview');preview.disabled=chosen!=='auto'&&!choice.available;if(preview.disabled)status.textContent=(chosen==='male'?'Keine erkennbare deutsche Männerstimme':'Keine erkennbare deutsche Frauenstimme')+' auf diesem Gerät verfügbar. Bitte Automatisch wählen oder weitere Systemstimmen installieren.';else if(chosen!=='auto')status.textContent='Stimme ausgewählt. Mit „Stimme testen“ anhören.';}
- function say(t){speaking=t;if(!$('odpc-voice-audio').checked)return;if(!('speechSynthesis' in window)||!window.SpeechSynthesisUtterance){status.textContent='Sprachausgabe nicht verfügbar. Text bleibt lesbar.';return}try{const choice=voiceChoice(),persona=$('odpc-voice-persona').value;if(persona!=='auto'&&!choice.available){updateVoiceAvailability();return;}speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang=$('odpc-voice-language').value;u.rate=1.17;if(choice.voice)u.voice=choice.voice;u.onerror=()=>{status.textContent='Sprachausgabe fehlgeschlagen. Bitte Text lesen.'};speechSynthesis.speak(u)}catch(e){status.textContent='Sprachausgabe nicht verfügbar. Bitte Text lesen.'}}
- $('odpc-voice-preview').addEventListener('click',()=>say('Hallo! Ich bin Helper Monkey. So klingt meine ausgewählte Stimme.'));
- $('odpc-voice-persona').addEventListener('change',()=>{if('speechSynthesis' in window)speechSynthesis.cancel();updateVoiceAvailability()});
- $('odpc-voice-language').addEventListener('change',updateVoiceAvailability);
- if('speechSynthesis' in window){speechSynthesis.addEventListener?.('voiceschanged',updateVoiceAvailability);updateVoiceAvailability();}
+ let voiceCatalog=[],speechTicket=0;
+ function refreshVoices(){if(!('speechSynthesis' in window))return;const select=$('odpc-voice-persona'),lang=$('odpc-voice-language').value.slice(0,2).toLowerCase(),prior=select.value;voiceCatalog=speechSynthesis.getVoices().filter(v=>(v.lang||'').toLowerCase().startsWith(lang));select.replaceChildren(new Option('Standardstimme','auto'));voiceCatalog.forEach((v,i)=>{const name=v.name||('Stimme '+(i+1));select.add(new Option(name+' ('+v.lang+')',String(i)))});select.value=prior==='auto'||voiceCatalog[Number(prior)]?prior:'auto';$('odpc-voice-voicehelp').textContent=voiceCatalog.length?voiceCatalog.length+' verfügbare Stimmprofile. Wähle eine Stimme und höre sie an. Die Namen kommen von deinem Gerät.':'Dein Browser stellt keine einzeln auswählbaren Stimmen bereit. Die Standardstimme kann trotzdem funktionieren.';$('odpc-voice-preview').disabled=false;}
+ function say(t){speaking=t;if(!$('odpc-voice-audio').checked)return;if(!('speechSynthesis' in window)||!window.SpeechSynthesisUtterance){status.textContent='Sprachausgabe nicht verfügbar. Text bleibt lesbar.';return}try{const ticket=++speechTicket;speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang=$('odpc-voice-language').value;u.rate=1.12;const id=$('odpc-voice-persona').value;if(id!=='auto'&&voiceCatalog[Number(id)])u.voice=voiceCatalog[Number(id)];u.onerror=e=>{if(ticket!==speechTicket)return;status.textContent='Sprachausgabe nicht möglich ('+(e.error||'Gerätefehler')+'). Bitte eine andere Stimme wählen oder Chrome direkt öffnen.'};speechSynthesis.speak(u)}catch(e){status.textContent='Sprachausgabe nicht verfügbar. Bitte Text lesen.'}}
+ $('odpc-voice-preview').addEventListener('click',()=>say('Hallo, ich bin Helper Monkey. Du hörst jetzt dieses Stimmprofil.'));
+ $('odpc-voice-persona').addEventListener('change',()=>{speechTicket++;if('speechSynthesis' in window)speechSynthesis.cancel();status.textContent='Stimmprofil ausgewählt. Tippe auf Stimme testen.'});
+ $('odpc-voice-language').addEventListener('change',refreshVoices);
+ if('speechSynthesis' in window){speechSynthesis.addEventListener?.('voiceschanged',refreshVoices);refreshVoices();}
 
- function stopAudio(){session++;if(recognition){try{recognition.abort()}catch(e){}recognition=null}if('speechSynthesis' in window)speechSynthesis.cancel()}
+ function stopAudio(){session++;speechTicket++;if(recognition){try{recognition.abort()}catch(e){}recognition=null}if('speechSynthesis' in window)speechSynthesis.cancel()}
  function append(role,t){const p=document.createElement('p');const b=document.createElement('strong');b.textContent=role+': ';p.append(b,document.createTextNode(t));log.append(p);log.scrollTop=log.scrollHeight}
  function ask(){if(panel.hidden)return;if(step>=questions.length){finish();return}const q=questions[step][1];status.textContent='Frage '+(step+1)+' von '+questions.length;append('Monkey',q);say(q)}
  function finish(){if(panel.dataset.finished==='yes')return;panel.dataset.finished='yes';const goal=(answers.goal||'').toLowerCase();let path='/start/';if(/auto|fahrzeug|obd|motor/.test(goal))path='/start/';else if(/web|homepage|wordpress|seite/.test(goal))path='/webmaster-agent/';else if(/konto|connector|gmail|google/.test(goal))path='/connector-einrichten/';else if(/recht|anwalt|kanzlei/.test(goal))path='/konfliktlotse-anwaltsvorarbeit/';
@@ -66,7 +66,7 @@ add_action('wp_footer', function () {
  status.textContent='Interview abgeschlossen';input.disabled=true;$('odpc-voice-send').disabled=true;$('odpc-voice-mic').disabled=true;
  }
  function submit(){if(step>=questions.length)return;const value=input.value.trim().slice(0,1000);if(!value)return;append('Du',value);answers[questions[step][0]]=value;step++;input.value='';ask()}
- $('odpc-voice-open').addEventListener('click',()=>{returnFocus=document.activeElement;panel.hidden=false;$('odpc-voice-open').setAttribute('aria-expanded','true');if(!active){active=true;ask()}input.focus()});
+ $('odpc-voice-open').addEventListener('click',()=>{returnFocus=document.activeElement;panel.hidden=false;$('odpc-voice-open').setAttribute('aria-expanded','true');if(!active){active=true;ask()}refreshVoices();input.focus()});
  $('odpc-voice-close').addEventListener('click',()=>{panel.hidden=true;$('odpc-voice-open').setAttribute('aria-expanded','false');stopAudio();(returnFocus&&returnFocus.isConnected?returnFocus:$('odpc-voice-open')).focus()});
  $('odpc-voice-send').addEventListener('click',submit);
  $('odpc-voice-stop').addEventListener('click',()=>{stopAudio();status.textContent='Audio gestoppt. Texteingabe ist weiterhin möglich.'});
