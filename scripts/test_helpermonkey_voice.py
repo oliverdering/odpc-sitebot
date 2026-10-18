@@ -52,6 +52,11 @@ class VoiceRegression(unittest.TestCase):
             with self.subTest(feature=feature):
                 self.assertIn(feature, self.source)
 
+    def test_gender_filter_release(self):
+        for feature in ("odpc-voice-gender", "voiceGender(v)", "refreshVoices()", "Alle Stimmen", "Männlich", "Weiblich"):
+            with self.subTest(feature=feature):
+                self.assertIn(feature, self.source)
+
     def test_wp_bootstrap(self):
         self.assertIn("if (!defined('ABSPATH')) exit;", self.source)
         self.assertIn("add_action('wp_footer'", self.source)
