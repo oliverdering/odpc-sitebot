@@ -101,7 +101,7 @@ try{
 document.getElementById("hm-v4-ask").addEventListener("click",run);
 input.addEventListener("keydown",function(e){if(e.key==="Enter"){e.preventDefault();run()}});
 document.getElementById("hm-v4-mic").addEventListener("click",function(){var SR=window.SpeechRecognition||window.webkitSpeechRecognition;if(!SR){response.textContent="Die Spracheingabe ist in diesem Browser nicht verfügbar. Bitte die Frage eintippen.";return}var r=new SR();r.lang="de-DE";r.onresult=function(e){input.value=e.results[0][0].transcript;run()};r.onerror=function(){response.textContent="Die Sprache wurde nicht erkannt. Bitte erneut versuchen oder schreiben."};try{r.start()}catch(e){response.textContent="Mikrofon kann nicht gestartet werden."}});
-document.getElementById("hm-v4-listen").addEventListener("click",function(){if(!("speechSynthesis" in window))return;window.speechSynthesis.cancel();var v=new SpeechSynthesisUtterance(response.textContent.slice(0,900));v.lang="de-DE";v.rate=.9;window.speechSynthesis.speak(v)});
+document.getElementById("hm-v4-listen").addEventListener("click",function(){if(!("speechSynthesis" in window))return;window.speechSynthesis.cancel();var v=new SpeechSynthesisUtterance(response.textContent.slice(0,900));v.lang="de-DE";v.rate=1.17;var voices=window.speechSynthesis.getVoices().filter(function(x){return /^de(-|_)/i.test(x.lang)});voices.sort(function(a,b){function score(x){return (/Google Deutsch|Google German|Microsoft Katja|Microsoft Hedda|Anna|Petra/i.test(x.name)?100:0)+(/natural|neural|premium/i.test(x.name)?30:0)+(/female|weiblich/i.test(x.name)?10:0)}return score(b)-score(a)});if(voices.length)v.voice=voices[0];window.speechSynthesis.speak(v)});
 })();
 </script>
 <?php },98);
