@@ -5,6 +5,8 @@ from pathlib import Path
 from urllib.request import Request,urlopen
 import paramiko
 from deploy_helpermonkey_v4 import find_theme,HOST,USER,PIN
+from prepare_voice_assets import prepare
+ASSET_SLUG="odpc-voice-assets-0.6.0"
 SRC=Path("site-deploy/ai.odpc.de/odpc-monkey-voice-interview.php")
 def main():
     password=os.environ.get("ODPC_SFTP_PASSWORD","")
@@ -13,6 +15,7 @@ def main():
     source=SRC.read_text(encoding="utf-8")
     expected_script=source.split("<script>",1)[1].split("</script>",1)[0].strip()
     expected_markup=source.split(" ?>",1)[1].split(" <style>",1)[0].strip()
+    assets=prepare()
     transport=paramiko.Transport((HOST,22))
     transport.start_client(timeout=25)
     try:
@@ -31,6 +34,25 @@ def main():
             except OSError as exc:
                 if getattr(exc,"errno",None) == 2: sftp.mkdir(folder)
                 else: raise
+            asset_folder=posixpath.join(folder,ASSET_SLUG)
+            try:
+                if not stat.S_ISDIR(sftp.lstat(asset_folder).st_mode): raise RuntimeError("Unsafe asset directory")
+            except FileNotFoundError: sftp.mkdir(asset_folder)
+            for asset in sorted(assets.iterdir()):
+                if not asset.is_file(): continue
+                remote=posixpath.join(asset_folder,asset.name)
+                try:
+                    if not stat.S_ISREG(sftp.lstat(remote).st_mode): raise RuntimeError("Unsafe existing asset")
+                except FileNotFoundError: pass
+                sftp.put(str(asset),remote+".uploading",confirm=True)
+                sftp.posix_rename(remote+".uploading",remote)
+                with sftp.open(remote,"rb") as check:
+                    if hashlib.sha256(check.read()).digest()!=hashlib.sha256(asset.read_bytes()).digest(): raise RuntimeError("Remote asset checksum failed")
+                url="https://ai.odpc.de/wp-content/mu-plugins/"+ASSET_SLUG+"/"+asset.name
+                with urlopen(Request(url,headers={"Cache-Control":"no-cache"}),timeout=30) as response:
+                    served=response.read(asset.stat().st_size+1)
+                if hashlib.sha256(served).digest()!=hashlib.sha256(asset.read_bytes()).digest(): raise RuntimeError("Public asset checksum failed: "+asset.name)
+            print("PASS: self-hosted local speech assets verified by SFTP and public HTTPS")
             target=posixpath.join(folder,"odpc-monkey-voice-interview.php")
             temp=target+".uploading"
             backup=Path("backup-helpermonkey-voice/previous.php")

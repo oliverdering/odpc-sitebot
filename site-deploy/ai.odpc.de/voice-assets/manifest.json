@@ -1,0 +1,31 @@
+{
+  "upstream": "pettarin/espeakng.js-cdn",
+  "commit": "c023eaca5609b4523613f674d0ee67bd761502f1",
+  "license": "GPL-3.0-or-later",
+  "files": [
+    {
+      "name": "espeakng.js",
+      "url": "https://raw.githubusercontent.com/pettarin/espeakng.js-cdn/c023eaca5609b4523613f674d0ee67bd761502f1/js/espeakng.js",
+      "size": 1997,
+      "sha256": "19e373939cef328bddd343fa1878fd3de3a8f9651d94d5969563746839bfc5d7"
+    },
+    {
+      "name": "espeakng.worker.js",
+      "url": "https://raw.githubusercontent.com/pettarin/espeakng.js-cdn/c023eaca5609b4523613f674d0ee67bd761502f1/js/espeakng.worker.js",
+      "size": 776339,
+      "sha256": "27dbae622e8dbd2b4f5def07208db1c557554148b83a99bacba37419031e2e2e"
+    },
+    {
+      "name": "espeakng.worker.data",
+      "url": "https://raw.githubusercontent.com/pettarin/espeakng.js-cdn/c023eaca5609b4523613f674d0ee67bd761502f1/js/espeakng.worker.data",
+      "size": 2553388,
+      "sha256": "a1a5de916d3f3d28babe3a0948d6eab84e793ae69e333974a918a69ddec32a67"
+    },
+    {
+      "name": "LICENSE",
+      "url": "https://raw.githubusercontent.com/pettarin/espeakng.js-cdn/c023eaca5609b4523613f674d0ee67bd761502f1/LICENSE",
+      "size": 35147,
+      "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903"
+    }
+  ]
+}
