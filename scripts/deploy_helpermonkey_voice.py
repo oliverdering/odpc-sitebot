@@ -10,6 +10,9 @@ def main():
     password=os.environ.get("ODPC_SFTP_PASSWORD","")
     if not password: raise RuntimeError("Missing ODPC_SFTP_PASSWORD; no deployment")
     if not SRC.is_file() or SRC.stat().st_size>60000: raise RuntimeError("Invalid source")
+    source=SRC.read_text(encoding="utf-8")
+    expected_script=source.split("<script>",1)[1].split("</script>",1)[0].strip()
+    expected_markup=source.split(" ?>",1)[1].split(" <style>",1)[0].strip()
     transport=paramiko.Transport((HOST,22))
     transport.start_client(timeout=25)
     try:
@@ -43,6 +46,9 @@ def main():
             try:
                 sftp.put(str(SRC),temp,confirm=True)
                 sftp.posix_rename(temp,target)
+                with sftp.open(target,"rb") as uploaded:
+                    if hashlib.sha256(uploaded.read()).digest()!=hashlib.sha256(SRC.read_bytes()).digest():
+                        raise RuntimeError("Uploaded voice file checksum mismatch")
                 verified=False
                 for attempt in range(4):
                     time.sleep(3)
@@ -50,12 +56,12 @@ def main():
                     try:
                         with urlopen(req,timeout=25) as response:
                             html=response.read(800000).decode("utf-8","replace")
-                        if 'id="odpc-voice-open"' in html and 'id="odpc-voice-mic"' in html:
+                        if expected_script in html and expected_markup in html:
                             verified=True
                             break
                     except Exception as exc: print("Smoke check retry:",type(exc).__name__)
-                if not verified: raise RuntimeError("Voice UI absent from public homepage")
-                print("PASS: voice module is visible in live homepage HTML")
+                if not verified: raise RuntimeError("Exact voice release absent from public homepage")
+                print("PASS: exact voice release and all selector markup verified in live homepage HTML")
             except Exception:
                 print("Verification failed: rolling back voice module")
                 if existed:
@@ -75,3 +81,4 @@ if __name__=="__main__":
     except Exception as exc:
         print("VOICE DEPLOY FAILED:",exc,file=sys.stderr)
         sys.exit(1)
+

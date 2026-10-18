@@ -46,7 +46,7 @@ class VoiceRegression(unittest.TestCase):
         self.assertNotIn("questions[step]", self.source)
 
     def test_voice_selection_and_mobile_layout(self):
-        for feature in ("speechSynthesis.getVoices()", "voiceschanged", "voiceCatalog",
+        for feature in ("getVoices()", "voiceschanged", "voiceCatalog",
                         "odpc-voice-persona", "odpc-voice-preview", "max-width:600px",
                         "odpc-voice-topclose", "el.replaceChildren(cb"):
             with self.subTest(feature=feature):
@@ -63,3 +63,4 @@ class VoiceRegression(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
+

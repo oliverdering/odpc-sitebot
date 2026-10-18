@@ -1,11 +1,13 @@
 name: Helper Monkey Voice / Live Deploy
-# ODPC voice release retry 2026-10-17
+# Release 0.5.2: executable regression tests and exact live verification
 on:
   push:
+    branches: [main]
     paths:
       - 'site-deploy/ai.odpc.de/odpc-monkey-voice-interview.php'
       - 'scripts/deploy_helpermonkey_voice.py'
       - 'scripts/test_helpermonkey_voice.py'
+      - 'scripts/test_helpermonkey_voice_runtime.mjs'
       - '.github/workflows/helpermonkey-voice-deploy.yml'
   workflow_dispatch:
 permissions:
@@ -24,6 +26,7 @@ jobs:
           php -l site-deploy/ai.odpc.de/odpc-monkey-voice-interview.php
           python3 -m py_compile scripts/deploy_helpermonkey_voice.py scripts/test_helpermonkey_voice.py
           python3 scripts/test_helpermonkey_voice.py
+          node --test scripts/test_helpermonkey_voice_runtime.mjs
       - name: Install SFTP client
         run: python3 -m pip install 'paramiko>=3.4,<5'
       - name: Publish with backup and live smoke test
@@ -39,3 +42,4 @@ jobs:
           path: backup-helpermonkey-voice/
           if-no-files-found: ignore
           retention-days: 15
+

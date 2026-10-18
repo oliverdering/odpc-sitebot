@@ -8,7 +8,7 @@ if (!defined('ABSPATH')) exit;
 add_action('wp_footer', function () {
  if (is_admin()) return;
  ?>
- <div id="odpc-voice" data-version="0.5.2" class="odpc-voice" hidden role="dialog" aria-modal="true" aria-labelledby="odpc-voice-title" aria-describedby="odpc-voice-status">
+ <div id="odpc-voice" class="odpc-voice" data-version="0.5.2" hidden role="dialog" aria-modal="true" aria-labelledby="odpc-voice-title" aria-describedby="odpc-voice-status">
   <h2 id="odpc-voice-title">🐵 Monkey Sprachassistent</h2><button type="button" id="odpc-voice-topclose" aria-label="Schließen">✕</button>
   <p id="odpc-voice-status" role="status" aria-live="polite">Bereit. Starte das Interview.</p>
   <div id="odpc-voice-log" role="log" aria-label="Gesprächsverlauf" aria-live="polite"></div>
@@ -31,7 +31,7 @@ add_action('wp_footer', function () {
  #odpc-voice-open{position:fixed;left:12px;bottom:12px;z-index:9998;border:2px solid #fff;border-radius:28px;background:#164735;color:#fff;padding:12px 18px;cursor:pointer;font:700 15px system-ui}
  .odpc-voice{position:fixed;left:12px;bottom:72px;z-index:9998;width:min(430px,calc(100vw - 24px));max-height:min(78dvh,700px);overflow:auto;overscroll-behavior:contain;background:#fff;color:#193b2c;border:2px solid #8dbca5;border-radius:14px;padding:18px;box-shadow:0 8px 36px #0004;font:15px/1.5 system-ui}
  .odpc-voice #odpc-voice-topclose{position:sticky;top:0;float:right;border:0;border-radius:50%;background:#164735;color:#fff;width:40px;height:40px;font-size:22px;cursor:pointer}.odpc-voice[hidden]{display:none}#odpc-voice-voicehelp{font-size:13px;margin:3px 0 10px;color:#426653}.odpc-voice #odpc-voice-preview{padding:9px 12px;border:0;border-radius:7px;background:#164735;color:#fff;cursor:pointer}.odpc-voice #odpc-voice-preview:disabled{opacity:.5}.odpc-voice[hidden]{display:none}.odpc-voice h2{margin:0 0 8px;font-size:21px}.odpc-voice input[type=text]{width:100%;box-sizing:border-box;padding:11px;border:1px solid #777;border-radius:7px;font:inherit}
- .odpc-voice select{width:100%;min-width:0;max-width:100%;padding:10px;margin-bottom:8px;font:inherit}.odpc-voice select option{max-width:100%}.odpc-voice input[type=checkbox]{width:auto;height:20px;vertical-align:middle;margin-right:7px}.odpc-voice label{display:block;margin-top:8px}.odpc-voice-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}.odpc-voice-actions button{padding:10px;border-radius:7px;background:#164735;color:white;border:0;cursor:pointer}
+ .odpc-voice,.odpc-voice *{box-sizing:border-box}.odpc-voice select{width:100%;min-width:0;max-width:100%;padding:10px;margin-bottom:8px;font:inherit}.odpc-voice select option{max-width:100%}.odpc-voice input[type=checkbox]{width:auto;height:20px;vertical-align:middle;margin-right:7px}.odpc-voice label{display:block;margin-top:8px}.odpc-voice-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}.odpc-voice-actions button{padding:10px;border-radius:7px;background:#164735;color:white;border:0;cursor:pointer}
  @media(max-width:600px){.odpc-voice{left:8px;right:8px;bottom:76px;width:auto;max-height:calc(100dvh - 105px);padding:14px}.odpc-voice-actions button{flex:1 1 42%;min-height:44px}#odpc-voice-open{bottom:8px;left:8px}}#odpc-voice-log{max-height:190px;overflow:auto;margin:8px 0}#odpc-voice-log p{margin:5px 0}#odpc-voice-open:focus-visible,.odpc-voice button:focus-visible,.odpc-voice input:focus-visible{outline:3px solid #e6b83f;outline-offset:2px}
  </style>
  <script>
@@ -53,18 +53,48 @@ add_action('wp_footer', function () {
  };
  const uiIds=['odpc-voice-title','label-language','label-persona','odpc-voice-preview','label-audio','label-answer','odpc-voice-mic','odpc-voice-send','odpc-voice-repeat','odpc-voice-stop','odpc-voice-reset','odpc-voice-back','odpc-voice-close','odpc-voice-open'];
  const questions=()=>languages[$('odpc-voice-language').value].questions.map((q,i)=>[['goal','device','account','mode'][i],q]);
- function localize(){const l=languages[$('odpc-voice-language').value];uiIds.forEach((id,i)=>{const el=$(id);if(el){if(id==='label-audio'){const cb=$('odpc-voice-audio');el.replaceChildren(cb,document.createTextNode(' '+l.ui[i]))}else el.textContent=(i===0?'🐵 ':i===13?'🎙 ':'')+l.ui[i]}});$('odpc-voice-topclose').setAttribute('aria-label',l.ui[12]);document.documentElement.lang=document.documentElement.lang||'de';if(active){stopAudio();step=0;answers={};log.replaceChildren();panel.dataset.finished='no';input.disabled=false;$('odpc-voice-send').disabled=false;$('odpc-voice-mic').disabled=false;ask();}}
+ function localize(){const l=languages[$('odpc-voice-language').value];uiIds.forEach((id,i)=>{const el=$(id);if(el){if(id==='label-audio'){const cb=$('odpc-voice-audio');el.replaceChildren(cb,document.createTextNode(' '+l.ui[i]))}else el.textContent=(i===0?'🐵 ':i===13?'🎙 ':'')+l.ui[i]}});$('odpc-voice-topclose').setAttribute('aria-label',l.ui[12]);document.documentElement.lang=document.documentElement.lang||'de';if(active){stopAudio();step=0;answers={};log.replaceChildren();panel.dataset.finished='no';input.value='';input.disabled=false;$('odpc-voice-send').disabled=false;$('odpc-voice-mic').disabled=false;ask();}}
 
  let voiceCatalog=[],speechTicket=0;
- function voiceGender(v){const n=(v.name||'').toLowerCase();if(/\b(male|man|masculine|männlich|hombre|homme|uomo|masculino)\b|\b(david|mark|daniel|george|thomas|stefan|paul|alexander|jorge|diego|pablo|carlos|enrique|conrad|christoph|stefano|henri|guy|andrew|ryan|matthew|liam|oliver|brian)\b/.test(n))return 'male';if(/\b(female|woman|feminine|weiblich|mujer|femme|donna|femenino)\b|\b(anna|sarah|samantha|victoria|karen|helena|maria|monica|lucia|sofia|laura|katja|heda|sabine|zira|jenny|aria|hazel|emma|amy|susan|julie|amelie)\b/.test(n))return 'female';return 'unknown'}
- function refreshVoices(){const select=$('odpc-voice-persona'),lang=$('odpc-voice-language').value.slice(0,2).toLowerCase(),filter=$('odpc-voice-gender').value,previous=voiceCatalog[Number(select.value)]?.voiceURI||'',all=('speechSynthesis' in window)?speechSynthesis.getVoices():[];voiceCatalog=all.filter(v=>(v.lang||'').toLowerCase().startsWith(lang)&& (filter==='all'||voiceGender(v)===filter));select.replaceChildren(new Option('Standard / System','auto'));voiceCatalog.forEach((v,i)=>{const name=v.name||('Stimme '+(i+1));select.add(new Option(name+' ('+v.lang+')',String(i)))});const idx=voiceCatalog.findIndex(v=>v.voiceURI===previous);select.value=idx>=0?String(idx):'auto';const count=all.filter(v=>(v.lang||'').toLowerCase().startsWith(lang)).length;$('odpc-voice-voicehelp').textContent=filter==='all'?count+' vom Browser bereitgestellte Stimmen für diese Sprache.':voiceCatalog.length?voiceCatalog.length+' anhand des Namens als '+(filter==='male'?'männlich':'weiblich')+' erkannte Stimmen.':'Keine eindeutig als '+(filter==='male'?'männlich':'weiblich')+' benannte Stimme gefunden. Bitte „Alle Stimmen“ wählen und Hörproben testen. Die Browser-API liefert keine verlässliche Geschlechtsangabe.';$('odpc-voice-preview').disabled=false;}
-
- function say(t){speaking=t;if(!$('odpc-voice-audio').checked)return;if(!('speechSynthesis' in window)||!window.SpeechSynthesisUtterance){status.textContent='Sprachausgabe nicht verfügbar. Text bleibt lesbar.';return}try{const ticket=++speechTicket;speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang=$('odpc-voice-language').value;u.rate=1.12;const id=$('odpc-voice-persona').value;if(id!=='auto'&&voiceCatalog[Number(id)])u.voice=voiceCatalog[Number(id)];u.onerror=e=>{if(ticket!==speechTicket)return;status.textContent='Sprachausgabe nicht möglich ('+(e.error||'Gerätefehler')+'). Bitte eine andere Stimme wählen oder Chrome direkt öffnen.'};speechSynthesis.speak(u)}catch(e){status.textContent='Sprachausgabe nicht verfügbar. Bitte Text lesen.'}}
- $('odpc-voice-preview').addEventListener('click',()=>say(languages[$('odpc-voice-language').value].preview));
+ function voiceGender(v){
+  const n=(v.name||'').toLowerCase();
+  if(/\b(female|woman|feminine|weiblich|mujer|femme|donna|femenino)\b|\b(anna|sarah|samantha|victoria|karen|helena|maria|monica|lucia|sofia|laura|hedda|heda|sabine|jenny|aria|emma|amy|susan|katja|zira|hazel|hortense|elsa|sabina|paulina|julie|denise|amelie|emilie|luciana|francisca|zofia|emel)\b/.test(n))return 'female';
+  if(/\b(male|man|masculine|männlich|hombre|homme|uomo|masculino)\b|\b(david|mark|daniel|george|thomas|stefan|paul|alexander|jorge|diego|pablo|carlos|enrique|stefan|conrad|christoph|stefano|guy|andrew|matthew|liam|oliver|brian|james|ryan|henri|cosimo|antonio|duarte|marek|ahmet)\b/.test(n))return 'male';
+  return 'unknown';
+ }
+ function refreshVoices(){
+  const select=$('odpc-voice-persona'),locale=$('odpc-voice-language').value.toLowerCase(),lang=locale.split('-')[0],filter=$('odpc-voice-gender').value,previous=voiceCatalog[Number(select.value)]?.voiceURI||'';
+  let all=[];try{all=window.speechSynthesis?.getVoices()||[]}catch(e){}
+  const matching=all.filter(v=>(v.lang||'').toLowerCase().replace(/_/g,'-').split('-')[0]===lang);
+  voiceCatalog=matching.filter(v=>filter==='all'||voiceGender(v)===filter).sort((a,b)=>Number(b.lang.toLowerCase()===locale)-Number(a.lang.toLowerCase()===locale));
+  select.replaceChildren();
+  if(filter==='all'&&voiceCatalog.length)select.add(new Option('Standard / System','auto'));
+  voiceCatalog.forEach((v,i)=>select.add(new Option((v.name||('Stimme '+(i+1)))+' ('+v.lang+')',String(i))));
+  if(!voiceCatalog.length)select.add(new Option('Keine passende Stimme verfügbar',''));
+  const idx=voiceCatalog.findIndex(v=>v.voiceURI===previous);
+  select.value=idx>=0?String(idx):voiceCatalog.length?(filter==='all'?'auto':'0'):'';
+  select.disabled=!voiceCatalog.length;
+  $('odpc-voice-voicehelp').textContent=!matching.length?'Für diese Sprache stellt dein Browser keine Stimme bereit. Prüfe die Sprachpakete deines Geräts oder verwende Texteingabe.':filter==='all'?matching.length+' verfügbare Stimmen für diese Sprache.':voiceCatalog.length?voiceCatalog.length+' anhand des Namens als '+(filter==='male'?'männlich':'weiblich')+' erkannte Stimmen. Hörprobe bitte prüfen.':'Keine als '+(filter==='male'?'männlich':'weiblich')+' erkennbare Stimme verfügbar. Wähle „Alle Stimmen“ und teste die Hörproben.';
+  $('odpc-voice-preview').disabled=!voiceCatalog.length;
+ }
+ function say(t,remember=true){
+  if(remember)speaking=t;
+  if(!$('odpc-voice-audio').checked)return;
+  if(!('speechSynthesis' in window)||!window.SpeechSynthesisUtterance){status.textContent='Sprachausgabe nicht verfügbar. Text bleibt lesbar.';return}
+  if(!voiceCatalog.length){status.textContent='Keine passende Stimme verfügbar. Bitte Stimmtyp, Sprache oder die Sprachpakete deines Geräts prüfen. Texteingabe bleibt möglich.';return}
+  try{
+   const ticket=++speechTicket;speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang=$('odpc-voice-language').value;u.rate=1.12;
+   const id=$('odpc-voice-persona').value;
+   u.voice=voiceCatalog[id==='auto'?0:Number(id)]||voiceCatalog[0];
+   u.onerror=e=>{if(ticket!==speechTicket)return;status.textContent='Sprachausgabe nicht möglich ('+(e.error||'Gerätefehler')+'). Bitte eine andere Stimme wählen oder Chrome direkt öffnen.'};
+   speechSynthesis.speak(u);
+  }catch(e){status.textContent='Sprachausgabe nicht verfügbar. Bitte Text lesen.'}
+ }
+ $('odpc-voice-preview').addEventListener('click',()=>say(languages[$('odpc-voice-language').value].preview,false));
  $('odpc-voice-persona').addEventListener('change',()=>{speechTicket++;if('speechSynthesis' in window)speechSynthesis.cancel();status.textContent='Stimmprofil ausgewählt. Tippe auf Stimme testen.'});
  $('odpc-voice-language').addEventListener('change',()=>{refreshVoices();localize()});
- $('odpc-voice-gender').addEventListener('change',refreshVoices);
- if('speechSynthesis' in window){speechSynthesis.addEventListener?.('voiceschanged',refreshVoices);refreshVoices();setTimeout(refreshVoices,700);setTimeout(refreshVoices,2000);}localize();
+ $('odpc-voice-gender').addEventListener('change',()=>{stopAudio();refreshVoices()});
+ if('speechSynthesis' in window){speechSynthesis.addEventListener?.('voiceschanged',refreshVoices);setTimeout(refreshVoices,700);setTimeout(refreshVoices,2000);}refreshVoices();localize();
 
  function stopAudio(){session++;speechTicket++;if(recognition){try{recognition.abort()}catch(e){}recognition=null}if('speechSynthesis' in window)speechSynthesis.cancel()}
  function append(role,t){const p=document.createElement('p');const b=document.createElement('strong');b.textContent=role+': ';p.append(b,document.createTextNode(t));log.append(p);log.scrollTop=log.scrollHeight}
@@ -76,7 +106,7 @@ add_action('wp_footer', function () {
  const pre=document.createElement('p');pre.textContent='Your answers remain in this browser window; this module does not send them to a server.';log.append(pre);
  status.textContent='Interview abgeschlossen';input.disabled=true;$('odpc-voice-send').disabled=true;$('odpc-voice-mic').disabled=true;
  }
- function submit(){if(step>=questions().length)return;const value=input.value.trim().slice(0,1000);if(!value)return;append('Du',value);answers[questions()[step][0]]=value;step++;input.value='';ask()}
+ function submit(){if(step>=questions().length)return;const value=input.value.trim().slice(0,1000);if(!value)return;append('Du',value);answers[questions()[step][0]]=value;stopAudio();step++;input.value='';ask()}
  $('odpc-voice-open').addEventListener('click',()=>{returnFocus=document.activeElement;panel.hidden=false;$('odpc-voice-open').setAttribute('aria-expanded','true');if(!active){active=true;ask()}refreshVoices();input.focus()});
  $('odpc-voice-topclose').addEventListener('click',()=>$('odpc-voice-close').click());
  $('odpc-voice-close').addEventListener('click',()=>{panel.hidden=true;$('odpc-voice-open').setAttribute('aria-expanded','false');stopAudio();(returnFocus&&returnFocus.isConnected?returnFocus:$('odpc-voice-open')).focus()});
@@ -85,18 +115,19 @@ add_action('wp_footer', function () {
  $('odpc-voice-reset').addEventListener('click',()=>{stopAudio();step=0;answers={};active=true;panel.dataset.finished='no';log.replaceChildren();input.value='';input.disabled=false;$('odpc-voice-send').disabled=false;$('odpc-voice-mic').disabled=false;ask();input.focus()});
  input.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();submit()}});
  $('odpc-voice-repeat').addEventListener('click',()=>say(speaking));
- $('odpc-voice-back').addEventListener('click',()=>{if(step===0)return;stopAudio();if(panel.dataset.finished==='yes'){panel.dataset.finished='no';log.querySelectorAll('a[href]').forEach(a=>a.remove())}step--;delete answers[questions()[step][0]];input.disabled=false;$('odpc-voice-send').disabled=false;$('odpc-voice-mic').disabled=false;ask()});
+ $('odpc-voice-back').addEventListener('click',()=>{if(step===0)return;stopAudio();input.value='';if(panel.dataset.finished==='yes'){panel.dataset.finished='no';log.querySelectorAll('a[href]').forEach(a=>a.remove())}step--;delete answers[questions()[step][0]];input.disabled=false;$('odpc-voice-send').disabled=false;$('odpc-voice-mic').disabled=false;ask()});
  $('odpc-voice-mic').addEventListener('click',()=>{
   if(!SpeechRecognition){status.textContent='Spracheingabe wird hier nicht unterstützt. Bitte tippe deine Antwort.';input.focus();return}
-  if(recognition){try{recognition.abort()}catch(e){}}if('speechSynthesis' in window)speechSynthesis.cancel();
+  stopAudio();
   const ticket=++session;recognition=new SpeechRecognition();recognition.lang=$('odpc-voice-language').value;recognition.interimResults=false;recognition.maxAlternatives=1;
   recognition.onresult=e=>{if(ticket!==session||panel.hidden)return;input.value=e.results[0][0].transcript;status.textContent='Antwort erkannt. Du kannst sie korrigieren oder senden.';input.focus()};
   recognition.onerror=e=>{if(ticket!==session||panel.hidden)return;status.textContent='Mikrofonfehler: '+e.error+'. Bitte nutze die Texteingabe.'};
   recognition.onend=()=>{if(ticket===session)recognition=null};try{recognition.start();status.textContent='Ich höre zu …'}catch(e){status.textContent='Mikrofon konnte nicht gestartet werden.'}
  });
- document.addEventListener('keydown',e=>{if(panel.hidden)return;if(e.key==='Escape'){$('odpc-voice-close').click();return}if(e.key==='Tab'){const nodes=Array.from(panel.querySelectorAll('button:not([disabled]),input:not([disabled]),select,a[href]')).filter(el=>el.getClientRects().length);if(!nodes.length)return;const first=nodes[0],last=nodes[nodes.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}}});
+ document.addEventListener('keydown',e=>{if(panel.hidden)return;if(e.key==='Escape'){$('odpc-voice-close').click();return}if(e.key==='Tab'){const nodes=Array.from(panel.querySelectorAll('button:not([disabled]),input:not([disabled]),select:not([disabled]),a[href]')).filter(el=>el.getClientRects().length);if(!nodes.length)return;const first=nodes[0],last=nodes[nodes.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}}});
  document.addEventListener('visibilitychange',()=>{if(document.hidden)stopAudio()});
  })();
  </script>
  <?php
 }, 50);
+
