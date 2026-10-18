@@ -1,0 +1,41 @@
+name: ODPC / AI search metadata
+on:
+  push:
+    paths:
+      - 'site-deploy/ai.odpc.de/odpc-search-metadata.php'
+      - 'scripts/deploy_search_metadata.py'
+      - 'scripts/verify_search_metadata.py'
+      - 'scripts/test_search_metadata.php'
+      - '.github/workflows/odpc-search-metadata-deploy.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: odpc-ai-search-metadata
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate PHP and metadata preservation
+        run: |
+          php -l site-deploy/ai.odpc.de/odpc-search-metadata.php
+          php scripts/test_search_metadata.php
+          python3 -m py_compile scripts/deploy_search_metadata.py scripts/verify_search_metadata.py
+      - name: Install SFTP client
+        run: python3 -m pip install 'paramiko>=3.4,<5'
+      - name: Publish with backup and rollback
+        env:
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+          AI_ODPC_THEME_PATH: ${{ secrets.AI_ODPC_THEME_PATH }}
+        run: python3 scripts/deploy_search_metadata.py
+      - name: Preserve prior module
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: previous-ai-search-metadata
+          path: backup-search-metadata/
+          if-no-files-found: ignore
+          retention-days: 15
