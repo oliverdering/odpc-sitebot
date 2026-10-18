@@ -29,14 +29,14 @@ test('eight locales, two genders: selected voice has matching language and type'
   assert.equal(s.controls['odpc-voice-voicehelp'].hidden,true);
  }
 });
-test('missing gender never silently falls back to a different system voice',()=>{
- const s=setup([voice('Anna')],'de-DE','male');s.run('refreshVoices();say("Test")');assert.equal(s.spoken.length,0);assert.equal(s.controls['odpc-voice-preview'].disabled,true);
- s.controls['odpc-voice-gender'].value='female';s.run('refreshVoices();say("Test")');assert.equal(s.spoken[0].voice.name,'Anna');
+test('unrecognized gender uses a device voice with a visible fallback notice',()=>{
+ const s=setup([voice('Anna')],'de-DE','male');s.run('refreshVoices();say("Test")');assert.equal(s.spoken.length,1);assert.equal(s.controls['odpc-voice-preview'].disabled,false);assert.equal(s.controls['odpc-voice-voicehelp'].hidden,false);
+ s.controls['odpc-voice-gender'].value='female';s.run('refreshVoices();say("Test")');assert.equal(s.spoken[1].voice.name,'Anna');assert.equal(s.controls['odpc-voice-voicehelp'].hidden,true);
 });
-test('empty and delayed voice catalogs update without fake options',()=>{
- const s=setup([]);s.run('refreshVoices()');assert.equal(s.controls['odpc-voice-preview'].disabled,true);
- s.setVoices([voice('Stefan')]);s.run('refreshVoices()');assert.equal(s.controls['odpc-voice-preview'].disabled,false);
- s.setVoices([]);s.run('refreshVoices();say("Test")');assert.equal(s.spoken.length,0);
+test('delayed voice catalogs are refreshed at speech time',()=>{
+ const s=setup([]);s.run('refreshVoices()');assert.equal(s.controls['odpc-voice-preview'].disabled,false);
+ s.setVoices([voice('Stefan')]);s.run('say("Test")');assert.equal(s.spoken[0].voice.name,'Stefan');
+ s.setVoices([]);s.run('say("Default")');assert.equal(s.spoken[1].voice,undefined);
 });
 test('voice is chosen automatically for the selected language and gender',()=>{
  const s=setup([voice('David','en-GB'),voice('Mark','en-US'),voice('Anna','en-US')],'en-US','male');s.run('refreshVoices();say("Test")');assert.equal(s.spoken[0].voice.name,'Mark');
@@ -56,4 +56,22 @@ test('menu contains exactly two selectors, male/female and eight languages',()=>
  assert.equal((selects[1][2].match(/<option /g)||[]).length,8);
  assert.ok(!source.includes('odpc-voice-persona'));
  assert.ok(!markup.includes('soweit erkennbar'));
+});
+
+test('generic Android voice names remain speakable for both menu choices',()=>{
+ for(const gender of ['male','female']){
+  const s=setup([voice('Google Deutsch')],'de-DE',gender);s.run('refreshVoices();say("Hallo")');
+  assert.equal(s.controls['odpc-voice-preview'].disabled,false);
+  assert.equal(s.spoken.length,1);assert.equal(s.spoken[0].voice.name,'Google Deutsch');
+ }
+});
+test('temporarily empty voice catalog still invokes the browser default engine',()=>{
+ const s=setup([]);s.run('refreshVoices();say("Hallo")');assert.equal(s.controls['odpc-voice-preview'].disabled,false);assert.equal(s.spoken.length,1);assert.equal(s.spoken[0].lang,'de-DE');assert.equal(s.spoken[0].voice,undefined);
+});
+
+test('explicit preview plays even when automatic speech is unchecked',()=>{
+ const s=setup([voice('Stefan')]);s.controls['odpc-voice-audio'].checked=false;s.run('say("Preview",false,true)');assert.equal(s.spoken.length,1);
+});
+test('a voice in a different language is not forced onto the selected language',()=>{
+ const s=setup([voice('David','en-US')],'de-DE','male');s.run('say("Hallo")');assert.equal(s.spoken[0].voice,undefined);assert.equal(s.spoken[0].lang,'de-DE');
 });
