@@ -44,5 +44,6 @@ def validate(url, source, previous=None):
     graph = json.loads(schema[0])['@graph']
     assert {'Organization','Person','WebSite','WebPage'} <= {node['@type'] for node in graph}
     assert any(node['@type'] == 'WebPage' and node['url'] == url for node in graph)
+    assert all(node.get('logo', {}).get('url', '').startswith('https://odpc.de/') for node in graph if node['@type'] == 'Organization')
     if previous is not None:
         assert body(source) == body(previous), 'Public body changed during metadata deployment'

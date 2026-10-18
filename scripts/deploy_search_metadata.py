@@ -28,7 +28,17 @@ def main():
     try:
         transport.auth_password(USER, password)
         with paramiko.SFTPClient.from_transport(transport) as sftp:
-            root = find_theme(sftp).split('/wp-content/themes/')[0]
+            theme = None
+            if not os.environ.get('AI_ODPC_THEME_PATH', '').strip():
+                known = '/ai-odpc/wp-content/themes/helpermonkey-business-v34-child'
+                try:
+                    if stat.S_ISREG(sftp.stat(known+'/style.css').st_mode):
+                        theme = known
+                except FileNotFoundError:
+                    pass
+            if theme is None:
+                theme = find_theme(sftp)
+            root = theme.split('/wp-content/themes/')[0]
             sftp.stat(root+'/wp-config.php')
             folder = root+'/wp-content/mu-plugins'
             if not stat.S_ISDIR(sftp.stat(folder).st_mode):

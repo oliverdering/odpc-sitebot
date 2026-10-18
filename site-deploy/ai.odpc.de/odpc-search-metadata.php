@@ -2,7 +2,7 @@
 /**
  * Plugin Name: ODPC Search Metadata
  * Description: Server-rendered search metadata for the Helper Monkey public pages.
- * Version: 1.0.0
+ * Version: 1.0.1
  */
 if (!defined('ABSPATH')) exit;
 
@@ -57,7 +57,7 @@ add_action('template_redirect', function () {
     $name = $path === '' ? 'Helper Monkey – kostenlose KI-Agenten' : wp_strip_all_tags(get_the_title(get_queried_object_id()));
     $fallback = trim(preg_replace('/\s+/u', ' ', wp_strip_all_tags(strip_shortcodes(get_post_field('post_content', get_queried_object_id())))));
     $info = $catalog[$slug] ?? [$name.' | Helper Monkey', wp_trim_words($fallback, 24, ' …')];
-    $org = ['@type'=>'Organization', '@id'=>'https://odpc.de/#organization', 'name'=>'ODPC – Oliver Dering Professional Consulting', 'url'=>'https://odpc.de/', 'founder'=>['@id'=>'https://odpc.de/#oliver-dering']];
+    $org = ['@type'=>'Organization', '@id'=>'https://odpc.de/#person', 'name'=>'Oliver Dering IT-Consulting', 'alternateName'=>'ODPC – Oliver Dering Professional Consulting', 'url'=>'https://odpc.de/', 'logo'=>['@type'=>'ImageObject', 'url'=>'https://odpc.de/wp-content/uploads/2026/10/cropped-file_000000008d58820abefbd8e885c5afce-447x191.png', 'width'=>447, 'height'=>191], 'founder'=>['@id'=>'https://odpc.de/#oliver-dering']];
     $person = ['@type'=>'Person', '@id'=>'https://odpc.de/#oliver-dering', 'name'=>'Oliver Dering', 'url'=>'https://odpc.de/about-me'];
     $site = ['@type'=>'WebSite', '@id'=>home_url('/').'#website', 'url'=>home_url('/'), 'name'=>'helper · monkey ©', 'inLanguage'=>'de-DE', 'publisher'=>['@id'=>$org['@id']]];
     $page = ['@type'=>'WebPage', '@id'=>$url.'#webpage', 'url'=>$url, 'name'=>$info[0], 'description'=>$info[1], 'inLanguage'=>'de-DE', 'isPartOf'=>['@id'=>$site['@id']], 'publisher'=>['@id'=>$org['@id']]];
