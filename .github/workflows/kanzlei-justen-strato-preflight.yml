@@ -1,0 +1,50 @@
+name: Kanzlei Justen / STRATO SFTP preflight
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  strato-preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Install Paramiko
+        run: python3 -m pip install 'paramiko>=3.4,<5'
+      - name: Check authenticated STRATO WordPress access (read only)
+        env:
+          STRATO_JUSTEN_SFTP_PASSWORD: ${{ secrets.STRATO_JUSTEN_SFTP_PASSWORD }}
+          STRATO_JUSTEN_HOSTKEY_SHA256: ${{ secrets.STRATO_JUSTEN_HOSTKEY_SHA256 }}
+        run: |
+          python3 - <<'PY'
+          import os,base64,hashlib,hmac,stat,posixpath
+          import paramiko
+          password=os.environ.get('STRATO_JUSTEN_SFTP_PASSWORD','')
+          pin=os.environ.get('STRATO_JUSTEN_HOSTKEY_SHA256','')
+          if not password or not pin.startswith('SHA256:'):
+              raise SystemExit('BLOCKED: STRATO_JUSTEN_SFTP_PASSWORD and independently verified STRATO_JUSTEN_HOSTKEY_SHA256 required as GitHub secrets')
+          t=paramiko.Transport(('59432978.ssh.w1.strato.hosting',22))
+          try:
+              t.start_client(timeout=20)
+              key='SHA256:'+base64.b64encode(hashlib.sha256(t.get_remote_server_key().asbytes()).digest()).decode().rstrip('=')
+              if not hmac.compare_digest(key,pin):raise RuntimeError('STRATO host key mismatch')
+              t.auth_password('stu471359126',password)
+              if not t.is_authenticated():raise RuntimeError('STRATO authentication failed')
+              s=paramiko.SFTPClient.from_transport(t)
+              try:
+                  home=s.normalize('.')
+                  print('Authenticated; home directory resolved; checking known WordPress location')
+                  candidates=['STRATO-apps/wordpress_01/app','/STRATO-apps/wordpress_01/app']
+                  roots=[posixpath.normpath(posixpath.join(home,p)) if not p.startswith('/') else p for p in candidates]
+                  for root in roots:
+                      try:
+                          wp=s.stat(root+'/wp-config.php')
+                          themes=s.stat(root+'/wp-content/themes')
+                          if stat.S_ISREG(wp.st_mode) and stat.S_ISDIR(themes.st_mode):
+                              print('PASS: WordPress root and theme directory accessible:',root)
+                              print('Theme directories:',[x.filename for x in s.listdir_attr(root+'/wp-content/themes') if stat.S_ISDIR(x.st_mode)])
+                              break
+                      except OSError:pass
+                  else:raise RuntimeError('WordPress directory not found at documented location; no changes made')
+              finally:s.close()
+          finally:t.close()
+          PY
