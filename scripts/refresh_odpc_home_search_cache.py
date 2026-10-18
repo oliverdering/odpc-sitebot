@@ -51,7 +51,7 @@ def main():
                     raise RuntimeError('Unexpected WordPress installation')
             cache_root = ROOT+'/wp-content/cache'
             bases = []
-            for name in ['all', 'wpfc-mobile-cache']:
+            for name in ['all', 'wpfc-mobile-cache', 'wpo-cache']:
                 candidate = cache_root+'/'+name
                 try:
                     if stat.S_ISDIR(sftp.lstat(candidate).st_mode):
@@ -59,7 +59,7 @@ def main():
                 except FileNotFoundError:
                     pass
             if not bases:
-                raise RuntimeError('WP Fastest Cache HTML directories not found')
+                raise RuntimeError('WordPress HTML cache directories not found')
             queue = [(folder,0) for folder in bases]
             inspected = 0
             removed = 0
