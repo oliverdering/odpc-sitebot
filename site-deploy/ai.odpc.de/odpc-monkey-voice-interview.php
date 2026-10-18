@@ -2,13 +2,13 @@
 /**
  * Plugin Name: ODPC Monkey Voice Interview
  * Description: Accessible opt-in voice interview and guided setup for Helper Monkey.
- * Version: 0.5.1
+ * Version: 0.5.2
  */
 if (!defined('ABSPATH')) exit;
 add_action('wp_footer', function () {
  if (is_admin()) return;
  ?>
- <div id="odpc-voice" class="odpc-voice" hidden role="dialog" aria-modal="true" aria-labelledby="odpc-voice-title" aria-describedby="odpc-voice-status">
+ <div id="odpc-voice" data-version="0.5.2" class="odpc-voice" hidden role="dialog" aria-modal="true" aria-labelledby="odpc-voice-title" aria-describedby="odpc-voice-status">
   <h2 id="odpc-voice-title">🐵 Monkey Sprachassistent</h2><button type="button" id="odpc-voice-topclose" aria-label="Schließen">✕</button>
   <p id="odpc-voice-status" role="status" aria-live="polite">Bereit. Starte das Interview.</p>
   <div id="odpc-voice-log" role="log" aria-label="Gesprächsverlauf" aria-live="polite"></div>
@@ -56,7 +56,7 @@ add_action('wp_footer', function () {
  function localize(){const l=languages[$('odpc-voice-language').value];uiIds.forEach((id,i)=>{const el=$(id);if(el){if(id==='label-audio'){const cb=$('odpc-voice-audio');el.replaceChildren(cb,document.createTextNode(' '+l.ui[i]))}else el.textContent=(i===0?'🐵 ':i===13?'🎙 ':'')+l.ui[i]}});$('odpc-voice-topclose').setAttribute('aria-label',l.ui[12]);document.documentElement.lang=document.documentElement.lang||'de';if(active){stopAudio();step=0;answers={};log.replaceChildren();panel.dataset.finished='no';input.disabled=false;$('odpc-voice-send').disabled=false;$('odpc-voice-mic').disabled=false;ask();}}
 
  let voiceCatalog=[],speechTicket=0;
- function voiceGender(v){const n=(v.name||'').toLowerCase();if(/\\b(male|man|masculine|männlich|hombre|homme|uomo|masculino)\\b|\\b(david|mark|daniel|george|thomas|stefan|paul|alexander|jorge|diego|pablo|carlos|enrique)\\b/.test(n))return 'male';if(/\\b(female|woman|feminine|weiblich|mujer|femme|donna|femenino)\\b|\\b(anna|sarah|samantha|victoria|karen|helena|maria|monica|lucia|sofia|laura)\\b/.test(n))return 'female';return 'unknown'}
+ function voiceGender(v){const n=(v.name||'').toLowerCase();if(/\b(male|man|masculine|männlich|hombre|homme|uomo|masculino)\b|\b(david|mark|daniel|george|thomas|stefan|paul|alexander|jorge|diego|pablo|carlos|enrique|conrad|christoph|stefano|henri|guy|andrew|ryan|matthew|liam|oliver|brian)\b/.test(n))return 'male';if(/\b(female|woman|feminine|weiblich|mujer|femme|donna|femenino)\b|\b(anna|sarah|samantha|victoria|karen|helena|maria|monica|lucia|sofia|laura|katja|heda|sabine|zira|jenny|aria|hazel|emma|amy|susan|julie|amelie)\b/.test(n))return 'female';return 'unknown'}
  function refreshVoices(){const select=$('odpc-voice-persona'),lang=$('odpc-voice-language').value.slice(0,2).toLowerCase(),filter=$('odpc-voice-gender').value,previous=voiceCatalog[Number(select.value)]?.voiceURI||'',all=('speechSynthesis' in window)?speechSynthesis.getVoices():[];voiceCatalog=all.filter(v=>(v.lang||'').toLowerCase().startsWith(lang)&& (filter==='all'||voiceGender(v)===filter));select.replaceChildren(new Option('Standard / System','auto'));voiceCatalog.forEach((v,i)=>{const name=v.name||('Stimme '+(i+1));select.add(new Option(name+' ('+v.lang+')',String(i)))});const idx=voiceCatalog.findIndex(v=>v.voiceURI===previous);select.value=idx>=0?String(idx):'auto';const count=all.filter(v=>(v.lang||'').toLowerCase().startsWith(lang)).length;$('odpc-voice-voicehelp').textContent=filter==='all'?count+' vom Browser bereitgestellte Stimmen für diese Sprache.':voiceCatalog.length?voiceCatalog.length+' anhand des Namens als '+(filter==='male'?'männlich':'weiblich')+' erkannte Stimmen.':'Keine eindeutig als '+(filter==='male'?'männlich':'weiblich')+' benannte Stimme gefunden. Bitte „Alle Stimmen“ wählen und Hörproben testen. Die Browser-API liefert keine verlässliche Geschlechtsangabe.';$('odpc-voice-preview').disabled=false;}
 
  function say(t){speaking=t;if(!$('odpc-voice-audio').checked)return;if(!('speechSynthesis' in window)||!window.SpeechSynthesisUtterance){status.textContent='Sprachausgabe nicht verfügbar. Text bleibt lesbar.';return}try{const ticket=++speechTicket;speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang=$('odpc-voice-language').value;u.rate=1.12;const id=$('odpc-voice-persona').value;if(id!=='auto'&&voiceCatalog[Number(id)])u.voice=voiceCatalog[Number(id)];u.onerror=e=>{if(ticket!==speechTicket)return;status.textContent='Sprachausgabe nicht möglich ('+(e.error||'Gerätefehler')+'). Bitte eine andere Stimme wählen oder Chrome direkt öffnen.'};speechSynthesis.speak(u)}catch(e){status.textContent='Sprachausgabe nicht verfügbar. Bitte Text lesen.'}}
@@ -64,7 +64,7 @@ add_action('wp_footer', function () {
  $('odpc-voice-persona').addEventListener('change',()=>{speechTicket++;if('speechSynthesis' in window)speechSynthesis.cancel();status.textContent='Stimmprofil ausgewählt. Tippe auf Stimme testen.'});
  $('odpc-voice-language').addEventListener('change',()=>{refreshVoices();localize()});
  $('odpc-voice-gender').addEventListener('change',refreshVoices);
- if('speechSynthesis' in window){speechSynthesis.addEventListener?.('voiceschanged',refreshVoices);refreshVoices();}localize();
+ if('speechSynthesis' in window){speechSynthesis.addEventListener?.('voiceschanged',refreshVoices);refreshVoices();setTimeout(refreshVoices,700);setTimeout(refreshVoices,2000);}localize();
 
  function stopAudio(){session++;speechTicket++;if(recognition){try{recognition.abort()}catch(e){}recognition=null}if('speechSynthesis' in window)speechSynthesis.cancel()}
  function append(role,t){const p=document.createElement('p');const b=document.createElement('strong');b.textContent=role+': ';p.append(b,document.createTextNode(t));log.append(p);log.scrollTop=log.scrollHeight}
