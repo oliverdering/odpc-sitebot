@@ -36,6 +36,22 @@ class VoiceRegression(unittest.TestCase):
             with self.subTest(feature=feature):
                 self.assertIn(feature, self.source)
 
+    def test_multilingual_release(self):
+        for locale in ("de-DE", "en-US", "es-ES", "fr-FR", "it-IT", "pt-PT", "pl-PL", "tr-TR"):
+            with self.subTest(locale=locale):
+                self.assertIn("value=\\""+locale+"\\"", self.source)
+                self.assertIn("'"+locale+"':{ui:", self.source)
+        self.assertIn("const questions=()=>", self.source)
+        self.assertNotIn("questions.length", self.source)
+        self.assertNotIn("questions[step]", self.source)
+
+    def test_voice_selection_and_mobile_layout(self):
+        for feature in ("speechSynthesis.getVoices()", "voiceschanged", "voiceCatalog",
+                        "odpc-voice-persona", "odpc-voice-preview", "max-width:600px",
+                        "odpc-voice-topclose", "el.replaceChildren(cb"):
+            with self.subTest(feature=feature):
+                self.assertIn(feature, self.source)
+
     def test_wp_bootstrap(self):
         self.assertIn("if (!defined('ABSPATH')) exit;", self.source)
         self.assertIn("add_action('wp_footer'", self.source)
