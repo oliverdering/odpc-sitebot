@@ -16,6 +16,14 @@ from deploy_helpermonkey_v4 import HOST, USER, PIN
 
 ROOT = '/clickandbuilds/Dering'
 EXPECTED = 'Für Unternehmen in Koblenz, Mayen-Koblenz und im Westerwald'
+TARGETS = {
+    'https://odpc.de': EXPECTED,
+    'https://odpc.de/einsatz-von-ki-je-nach-branche': 'KI nach Branche:',
+    'https://odpc.de/kunden-referenzen': 'WordPress und KI-Projekte',
+    'https://odpc.de/initiq': 'initIQ – Startflow, powered by odpc.de',
+    'https://odpc.de/praelex-ai': 'PraeLex.ai – Legal AI Assistant',
+    'https://odpc.de/praedoc': 'PraeDoc.ai – Logo für Dokumentendigitalisierung',
+}
 
 def fetch(url):
     with urlopen(Request(url, headers={'Cache-Control':'no-cache'}), timeout=30) as response:
@@ -82,7 +90,10 @@ def main():
                     canonicals = re.findall(r'<link\b[^>]*rel=[\"\x27]canonical[\"\x27][^>]*href=[\"\x27]([^\"\x27]+)',source,re.I)
                     if not canonicals:
                         canonicals = re.findall(r'<link\b[^>]*href=[\"\x27]([^\"\x27]+)[\"\x27][^>]*rel=[\"\x27]canonical[\"\x27]',source,re.I)
-                    if canonicals not in [['https://odpc.de'],['https://odpc.de/']] or EXPECTED in source:
+                    if len(canonicals) != 1:
+                        continue
+                    expected = TARGETS.get(canonicals[0].rstrip('/'))
+                    if expected is None or expected in source:
                         continue
                     digest = hashlib.sha256(raw).hexdigest()
                     backup = Path('backup-odpc-home-cache')/(digest+'.bin')
@@ -90,13 +101,14 @@ def main():
                     backup.write_bytes(raw)
                     sftp.remove(path)
                     removed += 1
-                    print('EXPIRED: verified stale homepage cache',posixpath.relpath(path,cache_root))
+                    print('EXPIRED: verified stale SEO cache',posixpath.relpath(path,cache_root))
             print('Homepage cache variants expired:',removed)
     finally:
         transport.close()
-    if EXPECTED not in fetch('https://odpc.de/'):
-        raise RuntimeError('Public homepage still has stale metadata')
-    print('PASS: normal public homepage serves updated regional SEO description')
+    for url, expected in TARGETS.items():
+        if expected not in fetch(url+'/'):
+            raise RuntimeError('Public page still has stale SEO metadata: '+url)
+        print('PASS: normal public URL serves updated SEO metadata:',url)
 
 if __name__ == '__main__':
     main()
