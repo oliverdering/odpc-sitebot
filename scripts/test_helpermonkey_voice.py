@@ -47,13 +47,13 @@ class VoiceRegression(unittest.TestCase):
 
     def test_voice_selection_and_mobile_layout(self):
         for feature in ("getVoices()", "voiceschanged", "voiceCatalog",
-                        "odpc-voice-persona", "odpc-voice-preview", "max-width:600px",
+                        "odpc-voice-gender", "odpc-voice-preview", "max-width:600px",
                         "odpc-voice-topclose", "el.replaceChildren(cb"):
             with self.subTest(feature=feature):
                 self.assertIn(feature, self.source)
 
     def test_gender_filter_release(self):
-        for feature in ("odpc-voice-gender", "voiceGender(v)", "refreshVoices()", "Alle Stimmen", "Männlich", "Weiblich"):
+        for feature in ("odpc-voice-gender", "voiceGender(v)", "refreshVoices()", "Männlich", "Weiblich"):
             with self.subTest(feature=feature):
                 self.assertIn(feature, self.source)
 

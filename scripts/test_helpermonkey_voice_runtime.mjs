@@ -6,8 +6,8 @@ const source=readFileSync('site-deploy/ai.odpc.de/odpc-monkey-voice-interview.ph
 const script=source.split('<script>')[1].split('</script>')[0];
 new vm.Script(script);
 const helpers=script.slice(script.indexOf(' function voiceGender('),script.indexOf(" $('odpc-voice-preview').addEventListener"));
-function setup(voices,locale='de-DE',gender='all'){
- const controls=Object.fromEntries(['persona','language','gender','preview','voicehelp','audio'].map(id=>['odpc-voice-'+id,{value:'',disabled:false,textContent:'',checked:true,options:[],replaceChildren(){this.options=[]},add(o){this.options.push(o)}}]));
+function setup(voices,locale='de-DE',gender='male'){
+ const controls=Object.fromEntries(['language','gender','preview','voicehelp','audio'].map(id=>['odpc-voice-'+id,{value:'',disabled:false,textContent:'',checked:true,options:[],replaceChildren(){this.options=[]},add(o){this.options.push(o)}}]));
  controls['odpc-voice-language'].value=locale;controls['odpc-voice-gender'].value=gender;
  const spoken=[],status={textContent:''};let available=voices;
  const synth={getVoices:()=>available,cancel(){},speak:u=>spoken.push(u)};
@@ -26,23 +26,34 @@ test('eight locales, two genders: selected voice has matching language and type'
  for(const lang of ['de-DE','en-US','es-ES','fr-FR','it-IT','pt-PT','pl-PL','tr-TR'])for(const gender of ['male','female']){
   const s=setup([voice('Male',lang),voice('Female',lang),voice('Other','ja-JP')],lang,gender);s.run('refreshVoices();say("Test")');
   assert.equal(s.spoken.length,1);assert.equal(s.spoken[0].voice.name,gender==='male'?'Male':'Female');assert.equal(s.spoken[0].lang,lang);
-  assert.ok(!s.controls['odpc-voice-persona'].options.some(o=>o.value==='auto'));
+  assert.equal(s.controls['odpc-voice-voicehelp'].hidden,true);
  }
 });
 test('missing gender never silently falls back to a different system voice',()=>{
  const s=setup([voice('Anna')],'de-DE','male');s.run('refreshVoices();say("Test")');assert.equal(s.spoken.length,0);assert.equal(s.controls['odpc-voice-preview'].disabled,true);
- s.controls['odpc-voice-gender'].value='all';s.run('refreshVoices();say("Test")');assert.equal(s.spoken[0].voice.name,'Anna');
+ s.controls['odpc-voice-gender'].value='female';s.run('refreshVoices();say("Test")');assert.equal(s.spoken[0].voice.name,'Anna');
 });
 test('empty and delayed voice catalogs update without fake options',()=>{
- const s=setup([]);s.run('refreshVoices()');assert.equal(s.controls['odpc-voice-persona'].disabled,true);
+ const s=setup([]);s.run('refreshVoices()');assert.equal(s.controls['odpc-voice-preview'].disabled,true);
  s.setVoices([voice('Stefan')]);s.run('refreshVoices()');assert.equal(s.controls['odpc-voice-preview'].disabled,false);
  s.setVoices([]);s.run('refreshVoices();say("Test")');assert.equal(s.spoken.length,0);
 });
-test('exact locale preferred; selected profile survives a reordered catalog',()=>{
- const s=setup([voice('David','en-GB'),voice('Mark','en-US')],'en-US','male');s.run('refreshVoices();say("Test")');assert.equal(s.spoken[0].voice.name,'Mark');
- s.controls['odpc-voice-persona'].value='1';s.setVoices([voice('Mark','en-US'),voice('David','en-GB')]);s.run('refreshVoices();say("Again")');assert.equal(s.spoken[1].voice.name,'David');
+test('voice is chosen automatically for the selected language and gender',()=>{
+ const s=setup([voice('David','en-GB'),voice('Mark','en-US'),voice('Anna','en-US')],'en-US','male');s.run('refreshVoices();say("Test")');assert.equal(s.spoken[0].voice.name,'Mark');
+ s.controls['odpc-voice-gender'].value='female';s.run('refreshVoices();say("Again")');assert.equal(s.spoken[1].voice.name,'Anna');
 });
 test('preview does not replace current question; muted output stays silent',()=>{
- const s=setup([voice('Anna')]);s.run('refreshVoices();say("Question");say("Preview",false)');assert.equal(s.run('speaking'),'Question');
+ const s=setup([voice('Anna')],'de-DE','female');s.run('refreshVoices();say("Question");say("Preview",false)');assert.equal(s.run('speaking'),'Question');
  s.controls['odpc-voice-audio'].checked=false;s.run('say("Muted")');assert.equal(s.spoken.length,2);
+});
+
+test('menu contains exactly two selectors, male/female and eight languages',()=>{
+ const markup=source.split('<style>')[0];
+ const selects=[...markup.matchAll(/<select id="([^"]+)">([\s\S]*?)<\/select>/g)];
+ assert.deepEqual(selects.map(s=>s[1]),['odpc-voice-gender','odpc-voice-language']);
+ const labels=[...selects[0][2].matchAll(/<option value="([^"]+)">([^<]+)<\/option>/g)].map(m=>[m[1],m[2]]);
+ assert.deepEqual(labels,[['male','Männlich'],['female','Weiblich']]);
+ assert.equal((selects[1][2].match(/<option /g)||[]).length,8);
+ assert.ok(!source.includes('odpc-voice-persona'));
+ assert.ok(!markup.includes('soweit erkennbar'));
 });
