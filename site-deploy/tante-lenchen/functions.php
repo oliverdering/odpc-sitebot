@@ -34,7 +34,7 @@ function tl_menu(){
       ['Kartoffelauflauf mit Brokkoli und Blumenkohl','16,50','Mit Käse überbacken']
     ]
   ];
-  echo '<p class="notice">Gültig ab 1. November 2026. Beide Saisonkarten bleiben zur Information sichtbar.</p>';
+
   foreach($groups as $category=>$items){
     echo '<section class="menu-group"><h2>'.esc_html($category).'</h2>';
     foreach($items as $item){
