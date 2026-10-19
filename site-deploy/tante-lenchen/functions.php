@@ -12,9 +12,9 @@ add_action('save_post_tl_dish',function($id){if(!isset($_POST['tl_dish_nonce'])|
 function tl_menu_legacy(){ $q=new WP_Query(['post_type'=>'tl_dish','posts_per_page'=>100,'orderby'=>'menu_order title','order'=>'ASC']);$groups=[];foreach($q->posts as $p){$category=get_post_meta($p->ID,'_tl_category',true)?:'Weitere Gerichte';$groups[$category][]=$p;}foreach($groups as $category=>$items){echo '<section class="menu-group"><h2>'.esc_html($category).'</h2>';foreach($items as $p){$price=get_post_meta($p->ID,'_tl_price',true);echo '<article class="dish"><div><strong>'.esc_html($p->post_title).'</strong><p>'.wp_kses_post($p->post_content).'</p></div><b>'.($price!==''?esc_html($price).' €':'Preis auf Anfrage').'</b></article>';}echo '</section>';}wp_reset_postdata();}
 
 function tl_menu(){
-  echo '<section id="sommerkarte"><h2>Sommerkarte · 1. April bis 31. Oktober</h2>';
+  echo '<div class="tl-menu-heading"><img src="https://odpc.de/wp-content/uploads/2026/02/FB_IMG_1771601697384.jpg" alt="Café Tante Lenchen – Logo" width="86" height="86"><div><h2>Unsere Speisekarten</h2><p>Wählen Sie Ihre Saisonkarte.</p></div></div><nav class="tl-season-tabs" aria-label="Saisonkarte wählen"><a href="#sommerkarte" data-season="sommerkarte">Sommerkarte</a><a href="#winterkarte" data-season="winterkarte">Winterkarte</a></nav><section id="sommerkarte" class="tl-season-panel"><h2>Sommerkarte</h2><p class="tl-menu-validity">Gültig vom 1. April bis 31. Oktober</p>';
   tl_menu_legacy();
-  echo '</section><section id="winterkarte"><h2>Winterkarte · ab 1. November</h2>';
+  echo '</section><section id="winterkarte" class="tl-season-panel"><h2>Winterkarte</h2><p class="tl-menu-validity">Gültig ab 1. November 2026</p>';
   $groups=[
     'Vorspeisen & Suppen'=>[
       ['Kürbis-Ingwer-Suppe','9,50'],['Gulaschsuppe','10,50'],['Maronensuppe','9,50'],
@@ -44,7 +44,7 @@ function tl_menu(){
     }
     echo '</section>';
   }
-  echo '</section>';
+  echo '</section><script>(function(){var tabs=document.querySelectorAll(".tl-season-tabs a"),panels=document.querySelectorAll(".tl-season-panel");function show(id){panels.forEach(function(p){p.hidden=p.id!==id});tabs.forEach(function(a){var on=a.dataset.season===id;a.classList.toggle("is-active",on);if(on)a.setAttribute("aria-current","true");else a.removeAttribute("aria-current")})}tabs.forEach(function(a){a.addEventListener("click",function(e){e.preventDefault();show(a.dataset.season);history.replaceState(null,"","#"+a.dataset.season)})});var m=new Date().getMonth()+1;show(location.hash==="#winterkarte"?"winterkarte":location.hash==="#sommerkarte"?"sommerkarte":m>=4&&m<=10?"sommerkarte":"winterkarte")})();</script>';
 }
 
 function tl_seed_menu(){if(get_option('tl_seeded'))return;$rows=[
