@@ -1,0 +1,37 @@
+name: Tante Lenchen / Permanent URL migration
+on:
+  push:
+    paths:
+      - 'site-deploy/odpc.de/odpc-lenchen-migration.php'
+      - 'scripts/deploy_lenchen_migration.py'
+      - '.github/workflows/tante-lenchen-migration.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: tante-lenchen-permanent-migration
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check source syntax
+        run: |
+          php -l site-deploy/odpc.de/odpc-lenchen-migration.php
+          python3 -m py_compile scripts/deploy_lenchen_migration.py
+      - name: Install SFTP client
+        run: python3 -m pip install 'paramiko>=3.4,<5'
+      - name: Publish permanent redirect and verify live
+        env:
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+        run: python3 scripts/deploy_lenchen_migration.py
+      - name: Retain previous configuration
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lenchen-migration-previous-configuration
+          path: backup-lenchen-migration/
+          if-no-files-found: ignore
+          retention-days: 30

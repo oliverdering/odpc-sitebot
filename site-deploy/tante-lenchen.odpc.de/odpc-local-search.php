@@ -36,7 +36,7 @@ add_action('wp', function () {
             '@type' => 'CafeOrCoffeeShop', '@id' => $base.'#cafe',
             'name' => 'Café Tante Lenchen', 'url' => $base,
             'description' => odpc_lenchen_search_pages()[''][1],
-            'telephone' => '+49 2621 9862644',
+            'telephone' => '+49 2621 6298644',
             'image' => 'https://odpc.de/wp-content/uploads/2026/02/FB_IMG_1771601697384.jpg',
             'address' => ['@type' => 'PostalAddress', 'streetAddress' => 'Auf Ahl 2', 'postalCode' => '56112', 'addressLocality' => 'Lahnstein', 'addressCountry' => 'DE'],
             'hasMenu' => home_url('/speisekarte/'),
