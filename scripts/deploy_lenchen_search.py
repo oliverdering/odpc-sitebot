@@ -17,7 +17,7 @@ from deploy_helpermonkey_v4 import HOST, USER, PIN
 ROOT = '/Lenchen'
 BASE = 'https://tante-lenchen.odpc.de/'
 SOURCE = Path('site-deploy/tante-lenchen.odpc.de/odpc-local-search.php')
-PAGES = ['', 'speisekarte/', 'kontakt/', 'anfahrt/', 'tisch-anfragen/', 'medien/', 'galerie/', 'impressum/', 'datenschutz/']
+PAGES = ['', 'speisekarte/', 'kontakt/', 'anfahrt/', 'tisch-anfragen/', 'medien/', 'impressum/', 'datenschutz/']
 
 
 def fetch(path):
