@@ -10,6 +10,7 @@ function hm_experience_route() {
  if (is_front_page()) return 'home';
  if (is_page('start')) return 'agents';
  if (is_page(['connector-einrichten','helper-monkey-einfach-starten-sprachassistent'])) return 'connector';
+ if(is_page()) return 'content';
  return '';
 }
 add_action('wp_enqueue_scripts', function () {
@@ -30,3 +31,19 @@ add_action('wp_footer', function(){ ?>
 })();
 </script>
 <?php },99);
+
+add_filter('the_content', function($content){
+ if(!hm_experience_route() || !class_exists('DOMDocument')) return $content;
+ $dom=new DOMDocument();$prior=libxml_use_internal_errors(true);
+ $dom->loadHTML('<?xml encoding="UTF-8"><div id="hm-preserved-content">'.$content.'</div>',LIBXML_HTML_NOIMPLIED|LIBXML_HTML_NODEFDTD);
+ libxml_clear_errors();libxml_use_internal_errors($prior);
+ $remove=[];
+ foreach($dom->getElementsByTagName('a') as $link){
+  $url=$link->getAttribute('href');$text=$link->textContent;
+  if(preg_match('~odpc\.de/(?:init|webdesign|ki-agenten-persoenlich|ki-dienstleistungen)~i',$url) || preg_match('/initIQ|Webdesign und Leistungen|Einrichtung gegen Honorar|IT, Unternehmen und Beratung|Webdesign und Live-Referenzen|Remote-Unterstützung direkt von ODPC/i',$text)) $remove[]=$link;
+ }
+ foreach($remove as $link)if($link->parentNode)$link->parentNode->removeChild($link);
+ $root=$dom->getElementById('hm-preserved-content');if(!$root)return $content;
+ $result='';foreach($root->childNodes as $node)$result.=$dom->saveHTML($node);
+ return $result;
+},100);
