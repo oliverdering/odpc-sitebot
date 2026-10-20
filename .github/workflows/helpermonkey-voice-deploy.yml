@@ -1,50 +1,57 @@
-name: Helper Monkey Voice / Live Deploy
-# Release 0.6.0: independent local male/female synthesis
+name: Helper Monkey / Guided Experience Live Release
 on:
   push:
     branches: [main]
     paths:
+      - 'site-deploy/ai.odpc.de/experience/**'
+      - 'site-deploy/ai.odpc.de/odpc-monkey-experience.php'
       - 'site-deploy/ai.odpc.de/odpc-monkey-voice-interview.php'
-      - 'scripts/deploy_helpermonkey_voice.py'
+      - 'scripts/restructure/**'
       - 'scripts/test_helpermonkey_voice.py'
       - 'scripts/test_helpermonkey_voice_runtime.mjs'
-      - 'scripts/test_helpermonkey_local_speech.mjs'
-      - 'scripts/prepare_voice_assets.py'
-      - 'site-deploy/ai.odpc.de/voice-assets/**'
       - '.github/workflows/helpermonkey-voice-deploy.yml'
   workflow_dispatch:
 permissions:
   contents: read
 concurrency:
-  group: helpermonkey-voice-live-release
+  group: helpermonkey-restructure
   cancel-in-progress: false
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
-      - name: Verify code
+      - name: Validate PHP and dialog behavior
         run: |
+          php -l site-deploy/ai.odpc.de/odpc-monkey-experience.php
+          php -l site-deploy/ai.odpc.de/experience/page.php
           php -l site-deploy/ai.odpc.de/odpc-monkey-voice-interview.php
-          python3 -m py_compile scripts/deploy_helpermonkey_voice.py scripts/test_helpermonkey_voice.py
+          php -l site-deploy/ai.odpc.de/odpc-search-metadata.php
+          php scripts/test_search_metadata.php
+          node --test scripts/restructure/test-guide.cjs scripts/test_helpermonkey_voice_runtime.mjs
           python3 scripts/test_helpermonkey_voice.py
-          node --test scripts/test_helpermonkey_voice_runtime.mjs
-          python3 scripts/prepare_voice_assets.py
-          node scripts/test_helpermonkey_local_speech.mjs
-      - name: Install SFTP client
+          python3 -m py_compile scripts/restructure/deploy.py
+      - name: Install existing deployment client
         run: python3 -m pip install 'paramiko>=3.4,<5'
-      - name: Publish with backup and live smoke test
+      - name: Publish coordinated release and verify live pages
         env:
           ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
           AI_ODPC_THEME_PATH: ${{ secrets.AI_ODPC_THEME_PATH }}
-        run: python3 scripts/deploy_helpermonkey_voice.py
-      - name: Retain rollback backup
+        run: python3 scripts/restructure/deploy.py
+      - name: Install browser QA
+        run: |
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+      - name: Test desktop, mobile and speech components
+        run: node scripts/restructure/live-qa.mjs
+      - name: Keep rollback files and QA evidence
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: helpermonkey-voice-previous
-          path: backup-helpermonkey-voice/
-          if-no-files-found: ignore
-          retention-days: 15
-
+          name: helpermonkey-experience-release-evidence
+          path: |
+            rollback-helpermonkey-experience/
+            helpermonkey-release-result.json
+            qa-helpermonkey-experience/
+          retention-days: 30

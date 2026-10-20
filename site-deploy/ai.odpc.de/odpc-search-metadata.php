@@ -2,14 +2,14 @@
 /**
  * Plugin Name: ODPC Search Metadata
  * Description: Server-rendered search metadata for the Helper Monkey public pages.
- * Version: 1.0.1
+ * Version: 1.0.2
  */
 if (!defined('ABSPATH')) exit;
 
 function odpc_ai_search_catalog() {
     return [
-        '' => ['Helper Monkey – kostenlose KI-Agenten & Tools | ODPC', 'Kostenlose KI-Agenten für Bewerbungen, E-Mail und Alltag. Helper Monkey von Oliver Dering: Starter herunterladen, im KI-Chat nutzen und Ergebnisse prüfen.'],
-        'start' => ['KI-Agenten & Downloads – Helper Monkey | ODPC', 'Vier kostenlose KI-Starter, Downloads und professionelle Fachpakete im Überblick. Passenden Helper Monkey auswählen und Schritt für Schritt starten.'],
+        '' => ['helper · monkey © – Deine KI. Dein Alltag. Einfach verbunden.', 'KI einfach einrichten: Monkey begleitet dich per Sprache oder Text. Offizielle Verbindungen für ChatGPT, Gemini und Claude, Smartphone-Einstieg und persönliche WhatsApp-Hilfe.'],
+        'start' => ['Die Monkeys – Aufgaben und Entwicklungsstand | helper · monkey', 'Finde den passenden Monkey für Bewerbung, Postfach, Büro oder Webseite. Klare Aufgaben, vorhandene Starter und nachvollziehbarer Entwicklungsstand.'],
         'helper-monkey-einfach-starten-sprachassistent' => ['KI-Einstieg mit Sprachassistent – Helper Monkey', 'Kostenloses Startinterview: Helper Monkey ermittelt deinen Einstieg anhand von Gerät, Erfahrung, Konten und Ziel. Mit Vorlesen und Spracheingabe im Browser.'],
         'helper-monkey-fuer-unternehmen-ki-kollegen' => ['KI-Assistenten für Unternehmen – Helper Monkey', 'Rollenbezogene KI-Assistenten für Büro, Marketing, Personal und Webdesign planen. Kostenlosen Bedarfscheck starten und ODPC-Begleitung kennenlernen.'],
         'connector-einrichten' => ['KI-Connector einrichten – Helper Monkey | ODPC', 'Prüfe verfügbare Kontoverbindungen für Gmail, Kalender und WordPress. Der kostenlose Connector-Starter erklärt Einrichtung, Berechtigungen und Freigaben.'],

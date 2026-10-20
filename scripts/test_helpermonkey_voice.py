@@ -41,7 +41,7 @@ class VoiceRegression(unittest.TestCase):
             with self.subTest(locale=locale):
                 self.assertIn('value="' + locale + '"', self.source)
                 self.assertIn("'"+locale+"':{ui:", self.source)
-        self.assertIn("const questions=()=>", self.source)
+        self.assertIn("const guide=window.MonkeyGuide", self.source)
         self.assertNotIn("questions.length", self.source)
         self.assertNotIn("questions[step]", self.source)
 
