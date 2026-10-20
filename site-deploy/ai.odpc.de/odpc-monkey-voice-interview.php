@@ -2,22 +2,24 @@
 /**
  * Plugin Name: ODPC Monkey Voice Interview
  * Description: Accessible opt-in voice interview and guided setup for Helper Monkey.
- * Version: 0.8.1
+ * Version: 0.9.0
  * License: GPL-3.0-or-later
  */
 if (!defined('ABSPATH')) exit;
 add_action('wp_footer', function () {
  if (is_admin()) return;
  ?>
- <div id="odpc-voice" class="odpc-voice" data-version="0.8.1" hidden role="dialog" aria-modal="true" aria-labelledby="odpc-voice-title" aria-describedby="odpc-voice-status">
+ <div id="odpc-voice" class="odpc-voice" data-version="0.9.0" hidden role="dialog" aria-modal="true" aria-labelledby="odpc-voice-title" aria-describedby="odpc-voice-status">
   <h2 id="odpc-voice-title">Monkey Einrichtungsassistent</h2><button type="button" id="odpc-voice-topclose" aria-label="Schließen">✕</button>
   <p id="odpc-voice-status" role="status" aria-live="polite">Bereit. Starte das Interview.</p>
+  <p id="hm-guide-progress" aria-live="polite"></p>
   <div id="odpc-voice-log" role="log" aria-label="Gesprächsverlauf" aria-live="polite"></div>
+  <div id="hm-guide-choices" aria-label="Antwort auswählen"></div>
   <details id="odpc-voice-settings"><summary>Stimme, Sprache &amp; weitere Funktionen</summary>
   <label id="label-gender" for="odpc-voice-gender">Stimme</label><select id="odpc-voice-gender"><option value="female" selected>Weiblich</option><option value="male">Männlich</option></select>
   <label id="label-language" for="odpc-voice-language">Sprache</label><select id="odpc-voice-language"><option value="de-DE">Deutsch</option><option value="en-US">English</option><option value="es-ES">Español</option><option value="fr-FR">Français</option><option value="it-IT">Italiano</option><option value="pt-PT">Português</option><option value="pl-PL">Polski</option><option value="tr-TR">Türkçe</option></select>
   <label for="odpc-voice-profile">Verfügbare Gerätestimme</label><select id="odpc-voice-profile"><option value="">Automatisch die passendste Stimme wählen</option></select>
-  <p id="odpc-voice-voicehelp" hidden role="status"></p><button type="button" id="odpc-voice-preview">🔊 Stimme testen</button><label id="label-audio" for="odpc-voice-audio"><input id="odpc-voice-audio" type="checkbox" checked> Sprachausgabe verwenden</label>
+  <p id="odpc-voice-voicehelp" hidden role="status"></p><button type="button" id="odpc-voice-preview">🔊 Stimme testen</button><label id="label-audio" for="odpc-voice-audio"><input id="odpc-voice-audio" type="checkbox"> Sprachausgabe verwenden</label>
   </details>
   <p id="hm-guide-privacy">Spracheingabe: Audio kann durch den Browseranbieter verarbeitet werden. Texteingabe ist ohne Mikrofon möglich. Keine Passwörter eingeben.</p>
   <label id="label-answer" for="odpc-voice-answer">Deine Antwort</label>
@@ -34,7 +36,7 @@ add_action('wp_footer', function () {
   <a id="hm-guide-help" href="https://wa.me/492654882183?text=Hallo%20Oliver%2C%20ich%20ben%C3%B6tige%20Hilfe%20beim%20KI-Einstieg." target="_blank" rel="noopener noreferrer">Du kommst nicht weiter? Oliver Dering hilft persönlich über WhatsApp ↗</a>
  </div>
  <a id="hm-personal-help" href="https://wa.me/492654882183?text=Hallo%20Oliver%2C%20ich%20ben%C3%B6tige%20Hilfe%20bei%20helper%20%C2%B7%20monkey." target="_blank" rel="noopener noreferrer">Oliver hilft · WhatsApp ↗</a>
- <button id="odpc-voice-open" type="button" aria-controls="odpc-voice" aria-expanded="false">🎙 Monkey sprechen</button>
+ <button id="odpc-voice-open" type="button" aria-controls="odpc-voice" aria-expanded="false">Connector öffnen</button>
  <style>
  #odpc-voice-open{position:fixed;left:12px;bottom:12px;z-index:9998;border:2px solid #fff;border-radius:28px;background:#164735;color:#fff;padding:12px 18px;cursor:pointer;font:700 15px system-ui}
  .odpc-voice{position:fixed;left:12px;bottom:72px;z-index:9998;width:min(430px,calc(100vw - 24px));max-height:min(78dvh,700px);overflow:auto;overscroll-behavior:contain;background:#fff;color:#193b2c;border:2px solid #8dbca5;border-radius:14px;padding:18px;box-shadow:0 8px 36px #0004;font:15px/1.5 system-ui}
@@ -50,7 +52,7 @@ add_action('wp_footer', function () {
  const SpeechRecognition=window.SpeechRecognition||window.webkitSpeechRecognition;
  let recognition=null, speaking='',step=0,answers={},active=false,session=0,returnFocus=null;
  const languages={
- 'de-DE':{ui:['Monkey Sprachassistent','Sprache','Stimme','Stimme testen','Sprachausgabe verwenden','Deine Antwort','Sprechen','Antwort senden','Wiederholen','Stopp','Neu starten','Zurück','Schließen','Monkey sprechen'],questions:['Was möchtest du mit Helper Monkey erreichen? Zum Beispiel eine Webseite verwalten, Bewerbungen schreiben, ein Fahrzeug diagnostizieren oder einen Assistenten einrichten.','Welches Gerät verwendest du? Android, iPhone, Windows, Mac oder etwas anderes?','Hast du bereits ein Google-Konto oder ein anderes Konto, das du verbinden möchtest? Bitte nenne niemals Passwörter.','Möchtest du zuerst kostenlos testen oder direkt die verfügbaren Einrichtungsschritte sehen?'],preview:'Hallo, ich bin dein helper monkey. Schön, dass du da bist. Wir gehen alles in Ruhe durch, Schritt für Schritt. Du kannst jederzeit nachfragen.',summary:'Danke. Ich habe deine Angaben aufgenommen. Ich zeige dir jetzt den passenden nächsten Schritt. Konten und Berechtigungen müssen ausdrücklich von dir freigegeben werden.',next:'Passenden Einrichtungsweg öffnen →'},
+ 'de-DE':{ui:['Connector · helper monkey','Sprache','Stimme','Stimme testen','Sprachausgabe verwenden','Deine Antwort','Sprechen','Antwort senden','Wiederholen','Stopp','Neu starten','Zurück','Schließen','Connector öffnen'],questions:['Was möchtest du mit Helper Monkey erreichen? Zum Beispiel eine Webseite verwalten, Bewerbungen schreiben, ein Fahrzeug diagnostizieren oder einen Assistenten einrichten.','Welches Gerät verwendest du? Android, iPhone, Windows, Mac oder etwas anderes?','Hast du bereits ein Google-Konto oder ein anderes Konto, das du verbinden möchtest? Bitte nenne niemals Passwörter.','Möchtest du zuerst kostenlos testen oder direkt die verfügbaren Einrichtungsschritte sehen?'],preview:'Hallo, ich bin dein helper monkey. Schön, dass du da bist. Wir gehen alles in Ruhe durch, Schritt für Schritt. Du kannst jederzeit nachfragen.',summary:'Danke. Ich habe deine Angaben aufgenommen. Ich zeige dir jetzt den passenden nächsten Schritt. Konten und Berechtigungen müssen ausdrücklich von dir freigegeben werden.',next:'Passenden Einrichtungsweg öffnen →'},
  'en-US':{ui:['Monkey Voice Assistant','Language','Voice','Test voice','Use speech output','Your answer','Speak','Send answer','Repeat','Stop','Restart','Back','Close','Talk to Monkey'],questions:['What would you like to do with Helper Monkey? For example manage a website, write job applications, diagnose a vehicle or set up an assistant.','What device are you using: Android, iPhone, Windows, Mac or something else?','Do you have a Google account or another account to connect? Never share passwords.','Would you like to try it for free first or see the setup steps?'],preview:'Hello, I am Helper Monkey. This is how this voice sounds.',summary:'Thank you. Here is your next step. Connecting accounts always requires your explicit permission.',next:'Open recommended setup →'},
  'es-ES':{ui:['Asistente de voz Monkey','Idioma','Voz','Probar voz','Usar voz','Tu respuesta','Hablar','Enviar respuesta','Repetir','Detener','Reiniciar','Atrás','Cerrar','Hablar con Monkey'],questions:['¿Qué quieres conseguir con Helper Monkey? Por ejemplo, gestionar una web, preparar solicitudes de empleo, diagnosticar un vehículo o configurar un asistente.','¿Qué dispositivo utilizas: Android, iPhone, Windows, Mac u otro?','¿Tienes una cuenta de Google u otra cuenta que quieras conectar? Nunca compartas contraseñas.','¿Prefieres probarlo gratis o ver los pasos de configuración?'],preview:'Hola, soy Helper Monkey. Así suena esta voz.',summary:'Gracias. Te mostraré el siguiente paso. La conexión de cuentas requiere tu autorización expresa.',next:'Abrir configuración recomendada →'},
  'fr-FR':{ui:['Assistant vocal Monkey','Langue','Voix','Tester la voix','Activer la voix','Votre réponse','Parler','Envoyer','Répéter','Arrêter','Recommencer','Retour','Fermer','Parler à Monkey'],questions:['Que souhaitez-vous faire avec Helper Monkey ? Gérer un site, préparer une candidature, diagnostiquer un véhicule ou configurer un assistant ?','Quel appareil utilisez-vous : Android, iPhone, Windows, Mac ou autre ?','Avez-vous un compte Google ou un autre compte à connecter ? Ne partagez jamais de mot de passe.','Préférez-vous essayer gratuitement ou consulter les étapes de configuration ?'],preview:'Bonjour, je suis Helper Monkey. Voici cette voix.',summary:'Merci. Voici la prochaine étape. Toute connexion de compte nécessite votre autorisation explicite.',next:'Ouvrir la configuration →'},
@@ -62,11 +64,12 @@ add_action('wp_footer', function () {
  const uiIds=['odpc-voice-title','label-language','label-gender','odpc-voice-preview','label-audio','label-answer','odpc-voice-mic','odpc-voice-send','odpc-voice-repeat','odpc-voice-stop','odpc-voice-reset','odpc-voice-back','odpc-voice-close','odpc-voice-open'];
  const guide=window.MonkeyGuide;
  if(!guide){status.textContent='Einrichtungsdialog konnte nicht geladen werden. Bitte neu laden oder Oliver über WhatsApp fragen.';return;}
+ const inlineMount=$('hm-connector-mount');
  let flow=guide.state(),history=[],lastPrompt='';
  try{const saved=JSON.parse(sessionStorage.getItem('hm-guide-v1')||'null');flow=guide.restore(saved)}catch(e){}
  const guideLang=()=> $('odpc-voice-language').value.split('-')[0];
  function persist(){try{sessionStorage.setItem('hm-guide-v1',JSON.stringify(flow))}catch(e){}}
- function localize(){const l=languages[$('odpc-voice-language').value];uiIds.forEach((id,i)=>{const el=$(id);if(el){if(id==='label-audio'){const cb=$('odpc-voice-audio');el.replaceChildren(cb,document.createTextNode(' '+l.ui[i]))}else el.textContent=(i===13?'🎙 ':'')+l.ui[i]}});$('odpc-voice-topclose').setAttribute('aria-label',l.ui[12]);if(active){stopAudio();ask();}}
+ function localize(){const l=languages[$('odpc-voice-language').value];uiIds.forEach((id,i)=>{const el=$(id);if(el){if(id==='label-audio'){const cb=$('odpc-voice-audio');el.replaceChildren(cb,document.createTextNode(' '+l.ui[i]))}else el.textContent=l.ui[i]}});$('odpc-voice-topclose').setAttribute('aria-label',l.ui[12]);if(active){stopAudio();ask();}}
 
  let voiceCatalog=[],speechTicket=0,voiceWaitTimer=null;
  function voiceGender(v){
@@ -133,13 +136,18 @@ add_action('wp_footer', function () {
   const href='https://wa.me/492654882183?text='+encodeURIComponent(text);
   $('hm-guide-help').href=href;$('hm-personal-help').href=href;
   panel.dataset.phase=flow.phase;panel.dataset.connectionResult=flow.result;
+  const stage={goal:1,platform:2,device:3,service:3,setup:4,test:5,done:5};
+  $('hm-guide-progress').textContent=(guideLang()==='de'?'Schritt ':'Step ')+stage[flow.phase]+' / 5 · '+phaseNames[flow.phase];
+  $('odpc-voice-back').disabled=!history.length;
  }
  function controls(){
   log.querySelectorAll('.hm-guide-next').forEach(e=>e.remove());updateHelp();
-  if(flow.phase==='platform'){const box=document.createElement('div');box.className='hm-guide-next';for(const name of ['chatgpt','gemini','claude']){const a=document.createElement('a');a.href=guide.setup({platform:name,services:[]},guideLang()).url;a.target='_blank';a.rel='noopener noreferrer';a.textContent=({chatgpt:'ChatGPT',gemini:'Gemini',claude:'Claude'})[name]+' ↗';box.append(a)}log.append(box);return;}
+  const choices=$('hm-guide-choices');choices.replaceChildren();
+  for(const choice of guide.choices(flow,guideLang())){const b=document.createElement('button');b.type='button';b.textContent=choice.label;b.dataset.choice=choice.value;b.onclick=()=>{input.value=choice.value;submit()};choices.append(b)}
+  if(flow.phase==='platform'){const box=document.createElement('div');box.className='hm-guide-next';const p=document.createElement('p');p.textContent=guideLang()==='de'?'Wähle deine KI oben aus. Noch kein Konto? Beim jeweiligen Originalanbieter kannst du ein kostenloses Konto anlegen.':'Choose your AI above. You can create a free account at its official website.';box.append(p);for(const name of ['chatgpt','gemini','claude']){const a=document.createElement('a');a.href=guide.setup({platform:name,services:[]},guideLang()).url;a.target='_blank';a.rel='noopener noreferrer';a.textContent=({chatgpt:'ChatGPT',gemini:'Gemini',claude:'Claude'})[name]+' ↗';box.append(a)}log.append(box);return;}
   if(!['setup','test','done'].includes(flow.phase))return;
   const data=guide.setup(flow,guideLang()),box=document.createElement('div');box.className='hm-guide-next';
-  const p=document.createElement('p');p.textContent=data.steps;box.append(p);
+  const p=document.createElement('p');p.textContent=data.steps;box.append(p);const cost=document.createElement('p');cost.className='hm-cost-note';cost.textContent=data.cost;box.append(cost);
   const link=document.createElement('a');link.href=data.url;link.textContent=(flow.platform||'KI-Konto')+' ↗';link.target='_blank';link.rel='noopener noreferrer';box.append(link);
   const help=document.createElement('a');help.href=data.help;help.textContent=guideLang()==='de'?'Offizielle Anleitung ↗':'Official guide ↗';help.target='_blank';help.rel='noopener noreferrer';box.append(help);
   if(['test','done'].includes(flow.phase)){
@@ -158,7 +166,7 @@ add_action('wp_footer', function () {
   if(result.accepted&&!result.help){history.push(JSON.parse(JSON.stringify(flow)));flow=result.state;persist()}
   input.value='';append('Monkey',result.text);lastPrompt=result.text;controls();say(result.text);
  }
- $('odpc-voice-open').addEventListener('click',()=>{returnFocus=document.activeElement;panel.hidden=false;$('odpc-voice-open').setAttribute('aria-expanded','true');if(!active){active=true;ask()}refreshVoices();input.focus()});
+ $('odpc-voice-open').addEventListener('click',()=>{returnFocus=document.activeElement;const mode=$('odpc-voice-open').dataset.startMode||'text';delete $('odpc-voice-open').dataset.startMode;$('odpc-voice-audio').checked=mode==='voice';if(mode!=='voice')stopAudio();panel.hidden=false;$('odpc-voice-open').setAttribute('aria-expanded','true');if(!active){active=true;ask()}else if(mode==='voice')say(lastPrompt);if(inlineMount)panel.scrollIntoView({block:'start',behavior:'instant'});refreshVoices();input.focus({preventScroll:!!inlineMount})});
  $('odpc-voice-topclose').addEventListener('click',()=>$('odpc-voice-close').click());
  $('odpc-voice-close').addEventListener('click',()=>{panel.hidden=true;$('odpc-voice-open').setAttribute('aria-expanded','false');stopAudio();(returnFocus&&returnFocus.isConnected?returnFocus:$('odpc-voice-open')).focus()});
  $('odpc-voice-send').addEventListener('click',submit);
@@ -170,17 +178,19 @@ add_action('wp_footer', function () {
  $('odpc-voice-mic').addEventListener('click',()=>{
   if(!SpeechRecognition){status.textContent='Spracheingabe wird hier nicht unterstützt. Bitte tippe deine Antwort.';input.focus();return}
   stopAudio();
+  $('odpc-voice-audio').checked=true;
   const ticket=++session;recognition=new SpeechRecognition();recognition.lang=$('odpc-voice-language').value;recognition.interimResults=false;recognition.maxAlternatives=1;
   recognition.onresult=e=>{if(ticket!==session||panel.hidden)return;input.value=e.results[0][0].transcript;status.textContent='Antwort erkannt.';submit();input.focus()};
   recognition.onerror=e=>{if(ticket!==session||panel.hidden)return;status.textContent='Mikrofonfehler: '+e.error+'. Bitte nutze die Texteingabe.'};
   recognition.onend=()=>{if(ticket===session)recognition=null};try{recognition.start();status.textContent='Ich höre zu …'}catch(e){status.textContent='Mikrofon konnte nicht gestartet werden.'}
  });
- document.addEventListener('keydown',e=>{if(panel.hidden)return;if(e.key==='Escape'){$('odpc-voice-close').click();return}if(e.key==='Tab'){const nodes=Array.from(panel.querySelectorAll('button:not([disabled]),input:not([disabled]),select:not([disabled]),a[href]')).filter(el=>el.getClientRects().length);if(!nodes.length)return;const first=nodes[0],last=nodes[nodes.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}}});
+ document.addEventListener('keydown',e=>{if(panel.hidden||inlineMount)return;if(e.key==='Escape'){$('odpc-voice-close').click();return}if(e.key==='Tab'){const nodes=Array.from(panel.querySelectorAll('button:not([disabled]),input:not([disabled]),select:not([disabled]),a[href]')).filter(el=>el.getClientRects().length);if(!nodes.length)return;const first=nodes[0],last=nodes[nodes.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}}});
  updateHelp();
  const extra=document.createElement('div');extra.className='odpc-voice-actions';
- ['odpc-voice-repeat','odpc-voice-reset','odpc-voice-back','odpc-voice-close'].forEach(id=>extra.append($(id)));$('odpc-voice-settings').append(extra);
+ ['odpc-voice-repeat','odpc-voice-reset','odpc-voice-close'].forEach(id=>extra.append($(id)));$('odpc-voice-settings').append(extra);
  const alias={de:'de-DE',en:'en-US',es:'es-ES',fr:'fr-FR',it:'it-IT',pt:'pt-PT',pl:'pl-PL',tr:'tr-TR'},requested=new URLSearchParams(location.search).get('lang');
  if(alias[requested]){$('odpc-voice-language').value=alias[requested];localize();refreshVoices()}
+ if(inlineMount){inlineMount.append(panel);panel.classList.add('hm-inline-connector');panel.setAttribute('role','region');panel.removeAttribute('aria-modal');panel.hidden=false;$('odpc-voice-topclose').hidden=true;$('odpc-voice-close').hidden=true;$('odpc-voice-open').setAttribute('aria-expanded','true');active=true;ask();}
  document.addEventListener('visibilitychange' ,()=>{if(document.hidden)stopAudio()});
  })();
  </script>
