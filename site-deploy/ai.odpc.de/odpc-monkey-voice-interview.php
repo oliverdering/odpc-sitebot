@@ -2,14 +2,14 @@
 /**
  * Plugin Name: ODPC Monkey Voice Interview
  * Description: Accessible opt-in voice interview and guided setup for Helper Monkey.
- * Version: 0.8.0
+ * Version: 0.8.1
  * License: GPL-3.0-or-later
  */
 if (!defined('ABSPATH')) exit;
 add_action('wp_footer', function () {
  if (is_admin()) return;
  ?>
- <div id="odpc-voice" class="odpc-voice" data-version="0.8.0" hidden role="dialog" aria-modal="true" aria-labelledby="odpc-voice-title" aria-describedby="odpc-voice-status">
+ <div id="odpc-voice" class="odpc-voice" data-version="0.8.1" hidden role="dialog" aria-modal="true" aria-labelledby="odpc-voice-title" aria-describedby="odpc-voice-status">
   <h2 id="odpc-voice-title">Monkey Einrichtungsassistent</h2><button type="button" id="odpc-voice-topclose" aria-label="Schließen">✕</button>
   <p id="odpc-voice-status" role="status" aria-live="polite">Bereit. Starte das Interview.</p>
   <div id="odpc-voice-log" role="log" aria-label="Gesprächsverlauf" aria-live="polite"></div>
@@ -50,7 +50,7 @@ add_action('wp_footer', function () {
  const SpeechRecognition=window.SpeechRecognition||window.webkitSpeechRecognition;
  let recognition=null, speaking='',step=0,answers={},active=false,session=0,returnFocus=null;
  const languages={
- 'de-DE':{ui:['Monkey Sprachassistent','Sprache','Stimme','Stimme testen','Sprachausgabe verwenden','Deine Antwort','Sprechen','Antwort senden','Wiederholen','Stopp','Neu starten','Zurück','Schließen','Monkey sprechen'],questions:['Was möchtest du mit Helper Monkey erreichen? Zum Beispiel eine Webseite verwalten, Bewerbungen schreiben, ein Fahrzeug diagnostizieren oder einen Assistenten einrichten.','Welches Gerät verwendest du? Android, iPhone, Windows, Mac oder etwas anderes?','Hast du bereits ein Google-Konto oder ein anderes Konto, das du verbinden möchtest? Bitte nenne niemals Passwörter.','Möchtest du zuerst kostenlos testen oder direkt die verfügbaren Einrichtungsschritte sehen?'],preview:'Hallo, ich bin Monkey. Schön, dass du da bist. Wir gehen alles in Ruhe durch, Schritt für Schritt. Du kannst jederzeit nachfragen.',summary:'Danke. Ich habe deine Angaben aufgenommen. Ich zeige dir jetzt den passenden nächsten Schritt. Konten und Berechtigungen müssen ausdrücklich von dir freigegeben werden.',next:'Passenden Einrichtungsweg öffnen →'},
+ 'de-DE':{ui:['Monkey Sprachassistent','Sprache','Stimme','Stimme testen','Sprachausgabe verwenden','Deine Antwort','Sprechen','Antwort senden','Wiederholen','Stopp','Neu starten','Zurück','Schließen','Monkey sprechen'],questions:['Was möchtest du mit Helper Monkey erreichen? Zum Beispiel eine Webseite verwalten, Bewerbungen schreiben, ein Fahrzeug diagnostizieren oder einen Assistenten einrichten.','Welches Gerät verwendest du? Android, iPhone, Windows, Mac oder etwas anderes?','Hast du bereits ein Google-Konto oder ein anderes Konto, das du verbinden möchtest? Bitte nenne niemals Passwörter.','Möchtest du zuerst kostenlos testen oder direkt die verfügbaren Einrichtungsschritte sehen?'],preview:'Hallo, ich bin dein helper monkey. Schön, dass du da bist. Wir gehen alles in Ruhe durch, Schritt für Schritt. Du kannst jederzeit nachfragen.',summary:'Danke. Ich habe deine Angaben aufgenommen. Ich zeige dir jetzt den passenden nächsten Schritt. Konten und Berechtigungen müssen ausdrücklich von dir freigegeben werden.',next:'Passenden Einrichtungsweg öffnen →'},
  'en-US':{ui:['Monkey Voice Assistant','Language','Voice','Test voice','Use speech output','Your answer','Speak','Send answer','Repeat','Stop','Restart','Back','Close','Talk to Monkey'],questions:['What would you like to do with Helper Monkey? For example manage a website, write job applications, diagnose a vehicle or set up an assistant.','What device are you using: Android, iPhone, Windows, Mac or something else?','Do you have a Google account or another account to connect? Never share passwords.','Would you like to try it for free first or see the setup steps?'],preview:'Hello, I am Helper Monkey. This is how this voice sounds.',summary:'Thank you. Here is your next step. Connecting accounts always requires your explicit permission.',next:'Open recommended setup →'},
  'es-ES':{ui:['Asistente de voz Monkey','Idioma','Voz','Probar voz','Usar voz','Tu respuesta','Hablar','Enviar respuesta','Repetir','Detener','Reiniciar','Atrás','Cerrar','Hablar con Monkey'],questions:['¿Qué quieres conseguir con Helper Monkey? Por ejemplo, gestionar una web, preparar solicitudes de empleo, diagnosticar un vehículo o configurar un asistente.','¿Qué dispositivo utilizas: Android, iPhone, Windows, Mac u otro?','¿Tienes una cuenta de Google u otra cuenta que quieras conectar? Nunca compartas contraseñas.','¿Prefieres probarlo gratis o ver los pasos de configuración?'],preview:'Hola, soy Helper Monkey. Así suena esta voz.',summary:'Gracias. Te mostraré el siguiente paso. La conexión de cuentas requiere tu autorización expresa.',next:'Abrir configuración recomendada →'},
  'fr-FR':{ui:['Assistant vocal Monkey','Langue','Voix','Tester la voix','Activer la voix','Votre réponse','Parler','Envoyer','Répéter','Arrêter','Recommencer','Retour','Fermer','Parler à Monkey'],questions:['Que souhaitez-vous faire avec Helper Monkey ? Gérer un site, préparer une candidature, diagnostiquer un véhicule ou configurer un assistant ?','Quel appareil utilisez-vous : Android, iPhone, Windows, Mac ou autre ?','Avez-vous un compte Google ou un autre compte à connecter ? Ne partagez jamais de mot de passe.','Préférez-vous essayer gratuitement ou consulter les étapes de configuration ?'],preview:'Bonjour, je suis Helper Monkey. Voici cette voix.',summary:'Merci. Voici la prochaine étape. Toute connexion de compte nécessite votre autorisation explicite.',next:'Ouvrir la configuration →'},
@@ -90,7 +90,7 @@ add_action('wp_footer', function () {
   const selected=voiceCatalog.find(v=>(v.voiceURI||v.name)===menu.value)||voiceCatalog[0];
   const native=!!window.speechSynthesis&&!!window.SpeechSynthesisUtterance&&!!selected;
   const help=$('odpc-voice-voicehelp');help.hidden=false;
-  help.textContent=native?'Gerätestimme: '+selected.name+'. Ruhiges Sprechtempo.'+(voiceGender(selected)==='unknown'?' Der Anbieter nennt kein Geschlecht. Bitte mit der Hörprobe prüfen.':''):'Noch keine passende Gerätestimme verfügbar. Auf Samsung: Einstellungen → Allgemeine Verwaltung → Text-zu-Sprache → Samsung oder Google → deutsche Sprachdaten. Danach diese Seite neu öffnen. Texteingabe funktioniert weiter.';
+  help.textContent=native?'Gerätestimme: '+selected.name+'. Zügiges, natürliches Sprechtempo.'+(voiceGender(selected)==='unknown'?' Der Anbieter nennt kein Geschlecht. Bitte mit der Hörprobe prüfen.':''):'Noch keine passende Gerätestimme verfügbar. Auf Samsung: Einstellungen → Allgemeine Verwaltung → Text-zu-Sprache → Samsung oder Google → deutsche Sprachdaten. Danach diese Seite neu öffnen. Texteingabe funktioniert weiter.';
   $('odpc-voice-preview').disabled=!native;menu.disabled=!native;
   return selected;
  }
@@ -110,9 +110,9 @@ add_action('wp_footer', function () {
    const next=()=>{
     if(ticket!==speechTicket||panel.hidden)return;
     if(index>=parts.length){panel.dataset.audioState='ended';status.textContent='Sprachausgabe beendet.';return}
-    const u=new SpeechSynthesisUtterance(parts[index++].trim());u.lang=$('odpc-voice-language').value;u.rate=0.94;u.pitch=1;u.volume=1;u.voice=selected;
+    const u=new SpeechSynthesisUtterance(parts[index++].trim());u.lang=$('odpc-voice-language').value;u.rate=1.12;u.pitch=1;u.volume=1;u.voice=selected;
     u.onstart=()=>{if(ticket===speechTicket)panel.dataset.audioState='playing'};
-    u.onend=()=>{if(ticket===speechTicket)voiceWaitTimer=setTimeout(next,280)};
+    u.onend=()=>{if(ticket===speechTicket)voiceWaitTimer=setTimeout(next,140)};
     u.onerror=()=>{if(ticket!==speechTicket)return;panel.dataset.audioState='error';status.textContent='Die Gerätestimme konnte nicht starten. Bitte „Stimme testen“ erneut antippen oder eine andere verfügbare Stimme wählen. Es wird keine künstliche Ersatzstimme zugeschaltet.'};
     try{speechSynthesis.speak(u)}catch(e){u.onerror()}
    };next();
