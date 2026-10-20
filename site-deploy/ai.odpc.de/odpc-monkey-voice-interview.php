@@ -178,9 +178,10 @@ add_action('wp_footer', function () {
  function submit(){
   const value=input.value.trim().slice(0,600);if(!value)return;
   const result=guide.reply(flow,value,guideLang());stopAudio();
-  if(!result.sensitive)append(guideLang()==='de'?'Du':'You',value);
+  const selectedChoice=guide.choices(flow,guideLang()).find(c=>c.value===value);
+  if(!result.sensitive)append(guideLang()==='de'?'Du':'You',selectedChoice?selectedChoice.label:value);
   if(result.accepted&&!result.help){history.push(JSON.parse(JSON.stringify(flow)));flow=result.state;persist()}
-  input.value='';append('Monkey',result.text);lastPrompt=result.text;controls();say(result.text);
+  input.value='';append('Monkey',result.text);lastPrompt=result.text;controls();if(result.accepted&&!result.help&&['done','work'].includes(flow.phase))panel.scrollTop=0;say(result.text);
  }
  function openConnector(){
   returnFocus=document.activeElement;const mode=$('odpc-voice-open').dataset.startMode||'text';delete $('odpc-voice-open').dataset.startMode;
