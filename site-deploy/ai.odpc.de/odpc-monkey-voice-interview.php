@@ -166,7 +166,7 @@ add_action('wp_footer', function () {
   if(result.accepted&&!result.help){history.push(JSON.parse(JSON.stringify(flow)));flow=result.state;persist()}
   input.value='';append('Monkey',result.text);lastPrompt=result.text;controls();say(result.text);
  }
- $('odpc-voice-open').addEventListener('click',()=>{returnFocus=document.activeElement;const mode=$('odpc-voice-open').dataset.startMode||'text';delete $('odpc-voice-open').dataset.startMode;$('odpc-voice-audio').checked=mode==='voice';if(mode!=='voice')stopAudio();panel.hidden=false;$('odpc-voice-open').setAttribute('aria-expanded','true');if(!active){active=true;ask()}else if(mode==='voice')say(lastPrompt);if(inlineMount)panel.scrollIntoView({block:'start',behavior:'instant'});refreshVoices();input.focus({preventScroll:!!inlineMount})});
+ $('odpc-voice-open').addEventListener('click',()=>{returnFocus=document.activeElement;const mode=$('odpc-voice-open').dataset.startMode||'text';delete $('odpc-voice-open').dataset.startMode;$('odpc-voice-audio').checked=mode==='voice';if(mode!=='voice')stopAudio();panel.hidden=false;$('odpc-voice-open').setAttribute('aria-expanded','true');if(!active){active=true;ask()}else if(mode==='voice')say(lastPrompt);if(inlineMount){panel.scrollIntoView({block:'start',behavior:'instant'});panel.focus({preventScroll:true})}else input.focus();refreshVoices()});
  $('odpc-voice-topclose').addEventListener('click',()=>$('odpc-voice-close').click());
  $('odpc-voice-close').addEventListener('click',()=>{panel.hidden=true;$('odpc-voice-open').setAttribute('aria-expanded','false');stopAudio();(returnFocus&&returnFocus.isConnected?returnFocus:$('odpc-voice-open')).focus()});
  $('odpc-voice-send').addEventListener('click',submit);
@@ -180,7 +180,7 @@ add_action('wp_footer', function () {
   stopAudio();
   $('odpc-voice-audio').checked=true;
   const ticket=++session;recognition=new SpeechRecognition();recognition.lang=$('odpc-voice-language').value;recognition.interimResults=false;recognition.maxAlternatives=1;
-  recognition.onresult=e=>{if(ticket!==session||panel.hidden)return;input.value=e.results[0][0].transcript;status.textContent='Antwort erkannt.';submit();input.focus()};
+  recognition.onresult=e=>{if(ticket!==session||panel.hidden)return;input.value=e.results[0][0].transcript;status.textContent='Antwort erkannt.';submit();if(!inlineMount)input.focus()};
   recognition.onerror=e=>{if(ticket!==session||panel.hidden)return;status.textContent='Mikrofonfehler: '+e.error+'. Bitte nutze die Texteingabe.'};
   recognition.onend=()=>{if(ticket===session)recognition=null};try{recognition.start();status.textContent='Ich höre zu …'}catch(e){status.textContent='Mikrofon konnte nicht gestartet werden.'}
  });
@@ -190,7 +190,7 @@ add_action('wp_footer', function () {
  ['odpc-voice-repeat','odpc-voice-reset','odpc-voice-close'].forEach(id=>extra.append($(id)));$('odpc-voice-settings').append(extra);
  const alias={de:'de-DE',en:'en-US',es:'es-ES',fr:'fr-FR',it:'it-IT',pt:'pt-PT',pl:'pl-PL',tr:'tr-TR'},requested=new URLSearchParams(location.search).get('lang');
  if(alias[requested]){$('odpc-voice-language').value=alias[requested];localize();refreshVoices()}
- if(inlineMount){inlineMount.append(panel);panel.classList.add('hm-inline-connector');panel.setAttribute('role','region');panel.removeAttribute('aria-modal');panel.hidden=false;$('odpc-voice-topclose').hidden=true;$('odpc-voice-close').hidden=true;$('odpc-voice-open').setAttribute('aria-expanded','true');active=true;ask();}
+ if(inlineMount){inlineMount.append(panel);panel.tabIndex=-1;panel.classList.add('hm-inline-connector');panel.setAttribute('role','region');panel.removeAttribute('aria-modal');panel.hidden=false;$('odpc-voice-topclose').hidden=true;$('odpc-voice-close').hidden=true;$('odpc-voice-open').setAttribute('aria-expanded','true');active=true;ask();}
  document.addEventListener('visibilitychange' ,()=>{if(document.hidden)stopAudio()});
  })();
  </script>

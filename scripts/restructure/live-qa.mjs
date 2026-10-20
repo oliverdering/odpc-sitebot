@@ -25,10 +25,11 @@ for(const [name,viewport]of [['desktop',{width:1440,height:1000}],['mobile',{wid
  assert.equal(await page.locator('.hm-header img').evaluate(e=>e.complete&&e.naturalWidth>0),true);
  assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),true);
  await page.screenshot({path:out+'/'+name+'-home.png',fullPage:true});pass(name+' homepage layout',{viewport,loadToNetworkIdleMs:Date.now()-start});
- await page.screenshot({path:out+'/'+name+'-home-viewport.png'});assert.equal(await page.locator('#kosten').count(),1);assert.equal(await page.locator('#olivers-praxis').count(),1);assert.match(await page.locator('#smartphone').innerText(),/SAMSUNG GALAXY S24 ULTRA/);
+ await page.screenshot({path:out+'/'+name+'-home-viewport.png'});assert.equal(await page.locator('#kosten').count(),1);assert.equal(await page.locator('#praxis').count(),1);assert.match(await page.locator('#smartphone').innerText(),/SAMSUNG GALAXY S24 ULTRA/);
  await page.evaluate(()=>window.scrollTo(0,1000));await page.waitForFunction(()=>window.scrollY>500);
  const sticky=await page.locator('.hm-header').boundingBox(),logo=await page.locator('.hm-header img').boundingBox();assert(sticky.y>=0&&sticky.y<25,name+' header remains pinned');assert(logo.y>=sticky.y&&logo.y+logo.height<=sticky.y+sticky.height+1,name+' logo stays visible');
  await page.screenshot({path:out+'/'+name+'-sticky-header.png'});pass(name+' floating logo header remains visible after scrolling');await page.evaluate(()=>window.scrollTo(0,0));await page.waitForFunction(()=>window.scrollY===0);
+ await page.getByRole('link',{name:'Connector jetzt einrichten →',exact:true}).click();assert.equal(await page.evaluate(()=>document.activeElement.id),'odpc-voice');
  assert.equal(await page.locator('#odpc-voice').getAttribute('role'),'region');assert.equal(await page.locator('#odpc-voice').isVisible(),true);assert.equal(await page.locator('#odpc-voice-audio').isChecked(),false);
  await page.locator('[data-choice="E-Mails organisieren"]').click();await page.locator('[data-choice="ChatGPT"]').click();await page.locator('[data-choice="Android"]').click();assert.equal(await page.locator('#odpc-voice').getAttribute('data-phase'),'service');
  await page.reload({waitUntil:'networkidle'});assert.equal(await page.locator('#odpc-voice').getAttribute('data-phase'),'service');await page.locator('[data-choice="Gmail"]').click();

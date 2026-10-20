@@ -27,7 +27,7 @@ add_filter('pre_get_document_title', function($title){
 add_action('wp_footer', function(){ ?>
 <script>
 (function(){
- document.querySelectorAll('[data-monkey-open]').forEach(function(b){b.addEventListener('click',function(){var v=document.getElementById('odpc-voice-open');if(v){v.dataset.startMode=b.dataset.monkeyMode||'text';v.click();}else location.href='/helper-monkey-einfach-starten-sprachassistent/';});});
+ document.querySelectorAll('[data-monkey-open]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();var v=document.getElementById('odpc-voice-open');if(v){v.dataset.startMode=b.dataset.monkeyMode||'text';v.click();}else location.href='/helper-monkey-einfach-starten-sprachassistent/';});});
 })();
 </script>
 <?php },99);
