@@ -2,18 +2,19 @@
 /**
  * Plugin Name: ODPC Monkey Voice Interview
  * Description: Accessible opt-in voice interview and guided setup for Helper Monkey.
- * Version: 0.9.1
+ * Version: 0.10.0
  * License: GPL-3.0-or-later
  */
 if (!defined('ABSPATH')) exit;
 add_action('wp_footer', function () {
  if (is_admin()) return;
  ?>
- <div id="odpc-voice" class="odpc-voice" data-version="0.9.1" hidden role="dialog" aria-modal="true" aria-labelledby="odpc-voice-title" aria-describedby="odpc-voice-status">
+ <div id="odpc-voice" class="odpc-voice" data-version="0.10.0" hidden role="dialog" aria-modal="true" aria-labelledby="odpc-voice-title" aria-describedby="odpc-voice-status">
   <h2 id="odpc-voice-title">Monkey Einrichtungsassistent</h2><button type="button" id="odpc-voice-topclose" aria-label="Schließen">✕</button>
   <p id="odpc-voice-status" role="status" aria-live="polite">Bereit. Starte das Interview.</p>
   <p id="hm-guide-progress" aria-live="polite"></p>
   <div id="odpc-voice-log" role="log" aria-label="Gesprächsverlauf" aria-live="polite"></div>
+  <div id="hm-guide-output"></div>
   <div id="hm-guide-choices" aria-label="Antwort auswählen"></div>
   <details id="odpc-voice-settings"><summary>Stimme, Sprache &amp; weitere Funktionen</summary>
   <label id="label-gender" for="odpc-voice-gender">Stimme</label><select id="odpc-voice-gender"><option value="female" selected>Weiblich</option><option value="male">Männlich</option></select>
@@ -133,26 +134,39 @@ add_action('wp_footer', function () {
  function stopAudio(){session++;speechTicket++;stopLocalAudio();if(recognition){try{recognition.abort()}catch(e){}recognition=null}if('speechSynthesis' in window)speechSynthesis.cancel()}
  function append(role,t){const p=document.createElement('p');const b=document.createElement('strong');b.textContent=role+': ';p.append(b,document.createTextNode(t));log.append(p);log.scrollTop=log.scrollHeight}
  function updateHelp(){
-  const phaseNames={goal:'Bedarf klären',platform:'KI-Konto auswählen',device:'Gerät auswählen',service:'Dienst auswählen',setup:'Konto offiziell verbinden',test:'Verbindung testen',done:'Nach dem Verbindungstest'};
+  const phaseNames={goal:'Bedarf klären',platform:'KI-Konto auswählen',device:'Gerät auswählen',service:'Dienst auswählen',setup:'Konto offiziell verbinden',test:'Verbindung testen',done:'Aufgabe auswählen',work:'Mit deiner KI arbeiten'};
   const text='Hallo Oliver, ich richte gerade helper · monkey ein und benötige Hilfe beim Schritt „'+phaseNames[flow.phase]+'“.';
   const href='https://wa.me/492654882183?text='+encodeURIComponent(text);
   $('hm-guide-help').href=href;$('hm-personal-help').href=href;
   panel.dataset.phase=flow.phase;panel.dataset.connectionResult=flow.result;
-  const stage={goal:1,platform:2,device:3,service:3,setup:4,test:5,done:5};
-  $('hm-guide-progress').textContent=(guideLang()==='de'?'Schritt ':'Step ')+stage[flow.phase]+' / 5 · '+phaseNames[flow.phase];
+  const stage={goal:1,platform:2,device:3,service:3,setup:4,test:5,done:5,work:5};
+  $('hm-guide-progress').textContent=(['done','work'].includes(flow.phase)?(guideLang()==='de'?'Einrichtung abgeschlossen · ':'Setup complete · '):'')+(guideLang()==='de'?'Schritt ':'Step ')+stage[flow.phase]+' / 5 · '+phaseNames[flow.phase];
   $('odpc-voice-back').disabled=!history.length;
  }
  function controls(){
   log.querySelectorAll('.hm-guide-next').forEach(e=>e.remove());updateHelp();
+  const output=$('hm-guide-output');output.replaceChildren();
   const choices=$('hm-guide-choices');choices.replaceChildren();
   for(const choice of guide.choices(flow,guideLang())){const b=document.createElement('button');b.type='button';b.textContent=choice.label;b.dataset.choice=choice.value;b.onclick=()=>{input.value=choice.value;submit()};choices.append(b)}
+  if(flow.phase==='done'){
+   const p=document.createElement('p');p.className='hm-task-intro';p.textContent=guideLang()==='de'?'Was möchtest du jetzt tatsächlich machen? Wähle eine Aufgabe. Wir bereiten den passenden Arbeitsauftrag für deine KI vor.':'What would you like to do now? Choose a task to prepare the prompt for your AI.';output.append(p);return;
+  }
+  if(flow.phase==='work'){
+   const data=guide.work(flow,guideLang());if(!data)return;
+   const title=document.createElement('h3');title.textContent=data.title;output.append(title);
+   const note=document.createElement('p');note.textContent=guideLang()==='de'?'1. Auftrag kopieren. 2. Dein KI-Konto öffnen. 3. Dort einfügen und absenden. Deine KI fragt nach den Details und prüft ihre Zugriffe.':'1. Copy the prompt. 2. Open your AI account. 3. Paste and send it there. Your AI will ask for details and check its access.';output.append(note);
+   const prompt=document.createElement('textarea');prompt.id='hm-guide-work-prompt';prompt.readOnly=true;prompt.setAttribute('aria-label',guideLang()==='de'?'Dein Arbeitsauftrag':'Your task prompt');prompt.value=data.prompt;output.append(prompt);
+   const copy=document.createElement('button');copy.type='button';copy.id='hm-guide-work-copy';copy.textContent=guideLang()==='de'?'Auftrag kopieren':'Copy task prompt';copy.onclick=async()=>{try{await navigator.clipboard.writeText(data.prompt);status.textContent=guideLang()==='de'?'Auftrag kopiert. Öffne jetzt '+data.platform+' und füge ihn dort ein.':'Copied. Open '+data.platform+' and paste it there.'}catch(e){prompt.focus();prompt.select();status.textContent=guideLang()==='de'?'Bitte den markierten Auftrag kopieren.':'Please copy the selected text.'}};output.append(copy);
+   const link=document.createElement('a');link.id='hm-guide-work-open';link.href=data.url;link.target='_blank';link.rel='noopener noreferrer';link.textContent=data.platform+(guideLang()==='de'?' öffnen ↗':' open ↗');output.append(link);
+   const fine=document.createElement('p');fine.className='hm-fine';fine.textContent=guideLang()==='de'?'Die Arbeit läuft in deinem KI-Konto mit dessen Freigaben. Diese Webseite kann deine Konten weder prüfen noch selbst Aufgaben dort ausführen.':'The task runs in your AI account with its permissions. This website cannot inspect or operate your accounts.';output.append(fine);return;
+  }
   if(flow.phase==='platform'){const box=document.createElement('div');box.className='hm-guide-next';const p=document.createElement('p');p.textContent=guideLang()==='de'?'Wähle deine KI oben aus. Noch kein Konto? Beim jeweiligen Originalanbieter kannst du ein kostenloses Konto anlegen.':'Choose your AI above. You can create a free account at its official website.';box.append(p);for(const name of ['chatgpt','gemini','claude']){const a=document.createElement('a');a.href=guide.setup({platform:name,services:[]},guideLang()).url;a.target='_blank';a.rel='noopener noreferrer';a.textContent=({chatgpt:'ChatGPT',gemini:'Gemini',claude:'Claude'})[name]+' ↗';box.append(a)}log.append(box);return;}
-  if(!['setup','test','done'].includes(flow.phase))return;
+  if(!['setup','test'].includes(flow.phase))return;
   const data=guide.setup(flow,guideLang()),box=document.createElement('div');box.className='hm-guide-next';
   const p=document.createElement('p');p.textContent=data.steps;box.append(p);const cost=document.createElement('p');cost.className='hm-cost-note';cost.textContent=data.cost;box.append(cost);
   const link=document.createElement('a');link.href=data.url;link.textContent=(flow.platform||'KI-Konto')+' ↗';link.target='_blank';link.rel='noopener noreferrer';box.append(link);
   const help=document.createElement('a');help.href=data.help;help.textContent=guideLang()==='de'?'Offizielle Anleitung ↗':'Official guide ↗';help.target='_blank';help.rel='noopener noreferrer';box.append(help);
-  if(['test','done'].includes(flow.phase)){
+  if(flow.phase==='test'){
    const label=document.createElement('label');label.htmlFor='hm-guide-test';label.textContent=guideLang()==='de'?'Dein Testauftrag für das KI-Konto':'Test prompt for your AI account';box.append(label);
    const prompt=document.createElement('textarea');prompt.id='hm-guide-test';prompt.readOnly=true;prompt.value=data.test;box.append(prompt);
    const copy=document.createElement('button');copy.type='button';copy.textContent=guideLang()==='de'?'Testauftrag kopieren':'Copy test prompt';copy.onclick=async()=>{try{await navigator.clipboard.writeText(data.test);status.textContent=guideLang()==='de'?'Kopiert. Jetzt im KI-Konto einfügen.':'Copied. Paste in your AI account.'}catch(e){prompt.focus();prompt.select();status.textContent='Bitte markierten Text kopieren.'}};box.append(copy);
