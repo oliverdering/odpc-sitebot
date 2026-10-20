@@ -12,6 +12,10 @@ for(const [name,viewport]of [['desktop',{width:1440,height:1000}],['mobile',{wid
  assert.equal(await page.locator('.hm-header img').evaluate(e=>e.complete&&e.naturalWidth>0),true);
  assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),true);
  await page.screenshot({path:out+'/'+name+'-home.png',fullPage:true});pass(name+' homepage layout',{viewport,loadToNetworkIdleMs:Date.now()-start});
+ await page.screenshot({path:out+'/'+name+'-home-viewport.png'});
+ await page.evaluate(()=>window.scrollTo(0,1000));await page.waitForFunction(()=>window.scrollY>500);
+ const sticky=await page.locator('.hm-header').boundingBox(),logo=await page.locator('.hm-header img').boundingBox();assert(sticky.y>=0&&sticky.y<25,name+' header remains pinned');assert(logo.y>=sticky.y&&logo.y+logo.height<=sticky.y+sticky.height+1,name+' logo stays visible');
+ await page.screenshot({path:out+'/'+name+'-sticky-header.png'});pass(name+' floating logo header remains visible after scrolling');await page.evaluate(()=>window.scrollTo(0,0));await page.waitForFunction(()=>window.scrollY===0);
  await page.getByRole('button',{name:'Mit Monkey sprechen',exact:false}).first().click();await page.locator('#odpc-voice-settings summary').click();await page.locator('#odpc-voice-audio').uncheck();await page.locator('#odpc-voice-settings summary').click();await page.locator('#odpc-voice-stop').click();
  async function answer(t){await page.locator('#odpc-voice-answer').fill(t);await page.locator('#odpc-voice-send').click()}
  await answer('Ich möchte E-Mails organisieren');await answer('ChatGPT');await answer('Samsung mit Gmail Kalender und Drive');
