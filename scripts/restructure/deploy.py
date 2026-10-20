@@ -62,8 +62,8 @@ def main():
     if not good:raise RuntimeError('Live release absent '+path)
     if 'initIQ / ODPC' in html or 'Dein KI-Team. Ein Klick zum Start.' in html:raise RuntimeError('Legacy homepage still served')
     report['checks'].append({'path':path,'status':code,'bytes':len(body)})
-   for path in ['/impressum/','/datenschutzerklaerung/','/werkstatt/','/webmaster-agent/']:
-    code,body=get('https://ai.odpc.de'+path)
+   for path in ['https://odpc.de/impressum','https://odpc.de/datenschutzerklaerung','https://ai.odpc.de/werkstatt/','https://ai.odpc.de/webmaster-agent/']:
+    code,body=get(path)
     if code!=200:raise RuntimeError('Preserved page failed '+path)
     report['checks'].append({'path':path,'status':code,'bytes':len(body)})
    for name in ['guide-core.js','experience.css']:
