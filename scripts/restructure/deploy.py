@@ -22,7 +22,11 @@ def main():
   actual='SHA256:'+base64.b64encode(hashlib.sha256(t.get_remote_server_key().asbytes()).digest()).decode().rstrip('=')
   if not hmac.compare_digest(actual,PIN):raise RuntimeError('Host key mismatch')
   t.auth_password(USER,os.environ['ODPC_SFTP_PASSWORD']);s=paramiko.SFTPClient.from_transport(t)
-  root=find_theme(s).split('/wp-content/themes/')[0];folder=root+'/wp-content/mu-plugins';s.stat(root+'/wp-config.php')
+  known='/ai-odpc/wp-content/themes/helpermonkey-business-v34-child'
+  try:
+   s.stat(known+'/style.css');theme=known
+  except FileNotFoundError:theme=find_theme(s)
+  root=theme.split('/wp-content/themes/')[0];folder=root+'/wp-content/mu-plugins';s.stat(root+'/wp-config.php')
   if not stat.S_ISDIR(s.lstat(folder).st_mode):raise RuntimeError('Unexpected plugin directory')
   # Existing local voice runtime is preserved, never replaced with an API.
   for name in ['espeakng.js','espeakng.worker.js']:

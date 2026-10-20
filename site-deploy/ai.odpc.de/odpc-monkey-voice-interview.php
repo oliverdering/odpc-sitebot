@@ -149,6 +149,7 @@ add_action('wp_footer', function () {
  }
  function controls(){
   log.querySelectorAll('.hm-guide-next').forEach(e=>e.remove());updateHelp();
+  if(flow.phase==='platform'){const box=document.createElement('div');box.className='hm-guide-next';for(const name of ['chatgpt','gemini','claude']){const a=document.createElement('a');a.href=guide.setup({platform:name,services:[]},guideLang()).url;a.target='_blank';a.rel='noopener noreferrer';a.textContent=({chatgpt:'ChatGPT',gemini:'Gemini',claude:'Claude'})[name]+' ↗';box.append(a)}log.append(box);return;}
   if(!['setup','test','done'].includes(flow.phase))return;
   const data=guide.setup(flow,guideLang()),box=document.createElement('div');box.className='hm-guide-next';
   const p=document.createElement('p');p.textContent=data.steps;box.append(p);
