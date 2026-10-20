@@ -32,3 +32,12 @@
 #hm-guide-output:empty{display:none}#hm-guide-output{margin:16px 0;padding:16px;border:1px solid #c6dbbc;border-radius:12px;background:#f0f6eb;font:14px/1.6 system-ui}#hm-guide-output h3{font-size:19px;margin:0 0 10px}#hm-guide-output p{margin:8px 0}#hm-guide-output textarea{width:100%;min-height:170px;resize:vertical;background:#fff;color:#193b2c;border:1px solid #aac49e;border-radius:8px;padding:11px;font:14px/1.5 system-ui}#hm-guide-output button,#hm-guide-output a{display:inline-block;min-height:44px;margin:12px 9px 3px 0;padding:11px 14px;border-radius:8px;border:1px solid #aac49e;background:#fff;color:#174c34;font:700 14px/1.5 system-ui;cursor:pointer}#hm-guide-output .hm-fine{font-size:12px}
 
 #odpc-voice[data-phase="done"] #odpc-voice-log,#odpc-voice[data-phase="work"] #odpc-voice-log{max-height:120px}
+
+html:has(body.hm-experience-page){scrollbar-gutter:stable}body.hm-connector-modal-open{position:fixed!important;top:var(--hm-page-y,0);left:var(--hm-page-x,0);width:100%}
+#odpc-voice.hm-inline-connector{overflow:visible;overscroll-behavior:auto;overflow-anchor:none;padding-bottom:38px}
+#odpc-voice #odpc-voice-log,#odpc-voice.hm-inline-connector #odpc-voice-log,#odpc-voice.hm-modal-connector #odpc-voice-log,#odpc-voice[data-phase="done"] #odpc-voice-log,#odpc-voice[data-phase="work"] #odpc-voice-log{max-height:none;overflow:visible}
+#hm-guide-history-log{overflow:visible;max-height:none;font-size:13px;line-height:1.6}#hm-guide-history-log p{margin:12px 0}#odpc-voice textarea[readonly]{overflow:hidden;resize:none;min-height:0}
+#odpc-voice.hm-modal-connector{top:calc(var(--hm-view-top,0px) + 8px);max-height:calc(var(--hm-view-height,100dvh) - 16px);scroll-behavior:auto;overflow-anchor:none;scroll-padding:58px 0 20px;-webkit-overflow-scrolling:touch}
+#odpc-voice input,#odpc-voice textarea{scroll-margin-top:58px;scroll-margin-bottom:24px}#hm-guide-work-preview{margin:10px 0}#hm-guide-work-preview summary{font-weight:650}#hm-guide-output>button,#hm-guide-output>a{scroll-margin-block:70px}
+
+#odpc-voice .hm-guide-next textarea[readonly],#odpc-voice #hm-guide-output textarea[readonly]{overflow:hidden;resize:none;min-height:0}
