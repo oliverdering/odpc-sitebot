@@ -14,8 +14,8 @@ function hm_experience_route() {
  return '';
 }
 add_action('wp_enqueue_scripts', function () {
- wp_enqueue_script('hm-guide-core', content_url('/mu-plugins/odpc-monkey-experience/guide-core.js'), [], '1.0.0', false);
- wp_enqueue_style('hm-experience', content_url('/mu-plugins/odpc-monkey-experience/experience.css'), [], '1.0.0');
+ wp_enqueue_script('hm-guide-core', content_url('/mu-plugins/odpc-monkey-experience/guide-core.js'), [], (string)filemtime(__DIR__.'/odpc-monkey-experience/guide-core.js'), false);
+ wp_enqueue_style('hm-experience', content_url('/mu-plugins/odpc-monkey-experience/experience.css'), [], (string)filemtime(__DIR__.'/odpc-monkey-experience/experience.css'));
 }, 20);
 add_filter('template_include', function ($template) {
  return hm_experience_route() ? __DIR__.'/odpc-monkey-experience/page.php' : $template;
