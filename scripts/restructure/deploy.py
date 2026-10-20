@@ -14,6 +14,8 @@ FILES={
  'odpc-monkey-voice-interview.php':SOURCE/'odpc-monkey-voice-interview.php',
  'odpc-search-metadata.php':SOURCE/'odpc-search-metadata.php',
 }
+DOWNLOADS=['helpermonkey-connector-multilingual-v3.1.zip','helpermonkey-lebenslauf-multilingual-v3.1.zip','helpermonkey-bewerbung-multilingual-v3.1.zip','helpermonkey-postfach-multilingual-v3.1.zip','helpermonkey-gespraechsuebersetzer-multilingual-v1.0.zip','helpermonkey-gespraechsuebersetzer-v1.0.txt','helpermonkey-sprachmodul-v1.0.txt']
+FILES.update({'odpc-monkey-experience/downloads/'+name:Path('downloads')/name for name in DOWNLOADS})
 def get(url):
  with urlopen(Request(url,headers={'Cache-Control':'no-cache','User-Agent':'HelperMonkey-Release-QA/1'}),timeout=35) as f:return f.status,f.read()
 def main():
@@ -32,6 +34,10 @@ def main():
   try:
    if not stat.S_ISDIR(s.lstat(dest).st_mode):raise RuntimeError('Unsafe asset directory')
   except FileNotFoundError:s.mkdir(dest)
+  downloads=dest+'/downloads'
+  try:
+   if not stat.S_ISDIR(s.lstat(downloads).st_mode):raise RuntimeError('Unsafe downloads directory')
+  except FileNotFoundError:s.mkdir(downloads)
   previous={};written=[];report={'site':'https://ai.odpc.de','commit':os.environ.get('GITHUB_SHA'),'files':{},'checks':[],'full_backup':'User confirmed pre-existing full backup; additional full backup skipped'}
   rollback=Path('rollback-helpermonkey-experience');rollback.mkdir(exist_ok=True)
   for name,source in FILES.items():
@@ -69,6 +75,10 @@ def main():
    for name in ['guide-core.js','experience.css']:
     code,data=get('https://ai.odpc.de/wp-content/mu-plugins/odpc-monkey-experience/'+name+'?v=1.0.0')
     if data!=(SOURCE/'experience'/name).read_bytes():raise RuntimeError('Public asset mismatch '+name)
+   for name in DOWNLOADS:
+    code,data=get('https://ai.odpc.de/wp-content/mu-plugins/odpc-monkey-experience/downloads/'+name)
+    if code!=200 or data!=(Path('downloads')/name).read_bytes():raise RuntimeError('Public download mismatch '+name)
+    report['checks'].append({'download':name,'status':code,'bytes':len(data)})
    print('PASS: coordinated release, uploaded checksums, four entry pages and four retained pages verified')
    Path('helpermonkey-release-result.json').write_text(json.dumps(report,indent=2))
   except Exception:

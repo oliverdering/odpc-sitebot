@@ -41,6 +41,16 @@ add_filter('the_content', function($content){
  $remove=[];
  foreach($dom->getElementsByTagName('a') as $link){
   $url=$link->getAttribute('href');$text=$link->textContent;
+  // Public downloads stay on our domain; repository and release evidence are internal.
+  $host=strtolower((string)parse_url($url,PHP_URL_HOST));
+  if(in_array($host,['github.com','www.github.com','raw.githubusercontent.com','objects.githubusercontent.com'],true)){
+   $file=basename((string)parse_url($url,PHP_URL_PATH));
+   $downloads=['helpermonkey-connector-multilingual-v3.1.zip','helpermonkey-lebenslauf-multilingual-v3.1.zip','helpermonkey-bewerbung-multilingual-v3.1.zip','helpermonkey-postfach-multilingual-v3.1.zip','helpermonkey-gespraechsuebersetzer-multilingual-v1.0.zip','helpermonkey-gespraechsuebersetzer-v1.0.txt','helpermonkey-sprachmodul-v1.0.txt'];
+   if($host==='raw.githubusercontent.com' && strpos((string)parse_url($url,PHP_URL_PATH),'/oliverdering/odpc-sitebot/main/downloads/')===0 && in_array($file,$downloads,true)){
+    $link->setAttribute('href',content_url('/mu-plugins/odpc-monkey-experience/downloads/'.$file));
+   }else{$remove[]=$link;}
+   continue;
+  }
   if(preg_match('~odpc\.de/(?:init|webdesign|ki-agenten-persoenlich|ki-dienstleistungen)~i',$url) || preg_match('/initIQ|Webdesign und Leistungen|Einrichtung gegen Honorar|IT, Unternehmen und Beratung|Webdesign und Live-Referenzen|Remote-Unterstützung direkt von ODPC/i',$text)) $remove[]=$link;
  }
  foreach($remove as $link)if($link->parentNode)$link->parentNode->removeChild($link);

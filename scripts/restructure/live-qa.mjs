@@ -6,6 +6,19 @@ const browser=await chromium.launch({args:['--autoplay-policy=no-user-gesture-re
 const report={time:new Date().toISOString(),checks:[],limitations:['No physical microphone recording or acoustic listening test on Samsung S24 Ultra or iPhone.','Account authorization and account-reading tests require the visitor’s own session.','Synthetic recognition test verifies handler and dialog; it does not verify the browser vendor recognition service.']};
 function pass(name,details){report.checks.push({name,status:'pass',...details});console.log('PASS',name)}
 try{
+const linkContext=await browser.newContext();
+const pagesResponse=await linkContext.request.get('https://ai.odpc.de/wp-json/wp/v2/pages?per_page=100&status=publish');assert.equal(pagesResponse.status(),200);
+const publicPages=await pagesResponse.json();const paths=[...new Set(['https://ai.odpc.de/',...publicPages.map(p=>p.link)])];
+const linkPage=await linkContext.newPage();let downloadLinks=0;
+for(const url of paths){
+ const response=await linkPage.goto(url,{waitUntil:'domcontentloaded'});assert.equal(response.status(),200,url);
+ const hrefs=await linkPage.locator('a[href]').evaluateAll(nodes=>nodes.map(a=>a.href));
+ const internalLinks=hrefs.filter(h=>{const host=new URL(h).hostname;return host==='github.com'||host.endsWith('.github.com')||host==='githubusercontent.com'||host.endsWith('.githubusercontent.com')});
+ assert.deepEqual(internalLinks,[],url+' must not link visitors to repositories or source downloads');
+ downloadLinks+=hrefs.filter(h=>h.includes('/odpc-monkey-experience/downloads/')).length;
+}
+assert(downloadLinks>=9,'preserved language downloads must remain available on our own domain');
+pass('all published pages keep repository links internal and downloads on our domain',{pages:paths.length,localDownloadLinks:downloadLinks});await linkContext.close();
 for(const [name,viewport]of [['desktop',{width:1440,height:1000}],['mobile',{width:390,height:844}]]){
  const context=await browser.newContext({viewport});const page=await context.newPage();const errors=[];page.on('pageerror',e=>errors.push(e.message));
  const start=Date.now();const res=await page.goto('https://ai.odpc.de/?hm_qa='+Date.now(),{waitUntil:'networkidle'});assert.equal(res.status(),200);assert.equal(await page.locator('h1').count(),1);
