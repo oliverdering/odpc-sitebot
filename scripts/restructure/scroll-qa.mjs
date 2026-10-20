@@ -8,7 +8,11 @@ export async function verifyScrolling(page,context,name,viewport,out,pass){
  before=await page.evaluate(()=>scrollY);await page.mouse.wheel(0,-160);await page.waitForFunction(y=>scrollY<y-60,before);pass(name+' inline Connector allows page scrolling in both directions');
  if(name==='mobile'){
   await positionInline();box=await panel.boundingBox();before=await page.evaluate(()=>scrollY);
-  const client=await context.newCDPSession(page);await client.send('Input.synthesizeScrollGesture',{x:box.x+box.width/2,y:Math.min(viewport.height-150,box.y+100),yDistance:-190,gestureSourceType:'touch',speed:500});await page.waitForFunction(y=>scrollY>y+70,before);await client.detach();pass('mobile emulated touch gesture scrolls the page over the Connector');
+  const client=await context.newCDPSession(page),x=box.x+box.width/2,y=Math.min(viewport.height-150,box.y+100);
+  await client.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x,y}]});
+  for(let i=1;i<=12;i++){await client.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{x,y:y-i*16}]});await page.waitForTimeout(16)}
+  await client.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});
+  console.log('TOUCH_SCROLL',JSON.stringify({before,after:await page.evaluate(()=>scrollY),start:{x,y}}));await page.waitForFunction(y=>scrollY>y+70,before);await client.detach();pass('mobile emulated touch gesture scrolls the page over the Connector');
  }
  const saved=await page.evaluate(()=>scrollY),savedBodyPosition=await page.locator('body').evaluate(e=>getComputedStyle(e).position);await page.locator('#odpc-voice-open').click();assert.equal(await panel.getAttribute('role'),'dialog');assert.equal(await page.locator('body').evaluate(e=>getComputedStyle(e).position),'fixed');assert(Math.abs((await page.locator('body').evaluate(e=>parseFloat(getComputedStyle(e).top)))+saved)<2);
  await page.locator('#odpc-voice-settings summary').click();await page.mouse.move(viewport.width/2,120);await page.mouse.wheel(0,650);await page.waitForFunction(()=>document.querySelector('#odpc-voice').scrollTop>25);assert.equal(await page.evaluate(()=>scrollY),0);
