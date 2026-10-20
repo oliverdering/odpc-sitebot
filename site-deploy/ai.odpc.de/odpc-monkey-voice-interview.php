@@ -2,14 +2,14 @@
 /**
  * Plugin Name: ODPC Monkey Voice Interview
  * Description: Accessible opt-in voice interview and guided setup for Helper Monkey.
- * Version: 0.9.0
+ * Version: 0.9.1
  * License: GPL-3.0-or-later
  */
 if (!defined('ABSPATH')) exit;
 add_action('wp_footer', function () {
  if (is_admin()) return;
  ?>
- <div id="odpc-voice" class="odpc-voice" data-version="0.9.0" hidden role="dialog" aria-modal="true" aria-labelledby="odpc-voice-title" aria-describedby="odpc-voice-status">
+ <div id="odpc-voice" class="odpc-voice" data-version="0.9.1" hidden role="dialog" aria-modal="true" aria-labelledby="odpc-voice-title" aria-describedby="odpc-voice-status">
   <h2 id="odpc-voice-title">Monkey Einrichtungsassistent</h2><button type="button" id="odpc-voice-topclose" aria-label="Schließen">✕</button>
   <p id="odpc-voice-status" role="status" aria-live="polite">Bereit. Starte das Interview.</p>
   <p id="hm-guide-progress" aria-live="polite"></p>
@@ -65,6 +65,8 @@ add_action('wp_footer', function () {
  const guide=window.MonkeyGuide;
  if(!guide){status.textContent='Einrichtungsdialog konnte nicht geladen werden. Bitte neu laden oder Oliver über WhatsApp fragen.';return;}
  const inlineMount=$('hm-connector-mount');
+ let modalOpen=false,inertBefore=[];
+ const backdrop=document.createElement('div');backdrop.id='hm-connector-backdrop';backdrop.hidden=true;document.body.append(backdrop);
  let flow=guide.state(),history=[],lastPrompt='';
  try{const saved=JSON.parse(sessionStorage.getItem('hm-guide-v1')||'null');flow=guide.restore(saved)}catch(e){}
  const guideLang=()=> $('odpc-voice-language').value.split('-')[0];
@@ -166,9 +168,25 @@ add_action('wp_footer', function () {
   if(result.accepted&&!result.help){history.push(JSON.parse(JSON.stringify(flow)));flow=result.state;persist()}
   input.value='';append('Monkey',result.text);lastPrompt=result.text;controls();say(result.text);
  }
- $('odpc-voice-open').addEventListener('click',()=>{returnFocus=document.activeElement;const mode=$('odpc-voice-open').dataset.startMode||'text';delete $('odpc-voice-open').dataset.startMode;$('odpc-voice-audio').checked=mode==='voice';if(mode!=='voice')stopAudio();panel.hidden=false;$('odpc-voice-open').setAttribute('aria-expanded','true');if(!active){active=true;ask()}else if(mode==='voice')say(lastPrompt);if(inlineMount){panel.scrollIntoView({block:'start',behavior:'instant'});panel.focus({preventScroll:true})}else input.focus();refreshVoices()});
- $('odpc-voice-topclose').addEventListener('click',()=>$('odpc-voice-close').click());
- $('odpc-voice-close').addEventListener('click',()=>{panel.hidden=true;$('odpc-voice-open').setAttribute('aria-expanded','false');stopAudio();(returnFocus&&returnFocus.isConnected?returnFocus:$('odpc-voice-open')).focus()});
+ function openConnector(){
+  returnFocus=document.activeElement;const mode=$('odpc-voice-open').dataset.startMode||'text';delete $('odpc-voice-open').dataset.startMode;
+  $('odpc-voice-audio').checked=mode==='voice';if(mode!=='voice')stopAudio();
+  if(inlineMount&&!modalOpen)inlineMount.style.minHeight=panel.offsetHeight+'px';
+  if(!modalOpen){inertBefore=Array.from(document.querySelectorAll('main,header.hm-header,footer.hm-footer')).map(el=>[el,el.inert]);inertBefore.forEach(([el])=>el.inert=true)}
+  modalOpen=true;document.body.append(panel);panel.classList.remove('hm-inline-connector');panel.classList.add('hm-modal-connector');panel.tabIndex=-1;panel.setAttribute('role','dialog');panel.setAttribute('aria-modal','true');panel.hidden=false;
+  backdrop.hidden=false;document.body.classList.add('hm-connector-modal-open');$('odpc-voice-topclose').hidden=false;$('odpc-voice-close').hidden=false;$('odpc-voice-open').setAttribute('aria-expanded','true');
+  if(!active){active=true;ask()}else if(mode==='voice')say(lastPrompt);
+  panel.scrollTop=0;panel.focus({preventScroll:true});refreshVoices();
+ }
+ function closeConnector(){
+  stopAudio();modalOpen=false;backdrop.hidden=true;document.body.classList.remove('hm-connector-modal-open');inertBefore.forEach(([el,value])=>el.inert=value);inertBefore=[];panel.classList.remove('hm-modal-connector');
+  if(inlineMount){inlineMount.style.minHeight='';inlineMount.append(panel);panel.classList.add('hm-inline-connector');panel.setAttribute('role','region');panel.removeAttribute('aria-modal');panel.hidden=false;$('odpc-voice-topclose').hidden=true;$('odpc-voice-close').hidden=true}else panel.hidden=true;
+  $('odpc-voice-open').setAttribute('aria-expanded','false');(returnFocus&&returnFocus.isConnected?returnFocus:$('odpc-voice-open')).focus({preventScroll:true});
+ }
+ $('odpc-voice-open').addEventListener('click',openConnector);
+ $('odpc-voice-topclose').addEventListener('click',closeConnector);
+ $('odpc-voice-close').addEventListener('click',closeConnector);
+ backdrop.addEventListener('click',closeConnector);
  $('odpc-voice-send').addEventListener('click',submit);
  $('odpc-voice-stop').addEventListener('click',()=>{stopAudio();status.textContent='Audio gestoppt. Texteingabe ist weiterhin möglich.'});
  $('odpc-voice-reset').addEventListener('click',()=>{stopAudio();flow=guide.state();history=[];persist();active=true;panel.dataset.finished='no';log.replaceChildren();input.value='';input.disabled=false;$('odpc-voice-send').disabled=false;$('odpc-voice-mic').disabled=false;ask();input.focus()});
@@ -184,13 +202,13 @@ add_action('wp_footer', function () {
   recognition.onerror=e=>{if(ticket!==session||panel.hidden)return;status.textContent='Mikrofonfehler: '+e.error+'. Bitte nutze die Texteingabe.'};
   recognition.onend=()=>{if(ticket===session)recognition=null};try{recognition.start();status.textContent='Ich höre zu …'}catch(e){status.textContent='Mikrofon konnte nicht gestartet werden.'}
  });
- document.addEventListener('keydown',e=>{if(panel.hidden||inlineMount)return;if(e.key==='Escape'){$('odpc-voice-close').click();return}if(e.key==='Tab'){const nodes=Array.from(panel.querySelectorAll('button:not([disabled]),input:not([disabled]),select:not([disabled]),a[href]')).filter(el=>el.getClientRects().length);if(!nodes.length)return;const first=nodes[0],last=nodes[nodes.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}}});
+ document.addEventListener('keydown',e=>{if(panel.hidden||!modalOpen)return;if(e.key==='Escape'){$('odpc-voice-close').click();return}if(e.key==='Tab'){const nodes=Array.from(panel.querySelectorAll('button:not([disabled]),input:not([disabled]),select:not([disabled]),textarea:not([disabled]),summary,a[href]')).filter(el=>el.getClientRects().length);if(!nodes.length)return;const first=nodes[0],last=nodes[nodes.length-1];if(e.shiftKey&&(document.activeElement===first||document.activeElement===panel)){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}}});
  updateHelp();
  const extra=document.createElement('div');extra.className='odpc-voice-actions';
  ['odpc-voice-repeat','odpc-voice-reset','odpc-voice-close'].forEach(id=>extra.append($(id)));$('odpc-voice-settings').append(extra);
  const alias={de:'de-DE',en:'en-US',es:'es-ES',fr:'fr-FR',it:'it-IT',pt:'pt-PT',pl:'pl-PL',tr:'tr-TR'},requested=new URLSearchParams(location.search).get('lang');
  if(alias[requested]){$('odpc-voice-language').value=alias[requested];localize();refreshVoices()}
- if(inlineMount){inlineMount.append(panel);panel.tabIndex=-1;panel.classList.add('hm-inline-connector');panel.setAttribute('role','region');panel.removeAttribute('aria-modal');panel.hidden=false;$('odpc-voice-topclose').hidden=true;$('odpc-voice-close').hidden=true;$('odpc-voice-open').setAttribute('aria-expanded','true');active=true;ask();}
+ if(inlineMount){inlineMount.append(panel);panel.tabIndex=-1;panel.classList.add('hm-inline-connector');panel.setAttribute('role','region');panel.removeAttribute('aria-modal');panel.hidden=false;$('odpc-voice-topclose').hidden=true;$('odpc-voice-close').hidden=true;$('odpc-voice-open').setAttribute('aria-expanded','false');active=true;ask();}
  document.addEventListener('visibilitychange' ,()=>{if(document.hidden)stopAudio()});
  })();
  </script>
