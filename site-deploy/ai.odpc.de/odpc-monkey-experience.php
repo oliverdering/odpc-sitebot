@@ -34,6 +34,7 @@ add_action('wp_footer', function(){ ?>
 
 add_filter('the_content', function($content){
  if(!hm_experience_route() || !class_exists('DOMDocument')) return $content;
+ $content=preg_replace('/individuelle ODPC-Beratung(?: bzw\. eingerichtete Lösungen auf Anfrage)?/iu','vorhandene Anleitungen und einzeln geprüfte Arbeitsabläufe',$content);
  $dom=new DOMDocument();$prior=libxml_use_internal_errors(true);
  $dom->loadHTML('<?xml encoding="UTF-8"><div id="hm-preserved-content">'.$content.'</div>',LIBXML_HTML_NOIMPLIED|LIBXML_HTML_NODEFDTD);
  libxml_clear_errors();libxml_use_internal_errors($prior);
