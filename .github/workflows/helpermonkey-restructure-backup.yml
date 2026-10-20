@@ -1,0 +1,28 @@
+name: Helper Monkey / Full private backup
+on:
+  push:
+    branches: [main]
+    paths: ['scripts/restructure/backup.py', '.github/workflows/helpermonkey-restructure-backup.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: helpermonkey-restructure
+  cancel-in-progress: false
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m pip install 'paramiko>=3.4,<5'
+      - name: Snapshot files and database privately on IONOS
+        env:
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+          AI_ODPC_THEME_PATH: ${{ secrets.AI_ODPC_THEME_PATH }}
+        run: python3 scripts/restructure/backup.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: helpermonkey-backup-manifest
+          path: backup-manifest.json
+          retention-days: 90
