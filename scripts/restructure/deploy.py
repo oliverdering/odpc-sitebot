@@ -28,10 +28,6 @@ def main():
   except FileNotFoundError:theme=find_theme(s)
   root=theme.split('/wp-content/themes/')[0];folder=root+'/wp-content/mu-plugins';s.stat(root+'/wp-config.php')
   if not stat.S_ISDIR(s.lstat(folder).st_mode):raise RuntimeError('Unexpected plugin directory')
-  # Existing local voice runtime is preserved, never replaced with an API.
-  for name in ['espeakng.js','espeakng.worker.js']:
-   code,data=get('https://ai.odpc.de/wp-content/mu-plugins/odpc-voice-assets-0.6.0/'+name)
-   if code!=200 or len(data)<1000:raise RuntimeError('Existing local speech engine unavailable')
   dest=folder+'/odpc-monkey-experience'
   try:
    if not stat.S_ISDIR(s.lstat(dest).st_mode):raise RuntimeError('Unsafe asset directory')
@@ -60,7 +56,7 @@ def main():
     for attempt in range(3):
      code,body=get('https://ai.odpc.de'+path+'?hm_release=1.0.0-'+str(int(time.time())))
      html=body.decode('utf-8','replace')
-     if code==200 and 'hm-experience-page' in html and 'data-version="0.7.0"' in html and 'hm-guide-help' in html:
+     if code==200 and 'hm-experience-page' in html and 'data-version="0.8.0"' in html and 'hm-guide-help' in html:
       good=True;break
      time.sleep(2)
     if not good:raise RuntimeError('Live release absent '+path)

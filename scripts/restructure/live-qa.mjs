@@ -31,12 +31,30 @@ for(const [name,viewport]of [['desktop',{width:1440,height:1000}],['mobile',{wid
  await page.locator('#odpc-voice-topclose').click();await page.goto('https://ai.odpc.de/start/',{waitUntil:'networkidle'});assert.equal(await page.locator('.hm-agent').count(),10);assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),true);await page.screenshot({path:out+'/'+name+'-agents.png',fullPage:true});
  assert.equal(errors.length,0,JSON.stringify(errors));pass(name+' agent overview and no page errors');await context.close();
 }
-const audioContext=await browser.newContext();const audio=await audioContext.newPage();await audio.goto('https://ai.odpc.de/connector-einrichten/',{waitUntil:'networkidle'});await audio.locator('#odpc-voice-open').click();await audio.locator('#odpc-voice-stop').click();await audio.locator('#odpc-voice-settings summary').click();await audio.locator('#odpc-voice-audio').uncheck();
-for(const locale of ['de-DE','en-US','es-ES','fr-FR','it-IT','pt-PT','pl-PL','tr-TR'])for(const gender of ['male','female']){
- await audio.locator('#odpc-voice-language').selectOption(locale);await audio.locator('#odpc-voice-gender').selectOption(gender);await audio.locator('#odpc-voice-preview').click();
- await audio.waitForFunction(()=>['playing','ended','error'].includes(document.querySelector('#odpc-voice').dataset.audioState),{timeout:30000});
- const data=await audio.locator('#odpc-voice').evaluate(e=>({...e.dataset}));assert.notEqual(data.audioState,'error');if(data.audioVoice.includes('+'))assert(Number(data.audioSamples)>0);pass('speech output '+locale+' '+gender,{voice:data.audioVoice,samples:data.audioSamples,state:data.audioState});await audio.locator('#odpc-voice-stop').click();
+const audioContext=await browser.newContext();const audio=await audioContext.newPage();await audio.goto('https://ai.odpc.de/connector-einrichten/',{waitUntil:'networkidle'});await audio.locator('#odpc-voice-open').click();
+assert.equal(await audio.locator('#odpc-voice-gender').inputValue(),'female');
+const deviceVoices=await audio.evaluate(()=>speechSynthesis.getVoices().map(v=>({name:v.name,lang:v.lang})));
+if(!deviceVoices.length){
+ await audio.waitForFunction(()=>document.querySelector('#odpc-voice').dataset.audioState==='voice-unavailable');
+ assert.equal(await audio.locator('#odpc-voice').getAttribute('data-audio-engine'),null);
+ pass('empty device catalog produces honest message, no eSpeak playback');
+ report.limitations.push('This Chromium runner offers no device voices. Natural voice audio cannot be acoustically tested here.');
+}else{
+ await audio.locator('#odpc-voice-settings summary').click();
+ assert((await audio.locator('#odpc-voice-profile option').count())>1);
+ await audio.locator('#odpc-voice-preview').click();
+ await audio.waitForFunction(()=>['playing','ended','error'].includes(document.querySelector('#odpc-voice').dataset.audioState));
+ const data=await audio.locator('#odpc-voice').evaluate(e=>({...e.dataset}));assert.notEqual(data.audioState,'error');assert.equal(data.audioEngine,'device');pass('available device voice starts',{voice:data.audioVoice,state:data.audioState});
 }
-await audioContext.close();
+assert.equal(await audio.locator('#odpc-voice-preview').isDisabled(),!deviceVoices.length);
+await audio.screenshot({path:out+'/device-voice-status.png',fullPage:true});await audioContext.close();
+const syntheticVoiceContext=await browser.newContext();await syntheticVoiceContext.addInitScript(()=>{
+ const profiles=[{name:'Microsoft Hedda',lang:'de-DE',voiceURI:'Hedda'},{name:'Microsoft Katja Online (Natural)',lang:'de-DE',voiceURI:'Katja'}];
+ const fake={getVoices:()=>profiles,cancel(){},addEventListener(){},speak(u){window.__testSpeech={name:u.voice.name,rate:u.rate,pitch:u.pitch};queueMicrotask(()=>{u.onstart?.();u.onend?.()})}};
+ Object.defineProperty(window,'speechSynthesis',{value:fake,configurable:true});
+ window.SpeechSynthesisUtterance=class{constructor(text){this.text=text}};
+});
+const syntheticVoice=await syntheticVoiceContext.newPage();await syntheticVoice.goto('https://ai.odpc.de/',{waitUntil:'networkidle'});await syntheticVoice.locator('#odpc-voice-open').click();await syntheticVoice.waitForFunction(()=>window.__testSpeech?.name==='Microsoft Katja Online (Natural)');
+const selected=await syntheticVoice.evaluate(()=>window.__testSpeech);assert.equal(selected.rate,.94);assert.equal(selected.pitch,1);pass('synthetic device catalog selects natural female at calm speed',{voice:selected.name,synthetic:true});await syntheticVoiceContext.close();
 const micContext=await browser.newContext();await micContext.addInitScript(()=>{window.SpeechRecognition=class{start(){queueMicrotask(()=>this.onresult({results:[[{transcript:'Gmail ChatGPT Samsung'}]]}))}abort(){}}});const mic=await micContext.newPage();await mic.goto('https://ai.odpc.de/',{waitUntil:'networkidle'});await mic.locator('#odpc-voice-open').click();await mic.locator('#odpc-voice-settings summary').click();await mic.locator('#odpc-voice-audio').uncheck();await mic.locator('#odpc-voice-mic').click();await mic.waitForFunction(()=>document.querySelector('#odpc-voice').dataset.phase==='setup');pass('synthetic speech recognition result advances dialog');await micContext.close();
 }finally{await writeFile(out+'/report.json',JSON.stringify(report,null,2));await browser.close()}

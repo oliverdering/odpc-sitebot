@@ -2,20 +2,21 @@
 /**
  * Plugin Name: ODPC Monkey Voice Interview
  * Description: Accessible opt-in voice interview and guided setup for Helper Monkey.
- * Version: 0.7.0
+ * Version: 0.8.0
  * License: GPL-3.0-or-later
  */
 if (!defined('ABSPATH')) exit;
 add_action('wp_footer', function () {
  if (is_admin()) return;
  ?>
- <div id="odpc-voice" class="odpc-voice" data-version="0.7.0" hidden role="dialog" aria-modal="true" aria-labelledby="odpc-voice-title" aria-describedby="odpc-voice-status">
+ <div id="odpc-voice" class="odpc-voice" data-version="0.8.0" hidden role="dialog" aria-modal="true" aria-labelledby="odpc-voice-title" aria-describedby="odpc-voice-status">
   <h2 id="odpc-voice-title">Monkey Einrichtungsassistent</h2><button type="button" id="odpc-voice-topclose" aria-label="Schließen">✕</button>
   <p id="odpc-voice-status" role="status" aria-live="polite">Bereit. Starte das Interview.</p>
   <div id="odpc-voice-log" role="log" aria-label="Gesprächsverlauf" aria-live="polite"></div>
   <details id="odpc-voice-settings"><summary>Stimme, Sprache &amp; weitere Funktionen</summary>
-  <label id="label-gender" for="odpc-voice-gender">Stimme</label><select id="odpc-voice-gender"><option value="male">Männlich</option><option value="female">Weiblich</option></select>
+  <label id="label-gender" for="odpc-voice-gender">Stimme</label><select id="odpc-voice-gender"><option value="female" selected>Weiblich</option><option value="male">Männlich</option></select>
   <label id="label-language" for="odpc-voice-language">Sprache</label><select id="odpc-voice-language"><option value="de-DE">Deutsch</option><option value="en-US">English</option><option value="es-ES">Español</option><option value="fr-FR">Français</option><option value="it-IT">Italiano</option><option value="pt-PT">Português</option><option value="pl-PL">Polski</option><option value="tr-TR">Türkçe</option></select>
+  <label for="odpc-voice-profile">Verfügbare Gerätestimme</label><select id="odpc-voice-profile"><option value="">Automatisch die passendste Stimme wählen</option></select>
   <p id="odpc-voice-voicehelp" hidden role="status"></p><button type="button" id="odpc-voice-preview">🔊 Stimme testen</button><label id="label-audio" for="odpc-voice-audio"><input id="odpc-voice-audio" type="checkbox" checked> Sprachausgabe verwenden</label>
   </details>
   <p id="hm-guide-privacy">Spracheingabe: Audio kann durch den Browseranbieter verarbeitet werden. Texteingabe ist ohne Mikrofon möglich. Keine Passwörter eingeben.</p>
@@ -49,7 +50,7 @@ add_action('wp_footer', function () {
  const SpeechRecognition=window.SpeechRecognition||window.webkitSpeechRecognition;
  let recognition=null, speaking='',step=0,answers={},active=false,session=0,returnFocus=null;
  const languages={
- 'de-DE':{ui:['Monkey Sprachassistent','Sprache','Stimme','Stimme testen','Sprachausgabe verwenden','Deine Antwort','Sprechen','Antwort senden','Wiederholen','Stopp','Neu starten','Zurück','Schließen','Monkey sprechen'],questions:['Was möchtest du mit Helper Monkey erreichen? Zum Beispiel eine Webseite verwalten, Bewerbungen schreiben, ein Fahrzeug diagnostizieren oder einen Assistenten einrichten.','Welches Gerät verwendest du? Android, iPhone, Windows, Mac oder etwas anderes?','Hast du bereits ein Google-Konto oder ein anderes Konto, das du verbinden möchtest? Bitte nenne niemals Passwörter.','Möchtest du zuerst kostenlos testen oder direkt die verfügbaren Einrichtungsschritte sehen?'],preview:'Hallo, ich bin Helper Monkey. Du hörst jetzt die ausgewählte Stimme.',summary:'Danke. Ich habe deine Angaben aufgenommen. Ich zeige dir jetzt den passenden nächsten Schritt. Konten und Berechtigungen müssen ausdrücklich von dir freigegeben werden.',next:'Passenden Einrichtungsweg öffnen →'},
+ 'de-DE':{ui:['Monkey Sprachassistent','Sprache','Stimme','Stimme testen','Sprachausgabe verwenden','Deine Antwort','Sprechen','Antwort senden','Wiederholen','Stopp','Neu starten','Zurück','Schließen','Monkey sprechen'],questions:['Was möchtest du mit Helper Monkey erreichen? Zum Beispiel eine Webseite verwalten, Bewerbungen schreiben, ein Fahrzeug diagnostizieren oder einen Assistenten einrichten.','Welches Gerät verwendest du? Android, iPhone, Windows, Mac oder etwas anderes?','Hast du bereits ein Google-Konto oder ein anderes Konto, das du verbinden möchtest? Bitte nenne niemals Passwörter.','Möchtest du zuerst kostenlos testen oder direkt die verfügbaren Einrichtungsschritte sehen?'],preview:'Hallo, ich bin Monkey. Schön, dass du da bist. Wir gehen alles in Ruhe durch, Schritt für Schritt. Du kannst jederzeit nachfragen.',summary:'Danke. Ich habe deine Angaben aufgenommen. Ich zeige dir jetzt den passenden nächsten Schritt. Konten und Berechtigungen müssen ausdrücklich von dir freigegeben werden.',next:'Passenden Einrichtungsweg öffnen →'},
  'en-US':{ui:['Monkey Voice Assistant','Language','Voice','Test voice','Use speech output','Your answer','Speak','Send answer','Repeat','Stop','Restart','Back','Close','Talk to Monkey'],questions:['What would you like to do with Helper Monkey? For example manage a website, write job applications, diagnose a vehicle or set up an assistant.','What device are you using: Android, iPhone, Windows, Mac or something else?','Do you have a Google account or another account to connect? Never share passwords.','Would you like to try it for free first or see the setup steps?'],preview:'Hello, I am Helper Monkey. This is how this voice sounds.',summary:'Thank you. Here is your next step. Connecting accounts always requires your explicit permission.',next:'Open recommended setup →'},
  'es-ES':{ui:['Asistente de voz Monkey','Idioma','Voz','Probar voz','Usar voz','Tu respuesta','Hablar','Enviar respuesta','Repetir','Detener','Reiniciar','Atrás','Cerrar','Hablar con Monkey'],questions:['¿Qué quieres conseguir con Helper Monkey? Por ejemplo, gestionar una web, preparar solicitudes de empleo, diagnosticar un vehículo o configurar un asistente.','¿Qué dispositivo utilizas: Android, iPhone, Windows, Mac u otro?','¿Tienes una cuenta de Google u otra cuenta que quieras conectar? Nunca compartas contraseñas.','¿Prefieres probarlo gratis o ver los pasos de configuración?'],preview:'Hola, soy Helper Monkey. Así suena esta voz.',summary:'Gracias. Te mostraré el siguiente paso. La conexión de cuentas requiere tu autorización expresa.',next:'Abrir configuración recomendada →'},
  'fr-FR':{ui:['Assistant vocal Monkey','Langue','Voix','Tester la voix','Activer la voix','Votre réponse','Parler','Envoyer','Répéter','Arrêter','Recommencer','Retour','Fermer','Parler à Monkey'],questions:['Que souhaitez-vous faire avec Helper Monkey ? Gérer un site, préparer une candidature, diagnostiquer un véhicule ou configurer un assistant ?','Quel appareil utilisez-vous : Android, iPhone, Windows, Mac ou autre ?','Avez-vous un compte Google ou un autre compte à connecter ? Ne partagez jamais de mot de passe.','Préférez-vous essayer gratuitement ou consulter les étapes de configuration ?'],preview:'Bonjour, je suis Helper Monkey. Voici cette voix.',summary:'Merci. Voici la prochaine étape. Toute connexion de compte nécessite votre autorisation explicite.',next:'Ouvrir la configuration →'},
@@ -67,74 +68,60 @@ add_action('wp_footer', function () {
  function persist(){try{sessionStorage.setItem('hm-guide-v1',JSON.stringify(flow))}catch(e){}}
  function localize(){const l=languages[$('odpc-voice-language').value];uiIds.forEach((id,i)=>{const el=$(id);if(el){if(id==='label-audio'){const cb=$('odpc-voice-audio');el.replaceChildren(cb,document.createTextNode(' '+l.ui[i]))}else el.textContent=(i===13?'🎙 ':'')+l.ui[i]}});$('odpc-voice-topclose').setAttribute('aria-label',l.ui[12]);if(active){stopAudio();ask();}}
 
- let voiceCatalog=[],speechTicket=0;
+ let voiceCatalog=[],speechTicket=0,voiceWaitTimer=null;
  function voiceGender(v){
   const n=((v.name||'')+' '+(v.voiceURI||'')).toLowerCase();
   if(/\b(female|woman|feminine|weiblich|mujer|femme|donna|femenino)\b|\b(anna|sarah|samantha|victoria|karen|helena|maria|monica|lucia|sofia|laura|hedda|heda|sabine|jenny|aria|emma|amy|susan|katja|zira|hazel|hortense|elsa|sabina|paulina|julie|denise|amelie|emilie|luciana|francisca|zofia|emel)\b/.test(n))return 'female';
   if(/\b(male|man|masculine|männlich|hombre|homme|uomo|masculino)\b|\b(david|mark|daniel|george|thomas|stefan|paul|alexander|jorge|diego|pablo|carlos|enrique|stefan|conrad|christoph|stefano|guy|andrew|matthew|liam|oliver|brian|james|ryan|henri|cosimo|antonio|duarte|marek|ahmet)\b/.test(n))return 'male';
   return 'unknown';
  }
+ function voiceQuality(v){
+  const n=(v.name+' '+(v.voiceURI||'')).toLowerCase();
+  return (/natural|neural|online/.test(n)?300:0)+(/premium|enhanced|hochwertig/.test(n)?200:0)+(/google|samsung/.test(n)?120:0)+(voiceGender(v)==='female'?60:0)+(v.default?15:0)-(/compact|basic|espeak/.test(n)?150:0);
+ }
  function refreshVoices(){
   const locale=$('odpc-voice-language').value.toLowerCase(),lang=locale.split('-')[0],gender=$('odpc-voice-gender').value;
   let all=[];try{all=window.speechSynthesis?.getVoices()||[]}catch(e){}
-  voiceCatalog=all.filter(v=>(v.lang||'').toLowerCase().replace(/_/g,'-').split('-')[0]===lang&&voiceGender(v)===gender).sort((a,b)=>Number(b.lang.toLowerCase()===locale)-Number(a.lang.toLowerCase()===locale));
-  const native=!!window.speechSynthesis&&!!window.SpeechSynthesisUtterance&&voiceCatalog.length>0,local=!!(window.AudioContext||window.webkitAudioContext)&&!!window.Worker;
-  const help=$('odpc-voice-voicehelp');help.hidden=native;
-  help.textContent=native?'':local?'Lokale Ersatzstimme: funktioniert ohne Gerätestimmen, klingt synthetischer.':'Für diesen Stimmtyp ist hier keine Sprachausgabe verfügbar.';
-  $('odpc-voice-preview').disabled=!native&&!local;
+  voiceCatalog=all.filter(v=>(v.lang||'').toLowerCase().replace(/_/g,'-').split('-')[0]===lang && (voiceGender(v)===gender || (gender==='female'&&voiceGender(v)==='unknown')) && !/espeak/i.test(v.name||'')).sort((a,b)=>voiceQuality(b)-voiceQuality(a)||Number(b.lang.toLowerCase()===locale)-Number(a.lang.toLowerCase()===locale));
+  const menu=$('odpc-voice-profile'),previous=menu.value;menu.replaceChildren();
+  const auto=document.createElement('option');auto.value='';auto.textContent='Automatisch die passendste Stimme wählen';menu.append(auto);
+  voiceCatalog.forEach(v=>{const option=document.createElement('option');option.value=v.voiceURI||v.name;option.textContent=v.name+(voiceGender(v)==='unknown'?' · Geschlecht nicht angegeben':'');menu.append(option)});
+  if(voiceCatalog.some(v=>(v.voiceURI||v.name)===previous))menu.value=previous;
+  const selected=voiceCatalog.find(v=>(v.voiceURI||v.name)===menu.value)||voiceCatalog[0];
+  const native=!!window.speechSynthesis&&!!window.SpeechSynthesisUtterance&&!!selected;
+  const help=$('odpc-voice-voicehelp');help.hidden=false;
+  help.textContent=native?'Gerätestimme: '+selected.name+'. Ruhiges Sprechtempo.'+(voiceGender(selected)==='unknown'?' Der Anbieter nennt kein Geschlecht. Bitte mit der Hörprobe prüfen.':''):'Noch keine passende Gerätestimme verfügbar. Auf Samsung: Einstellungen → Allgemeine Verwaltung → Text-zu-Sprache → Samsung oder Google → deutsche Sprachdaten. Danach diese Seite neu öffnen. Texteingabe funktioniert weiter.';
+  $('odpc-voice-preview').disabled=!native;menu.disabled=!native;
+  return selected;
  }
- const LOCAL_BASE='/wp-content/mu-plugins/odpc-voice-assets-0.6.0/';
- const localLanguage={'de-DE':'gmw/de','en-US':'gmw/en-US','es-ES':'roa/es','fr-FR':'roa/fr','it-IT':'roa/it','pt-PT':'roa/pt-PT','pl-PL':'zls/pl','tr-TR':'trk/tr'};
- let localReady=null,localTts=null,audioContext=null,localSource=null,synthesisQueue=Promise.resolve();
- function stopLocalAudio(){if(localSource){try{localSource.stop();localSource.disconnect()}catch(e){}localSource=null}panel.dataset.audioState='stopped'}
- function prepareLocalAudio(){const C=window.AudioContext||window.webkitAudioContext;if(!C||!window.Worker)throw Error('Lokale Sprachausgabe wird hier nicht unterstützt.');if(!audioContext)audioContext=new C();if(audioContext.state!=='running')audioContext.resume().catch(()=>{});return audioContext}
- function loadLocalEngine(){
-  if(localReady)return localReady;
-  localReady=new Promise((resolve,reject)=>{
-   let settled=false;const timer=setTimeout(()=>fail(Error('Laden der lokalen Stimme dauert zu lange. Bitte erneut testen.')),25000);
-   const fail=e=>{if(settled)return;settled=true;clearTimeout(timer);localReady=null;if(localTts){localTts.worker.terminate();localTts=null}reject(e)};
-   const start=()=>{try{localTts=new window.eSpeakNG(LOCAL_BASE+'espeakng.worker.js',()=>{if(settled)return;settled=true;clearTimeout(timer);resolve(localTts)});localTts.worker.addEventListener('error',()=>fail(Error('Lokale Stimme konnte nicht geladen werden.')))}catch(e){fail(e)}};
-   if(window.eSpeakNG){start();return}
-   const s=document.createElement('script');s.src=LOCAL_BASE+'espeakng.js';s.onload=start;s.onerror=()=>fail(Error('Lokale Sprachdateien sind nicht erreichbar.'));document.head.append(s);
-  });return localReady;
- }
- function localSay(text,ticket,locale,gender){
-  let context;try{context=prepareLocalAudio()}catch(e){status.textContent=e.message;panel.dataset.audioState='error';return}
-  status.textContent='Lokale '+(gender==='male'?'männliche':'weibliche')+' Stimme wird vorbereitet …';panel.dataset.audioState='loading';panel.dataset.audioVoice=localLanguage[locale]+'+'+(gender==='male'?'m3':'f2');
-  synthesisQueue=synthesisQueue.catch(()=>{}).then(async()=>{
-   if(ticket!==speechTicket||panel.hidden)return;
-   const tts=await loadLocalEngine();if(ticket!==speechTicket||panel.hidden)return;
-   await new Promise((resolve,reject)=>tts.set_voice(localLanguage[locale]+'+'+(gender==='male'?'m3':'f2'),code=>code===0?resolve():reject(Error('Gewählte lokale Stimme ist nicht verfügbar.'))));
-   tts.set_rate(175);
-   const chunks=await new Promise((resolve,reject)=>{const data=[];let count=0;const timer=setTimeout(()=>reject(Error('Spracherzeugung dauert zu lange.')),20000);tts.synthesize(text,samples=>{if(samples){const chunk=new Float32Array(samples);count+=chunk.length;if(count>44100*180){clearTimeout(timer);reject(Error('Sprachausgabe ist zu lang.'));return}data.push(chunk)}else{clearTimeout(timer);resolve(data)}})});
-   if(ticket!==speechTicket||panel.hidden)return;
-   const count=chunks.reduce((n,c)=>n+c.length,0);if(!count)throw Error('Keine Audiodaten erzeugt.');
-   if(context.state!=='running')await context.resume();if(ticket!==speechTicket||panel.hidden)return;if(context.state!=='running')throw Error('Bitte „Stimme testen“ erneut antippen, um Audio freizugeben.');
-   const buffer=context.createBuffer(1,count,44100),output=buffer.getChannelData(0);let offset=0;chunks.forEach(c=>{output.set(c,offset);offset+=c.length});
-   const source=context.createBufferSource();source.buffer=buffer;source.connect(context.destination);localSource=source;
-   source.onended=()=>{if(ticket!==speechTicket)return;if(localSource===source)localSource=null;source.disconnect();panel.dataset.audioState='ended';status.textContent='Sprachausgabe beendet.'};
-   source.start();panel.dataset.audioState='playing';panel.dataset.audioSamples=String(count);status.textContent='Spricht: '+(gender==='male'?'männlich':'weiblich')+' (lokale Ersatzstimme).';
-  }).catch(e=>{if(ticket!==speechTicket)return;panel.dataset.audioState='error';status.textContent=e.message||'Lokale Sprachausgabe fehlgeschlagen. Bitte erneut testen.'});
- }
+ function stopLocalAudio(){if(voiceWaitTimer){clearTimeout(voiceWaitTimer);voiceWaitTimer=null}panel.dataset.audioState='stopped'}
  function say(t,remember=true,force=false){
   if(remember)speaking=t;if(!force&&!$('odpc-voice-audio').checked)return;
-  refreshVoices();const ticket=++speechTicket;stopLocalAudio();if(window.speechSynthesis)speechSynthesis.cancel();
-  const locale=$('odpc-voice-language').value,gender=$('odpc-voice-gender').value;
-  if(!voiceCatalog.length||!window.speechSynthesis||!window.SpeechSynthesisUtterance){localSay(t,ticket,locale,gender);return}
-  try{
-   prepareLocalAudio();
-  }catch(e){}
-  try{
-   const u=new SpeechSynthesisUtterance(t);u.lang=locale;u.rate=1.12;u.voice=voiceCatalog[0];panel.dataset.audioVoice=u.voice.voiceURI||u.voice.name;
-   u.onstart=()=>{if(ticket===speechTicket)panel.dataset.audioState='playing'};
-   u.onend=()=>{if(ticket===speechTicket)panel.dataset.audioState='ended'};
-   u.onerror=()=>{if(ticket===speechTicket)localSay(t,ticket,locale,gender)};
-   speechSynthesis.speak(u);
-  }catch(e){if(ticket===speechTicket)localSay(t,ticket,locale,gender)}
+  const ticket=++speechTicket;stopLocalAudio();if(window.speechSynthesis)speechSynthesis.cancel();
+  const speakWhenReady=(retry)=>{
+   if(ticket!==speechTicket||panel.hidden)return;
+   const selected=refreshVoices();
+   if(!selected||!window.speechSynthesis||!window.SpeechSynthesisUtterance){
+    if(retry){panel.dataset.audioState='waiting-for-device-voice';voiceWaitTimer=setTimeout(()=>speakWhenReady(false),1200);return}
+    panel.dataset.audioState='voice-unavailable';panel.dataset.audioVoice='';status.textContent='Keine passende Gerätestimme verfügbar. Bitte deutsche Sprachdaten in den Geräteeinstellungen aktivieren oder die Texteingabe nutzen.';return;
+   }
+   panel.dataset.audioVoice=selected.voiceURI||selected.name;panel.dataset.audioEngine='device';
+   const parts=(String(t).match(/[^.!?]+[.!?]+|[^.!?]+$/g)||[String(t)]).flatMap(sentence=>sentence.match(/.{1,220}(?:\s|$)|.{1,220}/g)||[sentence]);let index=0;
+   const next=()=>{
+    if(ticket!==speechTicket||panel.hidden)return;
+    if(index>=parts.length){panel.dataset.audioState='ended';status.textContent='Sprachausgabe beendet.';return}
+    const u=new SpeechSynthesisUtterance(parts[index++].trim());u.lang=$('odpc-voice-language').value;u.rate=0.94;u.pitch=1;u.volume=1;u.voice=selected;
+    u.onstart=()=>{if(ticket===speechTicket)panel.dataset.audioState='playing'};
+    u.onend=()=>{if(ticket===speechTicket)voiceWaitTimer=setTimeout(next,280)};
+    u.onerror=()=>{if(ticket!==speechTicket)return;panel.dataset.audioState='error';status.textContent='Die Gerätestimme konnte nicht starten. Bitte „Stimme testen“ erneut antippen oder eine andere verfügbare Stimme wählen. Es wird keine künstliche Ersatzstimme zugeschaltet.'};
+    try{speechSynthesis.speak(u)}catch(e){u.onerror()}
+   };next();
+  };speakWhenReady(true);
  }
  $('odpc-voice-preview').addEventListener('click',()=>say(languages[$('odpc-voice-language').value].preview,false,true));
- $('odpc-voice-language').addEventListener('change',()=>{refreshVoices();localize()});
- $('odpc-voice-gender').addEventListener('change',()=>{stopAudio();refreshVoices();status.textContent='Stimme ausgewählt. Mit „Stimme testen“ anhören.';if(active&&$('odpc-voice-audio').checked)say(languages[$('odpc-voice-language').value].preview,false)});
+ $('odpc-voice-language').addEventListener('change',()=>{$('odpc-voice-profile').value='';refreshVoices();localize()});
+ $('odpc-voice-profile').addEventListener('change',()=>{stopAudio();refreshVoices();if(active)say(languages[$('odpc-voice-language').value].preview,false,true)});
+ $('odpc-voice-gender').addEventListener('change',()=>{stopAudio();$('odpc-voice-profile').value='';refreshVoices();status.textContent='Stimme ausgewählt. Mit „Stimme testen“ anhören.';if(active&&$('odpc-voice-audio').checked)say(languages[$('odpc-voice-language').value].preview,false)});
  $('odpc-voice-audio').addEventListener('change',()=>{if(!$('odpc-voice-audio').checked)stopAudio()});
  if('speechSynthesis' in window){speechSynthesis.addEventListener?.('voiceschanged',refreshVoices);setTimeout(refreshVoices,700);setTimeout(refreshVoices,2000);}refreshVoices();localize();
 

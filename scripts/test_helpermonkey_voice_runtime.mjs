@@ -5,34 +5,25 @@ import {test} from 'node:test';
 const source=readFileSync('site-deploy/ai.odpc.de/odpc-monkey-voice-interview.php','utf8');
 const script=source.split('<script>')[1].split('</script>')[0];new vm.Script(script);
 const helpers=script.slice(script.indexOf(' function voiceGender('),script.indexOf(" $('odpc-voice-preview').addEventListener"));
-function setup(voices,locale='de-DE',gender='male'){
- const controls=Object.fromEntries(['language','gender','preview','voicehelp','audio'].map(id=>['odpc-voice-'+id,{value:'',disabled:false,textContent:'',checked:true}]));
+function setup(voices,locale='de-DE',gender='female'){
+ const controls=Object.fromEntries(['language','gender','profile','preview','voicehelp','audio'].map(id=>['odpc-voice-'+id,{value:'',disabled:false,textContent:'',checked:true,children:[],replaceChildren(){this.children=[]},append(x){this.children.push(x)}}]));
  controls['odpc-voice-language'].value=locale;controls['odpc-voice-gender'].value=gender;
- const spoken=[],fallback=[],status={textContent:''};let available=voices;const panel={hidden:false,dataset:{}};
+ const spoken=[],timers=[],status={textContent:''};let available=voices;const panel={hidden:false,dataset:{}};
  const synth={getVoices:()=>available,cancel(){},speak:u=>spoken.push(u)};
- const ctx=vm.createContext({$:id=>controls[id],status,panel,fallback,window:{speechSynthesis:synth,SpeechSynthesisUtterance:class{},AudioContext:class{},Worker:class{}},speechSynthesis:synth,SpeechSynthesisUtterance:class{constructor(t){this.text=t}},setTimeout,clearTimeout});
- vm.runInContext('let voiceCatalog=[],speechTicket=0,speaking="";'+helpers,ctx);
- vm.runInContext('localSay=(text,ticket,locale,gender)=>fallback.push({text,ticket,locale,gender,voice:localLanguage[locale]+"+"+(gender==="male"?"m3":"f2")})',ctx);
- return{controls,spoken,fallback,status,panel,run:code=>vm.runInContext(code,ctx),setVoices:v=>available=v};
+ const ctx=vm.createContext({$:id=>controls[id],document:{createElement:()=>({value:'',textContent:''})},status,panel,window:{speechSynthesis:synth,SpeechSynthesisUtterance:class{}},speechSynthesis:synth,SpeechSynthesisUtterance:class{constructor(t){this.text=t}},setTimeout(fn){timers.push(fn);return timers.length},clearTimeout(){}});
+ vm.runInContext('let voiceCatalog=[],speechTicket=0,speaking="",voiceWaitTimer=null;'+helpers,ctx);
+ return{controls,spoken,timers,status,panel,run:code=>vm.runInContext(code,ctx),setVoices:v=>available=v};
 }
-const voice=(name,lang='de-DE')=>({name,lang,voiceURI:name});
-test('named native voices are assigned to the requested gender',()=>{
- const s=setup([]);for(const name of ['Microsoft Stefan - German','Google UK English Male'])assert.equal(s.run(`voiceGender(${JSON.stringify(voice(name))})`),'male');for(const name of ['Microsoft Hedda - German','Google UK English Female'])assert.equal(s.run(`voiceGender(${JSON.stringify(voice(name))})`),'female');assert.equal(s.run('voiceGender({name:"Google Deutsch"})'),'unknown');
-});
-test('eight locales and two genders select the correct named native voice',()=>{
- for(const lang of ['de-DE','en-US','es-ES','fr-FR','it-IT','pt-PT','pl-PL','tr-TR'])for(const gender of ['male','female']){const s=setup([voice('Male',lang),voice('Female',lang)],lang,gender);s.run('say("Test")');assert.equal(s.spoken[0].voice.name,gender==='male'?'Male':'Female');assert.equal(s.fallback.length,0);}
-});
-test('a single generic Android voice is never silently reused for both genders',()=>{
- const s=setup([voice('Google Deutsch')]);s.run('say("Test")');s.controls['odpc-voice-gender'].value='female';s.run('say("Test")');assert.equal(s.spoken.length,0);assert.deepEqual(s.fallback.map(x=>x.voice),['gmw/de+m3','gmw/de+f2']);assert.equal(s.controls['odpc-voice-preview'].disabled,false);
-});
-test('missing male voice uses local male, not the known female voice',()=>{
- const s=setup([voice('Anna')]);s.run('say("Test")');assert.equal(s.spoken.length,0);assert.equal(s.fallback[0].gender,'male');s.controls['odpc-voice-gender'].value='female';s.run('say("Test")');assert.equal(s.spoken[0].voice.name,'Anna');
-});
-test('empty native catalog still has two distinct local variants in every language',()=>{
- for(const lang of ['de-DE','en-US','es-ES','fr-FR','it-IT','pt-PT','pl-PL','tr-TR']){const s=setup([],lang);s.run('say("Test")');s.controls['odpc-voice-gender'].value='female';s.run('say("Test")');assert.notEqual(s.fallback[0].voice,s.fallback[1].voice);assert.equal(s.controls['odpc-voice-preview'].disabled,false);}
-});
-test('delayed catalog is refreshed at speech time',()=>{const s=setup([]);s.setVoices([voice('Stefan')]);s.run('say("Test")');assert.equal(s.spoken[0].voice.name,'Stefan');});
-test('failed native synthesis invokes the corresponding local gender',()=>{const s=setup([voice('Stefan')]);s.run('say("Test")');s.spoken[0].onerror({error:'synthesis-failed'});assert.equal(s.fallback[0].voice,'gmw/de+m3');});
-test('preview keeps the question and explicitly overrides muted automatic speech',()=>{const s=setup([voice('Stefan')]);s.run('say("Question");say("Preview",false,true)');assert.equal(s.run('speaking'),'Question');s.controls['odpc-voice-audio'].checked=false;s.run('say("Muted");say("Explicit",false,true)');assert.equal(s.spoken.length,3);});
-test('no voice of an unrelated language is forced onto the requested language',()=>{const s=setup([voice('David','en-US')]);s.run('say("Test")');assert.equal(s.spoken.length,0);assert.equal(s.fallback[0].locale,'de-DE');});
-test('menu retains exactly male/female and eight languages',()=>{const markup=source.split('<style>')[0],selects=[...markup.matchAll(/<select id="([^"]+)">([\s\S]*?)<\/select>/g)];assert.deepEqual(selects.map(s=>s[1]),['odpc-voice-gender','odpc-voice-language']);assert.deepEqual([...selects[0][2].matchAll(/<option value="([^"]+)">([^<]+)<\/option>/g)].map(m=>[m[1],m[2]]),[['male','Männlich'],['female','Weiblich']]);assert.equal((selects[1][2].match(/<option /g)||[]).length,8);});
+const voice=(name,lang='de-DE',extra={})=>({name,lang,voiceURI:name,...extra});
+test('female is the default, male remains an explicit option',()=>{const markup=source.split('<style>')[0];assert.match(markup,/<option value="female" selected>Weiblich<\/option>/);assert.match(markup,/<option value="male">Männlich<\/option>/);assert.match(markup,/id="odpc-voice-profile"/);assert.equal((markup.match(/<option value="(?:de-DE|en-US|es-ES|fr-FR|it-IT|pt-PT|pl-PL|tr-TR)"/g)||[]).length,8);});
+test('natural female voice wins over classic female and male voices',()=>{const s=setup([voice('Microsoft Hedda'),voice('Microsoft Conrad Online (Natural)'),voice('Microsoft Katja Online (Natural)')]);s.run('say("Guten Tag.")');assert.equal(s.spoken[0].voice.name,'Microsoft Katja Online (Natural)');assert.equal(s.spoken[0].rate,.94);assert.equal(s.spoken[0].pitch,1);});
+test('Google Deutsch is used instead of being discarded for absent gender metadata',()=>{const s=setup([voice('Google Deutsch')]);s.run('say("Hallo.")');assert.equal(s.spoken[0].voice.name,'Google Deutsch');assert.match(s.controls['odpc-voice-voicehelp'].textContent,/kein Geschlecht/);assert.equal(s.panel.dataset.audioEngine,'device');});
+test('enhanced Apple voice is preferred over compact counterpart',()=>{const s=setup([voice('Anna (Compact)'),voice('Anna (Enhanced)')]);s.run('say("Hallo.")');assert.equal(s.spoken[0].voice.name,'Anna (Enhanced)');});
+test('explicit profile choice overrides automatic quality ranking',()=>{const s=setup([voice('Anna'),voice('Microsoft Katja Online (Natural)')]);s.controls['odpc-voice-profile'].value='Anna';s.run('say("Hallo.")');assert.equal(s.spoken[0].voice.name,'Anna');});
+test('known male voice is never the female fallback',()=>{const s=setup([voice('Microsoft Stefan')]);s.run('say("Hallo.")');s.timers.shift()();assert.equal(s.spoken.length,0);assert.equal(s.panel.dataset.audioState,'voice-unavailable');});
+test('missing voices wait for the device and then show an honest limitation',()=>{const s=setup([]);s.run('say("Hallo.")');assert.equal(s.panel.dataset.audioState,'waiting-for-device-voice');s.timers.shift()();assert.equal(s.panel.dataset.audioState,'voice-unavailable');assert.equal(s.controls['odpc-voice-preview'].disabled,true);assert.equal(s.spoken.length,0);});
+test('late device catalog becomes usable without eSpeak',()=>{const s=setup([]);s.run('say("Hallo.")');s.setVoices([voice('Google Deutsch')]);s.timers.shift()();assert.equal(s.spoken[0].voice.name,'Google Deutsch');});
+test('device errors do not activate a robot voice',()=>{const s=setup([voice('Anna')]);s.run('say("Hallo.")');s.spoken[0].onerror();assert.equal(s.panel.dataset.audioState,'error');assert.match(s.status.textContent,/keine künstliche Ersatzstimme/);assert(!source.includes('localSay('));assert(!source.includes('new window.eSpeakNG'));});
+test('all eight languages use matching device voices',()=>{for(const lang of ['de-DE','en-US','es-ES','fr-FR','it-IT','pt-PT','pl-PL','tr-TR']){const s=setup([voice('Female Natural',lang)],lang);s.run('say("Test.")');assert.equal(s.spoken[0].voice.lang,lang);}});
+test('sentence pauses and cancellation prevent queued continuation after stop',()=>{const s=setup([voice('Anna')]);s.run('say("Ein Satz. Noch ein Satz.")');assert.equal(s.spoken.length,1);s.spoken[0].onend();assert.equal(s.timers.length,1);s.run('speechTicket++;stopLocalAudio()');s.timers.shift()();assert.equal(s.spoken.length,1);});
+test('preview does not overwrite the question and can be requested while muted',()=>{const s=setup([voice('Anna')]);s.controls['odpc-voice-audio'].checked=false;s.run('say("Frage.");say("Hörprobe.",false,true)');assert.equal(s.run('speaking'),'Frage.');assert.equal(s.spoken.length,1);});
