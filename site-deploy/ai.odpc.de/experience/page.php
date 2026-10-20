@@ -5,7 +5,7 @@
 <body <?php body_class('hm-experience-page'); ?>>
 <?php wp_body_open(); ?>
 <a class="hm-skip" href="#main">Zum Inhalt springen</a>
-<header class="hm-header"><a href="/" aria-label="helper · monkey Startseite"><img src="<?php echo esc_url($brand); ?>" alt="helper · monkey © – ki agents powered by odpc.de" width="460" height="126" fetchpriority="high"></a><nav aria-label="Hauptnavigation"><a href="/connector-einrichten/">Connector</a><a href="/start/">Monkeys</a><a href="/#fragen">Fragen</a><a class="hm-contact" href="<?php echo esc_url($wa); ?>" target="_blank" rel="noopener noreferrer">Oliver hilft persönlich ↗</a></nav></header>
+<header class="hm-header"><a href="/" aria-label="helper · monkey Startseite"><img src="<?php echo esc_url($brand); ?>" alt="helper · monkey © – ki agents powered by odpc.de" width="460" height="126" fetchpriority="high"></a><nav aria-label="Hauptnavigation"><a href="/connector-einrichten/" data-monkey-open data-monkey-mode="text">Connector</a><a href="/start/">Monkeys</a><a href="/#fragen">Fragen</a><a class="hm-contact" href="<?php echo esc_url($wa); ?>" target="_blank" rel="noopener noreferrer">Oliver hilft persönlich ↗</a></nav></header>
 <main id="main">
 <?php if($route==='content'): ?><article class="hm-wrap hm-section hm-preserved"><h1><?php the_title(); ?></h1><?php while(have_posts()):the_post();the_content();endwhile; ?></article><?php else: ?>
 <?php if ($route==='home' || $route==='connector'): ?>
@@ -50,6 +50,6 @@ foreach(($route==='agents'?$agents:array_slice($agents,0,3)) as $a): ?>
 <section class="hm-wrap hm-section hm-personal"><div><p class="hm-eyebrow">PERSÖNLICH ERREICHBAR</p><h2>Manchmal hilft ein Mensch.</h2><p class="hm-intro">Du kommst nicht weiter? Oliver Dering hilft dir persönlich über WhatsApp. Sag einfach, bei welchem Schritt du festhängst.</p><a class="hm-button hm-primary" href="<?php echo esc_url($wa); ?>" target="_blank" rel="noopener noreferrer">Oliver über WhatsApp fragen ↗</a><p class="hm-fine">Du prüfst die Nachricht und sendest sie selbst. Bitte keine Passwörter oder Zugangscodes übermitteln.</p></div></section>
 <?php endif; ?>
 </main>
-<footer class="hm-footer"><div class="hm-wrap"><p><strong>helper · monkey ©</strong><br>ki agents powered by odpc.de</p><nav aria-label="Fußnavigation"><a href="/connector-einrichten/">Connector</a><a href="/start/">Alle Monkeys</a><a href="/werkstatt/">Werkzeuge</a><a href="https://odpc.de/">odpc.de</a><a href="https://odpc.de/impressum">Impressum</a><a href="https://odpc.de/datenschutzerklaerung">Datenschutz</a></nav><p class="hm-fine">Deine Konten. Deine Freigaben. Deine Entscheidung.</p></div></footer>
+<footer class="hm-footer"><div class="hm-wrap"><p><strong>helper · monkey ©</strong><br>ki agents powered by odpc.de</p><nav aria-label="Fußnavigation"><a href="/connector-einrichten/" data-monkey-open data-monkey-mode="text">Connector</a><a href="/start/">Alle Monkeys</a><a href="/werkstatt/">Werkzeuge</a><a href="https://odpc.de/">odpc.de</a><a href="https://odpc.de/impressum">Impressum</a><a href="https://odpc.de/datenschutzerklaerung">Datenschutz</a></nav><p class="hm-fine">Deine Konten. Deine Freigaben. Deine Entscheidung.</p></div></footer>
 <?php wp_footer(); ?>
 </body></html>
