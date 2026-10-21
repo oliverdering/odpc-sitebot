@@ -14,7 +14,8 @@ App ohne Registrierung oder kostenpflichtige APIs. Vorrat, Einkaufsliste, Favori
 - Gramm-Mischküche: Gesamtmenge skalieren, Gewichtung ändern, Bestandteile ausschließen und weitere trockene Zutaten hinzufügen.
 - TL/EL nur als zutatenspezifische Näherung. Für Zutaten ohne Umrechnungsansatz wird keine Grammpräzision vorgetäuscht.
 - Eigene Rezepturen speichern, kopieren, exportieren; druckbare Etiketten mit Rezeptur und Mischdatum.
-- Dosen und Agentur-Beschriftung als optionaler Anfrage-Service über Oliver, ohne behauptete Preise oder Lagerverfügbarkeit.
+- Marke: „Mein Kraut. Dein Geschmack.“ / „My spice. Your taste.“
+- Geschäftsmodell: Grundgewürze und Nachfüllpackungen, schwarze Gewürzgläser mit passendem Verschluss und Agentur-Beschriftung; später bezahlter Datenbankzugang. Der Shop ist als in Vorbereitung gekennzeichnet. Aktuell nur Gläser-/Beschriftungsanfragen, keine Bestellabwicklung oder Zahlung.
 - Transparentes, datiertes Kostenbeispiel für italienische Kräuter gegenüber Ankerkraut. Kosten des Ersteinkaufs und des Verbrauchs getrennt.
 
 ## Daten und Qualität
@@ -38,3 +39,9 @@ Der GitHub-Workflow `meinkraut-deploy.yml` prüft Datenreferenzen, Rezeptmengen 
 ## Nächste Produktstufen
 
 Weitere Länderporträts und Einzelgewürze recherchieren, Rezepturen mit Testköchen verkosten, Bilder exakt zuordnen, Feedback aus Pilotbetrieb auswerten. Anschließend Konten und serverseitig gespeicherte persönliche Mischungen planen. PayPal erst nach einem eigenständigen Zugangs- und Zahlungsmodell integrieren; ein öffentlich ausgelieferter JSON-Katalog ist keine geschützte Bezahldatenbank.
+
+## Gläserauswahl · Stand 21.10.2026
+
+Kandidat: ETIVERA FACTUM 192 ml, schwarz, TO-58DE, Artikel FAC-SW192#K180Z. Lieferantenseite: https://www.etivera.de/factum-schraubglas-192ml-schwarz-mdg.-to58de-karton-180stk.html
+
+180 Stück kosten laut Angebot 174,57 EUR inklusive 19 % MwSt., zuzüglich Versand, ohne Deckel (rund 0,97 EUR je Glas). Das ist ein Beschaffungshinweis und kein Mein-Kraut-Verkaufspreis. Passenden Deep-Twist-Off-Deckel separat kalkulieren. Vor der Sortimentsfreigabe Eignung der Glas-/Deckelkombination, Dichtheit und Lichtschutz bestätigen; die schwarze Farbe allein belegt keine vollständige Lichtundurchlässigkeit. Konformitätsdownload war im Recherchezugriff nicht abrufbar. Füllgewicht pro Gewürz praktisch messen; 192 ml sind kein einheitliches Grammgewicht. Kalkulation später inklusive Deckel, Etikett/Druck, Verpackung, Versand, Zahlungsgebühren und Zugangskosten betrachten.
