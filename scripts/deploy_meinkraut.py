@@ -58,6 +58,11 @@ def main():
                 if fresh:
                     with sf.open(wrapper+'.uploading','w') as f:f.write(code)
                     sf.chmod(wrapper+'.uploading',0o644);sf.posix_rename(wrapper+'.uploading',wrapper)
+                # Verify rewritten routes before accepting the release. IONOS needs an explicit URL base.
+                for smoke_path in ['/','/gewuerz/schwarzer-pfeffer/','/mischung/mk-steakpfeffer/','/glaeser-etiketten/']:
+                    try:smoke_status,smoke_body,_=get('https://meinkraut.odpc.de'+smoke_path)
+                    except Exception as exc:raise RuntimeError('Public route request failed: '+smoke_path) from exc
+                    if smoke_status!=200 or b'<h1' not in smoke_body:raise RuntimeError('Public route verification failed: '+smoke_path)
                 status,body,_=get('https://odpc.de/.mk-setup-'+hash_value[:20]+'.php')
                 # An unauthenticated GET must stay inaccessible (normally HTTPError 404).
                 if status==200:raise RuntimeError('Setup must not accept unauthenticated GET')
