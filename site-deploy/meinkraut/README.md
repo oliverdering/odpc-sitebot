@@ -49,3 +49,9 @@ Kandidat: ETIVERA FACTUM 192 ml, schwarz, TO-58DE, Artikel FAC-SW192#K180Z. Lief
 ## Marketing und Vergleich
 
 Startseite erklärt das Selbstmischen sofort, zeigt den 25-g-Vergleich direkt nach dem Einstieg und ergänzt Familien-, Geschenk- und Grillanlässe. Preisvergleich in der Hauptnavigation. Preisstammdaten liegen zentral in `priceRows` mit sechs Händlerquellen; Startseite und Detailrechnung rechnen daraus. Stand 21.10.2026: 1,0814 EUR Zutaten/100 g, 0,27035 EUR/25 g; Vergleichsglas 5,49 EUR/25 g. Differenz 5,21965 EUR, rund 95 %. Erster Einkauf der sechs 500-g-Packungen: 38,95 EUR plus Versand. Eigene Gläser, Etiketten, Versand, Arbeitszeit, Restvorräte und späterer Zugang sind nicht im Prozentvergleich enthalten. Fremdhändlerpreise sind keine zukünftigen Mein-Kraut-Shoppreise. Kein Vergleich identischer Originalrezepturen oder interner Herstellkosten. Familienaktionen mit Begleitung Erwachsener und milden Kräutern. Wintermischungen werden als eigene Entwicklungsideen beschrieben, keine noch nicht vorhandenen fertigen Winterrezepte versprochen.
+
+## Verbindliches Logo
+
+Finale Freigabe durch Oliver: grauer Natursteinmörser und Stößel, Gewürze und Kräuter, klare dunkelgrüne Wortmarke. Kein Bus und keine Rallyezahl. Originalquelle: https://odpc.de/wp-content/uploads/2026/10/file_000000009f5081f4864e23c5e7a7e7f7.png
+
+SHA-256 des freigegebenen Originals: `8b848e559c99c43f9aaff48fe54a5d3857f0f475d8fd9fa66ad1e1b4aa2725a5`. Nur größenoptimierte WebP-Ableitungen, keine neue Gestaltung. Dasselbe Logo steht in Header, Startseite, Footer, Etikettenansicht und Druckvorlage sowie Favicon, Touch-Icon und Open-Graph-Vorschau. Alle Überschriften verwenden nun eine kräftige serifenlose Systemschrift passend zur Wortmarke; keine externen Schriften. Asset- und App-URLs erhalten neue Versionsparameter gegen veraltete Browser-Caches.
