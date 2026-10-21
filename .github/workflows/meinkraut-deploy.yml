@@ -1,10 +1,13 @@
 name: Mein Kraut / Validated beta deployment
 on:
   push:
+    branches: [main]
     paths:
       - 'site-deploy/meinkraut/**'
       - 'scripts/deploy_meinkraut.py'
       - 'scripts/test_meinkraut.cjs'
+      - 'scripts/test_meinkraut_php.php'
+      - 'scripts/build_meinkraut_seo.py'
       - 'deployment/meinkraut-bootstrap.json'
       - '.github/workflows/meinkraut-deploy.yml'
   workflow_dispatch:
@@ -16,13 +19,17 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - name: Validate application and data
         run: |
           node --check site-deploy/meinkraut/meinkraut.js
+          node --check site-deploy/meinkraut/shop.js
           node scripts/test_meinkraut.cjs
+          php scripts/test_meinkraut_php.php
+          python3 scripts/build_meinkraut_seo.py
+          git diff --exit-code -- site-deploy/meinkraut/sitemap.xml
           find site-deploy/meinkraut -name '*.php' -print0 | while IFS= read -r -d '' file; do php -l "$file"; done
           python3 -m py_compile scripts/deploy_meinkraut.py
       - run: python3 -m pip install 'paramiko>=3.4,<5'

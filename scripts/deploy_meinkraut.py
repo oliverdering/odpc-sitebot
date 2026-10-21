@@ -15,6 +15,8 @@ def mkdirs(sf,path):
 def get(url):
     with urlopen(Request(url,headers={'Cache-Control':'no-cache','User-Agent':'MeinKraut-ReleaseCheck/2'}),timeout=35) as r:return r.status,r.read(),r.headers
 def main():
+    catalog=json.loads((SOURCE/'content/shop-catalog.json').read_text())
+    if catalog.get('checkoutEnabled') is not False or catalog.get('mode')!='test':raise RuntimeError('Only test commerce is approved')
     tr=paramiko.Transport((HOST,22));tr.start_client(timeout=25)
     try:
         actual='SHA256:'+base64.b64encode(hashlib.sha256(tr.get_remote_server_key().asbytes()).digest()).decode().rstrip('=')
@@ -32,7 +34,7 @@ def main():
             with zipfile.ZipFile(SOURCE/'assets-bundle.zip') as z:
                 if any(Path(x).is_absolute() or '..' in Path(x).parts for x in z.namelist()):raise RuntimeError('Unsafe asset archive')
                 z.extractall(SOURCE)
-            required=['index.php','data.php','health.php','meinkraut.css','meinkraut.js','.htaccess','robots.txt','sitemap.xml','server/database.php','server/install.php','server/.htaccess','content/atlas-base.json','content/meinkraut-content.json']
+            required=['index.php','data.php','health.php','meinkraut.css','meinkraut.js','.htaccess','robots.txt','sitemap.xml','shop.css','shop.js','shop-api.php','server/public.php','server/commerce.php','content/shop-catalog.json','vendor/qrcode.js','vendor/qrcode-LICENSE.txt','server/database.php','server/install.php','server/.htaccess','content/atlas-base.json','content/meinkraut-content.json']
             files=[SOURCE/x for x in required]+[p for p in (SOURCE/'assets').rglob('*') if p.is_file() and p.suffix=='.webp']
             files.sort(key=lambda p:p.name=='index.php')
             BACKUP.mkdir(exist_ok=True);changed=[]

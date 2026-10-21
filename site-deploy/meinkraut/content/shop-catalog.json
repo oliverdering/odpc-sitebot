@@ -1,0 +1,901 @@
+{
+  "version": "3.0-test",
+  "mode": "test",
+  "checkoutEnabled": false,
+  "accountMode": "demo",
+  "updatedAt": "2026-10-21",
+  "appAccess": {
+    "targetPriceGross": 2.99,
+    "billingPeriod": null,
+    "status": "VORLÄUFIG",
+    "betaFree": true
+  },
+  "products": [
+    {
+      "id": "paprika-edelsuess",
+      "slug": "paprika-edelsuess",
+      "ingredientId": "paprika-edelsu",
+      "name": "Paprika edelsüß",
+      "line": "basic",
+      "description": "Fruchtig-milde Paprikanote für Gulasch, Gemüse und BBQ-Rubs.",
+      "status": "planned",
+      "variants": [
+        {
+          "id": "paprika-edelsuess-250",
+          "grams": 250,
+          "priceGross": null,
+          "priceStatus": "OFFEN"
+        },
+        {
+          "id": "paprika-edelsuess-500",
+          "grams": 500,
+          "priceGross": null,
+          "priceStatus": "OFFEN"
+        }
+      ],
+      "originStatus": "OFFEN",
+      "qualityStatus": "OFFEN",
+      "origin": "Je nach freigegebener Charge",
+      "sources": [
+        {
+          "title": "Öffentliche Produktinformation: Eberstein GmbH",
+          "url": "https://www.gewuerzpreisliste.de/wp-content/uploads/2026/03/Preisliste-Mar-26-Eberstein.pdf"
+        },
+        {
+          "title": "Öffentliche Produktinformation: Kahler Gewürze GmbH & Co. KG",
+          "url": "https://www.kahler-berlin.de/paprika-edelsuess-6024501"
+        },
+        {
+          "title": "Öffentliche Produktinformation: pikantum KG",
+          "url": "https://www.pikantum.de/Paprika-edelsuess-1kg"
+        }
+      ]
+    },
+    {
+      "id": "pfeffer-schwarz",
+      "slug": "pfeffer-schwarz",
+      "ingredientId": "schwarzer-pfeffer",
+      "name": "Schwarzer Pfeffer, ganz",
+      "line": "basic",
+      "description": "Ganze Körner zum frischen Mahlen oder Mörsern.",
+      "status": "planned",
+      "variants": [
+        {
+          "id": "pfeffer-schwarz-250",
+          "grams": 250,
+          "priceGross": null,
+          "priceStatus": "OFFEN"
+        },
+        {
+          "id": "pfeffer-schwarz-500",
+          "grams": 500,
+          "priceGross": null,
+          "priceStatus": "OFFEN"
+        }
+      ],
+      "originStatus": "OFFEN",
+      "qualityStatus": "OFFEN",
+      "origin": "Je nach freigegebener Charge",
+      "sources": [
+        {
+          "title": "Öffentliche Produktinformation: Eberstein GmbH",
+          "url": "https://www.gewuerzpreisliste.de/wp-content/uploads/2026/03/Preisliste-Mar-26-Eberstein.pdf"
+        },
+        {
+          "title": "Öffentliche Produktinformation: Kahler Gewürze GmbH & Co. KG",
+          "url": "https://www.kahler-berlin.de/pfeffer-schwarz-ganz-6025801"
+        },
+        {
+          "title": "Öffentliche Produktinformation: pikantum KG",
+          "url": "https://www.pikantum.de/Pfeffer-Salz-1kg_s3"
+        }
+      ]
+    },
+    {
+      "id": "knoblauchgranulat",
+      "slug": "knoblauchgranulat",
+      "ingredientId": "knoblauchgranulat",
+      "name": "Knoblauchgranulat",
+      "line": "basic",
+      "description": "Trockene Knoblauchwürze für Rubs, Dips und eigene Mischungen.",
+      "status": "planned",
+      "variants": [
+        {
+          "id": "knoblauchgranulat-250",
+          "grams": 250,
+          "priceGross": null,
+          "priceStatus": "OFFEN"
+        },
+        {
+          "id": "knoblauchgranulat-500",
+          "grams": 500,
+          "priceGross": null,
+          "priceStatus": "OFFEN"
+        }
+      ],
+      "originStatus": "OFFEN",
+      "qualityStatus": "OFFEN",
+      "origin": "Je nach freigegebener Charge",
+      "sources": [
+        {
+          "title": "Öffentliche Produktinformation: Eberstein GmbH",
+          "url": "https://www.gewuerzpreisliste.de/wp-content/uploads/2026/03/Preisliste-Mar-26-Eberstein.pdf"
+        },
+        {
+          "title": "Öffentliche Produktinformation: Kahler Gewürze GmbH & Co. KG",
+          "url": "https://www.kahler-berlin.de/knoblauchgranulat-6019101"
+        },
+        {
+          "title": "Öffentliche Produktinformation: pikantum KG",
+          "url": "https://www.pikantum.de/Knoblauch-granuliert-1kg"
+        }
+      ]
+    },
+    {
+      "id": "zwiebelgranulat",
+      "slug": "zwiebelgranulat",
+      "ingredientId": "zwiebelgranulat",
+      "name": "Zwiebelgranulat",
+      "line": "basic",
+      "description": "Herzhafte Basis für trockene Würzmischungen.",
+      "status": "planned",
+      "variants": [
+        {
+          "id": "zwiebelgranulat-250",
+          "grams": 250,
+          "priceGross": null,
+          "priceStatus": "OFFEN"
+        },
+        {
+          "id": "zwiebelgranulat-500",
+          "grams": 500,
+          "priceGross": null,
+          "priceStatus": "OFFEN"
+        }
+      ],
+      "originStatus": "OFFEN",
+      "qualityStatus": "OFFEN",
+      "origin": "Je nach freigegebener Charge",
+      "sources": [
+        {
+          "title": "Öffentliche Produktinformation: Eberstein GmbH",
+          "url": "https://www.gewuerzpreisliste.de/wp-content/uploads/2026/03/Preisliste-Mar-26-Eberstein.pdf"
+        },
+        {
+          "title": "Öffentliche Produktinformation: Kahler Gewürze GmbH & Co. KG",
+          "url": "https://www.kahler-berlin.de/zwiebelgranulat-6035001"
+        },
+        {
+          "title": "Öffentliche Produktinformation: pikantum KG",
+          "url": "https://www.pikantum.de/Bio-Zwiebelgranulat-1kg"
+        }
+      ]
+    },
+    {
+      "id": "oregano",
+      "slug": "oregano",
+      "ingredientId": "oregano",
+      "name": "Oregano",
+      "line": "basic",
+      "description": "Kräftige Kräuternote für mediterrane Gerichte.",
+      "status": "planned",
+      "variants": [
+        {
+          "id": "oregano-250",
+          "grams": 250,
+          "priceGross": null,
+          "priceStatus": "OFFEN"
+        },
+        {
+          "id": "oregano-500",
+          "grams": 500,
+          "priceGross": null,
+          "priceStatus": "OFFEN"
+        }
+      ],
+      "originStatus": "OFFEN",
+      "qualityStatus": "OFFEN",
+      "origin": "Je nach freigegebener Charge",
+      "sources": [
+        {
+          "title": "Öffentliche Produktinformation: Eberstein GmbH",
+          "url": "https://www.gewuerzpreisliste.de/wp-content/uploads/2026/03/Preisliste-Mar-26-Eberstein.pdf"
+        },
+        {
+          "title": "Öffentliche Produktinformation: Kahler Gewürze GmbH & Co. KG",
+          "url": "https://www.kahler-berlin.de/oregano-gerebelt-ursprung-griechenland-6077409"
+        },
+        {
+          "title": "Öffentliche Produktinformation: pikantum KG",
+          "url": "https://www.pikantum.de/Oregano-gerebelt-1kg"
+        }
+      ]
+    },
+    {
+      "id": "basilikum",
+      "slug": "basilikum",
+      "ingredientId": "basilikum",
+      "name": "Basilikum",
+      "line": "basic",
+      "description": "Kräuter für Tomatensaucen und italienisch inspirierte Mischungen.",
+      "status": "planned",
+      "variants": [
+        {
+          "id": "basilikum-250",
+          "grams": 250,
+          "priceGross": null,
+          "priceStatus": "OFFEN"
+        },
+        {
+          "id": "basilikum-500",
+          "grams": 500,
+          "priceGross": null,
+          "priceStatus": "OFFEN"
+        }
+      ],
+      "originStatus": "OFFEN",
+      "qualityStatus": "OFFEN",
+      "origin": "Je nach freigegebener Charge",
+      "sources": [
+        {
+          "title": "Öffentliche Produktinformation: Eberstein GmbH",
+          "url": "https://www.gewuerzpreisliste.de/wp-content/uploads/2026/03/Preisliste-Mar-26-Eberstein.pdf"
+        },
+        {
+          "title": "Öffentliche Produktinformation: Kahler Gewürze GmbH & Co. KG",
+          "url": "https://www.kahler-berlin.de/basilikum-gerebelt-6010801"
+        },
+        {
+          "title": "Öffentliche Produktinformation: pikantum KG",
+          "url": "https://www.pikantum.de/Bio-Basilikum-gerebelt-1kg"
+        }
+      ]
+    },
+    {
+      "id": "kreuzkuemmel",
+      "slug": "kreuzkuemmel",
+      "ingredientId": "kreuzkummel",
+      "name": "Kreuzkümmel",
+      "line": "basic",
+      "description": "Warmes, erdiges Aroma für Curry, Chili und orientalische Gerichte.",
+      "status": "planned",
+      "variants": [
+        {
+          "id": "kreuzkuemmel-250",
+          "grams": 250,
+          "priceGross": null,
+          "priceStatus": "OFFEN"
+        },
+        {
+          "id": "kreuzkuemmel-500",
+          "grams": 500,
+          "priceGross": null,
+          "priceStatus": "OFFEN"
+        }
+      ],
+      "originStatus": "OFFEN",
+      "qualityStatus": "OFFEN",
+      "origin": "Je nach freigegebener Charge",
+      "sources": [
+        {
+          "title": "Öffentliche Produktinformation: Eberstein GmbH",
+          "url": "https://www.gewuerzpreisliste.de/wp-content/uploads/2026/03/Preisliste-Mar-26-Eberstein.pdf"
+        },
+        {
+          "title": "Öffentliche Produktinformation: Kahler Gewürze GmbH & Co. KG",
+          "url": "https://www.kahler-berlin.de/cumin-gemahlen-6014401"
+        },
+        {
+          "title": "Öffentliche Produktinformation: pikantum KG",
+          "url": "https://www.pikantum.de/Kreuzkuemmel-Cumin-gemahlen-1kg"
+        }
+      ]
+    },
+    {
+      "id": "koriander",
+      "slug": "koriander",
+      "ingredientId": "koriandersaat",
+      "name": "Koriandersaat",
+      "line": "basic",
+      "description": "Ganze Samen mit einer warmen, zitrusartigen Würznote.",
+      "status": "planned",
+      "variants": [
+        {
+          "id": "koriander-250",
+          "grams": 250,
+          "priceGross": null,
+          "priceStatus": "OFFEN"
+        },
+        {
+          "id": "koriander-500",
+          "grams": 500,
+          "priceGross": null,
+          "priceStatus": "OFFEN"
+        }
+      ],
+      "originStatus": "OFFEN",
+      "qualityStatus": "OFFEN",
+      "origin": "Je nach freigegebener Charge",
+      "sources": [
+        {
+          "title": "Öffentliche Produktinformation: Eberstein GmbH",
+          "url": "https://www.gewuerzpreisliste.de/wp-content/uploads/2026/03/Preisliste-Mar-26-Eberstein.pdf"
+        },
+        {
+          "title": "Öffentliche Produktinformation: Kahler Gewürze GmbH & Co. KG",
+          "url": "https://www.kahler-berlin.de/koriander-gemahlen-6019701"
+        },
+        {
+          "title": "Öffentliche Produktinformation: pikantum KG",
+          "url": "https://www.pikantum.de/Koriander-gemahlen"
+        }
+      ]
+    },
+    {
+      "id": "kurkuma",
+      "slug": "kurkuma",
+      "ingredientId": "kurkuma",
+      "name": "Kurkuma",
+      "line": "basic",
+      "description": "Gemahlene Wurzel für Curry und Reisgerichte.",
+      "status": "planned",
+      "variants": [
+        {
+          "id": "kurkuma-250",
+          "grams": 250,
+          "priceGross": null,
+          "priceStatus": "OFFEN"
+        },
+        {
+          "id": "kurkuma-500",
+          "grams": 500,
+          "priceGross": null,
+          "priceStatus": "OFFEN"
+        }
+      ],
+      "originStatus": "OFFEN",
+      "qualityStatus": "OFFEN",
+      "origin": "Je nach freigegebener Charge",
+      "sources": [
+        {
+          "title": "Öffentliche Produktinformation: Eberstein GmbH",
+          "url": "https://www.gewuerzpreisliste.de/wp-content/uploads/2026/03/Preisliste-Mar-26-Eberstein.pdf"
+        },
+        {
+          "title": "Öffentliche Produktinformation: Kahler Gewürze GmbH & Co. KG",
+          "url": "https://www.kahler-berlin.de/curcuma-gemahlen-6027301"
+        },
+        {
+          "title": "Öffentliche Produktinformation: pikantum KG",
+          "url": "https://www.pikantum.de/Bio-Kurkuma-Wurzel-gemahlen-5kg?btgsterne=0&ratings_nPage=3"
+        }
+      ]
+    },
+    {
+      "id": "zimt",
+      "slug": "zimt",
+      "ingredientId": "zimt",
+      "name": "Zimt",
+      "line": "basic",
+      "description": "Die genaue botanische Art und Herkunft werden vor dem Einkauf festgelegt.",
+      "status": "planned",
+      "variants": [
+        {
+          "id": "zimt-250",
+          "grams": 250,
+          "priceGross": null,
+          "priceStatus": "OFFEN"
+        },
+        {
+          "id": "zimt-500",
+          "grams": 500,
+          "priceGross": null,
+          "priceStatus": "OFFEN"
+        }
+      ],
+      "originStatus": "OFFEN",
+      "qualityStatus": "OFFEN",
+      "origin": "Je nach freigegebener Charge",
+      "sources": [
+        {
+          "title": "Öffentliche Produktinformation: Eberstein GmbH",
+          "url": "https://www.gewuerzpreisliste.de/wp-content/uploads/2026/03/Preisliste-Mar-26-Eberstein.pdf"
+        },
+        {
+          "title": "Öffentliche Produktinformation: pikantum KG",
+          "url": "https://www.pikantum.de/Zimt-Ceylon-Canehl-gemahlen-1kg"
+        },
+        {
+          "title": "Öffentliche Produktinformation: Taste Market",
+          "url": "https://www.taste-market.de/Ceylon-Zimt/97-2x1kg"
+        }
+      ]
+    },
+    {
+      "id": "voatsiperifery",
+      "slug": "voatsiperifery",
+      "name": "Voatsiperifery-Wildpfeffer",
+      "line": "premium",
+      "description": "Holzig-würzige, fruchtige Pfeffernoten.",
+      "aroma": "Holzig-würzige, fruchtige Pfeffernoten.",
+      "usage": "Für Steak, Pilze und dunkle Saucen.",
+      "processing": "Pfefferfrüchte werden getrocknet; Wildsammlung und genaue Charge müssen belegt werden.",
+      "plannedOrigin": "Madagaskar",
+      "origin": "Sortimentskandidat: Madagaskar",
+      "originStatus": "OFFEN",
+      "qualityStatus": "OFFEN",
+      "documentation": "Für MeinKraut sind noch keine chargenbezogenen Herkunfts- oder Qualitätsunterlagen hinterlegt.",
+      "status": "planned",
+      "variants": [
+        {
+          "id": "voatsiperifery-25",
+          "grams": 25,
+          "priceGross": null,
+          "priceStatus": "OFFEN"
+        },
+        {
+          "id": "voatsiperifery-50",
+          "grams": 50,
+          "priceGross": null,
+          "priceStatus": "OFFEN"
+        },
+        {
+          "id": "voatsiperifery-100",
+          "grams": 100,
+          "priceGross": null,
+          "priceStatus": "OFFEN"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Öffentliche Produktinformation: BOS FOOD GmbH",
+          "url": "https://www.bosfood.de/shop-detail/kategorie/salz-pfeffer-senf-gewuerze-aromen-trockengemuese/subkategorie/pfeffer/produkt/voatsiperifery-pfeffer-ganz-1-kg_36475.html"
+        }
+      ],
+      "relatedIngredientIds": [
+        "schwarzer-pfeffer"
+      ],
+      "ingredientId": null
+    },
+    {
+      "id": "ceylon-zimt",
+      "slug": "ceylon-zimt",
+      "name": "Ceylon-Zimt",
+      "line": "premium",
+      "description": "Feine, süßlich-warme Zimtnote.",
+      "aroma": "Feine, süßlich-warme Zimtnote.",
+      "usage": "Für Gebäck, Porridge und herzhafte Schmorgerichte.",
+      "processing": "Cinnamomum verum als botanische Spezifikation; Anbauland und Sorte müssen für die konkrete Ware belegt werden.",
+      "plannedOrigin": "Sri Lanka",
+      "origin": "Sortimentskandidat: Sri Lanka",
+      "originStatus": "OFFEN",
+      "qualityStatus": "OFFEN",
+      "documentation": "Für MeinKraut sind noch keine chargenbezogenen Herkunfts- oder Qualitätsunterlagen hinterlegt.",
+      "status": "planned",
+      "variants": [
+        {
+          "id": "ceylon-zimt-25",
+          "grams": 25,
+          "priceGross": null,
+          "priceStatus": "OFFEN"
+        },
+        {
+          "id": "ceylon-zimt-50",
+          "grams": 50,
+          "priceGross": null,
+          "priceStatus": "OFFEN"
+        },
+        {
+          "id": "ceylon-zimt-100",
+          "grams": 100,
+          "priceGross": null,
+          "priceStatus": "OFFEN"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Öffentliche Produktinformation: pikantum KG",
+          "url": "https://www.pikantum.de/Zimt-Ceylon-Canehl-gemahlen-1kg"
+        },
+        {
+          "title": "Öffentliche Produktinformation: Uduwara Spices (Pvt) Ltd",
+          "url": "https://uduwaraspices.com/"
+        },
+        {
+          "title": "Öffentliche Produktinformation: Dhanaa Spices",
+          "url": "https://www.dhanaaspices.com/"
+        }
+      ],
+      "relatedIngredientIds": [
+        "zimt"
+      ],
+      "ingredientId": null
+    },
+    {
+      "id": "kampot-rot",
+      "slug": "kampot-rot",
+      "name": "Roter Kampot-Pfeffer",
+      "line": "premium",
+      "description": "Fruchtige Pfefferschärfe.",
+      "aroma": "Fruchtige Pfefferschärfe.",
+      "usage": "Zum Finishen von Fleisch, Gemüse oder Früchten.",
+      "processing": "Kampot ist eine geschützte Herkunftsbezeichnung. Nur mit nachvollziehbarem Herkunftsnachweis als entsprechendes Produkt freigeben.",
+      "plannedOrigin": "Kambodscha",
+      "origin": "Sortimentskandidat: Kambodscha",
+      "originStatus": "OFFEN",
+      "qualityStatus": "OFFEN",
+      "documentation": "Für MeinKraut sind noch keine chargenbezogenen Herkunfts- oder Qualitätsunterlagen hinterlegt.",
+      "status": "planned",
+      "variants": [
+        {
+          "id": "kampot-rot-25",
+          "grams": 25,
+          "priceGross": null,
+          "priceStatus": "OFFEN"
+        },
+        {
+          "id": "kampot-rot-50",
+          "grams": 50,
+          "priceGross": null,
+          "priceStatus": "OFFEN"
+        },
+        {
+          "id": "kampot-rot-100",
+          "grams": 100,
+          "priceGross": null,
+          "priceStatus": "OFFEN"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Öffentliche Produktinformation: La Plantation",
+          "url": "https://laplantation.com/en/product-cat/organic-spices/"
+        },
+        {
+          "title": "Öffentliche Produktinformation: Farmlink Cambodia",
+          "url": "https://www.farmlink-cambodia.com/docs/Farmlink-Catalog.pdf"
+        }
+      ],
+      "relatedIngredientIds": [
+        "schwarzer-pfeffer"
+      ],
+      "ingredientId": null
+    },
+    {
+      "id": "tellicherry",
+      "slug": "tellicherry",
+      "name": "Tellicherry-Pfeffer",
+      "line": "premium",
+      "description": "Kräftige, warme Pfeffernote.",
+      "aroma": "Kräftige, warme Pfeffernote.",
+      "usage": "Frisch mahlen, etwa zu Steak und Gemüse.",
+      "processing": "Tellicherry bezeichnet eine Handelsqualität nach Korngröße; die konkrete Sortierung und Herkunft werden beim Lieferanten geprüft.",
+      "plannedOrigin": "Indien",
+      "origin": "Sortimentskandidat: Indien",
+      "originStatus": "OFFEN",
+      "qualityStatus": "OFFEN",
+      "documentation": "Für MeinKraut sind noch keine chargenbezogenen Herkunfts- oder Qualitätsunterlagen hinterlegt.",
+      "status": "planned",
+      "variants": [
+        {
+          "id": "tellicherry-25",
+          "grams": 25,
+          "priceGross": null,
+          "priceStatus": "OFFEN"
+        },
+        {
+          "id": "tellicherry-50",
+          "grams": 50,
+          "priceGross": null,
+          "priceStatus": "OFFEN"
+        },
+        {
+          "id": "tellicherry-100",
+          "grams": 100,
+          "priceGross": null,
+          "priceStatus": "OFFEN"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Öffentliche Produktinformation: Eberstein GmbH",
+          "url": "https://www.gewuerzpreisliste.de/wp-content/uploads/2026/03/Preisliste-Mar-26-Eberstein.pdf"
+        }
+      ],
+      "relatedIngredientIds": [
+        "schwarzer-pfeffer"
+      ],
+      "ingredientId": null
+    },
+    {
+      "id": "pimenton-vera",
+      "slug": "pimenton-vera",
+      "name": "Pimentón de la Vera",
+      "line": "premium",
+      "description": "Rauchige, paprikabetonte Würze.",
+      "aroma": "Rauchige, paprikabetonte Würze.",
+      "usage": "Für Kartoffeln, Eintöpfe und BBQ-Rubs.",
+      "processing": "Die geschützte Bezeichnung setzt belegte Herkunft und Spezifikation voraus. Schärfegrad wird je Artikel festgelegt.",
+      "plannedOrigin": "Spanien",
+      "origin": "Sortimentskandidat: Spanien",
+      "originStatus": "OFFEN",
+      "qualityStatus": "OFFEN",
+      "documentation": "Für MeinKraut sind noch keine chargenbezogenen Herkunfts- oder Qualitätsunterlagen hinterlegt.",
+      "status": "planned",
+      "variants": [
+        {
+          "id": "pimenton-vera-25",
+          "grams": 25,
+          "priceGross": null,
+          "priceStatus": "OFFEN"
+        },
+        {
+          "id": "pimenton-vera-50",
+          "grams": 50,
+          "priceGross": null,
+          "priceStatus": "OFFEN"
+        },
+        {
+          "id": "pimenton-vera-100",
+          "grams": 100,
+          "priceGross": null,
+          "priceStatus": "OFFEN"
+        }
+      ],
+      "sources": [],
+      "relatedIngredientIds": [
+        "rauchpaprika"
+      ],
+      "ingredientId": null
+    },
+    {
+      "id": "urfa-biber",
+      "slug": "urfa-biber",
+      "name": "Urfa Biber",
+      "line": "premium",
+      "description": "Dunkle, fruchtige Chilischärfe.",
+      "aroma": "Dunkle, fruchtige Chilischärfe.",
+      "usage": "Für Grillgerichte, Dips und Gemüse.",
+      "processing": "Trocknung und Verarbeitung unterscheiden sich nach Hersteller. Salz- oder Ölzusätze müssen deklariert werden.",
+      "plannedOrigin": "Türkei",
+      "origin": "Sortimentskandidat: Türkei",
+      "originStatus": "OFFEN",
+      "qualityStatus": "OFFEN",
+      "documentation": "Für MeinKraut sind noch keine chargenbezogenen Herkunfts- oder Qualitätsunterlagen hinterlegt.",
+      "status": "planned",
+      "variants": [
+        {
+          "id": "urfa-biber-25",
+          "grams": 25,
+          "priceGross": null,
+          "priceStatus": "OFFEN"
+        },
+        {
+          "id": "urfa-biber-50",
+          "grams": 50,
+          "priceGross": null,
+          "priceStatus": "OFFEN"
+        },
+        {
+          "id": "urfa-biber-100",
+          "grams": 100,
+          "priceGross": null,
+          "priceStatus": "OFFEN"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Öffentliche Produktinformation: Kütaş Group",
+          "url": "https://www.kutas.com.tr/products"
+        },
+        {
+          "title": "Öffentliche Produktinformation: Eberstein GmbH",
+          "url": "https://www.gewuerzpreisliste.de/wp-content/uploads/2026/03/Preisliste-Mar-26-Eberstein.pdf"
+        }
+      ],
+      "relatedIngredientIds": [
+        "chiliflocken"
+      ],
+      "ingredientId": null
+    },
+    {
+      "id": "sumach",
+      "slug": "sumach",
+      "name": "Sumach",
+      "line": "premium",
+      "description": "Säuerlich-fruchtige Würze.",
+      "aroma": "Säuerlich-fruchtige Würze.",
+      "usage": "Für Salate, Zwiebeln und levantinische Gerichte.",
+      "processing": "Geplant ist eine klar spezifizierte Ware; Reinheit, Salzzusatz und Herkunft sind vor Einkauf offen.",
+      "plannedOrigin": "Türkei",
+      "origin": "Sortimentskandidat: Türkei",
+      "originStatus": "OFFEN",
+      "qualityStatus": "OFFEN",
+      "documentation": "Für MeinKraut sind noch keine chargenbezogenen Herkunfts- oder Qualitätsunterlagen hinterlegt.",
+      "status": "planned",
+      "variants": [
+        {
+          "id": "sumach-25",
+          "grams": 25,
+          "priceGross": null,
+          "priceStatus": "OFFEN"
+        },
+        {
+          "id": "sumach-50",
+          "grams": 50,
+          "priceGross": null,
+          "priceStatus": "OFFEN"
+        },
+        {
+          "id": "sumach-100",
+          "grams": 100,
+          "priceGross": null,
+          "priceStatus": "OFFEN"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Öffentliche Produktinformation: pikantum KG",
+          "url": "https://www.pikantum.de/Bio-Sumach-5kg"
+        },
+        {
+          "title": "Öffentliche Produktinformation: Kütaş Group",
+          "url": "https://www.kutas.com.tr/products"
+        },
+        {
+          "title": "Öffentliche Produktinformation: Eberstein GmbH",
+          "url": "https://www.gewuerzpreisliste.de/wp-content/uploads/2026/03/Preisliste-Mar-26-Eberstein.pdf"
+        }
+      ],
+      "relatedIngredientIds": [
+        "sumach"
+      ],
+      "ingredientId": null
+    },
+    {
+      "id": "kardamom-gruen",
+      "slug": "kardamom-gruen",
+      "name": "Grüner Kardamom",
+      "line": "premium",
+      "description": "Frisch-würzige, zitrische und warme Noten.",
+      "aroma": "Frisch-würzige, zitrische und warme Noten.",
+      "usage": "Für Masala, Reis, Kaffee und Gebäck.",
+      "processing": "Ganze Kapseln; Herkunft, Größe und chargenbezogene Qualität werden bei der Auswahl geprüft.",
+      "plannedOrigin": "Herkunft noch offen",
+      "origin": "Sortimentskandidat: Herkunft noch offen",
+      "originStatus": "OFFEN",
+      "qualityStatus": "OFFEN",
+      "documentation": "Für MeinKraut sind noch keine chargenbezogenen Herkunfts- oder Qualitätsunterlagen hinterlegt.",
+      "status": "planned",
+      "variants": [
+        {
+          "id": "kardamom-gruen-25",
+          "grams": 25,
+          "priceGross": null,
+          "priceStatus": "OFFEN"
+        },
+        {
+          "id": "kardamom-gruen-50",
+          "grams": 50,
+          "priceGross": null,
+          "priceStatus": "OFFEN"
+        },
+        {
+          "id": "kardamom-gruen-100",
+          "grams": 100,
+          "priceGross": null,
+          "priceStatus": "OFFEN"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Öffentliche Produktinformation: pikantum KG",
+          "url": "https://www.pikantum.de/Kardamom-ganz-1kg"
+        },
+        {
+          "title": "Öffentliche Produktinformation: Eberstein GmbH",
+          "url": "https://www.gewuerzpreisliste.de/wp-content/uploads/2026/03/Preisliste-Mar-26-Eberstein.pdf"
+        }
+      ],
+      "relatedIngredientIds": [
+        "kardamom"
+      ],
+      "ingredientId": null
+    },
+    {
+      "id": "andaliman",
+      "slug": "andaliman",
+      "name": "Andaliman-Pfeffer",
+      "line": "premium",
+      "description": "Zitrusbetonte, prickelnde Würze.",
+      "aroma": "Zitrusbetonte, prickelnde Würze.",
+      "usage": "Für Fisch, Gemüse und indonesisch inspirierte Gerichte.",
+      "processing": "Zanthoxylum-Arten; Herkunftsregion, Art und Verfahren werden mit der Warenspezifikation abgeglichen.",
+      "plannedOrigin": "Indonesien",
+      "origin": "Sortimentskandidat: Indonesien",
+      "originStatus": "OFFEN",
+      "qualityStatus": "OFFEN",
+      "documentation": "Für MeinKraut sind noch keine chargenbezogenen Herkunfts- oder Qualitätsunterlagen hinterlegt.",
+      "status": "planned",
+      "variants": [
+        {
+          "id": "andaliman-25",
+          "grams": 25,
+          "priceGross": null,
+          "priceStatus": "OFFEN"
+        },
+        {
+          "id": "andaliman-50",
+          "grams": 50,
+          "priceGross": null,
+          "priceStatus": "OFFEN"
+        },
+        {
+          "id": "andaliman-100",
+          "grams": 100,
+          "priceGross": null,
+          "priceStatus": "OFFEN"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Öffentliche Produktinformation: pikantum KG",
+          "url": "https://www.pikantum.de/1kg"
+        },
+        {
+          "title": "Öffentliche Produktinformation: Eberstein GmbH",
+          "url": "https://www.gewuerzpreisliste.de/wp-content/uploads/2026/03/Preisliste-Mar-26-Eberstein.pdf"
+        }
+      ],
+      "relatedIngredientIds": [
+        "sichuanpfeffer"
+      ],
+      "ingredientId": null
+    },
+    {
+      "id": "glas-personalisiert",
+      "slug": "glas-personalisiert",
+      "name": "Dein persönliches Gewürzglas",
+      "line": "glass",
+      "description": "Dunkles 192-ml-Glas mit passendem Verschluss und personalisiertem Etikett. Leer, zum Selbstbefüllen.",
+      "status": "planned",
+      "targetPriceGross": 2.99,
+      "priceStatus": "VORLÄUFIG",
+      "variants": [
+        {
+          "id": "glas-personalisiert-1",
+          "units": 1,
+          "priceGross": null,
+          "priceStatus": "OFFEN"
+        }
+      ],
+      "sources": []
+    },
+    {
+      "id": "glas-chalk",
+      "slug": "glas-chalk",
+      "name": "MeinKraut Chalk",
+      "line": "glass",
+      "description": "Dunkles Gewürzglas mit Verschluss und wiederbeschreibbarem Tafelfolien-Etikett. Leer, zum Selbstbefüllen. Geeignetes Schreibmittel und Material werden bemustert.",
+      "status": "planned",
+      "priceStatus": "OFFEN",
+      "variants": [
+        {
+          "id": "glas-chalk-1",
+          "units": 1,
+          "priceGross": null,
+          "priceStatus": "OFFEN"
+        }
+      ],
+      "sources": []
+    }
+  ],
+  "releaseGates": {
+    "legal": false,
+    "operator": false,
+    "products": false,
+    "prices": false,
+    "payments": false,
+    "privacy": false
+  }
+}
