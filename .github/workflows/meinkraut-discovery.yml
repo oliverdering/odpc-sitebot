@@ -1,0 +1,20 @@
+name: Mein Kraut / Read-only webspace discovery
+on:
+  push:
+    paths:
+      - scripts/meinkraut_discover.py
+      - .github/workflows/meinkraut-discovery.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m pip install 'paramiko>=3.4,<5'
+      - name: Inspect directories without changes
+        env:
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+        run: python3 scripts/meinkraut_discover.py
