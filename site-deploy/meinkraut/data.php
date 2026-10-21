@@ -8,5 +8,9 @@ try {
     $payload='window.WGA_DATA='.json_encode($atlas,$flags).';window.MEINKRAUT_CONTENT='.json_encode($extra,$flags).';';
     $etag='"'.hash('sha256',$payload).'"';header('ETag: '.$etag);header('X-MeinKraut-Catalog: '.$source);
     if (($_SERVER['HTTP_IF_NONE_MATCH']??'')===$etag){http_response_code(304);exit;}
-    echo $payload;
+    header('Vary: Accept-Encoding');
+    if (strpos($_SERVER['HTTP_ACCEPT_ENCODING']??'', 'gzip')!==false && function_exists('gzencode') && !ini_get('zlib.output_compression')) {
+        header('Content-Encoding: gzip');
+        echo gzencode($payload,6);
+    } else { echo $payload; }
 } catch(Throwable $e) {http_response_code(503);header('Cache-Control: no-store');echo 'console.error("Der Gewürzkatalog ist vorübergehend nicht verfügbar.");';}
