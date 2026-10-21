@@ -22,8 +22,10 @@ def main():
         tr.auth_password(USER,os.environ['ODPC_SFTP_PASSWORD']);sf=paramiko.SFTPClient.from_transport(tr)
         try:
             if not stat.S_ISDIR(sf.lstat(ROOT).st_mode):raise RuntimeError('User-created MeinKraut webspace is missing')
+            fresh=True
             try:
                 with sf.open(ROOT+'/index.php') as f:previous=f.read().decode()
+                fresh=False
                 if 'Mein Kraut' not in previous:raise RuntimeError('Refusing to overwrite unrelated existing website')
             except FileNotFoundError:pass
             sf.stat(ODPC_ROOT+'/wp-content/plugins/weltgewuerz-atlas/weltgewuerz-atlas.php')
@@ -41,6 +43,9 @@ def main():
                     try:
                         st=sf.lstat(target)
                         if not stat.S_ISREG(st.st_mode):raise RuntimeError('Unsafe existing file')
+                        if st.st_size==source.stat().st_size:
+                            with sf.open(target,'rb') as remote:
+                                if hashlib.sha256(remote.read()).digest()==hashlib.sha256(source.read_bytes()).digest():continue
                         sf.get(target,str(old));existed=True
                     except FileNotFoundError:pass
                     temp=target+'.uploading';sf.put(str(source),temp,confirm=True);sf.chmod(temp,0o644);sf.posix_rename(temp,target);changed.append((target,old,existed))
@@ -48,14 +53,15 @@ def main():
                 if len(hash_value)!=64 or any(c not in '0123456789abcdef' for c in hash_value):raise RuntimeError('Invalid setup verifier')
                 wrapper=ODPC_ROOT+'/.mk-setup-'+hash_value[:20]+'.php'
                 code="<?php\ndefine('MK_SETUP_HASH', '"+hash_value+"');\ndefine('MK_SETUP_WRAPPER', __FILE__);\nrequire dirname(__DIR__,2).'"+ROOT+"/server/install.php';\n"
-                with sf.open(wrapper+'.uploading','w') as f:f.write(code)
-                sf.chmod(wrapper+'.uploading',0o644);sf.posix_rename(wrapper+'.uploading',wrapper)
+                if fresh:
+                    with sf.open(wrapper+'.uploading','w') as f:f.write(code)
+                    sf.chmod(wrapper+'.uploading',0o644);sf.posix_rename(wrapper+'.uploading',wrapper)
                 status,body,_=get('https://odpc.de/.mk-setup-'+hash_value[:20]+'.php')
                 # An unauthenticated GET must stay inaccessible (normally HTTPError 404).
                 if status==200:raise RuntimeError('Setup must not accept unauthenticated GET')
             except Exception as exc:
                 from urllib.error import HTTPError
-                if isinstance(exc,HTTPError) and exc.code==404 and len(changed)==len(files):
+                if isinstance(exc,HTTPError) and exc.code==404:
                     print('PASS: Files deployed; one-time setup endpoint denies unauthenticated GET')
                 else:
                     for target,old,existed in reversed(changed):
