@@ -2,7 +2,7 @@ from pathlib import Path
 import json,xml.etree.ElementTree as ET
 from urllib.parse import quote
 p=Path(__file__).resolve().parents[1]/'site-deploy/meinkraut';a=json.loads((p/'content/atlas-base.json').read_text());e=json.loads((p/'content/meinkraut-content.json').read_text());shop=json.loads((p/'content/shop-catalog.json').read_text())
-paths=['/','/gewuerze/','/mischungen/','/laender/','/shop/','/premium/','/glaeser-etiketten/','/nachfuellen/']
+paths=['/','/gewuerze/','/mischungen/','/laender/','/gewuerzshop/','/premium/','/glaeser-etiketten/','/nachfuellen/']
 paths += ['/gewuerz/'+quote(i['id'])+'/' for i in a['ingredients']]
 paths += ['/mischung/'+quote(i['id'])+'/' for i in e['mixes']+a['recipes']]
 paths += ['/land/'+c+'/' for c in e['countries']]

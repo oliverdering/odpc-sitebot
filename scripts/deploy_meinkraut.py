@@ -59,7 +59,7 @@ def main():
                     with sf.open(wrapper+'.uploading','w') as f:f.write(code)
                     sf.chmod(wrapper+'.uploading',0o644);sf.posix_rename(wrapper+'.uploading',wrapper)
                 # Verify rewritten routes before accepting the release. IONOS needs an explicit URL base.
-                for smoke_path in ['/','/gewuerz/schwarzer-pfeffer/','/mischung/mk-steakpfeffer/','/glaeser-etiketten/']:
+                for smoke_path in ['/','/gewuerz/schwarzer-pfeffer/','/mischung/mk-steakpfeffer/','/glaeser-etiketten/','/gewuerzshop/','/premium/','/nachfuellen/','/etiketten/','/warenkorb/','/konto/']:
                     try:smoke_status,smoke_body,_=get('https://meinkraut.odpc.de'+smoke_path)
                     except Exception as exc:raise RuntimeError('Public route request failed: '+smoke_path) from exc
                     if smoke_status!=200 or b'<h1' not in smoke_body:raise RuntimeError('Public route verification failed: '+smoke_path)

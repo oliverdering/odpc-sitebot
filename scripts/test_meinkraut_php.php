@@ -2,7 +2,7 @@
 declare(strict_types=1);
 define('MK_INTERNAL',true);define('MK_COMMERCE_TEST_DB',':memory:');require dirname(__DIR__).'/site-deploy/meinkraut/server/commerce.php';
 function check($condition,string $name): void{if(!$condition)throw new RuntimeException($name);}
-$root=dirname(__DIR__).'/site-deploy/meinkraut';$paths=['/','/gewuerz/schwarzer-pfeffer/','/mischung/mk-steakpfeffer/','/mischungen/','/gewuerze/','/produkt/pfeffer-schwarz/','/land/DE/','/shop/','/premium/','/etiketten/','/warenkorb/','/konto/'];
+$root=dirname(__DIR__).'/site-deploy/meinkraut';$paths=['/','/gewuerz/schwarzer-pfeffer/','/mischung/mk-steakpfeffer/','/mischungen/','/gewuerze/','/produkt/pfeffer-schwarz/','/land/DE/','/gewuerzshop/','/premium/','/etiketten/','/warenkorb/','/konto/'];
 foreach($paths as $path){$_SERVER['REQUEST_URI']=$path;$_GET=[];$c=mk_public_context();check($c['status']===200,'route '.$path);$body=mk_public_body($c);check(substr_count($body,'<h1')===1,'one H1 '.$path);check($c['canonical']==='https://meinkraut.odpc.de'.$path,'canonical '.$path);check(strlen($c['description'])>20,'description '.$path);check($c['noindex']===in_array($path,['/etiketten/','/warenkorb/','/konto/']),'index policy '.$path);}
 $_SERVER['REQUEST_URI']='/mischung/not-a-recipe/';check(mk_public_context()['status']===404,'unknown recipe404');
 $_SERVER['REQUEST_URI']='/mischungen/?seite=999';$_GET=['seite'=>'999'];check(mk_public_context()['status']===404,'out-of-range pagination404');$_GET=[];
