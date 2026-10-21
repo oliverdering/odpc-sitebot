@@ -18,5 +18,7 @@ state.parts[0].enabled=false;assert.equal(api.currentRows()[1].amount,200);asser
 state.parts[1].enabled=false;assert(api.currentRows().every(p=>p.amount===0&&p.percent===0));
 assert(!api.validateSaved({id:'bad',name:'bad',parts:[{id:'unknown',grams:10}],target:100}));
 assert(api.validateSaved({id:'valid',name:'valid',parts:[{id:'salz',grams:10}],target:100}));
+for(const page of ['start','rezepte','regal','laender','regionen','werkstatt','wissen','dosen','kosten','meine','einkauf']){state.page=page;api.render();assert(root.innerHTML.includes('mk-main'),page+' render');if(page==='kosten'){assert(root.innerHTML.includes('5,49'));assert(root.innerHTML.includes('0,27'));assert(root.innerHTML.includes('38,95'));}}
+state.page='start';api.render();
 assert(root.innerHTML.includes('Mein Kraut')&&root.innerHTML.includes('649'));
-console.log(JSON.stringify({status:'PASS',ingredients:db.ingredients.length,recipes:recipeIds.size,starterMixes:extra.mixes.length,countryProfiles:Object.keys(extra.countries).length,spiceProfiles:Object.keys(extra.ingredients).length,checks:['IDs and references','100 g recipe sums','country structure','spice structure','mass scaling','exclusion rebalancing','empty mixture','import validation','homepage rendering']}));
+console.log(JSON.stringify({status:'PASS',ingredients:db.ingredients.length,recipes:recipeIds.size,starterMixes:extra.mixes.length,countryProfiles:Object.keys(extra.countries).length,spiceProfiles:Object.keys(extra.ingredients).length,checks:['IDs and references','100 g recipe sums','country structure','spice structure','mass scaling','exclusion rebalancing','empty mixture','import validation','all page rendering including sourced cost comparison']}));
