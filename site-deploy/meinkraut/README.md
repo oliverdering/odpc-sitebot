@@ -1,0 +1,40 @@
+# Mein Kraut · kostenlose Testversion 2.0
+
+Ziel: https://meinkraut.odpc.de/ · IONOS-Webspace `/MeinKraut`.
+
+## Umfang
+
+288 Grundzutaten, 649 Rezepturen und Würzideen einschließlich 24 neuer Trockenmischungen mit je 100 Gramm. 195 Länder im Atlas; 24 vertiefte Länderporträts und 35 Gewürzporträts mit Quellen. Der bestehende Weltgewürz-Atlas auf odpc.de/wga bleibt unverändert.
+
+App ohne Registrierung oder kostenpflichtige APIs. Vorrat, Einkaufsliste, Favoriten und eigene Mischungen liegen im Browser. JSON-Export/Import überträgt und sichert diese Daten. PayPal, Bezahlschranke, Konten und Bestellabwicklung sind bewusst noch nicht implementiert.
+
+## Funktionen
+
+- Rezeptsuche mit Land-, Rezeptart- und Vorratsfilter; Länder auch über Küchenbegriffe wie „chinesisch“ finden.
+- Gramm-Mischküche: Gesamtmenge skalieren, Gewichtung ändern, Bestandteile ausschließen und weitere trockene Zutaten hinzufügen.
+- TL/EL nur als zutatenspezifische Näherung. Für Zutaten ohne Umrechnungsansatz wird keine Grammpräzision vorgetäuscht.
+- Eigene Rezepturen speichern, kopieren, exportieren; druckbare Etiketten mit Rezeptur und Mischdatum.
+- Dosen und Agentur-Beschriftung als optionaler Anfrage-Service über Oliver, ohne behauptete Preise oder Lagerverfügbarkeit.
+- Transparentes, datiertes Kostenbeispiel für italienische Kräuter gegenüber Ankerkraut. Kosten des Ersteinkaufs und des Verbrauchs getrennt.
+
+## Daten und Qualität
+
+`content/atlas-base.json` stammt aus dem bestehenden Release 1.0. Der Altbestand enthält redaktionelle Hausvarianten ohne vollständigen individuellen Quellen- oder Verkostungsnachweis. `starter-mixes.json` enthält 24 ausdrücklich nicht verkostete eigene Rezepturen. `country-profiles.json` und `ingredient-knowledge.json` enthalten die recherchierten Erweiterungen; Quellen belegen den jeweiligen Kontext, während die Küchentipps redaktionell zusammengestellt sind. Symbole stammen aus dem Altbestand; mehrere Zutaten teilen sich ein Symbolbild. Ein eigenständiges, genaues Foto je Zutat steht noch aus.
+
+Die Zusammenfassung `content/meinkraut-content.json` ist der Laufzeit-Datenstand. `meinkraut-data.js` wird nur für die lokale statische Vorschau generiert; die Live-Version verwendet `data.php`.
+
+## Betrieb
+
+`index.php` liefert die App, `data.php` den öffentlichen Katalog. Zwei eigene MariaDB-Tabellen speichern versionierte Kataloge und ihre Datensätze (`mk_releases`, `mk_catalog_records`). Bestehende Tabellen werden nicht gelöscht. Bei einem Datenbankausfall dient das veröffentlichte JSON als Lesefallback.
+
+Zugangsdaten werden ausschließlich serverseitig außerhalb des Document-Roots in einem geschützten privaten Verzeichnis gespeichert. Keine Zugangsdaten im Repository. Die einmalige Einrichtung erfolgt über einen zufälligen, tokengeprüften HTTPS-Endpunkt; nach erfolgreicher Einrichtung löscht er sich. Im Repository liegt nur der SHA-256-Prüfwert dieses Tokens. `health.php` liefert ausschließlich öffentliche Versions- und Mengendaten.
+
+Der GitHub-Workflow `meinkraut-deploy.yml` prüft Datenreferenzen, Rezeptmengen und JavaScript/PHP-Syntax und überträgt ausschließlich den ausgewählten Webspace. Die SFTP-Hostkennung wird gegen den bestehenden Fingerabdruck geprüft. Öffentliche Vorgängerdateien werden gesichert. `assets-bundle.zip` enthält nur die WebP-Logoableitungen und vorhandenen Gewürzsymbole.
+
+## Prüfung
+
+`node scripts/test_meinkraut.cjs` prüft Referenzen, 100-g-Summen, Länder-/Gewürzprofile, proportionale Mengen, Ausschlüsse, leere Mischungen und Importvalidierung. Zusätzlich manuell im Browser geprüft: Startseite, Rezeptöffnung, 200-g-Skalierung, salzfreie Variante, lokales Speichern sowie Smartphone-Layout.
+
+## Nächste Produktstufen
+
+Weitere Länderporträts und Einzelgewürze recherchieren, Rezepturen mit Testköchen verkosten, Bilder exakt zuordnen, Feedback aus Pilotbetrieb auswerten. Anschließend Konten und serverseitig gespeicherte persönliche Mischungen planen. PayPal erst nach einem eigenständigen Zugangs- und Zahlungsmodell integrieren; ein öffentlich ausgelieferter JSON-Katalog ist keine geschützte Bezahldatenbank.
