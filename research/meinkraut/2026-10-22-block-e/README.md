@@ -1,9 +1,7 @@
-# Recherchetranche E – 22.10.2026
+# Recherchetranche E – Speculaas
 
-Ein niederländischer Kandidat mit sechs bezifferten Gewürzen aus Laura's Bakery. Die niederländische Originalfassung und die verlinkte englische Autorenfassung wurden vollständig gelesen; Letztere belegt den Länderbezug ausdrücklich. Mengen bleiben EL/TL. Keine Grammwerte oder eigene Haltbarkeitsfrist ergänzt.
+Die niederländische Autorenvariante von Laura's Bakery ist nach erneuter Originalquellenprüfung für den Import vorbereitet. Sechs Originalmengen in EL/TL bleiben erhalten. Die neue Zutat `kardamom-gemahlen-unspezifiziert` bildet ausdrücklich gemahlenen Kardamom ohne Arten- oder Pflanzenteil-Angabe ab. Kapseln und ganze Samen werden nicht mengenidentisch eingesetzt; eine Grammumrechnung fehlt bewusst.
 
-Der aktive Bestand enthält für NL drei Rezepttreffer und keine Trockenmischung. Weder Name, Quellen-URL noch Mengenprofil des Kandidaten sind bereits vorhanden. Gemahlener Kardamom wird als inaktiver Zutatenvorschlag geführt, weil die Quelle keine Samen- oder Artenangabe macht. Daher bleibt der Kandidat vorerst für den Import gesperrt.
+Die Zutaten-ID besitzt das vorhandene Kardamom-Symbol. Mengen, Quellen, Länderzuordnung und Allergene sind geprüft; keine identische Rezeptur unter den bisherigen 655 Rezepturen gefunden. Der Import ist für Version 3.0.10 mit 297 Zutaten und 656 Rezepturen vorbereitet; Live-Nachweis steht noch aus.
 
-Tagesstand: sieben neue Kandidaten. Aktive Datenbank unverändert: Version 3.0.8, 296 Zutaten, 654 Rezepturen. Dies ist kein Live-Import.
-
-Zusätzliche Recherche: Estland wurde weiter geprüft. Nutriplanet nennt schwarzen Pfeffer nur als mehrere Prisen; diese Menge wurde nicht erfunden. Nami-Nami ließ sich wegen HTTP 403 nicht vollständig lesen. Beide Quellen wurden nicht als neue importfähige Kandidaten erfasst. LIVIN bietet eine bezifferte Gewürzbasis, ihr Landesbezug als nationale Rezeptur bleibt ungeklärt.
+Tagesstand bleibt bei acht bereits recherchierten Rezeptkandidaten und zwei Herstellerprofilen. Keine neue Rezeptkandidaten-Recherche in diesem Integrationsschritt.

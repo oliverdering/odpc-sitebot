@@ -1,18 +1,18 @@
 {
-  "version": "3.0.8",
-  "baselineRevision": "50668e45e721b41ae208b513b3a42ab6bace6726",
+  "version": "3.0.10",
+  "baselineRevision": "78830ce734d9d7ea1b0801774982d9ab37d4e3f1",
   "expectedBaseline": {
     "ingredients": 296,
-    "recipes": 653
+    "recipes": 655
   },
   "expectedTarget": {
-    "ingredients": 296,
-    "recipes": 654
+    "ingredients": 297,
+    "recipes": 656
   },
-  "addedIngredients": [],
+  "addedIngredients": ["kardamom-gemahlen-unspezifiziert"],
   "addedRecipes": [
-    "mk-source-lv-ilze-piparkukas-spice"
+    "mk-source-nl-laura-speculaas"
   ],
   "checkedAt": "2026-10-22",
-  "sourceReview": "research/meinkraut/2026-10-22-block-d/validation.json"
+  "sourceReview": "research/meinkraut/2026-10-22-block-e/validation.json"
 }

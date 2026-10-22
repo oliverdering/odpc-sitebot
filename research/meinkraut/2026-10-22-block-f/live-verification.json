@@ -1,0 +1,35 @@
+{
+  "checkedAt": "2026-10-22",
+  "status": "PASS_LIVE",
+  "version": "3.0.9",
+  "catalog": "database",
+  "ingredients": 296,
+  "recipes": 655,
+  "importedRecipeId": "mk-source-fr-ducros-provence",
+  "deployment": {
+    "runId": 39842194630,
+    "url": "https://github.com/oliverdering/odpc-sitebot/actions/runs/39842194630",
+    "commit": "da2915e4f0b3b8ad9d7c8b35f8f13b3b01715a93",
+    "conclusion": "success",
+    "catalogActivation": "success"
+  },
+  "checks": {
+    "recipeURL": "https://meinkraut.odpc.de/mischung/mk-source-fr-ducros-provence/",
+    "recipeHTTP": 200,
+    "sourceAttribution": true,
+    "notTastedLabel": true,
+    "countryURL": "https://meinkraut.odpc.de/land/FR/",
+    "countryHTTP": 200,
+    "newRecipeLinked": true,
+    "sitemapUniqueURLs": 1004,
+    "shopMode": "test",
+    "checkoutEnabled": false
+  },
+  "publishedPercentages": {
+    "rosmarin": 27,
+    "bohnenkraut": 27,
+    "oregano": 27,
+    "thymian": 19
+  },
+  "massBasis": "100-g-Ansatz aus vollständig publizierten Prozenten; keine Volumenumrechnung."
+}

@@ -1,0 +1,23 @@
+{
+  "status": "PASS_STAGING",
+  "productionImport": false,
+  "candidateCount": 1,
+  "createdToday": 7,
+  "otherOpenBranchCandidates": 1,
+  "totalRecipeCandidatesAcrossBranches": 8,
+  "productReferencesToday": 2,
+  "totalResearchItemsToday": 10,
+  "errors": [],
+  "blockedFromImport": [{"id":"mk-research-20261022-fr-ducros-provence","unmapped":[],"issues":[],"reason":"already_imported"}],
+  "duplicateReview": {
+    "status": "PASS",
+    "activeRecipesChecked": 654,
+    "identicalIngredientMassProfile": 0
+  },
+  "quantityReview": {
+    "publishedPercentagesSum": 100,
+    "derivedBatchGrams": 100,
+    "volumeConversion": false
+  },
+  "importStatus": "live_verified"
+}

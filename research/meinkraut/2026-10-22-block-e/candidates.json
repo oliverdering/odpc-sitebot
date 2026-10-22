@@ -55,12 +55,10 @@
         },
         {
           "sourceName": "kardemom / ground cardamom",
-          "ingredient": null,
-          "proposedIngredient": "kardamom-gemahlen-unspezifiziert",
+          "ingredient": "kardamom-gemahlen-unspezifiziert",
           "amount": 2,
           "unit": "TL",
-          "optional": false,
-          "mappingIssue": "Quelle verlangt gemahlenen Kardamom ohne Art- oder Samenangabe. Keine formgleiche aktive Zutat vorhanden; Kapseln und Samen werden nicht gleichgesetzt."
+          "optional": false
         }
       ],
       "methodSteps": [
@@ -99,16 +97,15 @@
         }
       ],
       "editorialType": "Veröffentlichte Autorenvariante",
-      "reviewStatus": "Originalmengen, Länderbezug und Allergene geprüft am 22.10.2026; noch nicht verkostet; neue Zutatenidentität vor Import freizugeben.",
-      "readyForImport": false,
-      "openIssues": [
-        "Formgleiche Zutat kardamom-gemahlen-unspezifiziert fehlt im aktiven Atlas; Vorschlag vor Import fachlich und technisch prüfen."
-      ],
-      "importStatus": "research_pending",
+      "reviewStatus": "Originalmengen, Zutatenformen, Länderbezug und Allergene geprüft am 22.10.2026; noch nicht verkostet.",
+      "readyForImport": true,
+      "openIssues": [],
+      "importStatus": "bundled_pending_live_verification",
       "countryEvidence": "Die englische Autorenfassung ordnet die Mischung ausdrücklich den Niederlanden zu. Kein Anspruch auf eine verbindliche traditionelle Standardrezeptur.",
       "scopeNotes": [
         "Nur die sechs Zutaten des Grundrezepts erfasst. Die separat vorgeschlagenen Varianten mit Anis, Koriander oder Piment sind nicht Teil dieses Datensatzes."
-      ]
+      ],
+      "bundledRecipeId": "mk-source-nl-laura-speculaas"
     }
   ],
   "ingredientProposals": [
@@ -148,7 +145,7 @@
       ],
       "active": false,
       "readyForImport": false,
-      "status": "proposal_only"
+      "status": "bundled"
     }
   ]
 }
