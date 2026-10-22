@@ -1,8 +1,15 @@
 {
-  "status": "LIVE_VERIFIED",
-  "productionImport": true,
+  "status": "PASS_STAGING",
+  "productionImport": false,
   "candidateCount": 1,
   "createdToday": 5,
   "errors": [],
-  "blockedFromImport": []
+  "blockedFromImport": [
+    {
+      "id": "mk-research-20261022-lt-meduolis-skanauk",
+      "unmapped": [],
+      "issues": [],
+      "reason": "already_imported"
+    }
+  ]
 }
