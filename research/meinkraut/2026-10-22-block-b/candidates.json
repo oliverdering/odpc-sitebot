@@ -106,11 +106,12 @@
         }
       ],
       "editorialType": "Veröffentlichte Autorenvariante",
-      "reviewStatus": "Originalquelle und Länderbezug gelesen; Staging, nicht verkostet",
-      "readyForImport": true,
+      "reviewStatus": "Live-Datenbank und öffentliche Rezept- sowie Zutatenseite am 22.10.2026 geprüft; nicht verkostet",
+      "readyForImport": false,
       "openIssues": [],
       "bundledRecipeId": "mk-source-ie-gb-mixed-spice",
-      "importStatus": "bundled_pending_release"
+      "importStatus": "live_verified",
+      "importedRecipeId": "mk-source-ie-gb-mixed-spice"
     }
   ],
   "ingredientProposals": [

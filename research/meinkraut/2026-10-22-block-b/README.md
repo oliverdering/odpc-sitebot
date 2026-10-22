@@ -6,4 +6,4 @@ Dublettenprüfung: Im geprüften Bestand gibt es Pumpkin-Spice / Herbstgewürz (
 
 Quelle: https://www.biggerbolderbaking.com/homemade-mixed-spice/ (Gemma Stafford, gelesen am 22.10.2026). Keine fremden Bilder oder vollständigen Beschreibungstexte übernommen. Keine eigene Haltbarkeitsfrist und keine medizinischen Aussagen ergänzt.
 
-Tagesstand: drei Kandidaten in Tranche A plus ein Kandidat hier, insgesamt vier. Rezept und Zutat sind im append-only Release 3.0.6 gebündelt und technisch geprüft; ein Irland-Live-Treffer darf erst nach erfolgreicher Datenbankaktivierung und öffentlicher Routenprüfung gemeldet werden.
+Tagesstand: drei Kandidaten in Tranche A plus ein Kandidat hier, insgesamt vier. Rezept und Zutat wurden über das append-only Release 3.0.6 in der aktiven Datenbank freigeschaltet. Die öffentliche Rezeptseite, die Macis-Zutatenroute, das Symbolbild und Irlands vier Rezeptlinks wurden am 22.10.2026 geprüft.
