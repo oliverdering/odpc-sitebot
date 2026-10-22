@@ -1,0 +1,109 @@
+{
+  "checkedAt": "2026-10-22T14:51:30+02:00",
+  "status": "LIVE_VERIFIED",
+  "catalogSource": "database",
+  "version": "3.0.5",
+  "ingredients": 294,
+  "recipes": 651,
+  "newRecipes": [
+    {
+      "id": "mk-source-ca-maple-montreal",
+      "url": "https://meinkraut.odpc.de/mischung/mk-source-ca-maple-montreal/",
+      "httpStatus": 200,
+      "sourceAttribution": true,
+      "mustardDeclaration": true
+    },
+    {
+      "id": "mk-source-lk-roasted-curry",
+      "url": "https://meinkraut.odpc.de/mischung/mk-source-lk-roasted-curry/",
+      "httpStatus": 200,
+      "sourceAttribution": true,
+      "mustardDeclaration": true
+    }
+  ],
+  "newIngredients": [
+    {
+      "id": "basmati-reis-roh",
+      "url": "https://meinkraut.odpc.de/gewuerz/basmati-reis-roh/",
+      "httpStatus": 200,
+      "iconUrl": "https://meinkraut.odpc.de/assets/icons/s07.webp",
+      "iconHttpStatus": 200
+    },
+    {
+      "id": "kardamomsamen-gruen",
+      "url": "https://meinkraut.odpc.de/gewuerz/kardamomsamen-gruen/",
+      "httpStatus": 200,
+      "iconUrl": "https://meinkraut.odpc.de/assets/icons/s25.webp",
+      "iconHttpStatus": 200
+    },
+    {
+      "id": "zwiebelflocken-getrocknet",
+      "url": "https://meinkraut.odpc.de/gewuerz/zwiebelflocken-getrocknet/",
+      "httpStatus": 200,
+      "iconUrl": "https://meinkraut.odpc.de/assets/icons/s21.webp",
+      "iconHttpStatus": 200
+    },
+    {
+      "id": "dillsamen",
+      "url": "https://meinkraut.odpc.de/gewuerz/dillsamen/",
+      "httpStatus": 200,
+      "iconUrl": "https://meinkraut.odpc.de/assets/icons/s16.webp",
+      "iconHttpStatus": 200
+    },
+    {
+      "id": "ahornzucker",
+      "url": "https://meinkraut.odpc.de/gewuerz/ahornzucker/",
+      "httpStatus": 200,
+      "iconUrl": "https://meinkraut.odpc.de/assets/icons/w27.webp",
+      "iconHttpStatus": 200
+    },
+    {
+      "id": "knoblauchpulver",
+      "url": "https://meinkraut.odpc.de/gewuerz/knoblauchpulver/",
+      "httpStatus": 200,
+      "iconUrl": "https://meinkraut.odpc.de/assets/icons/s20.webp",
+      "iconHttpStatus": 200
+    }
+  ],
+  "countryCoverage": [
+    {
+      "country": "CA",
+      "recipeCount": 4,
+      "dryMixCount": 1,
+      "newLiveRecipeIds": [
+        "mk-source-ca-maple-montreal"
+      ]
+    },
+    {
+      "country": "LK",
+      "recipeCount": 4,
+      "dryMixCount": 1,
+      "newLiveRecipeIds": [
+        "mk-source-lk-roasted-curry"
+      ]
+    },
+    {
+      "country": "IE",
+      "recipeCount": 3,
+      "dryMixCount": 0,
+      "newLiveRecipeIds": []
+    }
+  ],
+  "countriesWithoutDryMix": 113,
+  "deploymentRun": "https://github.com/oliverdering/odpc-sitebot/actions/runs/39780428093",
+  "note": "Only the two listed recipes were activated; held research candidates are not included in live counts.",
+  "browserChecks": [
+    "Homepage shows 294 ingredients and 651 recipes",
+    "Curry recipe opens mixing workshop with source attribution",
+    "Scaling to 200 g weighed inputs displays 8.4 g shelled green cardamom seeds",
+    "Copied Canadian recipe preserves author, source URL and original units without a false house-recipe label"
+  ],
+  "nextResearch": {
+    "pullRequest": "https://github.com/oliverdering/odpc-sitebot/pull/3",
+    "candidateId": "mk-research-20261022-ie-gb-mixed-spice-stafford",
+    "status": "held_pending_ground_mace",
+    "source": "https://www.biggerbolderbaking.com/homemade-mixed-spice/",
+    "createdTodayAcrossBothBlocks": 4
+  },
+  "latestVerifiedDeployment": "https://github.com/oliverdering/odpc-sitebot/actions/runs/39781962781"
+}

@@ -2,7 +2,7 @@
   "status": "PASS_STAGING",
   "productionImport": false,
   "candidateCount": 3,
-  "createdToday": 3,
+  "createdToday": 4,
   "errors": [],
   "blockedFromImport": [
     {
@@ -16,21 +16,20 @@
         "Drei Zutatenzuordnungen offen.",
         "Löffelangaben bleiben Volumen; keine unbelegten Grammwerte.",
         "Zusammensetzung und Allergene des verwendeten Fünfgewürzepulvers sind produktabhängig."
-      ]
+      ],
+      "reason": "research_pending"
     },
     {
       "id": "mk-research-20261022-ca-maple-montreal",
       "unmapped": [],
-      "issues": [
-        "Produktive Datenbankfreigabe und konkrete Live-Routen prüfen."
-      ]
+      "issues": [],
+      "reason": "already_imported"
     },
     {
       "id": "mk-research-20261022-lk-roasted-curry-kodippili",
       "unmapped": [],
-      "issues": [
-        "Produktive Datenbankfreigabe und konkrete Live-Routen prüfen."
-      ]
+      "issues": [],
+      "reason": "already_imported"
     }
   ]
 }

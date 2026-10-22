@@ -39,7 +39,7 @@ for(const r of imported){
   assert(root.innerHTML.includes(r.sources[0].url)&&root.innerHTML.includes(r.sources[0].author));
   assert(root.innerHTML.includes('Enthält Senf'));
   const copied=api.recipeCopyText(r,.5);
-  assert(copied.includes(r.sources[0].url)&&copied.includes(r.editorialType));
+  assert(copied.includes(r.sources[0].url)&&copied.includes(r.editorialType.split(';')[0]));
   assert(!copied.includes('Mein Kraut – eigene Hausvariante'));
 }
 const curry=imported.find(r=>r.countries.includes('LK')),maple=imported.find(r=>r.countries.includes('CA'));

@@ -83,6 +83,10 @@ def validate(package, atlas, extra):
                 derived_allergens.update(ingredient_map[iid].get('allergens', []))
                 derived_allergens.update(IDENTITY_ALLERGENS.get(iid, set()))
         assessment = record.get('allergenAssessment', {})
+        if record.get('importStatus') == 'live_verified':
+            imported_id = record.get('importedRecipeId')
+            if imported_id not in active_ids or imported_id != record.get('bundledRecipeId'):
+                errors.append(f'{rid}: imported recipe must resolve to its catalog ID')
         if not derived_allergens.issubset(set(assessment.get('known', []))):
             errors.append(f'{rid}: missing known ingredient allergen(s)')
         norm = record.get('normalization100g')
@@ -115,7 +119,7 @@ def validate(package, atlas, extra):
             if record.get('readyForImport') is not False:
                 errors.append(f'{rid}: unresolved research cannot be marked import-ready')
         if record.get('readyForImport') is not True:
-            blocked.append({'id': rid, 'unmapped': unresolved, 'issues': record.get('openIssues', [])})
+            blocked.append({'id': rid, 'unmapped': unresolved, 'issues': record.get('openIssues', []), 'reason': 'already_imported' if record.get('importStatus') == 'live_verified' else 'research_pending'})
     return errors, blocked
 
 
