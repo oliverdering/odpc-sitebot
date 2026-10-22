@@ -9,6 +9,10 @@ on:
       - 'scripts/test_meinkraut_php.php'
       - 'scripts/build_meinkraut_seo.py'
       - 'deployment/meinkraut-bootstrap.json'
+      - 'deployment/meinkraut-catalog-release.json'
+      - 'scripts/release_meinkraut_catalog.py'
+      - 'scripts/meinkraut_catalog_release.php'
+      - 'scripts/test_meinkraut_catalog_release.php'
       - '.github/workflows/meinkraut-deploy.yml'
   workflow_dispatch:
 permissions:
@@ -22,12 +26,15 @@ jobs:
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Validate application and data
         run: |
           node --check site-deploy/meinkraut/meinkraut.js
           node --check site-deploy/meinkraut/shop.js
           node scripts/test_meinkraut.cjs
           php scripts/test_meinkraut_php.php
+          php scripts/test_meinkraut_catalog_release.php
           python3 scripts/build_meinkraut_seo.py
           git diff --exit-code -- site-deploy/meinkraut/sitemap.xml
           find site-deploy/meinkraut -name '*.php' -print0 | while IFS= read -r -d '' file; do php -l "$file"; done
@@ -37,6 +44,10 @@ jobs:
         env:
           ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
         run: python3 scripts/deploy_meinkraut.py
+      - name: Activate validated catalog database release
+        env:
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+        run: python3 scripts/release_meinkraut_catalog.py
       - name: Retain prior public application files
         if: always()
         uses: actions/upload-artifact@v4

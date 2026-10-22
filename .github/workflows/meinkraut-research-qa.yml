@@ -1,0 +1,45 @@
+name: MeinKraut research staging validation
+on:
+  pull_request:
+    paths:
+      - 'research/meinkraut/**'
+      - 'scripts/validate_meinkraut_research.py'
+      - 'site-deploy/meinkraut/**'
+      - 'scripts/*meinkraut*'
+      - 'deployment/meinkraut-catalog-release.json'
+      - '.github/workflows/meinkraut-research-qa.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'research/meinkraut/**'
+      - 'scripts/validate_meinkraut_research.py'
+      - 'site-deploy/meinkraut/**'
+      - 'scripts/*meinkraut*'
+      - 'deployment/meinkraut-catalog-release.json'
+      - '.github/workflows/meinkraut-research-qa.yml'
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Check research packages without production import
+        run: |
+          for file in research/meinkraut/*/candidates.json; do
+            python3 scripts/validate_meinkraut_research.py "$file"
+          done
+      - name: Check existing application
+        run: node scripts/test_meinkraut.cjs
+      - name: Check PHP routes, catalog transactions and source attribution
+        run: |
+          php scripts/test_meinkraut_php.php
+          php scripts/test_meinkraut_catalog_release.php
+          find site-deploy/meinkraut scripts -name '*meinkraut*.php' -print0 | while IFS= read -r -d '' file; do php -l "$file"; done
+          php -l site-deploy/meinkraut/server/public.php
+          python3 -m py_compile scripts/release_meinkraut_catalog.py
+          python3 scripts/build_meinkraut_seo.py
+          git diff --exit-code -- site-deploy/meinkraut/sitemap.xml

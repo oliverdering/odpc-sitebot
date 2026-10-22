@@ -22,7 +22,7 @@ assert(!api.validateSaved({id:'bad',name:'bad',parts:[{id:'unknown',grams:10}],t
 assert(api.validateSaved({id:'valid',name:'valid',parts:[{id:'salz',grams:10}],target:100}));
 for(const page of ['start','rezepte','regal','laender','regionen','werkstatt','wissen','dosen','kosten','meine','einkauf','shop','premium','refill','warenkorb','etiketten','konto']){state.page=page;api.render();assert(root.innerHTML.includes('mk-main'),page+' render');if(page==='kosten'){assert(root.innerHTML.includes('5,49'));assert(root.innerHTML.includes('0,27'));assert(root.innerHTML.includes('38,95'));}}
 state.page='start';api.render();
-assert(root.innerHTML.includes('Mein Kraut')&&root.innerHTML.includes('649'));
+assert(root.innerHTML.includes('Mein Kraut')&&root.innerHTML.includes(String(recipeIds.size)));
 const commerce=window.MEINKRAUT_SHOP_TEST;const cart=commerce.getState();
 assert.equal(catalog.checkoutEnabled,false);assert.equal(catalog.products.filter(p=>p.line==='basic').length,10);assert.equal(catalog.products.filter(p=>p.line==='premium').length,9);
 assert.equal(commerce.suggestPacks(480,[250,500],250)[0].grams,500);assert.equal(commerce.suggestPacks(0,[250,500],250).length,0);
@@ -31,4 +31,24 @@ cart.shelf['schwarzer-pfeffer']={grams:25,preferred:250};let plan=commerce.refil
 cart.shelf['schwarzer-pfeffer'].grams=null;plan=commerce.refillRows([{id:'schwarzer-pfeffer',amount:100}],new Set(['schwarzer-pfeffer']));assert(plan[0].ownedUnknown);assert.equal(plan[0].available,null);
 const label=commerce.getLabel();label.name='<img src=x onerror=alert(1)>';assert(!commerce.labelFace().includes('<img src=x'));assert(commerce.labelFace().includes('&lt;img'));assert(commerce.validateLabel({...label}));assert(!commerce.validateLabel({...label,style:'invalid'}));
 assert(window.MEINKRAUT_COMMERCE.validateBackup(window.MEINKRAUT_COMMERCE.backup()));assert(!window.MEINKRAUT_COMMERCE.validateBackup({shop:{},labels:[]}));
+// Source-backed imports keep exact forms, units and author attribution.
+const imported=db.recipes.filter(r=>r.id.startsWith('mk-source-'));
+assert.equal(imported.length,2);
+for(const r of imported){
+  state.modal=r.id;api.render();
+  assert(root.innerHTML.includes(r.sources[0].url)&&root.innerHTML.includes(r.sources[0].author));
+  assert(root.innerHTML.includes('Enthält Senf'));
+  const copied=api.recipeCopyText(r,.5);
+  assert(copied.includes(r.sources[0].url)&&copied.includes(r.editorialType));
+  assert(!copied.includes('Mein Kraut – eigene Hausvariante'));
+}
+const curry=imported.find(r=>r.countries.includes('LK')),maple=imported.find(r=>r.countries.includes('CA'));
+assert(api.canMix(curry));assert(!api.canMix(maple));
+assert.equal(curry.ingredients.find(p=>p.ingredient==='kardamomsamen-gruen').amount,5);
+assert.equal(curry.ingredients.reduce((sum,p)=>sum+p.amount,0),119);
+assert(!api.conversion('dillsamen'));assert(!api.conversion('knoblauchpulver'));
+state.modal='';state.workRecipe=curry;state.parts=api.partsFromRecipe(curry);state.target=100;state.page='werkstatt';api.render();
+assert(root.innerHTML.includes('Einwaage')&&root.innerHTML.includes(curry.sources[0].url));
+assert(Math.abs(api.currentRows().reduce((sum,p)=>sum+p.amount,0)-100)<1e-8);
+assert(Math.abs(api.currentRows().find(p=>p.id==='kardamomsamen-gruen').amount-5/119*100)<1e-8);
 console.log(JSON.stringify({status:'PASS',ingredients:db.ingredients.length,recipes:recipeIds.size,starterMixes:extra.mixes.length,countryProfiles:Object.keys(extra.countries).length,spiceProfiles:Object.keys(extra.ingredients).length,checks:['IDs and references','100 g recipe sums','country structure','spice structure','mass scaling','exclusion rebalancing','empty mixture','import validation','all page rendering including sourced cost comparison','catalog and payment gate','pack optimisation','known and unknown stock handling','invalid SKU rejection','label escaping and validation']}));

@@ -1,0 +1,26 @@
+{
+  "version": "3.0.5",
+  "baselineRevision": "2265c6fd5568fc641b356317640c735e2ca6d193",
+  "expectedBaseline": {
+    "ingredients": 288,
+    "recipes": 649
+  },
+  "expectedTarget": {
+    "ingredients": 294,
+    "recipes": 651
+  },
+  "addedIngredients": [
+    "basmati-reis-roh",
+    "kardamomsamen-gruen",
+    "zwiebelflocken-getrocknet",
+    "dillsamen",
+    "ahornzucker",
+    "knoblauchpulver"
+  ],
+  "addedRecipes": [
+    "mk-source-ca-maple-montreal",
+    "mk-source-lk-roasted-curry"
+  ],
+  "checkedAt": "2026-10-22",
+  "sourceReview": "research/meinkraut/2026-10-22-block-a/integration-review.json"
+}
