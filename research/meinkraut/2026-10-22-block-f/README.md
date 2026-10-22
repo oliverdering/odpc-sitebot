@@ -4,6 +4,6 @@ Ducros/McCormick Foodservice veröffentlicht die vollständigen Anteile der vier
 
 `manufacturer-references.json` dokumentiert zusätzlich Ankerkraut Magic Dust und Kotányi Gourmet Brotgewürz. Ihre Zutatenlisten sind belegt, die Mengenverhältnisse nicht. Sie bleiben Quellenprofile und werden nicht als nachmischbare Herstellerrezepturen importiert. Bei Ankerkraut werden Senf als enthaltene Zutat und Sellerie als Spurenhinweis getrennt geführt.
 
-Originalquellen: siehe JSON. Keine Herstellerbilder oder Werbetexte übernommen. Industrielle Mindesthaltbarkeit nicht auf Eigenmischungen übertragen. Für die neue Provence-Rezeptur stehen Datenbankfreigabe 3.0.9 und Live-Prüfung noch aus.
+Originalquellen: siehe JSON. Keine Herstellerbilder oder Werbetexte übernommen. Industrielle Mindesthaltbarkeit nicht auf Eigenmischungen übertragen. Die Provence-Rezeptur wurde in Datenbankversion 3.0.9 aktiviert und öffentlich geprüft: 296 Zutaten, 655 Rezepturen, Rezeptseite HTTP 200, Herstellerquelle vorhanden, unter Frankreich verlinkt, 1.004 eindeutige Sitemap-URLs. Produktionslauf 39842194630 erfolgreich; Details in live-verification.json.
 
 Tageszählung über Branches: acht Rezeptkandidaten (einschließlich des weiterhin offenen PR #6) und zwei Produktprofile, konservativ zehn Rechercheeinträge. Der lokale Staging-Validator zählt sieben Rezeptkandidaten, da PR #6 noch nicht auf main liegt. Heute keine weiteren Kandidaten anlegen.
