@@ -1,0 +1,148 @@
+{
+  "schemaVersion": 1,
+  "batchId": "oxana-research-2026-10-22-b",
+  "createdAt": "2026-10-22",
+  "productionImport": false,
+  "candidates": [
+    {
+      "id": "mk-research-20261022-ie-gb-mixed-spice-stafford",
+      "name": "Mixed Spice – Gemma Staffords Backgewürz",
+      "kind": "Trockenmischung",
+      "countries": [
+        "IE",
+        "GB"
+      ],
+      "region": "Irische und britische Backküche",
+      "description": "Warmes Backgewürz mit Piment, Zimt und Muskat; hier die veröffentlichte Autorenvariante.",
+      "ingredients": [
+        {
+          "sourceName": "ground allspice",
+          "ingredient": "piment",
+          "amount": 1,
+          "unit": "EL",
+          "optional": false,
+          "preparation": "Gemahlen abmessen; ganze Gewürze vorher fein mahlen."
+        },
+        {
+          "sourceName": "ground cinnamon",
+          "ingredient": "zimt",
+          "amount": 1,
+          "unit": "EL",
+          "optional": false,
+          "preparation": "Gemahlen abmessen; ganze Gewürze vorher fein mahlen."
+        },
+        {
+          "sourceName": "ground nutmeg",
+          "ingredient": "muskatnuss",
+          "amount": 1,
+          "unit": "EL",
+          "optional": false,
+          "preparation": "Gemahlen abmessen; ganze Gewürze vorher fein mahlen."
+        },
+        {
+          "sourceName": "ground mace",
+          "ingredient": null,
+          "amount": 2,
+          "unit": "TL",
+          "optional": false,
+          "preparation": "Gemahlen abmessen; ganze Gewürze vorher fein mahlen.",
+          "proposedIngredient": "macis-gemahlen",
+          "mappingIssue": "Gemahlene Muskatblüte fehlt im Atlas; nicht mit Muskatnuss gleichsetzen."
+        },
+        {
+          "sourceName": "ground cloves",
+          "ingredient": "gewurznelken",
+          "amount": 1,
+          "unit": "TL",
+          "optional": false,
+          "preparation": "Gemahlen abmessen; ganze Gewürze vorher fein mahlen."
+        },
+        {
+          "sourceName": "ground coriander",
+          "ingredient": "koriandersaat",
+          "amount": 1,
+          "unit": "TL",
+          "optional": false,
+          "preparation": "Gemahlen abmessen; ganze Gewürze vorher fein mahlen."
+        },
+        {
+          "sourceName": "ground ginger",
+          "ingredient": "ingwer",
+          "amount": 1,
+          "unit": "TL",
+          "optional": false,
+          "preparation": "Gemahlen abmessen; ganze Gewürze vorher fein mahlen."
+        }
+      ],
+      "originalYield": {
+        "amount": 2,
+        "unit": "oz",
+        "approximate": true,
+        "note": "Von der Quelle als Ausbeute genannt; keine eigene Grammumrechnung und keine gewogene Einwaage belegt."
+      },
+      "batchGrams": null,
+      "normalization100g": null,
+      "methodSteps": [
+        "Alle Bestandteile gemahlen in den Originaleinheiten abmessen. Ganze Gewürze zuerst fein mahlen.",
+        "In einer trockenen Schüssel gleichmäßig vermischen und in ein sauberes, trockenes, gut verschließbares Glas füllen."
+      ],
+      "application": "Für Kuchen, Puddings und andere Backwaren nach Rezept.",
+      "serving": "Nach dem jeweiligen Backrezept dosieren; keine allgemeine Gramm-Dosierung festgelegt.",
+      "allergenAssessment": {
+        "known": [],
+        "complete": true,
+        "note": "Keine der enthaltenen reinen Gewürzarten ist hier als kennzeichnungspflichtiges Allergen erfasst; Produktetiketten und Spuren separat prüfen. Keine Allergenfrei-Garantie."
+      },
+      "storageNotes": [
+        "Trocken, lichtgeschützt und gut verschlossen aufbewahren; keine eigene Haltbarkeitsfrist festgelegt."
+      ],
+      "sources": [
+        {
+          "title": "Homemade Mixed Spice Recipe",
+          "url": "https://www.biggerbolderbaking.com/homemade-mixed-spice/",
+          "author": "Gemma Stafford",
+          "accessedAt": "2026-10-22",
+          "primarySource": true,
+          "contentChecked": true,
+          "license": "Keine offene Lizenz festgestellt; keine fremden Bilder oder Beschreibungstexte übernommen."
+        }
+      ],
+      "editorialType": "Veröffentlichte Autorenvariante",
+      "reviewStatus": "Originalquelle und Länderbezug gelesen; Staging, nicht verkostet",
+      "readyForImport": false,
+      "openIssues": [
+        "Gemahlene Muskatblüte als formgenaue Zutat vervollständigen und prüfen.",
+        "Originale Löffelangaben erhalten; keine 100-g-Rezeptur aus Volumenmengen ableiten.",
+        "Vor Import erneut Dubletten und Live-Datenbankfreigabe prüfen."
+      ]
+    }
+  ],
+  "ingredientProposals": [
+    {
+      "id": "macis-gemahlen",
+      "name": "Muskatblüte (Macis), gemahlen",
+      "group": "Gewürze & Kräuter",
+      "form": "gemahlen",
+      "status": "proposal_only",
+      "active": false,
+      "readyForImport": false,
+      "reason": "Die Quelle führt gemahlene Muskatblüte als eigene Zutat neben gemahlener Muskatnuss.",
+      "notEquivalentTo": [
+        "muskatnuss"
+      ],
+      "allergens": [],
+      "allergenNote": "Reine Einzelzutat; produktabhängige Spuren sind separat zu prüfen.",
+      "sources": [
+        {
+          "title": "Homemade Mixed Spice Recipe",
+          "url": "https://www.biggerbolderbaking.com/homemade-mixed-spice/",
+          "author": "Gemma Stafford",
+          "accessedAt": "2026-10-22",
+          "primarySource": true,
+          "contentChecked": true,
+          "license": "Keine offene Lizenz festgestellt; keine fremden Bilder oder Beschreibungstexte übernommen."
+        }
+      ]
+    }
+  ]
+}
