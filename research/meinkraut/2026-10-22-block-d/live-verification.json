@@ -1,0 +1,39 @@
+{
+  "checkedAt": "2026-10-22",
+  "status": "PASS_LIVE",
+  "version": "3.0.8",
+  "catalog": "database",
+  "ingredients": 296,
+  "recipes": 654,
+  "importedRecipeId": "mk-source-lv-ilze-piparkukas-spice",
+  "deployment": {
+    "runId": 39830408360,
+    "url": "https://github.com/oliverdering/odpc-sitebot/actions/runs/39830408360",
+    "commit": "9dadc4c4efddf5aa36580b68865a5a646b706d19",
+    "conclusion": "success",
+    "catalogActivation": "activated"
+  },
+  "checks": {
+    "recipe": {
+      "url": "https://meinkraut.odpc.de/mischung/mk-source-lv-ilze-piparkukas-spice/",
+      "httpStatus": 200,
+      "sourceAttribution": true,
+      "notTastedLabel": true
+    },
+    "country": {
+      "url": "https://meinkraut.odpc.de/land/LV/",
+      "httpStatus": 200,
+      "newRecipeLinked": true
+    },
+    "sitemap": {
+      "url": "https://meinkraut.odpc.de/sitemap.xml",
+      "uniqueURLs": 1003
+    },
+    "shop": {
+      "mode": "test",
+      "checkoutEnabled": false
+    }
+  },
+  "primarySource": "https://latvianmom.com/2017/12/13/spice-mix-for-gingerbread-cookies/",
+  "releaseVerificationFix": "Live source checks now search both atlas.recipes and extra.mixes; health version is checked against the release manifest."
+}
