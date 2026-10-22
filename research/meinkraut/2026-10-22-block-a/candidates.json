@@ -129,7 +129,7 @@
     {
       "kind": "Trockenmischung",
       "editorialType": "Veröffentlichte Autorenvariante; sachliche Zutatenangaben, deutsche Kurzfassung eigenständig formuliert",
-      "reviewStatus": "Quellen und Zutatenformen geprüft; als mk-source-ca-maple-montreal im geprüften Release vorbereitet, nicht verkostet",
+      "reviewStatus": "Live-Datenbank und öffentliche Rezeptseite am 22.10.2026 geprüft; nicht verkostet",
       "readyForImport": false,
       "storageNotes": [
         "Sauber, trocken, luftdicht und lichtgeschützt lagern; keine eigene Haltbarkeitsfrist festgelegt."
@@ -241,15 +241,15 @@
       "safetyNotes": [
         "Zuckerhaltige Mischung laut Quelle erst nach dem scharfen Anbraten einsetzen."
       ],
-      "openIssues": [
-        "Produktive Datenbankfreigabe und konkrete Live-Routen prüfen."
-      ],
-      "bundledRecipeId": "mk-source-ca-maple-montreal"
+      "openIssues": [],
+      "bundledRecipeId": "mk-source-ca-maple-montreal",
+      "importStatus": "live_verified",
+      "importedRecipeId": "mk-source-ca-maple-montreal"
     },
     {
       "kind": "Trockenmischung",
       "editorialType": "Veröffentlichte Autorenvariante; sachliche Zutatenangaben, deutsche Kurzfassung eigenständig formuliert",
-      "reviewStatus": "Quellen und Zutatenformen geprüft; als mk-source-lk-roasted-curry im geprüften Release vorbereitet, nicht verkostet",
+      "reviewStatus": "Live-Datenbank und öffentliche Rezeptseite am 22.10.2026 geprüft; nicht verkostet",
       "readyForImport": false,
       "storageNotes": [
         "Sauber, trocken, luftdicht und lichtgeschützt lagern; keine eigene Haltbarkeitsfrist festgelegt."
@@ -407,10 +407,10 @@
           "license": "Keine offene Nachnutzungslizenz festgestellt; keine Bilder oder fremden Beschreibungstexte übernommen."
         }
       ],
-      "openIssues": [
-        "Produktive Datenbankfreigabe und konkrete Live-Routen prüfen."
-      ],
-      "bundledRecipeId": "mk-source-lk-roasted-curry"
+      "openIssues": [],
+      "bundledRecipeId": "mk-source-lk-roasted-curry",
+      "importStatus": "live_verified",
+      "importedRecipeId": "mk-source-lk-roasted-curry"
     }
   ],
   "ingredientProposals": [
