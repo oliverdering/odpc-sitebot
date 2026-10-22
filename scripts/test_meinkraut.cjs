@@ -3,7 +3,7 @@ const dir=path.join(__dirname,'../site-deploy/meinkraut');
 const db=JSON.parse(fs.readFileSync(path.join(dir,'content/atlas-base.json'))),extra=JSON.parse(fs.readFileSync(path.join(dir,'content/meinkraut-content.json')));
 const ingredientIds=new Set(db.ingredients.map(i=>i.id)),recipeIds=new Set();
 for(const r of [...db.recipes,...extra.mixes]){assert(!recipeIds.has(r.id),'duplicate recipe');recipeIds.add(r.id);assert(r.ingredients.length);for(const p of r.ingredients){assert(ingredientIds.has(p.ingredient),r.id+' missing '+p.ingredient);assert(p.amount>0);}}
-for(const r of extra.mixes){assert(Math.abs(r.ingredients.reduce((a,p)=>a+p.amount,0)-100)<1e-8);assert(r.ingredients.every(p=>p.unit==='g'));assert(r.methodSteps.length>=3);}
+for(const r of extra.mixes.filter(r=>!r.id.startsWith('mk-source-'))){assert(Math.abs(r.ingredients.reduce((a,p)=>a+p.amount,0)-100)<1e-8);assert(r.ingredients.every(p=>p.unit==='g'));assert(r.methodSteps.length>=3);}
 for(const c of Object.values(extra.countries)){assert(c.intro.length>300);assert(c.typicalDishes.length>=4);assert(c.typicalSpices.every(id=>ingredientIds.has(id)));assert(c.sources.every(x=>/^https:\/\//.test(x.url)));}
 for(const [id,k] of Object.entries(extra.ingredients)){assert(ingredientIds.has(id));assert(k.origin&&k.cultivation&&k.harvestProcessing&&k.storage&&k.sources.length);}
 const root={innerHTML:'',append(){},addEventListener(){},querySelector(){return null;}};
@@ -13,7 +13,7 @@ const sandbox={window,document:{getElementById:id=>id==='wga-root'?root:null,cre
 vm.createContext(sandbox);vm.runInContext(fs.readFileSync(path.join(dir,'shop.js'),'utf8'),sandbox);
 vm.runInContext(fs.readFileSync(path.join(dir,'meinkraut.js'),'utf8'),sandbox);
 const api=window.MEINKRAUT_TEST,state=api.getState();
-for(const r of extra.mixes)assert(api.canMix(r),r.id+' must be weighable');
+for(const r of extra.mixes.filter(r=>!r.id.startsWith('mk-source-')))assert(api.canMix(r),r.id+' must be weighable');
 state.parts=[{id:'salz',grams:35,enabled:true},{id:'schwarzer-pfeffer',grams:65,enabled:true}];state.target=200;
 assert.equal(api.currentRows().reduce((a,p)=>a+p.amount,0),200);assert.equal(api.currentRows()[0].amount,70);
 state.parts[0].enabled=false;assert.equal(api.currentRows()[1].amount,200);assert.equal(api.currentRows()[0].amount,0);
@@ -32,7 +32,7 @@ cart.shelf['schwarzer-pfeffer'].grams=null;plan=commerce.refillRows([{id:'schwar
 const label=commerce.getLabel();label.name='<img src=x onerror=alert(1)>';assert(!commerce.labelFace().includes('<img src=x'));assert(commerce.labelFace().includes('&lt;img'));assert(commerce.validateLabel({...label}));assert(!commerce.validateLabel({...label,style:'invalid'}));
 assert(window.MEINKRAUT_COMMERCE.validateBackup(window.MEINKRAUT_COMMERCE.backup()));assert(!window.MEINKRAUT_COMMERCE.validateBackup({shop:{},labels:[]}));
 // Source-backed imports keep exact forms, units and author attribution.
-const imported=db.recipes.filter(r=>r.id.startsWith('mk-source-'));
+const imported=[...db.recipes,...extra.mixes].filter(r=>r.id.startsWith('mk-source-'));
 assert(imported.length>=3);
 for(const r of imported){
   state.modal=r.id;api.render();
@@ -45,14 +45,20 @@ for(const r of imported){
 const curry=imported.find(r=>r.countries.includes('LK')),maple=imported.find(r=>r.countries.includes('CA'));
 const mixed=imported.find(r=>r.id==='mk-source-ie-gb-mixed-spice');
 const meduolis=imported.find(r=>r.id==='mk-source-lt-meduolis-spice');
+const piparkukas=imported.find(r=>r.id==='mk-source-lv-ilze-piparkukas-spice');
 assert(api.canMix(curry));assert(!api.canMix(maple));
 assert(!api.canMix(mixed));
 assert(api.canMix(meduolis));
+assert(!api.canMix(piparkukas));
 assert.deepEqual(Array.from(mixed.countries),['IE','GB']);
 assert.equal(mixed.ingredients.find(p=>p.ingredient==='macis-gemahlen').amount,2);
 assert.deepEqual(Array.from(meduolis.countries),['LT']);
 assert.equal(meduolis.ingredients.reduce((sum,p)=>sum+p.amount,0),69);
 assert.equal(meduolis.ingredients.find(p=>p.ingredient==='kardamomsamen-unspezifiziert').amount,7);
+assert.deepEqual(Array.from(piparkukas.countries),['LV']);
+assert.equal(piparkukas.ingredients.find(p=>p.ingredient==='kardamomsamen-unspezifiziert').amount,.5);
+assert.equal(piparkukas.ingredients.find(p=>p.ingredient==='piment').unit,'EL');
+assert.equal(piparkukas.allergens.length,0);
 assert.equal(curry.ingredients.find(p=>p.ingredient==='kardamomsamen-gruen').amount,5);
 assert.equal(curry.ingredients.reduce((sum,p)=>sum+p.amount,0),119);
 assert(!api.conversion('dillsamen'));assert(!api.conversion('knoblauchpulver'));

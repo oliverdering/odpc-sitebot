@@ -6,4 +6,4 @@ Die Zuordnung LV stützt sich auf die ausdrückliche Einordnung der Autorin als 
 
 Quelle: https://latvianmom.com/2017/12/13/spice-mix-for-gingerbread-cookies/ (Ilze, veröffentlicht 13.12.2017, aktualisiert 18.12.2024, gelesen am 22.10.2026). Keine fremden Bilder oder Beschreibungstexte übernommen. Keine eigene Haltbarkeitsfrist ergänzt.
 
-Tagesstand: insgesamt sechs neue Kandidaten. Dieser Kandidat ist fachlich und strukturell für einen späteren append-only Import vorbereitet, aber noch nicht live und von MeinKraut nicht verkostet.
+Tagesstand: insgesamt sechs neue Kandidaten. Dieser Kandidat wurde nach bestandener fachlicher und struktureller Prüfung append-only als `mk-source-lv-ilze-piparkukas-spice` in die freigegebene Datenbankversion 3.0.8 übernommen. Die Veröffentlichung bleibt als Familienvariante und von MeinKraut noch nicht verkostet gekennzeichnet.
