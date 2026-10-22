@@ -46,6 +46,11 @@ const curry=imported.find(r=>r.countries.includes('LK')),maple=imported.find(r=>
 const mixed=imported.find(r=>r.id==='mk-source-ie-gb-mixed-spice');
 const meduolis=imported.find(r=>r.id==='mk-source-lt-meduolis-spice');
 const piparkukas=imported.find(r=>r.id==='mk-source-lv-ilze-piparkukas-spice');
+const ducros=imported.find(r=>r.id==='mk-source-fr-ducros-provence');
+assert(api.canMix(ducros));
+assert.deepEqual(Array.from(ducros.countries),['FR']);
+assert.equal(ducros.ingredients.reduce((n,p)=>n+p.amount,0),100);
+assert.deepEqual(Object.fromEntries(ducros.ingredients.map(p=>[p.ingredient,p.amount])),{rosmarin:27,bohnenkraut:27,oregano:27,thymian:19});
 assert(api.canMix(curry));assert(!api.canMix(maple));
 assert(!api.canMix(mixed));
 assert(api.canMix(meduolis));
