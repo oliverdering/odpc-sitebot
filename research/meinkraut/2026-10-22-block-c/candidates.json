@@ -155,10 +155,10 @@
       ],
       "editorialType": "Veröffentlichte Autorenvariante",
       "reviewStatus": "Originalquelle, Zutatenformen, Länderzuordnung und Allergene geprüft am 22.10.2026; noch nicht verkostet",
-      "readyForImport": true,
+      "readyForImport": false,
       "openIssues": [],
       "bundledRecipeId": "mk-source-lt-meduolis-spice",
-      "importStatus": "bundled_pending_release"
+      "importStatus": "live_verified"
     }
   ],
   "ingredientProposals": [
@@ -167,8 +167,8 @@
       "name": "Kardamomsamen, Art nicht spezifiziert",
       "group": "Gewürze & Kräuter",
       "form": "Samen",
-      "status": "bundled",
-      "active": false,
+      "status": "live_verified",
+      "active": true,
       "readyForImport": false,
       "reason": "Die Quelle nennt Kardamomsamen ohne Artenangabe; vorhandene ganze Kapseln und ausdrücklich grüne Samen sind keine sichere form- und artgleiche Zuordnung.",
       "notEquivalentTo": [

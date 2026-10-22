@@ -1,10 +1,10 @@
 {
-  "checkedAt": "2026-10-22T15:31:00+02:00",
+  "checkedAt": "2026-10-22T17:18:00+02:00",
   "status": "LIVE_VERIFIED",
   "catalogSource": "database",
-  "version": "3.0.6",
-  "ingredients": 295,
-  "recipes": 652,
+  "version": "3.0.7",
+  "ingredients": 296,
+  "recipes": 653,
   "newRecipes": [
     {
       "id": "mk-source-ca-maple-montreal",
@@ -23,6 +23,13 @@
     {
       "id": "mk-source-ie-gb-mixed-spice",
       "url": "https://meinkraut.odpc.de/mischung/mk-source-ie-gb-mixed-spice/",
+      "httpStatus": 200,
+      "sourceAttribution": true,
+      "mustardDeclaration": false
+    },
+    {
+      "id": "mk-source-lt-meduolis-spice",
+      "url": "https://meinkraut.odpc.de/mischung/mk-source-lt-meduolis-spice/",
       "httpStatus": 200,
       "sourceAttribution": true,
       "mustardDeclaration": false
@@ -77,6 +84,13 @@
       "httpStatus": 200,
       "iconUrl": "https://meinkraut.odpc.de/assets/icons/s26.webp",
       "iconHttpStatus": 200
+    },
+    {
+      "id": "kardamomsamen-unspezifiziert",
+      "url": "https://meinkraut.odpc.de/gewuerz/kardamomsamen-unspezifiziert/",
+      "httpStatus": 200,
+      "iconUrl": "https://meinkraut.odpc.de/assets/icons/s25.webp",
+      "iconHttpStatus": 200
     }
   ],
   "countryCoverage": [
@@ -103,11 +117,19 @@
       "newLiveRecipeIds": [
         "mk-source-ie-gb-mixed-spice"
       ]
+    },
+    {
+      "country": "LT",
+      "recipeCount": 4,
+      "dryMixCount": 1,
+      "newLiveRecipeIds": [
+        "mk-source-lt-meduolis-spice"
+      ]
     }
   ],
-  "countriesWithoutDryMix": 112,
-  "deploymentRun": "https://github.com/oliverdering/odpc-sitebot/actions/runs/39786666866",
-  "note": "The three listed source-backed recipes are active; the held Spice Bag research candidate is not included in live counts.",
+  "countriesWithoutDryMix": 111,
+  "deploymentRun": "https://github.com/oliverdering/odpc-sitebot/actions/runs/39802380260",
+  "note": "The four listed source-backed recipes are active; the held Spice Bag research candidate is not included in live counts.",
   "browserChecks": [
     "Homepage shows 294 ingredients and 651 recipes",
     "Curry recipe opens mixing workshop with source attribution",
@@ -115,15 +137,19 @@
     "Copied Canadian recipe preserves author, source URL and original units without a false house-recipe label",
     "Mixed Spice public route shows all seven original EL/TL quantities, author attribution and untested status",
     "Ground mace public route and symbol image load",
-    "Ireland country page links four recipes including one dry mix"
+    "Ireland country page links four recipes including one dry mix",
+    "Health endpoint reports database version 3.0.7 with 296 ingredients and 653 recipes",
+    "Meduolis public route shows all eight original gram quantities, Skanauk.lt attribution, untested status and a 69 g pre-sieving input basis",
+    "Unspecified-cardamom-seed route loads with symbol image /assets/icons/s25.webp",
+    "Lithuania country page links four recipes including its first dry mix"
   ],
   "nextResearch": {
-    "pullRequest": "https://github.com/oliverdering/odpc-sitebot/pull/3",
-    "candidateId": "mk-research-20261022-ie-gb-mixed-spice-stafford",
+    "pullRequest": "https://github.com/oliverdering/odpc-sitebot/pull/4",
+    "candidateId": "mk-research-20261022-lt-meduolis-skanauk",
     "status": "live_verified",
-    "source": "https://www.biggerbolderbaking.com/homemade-mixed-spice/",
-    "createdTodayAcrossBothBlocks": 4,
-    "importedRecipeId": "mk-source-ie-gb-mixed-spice"
+    "source": "https://skanauk.lt/naminis-prieskoniu-misinys-meduolis",
+    "createdTodayAcrossBothBlocks": 5,
+    "importedRecipeId": "mk-source-lt-meduolis-spice"
   },
-  "latestVerifiedDeployment": "https://github.com/oliverdering/odpc-sitebot/actions/runs/39786666866"
+  "latestVerifiedDeployment": "https://github.com/oliverdering/odpc-sitebot/actions/runs/39802380260"
 }

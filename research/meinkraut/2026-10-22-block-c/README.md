@@ -6,4 +6,4 @@ Die Einwaagen ergeben 69 g vor Mahlen und Sieben. Die optionale 100-g-Ansicht sk
 
 Quelle: https://skanauk.lt/naminis-prieskoniu-misinys-meduolis (Skanauk.lt receptai, gelesen am 22.10.2026). Keine fremden Bilder oder Beschreibungstexte übernommen. Keine eigene Haltbarkeitsfrist und keine medizinischen Aussagen ergänzt.
 
-Tagesstand: insgesamt fünf neue Kandidaten. Dieser Datensatz ist im append-only Release 3.0.7 gebündelt. Ein Live-Treffer darf erst nach erfolgreicher Datenbankaktivierung und öffentlicher Routenprüfung gemeldet werden.
+Tagesstand: insgesamt fünf neue Kandidaten. Der Datensatz wurde als append-only Release 3.0.7 aktiviert und öffentlich geprüft. Live bestätigt sind 296 Zutaten, 653 Rezepte, der Meduolis-Rezepttreffer mit allen acht Originalmengen, die neue Zutatenroute samt Symbol sowie vier Litauen-Treffer einschließlich einer Trockenmischung. Produktionslauf: https://github.com/oliverdering/odpc-sitebot/actions/runs/39802380260.
