@@ -1,0 +1,14 @@
+{
+  "status": "PASS_STAGING",
+  "productionImport": false,
+  "candidateCount": 1,
+  "createdToday": 6,
+  "errors": [],
+  "blockedFromImport": [
+    {
+      "candidateId": "mk-research-20261022-lv-grandmas-gingerbread-ilze",
+      "reason": "already_imported",
+      "importedRecipeId": "mk-source-lv-ilze-piparkukas-spice"
+    }
+  ]
+}

@@ -1,20 +1,18 @@
 {
-  "version": "3.0.7",
-  "baselineRevision": "8f9243f30c0d6b6d9b690ff4d26ebdb724d2dda1",
+  "version": "3.0.8",
+  "baselineRevision": "50668e45e721b41ae208b513b3a42ab6bace6726",
   "expectedBaseline": {
-    "ingredients": 295,
-    "recipes": 652
-  },
-  "expectedTarget": {
     "ingredients": 296,
     "recipes": 653
   },
-  "addedIngredients": [
-    "kardamomsamen-unspezifiziert"
-  ],
+  "expectedTarget": {
+    "ingredients": 296,
+    "recipes": 654
+  },
+  "addedIngredients": [],
   "addedRecipes": [
-    "mk-source-lt-meduolis-spice"
+    "mk-source-lv-ilze-piparkukas-spice"
   ],
   "checkedAt": "2026-10-22",
-  "sourceReview": "research/meinkraut/2026-10-22-block-c/validation.json"
+  "sourceReview": "research/meinkraut/2026-10-22-block-d/validation.json"
 }
