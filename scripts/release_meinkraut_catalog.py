@@ -89,13 +89,13 @@ def main():
                 expected = data['manifest']['expectedTarget']
                 with urlopen(URL + '/health.php?catalog=' + result['releaseKey'][:16], timeout=35) as r:
                     health = json.load(r)
-                if health.get('catalog') != 'database' or any(health.get(k) != v for k, v in expected.items()):
+                if health.get('catalog') != 'database' or health.get('version') != data['manifest']['version'] or any(health.get(k) != v for k, v in expected.items()):
                     raise RuntimeError('Live database catalog mismatch')
                 from urllib.parse import quote
                 for rid in data['manifest']['addedRecipes']:
                     with urlopen(URL + '/mischung/' + quote(rid) + '/', timeout=35) as r:
                         body = r.read().decode()
-                    recipe = next(x for x in data['atlas']['recipes'] if x['id'] == rid)
+                    recipe = next(x for x in data['atlas']['recipes'] + data['extra']['mixes'] if x['id'] == rid)
                     if recipe['sources'][0]['url'] not in body or recipe['sources'][0]['author'] not in body:
                         raise RuntimeError('Published source attribution missing')
                 for iid in data['manifest']['addedIngredients']:
