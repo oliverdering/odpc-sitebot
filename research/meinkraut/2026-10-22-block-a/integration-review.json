@@ -1,0 +1,150 @@
+{
+  "checkedAt": "2026-10-22",
+  "productionImport": false,
+  "liveCatalog": {
+    "source": "database",
+    "ingredients": 288,
+    "recipes": 649,
+    "atlasSHA256": "3ac442b41b5d10563dc81801c597fdfcb2df967243766b3b456c7241c43f2d62",
+    "extraSHA256": "e880d5d0ffba297dc6a176f9e969e4e5e20545d8a7ab6fbe91258a721b6a9311"
+  },
+  "ingredientProposals": {
+    "count": 6,
+    "activeCount": 0,
+    "note": "Identity and form specifications only; full catalog metadata, asset mapping and release review still required."
+  },
+  "sourceRecheck": [
+    {
+      "candidateId": "mk-research-20261022-lk-roasted-curry-kodippili",
+      "url": "https://www.theflavorbender.com/sri-lankan-roasted-curry-powder/",
+      "result": "Recipe card and its method specify 5 g shelled green cardamom seeds. Introductory preparation prose is less precise; use explicit weighed recipe-card quantity. Basmati required; 119 g chosen raw inputs includes optional mustard, excludes optional curry leaves. Approximate final yield is not guaranteed."
+    },
+    {
+      "candidateId": "mk-research-20261022-ca-maple-montreal",
+      "url": "https://maplefromcanada.ca/recipes/maple-montreal-steak-spice/",
+      "result": "Onion flakes, dill seeds, garlic powder and dry maple sugar are named. Maple sugar selected from explicit author alternatives. Existing flakes/granule/leaf/syrup substitutions are not accepted. Preserve original volume units."
+    }
+  ],
+  "duplicateScreen": {
+    "method": "Compared ingredient identity sets and names against every current live recipe; no volume-to-mass conversion. Identity-set screen alone is not a complete semantic duplicate audit.",
+    "candidates": [
+      {
+        "id": "mk-research-20261022-ie-spice-bag-saarinen",
+        "sameIngredientSetInLive": [],
+        "liveIdPresent": false,
+        "readyForImport": false
+      },
+      {
+        "id": "mk-research-20261022-ca-maple-montreal",
+        "sameIngredientSetInLive": [],
+        "liveIdPresent": false,
+        "readyForImport": false
+      },
+      {
+        "id": "mk-research-20261022-lk-roasted-curry-kodippili",
+        "sameIngredientSetInLive": [],
+        "liveIdPresent": false,
+        "readyForImport": false
+      }
+    ],
+    "manualComparisons": [
+      {
+        "candidateId": "mk-research-20261022-lk-roasted-curry-kodippili",
+        "comparedWith": [
+          "m20",
+          "m25",
+          "mk-garam-masala",
+          "x002"
+        ],
+        "result": "Existing masala recipes lack the basmati component and have other spices/ratios; x002 is a coconut paste rather than this dry roasted powder. No exact duplicate found in this comparison."
+      },
+      {
+        "candidateId": "mk-research-20261022-ca-maple-montreal",
+        "comparedWith": [
+          "x023",
+          "c148"
+        ],
+        "result": "Existing Canadian maple-mustard recipes are liquid glazes using syrup and Dijon, unlike the proposed dry seed mixture."
+      }
+    ]
+  },
+  "publicCountryRouteChecks": [
+    {
+      "country": "IE",
+      "url": "https://meinkraut.odpc.de/land/IE/",
+      "httpStatus": 200,
+      "liveRecipeIds": [
+        "c008",
+        "atlas6-nordwesteuropaeische-kraeuter-mayonnaise",
+        "atlas6-irische-petersilien-senf-sauce"
+      ],
+      "renderedRecipeIds": [
+        "c008",
+        "atlas6-nordwesteuropaeische-kraeuter-mayonnaise",
+        "atlas6-irische-petersilien-senf-sauce"
+      ],
+      "newCandidateLiveHits": 0
+    },
+    {
+      "country": "CA",
+      "url": "https://meinkraut.odpc.de/land/CA/",
+      "httpStatus": 200,
+      "liveRecipeIds": [
+        "x023",
+        "c148",
+        "atlas6-kanadische-honig-knoblauch-glasur"
+      ],
+      "renderedRecipeIds": [
+        "x023",
+        "c148",
+        "atlas6-kanadische-honig-knoblauch-glasur"
+      ],
+      "newCandidateLiveHits": 0
+    },
+    {
+      "country": "LK",
+      "url": "https://meinkraut.odpc.de/land/LK/",
+      "httpStatus": 200,
+      "liveRecipeIds": [
+        "r046",
+        "x002",
+        "atlas-lk-seeni-sambol-suess-scharfe-zwiebelwuerze"
+      ],
+      "renderedRecipeIds": [
+        "r046",
+        "x002",
+        "atlas-lk-seeni-sambol-suess-scharfe-zwiebelwuerze"
+      ],
+      "newCandidateLiveHits": 0
+    }
+  ],
+  "integrationGates": [
+    "Convert ingredient proposals into complete reviewed catalog records; keep new IDs distinct from existing product forms.",
+    "SSR and interactive recipe detail currently omit recipe source links; copy function labels every recipe as own house variant. Preserve published-author attribution before source-based import.",
+    "Only weighed input quantities may be normalized; mixed volume/weight recipes stay in original units.",
+    "Choose database release version with preconditions and rollback; file deployment alone does not change active database release.",
+    "Run JavaScript, PHP and concrete new recipe/ingredient route tests on assembled release before activation."
+  ],
+  "validation": {
+    "staging": "PASS_STAGING",
+    "requireReadyExitCode": 2,
+    "negativeProbes": {
+      "unknown_proposed_id": "REJECTED",
+      "proposal_disguised_as_active": "REJECTED",
+      "premature_recipe_approval": "REJECTED",
+      "premature_ingredient_approval": "REJECTED",
+      "stale_normalized_proposal": "REJECTED",
+      "missing_mustard_allergen": "REJECTED"
+    },
+    "applicationJavaScript": "PASS (288 ingredients / 649 recipes)"
+  },
+  "dailyNewRecipeCandidates": 3,
+  "newRecipeCandidatesAddedThisReview": 0,
+  "nextPriorities": [
+    "Complete six ingredient records and exact icon mapping",
+    "Preserve author/source attribution in SSR, recipe detail and copied recipe",
+    "Finish safe database release process",
+    "Ireland spice-bag compound ingredient specification",
+    "After current import blockers: Baltic states, Caribbean, Central Asia"
+  ]
+}

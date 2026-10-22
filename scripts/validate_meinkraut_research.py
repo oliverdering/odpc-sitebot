@@ -21,6 +21,23 @@ def validate(package, atlas, extra):
     ingredient_map = {x['id']: x for x in atlas['ingredients']}
     countries = {x['code'] for x in atlas['countries']}
     active_ids = {x['id'] for x in atlas['recipes'] + extra['mixes']}
+    proposals = {}
+    for proposal in package.get('ingredientProposals', []):
+        pid = proposal.get('id', '')
+        if not re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*', pid) or pid in proposals or pid in ingredient_map:
+            errors.append(f'{pid}: proposed ingredient ID invalid, duplicated, or already active')
+        proposals[pid] = proposal
+        if proposal.get('active') is not False or proposal.get('readyForImport') is not False or proposal.get('status') != 'proposal_only':
+            errors.append(f'{pid}: ingredient proposals must remain inactive and unapproved')
+        for field in ['name', 'group', 'form', 'reason', 'allergenNote']:
+            if not isinstance(proposal.get(field), str) or not proposal[field].strip():
+                errors.append(f'{pid}: proposal missing {field}')
+        if not isinstance(proposal.get('allergens'), list):
+            errors.append(f'{pid}: explicit ingredient allergen assessment required')
+        if not proposal.get('sources') or any(not s.get('url', '').startswith('https://') or not s.get('contentChecked') or not s.get('primarySource') for s in proposal['sources']):
+            errors.append(f'{pid}: checked primary evidence required for ingredient proposal')
+        if not proposal.get('notEquivalentTo') or any(i not in ingredient_map for i in proposal['notEquivalentTo']):
+            errors.append(f'{pid}: rejected substitution must reference actual atlas ingredient(s)')
     if package.get('schemaVersion') != 1 or package.get('productionImport') is not False:
         errors.append('Research package must use schema 1 and productionImport=false')
     records = package.get('candidates', [])
@@ -47,6 +64,12 @@ def validate(package, atlas, extra):
             if part.get('unit') not in {'g', 'TL', 'EL', 'ml', 'Stück'}:
                 errors.append(f'{rid}: unsupported or missing unit')
             iid = part.get('ingredient')
+            proposed = part.get('proposedIngredient')
+            if proposed is not None:
+                if iid is not None or proposed not in proposals:
+                    errors.append(f'{rid}: proposal must resolve to a staged ingredient and cannot masquerade as active')
+                else:
+                    derived_allergens.update(proposals[proposed].get('allergens', []))
             if iid is None:
                 if not part.get('mappingIssue'):
                     errors.append(f'{rid}: unresolved ingredient needs an explicit mappingIssue')
@@ -76,7 +99,7 @@ def validate(package, atlas, extra):
                 if len(preview) != len(inputs):
                     errors.append(f'{rid}: incomplete normalization')
                 for original, scaled in zip(inputs, preview):
-                    if scaled.get('sourceName') != original.get('sourceName') or scaled.get('ingredient') != original.get('ingredient') or scaled.get('unit') != 'g' or not math.isclose(scaled.get('amount', -1), original['amount'] * expected_factor, rel_tol=1e-10):
+                    if scaled.get('sourceName') != original.get('sourceName') or scaled.get('ingredient') != original.get('ingredient') or scaled.get('proposedIngredient') != original.get('proposedIngredient') or scaled.get('unit') != 'g' or not math.isclose(scaled.get('amount', -1), original['amount'] * expected_factor, rel_tol=1e-10):
                         errors.append(f'{rid}: invalid normalized ingredient')
                 if not math.isclose(sum(p.get('amount', 0) for p in preview), 100, abs_tol=1e-8):
                     errors.append(f'{rid}: normalized inputs must total 100 g')
@@ -108,7 +131,7 @@ def main():
     for file in (REPO / 'research/meinkraut').glob('*/candidates.json'):
         batch = json.loads(file.read_text())
         for candidate in batch.get('candidates', []):
-            key = (batch.get('createdAt'), candidate.get('id'))
+            key = candidate.get('id')
             if key in seen:
                 duplicate_ids.add(key)
             seen.add(key)

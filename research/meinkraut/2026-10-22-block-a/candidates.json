@@ -170,7 +170,8 @@
           "amount": 1,
           "unit": "EL",
           "optional": false,
-          "mappingIssue": "Getrocknete Zwiebelflocken sind nicht mengenidentisch mit Zwiebelgranulat."
+          "mappingIssue": "Belegter Zutatenvorschlag zwiebelflocken-getrocknet liegt nur im Staging vor; noch keine aktive Atlas-ID.",
+          "proposedIngredient": "zwiebelflocken-getrocknet"
         },
         {
           "sourceName": "red pepper flakes",
@@ -199,7 +200,8 @@
           "amount": 2,
           "unit": "TL",
           "optional": false,
-          "mappingIssue": "Dillsamen fehlen; vorhandener Dill ist Blattkraut."
+          "mappingIssue": "Belegter Zutatenvorschlag dillsamen liegt nur im Staging vor; noch keine aktive Atlas-ID.",
+          "proposedIngredient": "dillsamen"
         },
         {
           "sourceName": "maple sugar or maple flakes",
@@ -207,7 +209,8 @@
           "amount": 30,
           "unit": "g",
           "optional": false,
-          "mappingIssue": "Ahornzucker/-flocken fehlen; Ahornsirup wäre eine andere, feuchte Zutat."
+          "mappingIssue": "Belegter Zutatenvorschlag ahornzucker liegt nur im Staging vor; noch keine aktive Atlas-ID.",
+          "proposedIngredient": "ahornzucker"
         },
         {
           "sourceName": "garlic powder",
@@ -215,7 +218,8 @@
           "amount": 1,
           "unit": "TL",
           "optional": false,
-          "mappingIssue": "Knoblauchpulver fehlt als exakt passende Form; nicht volumenidentisch mit Granulat."
+          "mappingIssue": "Belegter Zutatenvorschlag knoblauchpulver liegt nur im Staging vor; noch keine aktive Atlas-ID.",
+          "proposedIngredient": "knoblauchpulver"
         }
       ],
       "originalYield": {
@@ -246,14 +250,16 @@
         "Zuckerhaltige Mischung laut Quelle erst nach dem scharfen Anbraten einsetzen."
       ],
       "openIssues": [
-        "Vier formgenaue Zutatenzuordnungen offen.",
-        "Gemischte Gewichts- und Volumenangaben; keine 100-g-Rezeptur daraus erfinden."
+        "Vier formgenaue Zutatenpositionen mit Herkunftsnachweis vorgeschlagen, aber noch keine aktiven Atlas-IDs.",
+        "Ahornzucker als explizit erlaubte Option gewählt; keine Gleichsetzung mit Ahornsirup.",
+        "Gemischte Gewichts- und Volumenangaben bleiben erhalten; keine erfundene 100-g-Rezeptur.",
+        "Quellenangabe und veröffentlichte Autorenvariante in öffentlicher Rezeptansicht, Kopierfunktion und SSR korrekt erhalten."
       ]
     },
     {
       "kind": "Trockenmischung",
       "editorialType": "Veröffentlichte Autorenvariante; sachliche Zutatenangaben, deutsche Kurzfassung eigenständig formuliert",
-      "reviewStatus": "Quellenseite gelesen; Staging, nicht verkostet, nicht importiert",
+      "reviewStatus": "Rezeptkarte und Zutatenformen erneut geprüft; sechs Zutatenergänzungen im Gesamtpaket vorgeschlagen, nicht importiert",
       "readyForImport": false,
       "storageNotes": [
         "Sauber, trocken, luftdicht und lichtgeschützt lagern; keine eigene Haltbarkeitsfrist festgelegt."
@@ -300,15 +306,18 @@
           "amount": 20,
           "unit": "g",
           "optional": false,
-          "mappingIssue": "Basmati fehlt; vorhandener Jasminreis und Reismehl sind keine identische Zutat."
+          "mappingIssue": "Belegter Zutatenvorschlag basmati-reis-roh liegt nur im Staging vor; noch keine aktive Atlas-ID.",
+          "proposedIngredient": "basmati-reis-roh"
         },
         {
           "sourceName": "green cardamom seeds",
-          "ingredient": "kardamom",
+          "ingredient": null,
           "amount": 5,
           "unit": "g",
           "optional": false,
-          "preparation": "Kapseln öffnen; ausschließlich die ausgelösten Samen wiegen, keine 5 g ganze Kapseln."
+          "preparation": "Kapselhüllen entfernen; 5 g ausgelöste Samen abwiegen. Rezeptkarte und zugehöriger Zubereitungsschritt nennen Samengewicht.",
+          "proposedIngredient": "kardamomsamen-gruen",
+          "mappingIssue": "Belegter Zutatenvorschlag kardamomsamen-gruen liegt nur im Staging vor; noch keine aktive Atlas-ID."
         },
         {
           "sourceName": "fennel seeds",
@@ -365,13 +374,15 @@
             "sourceName": "basmati rice",
             "ingredient": null,
             "amount": 16.80672268907563,
-            "unit": "g"
+            "unit": "g",
+            "proposedIngredient": "basmati-reis-roh"
           },
           {
             "sourceName": "green cardamom seeds",
-            "ingredient": "kardamom",
+            "ingredient": null,
             "amount": 4.201680672268908,
-            "unit": "g"
+            "unit": "g",
+            "proposedIngredient": "kardamomsamen-gruen"
           },
           {
             "sourceName": "fennel seeds",
@@ -394,8 +405,10 @@
         ]
       },
       "methodSteps": [
-        "Reis trocken leicht bräunen, dann Gewürze zugeben und unter Bewegung kurz mitrösten.",
-        "Vollständig abkühlen lassen, portionsweise mahlen und vermengen."
+        "Kardamomkapseln öffnen, Hüllen entfernen und nur die ausgelösten Samen gemäß Zutatenliste wiegen.",
+        "Ungekochten Basmati-Reis in einer trockenen Pfanne bei mittlerer Hitze leicht bräunen.",
+        "Die übrigen ausgewählten Gewürze zugeben und unter ständiger Bewegung etwa 2–4 Minuten duftend rösten; nicht verbrennen lassen.",
+        "Vom Herd nehmen und vollständig abkühlen lassen. Anschließend portionsweise fein mahlen und vermengen."
       ],
       "application": "Für Currys; Schärfe und Salz separat am Gericht ergänzen.",
       "serving": "Keine allgemeine Gramm-Dosierung belegt.",
@@ -411,10 +424,169 @@
         }
       ],
       "openIssues": [
-        "Basmati-Zutaten-ID ergänzen.",
-        "Kardamom-Samengewicht muss bei Umsetzung erhalten bleiben.",
-        "Optionale Zutaten und Einwaage/Endausbeute in der Anzeige unterscheiden.",
-        "100-g-Werte sind eine rechnerische Vorschau, noch kein aktives MeinKraut-Grundrezept."
+        "Basmati und ausgelöste grüne Kardamomsamen sind als eigene Zutaten vorgeschlagen, aber im produktiven Atlas noch nicht vorhanden.",
+        "Auswahl mit optionalem Senf und ohne optionale Curryblätter sichtbar ausweisen.",
+        "119 g bezeichnet die Einwaage; die Quelle nennt nur eine ungefähre Endausbeute. 100-g-Vorschau nicht als garantierte Endmenge ausgeben.",
+        "Quellenangabe und veröffentlichte Autorenvariante in öffentlicher Rezeptansicht, Kopierfunktion und SSR korrekt erhalten.",
+        "Aktive Datenbankfreigabe und Live-Routen erst nach gesonderter Integrationsprüfung."
+      ]
+    }
+  ],
+  "ingredientProposals": [
+    {
+      "id": "basmati-reis-roh",
+      "name": "Ungekochter Basmati-Reis",
+      "group": "Getreide",
+      "form": "ganz, ungekocht",
+      "status": "proposal_only",
+      "active": false,
+      "readyForImport": false,
+      "reason": "Vorhandener Reis ist ausdrücklich Jasminreis.",
+      "notEquivalentTo": [
+        "reis-roh"
+      ],
+      "allergens": [],
+      "allergenNote": "Identität einer unvermischten Einzelzutat; keine Aussage über produktabhängige Spuren oder Allergenfreiheit.",
+      "sources": [
+        {
+          "title": "Easy Curry Powder (Sri Lankan Curry powder)",
+          "url": "https://www.theflavorbender.com/sri-lankan-roasted-curry-powder/",
+          "author": "Dini Kodippili",
+          "accessedAt": "2026-10-22",
+          "primarySource": true,
+          "contentChecked": true,
+          "license": "Keine offene Nachnutzungslizenz festgestellt; keine Bilder oder fremden Beschreibungstexte übernommen."
+        }
+      ]
+    },
+    {
+      "id": "kardamomsamen-gruen",
+      "name": "Grüne Kardamomsamen ohne Kapselhülle",
+      "group": "Gewürze & Kräuter",
+      "form": "Samen",
+      "status": "proposal_only",
+      "active": false,
+      "readyForImport": false,
+      "reason": "Die Quelle wiegt ausgelöste Samen; vorhandene grüne Kapseln enthalten die Hülle.",
+      "notEquivalentTo": [
+        "kardamom"
+      ],
+      "allergens": [],
+      "allergenNote": "Identität einer unvermischten Einzelzutat; keine Aussage über produktabhängige Spuren oder Allergenfreiheit.",
+      "sources": [
+        {
+          "title": "Easy Curry Powder (Sri Lankan Curry powder)",
+          "url": "https://www.theflavorbender.com/sri-lankan-roasted-curry-powder/",
+          "author": "Dini Kodippili",
+          "accessedAt": "2026-10-22",
+          "primarySource": true,
+          "contentChecked": true,
+          "license": "Keine offene Nachnutzungslizenz festgestellt; keine Bilder oder fremden Beschreibungstexte übernommen."
+        }
+      ]
+    },
+    {
+      "id": "zwiebelflocken-getrocknet",
+      "name": "Getrocknete Zwiebelflocken",
+      "group": "Gewürze & Kräuter",
+      "form": "Flocken",
+      "status": "proposal_only",
+      "active": false,
+      "readyForImport": false,
+      "reason": "Flocken und Granulat sind bei Löffelmengen nicht automatisch austauschbar.",
+      "notEquivalentTo": [
+        "zwiebelgranulat"
+      ],
+      "allergens": [],
+      "allergenNote": "Identität einer unvermischten Einzelzutat; keine Aussage über produktabhängige Spuren oder Allergenfreiheit.",
+      "sources": [
+        {
+          "title": "Maple Montréal Steak Spice",
+          "url": "https://maplefromcanada.ca/recipes/maple-montreal-steak-spice/",
+          "author": "Maple from Canada / Quebec Maple Syrup Producers",
+          "accessedAt": "2026-10-22",
+          "primarySource": true,
+          "contentChecked": true,
+          "license": "Keine offene Nachnutzungslizenz festgestellt; keine Bilder oder fremden Beschreibungstexte übernommen."
+        }
+      ]
+    },
+    {
+      "id": "dillsamen",
+      "name": "Dillsamen",
+      "group": "Gewürze & Kräuter",
+      "form": "Samen",
+      "status": "proposal_only",
+      "active": false,
+      "readyForImport": false,
+      "reason": "Blattkraut und Samen getrennt führen.",
+      "notEquivalentTo": [
+        "dill"
+      ],
+      "allergens": [],
+      "allergenNote": "Identität einer unvermischten Einzelzutat; keine Aussage über produktabhängige Spuren oder Allergenfreiheit.",
+      "sources": [
+        {
+          "title": "Maple Montréal Steak Spice",
+          "url": "https://maplefromcanada.ca/recipes/maple-montreal-steak-spice/",
+          "author": "Maple from Canada / Quebec Maple Syrup Producers",
+          "accessedAt": "2026-10-22",
+          "primarySource": true,
+          "contentChecked": true,
+          "license": "Keine offene Nachnutzungslizenz festgestellt; keine Bilder oder fremden Beschreibungstexte übernommen."
+        }
+      ]
+    },
+    {
+      "id": "ahornzucker",
+      "name": "Ahornzucker",
+      "group": "Zucker & Süßungsmittel",
+      "form": "trocken",
+      "status": "proposal_only",
+      "active": false,
+      "readyForImport": false,
+      "reason": "Die ausdrücklich erlaubte Ahornzucker-Option wählen; Sirup ist feucht. Ahornflocken werden nicht als eigene Variante angelegt.",
+      "notEquivalentTo": [
+        "ahornsirup"
+      ],
+      "allergens": [],
+      "allergenNote": "Identität einer unvermischten Einzelzutat; keine Aussage über produktabhängige Spuren oder Allergenfreiheit.",
+      "sources": [
+        {
+          "title": "Maple Montréal Steak Spice",
+          "url": "https://maplefromcanada.ca/recipes/maple-montreal-steak-spice/",
+          "author": "Maple from Canada / Quebec Maple Syrup Producers",
+          "accessedAt": "2026-10-22",
+          "primarySource": true,
+          "contentChecked": true,
+          "license": "Keine offene Nachnutzungslizenz festgestellt; keine Bilder oder fremden Beschreibungstexte übernommen."
+        }
+      ]
+    },
+    {
+      "id": "knoblauchpulver",
+      "name": "Knoblauchpulver",
+      "group": "Gewürze & Kräuter",
+      "form": "gemahlen",
+      "status": "proposal_only",
+      "active": false,
+      "readyForImport": false,
+      "reason": "Bei Volumenmengen keine Gleichsetzung von Pulver und Granulat.",
+      "notEquivalentTo": [
+        "knoblauchgranulat"
+      ],
+      "allergens": [],
+      "allergenNote": "Identität einer unvermischten Einzelzutat; keine Aussage über produktabhängige Spuren oder Allergenfreiheit.",
+      "sources": [
+        {
+          "title": "Maple Montréal Steak Spice",
+          "url": "https://maplefromcanada.ca/recipes/maple-montreal-steak-spice/",
+          "author": "Maple from Canada / Quebec Maple Syrup Producers",
+          "accessedAt": "2026-10-22",
+          "primarySource": true,
+          "contentChecked": true,
+          "license": "Keine offene Nachnutzungslizenz festgestellt; keine Bilder oder fremden Beschreibungstexte übernommen."
+        }
       ]
     }
   ]

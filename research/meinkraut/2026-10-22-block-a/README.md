@@ -10,6 +10,14 @@ Drei eigenständig recherchierte Kandidaten: irische Spice-Bag-Würze, kanadisch
 - Kanada: Zwiebelflocken, Dillsamen, Ahornzucker und Knoblauchpulver benötigen formgenaue Zuordnungen. Dillblatt, Ahornsirup und Granulate sind keine identischen Mengenersatzwerte. Enthält Senf.
 - Sri Lanka: Basmati fehlt; vorhandener Jasminreis ist nicht gleichzusetzen. Kardamom wird als Samengewicht nach dem Auslösen erfasst. 119 g sind die ausgewählten Einwaagen, nicht die vom Autor ungefähr angegebene Endausbeute. Die 100-g-Vorschau normalisiert diese Einwaagen. Enthält Senf in der dokumentierten Auswahl.
 
+### Zweite Prüfung: konkrete Zutatenvorschläge
+
+`candidates.json` enthält jetzt sechs gesonderte `ingredientProposals`: ungekochter Basmati, ausgelöste grüne Kardamomsamen, Zwiebelflocken, Dillsamen, Ahornzucker und Knoblauchpulver. Jeder Vorschlag nennt die gelesene Primärquelle, genaue Form und die verworfene Bestandsalternative. Diese Vorschläge sind keine aktiven Atlaszutaten. `ingredient` bleibt deshalb `null`; `proposedIngredient` dokumentiert nur die geplante Zuordnung. Die Rezeptkarte des Curryautors nennt 5 g ausgelöste Samen; der vorhandene Atlas führt dagegen grüne Kapseln. Ein eigener Samen-Datensatz verhindert, dass die Rezeptansicht versehentlich Kapselgewicht verlangt.
+
+`integration-review.json` protokolliert den erneuten Live-Abgleich, konkrete öffentliche Länder-Routen, Dublettenvergleiche, Quellenklärung und sechs negative Importproben. Die verwandten kanadischen Ahorn-Dijon-Glasuren und indischen Masala-Rezepte sind keine identischen Rezepturen. Ein Vergleich der Zutatenmengen und Rezeptsemantik bleibt vor Veröffentlichung erforderlich.
+
+Weitere Integrationslücke: Quellen werden in der öffentlichen Rezeptansicht bislang nicht als Rezeptquellen ausgegeben; die Kopierfunktion ergänzt pauschal eine Hausvarianten-Bezeichnung. Veröffentlichte Autorenvarianten benötigen vor dem Import eine korrekte Herkunftsanzeige in SSR, interaktiver Ansicht und kopiertem Rezept. Diese Prüfung ändert keine Website-Dateien. Es wurden bei dieser zweiten Prüfung keine neuen Rezeptkandidaten angelegt; der Tagesstand bleibt drei.
+
 ## Belegte Ausgangslage
 
 Live-Daten wurden über `https://meinkraut.odpc.de/data.php` gelesen; der Server meldete die Datenquelle `database`: 288 Zutaten, 649 Rezepturen, 195 auswählbare Länder. Jedes auswählbare Land besitzt mindestens drei Zuordnungen. Bei 115 Ländern fehlt hingegen die Rezeptart `Trockenmischung`. Irland besitzt drei Saucen-/Dressing-Einträge und keine Trockenmischung. `coverage.json` enthält die prüfbare Länderübersicht.
