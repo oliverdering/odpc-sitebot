@@ -41,13 +41,11 @@
         },
         {
           "sourceName": "ground mace",
-          "ingredient": null,
+          "ingredient": "macis-gemahlen",
           "amount": 2,
           "unit": "TL",
           "optional": false,
-          "preparation": "Gemahlen abmessen; ganze Gewürze vorher fein mahlen.",
-          "proposedIngredient": "macis-gemahlen",
-          "mappingIssue": "Gemahlene Muskatblüte fehlt im Atlas; nicht mit Muskatnuss gleichsetzen."
+          "preparation": "Gemahlen abmessen; ganze Gewürze vorher fein mahlen."
         },
         {
           "sourceName": "ground cloves",
@@ -109,12 +107,10 @@
       ],
       "editorialType": "Veröffentlichte Autorenvariante",
       "reviewStatus": "Originalquelle und Länderbezug gelesen; Staging, nicht verkostet",
-      "readyForImport": false,
-      "openIssues": [
-        "Gemahlene Muskatblüte als formgenaue Zutat vervollständigen und prüfen.",
-        "Originale Löffelangaben erhalten; keine 100-g-Rezeptur aus Volumenmengen ableiten.",
-        "Vor Import erneut Dubletten und Live-Datenbankfreigabe prüfen."
-      ]
+      "readyForImport": true,
+      "openIssues": [],
+      "bundledRecipeId": "mk-source-ie-gb-mixed-spice",
+      "importStatus": "bundled_pending_release"
     }
   ],
   "ingredientProposals": [
@@ -123,7 +119,7 @@
       "name": "Muskatblüte (Macis), gemahlen",
       "group": "Gewürze & Kräuter",
       "form": "gemahlen",
-      "status": "proposal_only",
+      "status": "bundled",
       "active": false,
       "readyForImport": false,
       "reason": "Die Quelle führt gemahlene Muskatblüte als eigene Zutat neben gemahlener Muskatnuss.",
