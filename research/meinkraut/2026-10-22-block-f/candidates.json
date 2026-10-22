@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "batchId": "oxana-research-2026-10-22-f",
+  "createdAt": "2026-10-22",
+  "productionImport": false,
+  "candidates": [
+    {
+      "id": "mk-research-20261022-fr-ducros-provence",
+      "name": "Kräuter der Provence – veröffentlichte Ducros-Zusammensetzung",
+      "kind": "Trockenmischung",
+      "countries": [
+        "FR"
+      ],
+      "region": "Provence",
+      "description": "Vier getrocknete Kräuter im vollständig veröffentlichten Herstellerverhältnis.",
+      "ingredients": [
+        {
+          "sourceName": "Romarin (27 %)",
+          "ingredient": "rosmarin",
+          "amount": 27,
+          "unit": "g",
+          "optional": false,
+          "preparation": "Getrocknet und geschnitten verwenden."
+        },
+        {
+          "sourceName": "Sarriette (27 %)",
+          "ingredient": "bohnenkraut",
+          "amount": 27,
+          "unit": "g",
+          "optional": false,
+          "preparation": "Getrocknet und geschnitten verwenden."
+        },
+        {
+          "sourceName": "Origan (27 %)",
+          "ingredient": "oregano",
+          "amount": 27,
+          "unit": "g",
+          "optional": false,
+          "preparation": "Getrocknet und geschnitten verwenden."
+        },
+        {
+          "sourceName": "Thym (19 %)",
+          "ingredient": "thymian",
+          "amount": 19,
+          "unit": "g",
+          "optional": false,
+          "preparation": "Getrocknet und geschnitten verwenden."
+        }
+      ],
+      "batchGrams": 100,
+      "quantityBasis": "Redaktioneller 100-g-Ansatz aus vollständig veröffentlichten Prozentanteilen; keine Volumen- oder Dichteumrechnung.",
+      "publishedPercentages": {
+        "rosmarin": 27,
+        "bohnenkraut": 27,
+        "oregano": 27,
+        "thymian": 19
+      },
+      "methodSteps": [
+        "Die vier getrockneten Kräuter für einen 100-g-Ansatz abwiegen.",
+        "In einer trockenen Schüssel gleichmäßig mischen.",
+        "In ein sauberes, trockenes, luftdichtes Glas füllen."
+      ],
+      "methodProvenance": "Mischanleitung eigenständig redaktionell formuliert; Quelle belegt Zusammensetzung und getrocknete Zutaten.",
+      "application": "Für Tomatensaucen, Gemüse und Grillgerichte.",
+      "serving": "Nach Geschmack dosieren; keine numerische Herstellerdosierung angegeben.",
+      "allergenAssessment": {
+        "known": [],
+        "complete": true,
+        "note": "Bewertung der vier reinen Kräuter; die Herstellerseite enthält keine spezifische Allergeninformation. Produktetiketten und mögliche Spuren prüfen."
+      },
+      "storageNotes": [
+        "Trocken, lichtgeschützt und gut verschlossen lagern. Die industrielle Produkt-Haltbarkeit wird nicht auf eine selbst gemischte Rezeptur übertragen."
+      ],
+      "sources": [
+        {
+          "title": "Ducros Herbes de Provence Label Rouge – Foodservice",
+          "url": "https://www.mccormickforchefs.com/fr-fr/marques-et-produits/ducros/ducros-herbes-de-provence-label-rouge",
+          "author": "Ducros / McCormick",
+          "accessedAt": "2026-10-22",
+          "primarySource": true,
+          "contentChecked": true,
+          "license": "Sachliche Zusammensetzung erfasst; eigene deutsche Kurzfassung, keine Herstellertexte oder Bilder übernommen."
+        },
+        {
+          "title": "Herbes de Provence – Herstellerinformationen",
+          "url": "https://www.ducros.com/fr-fr/le-secret-des-epices/les-herbes-de-provence",
+          "author": "Ducros / McCormick",
+          "accessedAt": "2026-10-22",
+          "primarySource": true,
+          "contentChecked": true,
+          "license": "Herkunftsbezug und getrocknete Zutaten geprüft; keine Bilder oder Werbetexte übernommen."
+        }
+      ],
+      "editorialType": "Veröffentlichte Herstellerzusammensetzung; redaktionelle Mischanleitung",
+      "reviewStatus": "Originalanteile, Länderbezug und Zutatenreferenzen am 22.10.2026 geprüft; noch nicht verkostet.",
+      "readyForImport": true,
+      "openIssues": [],
+      "importStatus": "research_ready",
+      "scopeNotes": [
+        "Die Quelle beschreibt ein zertifiziertes Herstellerprodukt. Die selbst gemischte Rezeptur erhält dadurch keine Label-Rouge-Zertifizierung.",
+        "Die abweichende Ducros-Standardmischung mit fünf Kräutern ist nicht Teil dieses Datensatzes."
+      ]
+    }
+  ],
+  "ingredientProposals": []
+}

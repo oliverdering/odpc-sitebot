@@ -1,0 +1,23 @@
+{
+  "status": "PASS_STAGING",
+  "productionImport": false,
+  "candidateCount": 1,
+  "createdToday": 7,
+  "otherOpenBranchCandidates": 1,
+  "totalRecipeCandidatesAcrossBranches": 8,
+  "productReferencesToday": 2,
+  "totalResearchItemsToday": 10,
+  "errors": [],
+  "blockedFromImport": [],
+  "duplicateReview": {
+    "status": "PASS",
+    "activeRecipesChecked": 654,
+    "identicalIngredientMassProfile": 0
+  },
+  "quantityReview": {
+    "publishedPercentagesSum": 100,
+    "derivedBatchGrams": 100,
+    "volumeConversion": false
+  },
+  "importStatus": "bundled_pending_live_verification"
+}

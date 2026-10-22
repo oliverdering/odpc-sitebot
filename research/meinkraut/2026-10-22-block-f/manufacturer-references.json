@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-22",
+  "recordType": "manufacturer_product_references",
+  "productionImport": false,
+  "records": [
+    {
+      "id": "mk-productref-ankerkraut-magic-dust",
+      "manufacturer": "Ankerkraut",
+      "product": "Magic Dust",
+      "source": {
+        "url": "https://www.ankerkraut.de/products/magic-dust",
+        "title": "Magic Dust – Herstellerproduktseite",
+        "accessedAt": "2026-10-22",
+        "primarySource": true,
+        "contentChecked": true
+      },
+      "ingredientsInPublishedOrder": [
+        "Paprika edelsüß",
+        "Meersalz",
+        "Rohrohrzucker",
+        "Senfmehl",
+        "Knoblauch",
+        "schwarzer Pfeffer",
+        "Kreuzkümmel",
+        "geräucherte Jalapeño (Chili, Rauch)",
+        "geräucherte Paprika (Paprika, Rauch)",
+        "Cayennepfeffer"
+      ],
+      "allergensInIngredients": [
+        "Senf"
+      ],
+      "traceWarning": [
+        "Sellerie"
+      ],
+      "ingredientQuantitiesPublished": false,
+      "readyForRecipeImport": false,
+      "reason": "Zutatenliste ohne einzelne Mengenanteile; keine Originalrezeptur rekonstruierbar. Nährwert-Salzangaben sind keine Rezeptanteile.",
+      "copiedMedia": false
+    },
+    {
+      "id": "mk-productref-kotanyi-bread-crushed",
+      "manufacturer": "Kotányi Gourmet",
+      "product": "Brotgewürz geschrotet",
+      "source": {
+        "url": "https://www.kotanyi.com/de/gastronomie/produkt/brotgewuerz-geschrotet/",
+        "title": "Brotgewürz geschrotet – Gastronomie",
+        "accessedAt": "2026-10-22",
+        "primarySource": true,
+        "contentChecked": true
+      },
+      "ingredientsInPublishedOrder": [
+        "Fenchel",
+        "Koriander",
+        "Kümmel"
+      ],
+      "allergenStatement": "Keine spezifische Allergenfreigabe auf der gelesenen Produktseite.",
+      "ingredientQuantitiesPublished": false,
+      "readyForRecipeImport": false,
+      "reason": "Drei Zutaten veröffentlicht, jedoch keine Einzelanteile. Keine gleich großen Anteile unterstellt.",
+      "copiedMedia": false
+    }
+  ],
+  "dailyResearchLedger": {
+    "existingRecipeCandidates": 7,
+    "newRecipeCandidates": 1,
+    "newProductReferences": 2,
+    "totalResearchItemsToday": 10,
+    "note": "Der siebte Rezeptkandidat liegt in separatem Entwurfs-PR #6. Herstellerprofile werden nicht als nachmischbare Rezepturen gezählt."
+  }
+}
