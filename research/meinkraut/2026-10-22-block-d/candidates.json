@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "batchId": "oxana-research-2026-10-22-d",
+  "createdAt": "2026-10-22",
+  "productionImport": false,
+  "candidates": [
+    {
+      "id": "mk-research-20261022-lv-grandmas-gingerbread-ilze",
+      "name": "Lettisches Oma-Piparkūkas-Gewürz – Ilzes Familienvariante",
+      "kind": "Trockenmischung",
+      "countries": [
+        "LV"
+      ],
+      "region": "Lettische Familienrezeptur für Piparkūkas",
+      "description": "Warmes Backgewürz aus Piment, Nelken, Koriander, Kardamom, Muskat, Ingwer und Zimt; veröffentlichte Familienvariante.",
+      "ingredients": [
+        {
+          "sourceName": "whole allspice",
+          "ingredient": "piment",
+          "amount": 1,
+          "unit": "EL",
+          "optional": false,
+          "preparation": "Ganz abmessen und anschließend mahlen."
+        },
+        {
+          "sourceName": "whole cloves",
+          "ingredient": "gewurznelken",
+          "amount": 0.5,
+          "unit": "EL",
+          "optional": false,
+          "preparation": "Ganz abmessen und anschließend mahlen."
+        },
+        {
+          "sourceName": "whole coriander seeds",
+          "ingredient": "koriandersaat",
+          "amount": 1,
+          "unit": "EL",
+          "optional": false,
+          "preparation": "Ganz abmessen und anschließend mahlen."
+        },
+        {
+          "sourceName": "whole cardamom seeds (from pods)",
+          "ingredient": "kardamomsamen-unspezifiziert",
+          "amount": 0.5,
+          "unit": "EL",
+          "optional": false,
+          "preparation": "Samen ohne Kapselhüllen abmessen und anschließend mahlen; die Quelle nennt keine Kardamomart."
+        },
+        {
+          "sourceName": "ground nutmeg",
+          "ingredient": "muskatnuss",
+          "amount": 0.5,
+          "unit": "EL",
+          "optional": false,
+          "preparation": "Frisch fein reiben oder gemahlen abmessen."
+        },
+        {
+          "sourceName": "ground ginger",
+          "ingredient": "ingwer",
+          "amount": 1,
+          "unit": "TL",
+          "optional": false
+        },
+        {
+          "sourceName": "cinnamon",
+          "ingredient": "zimt",
+          "amount": 1,
+          "unit": "TL",
+          "optional": false,
+          "preparation": "Gemahlen verwenden."
+        }
+      ],
+      "methodSteps": [
+        "Piment, Gewürznelken, Koriandersaat und ausgelöste Kardamomsamen in den veröffentlichten Volumenmengen abmessen.",
+        "Die ganzen Gewürze fein mahlen.",
+        "Mit gemahlener Muskatnuss, Ingwer und Zimt gründlich vermischen und luftdicht verschließen."
+      ],
+      "application": "Laut Quelle als Gewürzbasis für lettische Piparkūkas beziehungsweise Gingerbread Cookies.",
+      "serving": "Die veröffentlichte Menge ist für etwa sechs bis acht US-Cups Mehl vorgesehen; die gewünschte Würzintensität bestimmt die genaue Mehlmenge. Keine Umrechnung in Gramm ergänzt.",
+      "allergenAssessment": {
+        "known": [],
+        "complete": true,
+        "note": "Keine der enthaltenen reinen Gewürzarten ist hier als kennzeichnungspflichtiges Allergen erfasst; Produktetiketten und mögliche Spuren separat prüfen. Keine Allergenfrei-Garantie."
+      },
+      "storageNotes": [
+        "Nach der Quelle luftdicht, beispielsweise in einem Glas, aufbewahren; keine eigene Haltbarkeitsfrist festgelegt."
+      ],
+      "sources": [
+        {
+          "title": "Spice mix for gingerbread cookies",
+          "url": "https://latvianmom.com/2017/12/13/spice-mix-for-gingerbread-cookies/",
+          "author": "Ilze",
+          "accessedAt": "2026-10-22",
+          "primarySource": true,
+          "contentChecked": true,
+          "license": "Keine offene Nachnutzungslizenz festgestellt; keine Bilder oder fremden Beschreibungstexte übernommen."
+        }
+      ],
+      "editorialType": "Veröffentlichte Familienvariante",
+      "reviewStatus": "Originalquelle, Zutatenformen, Länderzuordnung, Mengen und Allergene geprüft am 22.10.2026; noch nicht verkostet",
+      "readyForImport": true,
+      "openIssues": [],
+      "importStatus": "research_ready"
+    }
+  ],
+  "ingredientProposals": []
+}
