@@ -34,7 +34,7 @@ def main():
     wrapper += "if(($_SERVER['REQUEST_METHOD']??'')!=='POST'||!hash_equals('" + guard + "',hash('sha256',$_SERVER['HTTP_X_MK_RELEASE_TOKEN']??''))){http_response_code(404);exit;}\n"
     wrapper += "header('Content-Type: application/json');header('Cache-Control: no-store');define('MK_RELEASE_INTERNAL',true);define('MK_INTERNAL',true);require __DIR__.'/server/database.php';\n"
     wrapper += library
-    wrapper += "\ntry{$q=json_decode(file_get_contents('php://input'),true,512,JSON_THROW_ON_ERROR);$pdo=mk_database();if(!$pdo)throw new RuntimeException('database_unavailable');echo json_encode(mk_catalog_release($pdo,$q),JSON_THROW_ON_ERROR);}catch(Throwable $e){http_response_code(409);echo json_encode(['status'=>'rejected','code'=>in_array($e->getMessage(),['baseline_changed','release_changed','expected_one_active_release'],true)?$e->getMessage():'validation_or_database_error']);}\n"
+    wrapper += "\ntry{$q=json_decode(file_get_contents('php://input'),true,512,JSON_THROW_ON_ERROR);if(($q['action']??'')==='ping'){echo '{\"status\":\"ready\"}';exit;}$pdo=mk_database();if(!$pdo)throw new RuntimeException('database_unavailable');echo json_encode(mk_catalog_release($pdo,$q),JSON_THROW_ON_ERROR);}catch(Throwable $e){http_response_code(409);echo json_encode(['status'=>'rejected','code'=>in_array($e->getMessage(),['baseline_changed','release_changed','expected_one_active_release'],true)?$e->getMessage():'validation_or_database_error']);}\n"
     tr = paramiko.Transport((HOST, 22)); tr.start_client(timeout=25)
     try:
         actual = 'SHA256:' + base64.b64encode(hashlib.sha256(tr.get_remote_server_key().asbytes()).digest()).decode().rstrip('=')
@@ -47,7 +47,9 @@ def main():
             with sf.open(ROOT + endpoint, 'wx') as remote:
                 uploaded = True
                 remote.write(wrapper)
-            sf.chmod(ROOT + endpoint, 0o600)
+            # The web server reads the entry script before PHP runs its token
+            # guard. Database credentials stay in the existing private config.
+            sf.chmod(ROOT + endpoint, 0o644)
 
             def request(payload):
                 req = Request(URL + endpoint, data=json.dumps(payload, ensure_ascii=False).encode(), headers={'Content-Type': 'application/json', 'X-MK-Release-Token': token}, method='POST')
@@ -55,7 +57,10 @@ def main():
                     with urlopen(req, timeout=90) as r:
                         return json.load(r)
                 except HTTPError as exc:
-                    body = json.loads(exc.read())
+                    try:
+                        body = json.loads(exc.read())
+                    except (ValueError, UnicodeError):
+                        body = {'code': 'http_' + str(exc.code)}
                     raise RuntimeError('Catalog operation rejected: ' + body.get('code', 'unknown')) from None
 
             # A token-less caller cannot read or activate releases.
@@ -65,6 +70,8 @@ def main():
             except HTTPError as exc:
                 if exc.code != 404:
                     raise RuntimeError('Unexpected unauthenticated response') from None
+            if request({'action': 'ping'}).get('status') != 'ready':
+                raise RuntimeError('Authenticated catalog endpoint unavailable')
             plan = request(dict(data, action='plan'))
             print('CATALOG PLAN', json.dumps(plan))
             activated = False
