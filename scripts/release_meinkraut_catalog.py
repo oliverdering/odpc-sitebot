@@ -27,6 +27,7 @@ def main():
     data = release_payload()
     token = secrets.token_hex(32)
     endpoint = '/mk-catalog-' + secrets.token_hex(20) + '.php'
+    payload_path = '/server/.mk-catalog-' + secrets.token_hex(20) + '.json'
     guard = hashlib.sha256(token.encode()).hexdigest()
     library = (REPO / 'scripts/meinkraut_catalog_release.php').read_text().split('<?php', 1)[1]
     library = library.replace('declare(strict_types=1);', '', 1)
@@ -34,7 +35,7 @@ def main():
     wrapper += "if(($_SERVER['REQUEST_METHOD']??'')!=='POST'||!hash_equals('" + guard + "',hash('sha256',$_SERVER['HTTP_X_MK_RELEASE_TOKEN']??''))){http_response_code(404);exit;}\n"
     wrapper += "header('Content-Type: application/json');header('Cache-Control: no-store');define('MK_RELEASE_INTERNAL',true);define('MK_INTERNAL',true);require __DIR__.'/server/database.php';\n"
     wrapper += library
-    wrapper += "\ntry{$q=json_decode(file_get_contents('php://input'),true,512,JSON_THROW_ON_ERROR);if(($q['action']??'')==='ping'){echo '{\"status\":\"ready\"}';exit;}$pdo=mk_database();if(!$pdo)throw new RuntimeException('database_unavailable');echo json_encode(mk_catalog_release($pdo,$q),JSON_THROW_ON_ERROR);}catch(Throwable $e){http_response_code(409);echo json_encode(['status'=>'rejected','code'=>in_array($e->getMessage(),['baseline_changed','release_changed','expected_one_active_release'],true)?$e->getMessage():'validation_or_database_error']);}\n"
+    wrapper += "\ntry{$control=json_decode(file_get_contents('php://input'),true,512,JSON_THROW_ON_ERROR);if(($control['action']??'')==='ping'){echo '{\"status\":\"ready\"}';exit;}$q=($control['action']??'')==='rollback'?[]:json_decode(file_get_contents(__DIR__.'" + payload_path + "'),true,512,JSON_THROW_ON_ERROR);foreach(['action','expectedKey','previousKey'] as $field)if(isset($control[$field]))$q[$field]=$control[$field];$pdo=mk_database();if(!$pdo)throw new RuntimeException('database_unavailable');echo json_encode(mk_catalog_release($pdo,$q),JSON_THROW_ON_ERROR);}catch(Throwable $e){http_response_code(409);echo json_encode(['status'=>'rejected','code'=>in_array($e->getMessage(),['baseline_changed','release_changed','expected_one_active_release'],true)?$e->getMessage():'validation_or_database_error']);}\n"
     tr = paramiko.Transport((HOST, 22)); tr.start_client(timeout=25)
     try:
         actual = 'SHA256:' + base64.b64encode(hashlib.sha256(tr.get_remote_server_key().asbytes()).digest()).decode().rstrip('=')
@@ -43,7 +44,14 @@ def main():
         tr.auth_password(USER, os.environ['ODPC_SFTP_PASSWORD'])
         sf = paramiko.SFTPClient.from_transport(tr)
         uploaded = False
+        payload_uploaded = False
         try:
+            # Keep large public catalog snapshots off the HTTP request path.
+            # /server is already denied by its deployed .htaccess file.
+            with sf.open(ROOT + payload_path, 'wx') as remote:
+                payload_uploaded = True
+                remote.write(json.dumps(data, ensure_ascii=False))
+            sf.chmod(ROOT + payload_path, 0o600)
             with sf.open(ROOT + endpoint, 'wx') as remote:
                 uploaded = True
                 remote.write(wrapper)
@@ -72,11 +80,11 @@ def main():
                     raise RuntimeError('Unexpected unauthenticated response') from None
             if request({'action': 'ping'}).get('status') != 'ready':
                 raise RuntimeError('Authenticated catalog endpoint unavailable')
-            plan = request(dict(data, action='plan'))
+            plan = request({'action': 'plan'})
             print('CATALOG PLAN', json.dumps(plan))
             activated = False
             try:
-                result = request(dict(data, action='activate', expectedKey=plan['previousKey']))
+                result = request({'action': 'activate', 'expectedKey': plan['previousKey']})
                 activated = result['status'] == 'activated'
                 expected = data['manifest']['expectedTarget']
                 with urlopen(URL + '/health.php?catalog=' + result['releaseKey'][:16], timeout=35) as r:
@@ -96,12 +104,14 @@ def main():
                             raise RuntimeError('New ingredient route missing')
                 print('CATALOG VERIFIED', json.dumps(dict(result, catalog=health['catalog'])))
             except Exception:
-                if activated or (plan['status'] == 'planned' and request(dict(data, action='plan'))['status'] == 'already_active'):
+                if activated or (plan['status'] == 'planned' and request({'action': 'plan'})['status'] == 'already_active'):
                     print('CATALOG ROLLBACK', json.dumps(request({'action': 'rollback', 'expectedKey': plan['releaseKey'], 'previousKey': plan['previousKey']})))
                 raise
         finally:
             if uploaded:
                 sf.remove(ROOT + endpoint)
+            if payload_uploaded:
+                sf.remove(ROOT + payload_path)
             sf.close()
     finally:
         tr.close()
