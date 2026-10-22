@@ -1,0 +1,2656 @@
+{
+  "checkedAt": "2026-10-22",
+  "productionDataSource": "database",
+  "endpoint": "https://meinkraut.odpc.de/data.php",
+  "repositoryCommit": "2265c6fd5568fc641b356317640c735e2ca6d193",
+  "ingredients": 288,
+  "recipes": 649,
+  "countries": 195,
+  "zeroRecipeCountries": [],
+  "minimumRecipesPerSelectableCountry": 3,
+  "countriesWithoutDryMix": [
+    "AL",
+    "AD",
+    "AO",
+    "AM",
+    "AZ",
+    "BS",
+    "BB",
+    "BY",
+    "BE",
+    "BZ",
+    "BJ",
+    "BO",
+    "BA",
+    "BW",
+    "BN",
+    "BG",
+    "BI",
+    "CV",
+    "CR",
+    "DM",
+    "DO",
+    "DK",
+    "EC",
+    "SV",
+    "EE",
+    "SZ",
+    "FJ",
+    "FI",
+    "GA",
+    "GM",
+    "GT",
+    "GW",
+    "GY",
+    "HT",
+    "HN",
+    "IE",
+    "IS",
+    "IL",
+    "KH",
+    "CM",
+    "CA",
+    "KI",
+    "CO",
+    "KM",
+    "CG",
+    "CD",
+    "HR",
+    "CU",
+    "LA",
+    "LS",
+    "LI",
+    "LT",
+    "LU",
+    "MG",
+    "MW",
+    "MT",
+    "MH",
+    "MR",
+    "MU",
+    "FM",
+    "MC",
+    "ME",
+    "MZ",
+    "NR",
+    "NP",
+    "NZ",
+    "NI",
+    "NL",
+    "KP",
+    "MK",
+    "NO",
+    "PW",
+    "PA",
+    "PG",
+    "PY",
+    "PE",
+    "PH",
+    "PL",
+    "MD",
+    "RW",
+    "RU",
+    "SB",
+    "ZM",
+    "WS",
+    "SM",
+    "SE",
+    "CH",
+    "SN",
+    "RS",
+    "SC",
+    "SL",
+    "ZW",
+    "SG",
+    "SI",
+    "ES",
+    "LK",
+    "KN",
+    "LC",
+    "VC",
+    "SR",
+    "ST",
+    "SS",
+    "TL",
+    "TO",
+    "TT",
+    "TD",
+    "TV",
+    "UA",
+    "UY",
+    "VU",
+    "VA",
+    "VE",
+    "CF",
+    "CY",
+    "GQ"
+  ],
+  "countriesCoverage": [
+    {
+      "country": "AF",
+      "name": "Afghanistan",
+      "recipeCount": 4,
+      "dryMixCount": 1,
+      "recipeIds": [
+        "c031",
+        "atlas6-zira-koriander-plovmischung-zentralasien",
+        "atlas6-zentralasiatische-joghurt-knoblauchwuerze",
+        "atlas6-afghanischer-gruener-chutney-koriander-minze"
+      ]
+    },
+    {
+      "country": "AL",
+      "name": "Albanien",
+      "recipeCount": 3,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c001",
+        "atlas-al-salc-kosi-albanischer-knoblauch-joghurt-dip",
+        "atlas-al-salc-domatesh-albanische-paprika-tomatensauce"
+      ]
+    },
+    {
+      "country": "DZ",
+      "name": "Algerien",
+      "recipeCount": 3,
+      "dryMixCount": 1,
+      "recipeIds": [
+        "m16",
+        "r055",
+        "r056"
+      ]
+    },
+    {
+      "country": "AD",
+      "name": "Andorra",
+      "recipeCount": 3,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c002",
+        "atlas6-katalanische-picada-kraeuterbasis",
+        "atlas6-andorranische-knoblauch-olivenoel-emulsion"
+      ]
+    },
+    {
+      "country": "AO",
+      "name": "Angola",
+      "recipeCount": 4,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c054",
+        "atlas6-palmfrucht-tomaten-ansatz-zentralafrika",
+        "atlas6-pili-pili-milde-haus-chilisauce-zentralafrika",
+        "atlas6-piri-piri-zitronen-chili-marinade"
+      ]
+    },
+    {
+      "country": "AG",
+      "name": "Antigua und Barbuda",
+      "recipeCount": 3,
+      "dryMixCount": 1,
+      "recipeIds": [
+        "c096",
+        "atlas-ag-antiguan-green-seasoning-kraeutermarinierpaste",
+        "atlas-ag-pepperpot-karibische-kraeuter-piment-wuerze"
+      ]
+    },
+    {
+      "country": "AR",
+      "name": "Argentinien",
+      "recipeCount": 6,
+      "dryMixCount": 1,
+      "recipeIds": [
+        "m43",
+        "r077",
+        "atlas6-salsa-criolla-suedamerikanisches-essig-paprika-dressing",
+        "atlas6-suedamerikanischer-kraeuter-chili-dip",
+        "atlas6-paraguayisch-uruguayische-zitronen-petersilienwuerze",
+        "atlas7-salsa-criolla-argentinien"
+      ]
+    },
+    {
+      "country": "AM",
+      "name": "Armenien",
+      "recipeCount": 3,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c032",
+        "atlas-am-eetch-tomaten-paprika-wuerzbasis",
+        "atlas-am-jajik-armenische-joghurt-gurken-wuerze"
+      ]
+    },
+    {
+      "country": "AZ",
+      "name": "Aserbaidschan",
+      "recipeCount": 4,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c033",
+        "c174",
+        "atlas-az-nar-rab-granatapfelreduktion",
+        "atlas-az-safranaufguss-fuer-aserbaidschanischen-plov"
+      ]
+    },
+    {
+      "country": "AU",
+      "name": "Australien",
+      "recipeCount": 3,
+      "dryMixCount": 2,
+      "recipeIds": [
+        "r087",
+        "atlas-au-native-lemon-myrtle-knoblauch-pfeffer-rub",
+        "atlas-au-macadamia-zitronenmyrte-kruste"
+      ]
+    },
+    {
+      "country": "BS",
+      "name": "Bahamas",
+      "recipeCount": 4,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c097",
+        "atlas6-karibisches-green-seasoning-frischkraeuterpaste",
+        "atlas6-karibische-frische-scotch-bonnet-limettensauce",
+        "atlas6-karibischer-kokos-limetten-fisch-dip"
+      ]
+    },
+    {
+      "country": "BH",
+      "name": "Bahrain",
+      "recipeCount": 4,
+      "dryMixCount": 3,
+      "recipeIds": [
+        "c034",
+        "atlas6-daqoos-golfstaaten-tomaten-chilisauce",
+        "atlas6-golf-baharat-pfeffer-kardamom-gewuerzbasis",
+        "atlas6-golfstaaten-loomi-sumach-fischwuerze"
+      ]
+    },
+    {
+      "country": "BD",
+      "name": "Bangladesch",
+      "recipeCount": 4,
+      "dryMixCount": 1,
+      "recipeIds": [
+        "x004",
+        "atlas-bd-panch-phoron-bengalische-fuenfkornmischung",
+        "atlas-bd-shorshe-bata-bengalische-senfpaste",
+        "atlas7-kasundi-frisch"
+      ]
+    },
+    {
+      "country": "BB",
+      "name": "Barbados",
+      "recipeCount": 5,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c098",
+        "atlas6-karibisches-green-seasoning-frischkraeuterpaste",
+        "atlas6-karibische-frische-scotch-bonnet-limettensauce",
+        "atlas6-karibische-tamarinden-chilisauce",
+        "atlas7-bajan-pepper-sauce"
+      ]
+    },
+    {
+      "country": "BY",
+      "name": "Belarus",
+      "recipeCount": 3,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c003",
+        "atlas6-baltische-rote-bete-meerrettich-creme",
+        "atlas6-osteuropaeischer-dill-knoblauch-schmanddip"
+      ]
+    },
+    {
+      "country": "BE",
+      "name": "Belgien",
+      "recipeCount": 3,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c004",
+        "atlas6-mitteleuropaeische-senf-schalotten-sauce",
+        "atlas6-nordwesteuropaeische-kraeuter-mayonnaise"
+      ]
+    },
+    {
+      "country": "BZ",
+      "name": "Belize",
+      "recipeCount": 5,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c099",
+        "atlas6-karibische-tamarinden-chilisauce",
+        "atlas6-antillischer-sofrito-paprika-zwiebel-wuerzpaste",
+        "atlas6-karibisches-mojo-knoblauch-zitrus-basis",
+        "atlas6-zentralamerikanischer-achiote-zitrus-rub"
+      ]
+    },
+    {
+      "country": "BJ",
+      "name": "Benin",
+      "recipeCount": 3,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c055",
+        "atlas-bj-piment-tomate-beninische-chili-tomatenwuerze",
+        "atlas-bj-piment-rouge-gegarte-tomaten-chilipaste"
+      ]
+    },
+    {
+      "country": "BT",
+      "name": "Bhutan",
+      "recipeCount": 4,
+      "dryMixCount": 1,
+      "recipeIds": [
+        "c035",
+        "v408",
+        "atlas6-bhutanischer-chili-kaese-kochansatz",
+        "atlas6-bhutanischer-ingwer-kardamom-rub"
+      ]
+    },
+    {
+      "country": "BO",
+      "name": "Bolivien",
+      "recipeCount": 3,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c100",
+        "atlas-bo-llajwa-de-man-bolivianische-erdnusssauce",
+        "atlas-bo-llajwa-cochala-geroestete-gemuese-chilisalsa"
+      ]
+    },
+    {
+      "country": "BA",
+      "name": "Bosnien und Herzegowina",
+      "recipeCount": 6,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "r074",
+        "atlas6-pindjur-geroestete-paprika-auberginen-sauce",
+        "atlas6-ajvar-paprikaaufstrich-als-kochbasis",
+        "atlas6-tarator-kalter-gurken-joghurt-dip",
+        "atlas6-ljuteniza-paprika-tomaten-paste",
+        "atlas6-balkan-grilljoghurt-mit-minze-und-knoblauch"
+      ]
+    },
+    {
+      "country": "BW",
+      "name": "Botsuana",
+      "recipeCount": 3,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c056",
+        "atlas6-suedafrikanische-chakalaka-wuerzbasis",
+        "atlas6-suedliches-afrika-tomaten-zwiebel-grillsosse"
+      ]
+    },
+    {
+      "country": "BR",
+      "name": "Brasilien",
+      "recipeCount": 5,
+      "dryMixCount": 1,
+      "recipeIds": [
+        "r085",
+        "c150",
+        "c187",
+        "atlas7-salsa-vinagrete-brasil",
+        "mk-brasil-grill"
+      ]
+    },
+    {
+      "country": "BN",
+      "name": "Brunei Darussalam",
+      "recipeCount": 3,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c036",
+        "atlas6-suedostasiatische-sambal-belacan-zitruswuerze",
+        "atlas6-suedostasiatisches-soja-limetten-chili-dressing"
+      ]
+    },
+    {
+      "country": "BG",
+      "name": "Bulgarien",
+      "recipeCount": 5,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c005",
+        "atlas6-pindjur-geroestete-paprika-auberginen-sauce",
+        "atlas6-ajvar-paprikaaufstrich-als-kochbasis",
+        "atlas6-tarator-kalter-gurken-joghurt-dip",
+        "atlas6-ljuteniza-paprika-tomaten-paste"
+      ]
+    },
+    {
+      "country": "BF",
+      "name": "Burkina Faso",
+      "recipeCount": 4,
+      "dryMixCount": 1,
+      "recipeIds": [
+        "c057",
+        "atlas6-maf-westafrikanische-erdnuss-tomatenbasis",
+        "atlas6-westafrikanische-chili-zwiebel-tomatenbasis",
+        "atlas6-westafrikanischer-geroesteter-ingwer-chili-rub"
+      ]
+    },
+    {
+      "country": "BI",
+      "name": "Burundi",
+      "recipeCount": 3,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c058",
+        "atlas6-ostafrikanische-kachumbari-zitronenwuerze",
+        "atlas6-erdnuss-blattgemuese-saucenbasis-ostafrika"
+      ]
+    },
+    {
+      "country": "CV",
+      "name": "Cabo Verde",
+      "recipeCount": 3,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c059",
+        "atlas6-piri-piri-zitronen-chili-marinade",
+        "atlas6-cabo-verdisches-refogado-paprika-zwiebel-fundament"
+      ]
+    },
+    {
+      "country": "CL",
+      "name": "Chile",
+      "recipeCount": 5,
+      "dryMixCount": 1,
+      "recipeIds": [
+        "x015",
+        "atlas6-salsa-criolla-suedamerikanisches-essig-paprika-dressing",
+        "atlas6-suedamerikanischer-kraeuter-chili-dip",
+        "atlas7-chancho-en-piedra",
+        "atlas7-merken-mapuche"
+      ]
+    },
+    {
+      "country": "CN",
+      "name": "China",
+      "recipeCount": 24,
+      "dryMixCount": 4,
+      "recipeIds": [
+        "m28",
+        "m29",
+        "r009",
+        "r010",
+        "r011",
+        "r012",
+        "r013",
+        "r014",
+        "r015",
+        "r016",
+        "c129",
+        "c130",
+        "c131",
+        "c190",
+        "c191",
+        "c214",
+        "c218",
+        "c228",
+        "c235",
+        "c236",
+        "v403",
+        "atlas8-ingwer-lauch-kanton",
+        "atlas8-bohnen-knoblauch-schwarz",
+        "mk-fuenfgewuerze"
+      ]
+    },
+    {
+      "country": "CR",
+      "name": "Costa Rica",
+      "recipeCount": 3,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c101",
+        "atlas6-zentralamerikanischer-curtido-essig-oregano-gemuesewuerze",
+        "atlas6-zentralamerikanischer-chirmol-geroesteter-tomatendip"
+      ]
+    },
+    {
+      "country": "CI",
+      "name": "Côte d’Ivoire",
+      "recipeCount": 4,
+      "dryMixCount": 1,
+      "recipeIds": [
+        "c060",
+        "atlas6-maf-westafrikanische-erdnuss-tomatenbasis",
+        "atlas6-westafrikanische-chili-zwiebel-tomatenbasis",
+        "atlas6-westafrikanischer-geroesteter-ingwer-chili-rub"
+      ]
+    },
+    {
+      "country": "DE",
+      "name": "Deutschland",
+      "recipeCount": 19,
+      "dryMixCount": 15,
+      "recipeIds": [
+        "m02",
+        "m06",
+        "m11",
+        "m48",
+        "r072",
+        "r073",
+        "c170",
+        "c183",
+        "c232",
+        "mk-steakpfeffer",
+        "mk-universalwuerze",
+        "mk-schweinebraten",
+        "mk-gulasch",
+        "mk-haehnchen",
+        "mk-kartoffel",
+        "mk-gemuesebruehe-trocken",
+        "mk-fisch",
+        "mk-salat",
+        "mk-doener"
+      ]
+    },
+    {
+      "country": "DM",
+      "name": "Dominica",
+      "recipeCount": 4,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c102",
+        "atlas6-karibisches-green-seasoning-frischkraeuterpaste",
+        "atlas6-karibische-frische-scotch-bonnet-limettensauce",
+        "atlas6-karibischer-kokos-limetten-fisch-dip"
+      ]
+    },
+    {
+      "country": "DO",
+      "name": "Dominikanische Republik",
+      "recipeCount": 4,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c103",
+        "atlas6-antillischer-sofrito-paprika-zwiebel-wuerzpaste",
+        "atlas6-karibisches-mojo-knoblauch-zitrus-basis",
+        "atlas7-wasakaka"
+      ]
+    },
+    {
+      "country": "DJ",
+      "name": "Dschibuti",
+      "recipeCount": 4,
+      "dryMixCount": 2,
+      "recipeIds": [
+        "c061",
+        "atlas6-ostafrikanischer-pilau-ganzgewuerzmix",
+        "atlas6-horn-von-afrika-kardamom-kreuzkuemmel-rub",
+        "atlas6-horn-von-afrika-chili-ingwer-gewuerzpaste"
+      ]
+    },
+    {
+      "country": "DK",
+      "name": "Dänemark",
+      "recipeCount": 5,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c006",
+        "c179",
+        "atlas6-nordische-suesse-senf-dill-sauce",
+        "atlas6-nordische-meerrettich-sahnesauce",
+        "atlas6-nordwesteuropaeische-kraeuter-mayonnaise"
+      ]
+    },
+    {
+      "country": "EC",
+      "name": "Ecuador",
+      "recipeCount": 5,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "x016",
+        "atlas6-salsa-criolla-suedamerikanisches-essig-paprika-dressing",
+        "atlas6-andiner-aj-kraeuter-limetten-wuerzdip",
+        "atlas6-andine-erdnuss-achiote-sauce",
+        "atlas7-aji-ecuatoriano"
+      ]
+    },
+    {
+      "country": "SV",
+      "name": "El Salvador",
+      "recipeCount": 5,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c104",
+        "atlas6-zentralamerikanischer-curtido-essig-oregano-gemuesewuerze",
+        "atlas6-zentralamerikanischer-chirmol-geroesteter-tomatendip",
+        "atlas6-zentralamerikanischer-achiote-zitrus-rub",
+        "atlas7-curtido-salvador"
+      ]
+    },
+    {
+      "country": "ER",
+      "name": "Eritrea",
+      "recipeCount": 3,
+      "dryMixCount": 1,
+      "recipeIds": [
+        "r058",
+        "atlas6-horn-von-afrika-kardamom-kreuzkuemmel-rub",
+        "atlas6-horn-von-afrika-chili-ingwer-gewuerzpaste"
+      ]
+    },
+    {
+      "country": "EE",
+      "name": "Estland",
+      "recipeCount": 4,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c007",
+        "c177",
+        "atlas6-baltische-rote-bete-meerrettich-creme",
+        "atlas6-osteuropaeischer-dill-knoblauch-schmanddip"
+      ]
+    },
+    {
+      "country": "SZ",
+      "name": "Eswatini",
+      "recipeCount": 3,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c062",
+        "atlas6-suedafrikanische-chakalaka-wuerzbasis",
+        "atlas6-suedliches-afrika-tomaten-zwiebel-grillsosse"
+      ]
+    },
+    {
+      "country": "FJ",
+      "name": "Fidschi",
+      "recipeCount": 3,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c117",
+        "c202",
+        "c241"
+      ]
+    },
+    {
+      "country": "FI",
+      "name": "Finnland",
+      "recipeCount": 3,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "x019",
+        "atlas6-nordische-suesse-senf-dill-sauce",
+        "atlas6-nordische-meerrettich-sahnesauce"
+      ]
+    },
+    {
+      "country": "FR",
+      "name": "Frankreich",
+      "recipeCount": 15,
+      "dryMixCount": 5,
+      "recipeIds": [
+        "m05",
+        "r065",
+        "r066",
+        "c144",
+        "c181",
+        "c182",
+        "c216",
+        "c217",
+        "c219",
+        "c229",
+        "atlas7-rougail-pilon-tomate",
+        "atlas8-sauce-chien",
+        "atlas8-piperade-baskisch",
+        "mk-fisch",
+        "mk-salat"
+      ]
+    },
+    {
+      "country": "GA",
+      "name": "Gabun",
+      "recipeCount": 4,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c063",
+        "atlas6-palmfrucht-tomaten-ansatz-zentralafrika",
+        "atlas6-pili-pili-milde-haus-chilisauce-zentralafrika",
+        "atlas6-zentralafrikanischer-erdnuss-zwiebeldip"
+      ]
+    },
+    {
+      "country": "GM",
+      "name": "Gambia",
+      "recipeCount": 3,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c064",
+        "atlas6-maf-westafrikanische-erdnuss-tomatenbasis",
+        "atlas6-westafrikanische-limetten-zwiebel-marinade"
+      ]
+    },
+    {
+      "country": "GE",
+      "name": "Georgien",
+      "recipeCount": 6,
+      "dryMixCount": 1,
+      "recipeIds": [
+        "m49",
+        "r075",
+        "c155",
+        "c173",
+        "atlas-ge-tkemali-georgische-sauerkirschpflaumensauce",
+        "atlas-ge-rote-adschika-georgische-frische-wuerzpaste"
+      ]
+    },
+    {
+      "country": "GH",
+      "name": "Ghana",
+      "recipeCount": 4,
+      "dryMixCount": 1,
+      "recipeIds": [
+        "m46",
+        "r060",
+        "x009",
+        "atlas7-shito-intensiv"
+      ]
+    },
+    {
+      "country": "GD",
+      "name": "Grenada",
+      "recipeCount": 4,
+      "dryMixCount": 1,
+      "recipeIds": [
+        "c105",
+        "atlas6-karibisches-green-seasoning-frischkraeuterpaste",
+        "atlas6-karibische-frische-scotch-bonnet-limettensauce",
+        "atlas6-karibische-tamarinden-chilisauce"
+      ]
+    },
+    {
+      "country": "GR",
+      "name": "Griechenland",
+      "recipeCount": 12,
+      "dryMixCount": 3,
+      "recipeIds": [
+        "m01",
+        "m02",
+        "r070",
+        "r071",
+        "c145",
+        "c206",
+        "c224",
+        "v404",
+        "atlas7-skordalia",
+        "atlas7-ktipiti",
+        "atlas7-melitzanosalata",
+        "atlas8-ladolemono"
+      ]
+    },
+    {
+      "country": "GT",
+      "name": "Guatemala",
+      "recipeCount": 4,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c106",
+        "atlas6-zentralamerikanischer-curtido-essig-oregano-gemuesewuerze",
+        "atlas6-zentralamerikanischer-chirmol-geroesteter-tomatendip",
+        "atlas6-zentralamerikanischer-achiote-zitrus-rub"
+      ]
+    },
+    {
+      "country": "GN",
+      "name": "Guinea",
+      "recipeCount": 5,
+      "dryMixCount": 1,
+      "recipeIds": [
+        "c065",
+        "atlas6-maf-westafrikanische-erdnuss-tomatenbasis",
+        "atlas6-westafrikanische-chili-zwiebel-tomatenbasis",
+        "atlas6-westafrikanische-limetten-zwiebel-marinade",
+        "atlas6-westafrikanischer-geroesteter-ingwer-chili-rub"
+      ]
+    },
+    {
+      "country": "GW",
+      "name": "Guinea-Bissau",
+      "recipeCount": 4,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c066",
+        "atlas6-maf-westafrikanische-erdnuss-tomatenbasis",
+        "atlas6-westafrikanische-chili-zwiebel-tomatenbasis",
+        "atlas6-westafrikanische-limetten-zwiebel-marinade"
+      ]
+    },
+    {
+      "country": "GY",
+      "name": "Guyana",
+      "recipeCount": 4,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c107",
+        "atlas6-karibisches-green-seasoning-frischkraeuterpaste",
+        "atlas6-karibische-frische-scotch-bonnet-limettensauce",
+        "atlas6-karibische-tamarinden-chilisauce"
+      ]
+    },
+    {
+      "country": "HT",
+      "name": "Haiti",
+      "recipeCount": 3,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "x017",
+        "atlas6-pikliz-haitianischer-scharfer-krautsalat",
+        "atlas6-sos-ti-malice-haitianische-warme-chilisauce"
+      ]
+    },
+    {
+      "country": "HN",
+      "name": "Honduras",
+      "recipeCount": 4,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c108",
+        "atlas6-zentralamerikanischer-curtido-essig-oregano-gemuesewuerze",
+        "atlas6-zentralamerikanischer-chirmol-geroesteter-tomatendip",
+        "atlas6-zentralamerikanischer-achiote-zitrus-rub"
+      ]
+    },
+    {
+      "country": "IN",
+      "name": "Indien",
+      "recipeCount": 31,
+      "dryMixCount": 13,
+      "recipeIds": [
+        "m20",
+        "m21",
+        "m22",
+        "m23",
+        "m24",
+        "m25",
+        "m26",
+        "m27",
+        "r040",
+        "r041",
+        "r042",
+        "r043",
+        "r044",
+        "r045",
+        "c134",
+        "c135",
+        "c136",
+        "c137",
+        "c195",
+        "c204",
+        "c205",
+        "c230",
+        "atlas7-hari-chutney",
+        "atlas7-kasundi-frisch",
+        "atlas8-goa-recheado",
+        "atlas8-rajasthan-lehsun-chutney",
+        "atlas8-kerala-kokos-chutney",
+        "atlas8-pudina-kokos-chutney",
+        "mk-chicken-masala",
+        "mk-tandoori",
+        "mk-garam-masala"
+      ]
+    },
+    {
+      "country": "ID",
+      "name": "Indonesien",
+      "recipeCount": 13,
+      "dryMixCount": 2,
+      "recipeIds": [
+        "m34",
+        "m35",
+        "r031",
+        "r032",
+        "r033",
+        "r034",
+        "c165",
+        "c188",
+        "c207",
+        "c222",
+        "c234",
+        "atlas-id-sambal-terasi-chili-garnelenpaste",
+        "atlas7-sambal-matah"
+      ]
+    },
+    {
+      "country": "IQ",
+      "name": "Irak",
+      "recipeCount": 4,
+      "dryMixCount": 3,
+      "recipeIds": [
+        "m13",
+        "m15",
+        "x024",
+        "atlas8-amba-frisch"
+      ]
+    },
+    {
+      "country": "IR",
+      "name": "Iran",
+      "recipeCount": 5,
+      "dryMixCount": 1,
+      "recipeIds": [
+        "m19",
+        "r076",
+        "c154",
+        "c196",
+        "c226"
+      ]
+    },
+    {
+      "country": "IE",
+      "name": "Irland",
+      "recipeCount": 3,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c008",
+        "atlas6-nordwesteuropaeische-kraeuter-mayonnaise",
+        "atlas6-irische-petersilien-senf-sauce"
+      ]
+    },
+    {
+      "country": "IS",
+      "name": "Island",
+      "recipeCount": 3,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c009",
+        "atlas6-nordische-meerrettich-sahnesauce",
+        "atlas6-islaendischer-skyr-senf-dill-dip"
+      ]
+    },
+    {
+      "country": "IL",
+      "name": "Israel",
+      "recipeCount": 5,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "r049",
+        "c152",
+        "atlas6-levantinische-tahini-zitronensauce",
+        "atlas6-levantinische-sumach-oregano-zwiebelwuerze",
+        "atlas6-jemenitische-zhoug-gruene-chili-korianderwuerze"
+      ]
+    },
+    {
+      "country": "IT",
+      "name": "Italien",
+      "recipeCount": 17,
+      "dryMixCount": 6,
+      "recipeIds": [
+        "m03",
+        "m04",
+        "r063",
+        "r064",
+        "r082",
+        "r083",
+        "r094",
+        "c142",
+        "c143",
+        "c215",
+        "c225",
+        "c239",
+        "atlas7-agliata",
+        "mk-bolognese",
+        "mk-italienische-kraeuter",
+        "mk-pizza",
+        "mk-kartoffel"
+      ]
+    },
+    {
+      "country": "JM",
+      "name": "Jamaika",
+      "recipeCount": 4,
+      "dryMixCount": 1,
+      "recipeIds": [
+        "m42",
+        "r084",
+        "c199",
+        "atlas-jm-escovitch-jamaikanische-essig-gemuesewuerze"
+      ]
+    },
+    {
+      "country": "JP",
+      "name": "Japan",
+      "recipeCount": 27,
+      "dryMixCount": 1,
+      "recipeIds": [
+        "m30",
+        "r001",
+        "r002",
+        "r003",
+        "r004",
+        "r005",
+        "r006",
+        "r007",
+        "r008",
+        "r082",
+        "r083",
+        "c132",
+        "c133",
+        "c192",
+        "c209",
+        "c211",
+        "c220",
+        "c221",
+        "c237",
+        "c238",
+        "v401",
+        "atlas7-goma-dare",
+        "atlas7-nerigoma",
+        "atlas7-goma-dressing",
+        "atlas7-ponzu-selbstgemacht",
+        "atlas8-ponzu-sesam-dressing",
+        "atlas8-dengaku-miso"
+      ]
+    },
+    {
+      "country": "YE",
+      "name": "Jemen",
+      "recipeCount": 5,
+      "dryMixCount": 3,
+      "recipeIds": [
+        "c037",
+        "atlas6-jemenitische-zhoug-gruene-chili-korianderwuerze",
+        "atlas6-jemenitisches-hawaij-aromatische-suppenvariante",
+        "atlas7-zhug-gewuerz-intensiv",
+        "atlas7-hawaij-kaffee"
+      ]
+    },
+    {
+      "country": "JO",
+      "name": "Jordanien",
+      "recipeCount": 5,
+      "dryMixCount": 1,
+      "recipeIds": [
+        "m12",
+        "c151",
+        "atlas6-levantinische-tahini-zitronensauce",
+        "atlas6-levantinische-sumach-oregano-zwiebelwuerze",
+        "atlas8-mutabal-aubergine"
+      ]
+    },
+    {
+      "country": "KH",
+      "name": "Kambodscha",
+      "recipeCount": 5,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c038",
+        "atlas6-suedostasiatisches-soja-limetten-chili-dressing",
+        "atlas6-kambodschanisches-tuk-trey-limetten-fischsauce",
+        "atlas7-tuk-meric",
+        "atlas7-tuk-trey-khmer"
+      ]
+    },
+    {
+      "country": "CM",
+      "name": "Kamerun",
+      "recipeCount": 4,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c067",
+        "atlas6-palmfrucht-tomaten-ansatz-zentralafrika",
+        "atlas6-pili-pili-milde-haus-chilisauce-zentralafrika",
+        "atlas6-zentralafrikanischer-erdnuss-zwiebeldip"
+      ]
+    },
+    {
+      "country": "CA",
+      "name": "Kanada",
+      "recipeCount": 3,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "x023",
+        "c148",
+        "atlas6-kanadische-honig-knoblauch-glasur"
+      ]
+    },
+    {
+      "country": "KZ",
+      "name": "Kasachstan",
+      "recipeCount": 4,
+      "dryMixCount": 1,
+      "recipeIds": [
+        "c039",
+        "atlas6-zira-koriander-plovmischung-zentralasien",
+        "atlas6-zentralasiatischer-essig-zwiebel-salatansatz",
+        "atlas6-zentralasiatische-joghurt-knoblauchwuerze"
+      ]
+    },
+    {
+      "country": "QA",
+      "name": "Katar",
+      "recipeCount": 4,
+      "dryMixCount": 3,
+      "recipeIds": [
+        "c040",
+        "atlas6-daqoos-golfstaaten-tomaten-chilisauce",
+        "atlas6-golf-baharat-pfeffer-kardamom-gewuerzbasis",
+        "atlas6-golfstaaten-loomi-sumach-fischwuerze"
+      ]
+    },
+    {
+      "country": "KE",
+      "name": "Kenia",
+      "recipeCount": 4,
+      "dryMixCount": 2,
+      "recipeIds": [
+        "c068",
+        "atlas6-ostafrikanische-kachumbari-zitronenwuerze",
+        "atlas6-ostafrikanischer-pilau-ganzgewuerzmix",
+        "atlas6-ostafrikanische-kokos-chili-kochbasis"
+      ]
+    },
+    {
+      "country": "KG",
+      "name": "Kirgisistan",
+      "recipeCount": 4,
+      "dryMixCount": 1,
+      "recipeIds": [
+        "c041",
+        "atlas6-zira-koriander-plovmischung-zentralasien",
+        "atlas6-zentralasiatischer-essig-zwiebel-salatansatz",
+        "atlas6-zentralasiatische-joghurt-knoblauchwuerze"
+      ]
+    },
+    {
+      "country": "KI",
+      "name": "Kiribati",
+      "recipeCount": 3,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c118",
+        "atlas6-pazifische-kokos-limetten-wuerzbasis",
+        "atlas6-pazifischer-limetten-ingwer-fisch-dip"
+      ]
+    },
+    {
+      "country": "CO",
+      "name": "Kolumbien",
+      "recipeCount": 6,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "x014",
+        "atlas6-andiner-aj-kraeuter-limetten-wuerzdip",
+        "atlas6-andine-erdnuss-achiote-sauce",
+        "atlas6-venezolanisch-kolumbianische-guasacaca-kraeutersauce",
+        "atlas7-aji-picante-colombia",
+        "atlas8-aji-picante-colombia-frisch"
+      ]
+    },
+    {
+      "country": "KM",
+      "name": "Komoren",
+      "recipeCount": 4,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c069",
+        "atlas6-ostafrikanische-kokos-chili-kochbasis",
+        "atlas6-kokos-limetten-chili-dip-im-westlichen-indischen-ozean",
+        "atlas6-creole-rougaille-tomatenbasis"
+      ]
+    },
+    {
+      "country": "CG",
+      "name": "Kongo-Brazzaville",
+      "recipeCount": 4,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c070",
+        "atlas6-palmfrucht-tomaten-ansatz-zentralafrika",
+        "atlas6-pili-pili-milde-haus-chilisauce-zentralafrika",
+        "atlas6-zentralafrikanischer-erdnuss-zwiebeldip"
+      ]
+    },
+    {
+      "country": "CD",
+      "name": "Kongo-Kinshasa",
+      "recipeCount": 4,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c071",
+        "atlas6-palmfrucht-tomaten-ansatz-zentralafrika",
+        "atlas6-pili-pili-milde-haus-chilisauce-zentralafrika",
+        "atlas6-zentralafrikanischer-erdnuss-zwiebeldip"
+      ]
+    },
+    {
+      "country": "HR",
+      "name": "Kroatien",
+      "recipeCount": 3,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "r074",
+        "atlas6-ajvar-paprikaaufstrich-als-kochbasis",
+        "atlas6-balkan-grilljoghurt-mit-minze-und-knoblauch"
+      ]
+    },
+    {
+      "country": "CU",
+      "name": "Kuba",
+      "recipeCount": 4,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "x012",
+        "atlas6-antillischer-sofrito-paprika-zwiebel-wuerzpaste",
+        "atlas6-karibisches-mojo-knoblauch-zitrus-basis",
+        "atlas8-mojo-de-ajo-cubano"
+      ]
+    },
+    {
+      "country": "KW",
+      "name": "Kuwait",
+      "recipeCount": 4,
+      "dryMixCount": 2,
+      "recipeIds": [
+        "c042",
+        "atlas6-daqoos-golfstaaten-tomaten-chilisauce",
+        "atlas6-golf-baharat-pfeffer-kardamom-gewuerzbasis",
+        "atlas6-golfstaaten-loomi-sumach-fischwuerze"
+      ]
+    },
+    {
+      "country": "LA",
+      "name": "Laos",
+      "recipeCount": 6,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "r025",
+        "atlas6-suedostasiatisches-soja-limetten-chili-dressing",
+        "atlas6-laotisches-jeow-som-scharfer-limetten-dip",
+        "atlas7-jeow-mak-khua",
+        "atlas7-jeow-mak-muang",
+        "atlas7-jeow-mak-nad"
+      ]
+    },
+    {
+      "country": "LS",
+      "name": "Lesotho",
+      "recipeCount": 3,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c072",
+        "atlas6-suedafrikanische-chakalaka-wuerzbasis",
+        "atlas6-suedliches-afrika-tomaten-zwiebel-grillsosse"
+      ]
+    },
+    {
+      "country": "LV",
+      "name": "Lettland",
+      "recipeCount": 3,
+      "dryMixCount": 1,
+      "recipeIds": [
+        "c010",
+        "atlas6-baltische-rote-bete-meerrettich-creme",
+        "atlas6-osteuropaeischer-dill-knoblauch-schmanddip"
+      ]
+    },
+    {
+      "country": "LB",
+      "name": "Libanon",
+      "recipeCount": 10,
+      "dryMixCount": 3,
+      "recipeIds": [
+        "m12",
+        "m13",
+        "m15",
+        "r049",
+        "r050",
+        "r052",
+        "atlas7-zeit-wa-toum",
+        "atlas8-tarator-levant",
+        "atlas8-mutabal-aubergine",
+        "atlas8-fattoush-sumach"
+      ]
+    },
+    {
+      "country": "LR",
+      "name": "Liberia",
+      "recipeCount": 4,
+      "dryMixCount": 1,
+      "recipeIds": [
+        "c073",
+        "atlas6-maf-westafrikanische-erdnuss-tomatenbasis",
+        "atlas6-westafrikanische-chili-zwiebel-tomatenbasis",
+        "atlas6-westafrikanischer-geroesteter-ingwer-chili-rub"
+      ]
+    },
+    {
+      "country": "LY",
+      "name": "Libyen",
+      "recipeCount": 3,
+      "dryMixCount": 2,
+      "recipeIds": [
+        "c074",
+        "atlas6-libysches-hararat-warme-gewuerzmischung",
+        "atlas6-libysche-tomaten-kuemmel-schmorbasis"
+      ]
+    },
+    {
+      "country": "LI",
+      "name": "Liechtenstein",
+      "recipeCount": 3,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c011",
+        "atlas6-apfel-kren-sauce-mit-milder-saeure",
+        "atlas6-mitteleuropaeische-senf-schalotten-sauce"
+      ]
+    },
+    {
+      "country": "LT",
+      "name": "Litauen",
+      "recipeCount": 3,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c012",
+        "atlas6-baltische-rote-bete-meerrettich-creme",
+        "atlas6-osteuropaeischer-dill-knoblauch-schmanddip"
+      ]
+    },
+    {
+      "country": "LU",
+      "name": "Luxemburg",
+      "recipeCount": 3,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c013",
+        "atlas6-mitteleuropaeische-senf-schalotten-sauce",
+        "atlas6-nordwesteuropaeische-kraeuter-mayonnaise"
+      ]
+    },
+    {
+      "country": "MG",
+      "name": "Madagaskar",
+      "recipeCount": 5,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c075",
+        "atlas6-kokos-limetten-chili-dip-im-westlichen-indischen-ozean",
+        "atlas6-madagassischer-sakay-chili-ingwer-dip",
+        "atlas7-rougail-pilon-tomate",
+        "atlas7-rougail-mangue"
+      ]
+    },
+    {
+      "country": "MW",
+      "name": "Malawi",
+      "recipeCount": 3,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c076",
+        "atlas6-erdnuss-blattgemuese-saucenbasis-ostafrika",
+        "atlas6-piri-piri-zitronen-chili-marinade"
+      ]
+    },
+    {
+      "country": "MY",
+      "name": "Malaysia",
+      "recipeCount": 9,
+      "dryMixCount": 1,
+      "recipeIds": [
+        "m35",
+        "r035",
+        "r036",
+        "c189",
+        "c233",
+        "atlas-my-sambal-belacan-chili-limetten-dip",
+        "atlas-my-sambal-tumis-gebratene-chiligrundpaste",
+        "atlas7-sambal-belacan-malaysia",
+        "atlas7-satay-erdnuss-dip"
+      ]
+    },
+    {
+      "country": "MV",
+      "name": "Malediven",
+      "recipeCount": 3,
+      "dryMixCount": 1,
+      "recipeIds": [
+        "c043",
+        "atlas6-maledivische-kokos-limetten-chiliwuerze",
+        "atlas6-maledivische-thunfisch-gewuerzbasis-ohne-fisch"
+      ]
+    },
+    {
+      "country": "ML",
+      "name": "Mali",
+      "recipeCount": 5,
+      "dryMixCount": 1,
+      "recipeIds": [
+        "c077",
+        "atlas6-maf-westafrikanische-erdnuss-tomatenbasis",
+        "atlas6-westafrikanische-chili-zwiebel-tomatenbasis",
+        "atlas6-westafrikanische-limetten-zwiebel-marinade",
+        "atlas6-westafrikanischer-geroesteter-ingwer-chili-rub"
+      ]
+    },
+    {
+      "country": "MT",
+      "name": "Malta",
+      "recipeCount": 3,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c014",
+        "atlas6-mediterranes-zitronen-kapern-dressing",
+        "atlas6-maltesische-kunserva-tomaten-wuerzsauce"
+      ]
+    },
+    {
+      "country": "MA",
+      "name": "Marokko",
+      "recipeCount": 7,
+      "dryMixCount": 3,
+      "recipeIds": [
+        "m14",
+        "m16",
+        "r055",
+        "r056",
+        "c162",
+        "c197",
+        "mk-ras-el-hanout"
+      ]
+    },
+    {
+      "country": "MH",
+      "name": "Marshallinseln",
+      "recipeCount": 3,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c119",
+        "atlas6-pazifische-kokos-limetten-wuerzbasis",
+        "atlas6-pazifischer-limetten-ingwer-fisch-dip"
+      ]
+    },
+    {
+      "country": "MR",
+      "name": "Mauretanien",
+      "recipeCount": 3,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c078",
+        "atlas6-westafrikanische-limetten-zwiebel-marinade",
+        "atlas6-mauretanische-fisch-zitronen-marinade"
+      ]
+    },
+    {
+      "country": "MU",
+      "name": "Mauritius",
+      "recipeCount": 5,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c079",
+        "atlas6-kokos-limetten-chili-dip-im-westlichen-indischen-ozean",
+        "atlas6-creole-rougaille-tomatenbasis",
+        "atlas7-rougail-pilon-tomate",
+        "atlas7-rougail-mangue"
+      ]
+    },
+    {
+      "country": "MX",
+      "name": "Mexiko",
+      "recipeCount": 13,
+      "dryMixCount": 6,
+      "recipeIds": [
+        "m36",
+        "m37",
+        "m38",
+        "m44",
+        "r078",
+        "r079",
+        "c138",
+        "c139",
+        "c185",
+        "atlas7-salsa-macha",
+        "atlas8-sikil-pak",
+        "atlas8-oaxaca-pasilla-salsa",
+        "mk-chili-con-carne"
+      ]
+    },
+    {
+      "country": "FM",
+      "name": "Mikronesien",
+      "recipeCount": 3,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c120",
+        "atlas6-pazifische-kokos-limetten-wuerzbasis",
+        "atlas6-pazifischer-limetten-ingwer-fisch-dip"
+      ]
+    },
+    {
+      "country": "MC",
+      "name": "Monaco",
+      "recipeCount": 3,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c015",
+        "atlas6-kraeuter-pistou-ohne-kaese",
+        "atlas6-mediterranes-zitronen-kapern-dressing"
+      ]
+    },
+    {
+      "country": "MN",
+      "name": "Mongolei",
+      "recipeCount": 3,
+      "dryMixCount": 2,
+      "recipeIds": [
+        "x005",
+        "atlas6-mongolische-lauch-pfeffer-fleischwuerze",
+        "atlas6-mongolische-kuemmel-pfeffer-zwiebelbasis"
+      ]
+    },
+    {
+      "country": "ME",
+      "name": "Montenegro",
+      "recipeCount": 4,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c016",
+        "atlas6-ajvar-paprikaaufstrich-als-kochbasis",
+        "atlas6-tarator-kalter-gurken-joghurt-dip",
+        "atlas6-balkan-grilljoghurt-mit-minze-und-knoblauch"
+      ]
+    },
+    {
+      "country": "MZ",
+      "name": "Mosambik",
+      "recipeCount": 3,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "r061",
+        "atlas6-piri-piri-zitronen-chili-marinade",
+        "atlas6-mosambikanische-matapa-kokos-erdnuss-wuerzbasis"
+      ]
+    },
+    {
+      "country": "MM",
+      "name": "Myanmar",
+      "recipeCount": 3,
+      "dryMixCount": 1,
+      "recipeIds": [
+        "c044",
+        "atlas6-myanmarisches-tamarinden-chili-dressing",
+        "atlas6-burmesisches-sesam-erdnuss-chili-topping"
+      ]
+    },
+    {
+      "country": "NA",
+      "name": "Namibia",
+      "recipeCount": 3,
+      "dryMixCount": 1,
+      "recipeIds": [
+        "c080",
+        "atlas6-suedafrikanische-chakalaka-wuerzbasis",
+        "atlas6-suedliches-afrika-tomaten-zwiebel-grillsosse"
+      ]
+    },
+    {
+      "country": "NR",
+      "name": "Nauru",
+      "recipeCount": 3,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c121",
+        "atlas6-pazifische-kokos-limetten-wuerzbasis",
+        "atlas6-pazifischer-limetten-ingwer-fisch-dip"
+      ]
+    },
+    {
+      "country": "NP",
+      "name": "Nepal",
+      "recipeCount": 3,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "r047",
+        "x001",
+        "atlas6-nepalesischer-sesam-tomaten-achar"
+      ]
+    },
+    {
+      "country": "NZ",
+      "name": "Neuseeland",
+      "recipeCount": 3,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "r088",
+        "atlas6-neuseelaendische-minz-senf-grillwuerze",
+        "atlas6-neuseelaendische-zitronen-petersilien-fischwuerze"
+      ]
+    },
+    {
+      "country": "NI",
+      "name": "Nicaragua",
+      "recipeCount": 4,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c109",
+        "atlas6-zentralamerikanischer-curtido-essig-oregano-gemuesewuerze",
+        "atlas6-zentralamerikanischer-chirmol-geroesteter-tomatendip",
+        "atlas6-zentralamerikanischer-achiote-zitrus-rub"
+      ]
+    },
+    {
+      "country": "NL",
+      "name": "Niederlande",
+      "recipeCount": 3,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c017",
+        "atlas6-mitteleuropaeische-senf-schalotten-sauce",
+        "atlas6-nordwesteuropaeische-kraeuter-mayonnaise"
+      ]
+    },
+    {
+      "country": "NE",
+      "name": "Niger",
+      "recipeCount": 4,
+      "dryMixCount": 1,
+      "recipeIds": [
+        "c081",
+        "atlas6-maf-westafrikanische-erdnuss-tomatenbasis",
+        "atlas6-westafrikanische-chili-zwiebel-tomatenbasis",
+        "atlas6-westafrikanischer-geroesteter-ingwer-chili-rub"
+      ]
+    },
+    {
+      "country": "NG",
+      "name": "Nigeria",
+      "recipeCount": 6,
+      "dryMixCount": 3,
+      "recipeIds": [
+        "m46",
+        "r059",
+        "r060",
+        "x022",
+        "c198",
+        "atlas7-ata-dindin"
+      ]
+    },
+    {
+      "country": "KP",
+      "name": "Nordkorea",
+      "recipeCount": 3,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c045",
+        "atlas6-nordkoreanisch-inspiriertes-soja-sesam-dressing",
+        "atlas6-nordkoreanischer-senf-essig-nudel-dip"
+      ]
+    },
+    {
+      "country": "MK",
+      "name": "Nordmazedonien",
+      "recipeCount": 5,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "r074",
+        "atlas6-pindjur-geroestete-paprika-auberginen-sauce",
+        "atlas6-ajvar-paprikaaufstrich-als-kochbasis",
+        "atlas6-tarator-kalter-gurken-joghurt-dip",
+        "atlas6-ljuteniza-paprika-tomaten-paste"
+      ]
+    },
+    {
+      "country": "NO",
+      "name": "Norwegen",
+      "recipeCount": 3,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c018",
+        "atlas6-nordische-suesse-senf-dill-sauce",
+        "atlas6-nordische-meerrettich-sahnesauce"
+      ]
+    },
+    {
+      "country": "OM",
+      "name": "Oman",
+      "recipeCount": 4,
+      "dryMixCount": 2,
+      "recipeIds": [
+        "c046",
+        "atlas6-daqoos-golfstaaten-tomaten-chilisauce",
+        "atlas6-golf-baharat-pfeffer-kardamom-gewuerzbasis",
+        "atlas6-golfstaaten-loomi-sumach-fischwuerze"
+      ]
+    },
+    {
+      "country": "PK",
+      "name": "Pakistan",
+      "recipeCount": 5,
+      "dryMixCount": 1,
+      "recipeIds": [
+        "r042",
+        "r043",
+        "r044",
+        "r048",
+        "x003"
+      ]
+    },
+    {
+      "country": "PW",
+      "name": "Palau",
+      "recipeCount": 4,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c122",
+        "atlas6-pazifische-kokos-limetten-wuerzbasis",
+        "atlas6-pazifischer-limetten-ingwer-fisch-dip",
+        "atlas6-pazifischer-zitronengras-kokos-ansatz"
+      ]
+    },
+    {
+      "country": "PS",
+      "name": "Palästinensische Autonomiegebiete",
+      "recipeCount": 3,
+      "dryMixCount": 1,
+      "recipeIds": [
+        "m12",
+        "r049",
+        "c153"
+      ]
+    },
+    {
+      "country": "PA",
+      "name": "Panama",
+      "recipeCount": 6,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c110",
+        "atlas6-antillischer-sofrito-paprika-zwiebel-wuerzpaste",
+        "atlas6-karibisches-mojo-knoblauch-zitrus-basis",
+        "atlas6-zentralamerikanischer-curtido-essig-oregano-gemuesewuerze",
+        "atlas6-zentralamerikanischer-achiote-zitrus-rub",
+        "atlas7-ajilimoljili"
+      ]
+    },
+    {
+      "country": "PG",
+      "name": "Papua-Neuguinea",
+      "recipeCount": 3,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c123",
+        "atlas6-pazifischer-limetten-ingwer-fisch-dip",
+        "atlas6-pazifischer-zitronengras-kokos-ansatz"
+      ]
+    },
+    {
+      "country": "PY",
+      "name": "Paraguay",
+      "recipeCount": 4,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c111",
+        "atlas6-salsa-criolla-suedamerikanisches-essig-paprika-dressing",
+        "atlas6-suedamerikanischer-kraeuter-chili-dip",
+        "atlas6-paraguayisch-uruguayische-zitronen-petersilienwuerze"
+      ]
+    },
+    {
+      "country": "PE",
+      "name": "Peru",
+      "recipeCount": 5,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "r086",
+        "c149",
+        "c186",
+        "atlas-pe-salsa-de-aj-amarillo-peruanische-chilisauce",
+        "atlas-pe-salsa-huanca-na-aj-kaese-sauce"
+      ]
+    },
+    {
+      "country": "PH",
+      "name": "Philippinen",
+      "recipeCount": 8,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "r038",
+        "r039",
+        "c168",
+        "c194",
+        "atlas-ph-atchara-philippinischer-suesssaurer-papaya-pickle",
+        "atlas7-toyomansi-limette",
+        "atlas7-suka-sili",
+        "atlas7-adobo-wuerzansatz"
+      ]
+    },
+    {
+      "country": "PL",
+      "name": "Polen",
+      "recipeCount": 5,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c019",
+        "c176",
+        "atlas6-baltische-rote-bete-meerrettich-creme",
+        "atlas6-osteuropaeischer-dill-knoblauch-schmanddip",
+        "atlas6-kuemmel-senf-schmalzgewuerz-mit-oel-angeruehrt"
+      ]
+    },
+    {
+      "country": "PT",
+      "name": "Portugal",
+      "recipeCount": 3,
+      "dryMixCount": 1,
+      "recipeIds": [
+        "m47",
+        "r061",
+        "r069"
+      ]
+    },
+    {
+      "country": "MD",
+      "name": "Republik Moldau",
+      "recipeCount": 3,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c020",
+        "atlas-md-mujdei-cu-nuci-walnuss-knoblauchsauce",
+        "atlas-md-mujdei-de-ro-ii-tomaten-knoblauchsauce"
+      ]
+    },
+    {
+      "country": "RW",
+      "name": "Ruanda",
+      "recipeCount": 3,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c082",
+        "atlas6-ostafrikanische-kachumbari-zitronenwuerze",
+        "atlas6-erdnuss-blattgemuese-saucenbasis-ostafrika"
+      ]
+    },
+    {
+      "country": "RO",
+      "name": "Rumänien",
+      "recipeCount": 3,
+      "dryMixCount": 1,
+      "recipeIds": [
+        "c021",
+        "atlas6-zacusc-rumaenische-paprika-auberginenpaste",
+        "atlas6-rumaenische-paprika-knoblauch-bratwuerze"
+      ]
+    },
+    {
+      "country": "RU",
+      "name": "Russland",
+      "recipeCount": 3,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c022",
+        "c178",
+        "atlas6-osteuropaeischer-dill-knoblauch-schmanddip"
+      ]
+    },
+    {
+      "country": "SB",
+      "name": "Salomonen",
+      "recipeCount": 4,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c124",
+        "atlas6-pazifische-kokos-limetten-wuerzbasis",
+        "atlas6-pazifischer-limetten-ingwer-fisch-dip",
+        "atlas6-pazifischer-zitronengras-kokos-ansatz"
+      ]
+    },
+    {
+      "country": "ZM",
+      "name": "Sambia",
+      "recipeCount": 4,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c083",
+        "atlas6-erdnuss-blattgemuese-saucenbasis-ostafrika",
+        "atlas6-suedafrikanische-chakalaka-wuerzbasis",
+        "atlas6-suedliches-afrika-tomaten-zwiebel-grillsosse"
+      ]
+    },
+    {
+      "country": "WS",
+      "name": "Samoa",
+      "recipeCount": 3,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c125",
+        "c201",
+        "c242"
+      ]
+    },
+    {
+      "country": "SM",
+      "name": "San Marino",
+      "recipeCount": 3,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c023",
+        "atlas6-kraeuter-pistou-ohne-kaese",
+        "atlas6-mediterranes-zitronen-kapern-dressing"
+      ]
+    },
+    {
+      "country": "SA",
+      "name": "Saudi-Arabien",
+      "recipeCount": 4,
+      "dryMixCount": 3,
+      "recipeIds": [
+        "c047",
+        "atlas6-daqoos-golfstaaten-tomaten-chilisauce",
+        "atlas6-golf-baharat-pfeffer-kardamom-gewuerzbasis",
+        "atlas6-golfstaaten-loomi-sumach-fischwuerze"
+      ]
+    },
+    {
+      "country": "SE",
+      "name": "Schweden",
+      "recipeCount": 4,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c024",
+        "c180",
+        "atlas6-nordische-suesse-senf-dill-sauce",
+        "atlas6-nordische-meerrettich-sahnesauce"
+      ]
+    },
+    {
+      "country": "CH",
+      "name": "Schweiz",
+      "recipeCount": 3,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c025",
+        "atlas6-apfel-kren-sauce-mit-milder-saeure",
+        "atlas6-mitteleuropaeische-senf-schalotten-sauce"
+      ]
+    },
+    {
+      "country": "SN",
+      "name": "Senegal",
+      "recipeCount": 4,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "x008",
+        "c156",
+        "v405",
+        "atlas7-yassa-marinade"
+      ]
+    },
+    {
+      "country": "RS",
+      "name": "Serbien",
+      "recipeCount": 5,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "r074",
+        "atlas6-pindjur-geroestete-paprika-auberginen-sauce",
+        "atlas6-ajvar-paprikaaufstrich-als-kochbasis",
+        "atlas6-tarator-kalter-gurken-joghurt-dip",
+        "atlas6-ljuteniza-paprika-tomaten-paste"
+      ]
+    },
+    {
+      "country": "SC",
+      "name": "Seychellen",
+      "recipeCount": 4,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c084",
+        "atlas6-ostafrikanische-kokos-chili-kochbasis",
+        "atlas6-kokos-limetten-chili-dip-im-westlichen-indischen-ozean",
+        "atlas6-creole-rougaille-tomatenbasis"
+      ]
+    },
+    {
+      "country": "SL",
+      "name": "Sierra Leone",
+      "recipeCount": 4,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c085",
+        "atlas6-maf-westafrikanische-erdnuss-tomatenbasis",
+        "atlas6-westafrikanische-chili-zwiebel-tomatenbasis",
+        "atlas6-westafrikanische-limetten-zwiebel-marinade"
+      ]
+    },
+    {
+      "country": "ZW",
+      "name": "Simbabwe",
+      "recipeCount": 4,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c086",
+        "atlas6-erdnuss-blattgemuese-saucenbasis-ostafrika",
+        "atlas6-suedafrikanische-chakalaka-wuerzbasis",
+        "atlas6-suedliches-afrika-tomaten-zwiebel-grillsosse"
+      ]
+    },
+    {
+      "country": "SG",
+      "name": "Singapur",
+      "recipeCount": 3,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "r037",
+        "atlas6-suedostasiatische-sambal-belacan-zitruswuerze",
+        "atlas6-suedostasiatisches-soja-limetten-chili-dressing"
+      ]
+    },
+    {
+      "country": "SK",
+      "name": "Slowakei",
+      "recipeCount": 4,
+      "dryMixCount": 1,
+      "recipeIds": [
+        "c026",
+        "atlas6-kuemmel-senf-schmalzgewuerz-mit-oel-angeruehrt",
+        "atlas6-apfel-kren-sauce-mit-milder-saeure",
+        "atlas6-herzhafte-kuemmel-paprika-bratenwuerze"
+      ]
+    },
+    {
+      "country": "SI",
+      "name": "Slowenien",
+      "recipeCount": 3,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c027",
+        "atlas6-ajvar-paprikaaufstrich-als-kochbasis",
+        "atlas6-balkan-grilljoghurt-mit-minze-und-knoblauch"
+      ]
+    },
+    {
+      "country": "SO",
+      "name": "Somalia",
+      "recipeCount": 5,
+      "dryMixCount": 4,
+      "recipeIds": [
+        "r062",
+        "v407",
+        "atlas6-ostafrikanischer-pilau-ganzgewuerzmix",
+        "atlas6-horn-von-afrika-kardamom-kreuzkuemmel-rub",
+        "atlas6-horn-von-afrika-chili-ingwer-gewuerzpaste"
+      ]
+    },
+    {
+      "country": "ES",
+      "name": "Spanien",
+      "recipeCount": 5,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "r067",
+        "r068",
+        "c140",
+        "c141",
+        "atlas8-piperade-baskisch"
+      ]
+    },
+    {
+      "country": "LK",
+      "name": "Sri Lanka",
+      "recipeCount": 3,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "r046",
+        "x002",
+        "atlas-lk-seeni-sambol-suess-scharfe-zwiebelwuerze"
+      ]
+    },
+    {
+      "country": "KN",
+      "name": "St. Kitts und Nevis",
+      "recipeCount": 4,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c112",
+        "atlas6-karibisches-green-seasoning-frischkraeuterpaste",
+        "atlas6-karibische-frische-scotch-bonnet-limettensauce",
+        "atlas6-karibischer-kokos-limetten-fisch-dip"
+      ]
+    },
+    {
+      "country": "LC",
+      "name": "St. Lucia",
+      "recipeCount": 4,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c113",
+        "atlas6-karibisches-green-seasoning-frischkraeuterpaste",
+        "atlas6-karibische-frische-scotch-bonnet-limettensauce",
+        "atlas6-karibischer-kokos-limetten-fisch-dip"
+      ]
+    },
+    {
+      "country": "VC",
+      "name": "St. Vincent und die Grenadinen",
+      "recipeCount": 4,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c114",
+        "atlas6-karibisches-green-seasoning-frischkraeuterpaste",
+        "atlas6-karibische-frische-scotch-bonnet-limettensauce",
+        "atlas6-karibischer-kokos-limetten-fisch-dip"
+      ]
+    },
+    {
+      "country": "SD",
+      "name": "Sudan",
+      "recipeCount": 4,
+      "dryMixCount": 1,
+      "recipeIds": [
+        "c087",
+        "c227",
+        "atlas6-horn-von-afrika-kardamom-kreuzkuemmel-rub",
+        "atlas6-horn-von-afrika-chili-ingwer-gewuerzpaste"
+      ]
+    },
+    {
+      "country": "SR",
+      "name": "Suriname",
+      "recipeCount": 3,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c115",
+        "atlas6-karibische-tamarinden-chilisauce",
+        "atlas6-surinamisches-sambal-madame-jeanette-schnellpaste"
+      ]
+    },
+    {
+      "country": "SY",
+      "name": "Syrien",
+      "recipeCount": 11,
+      "dryMixCount": 3,
+      "recipeIds": [
+        "m12",
+        "m13",
+        "m15",
+        "r049",
+        "r050",
+        "r051",
+        "r052",
+        "atlas8-tarator-levant",
+        "atlas8-mutabal-aubergine",
+        "atlas8-gruen-paprika-walnuss",
+        "atlas8-fattoush-sumach"
+      ]
+    },
+    {
+      "country": "ST",
+      "name": "São Tomé und Príncipe",
+      "recipeCount": 3,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c088",
+        "atlas6-palmfrucht-tomaten-ansatz-zentralafrika",
+        "atlas6-pili-pili-milde-haus-chilisauce-zentralafrika"
+      ]
+    },
+    {
+      "country": "ZA",
+      "name": "Südafrika",
+      "recipeCount": 5,
+      "dryMixCount": 2,
+      "recipeIds": [
+        "m47",
+        "r061",
+        "x010",
+        "c158",
+        "atlas7-chakalaka"
+      ]
+    },
+    {
+      "country": "KR",
+      "name": "Südkorea",
+      "recipeCount": 9,
+      "dryMixCount": 1,
+      "recipeIds": [
+        "m31",
+        "r017",
+        "r018",
+        "r019",
+        "r020",
+        "r021",
+        "c169",
+        "c193",
+        "atlas7-ssamjang-korean"
+      ]
+    },
+    {
+      "country": "SS",
+      "name": "Südsudan",
+      "recipeCount": 3,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c089",
+        "atlas6-horn-von-afrika-chili-ingwer-gewuerzpaste",
+        "atlas6-suedsudanesische-okra-erdnussbasis"
+      ]
+    },
+    {
+      "country": "TJ",
+      "name": "Tadschikistan",
+      "recipeCount": 4,
+      "dryMixCount": 1,
+      "recipeIds": [
+        "c048",
+        "atlas6-zira-koriander-plovmischung-zentralasien",
+        "atlas6-zentralasiatischer-essig-zwiebel-salatansatz",
+        "atlas6-zentralasiatische-joghurt-knoblauchwuerze"
+      ]
+    },
+    {
+      "country": "TZ",
+      "name": "Tansania",
+      "recipeCount": 4,
+      "dryMixCount": 2,
+      "recipeIds": [
+        "c090",
+        "atlas6-ostafrikanische-kachumbari-zitronenwuerze",
+        "atlas6-ostafrikanischer-pilau-ganzgewuerzmix",
+        "atlas6-ostafrikanische-kokos-chili-kochbasis"
+      ]
+    },
+    {
+      "country": "TH",
+      "name": "Thailand",
+      "recipeCount": 16,
+      "dryMixCount": 1,
+      "recipeIds": [
+        "m33",
+        "r022",
+        "r023",
+        "r024",
+        "r025",
+        "r026",
+        "r027",
+        "c166",
+        "c210",
+        "c213",
+        "c223",
+        "c240",
+        "v402",
+        "v406",
+        "atlas7-nam-jim-jaew",
+        "atlas7-prik-nam-pla"
+      ]
+    },
+    {
+      "country": "TL",
+      "name": "Timor-Leste",
+      "recipeCount": 3,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c049",
+        "atlas6-timor-leste-chili-limetten-sambal",
+        "atlas6-timoresische-ai-manas-scharfe-zitronen-chilipaste"
+      ]
+    },
+    {
+      "country": "TG",
+      "name": "Togo",
+      "recipeCount": 4,
+      "dryMixCount": 1,
+      "recipeIds": [
+        "c091",
+        "atlas6-maf-westafrikanische-erdnuss-tomatenbasis",
+        "atlas6-westafrikanische-chili-zwiebel-tomatenbasis",
+        "atlas6-westafrikanischer-geroesteter-ingwer-chili-rub"
+      ]
+    },
+    {
+      "country": "TO",
+      "name": "Tonga",
+      "recipeCount": 3,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c126",
+        "atlas6-pazifische-kokos-limetten-wuerzbasis",
+        "atlas6-pazifischer-limetten-ingwer-fisch-dip"
+      ]
+    },
+    {
+      "country": "TT",
+      "name": "Trinidad und Tobago",
+      "recipeCount": 3,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "x011",
+        "c160",
+        "c200"
+      ]
+    },
+    {
+      "country": "TD",
+      "name": "Tschad",
+      "recipeCount": 3,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c092",
+        "atlas6-tschadische-erdnuss-koriander-tomatensauce",
+        "atlas6-tschadische-okra-tomaten-kochbasis"
+      ]
+    },
+    {
+      "country": "CZ",
+      "name": "Tschechien",
+      "recipeCount": 4,
+      "dryMixCount": 2,
+      "recipeIds": [
+        "c028",
+        "atlas6-kuemmel-senf-schmalzgewuerz-mit-oel-angeruehrt",
+        "atlas6-apfel-kren-sauce-mit-milder-saeure",
+        "atlas6-herzhafte-kuemmel-paprika-bratenwuerze"
+      ]
+    },
+    {
+      "country": "TN",
+      "name": "Tunesien",
+      "recipeCount": 5,
+      "dryMixCount": 2,
+      "recipeIds": [
+        "m16",
+        "r055",
+        "r056",
+        "c163",
+        "c212"
+      ]
+    },
+    {
+      "country": "TM",
+      "name": "Turkmenistan",
+      "recipeCount": 3,
+      "dryMixCount": 1,
+      "recipeIds": [
+        "c050",
+        "atlas6-zira-koriander-plovmischung-zentralasien",
+        "atlas6-zentralasiatischer-essig-zwiebel-salatansatz"
+      ]
+    },
+    {
+      "country": "TV",
+      "name": "Tuvalu",
+      "recipeCount": 3,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c127",
+        "atlas6-pazifische-kokos-limetten-wuerzbasis",
+        "atlas6-pazifischer-limetten-ingwer-fisch-dip"
+      ]
+    },
+    {
+      "country": "TR",
+      "name": "Türkei",
+      "recipeCount": 12,
+      "dryMixCount": 3,
+      "recipeIds": [
+        "m17",
+        "r051",
+        "r052",
+        "r053",
+        "r054",
+        "c172",
+        "c208",
+        "c231",
+        "atlas7-acili-ezme",
+        "atlas8-haydari",
+        "mk-koefte",
+        "mk-doener"
+      ]
+    },
+    {
+      "country": "UG",
+      "name": "Uganda",
+      "recipeCount": 5,
+      "dryMixCount": 1,
+      "recipeIds": [
+        "c093",
+        "atlas6-ostafrikanische-kachumbari-zitronenwuerze",
+        "atlas6-ostafrikanischer-pilau-ganzgewuerzmix",
+        "atlas6-ostafrikanische-kokos-chili-kochbasis",
+        "atlas6-erdnuss-blattgemuese-saucenbasis-ostafrika"
+      ]
+    },
+    {
+      "country": "UA",
+      "name": "Ukraine",
+      "recipeCount": 3,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "x020",
+        "atlas6-baltische-rote-bete-meerrettich-creme",
+        "atlas6-osteuropaeischer-dill-knoblauch-schmanddip"
+      ]
+    },
+    {
+      "country": "HU",
+      "name": "Ungarn",
+      "recipeCount": 5,
+      "dryMixCount": 3,
+      "recipeIds": [
+        "m11",
+        "x018",
+        "atlas6-kuemmel-senf-schmalzgewuerz-mit-oel-angeruehrt",
+        "atlas6-herzhafte-kuemmel-paprika-bratenwuerze",
+        "mk-gulasch"
+      ]
+    },
+    {
+      "country": "UY",
+      "name": "Uruguay",
+      "recipeCount": 4,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "r077",
+        "atlas6-salsa-criolla-suedamerikanisches-essig-paprika-dressing",
+        "atlas6-suedamerikanischer-kraeuter-chili-dip",
+        "atlas6-paraguayisch-uruguayische-zitronen-petersilienwuerze"
+      ]
+    },
+    {
+      "country": "UZ",
+      "name": "Usbekistan",
+      "recipeCount": 4,
+      "dryMixCount": 1,
+      "recipeIds": [
+        "c051",
+        "atlas6-zira-koriander-plovmischung-zentralasien",
+        "atlas6-zentralasiatischer-essig-zwiebel-salatansatz",
+        "atlas6-zentralasiatische-joghurt-knoblauchwuerze"
+      ]
+    },
+    {
+      "country": "VU",
+      "name": "Vanuatu",
+      "recipeCount": 4,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c128",
+        "atlas6-pazifische-kokos-limetten-wuerzbasis",
+        "atlas6-pazifischer-limetten-ingwer-fisch-dip",
+        "atlas6-pazifischer-zitronengras-kokos-ansatz"
+      ]
+    },
+    {
+      "country": "VA",
+      "name": "Vatikanstadt",
+      "recipeCount": 3,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c029",
+        "atlas6-kraeuter-pistou-ohne-kaese",
+        "atlas6-mediterranes-zitronen-kapern-dressing"
+      ]
+    },
+    {
+      "country": "VE",
+      "name": "Venezuela",
+      "recipeCount": 7,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c116",
+        "atlas6-salsa-criolla-suedamerikanisches-essig-paprika-dressing",
+        "atlas6-suedamerikanischer-kraeuter-chili-dip",
+        "atlas6-andiner-aj-kraeuter-limetten-wuerzdip",
+        "atlas6-andine-erdnuss-achiote-sauce",
+        "atlas6-venezolanisch-kolumbianische-guasacaca-kraeutersauce",
+        "atlas7-guasacaca"
+      ]
+    },
+    {
+      "country": "AE",
+      "name": "Vereinigte Arabische Emirate",
+      "recipeCount": 5,
+      "dryMixCount": 4,
+      "recipeIds": [
+        "c052",
+        "atlas-ae-loomi-koriander-fischrub",
+        "atlas6-daqoos-golfstaaten-tomaten-chilisauce",
+        "atlas6-golf-baharat-pfeffer-kardamom-gewuerzbasis",
+        "atlas6-golfstaaten-loomi-sumach-fischwuerze"
+      ]
+    },
+    {
+      "country": "US",
+      "name": "Vereinigte Staaten",
+      "recipeCount": 19,
+      "dryMixCount": 12,
+      "recipeIds": [
+        "m36",
+        "m37",
+        "m38",
+        "m39",
+        "m40",
+        "m41",
+        "m48",
+        "r080",
+        "r081",
+        "r089",
+        "c146",
+        "c147",
+        "c203",
+        "atlas8-hawaii-shoyu-poke-wuerze",
+        "mk-steakpfeffer",
+        "mk-bbq-mild",
+        "mk-bbq-rauchig",
+        "mk-cajun",
+        "mk-chili-con-carne"
+      ]
+    },
+    {
+      "country": "GB",
+      "name": "Vereinigtes Königreich",
+      "recipeCount": 3,
+      "dryMixCount": 1,
+      "recipeIds": [
+        "m23",
+        "c171",
+        "c184"
+      ]
+    },
+    {
+      "country": "VN",
+      "name": "Vietnam",
+      "recipeCount": 8,
+      "dryMixCount": 1,
+      "recipeIds": [
+        "m32",
+        "r028",
+        "r029",
+        "r030",
+        "c167",
+        "atlas-vn-n-c-m-u-vietnamesische-karamell-wuerzbasis",
+        "atlas7-nuoc-cham",
+        "atlas7-nuoc-mam-gung"
+      ]
+    },
+    {
+      "country": "CF",
+      "name": "Zentralafrikanische Republik",
+      "recipeCount": 4,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c094",
+        "atlas6-palmfrucht-tomaten-ansatz-zentralafrika",
+        "atlas6-pili-pili-milde-haus-chilisauce-zentralafrika",
+        "atlas6-zentralafrikanischer-erdnuss-zwiebeldip"
+      ]
+    },
+    {
+      "country": "CY",
+      "name": "Zypern",
+      "recipeCount": 6,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c053",
+        "atlas6-tarator-kalter-gurken-joghurt-dip",
+        "atlas6-levantinische-tahini-zitronensauce",
+        "atlas6-levantinische-sumach-oregano-zwiebelwuerze",
+        "atlas7-melitzanosalata",
+        "atlas8-ladolemono"
+      ]
+    },
+    {
+      "country": "EG",
+      "name": "Ägypten",
+      "recipeCount": 7,
+      "dryMixCount": 4,
+      "recipeIds": [
+        "m18",
+        "r057",
+        "x021",
+        "c161",
+        "atlas7-shatta-egypt",
+        "atlas7-dukkah-haselnuss",
+        "atlas8-tahini-petersilie"
+      ]
+    },
+    {
+      "country": "GQ",
+      "name": "Äquatorialguinea",
+      "recipeCount": 4,
+      "dryMixCount": 0,
+      "recipeIds": [
+        "c095",
+        "atlas6-palmfrucht-tomaten-ansatz-zentralafrika",
+        "atlas6-pili-pili-milde-haus-chilisauce-zentralafrika",
+        "atlas6-zentralafrikanischer-erdnuss-zwiebeldip"
+      ]
+    },
+    {
+      "country": "ET",
+      "name": "Äthiopien",
+      "recipeCount": 5,
+      "dryMixCount": 2,
+      "recipeIds": [
+        "m45",
+        "r058",
+        "c157",
+        "c164",
+        "atlas8-awaze-berbere-frisch"
+      ]
+    },
+    {
+      "country": "AT",
+      "name": "Österreich",
+      "recipeCount": 7,
+      "dryMixCount": 4,
+      "recipeIds": [
+        "c030",
+        "c175",
+        "atlas6-kuemmel-senf-schmalzgewuerz-mit-oel-angeruehrt",
+        "atlas6-apfel-kren-sauce-mit-milder-saeure",
+        "atlas6-herzhafte-kuemmel-paprika-bratenwuerze",
+        "mk-schweinebraten",
+        "mk-gulasch"
+      ]
+    }
+  ],
+  "interpretation": "Keine Null-Treffer-Länder in den ungefilterten Live-Rohdaten. Leere Ansichten müssen zusätzlich nach Rezeptart, Suche, Vorratsfilter und Linkziel geprüft werden; keine Ursache ohne UI-Nachweis behaupten."
+}

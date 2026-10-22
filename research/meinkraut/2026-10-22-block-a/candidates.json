@@ -1,0 +1,421 @@
+{
+  "schemaVersion": 1,
+  "batchId": "oxana-research-2026-10-22-a",
+  "createdAt": "2026-10-22",
+  "source": "Eigene Recherche in Originalquellen; unabhängig vom noch ausstehenden Claire-Paket",
+  "productionImport": false,
+  "candidates": [
+    {
+      "kind": "Trockenmischung",
+      "editorialType": "Veröffentlichte Autorenvariante; sachliche Zutatenangaben, deutsche Kurzfassung eigenständig formuliert",
+      "reviewStatus": "Quellenseite gelesen; Staging, nicht verkostet, nicht importiert",
+      "readyForImport": false,
+      "storageNotes": [
+        "Sauber, trocken, luftdicht und lichtgeschützt lagern; keine eigene Haltbarkeitsfrist festgelegt."
+      ],
+      "allergenAssessment": {
+        "known": [],
+        "complete": false,
+        "note": "Einzelproduktetiketten und gegebenenfalls zusammengesetzte Zutaten vor Freigabe prüfen."
+      },
+      "id": "mk-research-20261022-ie-spice-bag-saarinen",
+      "name": "Spice-Bag-Gewürz – Autorenvariante aus Irland",
+      "countries": [
+        "IE"
+      ],
+      "region": "Irisch-chinesische Takeaway-Küche",
+      "description": "Salzig-süße Würzmischung für knusprige Kartoffeln und Gemüse; Fünfgewürzearoma mit Chili.",
+      "ingredients": [
+        {
+          "sourceName": "Chinese five spice",
+          "ingredient": null,
+          "amount": 1,
+          "unit": "EL",
+          "optional": false,
+          "mappingIssue": "Zusammengesetztes Fünfgewürzepulver fehlt als Zutat; Rezept-ID ist keine Zutaten-ID."
+        },
+        {
+          "sourceName": "salt",
+          "ingredient": "salz",
+          "amount": 3,
+          "unit": "EL",
+          "optional": false
+        },
+        {
+          "sourceName": "sugar",
+          "ingredient": "zucker",
+          "amount": 2,
+          "unit": "EL",
+          "optional": false
+        },
+        {
+          "sourceName": "chilli flakes",
+          "ingredient": "chiliflocken",
+          "amount": 1,
+          "unit": "EL",
+          "optional": false
+        },
+        {
+          "sourceName": "chilli powder",
+          "ingredient": null,
+          "amount": 1,
+          "unit": "TL",
+          "optional": false,
+          "mappingIssue": "Chilipulver ist unspezifiziert; nicht automatisch durch Cayenne oder eine US-Chili-Gewürzmischung ersetzen."
+        },
+        {
+          "sourceName": "ground ginger",
+          "ingredient": "ingwer",
+          "amount": 1,
+          "unit": "TL",
+          "optional": false
+        },
+        {
+          "sourceName": "ground coriander",
+          "ingredient": "koriandersaat",
+          "amount": 1,
+          "unit": "TL",
+          "optional": false,
+          "preparation": "Vor dem Abmessen mahlen."
+        },
+        {
+          "sourceName": "ground cinnamon",
+          "ingredient": "zimt",
+          "amount": 0.5,
+          "unit": "TL",
+          "optional": false,
+          "preparation": "Gemahlen verwenden."
+        },
+        {
+          "sourceName": "MSG",
+          "ingredient": null,
+          "amount": 0.5,
+          "unit": "TL",
+          "optional": true,
+          "mappingIssue": "Mononatriumglutamat fehlt als Zutat."
+        }
+      ],
+      "originalYield": {
+        "sourceServings": 30,
+        "amount": null,
+        "unit": null,
+        "note": "Autor nennt 30 Portionen; kein belegtes Gesamtgewicht."
+      },
+      "batchGrams": null,
+      "normalization100g": null,
+      "methodSteps": [
+        "Alle angegebenen trockenen Bestandteile abmessen und gründlich mischen.",
+        "Gut verschlossen trocken aufbewahren."
+      ],
+      "application": "Nach dem Garen auf Chips, Gemüse oder Hähnchen geben.",
+      "serving": "Quelle empfiehlt ungefähr 1 TL je Portion.",
+      "sources": [
+        {
+          "title": "Homemade Spice Bag Spice Mix",
+          "url": "https://finnishinireland.com/recipes/spice-bag-spice-mix",
+          "author": "Niko Saarinen",
+          "accessedAt": "2026-10-22",
+          "primarySource": true,
+          "contentChecked": true,
+          "license": "Keine offene Nachnutzungslizenz festgestellt; keine Bilder oder fremden Beschreibungstexte übernommen."
+        }
+      ],
+      "openIssues": [
+        "Drei Zutatenzuordnungen offen.",
+        "Löffelangaben bleiben Volumen; keine unbelegten Grammwerte.",
+        "Zusammensetzung und Allergene des verwendeten Fünfgewürzepulvers sind produktabhängig."
+      ]
+    },
+    {
+      "kind": "Trockenmischung",
+      "editorialType": "Veröffentlichte Autorenvariante; sachliche Zutatenangaben, deutsche Kurzfassung eigenständig formuliert",
+      "reviewStatus": "Quellenseite gelesen; Staging, nicht verkostet, nicht importiert",
+      "readyForImport": false,
+      "storageNotes": [
+        "Sauber, trocken, luftdicht und lichtgeschützt lagern; keine eigene Haltbarkeitsfrist festgelegt."
+      ],
+      "allergenAssessment": {
+        "known": [
+          "Senf"
+        ],
+        "complete": true,
+        "note": "Aus enthaltenen Senfsamen abgeleitet; mögliche produktabhängige Spuren separat prüfen."
+      },
+      "id": "mk-research-20261022-ca-maple-montreal",
+      "name": "Montréal-Steakwürze mit Ahorn – veröffentlichte Variante",
+      "countries": [
+        "CA"
+      ],
+      "region": "Québec / Montréal",
+      "description": "Grobe Pfeffer-Senf-Würze mit Ahornzucker; erst nach scharfem Anbraten einsetzen.",
+      "ingredients": [
+        {
+          "sourceName": "black peppercorns",
+          "ingredient": "schwarzer-pfeffer",
+          "amount": 1,
+          "unit": "EL",
+          "optional": false
+        },
+        {
+          "sourceName": "coarse salt",
+          "ingredient": "salz",
+          "amount": 1,
+          "unit": "EL",
+          "optional": false,
+          "preparation": "Grobkörniges Salz verwenden."
+        },
+        {
+          "sourceName": "onion flakes",
+          "ingredient": null,
+          "amount": 1,
+          "unit": "EL",
+          "optional": false,
+          "mappingIssue": "Getrocknete Zwiebelflocken sind nicht mengenidentisch mit Zwiebelgranulat."
+        },
+        {
+          "sourceName": "red pepper flakes",
+          "ingredient": "chiliflocken",
+          "amount": 1,
+          "unit": "TL",
+          "optional": false
+        },
+        {
+          "sourceName": "coriander seeds",
+          "ingredient": "koriandersaat",
+          "amount": 1,
+          "unit": "EL",
+          "optional": false
+        },
+        {
+          "sourceName": "mustard seeds",
+          "ingredient": "senfkorner",
+          "amount": 1,
+          "unit": "EL",
+          "optional": false
+        },
+        {
+          "sourceName": "dill seeds",
+          "ingredient": null,
+          "amount": 2,
+          "unit": "TL",
+          "optional": false,
+          "mappingIssue": "Dillsamen fehlen; vorhandener Dill ist Blattkraut."
+        },
+        {
+          "sourceName": "maple sugar or maple flakes",
+          "ingredient": null,
+          "amount": 30,
+          "unit": "g",
+          "optional": false,
+          "mappingIssue": "Ahornzucker/-flocken fehlen; Ahornsirup wäre eine andere, feuchte Zutat."
+        },
+        {
+          "sourceName": "garlic powder",
+          "ingredient": null,
+          "amount": 1,
+          "unit": "TL",
+          "optional": false,
+          "mappingIssue": "Knoblauchpulver fehlt als exakt passende Form; nicht volumenidentisch mit Granulat."
+        }
+      ],
+      "originalYield": {
+        "amount": 125,
+        "unit": "ml",
+        "note": "Quelle nennt ca. 1/2 cup; ausschließlich für Ahornzucker/-flocken zusätzlich 30 g angegeben."
+      },
+      "batchGrams": null,
+      "normalization100g": null,
+      "methodSteps": [
+        "Pfeffer, Salz, Zwiebelflocken, Chili, Koriander, Senf und Dillsamen grob zerkleinern.",
+        "Ahornzucker und Knoblauchpulver untermischen."
+      ],
+      "application": "Fleisch, Fisch oder Gemüse nach dem Anbraten würzen.",
+      "serving": "Nach Geschmack; keine genaue Gramm-Dosierung belegt.",
+      "sources": [
+        {
+          "title": "Maple Montréal Steak Spice",
+          "url": "https://maplefromcanada.ca/recipes/maple-montreal-steak-spice/",
+          "author": "Maple from Canada / Quebec Maple Syrup Producers",
+          "accessedAt": "2026-10-22",
+          "primarySource": true,
+          "contentChecked": true,
+          "license": "Keine offene Nachnutzungslizenz festgestellt; keine Bilder oder fremden Beschreibungstexte übernommen."
+        }
+      ],
+      "safetyNotes": [
+        "Zuckerhaltige Mischung laut Quelle erst nach dem scharfen Anbraten einsetzen."
+      ],
+      "openIssues": [
+        "Vier formgenaue Zutatenzuordnungen offen.",
+        "Gemischte Gewichts- und Volumenangaben; keine 100-g-Rezeptur daraus erfinden."
+      ]
+    },
+    {
+      "kind": "Trockenmischung",
+      "editorialType": "Veröffentlichte Autorenvariante; sachliche Zutatenangaben, deutsche Kurzfassung eigenständig formuliert",
+      "reviewStatus": "Quellenseite gelesen; Staging, nicht verkostet, nicht importiert",
+      "readyForImport": false,
+      "storageNotes": [
+        "Sauber, trocken, luftdicht und lichtgeschützt lagern; keine eigene Haltbarkeitsfrist festgelegt."
+      ],
+      "allergenAssessment": {
+        "known": [
+          "Senf"
+        ],
+        "complete": true,
+        "note": "Gilt für die hier dokumentierte Auswahl mit optionalem schwarzem Senf."
+      },
+      "id": "mk-research-20261022-lk-roasted-curry-kodippili",
+      "name": "Geröstetes Sri-Lanka-Currypulver – Autorenvariante",
+      "countries": [
+        "LK"
+      ],
+      "region": "Sri Lanka",
+      "description": "Pfeffriges Currypulver aus gerösteten Samen und Reis, ohne zugegebenes Chili.",
+      "ingredients": [
+        {
+          "sourceName": "coriander seeds",
+          "ingredient": "koriandersaat",
+          "amount": 30,
+          "unit": "g",
+          "optional": false
+        },
+        {
+          "sourceName": "cumin seeds",
+          "ingredient": "kreuzkummel",
+          "amount": 30,
+          "unit": "g",
+          "optional": false
+        },
+        {
+          "sourceName": "black peppercorns",
+          "ingredient": "schwarzer-pfeffer",
+          "amount": 20,
+          "unit": "g",
+          "optional": false
+        },
+        {
+          "sourceName": "basmati rice",
+          "ingredient": null,
+          "amount": 20,
+          "unit": "g",
+          "optional": false,
+          "mappingIssue": "Basmati fehlt; vorhandener Jasminreis und Reismehl sind keine identische Zutat."
+        },
+        {
+          "sourceName": "green cardamom seeds",
+          "ingredient": "kardamom",
+          "amount": 5,
+          "unit": "g",
+          "optional": false,
+          "preparation": "Kapseln öffnen; ausschließlich die ausgelösten Samen wiegen, keine 5 g ganze Kapseln."
+        },
+        {
+          "sourceName": "fennel seeds",
+          "ingredient": "fenchelsamen",
+          "amount": 6,
+          "unit": "g",
+          "optional": false
+        },
+        {
+          "sourceName": "whole cloves",
+          "ingredient": "gewurznelken",
+          "amount": 4,
+          "unit": "g",
+          "optional": false
+        },
+        {
+          "sourceName": "black mustard seeds",
+          "ingredient": "senfsaat-schwarz",
+          "amount": 4,
+          "unit": "g",
+          "optional": true
+        }
+      ],
+      "originalYield": {
+        "amount": 115,
+        "unit": "g",
+        "approximate": true,
+        "note": "Quelle nennt ca. 115 g Ausbeute; ausgewählte Einwaagen einschließlich optionalem Senf ergeben 119 g. Optionale Curryblätter nicht einbezogen."
+      },
+      "batchGrams": 119,
+      "normalization100g": {
+        "basis": "Einwaagen vor dem Rösten, mit optionalem Senf und ohne optionale Curryblätter; keine Aussage über Endausbeute.",
+        "factor": 0.8403361344537815,
+        "ingredients": [
+          {
+            "sourceName": "coriander seeds",
+            "ingredient": "koriandersaat",
+            "amount": 25.210084033613445,
+            "unit": "g"
+          },
+          {
+            "sourceName": "cumin seeds",
+            "ingredient": "kreuzkummel",
+            "amount": 25.210084033613445,
+            "unit": "g"
+          },
+          {
+            "sourceName": "black peppercorns",
+            "ingredient": "schwarzer-pfeffer",
+            "amount": 16.80672268907563,
+            "unit": "g"
+          },
+          {
+            "sourceName": "basmati rice",
+            "ingredient": null,
+            "amount": 16.80672268907563,
+            "unit": "g"
+          },
+          {
+            "sourceName": "green cardamom seeds",
+            "ingredient": "kardamom",
+            "amount": 4.201680672268908,
+            "unit": "g"
+          },
+          {
+            "sourceName": "fennel seeds",
+            "ingredient": "fenchelsamen",
+            "amount": 5.042016806722689,
+            "unit": "g"
+          },
+          {
+            "sourceName": "whole cloves",
+            "ingredient": "gewurznelken",
+            "amount": 3.361344537815126,
+            "unit": "g"
+          },
+          {
+            "sourceName": "black mustard seeds",
+            "ingredient": "senfsaat-schwarz",
+            "amount": 3.361344537815126,
+            "unit": "g"
+          }
+        ]
+      },
+      "methodSteps": [
+        "Reis trocken leicht bräunen, dann Gewürze zugeben und unter Bewegung kurz mitrösten.",
+        "Vollständig abkühlen lassen, portionsweise mahlen und vermengen."
+      ],
+      "application": "Für Currys; Schärfe und Salz separat am Gericht ergänzen.",
+      "serving": "Keine allgemeine Gramm-Dosierung belegt.",
+      "sources": [
+        {
+          "title": "Easy Curry Powder (Sri Lankan Curry powder)",
+          "url": "https://www.theflavorbender.com/sri-lankan-roasted-curry-powder/",
+          "author": "Dini Kodippili",
+          "accessedAt": "2026-10-22",
+          "primarySource": true,
+          "contentChecked": true,
+          "license": "Keine offene Nachnutzungslizenz festgestellt; keine Bilder oder fremden Beschreibungstexte übernommen."
+        }
+      ],
+      "openIssues": [
+        "Basmati-Zutaten-ID ergänzen.",
+        "Kardamom-Samengewicht muss bei Umsetzung erhalten bleiben.",
+        "Optionale Zutaten und Einwaage/Endausbeute in der Anzeige unterscheiden.",
+        "100-g-Werte sind eine rechnerische Vorschau, noch kein aktives MeinKraut-Grundrezept."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "status": "PASS_STAGING",
+  "productionImport": false,
+  "candidateCount": 3,
+  "createdToday": 3,
+  "errors": [],
+  "blockedFromImport": [
+    {
+      "id": "mk-research-20261022-ie-spice-bag-saarinen",
+      "unmapped": [
+        "Chinese five spice",
+        "chilli powder",
+        "MSG"
+      ],
+      "issues": [
+        "Drei Zutatenzuordnungen offen.",
+        "Löffelangaben bleiben Volumen; keine unbelegten Grammwerte.",
+        "Zusammensetzung und Allergene des verwendeten Fünfgewürzepulvers sind produktabhängig."
+      ]
+    },
+    {
+      "id": "mk-research-20261022-ca-maple-montreal",
+      "unmapped": [
+        "onion flakes",
+        "dill seeds",
+        "maple sugar or maple flakes",
+        "garlic powder"
+      ],
+      "issues": [
+        "Vier formgenaue Zutatenzuordnungen offen.",
+        "Gemischte Gewichts- und Volumenangaben; keine 100-g-Rezeptur daraus erfinden."
+      ]
+    },
+    {
+      "id": "mk-research-20261022-lk-roasted-curry-kodippili",
+      "unmapped": [
+        "basmati rice"
+      ],
+      "issues": [
+        "Basmati-Zutaten-ID ergänzen.",
+        "Kardamom-Samengewicht muss bei Umsetzung erhalten bleiben.",
+        "Optionale Zutaten und Einwaage/Endausbeute in der Anzeige unterscheiden.",
+        "100-g-Werte sind eine rechnerische Vorschau, noch kein aktives MeinKraut-Grundrezept."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+name: MeinKraut research staging validation
+on:
+  pull_request:
+    paths:
+      - 'research/meinkraut/**'
+      - 'scripts/validate_meinkraut_research.py'
+      - '.github/workflows/meinkraut-research-qa.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'research/meinkraut/**'
+      - 'scripts/validate_meinkraut_research.py'
+      - '.github/workflows/meinkraut-research-qa.yml'
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check research packages without production import
+        run: |
+          for file in research/meinkraut/*/candidates.json; do
+            python3 scripts/validate_meinkraut_research.py "$file"
+          done
+      - name: Check existing application
+        run: node scripts/test_meinkraut.cjs
