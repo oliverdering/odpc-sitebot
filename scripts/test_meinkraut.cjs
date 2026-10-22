@@ -36,7 +36,8 @@ const imported=[...db.recipes,...extra.mixes].filter(r=>r.id.startsWith('mk-sour
 assert(imported.length>=3);
 for(const r of imported){
   state.modal=r.id;api.render();
-  assert(root.innerHTML.includes(r.sources[0].url)&&root.innerHTML.includes(r.sources[0].author));
+  const renderedText=root.innerHTML.replace(/&#39;|&quot;|&lt;|&gt;|&amp;/g,entity=>({'&#39;':"'",'&quot;':'"','&lt;':'<','&gt;':'>','&amp;':'&'}[entity]));
+  assert(renderedText.includes(r.sources[0].url)&&renderedText.includes(r.sources[0].author));
   for(const allergen of r.allergens||[])assert(root.innerHTML.includes(allergen));
   const copied=api.recipeCopyText(r,.5);
   assert(copied.includes(r.sources[0].url)&&copied.includes(r.editorialType.split(';')[0]));
@@ -47,6 +48,12 @@ const mixed=imported.find(r=>r.id==='mk-source-ie-gb-mixed-spice');
 const meduolis=imported.find(r=>r.id==='mk-source-lt-meduolis-spice');
 const piparkukas=imported.find(r=>r.id==='mk-source-lv-ilze-piparkukas-spice');
 const ducros=imported.find(r=>r.id==='mk-source-fr-ducros-provence');
+const speculaas=imported.find(r=>r.id==='mk-source-nl-laura-speculaas');
+assert(!api.canMix(speculaas));
+assert.deepEqual(Array.from(speculaas.countries),['NL']);
+assert.equal(speculaas.ingredients.find(p=>p.ingredient==='kardamom-gemahlen-unspezifiziert').unit,'TL');
+assert.equal(speculaas.ingredients.find(p=>p.ingredient==='zimt').amount,8);
+assert(!api.conversion('kardamom-gemahlen-unspezifiziert'));
 assert(api.canMix(ducros));
 assert.deepEqual(Array.from(ducros.countries),['FR']);
 assert.equal(ducros.ingredients.reduce((n,p)=>n+p.amount,0),100);

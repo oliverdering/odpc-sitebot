@@ -1,18 +1,18 @@
 {
-  "version": "3.0.9",
-  "baselineRevision": "cab8913c05b12f6e18fa82e435617e8cf13174d7",
+  "version": "3.0.10",
+  "baselineRevision": "78830ce734d9d7ea1b0801774982d9ab37d4e3f1",
   "expectedBaseline": {
-    "ingredients": 296,
-    "recipes": 654
-  },
-  "expectedTarget": {
     "ingredients": 296,
     "recipes": 655
   },
-  "addedIngredients": [],
+  "expectedTarget": {
+    "ingredients": 297,
+    "recipes": 656
+  },
+  "addedIngredients": ["kardamom-gemahlen-unspezifiziert"],
   "addedRecipes": [
-    "mk-source-fr-ducros-provence"
+    "mk-source-nl-laura-speculaas"
   ],
   "checkedAt": "2026-10-22",
-  "sourceReview": "research/meinkraut/2026-10-22-block-f/validation.json"
+  "sourceReview": "research/meinkraut/2026-10-22-block-e/validation.json"
 }

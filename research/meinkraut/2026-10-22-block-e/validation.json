@@ -1,0 +1,20 @@
+{
+  "status": "PASS_STAGING",
+  "productionImport": false,
+  "candidateCount": 1,
+  "createdToday": 8,
+  "errors": [],
+  "blockedFromImport": [],
+  "ingredientReview": {
+    "id": "kardamom-gemahlen-unspezifiziert",
+    "status": "bundled",
+    "form": "gemahlen",
+    "speciesSpecified": false,
+    "conversionToGrams": null
+  },
+  "duplicateReview": {
+    "activeRecipes": 655,
+    "matchingSourceOrVolumeProfile": 0
+  },
+  "importStatus": "bundled_pending_live_verification"
+}

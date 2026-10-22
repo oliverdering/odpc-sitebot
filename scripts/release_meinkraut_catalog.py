@@ -1,5 +1,5 @@
 """Activate a checked append-only catalog release through an ephemeral authenticated endpoint."""
-import base64, hashlib, hmac, json, os, secrets, subprocess
+import base64, hashlib, hmac, html, json, os, secrets, subprocess
 from pathlib import Path
 from urllib.error import HTTPError
 from urllib.request import Request, urlopen
@@ -94,7 +94,7 @@ def main():
                 from urllib.parse import quote
                 for rid in data['manifest']['addedRecipes']:
                     with urlopen(URL + '/mischung/' + quote(rid) + '/', timeout=35) as r:
-                        body = r.read().decode()
+                        body = html.unescape(r.read().decode())
                     recipe = next(x for x in data['atlas']['recipes'] + data['extra']['mixes'] if x['id'] == rid)
                     if recipe['sources'][0]['url'] not in body or recipe['sources'][0]['author'] not in body:
                         raise RuntimeError('Published source attribution missing')
