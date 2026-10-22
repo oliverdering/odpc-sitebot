@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 1,
+  "batchId": "oxana-research-2026-10-22-c",
+  "createdAt": "2026-10-22",
+  "productionImport": false,
+  "candidates": [
+    {
+      "id": "mk-research-20261022-lt-meduolis-skanauk",
+      "name": "Meduolis-Backgewürz – Skanauk.lt-Variante",
+      "kind": "Trockenmischung",
+      "countries": [
+        "LT"
+      ],
+      "region": "Litauisches Rezeptportal; Backgewürz",
+      "description": "Warmes, pfeffriges Backgewürz mit Kardamom und Sternanis; veröffentlichte Autorenvariante.",
+      "ingredients": [
+        {
+          "sourceName": "cinamono lazdelės",
+          "ingredient": "zimt",
+          "amount": 25,
+          "unit": "g",
+          "optional": false,
+          "preparation": "Vor dem Abwiegen als Zimtstange bereitstellen."
+        },
+        {
+          "sourceName": "džiovintas imbieras",
+          "ingredient": "ingwer",
+          "amount": 10,
+          "unit": "g",
+          "optional": false
+        },
+        {
+          "sourceName": "gvazdikėliai",
+          "ingredient": "gewurznelken",
+          "amount": 7,
+          "unit": "g",
+          "optional": false
+        },
+        {
+          "sourceName": "kardamono sėklos",
+          "ingredient": "kardamomsamen-unspezifiziert",
+          "amount": 7,
+          "unit": "g",
+          "optional": false
+        },
+        {
+          "sourceName": "kvapnieji pipirai",
+          "ingredient": "piment",
+          "amount": 5,
+          "unit": "g",
+          "optional": false
+        },
+        {
+          "sourceName": "juodieji pipirai",
+          "ingredient": "schwarzer-pfeffer",
+          "amount": 5,
+          "unit": "g",
+          "optional": false
+        },
+        {
+          "sourceName": "muskato riešutas",
+          "ingredient": "muskatnuss",
+          "amount": 5,
+          "unit": "g",
+          "optional": false
+        },
+        {
+          "sourceName": "žvaigždinis anyžius",
+          "ingredient": "sternanis",
+          "amount": 5,
+          "unit": "g",
+          "optional": false
+        }
+      ],
+      "batchGrams": 69,
+      "normalization100g": {
+        "factor": 1.4492753623188406,
+        "basis": "Einwaage vor dem Mahlen und Sieben; keine garantierte Endausbeute.",
+        "ingredients": [
+          {
+            "sourceName": "cinamono lazdelės",
+            "ingredient": "zimt",
+            "amount": 36.231884057971016,
+            "unit": "g"
+          },
+          {
+            "sourceName": "džiovintas imbieras",
+            "ingredient": "ingwer",
+            "amount": 14.492753623188406,
+            "unit": "g"
+          },
+          {
+            "sourceName": "gvazdikėliai",
+            "ingredient": "gewurznelken",
+            "amount": 10.144927536231885,
+            "unit": "g"
+          },
+          {
+            "sourceName": "kardamono sėklos",
+            "ingredient": "kardamomsamen-unspezifiziert",
+            "amount": 10.144927536231885,
+            "unit": "g"
+          },
+          {
+            "sourceName": "kvapnieji pipirai",
+            "ingredient": "piment",
+            "amount": 7.246376811594203,
+            "unit": "g"
+          },
+          {
+            "sourceName": "juodieji pipirai",
+            "ingredient": "schwarzer-pfeffer",
+            "amount": 7.246376811594203,
+            "unit": "g"
+          },
+          {
+            "sourceName": "muskato riešutas",
+            "ingredient": "muskatnuss",
+            "amount": 7.246376811594203,
+            "unit": "g"
+          },
+          {
+            "sourceName": "žvaigždinis anyžius",
+            "ingredient": "sternanis",
+            "amount": 7.246376811594203,
+            "unit": "g"
+          }
+        ]
+      },
+      "methodSteps": [
+        "Alle acht trockenen Zutaten in den angegebenen Gewichten abwiegen.",
+        "Gemeinsam in einer geeigneten Gewürzmühle fein mahlen.",
+        "Die gemahlene Mischung durchsieben und anschließend trocken sowie gut verschlossen aufbewahren."
+      ],
+      "application": "Für Meduolis und andere Backwaren, darunter Gebäck mit Kürbis.",
+      "serving": "Laut Quelle sparsam nach dem jeweiligen Backrezept dosieren; keine allgemeine Gramm-Dosierung angegeben.",
+      "allergenAssessment": {
+        "known": [],
+        "complete": true,
+        "note": "Keine der enthaltenen reinen Gewürzarten ist hier als kennzeichnungspflichtiges Allergen erfasst; Produktetiketten und Spuren separat prüfen. Keine Allergenfrei-Garantie."
+      },
+      "storageNotes": [
+        "Trocken, lichtgeschützt und gut verschlossen aufbewahren; keine eigene Haltbarkeitsfrist festgelegt."
+      ],
+      "sources": [
+        {
+          "title": "Naminis prieskonių mišinys „Meduolis“",
+          "url": "https://skanauk.lt/naminis-prieskoniu-misinys-meduolis",
+          "author": "Skanauk.lt receptai",
+          "accessedAt": "2026-10-22",
+          "primarySource": true,
+          "contentChecked": true,
+          "license": "Keine offene Nachnutzungslizenz festgestellt; keine Bilder oder fremden Beschreibungstexte übernommen."
+        }
+      ],
+      "editorialType": "Veröffentlichte Autorenvariante",
+      "reviewStatus": "Originalquelle, Zutatenformen, Länderzuordnung und Allergene geprüft am 22.10.2026; noch nicht verkostet",
+      "readyForImport": true,
+      "openIssues": [],
+      "bundledRecipeId": "mk-source-lt-meduolis-spice",
+      "importStatus": "bundled_pending_release"
+    }
+  ],
+  "ingredientProposals": [
+    {
+      "id": "kardamomsamen-unspezifiziert",
+      "name": "Kardamomsamen, Art nicht spezifiziert",
+      "group": "Gewürze & Kräuter",
+      "form": "Samen",
+      "status": "bundled",
+      "active": false,
+      "readyForImport": false,
+      "reason": "Die Quelle nennt Kardamomsamen ohne Artenangabe; vorhandene ganze Kapseln und ausdrücklich grüne Samen sind keine sichere form- und artgleiche Zuordnung.",
+      "notEquivalentTo": [
+        "kardamom",
+        "kardamomsamen-gruen"
+      ],
+      "allergens": [],
+      "allergenNote": "Reine Einzelzutat; produktabhängige Spuren sind separat zu prüfen.",
+      "sources": [
+        {
+          "title": "Naminis prieskonių mišinys „Meduolis“",
+          "url": "https://skanauk.lt/naminis-prieskoniu-misinys-meduolis",
+          "author": "Skanauk.lt receptai",
+          "accessedAt": "2026-10-22",
+          "primarySource": true,
+          "contentChecked": true,
+          "license": "Keine offene Nachnutzungslizenz festgestellt; keine Bilder oder fremden Beschreibungstexte übernommen."
+        }
+      ]
+    }
+  ]
+}
