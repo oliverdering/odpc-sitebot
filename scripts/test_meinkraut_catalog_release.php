@@ -20,7 +20,7 @@ foreach(['changed_baseline','changed_existing','unknown_reference','missing_alle
     if($probe==='changed_baseline')$bad['baselineExtra']['version']='wrong';
     if($probe==='changed_existing')$bad['atlas']['ingredients'][0]['name']='changed';
     if($probe==='unknown_reference')$bad['atlas']['recipes'][count($bad['atlas']['recipes'])-1]['ingredients'][0]['ingredient']='unknown';
-    if($probe==='missing_allergen')$bad['atlas']['recipes'][count($bad['atlas']['recipes'])-1]['allergens']=[];
+    if($probe==='missing_allergen'){$last=count($bad['atlas']['recipes'])-1;$bad['atlas']['recipes'][$last]['ingredients'][0]['ingredient']='senfkorner';$bad['atlas']['recipes'][$last]['allergens']=[];}
     if($probe==='wrong_expected_key')$bad['expectedKey']=str_repeat('0',64);
     $rejected=false;try{mk_catalog_release($pdo,$bad);}catch(Throwable $e){$rejected=true;}mk_release_check($rejected,$probe.'_accepted');
     mk_release_check($pdo->query('SELECT release_key FROM mk_releases WHERE active=1')->fetchColumn()===$key,'failed_request_changed_release');

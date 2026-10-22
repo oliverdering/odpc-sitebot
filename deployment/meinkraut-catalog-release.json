@@ -1,26 +1,20 @@
 {
-  "version": "3.0.5",
-  "baselineRevision": "2265c6fd5568fc641b356317640c735e2ca6d193",
+  "version": "3.0.6",
+  "baselineRevision": "cb24b2a240b9d5eec5529f334fe3f9e316c5416d",
   "expectedBaseline": {
-    "ingredients": 288,
-    "recipes": 649
-  },
-  "expectedTarget": {
     "ingredients": 294,
     "recipes": 651
   },
+  "expectedTarget": {
+    "ingredients": 295,
+    "recipes": 652
+  },
   "addedIngredients": [
-    "basmati-reis-roh",
-    "kardamomsamen-gruen",
-    "zwiebelflocken-getrocknet",
-    "dillsamen",
-    "ahornzucker",
-    "knoblauchpulver"
+    "macis-gemahlen"
   ],
   "addedRecipes": [
-    "mk-source-ca-maple-montreal",
-    "mk-source-lk-roasted-curry"
+    "mk-source-ie-gb-mixed-spice"
   ],
   "checkedAt": "2026-10-22",
-  "sourceReview": "research/meinkraut/2026-10-22-block-a/integration-review.json"
+  "sourceReview": "research/meinkraut/2026-10-22-block-b/validation.json"
 }

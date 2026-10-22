@@ -33,17 +33,21 @@ const label=commerce.getLabel();label.name='<img src=x onerror=alert(1)>';assert
 assert(window.MEINKRAUT_COMMERCE.validateBackup(window.MEINKRAUT_COMMERCE.backup()));assert(!window.MEINKRAUT_COMMERCE.validateBackup({shop:{},labels:[]}));
 // Source-backed imports keep exact forms, units and author attribution.
 const imported=db.recipes.filter(r=>r.id.startsWith('mk-source-'));
-assert.equal(imported.length,2);
+assert(imported.length>=3);
 for(const r of imported){
   state.modal=r.id;api.render();
   assert(root.innerHTML.includes(r.sources[0].url)&&root.innerHTML.includes(r.sources[0].author));
-  assert(root.innerHTML.includes('Enthält Senf'));
+  for(const allergen of r.allergens||[])assert(root.innerHTML.includes(allergen));
   const copied=api.recipeCopyText(r,.5);
   assert(copied.includes(r.sources[0].url)&&copied.includes(r.editorialType.split(';')[0]));
   assert(!copied.includes('Mein Kraut – eigene Hausvariante'));
 }
 const curry=imported.find(r=>r.countries.includes('LK')),maple=imported.find(r=>r.countries.includes('CA'));
+const mixed=imported.find(r=>r.id==='mk-source-ie-gb-mixed-spice');
 assert(api.canMix(curry));assert(!api.canMix(maple));
+assert(!api.canMix(mixed));
+assert.deepEqual(Array.from(mixed.countries),['IE','GB']);
+assert.equal(mixed.ingredients.find(p=>p.ingredient==='macis-gemahlen').amount,2);
 assert.equal(curry.ingredients.find(p=>p.ingredient==='kardamomsamen-gruen').amount,5);
 assert.equal(curry.ingredients.reduce((sum,p)=>sum+p.amount,0),119);
 assert(!api.conversion('dillsamen'));assert(!api.conversion('knoblauchpulver'));
