@@ -44,3 +44,12 @@ node scripts/test_meinkraut.cjs
 ```
 
 Mit `--require-ready` liefert der Prüfer bei offenen Kandidaten Exitcode 2. Das ist eine beabsichtigte Importsperre. Alle Recherchedaten liegen außerhalb des ausgelieferten Webverzeichnisses. Website, Shopzustand, Nutzerregale und aktive Rezeptdaten bleiben unverändert.
+
+
+## Vorbereiteter Katalogimport 3.0.5
+
+Die sechs Zutatenvorschläge sind jetzt als vollständige formgenaue Katalogeinträge im Bundle enthalten (`status: bundled`); dies bezeichnet noch keinen bestätigten Live-Import. Zwei geprüfte Autorenvarianten werden als `mk-source-ca-maple-montreal` und `mk-source-lk-roasted-curry` vorbereitet. Die irische Spice-Bag-Mischung bleibt im Staging. Mengen und Originaleinheiten bleiben erhalten; die Curry-Mischküche skaliert ausschließlich die gewogenen Einwaagen. Im Quellansatz ist schwarzer Senf enthalten und die optionale Curryblatt-Zugabe ausgelassen.
+
+Die Quellenanzeige wird in SSR, Rezeptdialog, Mischküche und kopiertem Rezept ergänzt. Ein transaktionaler Katalogimport prüft den tatsächlich aktiven Datenbestand gegen den vorherigen Repository-Stand, erlaubt ausschließlich die im Release-Manifest aufgeführten Ergänzungen und erhält die bisherige Freigabe für einen Rückfall. Nutzerregale und Shopdaten werden nicht bearbeitet. Ein nur für den Deployment-Lauf erzeugter, authentifizierter Endpunkt wird anschließend entfernt. Quellen, Allergenhinweise, Maße und Datensatzreferenzen werden vor Freigabe geprüft.
+
+`deployment/meinkraut-catalog-release.json` beschreibt den erwarteten Übergang von 288 Zutaten / 649 Rezepturen zu 294 / 651. `scripts/test_meinkraut_catalog_release.php` prüft Planung, Importsperren, Aktivierung, Idempotenz, Historie, unveränderte Nutzerdaten und Rückfall auf einer isolierten Datenbank. Produktive Aktivierung und konkrete Live-Treffer sind erst nach erfolgreichem Deployment belegt und werden gesondert protokolliert.

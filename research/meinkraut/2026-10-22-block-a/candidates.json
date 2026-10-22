@@ -129,7 +129,7 @@
     {
       "kind": "Trockenmischung",
       "editorialType": "Veröffentlichte Autorenvariante; sachliche Zutatenangaben, deutsche Kurzfassung eigenständig formuliert",
-      "reviewStatus": "Quellenseite gelesen; Staging, nicht verkostet, nicht importiert",
+      "reviewStatus": "Quellen und Zutatenformen geprüft; als mk-source-ca-maple-montreal im geprüften Release vorbereitet, nicht verkostet",
       "readyForImport": false,
       "storageNotes": [
         "Sauber, trocken, luftdicht und lichtgeschützt lagern; keine eigene Haltbarkeitsfrist festgelegt."
@@ -166,12 +166,10 @@
         },
         {
           "sourceName": "onion flakes",
-          "ingredient": null,
+          "ingredient": "zwiebelflocken-getrocknet",
           "amount": 1,
           "unit": "EL",
-          "optional": false,
-          "mappingIssue": "Belegter Zutatenvorschlag zwiebelflocken-getrocknet liegt nur im Staging vor; noch keine aktive Atlas-ID.",
-          "proposedIngredient": "zwiebelflocken-getrocknet"
+          "optional": false
         },
         {
           "sourceName": "red pepper flakes",
@@ -196,30 +194,24 @@
         },
         {
           "sourceName": "dill seeds",
-          "ingredient": null,
+          "ingredient": "dillsamen",
           "amount": 2,
           "unit": "TL",
-          "optional": false,
-          "mappingIssue": "Belegter Zutatenvorschlag dillsamen liegt nur im Staging vor; noch keine aktive Atlas-ID.",
-          "proposedIngredient": "dillsamen"
+          "optional": false
         },
         {
           "sourceName": "maple sugar or maple flakes",
-          "ingredient": null,
+          "ingredient": "ahornzucker",
           "amount": 30,
           "unit": "g",
-          "optional": false,
-          "mappingIssue": "Belegter Zutatenvorschlag ahornzucker liegt nur im Staging vor; noch keine aktive Atlas-ID.",
-          "proposedIngredient": "ahornzucker"
+          "optional": false
         },
         {
           "sourceName": "garlic powder",
-          "ingredient": null,
+          "ingredient": "knoblauchpulver",
           "amount": 1,
           "unit": "TL",
-          "optional": false,
-          "mappingIssue": "Belegter Zutatenvorschlag knoblauchpulver liegt nur im Staging vor; noch keine aktive Atlas-ID.",
-          "proposedIngredient": "knoblauchpulver"
+          "optional": false
         }
       ],
       "originalYield": {
@@ -250,16 +242,14 @@
         "Zuckerhaltige Mischung laut Quelle erst nach dem scharfen Anbraten einsetzen."
       ],
       "openIssues": [
-        "Vier formgenaue Zutatenpositionen mit Herkunftsnachweis vorgeschlagen, aber noch keine aktiven Atlas-IDs.",
-        "Ahornzucker als explizit erlaubte Option gewählt; keine Gleichsetzung mit Ahornsirup.",
-        "Gemischte Gewichts- und Volumenangaben bleiben erhalten; keine erfundene 100-g-Rezeptur.",
-        "Quellenangabe und veröffentlichte Autorenvariante in öffentlicher Rezeptansicht, Kopierfunktion und SSR korrekt erhalten."
-      ]
+        "Produktive Datenbankfreigabe und konkrete Live-Routen prüfen."
+      ],
+      "bundledRecipeId": "mk-source-ca-maple-montreal"
     },
     {
       "kind": "Trockenmischung",
       "editorialType": "Veröffentlichte Autorenvariante; sachliche Zutatenangaben, deutsche Kurzfassung eigenständig formuliert",
-      "reviewStatus": "Rezeptkarte und Zutatenformen erneut geprüft; sechs Zutatenergänzungen im Gesamtpaket vorgeschlagen, nicht importiert",
+      "reviewStatus": "Quellen und Zutatenformen geprüft; als mk-source-lk-roasted-curry im geprüften Release vorbereitet, nicht verkostet",
       "readyForImport": false,
       "storageNotes": [
         "Sauber, trocken, luftdicht und lichtgeschützt lagern; keine eigene Haltbarkeitsfrist festgelegt."
@@ -302,22 +292,18 @@
         },
         {
           "sourceName": "basmati rice",
-          "ingredient": null,
+          "ingredient": "basmati-reis-roh",
           "amount": 20,
           "unit": "g",
-          "optional": false,
-          "mappingIssue": "Belegter Zutatenvorschlag basmati-reis-roh liegt nur im Staging vor; noch keine aktive Atlas-ID.",
-          "proposedIngredient": "basmati-reis-roh"
+          "optional": false
         },
         {
           "sourceName": "green cardamom seeds",
-          "ingredient": null,
+          "ingredient": "kardamomsamen-gruen",
           "amount": 5,
           "unit": "g",
           "optional": false,
-          "preparation": "Kapselhüllen entfernen; 5 g ausgelöste Samen abwiegen. Rezeptkarte und zugehöriger Zubereitungsschritt nennen Samengewicht.",
-          "proposedIngredient": "kardamomsamen-gruen",
-          "mappingIssue": "Belegter Zutatenvorschlag kardamomsamen-gruen liegt nur im Staging vor; noch keine aktive Atlas-ID."
+          "preparation": "Kapselhüllen entfernen; 5 g ausgelöste Samen abwiegen. Rezeptkarte und zugehöriger Zubereitungsschritt nennen Samengewicht."
         },
         {
           "sourceName": "fennel seeds",
@@ -372,17 +358,15 @@
           },
           {
             "sourceName": "basmati rice",
-            "ingredient": null,
+            "ingredient": "basmati-reis-roh",
             "amount": 16.80672268907563,
-            "unit": "g",
-            "proposedIngredient": "basmati-reis-roh"
+            "unit": "g"
           },
           {
             "sourceName": "green cardamom seeds",
-            "ingredient": null,
+            "ingredient": "kardamomsamen-gruen",
             "amount": 4.201680672268908,
-            "unit": "g",
-            "proposedIngredient": "kardamomsamen-gruen"
+            "unit": "g"
           },
           {
             "sourceName": "fennel seeds",
@@ -424,12 +408,9 @@
         }
       ],
       "openIssues": [
-        "Basmati und ausgelöste grüne Kardamomsamen sind als eigene Zutaten vorgeschlagen, aber im produktiven Atlas noch nicht vorhanden.",
-        "Auswahl mit optionalem Senf und ohne optionale Curryblätter sichtbar ausweisen.",
-        "119 g bezeichnet die Einwaage; die Quelle nennt nur eine ungefähre Endausbeute. 100-g-Vorschau nicht als garantierte Endmenge ausgeben.",
-        "Quellenangabe und veröffentlichte Autorenvariante in öffentlicher Rezeptansicht, Kopierfunktion und SSR korrekt erhalten.",
-        "Aktive Datenbankfreigabe und Live-Routen erst nach gesonderter Integrationsprüfung."
-      ]
+        "Produktive Datenbankfreigabe und konkrete Live-Routen prüfen."
+      ],
+      "bundledRecipeId": "mk-source-lk-roasted-curry"
     }
   ],
   "ingredientProposals": [
@@ -438,7 +419,7 @@
       "name": "Ungekochter Basmati-Reis",
       "group": "Getreide",
       "form": "ganz, ungekocht",
-      "status": "proposal_only",
+      "status": "bundled",
       "active": false,
       "readyForImport": false,
       "reason": "Vorhandener Reis ist ausdrücklich Jasminreis.",
@@ -464,7 +445,7 @@
       "name": "Grüne Kardamomsamen ohne Kapselhülle",
       "group": "Gewürze & Kräuter",
       "form": "Samen",
-      "status": "proposal_only",
+      "status": "bundled",
       "active": false,
       "readyForImport": false,
       "reason": "Die Quelle wiegt ausgelöste Samen; vorhandene grüne Kapseln enthalten die Hülle.",
@@ -490,7 +471,7 @@
       "name": "Getrocknete Zwiebelflocken",
       "group": "Gewürze & Kräuter",
       "form": "Flocken",
-      "status": "proposal_only",
+      "status": "bundled",
       "active": false,
       "readyForImport": false,
       "reason": "Flocken und Granulat sind bei Löffelmengen nicht automatisch austauschbar.",
@@ -516,7 +497,7 @@
       "name": "Dillsamen",
       "group": "Gewürze & Kräuter",
       "form": "Samen",
-      "status": "proposal_only",
+      "status": "bundled",
       "active": false,
       "readyForImport": false,
       "reason": "Blattkraut und Samen getrennt führen.",
@@ -542,7 +523,7 @@
       "name": "Ahornzucker",
       "group": "Zucker & Süßungsmittel",
       "form": "trocken",
-      "status": "proposal_only",
+      "status": "bundled",
       "active": false,
       "readyForImport": false,
       "reason": "Die ausdrücklich erlaubte Ahornzucker-Option wählen; Sirup ist feucht. Ahornflocken werden nicht als eigene Variante angelegt.",
@@ -568,7 +549,7 @@
       "name": "Knoblauchpulver",
       "group": "Gewürze & Kräuter",
       "form": "gemahlen",
-      "status": "proposal_only",
+      "status": "bundled",
       "active": false,
       "readyForImport": false,
       "reason": "Bei Volumenmengen keine Gleichsetzung von Pulver und Granulat.",

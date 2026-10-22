@@ -24,10 +24,13 @@ def validate(package, atlas, extra):
     proposals = {}
     for proposal in package.get('ingredientProposals', []):
         pid = proposal.get('id', '')
-        if not re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*', pid) or pid in proposals or pid in ingredient_map:
+        bundled = proposal.get('status') == 'bundled'
+        if not re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*', pid) or pid in proposals or (pid in ingredient_map) != bundled:
             errors.append(f'{pid}: proposed ingredient ID invalid, duplicated, or already active')
         proposals[pid] = proposal
-        if proposal.get('active') is not False or proposal.get('readyForImport') is not False or proposal.get('status') != 'proposal_only':
+        if bundled and any(proposal.get(k) != ingredient_map.get(pid, {}).get(k) for k in ['name', 'group', 'form', 'allergens']):
+            errors.append(f'{pid}: bundled proposal differs from catalog identity')
+        if proposal.get('active') is not False or proposal.get('readyForImport') is not False or proposal.get('status') not in {'proposal_only', 'bundled'}:
             errors.append(f'{pid}: ingredient proposals must remain inactive and unapproved')
         for field in ['name', 'group', 'form', 'reason', 'allergenNote']:
             if not isinstance(proposal.get(field), str) or not proposal[field].strip():
