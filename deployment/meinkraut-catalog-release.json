@@ -1,20 +1,20 @@
 {
-  "version": "3.0.6",
-  "baselineRevision": "cb24b2a240b9d5eec5529f334fe3f9e316c5416d",
+  "version": "3.0.7",
+  "baselineRevision": "8f9243f30c0d6b6d9b690ff4d26ebdb724d2dda1",
   "expectedBaseline": {
-    "ingredients": 294,
-    "recipes": 651
-  },
-  "expectedTarget": {
     "ingredients": 295,
     "recipes": 652
   },
+  "expectedTarget": {
+    "ingredients": 296,
+    "recipes": 653
+  },
   "addedIngredients": [
-    "macis-gemahlen"
+    "kardamomsamen-unspezifiziert"
   ],
   "addedRecipes": [
-    "mk-source-ie-gb-mixed-spice"
+    "mk-source-lt-meduolis-spice"
   ],
   "checkedAt": "2026-10-22",
-  "sourceReview": "research/meinkraut/2026-10-22-block-b/validation.json"
+  "sourceReview": "research/meinkraut/2026-10-22-block-c/validation.json"
 }

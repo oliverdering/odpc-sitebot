@@ -44,10 +44,15 @@ for(const r of imported){
 }
 const curry=imported.find(r=>r.countries.includes('LK')),maple=imported.find(r=>r.countries.includes('CA'));
 const mixed=imported.find(r=>r.id==='mk-source-ie-gb-mixed-spice');
+const meduolis=imported.find(r=>r.id==='mk-source-lt-meduolis-spice');
 assert(api.canMix(curry));assert(!api.canMix(maple));
 assert(!api.canMix(mixed));
+assert(api.canMix(meduolis));
 assert.deepEqual(Array.from(mixed.countries),['IE','GB']);
 assert.equal(mixed.ingredients.find(p=>p.ingredient==='macis-gemahlen').amount,2);
+assert.deepEqual(Array.from(meduolis.countries),['LT']);
+assert.equal(meduolis.ingredients.reduce((sum,p)=>sum+p.amount,0),69);
+assert.equal(meduolis.ingredients.find(p=>p.ingredient==='kardamomsamen-unspezifiziert').amount,7);
 assert.equal(curry.ingredients.find(p=>p.ingredient==='kardamomsamen-gruen').amount,5);
 assert.equal(curry.ingredients.reduce((sum,p)=>sum+p.amount,0),119);
 assert(!api.conversion('dillsamen'));assert(!api.conversion('knoblauchpulver'));
