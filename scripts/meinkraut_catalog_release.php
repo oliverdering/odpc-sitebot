@@ -23,7 +23,8 @@ function mk_release_validate(array $q): void {
     }
     $otherA=$a;$otherBA=$ba;unset($otherA['ingredients'],$otherA['recipes'],$otherBA['ingredients'],$otherBA['recipes']);
     mk_release_check($otherA===$otherBA,'atlas_metadata_changed');
-    $be['version']=$e['version'];mk_release_check($be===$e,'extra_content_changed');
+    $otherE=$e;$otherBE=$be;unset($otherE['version'],$otherE['mixes'],$otherBE['version'],$otherBE['mixes']);
+    mk_release_check($otherE===$otherBE,'extra_content_changed');
     foreach($recipes as $r){
         mk_release_check(!empty($r['ingredients']),'empty_recipe');
         foreach($r['countries'] as $country)mk_release_check(isset($countries[$country])||in_array($country,['TW','XK','PR'],true),'unknown_country');
