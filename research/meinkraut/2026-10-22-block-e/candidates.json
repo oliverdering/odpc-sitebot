@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 1,
+  "batchId": "oxana-research-2026-10-22-e",
+  "createdAt": "2026-10-22",
+  "productionImport": false,
+  "candidates": [
+    {
+      "id": "mk-research-20261022-nl-speculaas-laura",
+      "name": "Speculaaskruiden – Laura's Bakery-Variante",
+      "kind": "Trockenmischung",
+      "countries": [
+        "NL"
+      ],
+      "region": "Niederländische Backküche; Sinterklaas",
+      "description": "Zimtbetonte Backgewürzmischung mit Muskat, Nelken, Ingwer, Macis und Kardamom.",
+      "ingredients": [
+        {
+          "sourceName": "kaneel / ground cinnamon",
+          "ingredient": "zimt",
+          "amount": 8,
+          "unit": "EL",
+          "optional": false,
+          "preparation": "Gemahlen abmessen."
+        },
+        {
+          "sourceName": "nootmuskaat / ground nutmeg",
+          "ingredient": "muskatnuss",
+          "amount": 2,
+          "unit": "EL",
+          "optional": false,
+          "preparation": "Vor dem Abmessen fein reiben."
+        },
+        {
+          "sourceName": "kruidnagel / ground cloves",
+          "ingredient": "gewurznelken",
+          "amount": 2,
+          "unit": "EL",
+          "optional": false,
+          "preparation": "Vor dem Abmessen fein mahlen."
+        },
+        {
+          "sourceName": "gember / ground ginger",
+          "ingredient": "ingwer",
+          "amount": 1,
+          "unit": "EL",
+          "optional": false,
+          "preparation": "Getrocknet und gemahlen verwenden."
+        },
+        {
+          "sourceName": "foelie / ground mace",
+          "ingredient": "macis-gemahlen",
+          "amount": 2,
+          "unit": "TL",
+          "optional": false
+        },
+        {
+          "sourceName": "kardemom / ground cardamom",
+          "ingredient": null,
+          "proposedIngredient": "kardamom-gemahlen-unspezifiziert",
+          "amount": 2,
+          "unit": "TL",
+          "optional": false,
+          "mappingIssue": "Quelle verlangt gemahlenen Kardamom ohne Art- oder Samenangabe. Keine formgleiche aktive Zutat vorhanden; Kapseln und Samen werden nicht gleichgesetzt."
+        }
+      ],
+      "methodSteps": [
+        "Alle sechs Gewürze gemahlen in den Original-Löffelmengen abmessen.",
+        "In einer trockenen Schüssel gleichmäßig vermischen.",
+        "In ein sauberes, luftdicht schließendes Gewürzglas füllen."
+      ],
+      "application": "Für Speculaas, Kruidnoten und weitere gewürzte Backwaren nach Rezept.",
+      "serving": "Die Quelle nennt ein kleines Glas als Ansatz; Dosierung nach dem Backrezept. Keine Grammumrechnung ergänzt.",
+      "allergenAssessment": {
+        "known": [],
+        "complete": true,
+        "note": "Bewertung für reine Gewürze und den Zutatenvorschlag. Etiketten und Spuren separat prüfen; keine Allergenfrei-Garantie."
+      },
+      "storageNotes": [
+        "Dunkel, trocken und luftdicht lagern. Keine eigene Haltbarkeitsfrist ergänzt."
+      ],
+      "sources": [
+        {
+          "title": "Zelf speculaaskruiden maken",
+          "url": "https://www.laurasbakery.nl/zelf-speculaaskruiden-maken/",
+          "author": "Laura's Bakery",
+          "accessedAt": "2026-10-22",
+          "primarySource": true,
+          "contentChecked": true,
+          "license": "Keine offene Nachnutzungslizenz festgestellt; nur sachliche Rezeptdaten und eigene deutsche Kurzfassung, keine Bilder übernommen."
+        },
+        {
+          "title": "Speculaas spice mix",
+          "url": "https://www.inlaurasbakery.com/speculaas-spice-mix/",
+          "author": "Laura's Bakery",
+          "accessedAt": "2026-10-22",
+          "primarySource": true,
+          "contentChecked": true,
+          "license": "Englische Fassung derselben Autorin; Länderbezug und Zutatenformen geprüft, keine Bilder übernommen."
+        }
+      ],
+      "editorialType": "Veröffentlichte Autorenvariante",
+      "reviewStatus": "Originalmengen, Länderbezug und Allergene geprüft am 22.10.2026; noch nicht verkostet; neue Zutatenidentität vor Import freizugeben.",
+      "readyForImport": false,
+      "openIssues": [
+        "Formgleiche Zutat kardamom-gemahlen-unspezifiziert fehlt im aktiven Atlas; Vorschlag vor Import fachlich und technisch prüfen."
+      ],
+      "importStatus": "research_pending",
+      "countryEvidence": "Die englische Autorenfassung ordnet die Mischung ausdrücklich den Niederlanden zu. Kein Anspruch auf eine verbindliche traditionelle Standardrezeptur.",
+      "scopeNotes": [
+        "Nur die sechs Zutaten des Grundrezepts erfasst. Die separat vorgeschlagenen Varianten mit Anis, Koriander oder Piment sind nicht Teil dieses Datensatzes."
+      ]
+    }
+  ],
+  "ingredientProposals": [
+    {
+      "id": "kardamom-gemahlen-unspezifiziert",
+      "name": "Kardamom, gemahlen (Art nicht spezifiziert)",
+      "group": "Gewürze & Kräuter",
+      "form": "gemahlen",
+      "allergens": [],
+      "reason": "Die Originalquelle fordert gemahlenen Kardamom und legt weder Art noch vermahlenen Pflanzenteil fest.",
+      "allergenNote": "Für reinen Kardamom keine in diesem Atlas erfassten Pflichtallergene; Etiketten prüfen.",
+      "sources": [
+        {
+          "title": "Zelf speculaaskruiden maken",
+          "url": "https://www.laurasbakery.nl/zelf-speculaaskruiden-maken/",
+          "author": "Laura's Bakery",
+          "accessedAt": "2026-10-22",
+          "primarySource": true,
+          "contentChecked": true,
+          "license": "Keine offene Nachnutzungslizenz festgestellt; nur sachliche Rezeptdaten und eigene deutsche Kurzfassung, keine Bilder übernommen."
+        },
+        {
+          "title": "Speculaas spice mix",
+          "url": "https://www.inlaurasbakery.com/speculaas-spice-mix/",
+          "author": "Laura's Bakery",
+          "accessedAt": "2026-10-22",
+          "primarySource": true,
+          "contentChecked": true,
+          "license": "Englische Fassung derselben Autorin; Länderbezug und Zutatenformen geprüft, keine Bilder übernommen."
+        }
+      ],
+      "notEquivalentTo": [
+        "kardamom",
+        "schwarzer-kardamom",
+        "kardamomsamen-gruen",
+        "kardamomsamen-unspezifiziert"
+      ],
+      "active": false,
+      "readyForImport": false,
+      "status": "proposal_only"
+    }
+  ]
+}

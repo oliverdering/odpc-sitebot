@@ -1,0 +1,30 @@
+{
+  "status": "PASS_STAGING",
+  "productionImport": false,
+  "candidateCount": 1,
+  "createdToday": 7,
+  "errors": [],
+  "blockedFromImport": [
+    {
+      "id": "mk-research-20261022-nl-speculaas-laura",
+      "unmapped": [
+        "kardemom / ground cardamom"
+      ],
+      "issues": [
+        "Formgleiche Zutat kardamom-gemahlen-unspezifiziert fehlt im aktiven Atlas; Vorschlag vor Import fachlich und technisch prüfen."
+      ],
+      "reason": "research_pending"
+    }
+  ],
+  "duplicateReview": {
+    "status": "PASS",
+    "activeRecipes": 654,
+    "matchingSourceOrVolumeProfile": 0
+  },
+  "productionCatalog": {
+    "version": "3.0.8",
+    "ingredients": 296,
+    "recipes": 654,
+    "changed": false
+  }
+}
