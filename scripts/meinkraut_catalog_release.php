@@ -25,7 +25,7 @@ function mk_release_validate(array $q): void {
     mk_release_check($otherA===$otherBA,'atlas_metadata_changed');
     $be['version']=$e['version'];mk_release_check($be===$e,'extra_content_changed');
     foreach($recipes as $r){
-        mk_release_check(!empty($r['ingredients'])&&!empty($r['countries']),'empty_recipe');
+        mk_release_check(!empty($r['ingredients']),'empty_recipe');
         foreach($r['countries'] as $country)mk_release_check(isset($countries[$country])||in_array($country,['TW','XK','PR'],true),'unknown_country');
         foreach($r['ingredients'] as $p){
             mk_release_check(isset($ingredients[$p['ingredient']]),'unknown_ingredient');
@@ -34,6 +34,7 @@ function mk_release_validate(array $q): void {
     }
     foreach($m['addedRecipes'] as $id){
         $r=$recipes[$id];mk_release_check(!empty($r['sources'])&&!empty($r['methodSteps'])&&!empty($r['safetyNotes']),'missing_recipe_evidence');
+        mk_release_check(!empty($r['countries']),'missing_country');
         foreach($r['sources'] as $s)mk_release_check(str_starts_with($s['url']??'','https://')&&!empty($s['author'])&&!empty($s['contentChecked'])&&!empty($s['primarySource']),'invalid_source');
         $allergens=[];foreach($r['ingredients'] as $p){
             mk_release_check(in_array($p['unit'],['g','TL','EL','ml','Stück'],true),'invalid_unit');
