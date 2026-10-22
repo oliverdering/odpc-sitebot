@@ -4,7 +4,7 @@
   "candidateCount": 1,
   "createdToday": 8,
   "errors": [],
-  "blockedFromImport": [],
+  "blockedFromImport": [{"id":"mk-research-20261022-nl-speculaas-laura","unmapped":[],"issues":[],"reason":"already_imported"}],
   "ingredientReview": {
     "id": "kardamom-gemahlen-unspezifiziert",
     "status": "bundled",
@@ -16,5 +16,5 @@
     "activeRecipes": 655,
     "matchingSourceOrVolumeProfile": 0
   },
-  "importStatus": "bundled_pending_live_verification"
+  "importStatus": "live_verified"
 }
