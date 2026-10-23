@@ -1,18 +1,20 @@
 {
-  "version": "3.0.13",
-  "baselineRevision": "c9cd1d147ac5922c560859dab1075ee7506c4823",
+  "version": "3.0.14",
+  "baselineRevision": "3e3528400d9bdf5e119f25869505a6f3d5a9cd10",
   "expectedBaseline": {
-    "ingredients": 297,
-    "recipes": 658
-  },
-  "expectedTarget": {
     "ingredients": 297,
     "recipes": 659
   },
-  "addedIngredients": [],
+  "expectedTarget": {
+    "ingredients": 298,
+    "recipes": 660
+  },
+  "addedIngredients": [
+    "paprika-gemahlen-unspezifiziert"
+  ],
   "addedRecipes": [
-    "mk-source-is-eatrvk-grill-seasoning"
+    "mk-source-am-kalajian-chaimen-spice"
   ],
   "checkedAt": "2026-10-23",
-  "sourceReview": "research/meinkraut/2026-10-23-block-d/validation.json"
+  "sourceReview": "research/meinkraut/2026-10-23-block-e/validation.json"
 }
