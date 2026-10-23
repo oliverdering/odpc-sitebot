@@ -1,18 +1,18 @@
 {
-  "version": "3.0.11",
-  "baselineRevision": "1f722222a9769f678235e8dc464e1c74c59f64aa",
+  "version": "3.0.12",
+  "baselineRevision": "925fcdb5ad2cdb9a9a666dd6c4a0206eaa3ab440",
   "expectedBaseline": {
-    "ingredients": 297,
-    "recipes": 656
-  },
-  "expectedTarget": {
     "ingredients": 297,
     "recipes": 657
   },
+  "expectedTarget": {
+    "ingredients": 297,
+    "recipes": 658
+  },
   "addedIngredients": [],
   "addedRecipes": [
-    "mk-source-fi-mkn-piparkakkumauste"
+    "mk-source-no-beeco-pepperkakekrydder"
   ],
   "checkedAt": "2026-10-23",
-  "sourceReview": "research/meinkraut/2026-10-23-block-a/validation.json"
+  "sourceReview": "research/meinkraut/2026-10-23-block-b/validation.json"
 }
