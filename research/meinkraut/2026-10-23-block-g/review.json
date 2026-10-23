@@ -1,0 +1,13 @@
+{
+  "checkedAt":"2026-10-23",
+  "productionImport":false,
+  "status":"PASS_STAGING_WITH_IMPORT_BLOCKS",
+  "candidateId":"mk-research-20261023-al-tresova-tarator",
+  "dataCommit":"bc95385f0cecbe75fbb3422af7ae6489c8d69f01",
+  "validation":{"runId":39909745514,"url":"https://github.com/oliverdering/odpc-sitebot/actions/runs/39909745514","conclusion":"success","checks":["research packages","JavaScript application","PHP routes","catalog transactions","source attribution","sitemap"]},
+  "sourceReview":{"originalRecipeRead":true,"authorContextRead":true,"oilTotal":"unresolved","vinegarDetails":"unresolved","garlicCloveDisplay":"blocked before import","knownAllergens":["Milch"],"allergenAssessmentComplete":false},
+  "catalogObservation":{"healthURL":"https://meinkraut.odpc.de/health.php","publicDataURL":"https://meinkraut.odpc.de/data.php","catalog":"database","version":"3.0.15","ingredients":299,"recipes":661,"country":"AL","liveCountryRecipes":3,"liveCountryDryMixes":0,"candidateImported":false},
+  "dailyCandidateCountIncludingOpenBranches":7,
+  "nextSteps":["Resolve oil allocation without guessing","Represent garlic cloves explicitly in recipe UI and scaling","Resolve vinegar identity and product allergen assessment"],
+  "readyForImport":false
+}
