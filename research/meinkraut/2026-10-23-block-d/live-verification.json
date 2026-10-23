@@ -1,0 +1,97 @@
+{
+  "checkedAt": "2026-10-23",
+  "dateTimezone": "Europe/Berlin",
+  "status": "PASS_LIVE",
+  "version": "3.0.13",
+  "catalog": "database",
+  "ingredients": 297,
+  "recipes": 659,
+  "importedRecipeId": "mk-source-is-eatrvk-grill-seasoning",
+  "deployment": {
+    "runId": 39897053431,
+    "url": "https://github.com/oliverdering/odpc-sitebot/actions/runs/39897053431",
+    "commit": "83d8b7959aaad8e68b510738ec180e3f33bb97a9",
+    "conclusion": "success",
+    "catalogActivation": "success"
+  },
+  "validation": {
+    "runId": 39897010125,
+    "url": "https://github.com/oliverdering/odpc-sitebot/actions/runs/39897010125",
+    "commit": "121832ac5161435249110cc9fc42a2d1e7097aa3",
+    "conclusion": "success"
+  },
+  "checks": {
+    "health": {
+      "url": "https://meinkraut.odpc.de/health.php",
+      "http": 200
+    },
+    "recipe": {
+      "url": "https://meinkraut.odpc.de/mischung/mk-source-is-eatrvk-grill-seasoning/",
+      "http": 200
+    },
+    "country": {
+      "url": "https://meinkraut.odpc.de/land/IS/",
+      "http": 200
+    },
+    "data": {
+      "url": "https://meinkraut.odpc.de/data.php",
+      "http": 200
+    },
+    "sitemap": {
+      "url": "https://meinkraut.odpc.de/sitemap.xml",
+      "http": 200
+    }
+  },
+  "sourceAttribution": true,
+  "notTastedLabel": true,
+  "originalFractionsVisible": true,
+  "unconvertedCupNoteVisible": true,
+  "publicDataRecipeExactMatch": true,
+  "liveCountryCounts": {
+    "IS": {
+      "recipes": 4,
+      "dryMixes": 1
+    }
+  },
+  "sitemapUniqueURLs": 1009,
+  "shopMode": "test",
+  "checkoutEnabled": false,
+  "originalQuantities": [
+    {
+      "ingredient": "salz",
+      "amount": 0.3333333333333333,
+      "unit": "Tasse"
+    },
+    {
+      "ingredient": "brauner-zucker",
+      "amount": 0.25,
+      "unit": "Tasse"
+    },
+    {
+      "ingredient": "rauchpaprika",
+      "amount": 0.25,
+      "unit": "Tasse"
+    },
+    {
+      "ingredient": "schwarzer-pfeffer",
+      "amount": 2,
+      "unit": "EL"
+    },
+    {
+      "ingredient": "oregano",
+      "amount": 2,
+      "unit": "EL"
+    },
+    {
+      "ingredient": "thymian",
+      "amount": 2,
+      "unit": "EL"
+    },
+    {
+      "ingredient": "cayennepfeffer",
+      "amount": 1,
+      "unit": "EL"
+    }
+  ],
+  "quantityBasis": "Originale Tassen- und EL-Mengen; Tassenvolumen nicht definiert, keine Grammumrechnung"
+}

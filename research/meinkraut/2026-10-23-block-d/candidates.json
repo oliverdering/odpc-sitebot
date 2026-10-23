@@ -6,40 +6,125 @@
   "dailyCandidateCountIncludingOpenBranches": 4,
   "dailyCountNote": "FI und NO auf main; SI nur im offenen Entwurfs-PR 10; dieser IS-Kandidat ist Nummer vier.",
   "ingredientProposals": [],
-  "candidates": [{
-    "id": "mk-research-20261023-is-eatrvk-grill-seasoning",
-    "name": "Grillmischung – EatRVK-Autorenvariante",
-    "kind": "Trockenmischung",
-    "countries": ["IS"],
-    "region": "Veröffentlichte Autorenvariante aus Reykjavík; kein traditioneller Nationalstandard",
-    "description": "Salzig-süße Grillwürze mit Paprika, Pfeffer und getrockneten Kräutern.",
-    "editorialType": "Veröffentlichte Autorenvariante",
-    "reviewStatus": "Originalquelle, Zutatenformen, Mengen, Herkunftskontext und Allergene am 23.10.2026 geprüft; noch nicht verkostet.",
-    "ingredients": [
-      {"sourceName":"gott salt","ingredient":"salz","amount":0.3333333333333333,"unit":"Tasse","sourceFraction":"1/3","sourceUnit":"bolli","preparation":"Dieselbe Tasse für alle Tassenmengen verwenden; Quellvolumen nicht definiert."},
-      {"sourceName":"púðursykur","ingredient":"brauner-zucker","amount":0.25,"unit":"Tasse","sourceFraction":"1/4","sourceUnit":"bolli","preparation":"Brauner Zucker; dieselbe Tasse wie beim Salz verwenden."},
-      {"sourceName":"papríka, reykt papríkuduft empfohlen","ingredient":"rauchpaprika","amount":0.25,"unit":"Tasse","sourceFraction":"1/4","sourceUnit":"bolli","preparation":"Die von der Autorin empfohlene geräucherte Paprikapulver-Variante ausgewählt."},
-      {"sourceName":"mulinn svartur pipar","ingredient":"schwarzer-pfeffer","amount":2,"unit":"EL","preparation":"Schwarzen Pfeffer vor dem Abmessen mahlen oder zerstoßen."},
-      {"sourceName":"þurrkað oregano","ingredient":"oregano","amount":2,"unit":"EL","preparation":"Getrocknet."},
-      {"sourceName":"þurrkað timían","ingredient":"thymian","amount":2,"unit":"EL","preparation":"Getrocknet."},
-      {"sourceName":"cayenne pipar","ingredient":"cayennepfeffer","amount":1,"unit":"EL","preparation":"Gemahlenes Cayennepulver."}
-    ],
-    "methodSteps": ["Mit derselben Tasse 1/3 Salz sowie je 1/4 braunen Zucker und Rauchpaprika abmessen; die EL-Zutaten separat abmessen.","Schwarzen Pfeffer vor dem Abmessen mahlen oder zerstoßen. Sämtliche trockenen Zutaten gründlich vermischen.","In einen sauberen, trockenen und dicht schließenden Behälter füllen."],
-    "application": "Als Würze für Grillgerichte nach Geschmack; keine unbelegte Dosierung pro Kilogramm ergänzt.",
-    "serving": "Originalansatz: 1/3 Tasse Salz, je 1/4 Tasse brauner Zucker und Paprikapulver, je 2 EL schwarzer Pfeffer, Oregano und Thymian sowie 1 EL Cayenne. Tasse entspricht dem Quellwort bolli; das Volumen ist nicht definiert. Keine Umrechnung in ml oder g; gerundete Dezimalanzeige bei 1/3 beachten.",
-    "massBasis": "Originale Tassen- und EL-Mengen; Tassenvolumen nicht definiert, keine Grammumrechnung",
-    "normalization100g": null,
-    "allergenAssessment": {"known":[],"complete":true,"note":"Aus den sieben reinen Zutaten keines der 14 benannten Allergene abgeleitet. Produktetiketten und Spuren separat prüfen; keine Allergenfrei-Garantie."},
-    "storageNotes": ["Dicht verschlossen und trocken aufbewahren. Keine eigene Haltbarkeitsfrist oder zugesicherte Lagerdauer übernommen."],
-    "sources": [
-      {"title":"Leyndarmál grillarans","url":"https://www.eatrvk.is/2016/07/leyndarmal-grillarans/","author":"Linda Björk Ingimarsdóttir / EatRVK","publishedAt":"2016-07-15","accessedAt":"2026-10-23","primarySource":true,"contentChecked":true,"license":"Sachliche Mengen und eigene deutsche Kurzfassung; keine Bilder oder Werbetexte übernommen."},
-      {"title":"Um EatRVK","url":"https://www.eatrvk.is/um-eatrvk/","author":"EatRVK","publishedAt":"2015-10-05","accessedAt":"2026-10-23","primarySource":true,"contentChecked":true,"evidenceScope":"Herausgeberinnen wohnen in Reykjavík; Rezeptautorin auf derselben Seite vorgestellt."}
-    ],
-    "countryEvidence": "Die eigene Über-uns-Seite nennt Reykjavík als Wohnort der drei Herausgeberinnen und stellt Rezeptautorin Linda Björk Ingimarsdóttir vor. Zuordnung als lokale Autorenveröffentlichung, keine traditionelle isländische Standardrezeptur.",
-    "scopeNotes": ["Rauchpaprika ist eine Empfehlung der Originalautorin; diese empfohlene Ausführung wird ausgewählt.","Tasse bleibt eine Quellmengeneinheit ohne behauptetes ml-Volumen. Mischküche und Gramm-Nachfüllberechnung sind für diesen Ansatz gesperrt.","Keine Gesundheits-/Zusatzstoffbehauptungen oder Lagerdauer der Quelle übernommen."],
-    "readyForImport": true,
-    "openIssues": [],
-    "importStatus": "bundled_pending_database_activation",
-    "bundledRecipeId": "mk-source-is-eatrvk-grill-seasoning"
-  }]
+  "candidates": [
+    {
+      "id": "mk-research-20261023-is-eatrvk-grill-seasoning",
+      "name": "Grillmischung – EatRVK-Autorenvariante",
+      "kind": "Trockenmischung",
+      "countries": [
+        "IS"
+      ],
+      "region": "Veröffentlichte Autorenvariante aus Reykjavík; kein traditioneller Nationalstandard",
+      "description": "Salzig-süße Grillwürze mit Paprika, Pfeffer und getrockneten Kräutern.",
+      "editorialType": "Veröffentlichte Autorenvariante",
+      "reviewStatus": "Originalquelle, Zutatenformen, Mengen, Herkunftskontext und Allergene am 23.10.2026 geprüft; noch nicht verkostet.",
+      "ingredients": [
+        {
+          "sourceName": "gott salt",
+          "ingredient": "salz",
+          "amount": 0.3333333333333333,
+          "unit": "Tasse",
+          "sourceFraction": "1/3",
+          "sourceUnit": "bolli",
+          "preparation": "Dieselbe Tasse für alle Tassenmengen verwenden; Quellvolumen nicht definiert."
+        },
+        {
+          "sourceName": "púðursykur",
+          "ingredient": "brauner-zucker",
+          "amount": 0.25,
+          "unit": "Tasse",
+          "sourceFraction": "1/4",
+          "sourceUnit": "bolli",
+          "preparation": "Brauner Zucker; dieselbe Tasse wie beim Salz verwenden."
+        },
+        {
+          "sourceName": "papríka, reykt papríkuduft empfohlen",
+          "ingredient": "rauchpaprika",
+          "amount": 0.25,
+          "unit": "Tasse",
+          "sourceFraction": "1/4",
+          "sourceUnit": "bolli",
+          "preparation": "Die von der Autorin empfohlene geräucherte Paprikapulver-Variante ausgewählt."
+        },
+        {
+          "sourceName": "mulinn svartur pipar",
+          "ingredient": "schwarzer-pfeffer",
+          "amount": 2,
+          "unit": "EL",
+          "preparation": "Schwarzen Pfeffer vor dem Abmessen mahlen oder zerstoßen."
+        },
+        {
+          "sourceName": "þurrkað oregano",
+          "ingredient": "oregano",
+          "amount": 2,
+          "unit": "EL",
+          "preparation": "Getrocknet."
+        },
+        {
+          "sourceName": "þurrkað timían",
+          "ingredient": "thymian",
+          "amount": 2,
+          "unit": "EL",
+          "preparation": "Getrocknet."
+        },
+        {
+          "sourceName": "cayenne pipar",
+          "ingredient": "cayennepfeffer",
+          "amount": 1,
+          "unit": "EL",
+          "preparation": "Gemahlenes Cayennepulver."
+        }
+      ],
+      "methodSteps": [
+        "Mit derselben Tasse 1/3 Salz sowie je 1/4 braunen Zucker und Rauchpaprika abmessen; die EL-Zutaten separat abmessen.",
+        "Schwarzen Pfeffer vor dem Abmessen mahlen oder zerstoßen. Sämtliche trockenen Zutaten gründlich vermischen.",
+        "In einen sauberen, trockenen und dicht schließenden Behälter füllen."
+      ],
+      "application": "Als Würze für Grillgerichte nach Geschmack; keine unbelegte Dosierung pro Kilogramm ergänzt.",
+      "serving": "Originalansatz: 1/3 Tasse Salz, je 1/4 Tasse brauner Zucker und Paprikapulver, je 2 EL schwarzer Pfeffer, Oregano und Thymian sowie 1 EL Cayenne. Tasse entspricht dem Quellwort bolli; das Volumen ist nicht definiert. Keine Umrechnung in ml oder g; gerundete Dezimalanzeige bei 1/3 beachten.",
+      "massBasis": "Originale Tassen- und EL-Mengen; Tassenvolumen nicht definiert, keine Grammumrechnung",
+      "normalization100g": null,
+      "allergenAssessment": {
+        "known": [],
+        "complete": true,
+        "note": "Aus den sieben reinen Zutaten keines der 14 benannten Allergene abgeleitet. Produktetiketten und Spuren separat prüfen; keine Allergenfrei-Garantie."
+      },
+      "storageNotes": [
+        "Dicht verschlossen und trocken aufbewahren. Keine eigene Haltbarkeitsfrist oder zugesicherte Lagerdauer übernommen."
+      ],
+      "sources": [
+        {
+          "title": "Leyndarmál grillarans",
+          "url": "https://www.eatrvk.is/2016/07/leyndarmal-grillarans/",
+          "author": "Linda Björk Ingimarsdóttir / EatRVK",
+          "publishedAt": "2016-07-15",
+          "accessedAt": "2026-10-23",
+          "primarySource": true,
+          "contentChecked": true,
+          "license": "Sachliche Mengen und eigene deutsche Kurzfassung; keine Bilder oder Werbetexte übernommen."
+        },
+        {
+          "title": "Um EatRVK",
+          "url": "https://www.eatrvk.is/um-eatrvk/",
+          "author": "EatRVK",
+          "publishedAt": "2015-10-05",
+          "accessedAt": "2026-10-23",
+          "primarySource": true,
+          "contentChecked": true,
+          "evidenceScope": "Herausgeberinnen wohnen in Reykjavík; Rezeptautorin auf derselben Seite vorgestellt."
+        }
+      ],
+      "countryEvidence": "Die eigene Über-uns-Seite nennt Reykjavík als Wohnort der drei Herausgeberinnen und stellt Rezeptautorin Linda Björk Ingimarsdóttir vor. Zuordnung als lokale Autorenveröffentlichung, keine traditionelle isländische Standardrezeptur.",
+      "scopeNotes": [
+        "Rauchpaprika ist eine Empfehlung der Originalautorin; diese empfohlene Ausführung wird ausgewählt.",
+        "Tasse bleibt eine Quellmengeneinheit ohne behauptetes ml-Volumen. Mischküche und Gramm-Nachfüllberechnung sind für diesen Ansatz gesperrt.",
+        "Keine Gesundheits-/Zusatzstoffbehauptungen oder Lagerdauer der Quelle übernommen."
+      ],
+      "readyForImport": false,
+      "openIssues": [],
+      "importStatus": "live_verified",
+      "bundledRecipeId": "mk-source-is-eatrvk-grill-seasoning",
+      "importedRecipeId": "mk-source-is-eatrvk-grill-seasoning"
+    }
+  ]
 }
