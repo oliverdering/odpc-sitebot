@@ -1,0 +1,91 @@
+{
+  "checkedAt": "2026-10-23",
+  "dateTimezone": "Europe/Berlin",
+  "status": "PASS_LIVE",
+  "version": "3.0.15",
+  "catalog": "database",
+  "ingredients": 299,
+  "recipes": 661,
+  "importedRecipeId": "mk-source-hr-bilicic-all-purpose",
+  "addedIngredientId": "zwiebelpulver",
+  "deployment": {
+    "runId": 39908702885,
+    "url": "https://github.com/oliverdering/odpc-sitebot/actions/runs/39908702885",
+    "commit": "6ed337d94a2bb7b2cf11622d33ab960bff2dec5a",
+    "conclusion": "success",
+    "catalogActivation": "success"
+  },
+  "validation": {
+    "runId": 39908627144,
+    "url": "https://github.com/oliverdering/odpc-sitebot/actions/runs/39908627144",
+    "commit": "9e462c1e87f7dc018bd8d0c318d87e7419e627b1",
+    "conclusion": "success"
+  },
+  "checks": {
+    "health": {
+      "url": "https://meinkraut.odpc.de/health.php",
+      "http": 200
+    },
+    "recipe": {
+      "url": "https://meinkraut.odpc.de/mischung/mk-source-hr-bilicic-all-purpose/",
+      "http": 200
+    },
+    "country": {
+      "url": "https://meinkraut.odpc.de/land/HR/",
+      "http": 200
+    },
+    "ingredient": {
+      "url": "https://meinkraut.odpc.de/gewuerz/zwiebelpulver/",
+      "http": 200
+    },
+    "data": {
+      "url": "https://meinkraut.odpc.de/data.php",
+      "http": 200
+    },
+    "sitemap": {
+      "url": "https://meinkraut.odpc.de/sitemap.xml",
+      "http": 200
+    }
+  },
+  "sourceAttribution": true,
+  "notTastedLabel": true,
+  "selectedSourceOptionVisible": true,
+  "publicDataRecipeExactMatch": true,
+  "liveCountryCounts": {
+    "HR": {
+      "recipes": 4,
+      "dryMixes": 1
+    }
+  },
+  "sitemapUniqueURLs": 1013,
+  "shopMode": "test",
+  "checkoutEnabled": false,
+  "originalQuantities": [
+    {
+      "ingredient": "zwiebelpulver",
+      "amount": 4,
+      "unit": "EL"
+    },
+    {
+      "ingredient": "knoblauchpulver",
+      "amount": 4,
+      "unit": "EL"
+    },
+    {
+      "ingredient": "schwarzer-pfeffer",
+      "amount": 3,
+      "unit": "EL"
+    },
+    {
+      "ingredient": "petersilie",
+      "amount": 2,
+      "unit": "EL"
+    },
+    {
+      "ingredient": "paprika-edelsu",
+      "amount": 2,
+      "unit": "EL"
+    }
+  ],
+  "quantityBasis": "Originale EL-Mengen; Pulver und trockene Kräuter in der angegebenen Form abmessen"
+}
