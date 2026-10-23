@@ -1,18 +1,18 @@
 {
-  "version": "3.0.16",
-  "baselineRevision": "a93c42b54346f7e4188c1031d05dfb0a66fa5668",
+  "version": "3.0.17",
+  "baselineRevision": "b9b7a2b356f5775e7052b243fb588ff9d4e12b4f",
   "expectedBaseline": {
-    "ingredients": 299,
-    "recipes": 661
-  },
-  "expectedTarget": {
     "ingredients": 299,
     "recipes": 662
   },
+  "expectedTarget": {
+    "ingredients": 299,
+    "recipes": 663
+  },
   "addedIngredients": [],
   "addedRecipes": [
-    "mk-source-be-libelle-speculaas"
+    "mk-source-maghreb-ileauxepices-ras-el-hanout"
   ],
   "checkedAt": "2026-10-23",
-  "sourceReview": "research/meinkraut/2026-10-23-block-h/validation.json"
+  "sourceReview": "research/meinkraut/2026-10-23-block-i/validation.json"
 }
