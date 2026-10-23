@@ -4,12 +4,12 @@
   "candidateCount": 1,
   "createdToday": 2,
   "errors": [],
-  "blockedFromImport": [],
+  "blockedFromImport": [{"id":"mk-research-20261023-no-beeco-pepperkakekrydder","unmapped":[],"issues":[],"reason":"already_imported"}],
   "duplicateReview": {"activeRecipesChecked":657,"matchingSource":[],"matchingVolumeProfile":[]},
   "ingredientReview": {"activeIngredientsChecked":297,"unmapped":[],"newIngredients":[]},
   "quantityReview": {"originalUnit":"EL","sum":6,"gramsConverted":false},
   "countryReview": {"NO":{"recipesBefore":3,"dryMixesBefore":0,"evidence":"Originalseite des Herausgebers benennt eigene Tätigkeit in Norwegen; veröffentlichte Anbietervariante."}},
-  "importStatus": "bundled_pending_live_verification",
+  "importStatus": "live_verified",
   "targetVersion": "3.0.12",
   "expectedTarget": {"ingredients":297,"recipes":658}
 }

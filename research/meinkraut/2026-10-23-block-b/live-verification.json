@@ -1,0 +1,48 @@
+{
+  "checkedAt": "2026-10-23",
+  "dateTimezone": "Europe/Berlin",
+  "status": "PASS_LIVE",
+  "version": "3.0.12",
+  "catalog": "database",
+  "ingredients": 297,
+  "recipes": 658,
+  "importedRecipeId": "mk-source-no-beeco-pepperkakekrydder",
+  "deployment": {
+    "runId": 39886364904,
+    "url": "https://github.com/oliverdering/odpc-sitebot/actions/runs/39886364904",
+    "commit": "d3e843eec1ede8dbbfdea8999aecae9abf622cc7",
+    "conclusion": "success",
+    "catalogActivation": "success"
+  },
+  "validation": {
+    "runId": 39886283569,
+    "url": "https://github.com/oliverdering/odpc-sitebot/actions/runs/39886283569",
+    "commit": "9f257b332a88c220801deac0eb1cea2c5c9a946e",
+    "conclusion": "success"
+  },
+  "checks": {
+    "healthURL": "https://meinkraut.odpc.de/health.php",
+    "healthHTTP": 200,
+    "recipeURL": "https://meinkraut.odpc.de/mischung/mk-source-no-beeco-pepperkakekrydder/",
+    "recipeHTTP": 200,
+    "sourceAttribution": true,
+    "notTastedLabel": true,
+    "countryURL": "https://meinkraut.odpc.de/land/NO/",
+    "countryHTTP": 200,
+    "newRecipeLinked": true,
+    "publicDataURL": "https://meinkraut.odpc.de/data.php",
+    "publicDataCatalogHeader": "database",
+    "publicDataOriginalQuantitiesVerified": true,
+    "sitemapUniqueURLs": 1008,
+    "shopMode": "test",
+    "checkoutEnabled": false
+  },
+  "liveCountryCounts": {"NO":{"recipes":4,"dryMixes":1}},
+  "originalQuantities": [
+    {"ingredient":"zimt","amount":3,"unit":"EL"},
+    {"ingredient":"kardamom-gemahlen-unspezifiziert","amount":1,"unit":"EL"},
+    {"ingredient":"ingwer","amount":1,"unit":"EL"},
+    {"ingredient":"gewurznelken","amount":1,"unit":"EL"}
+  ],
+  "quantityBasis": "Originale EL-Mengen; keine Grammumrechnung. Alle Gewürze gemahlen abmessen."
+}
