@@ -15,13 +15,20 @@ $pdo->exec("CREATE TABLE mk_shop_state(id INTEGER PRIMARY KEY,payload TEXT); INS
 $key=mk_release_key($q['baselineAtlas'],$q['baselineExtra']);$st=$pdo->prepare('INSERT INTO mk_releases VALUES(?,?,1,?,?)');$st->execute([$key,$q['baselineExtra']['version'],json_encode($q['baselineAtlas']),json_encode($q['baselineExtra'])]);
 $plan=mk_catalog_release($pdo,$q);mk_release_check($plan['status']==='planned','plan_failed');
 mk_release_check((int)$pdo->query('SELECT COUNT(*) FROM mk_releases')->fetchColumn()===1,'plan_mutated');
-foreach(['changed_baseline','changed_existing','unknown_reference','missing_allergen','wrong_expected_key'] as $probe){
+foreach(['changed_baseline','changed_existing','unknown_reference','missing_allergen','invalid_unit','wrong_expected_key'] as $probe){
     $bad=$q;$bad['action']='activate';$bad['expectedKey']=$key;
     if($probe==='changed_baseline')$bad['baselineExtra']['version']='wrong';
     if($probe==='changed_existing')$bad['atlas']['ingredients'][0]['name']='changed';
     if($probe==='unknown_reference')$bad['atlas']['recipes'][count($bad['atlas']['recipes'])-1]['ingredients'][0]['ingredient']='unknown';
     if($probe==='missing_allergen'){$last=count($bad['atlas']['recipes'])-1;$bad['atlas']['recipes'][$last]['ingredients'][0]['ingredient']='senfkorner';$bad['atlas']['recipes'][$last]['allergens']=[];}
     if($probe==='wrong_expected_key')$bad['expectedKey']=str_repeat('0',64);
+    if($probe==='invalid_unit'){
+        foreach(['atlas'=>'recipes','extra'=>'mixes'] as $collection=>$field){
+            foreach($bad[$collection][$field] as &$recipe){
+                if(in_array($recipe['id'],$m['addedRecipes'],true))$recipe['ingredients'][0]['unit']='undefined-unit';
+            }unset($recipe);
+        }
+    }
     $rejected=false;try{mk_catalog_release($pdo,$bad);}catch(Throwable $e){$rejected=true;}mk_release_check($rejected,$probe.'_accepted');
     mk_release_check($pdo->query('SELECT release_key FROM mk_releases WHERE active=1')->fetchColumn()===$key,'failed_request_changed_release');
 }

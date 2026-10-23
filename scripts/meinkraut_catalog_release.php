@@ -38,7 +38,7 @@ function mk_release_validate(array $q): void {
         mk_release_check(!empty($r['countries']),'missing_country');
         foreach($r['sources'] as $s)mk_release_check(str_starts_with($s['url']??'','https://')&&!empty($s['author'])&&!empty($s['contentChecked'])&&!empty($s['primarySource']),'invalid_source');
         $allergens=[];foreach($r['ingredients'] as $p){
-            mk_release_check(in_array($p['unit'],['g','TL','EL','ml','Stück'],true),'invalid_unit');
+            mk_release_check(in_array($p['unit'],['g','TL','EL','ml','Stück','Tasse'],true),'invalid_unit');
             foreach($ingredients[$p['ingredient']]['allergens']??[] as $v)$allergens[$v]=true;
             if(in_array($p['ingredient'],['senfkorner','senfsaat-schwarz','senfsaat-gelb','senfpulver'],true))$allergens['Senf']=true;
         }
