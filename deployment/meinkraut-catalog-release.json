@@ -1,20 +1,20 @@
 {
-  "version": "3.0.14",
-  "baselineRevision": "3e3528400d9bdf5e119f25869505a6f3d5a9cd10",
+  "version": "3.0.15",
+  "baselineRevision": "22835be94c4e490f465e10c6c7a8215183da1036",
   "expectedBaseline": {
-    "ingredients": 297,
-    "recipes": 659
-  },
-  "expectedTarget": {
     "ingredients": 298,
     "recipes": 660
   },
+  "expectedTarget": {
+    "ingredients": 299,
+    "recipes": 661
+  },
   "addedIngredients": [
-    "paprika-gemahlen-unspezifiziert"
+    "zwiebelpulver"
   ],
   "addedRecipes": [
-    "mk-source-am-kalajian-chaimen-spice"
+    "mk-source-hr-bilicic-all-purpose"
   ],
   "checkedAt": "2026-10-23",
-  "sourceReview": "research/meinkraut/2026-10-23-block-e/validation.json"
+  "sourceReview": "research/meinkraut/2026-10-23-block-f/validation.json"
 }
