@@ -1,0 +1,31 @@
+{
+  "status": "PASS_STAGING",
+  "productionImport": false,
+  "candidateCount": 1,
+  "createdToday": 8,
+  "errors": [],
+  "blockedFromImport": [
+    {
+      "id": "mk-research-20261023-lu-vegelizious-mustard-sauce",
+      "unmapped": [
+        "lait",
+        "Moutarde original",
+        "Moutarde à l’ancienne",
+        "poivre"
+      ],
+      "issues": [
+        "Passende Zutatenidentitäten für Milch und beide Hersteller-Senfe prüfen und freigeben.",
+        "Qualitative Mengen benötigen vor Import eine geprüfte Darstellung, Skalierung und Deklaration im produktiven Datenmodell; keine Null- oder Schätzwerte einsetzen.",
+        "Pfefferart im Original unbestimmt; generische Abbildung erforderlich.",
+        "Produktspezifische Allergenangaben einschließlich möglicher Sulfite prüfen."
+      ],
+      "reason": "research_pending",
+      "qualitativeIngredients": [
+        "sel",
+        "poivre"
+      ]
+    }
+  ],
+  "createdTodayIncludingOpenBranches": 10,
+  "countScopeNote": "Acht Pakete auf diesem Branch plus je ein Kandidat ausschließlich in Entwurf 10 und 14."
+}

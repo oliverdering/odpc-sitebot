@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "batchId": "oxana-research-2026-10-23-j",
+  "createdAt": "2026-10-23",
+  "productionImport": false,
+  "dailyCandidateCountIncludingOpenBranches": 10,
+  "dailyCountNote": "Sieben heutige Kandidaten live; SI und AL in Entwürfen 10/14; dieser LU-Kandidat ist Nummer zehn. Keine weiteren neuen Kandidaten heute.",
+  "candidates": [
+    {
+      "id": "mk-research-20261023-lu-vegelizious-mustard-sauce",
+      "name": "Senf-Bohnenkraut-Sauce – Vegelizious / Moutarderie de Luxembourg",
+      "kind": "Frische Senfsauce / Kochsauce",
+      "countries": [
+        "LU"
+      ],
+      "region": "Veröffentlichte luxemburgische Autorenvariante zu Kniddelen",
+      "description": "Milch-Senfsauce mit zwei unterschiedlichen Luxemburger Senfprodukten und getrocknetem Bohnenkraut.",
+      "editorialType": "Veröffentlichte Autorenvariante; noch nicht importfreigegeben",
+      "reviewStatus": "Originalrezept und Hersteller-Zutatenlisten am 23.10.2026 gelesen. Zutatenabbildung und qualitative Mengen noch offen; noch nicht verkostet.",
+      "ingredients": [
+        {
+          "sourceName": "lait",
+          "ingredient": null,
+          "amount": 325,
+          "unit": "ml",
+          "mappingIssue": "Im geprüften Atlas keine passende allgemeine Milchzutat vorhanden; Tierart und Fettgehalt im Rezept nicht angegeben. Keine Gleichsetzung mit Sahne, Joghurt oder Kokosmilch."
+        },
+        {
+          "sourceName": "Moutarde original",
+          "ingredient": null,
+          "amount": 90,
+          "unit": "g",
+          "mappingIssue": "Konkretes Herstellerprodukt fehlt im Atlas; weder Dijon noch mittelscharfer Senf ist quellenbelegt gleichwertig."
+        },
+        {
+          "sourceName": "Moutarde à l’ancienne",
+          "ingredient": null,
+          "amount": 15,
+          "unit": "g",
+          "mappingIssue": "Getrenntes körniges Herstellerprodukt mit Wein laut Zutatenliste; eigener Produktbezug fehlt im Atlas."
+        },
+        {
+          "sourceName": "sarriette",
+          "ingredient": "bohnenkraut",
+          "amount": 1,
+          "unit": "TL",
+          "preparation": "Getrocknet; ausdrücklich im Zubereitungsschritt beschrieben."
+        }
+      ],
+      "qualitativeIngredients": [
+        {
+          "sourceName": "sel",
+          "ingredient": "salz",
+          "amount": null,
+          "unit": null,
+          "quantityMode": "to_taste",
+          "sourceQuantity": "assaisonner avec du sel et du poivre",
+          "note": "Zum Abschmecken, keine numerische Menge genannt."
+        },
+        {
+          "sourceName": "poivre",
+          "ingredient": null,
+          "amount": null,
+          "unit": null,
+          "quantityMode": "to_taste",
+          "sourceQuantity": "assaisonner avec du sel et du poivre",
+          "mappingIssue": "Pfefferart nicht spezifiziert; nicht ungeprüft schwarzem oder weißem Pfeffer zugeordnet."
+        }
+      ],
+      "methodSteps": [
+        "Milch und die beiden Senfprodukte verrühren und in einem Topf bei geringer Hitze erwärmen.",
+        "Getrocknetes Bohnenkraut einrühren; die Quelle nennt außerdem Salz und Pfeffer zum Abschmecken ohne Mengen.",
+        "Die Quelle lässt anschließend separat gekochte Kniddelen fünf Minuten in der Sauce ziehen. Diese Sauce ist als eigener Abschnitt erfasst; kein Kniddelen-Teig mitimportiert."
+      ],
+      "application": "Frische Kochsauce zu separat zubereiteten Kniddelen; Quellvariante noch nicht freigegeben.",
+      "serving": "Sauce für den veröffentlichten Ansatz zu zwei bis drei Portionen Kniddelen. Keine Gramm- oder Flüssigkeitsausbeute berechnet.",
+      "massBasis": "Original: 325 ml Milch, 90 g Original-Senf, 15 g à-l’ancienne-Senf, 1 TL getrocknetes Bohnenkraut; Salz/Pfeffer ohne numerische Menge",
+      "normalization100g": null,
+      "allergenAssessment": {
+        "known": [
+          "Milch",
+          "Senf"
+        ],
+        "complete": false,
+        "note": "Milch aus lait, Senf aus den beiden Herstellerprodukten. Wein ist beim körnigen Senf genannt; Sulfitgehalt und vollständige produktspezifische Allergendeklaration sind nicht belegt. Keine Sulfitfreiheit behauptet. Weizen/Ei des getrennten Kniddelen-Teigs gehören nicht in diese Sauce."
+      },
+      "storageNotes": [
+        "Frische milchhaltige Kochsauce; keine Trockenlagerung. Bis zur Verwendung kühlen, keine eigene Haltbarkeitsfrist oder Konservierungsmethode ergänzt."
+      ],
+      "sources": [
+        {
+          "title": "Kniddelen à la sauce moutarde – Abschnitt Sauce moutarde",
+          "url": "https://moutarderie.lu/fr/recettes/kniddelen-a-la-sauce-moutarde/",
+          "author": "Vegelizious / Moutarderie de Luxembourg",
+          "accessedAt": "2026-10-23",
+          "primarySource": true,
+          "contentChecked": true,
+          "evidenceScope": "Eigenständig ausgewiesene Sauce mit vier konkreten Mengen; Schritt 3 nennt zusätzlich Salz und Pfeffer ohne Mengen. Kniddelen-Zutaten werden nicht Bestandteil der Sauce.",
+          "license": "Nur sachliche Mengen und Zutaten; deutsche Kurzfassung eigenständig, keine Bilder oder Artikeltexte übernommen."
+        },
+        {
+          "title": "Notre gamme de moutardes",
+          "url": "https://moutarderie.lu/fr/produits/moutarde/",
+          "author": "Moutarderie de Luxembourg",
+          "accessedAt": "2026-10-23",
+          "primarySource": true,
+          "contentChecked": true,
+          "evidenceScope": "Original und à l’ancienne sind getrennte Herstellerprodukte. Senfsamen in beiden, Wein in à l’ancienne; keine ungeprüfte Gleichsetzung mit Dijon oder mittelscharfem Senf."
+        }
+      ],
+      "countryEvidence": "Originalveröffentlichung der Moutarderie de Luxembourg, ausdrücklich Kniddelen und luxemburgische Senfprodukte; LU als Veröffentlichungs- und Küchenbezug, kein verbindlicher Nationalstandard.",
+      "scopeNotes": [
+        "Ausschließlich der im Original getrennte Abschnitt Sauce moutarde, nicht das vollständige Kniddelen-Gericht.",
+        "Hersteller-Senfe bleiben zwei unterschiedliche zusammengesetzte Zutaten; keine erfundene Eigenrezeptur des Produkts.",
+        "Qualitative Mengen sind vollständig als Quellwortlaut erhalten und bleiben von numerisch skalierbaren Zutaten getrennt."
+      ],
+      "readyForImport": false,
+      "openIssues": [
+        "Passende Zutatenidentitäten für Milch und beide Hersteller-Senfe prüfen und freigeben.",
+        "Qualitative Mengen benötigen vor Import eine geprüfte Darstellung, Skalierung und Deklaration im produktiven Datenmodell; keine Null- oder Schätzwerte einsetzen.",
+        "Pfefferart im Original unbestimmt; generische Abbildung erforderlich.",
+        "Produktspezifische Allergenangaben einschließlich möglicher Sulfite prüfen."
+      ],
+      "importStatus": "research_pending"
+    }
+  ]
+}

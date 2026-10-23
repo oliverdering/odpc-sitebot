@@ -82,6 +82,30 @@ def validate(package, atlas, extra):
             else:
                 derived_allergens.update(ingredient_map[iid].get('allergens', []))
                 derived_allergens.update(IDENTITY_ALLERGENS.get(iid, set()))
+        qualitative = record.get('qualitativeIngredients', [])
+        if not isinstance(qualitative, list):
+            errors.append(f'{rid}: qualitativeIngredients must be a list')
+            qualitative = []
+        for part in qualitative:
+            if not isinstance(part, dict):
+                errors.append(f'{rid}: qualitative ingredient must be an object')
+                continue
+            if not part.get('sourceName') or not part.get('sourceQuantity') or part.get('quantityMode') not in {'to_taste', 'as_needed', 'unspecified'}:
+                errors.append(f'{rid}: qualitative ingredient needs original quantity wording and mode')
+            if part.get('amount') is not None or part.get('unit') is not None:
+                errors.append(f'{rid}: qualitative quantity must not invent a numeric amount or unit')
+            iid = part.get('ingredient')
+            if iid is None:
+                if not part.get('mappingIssue'):
+                    errors.append(f'{rid}: unresolved qualitative ingredient needs mappingIssue')
+                unresolved.append(part.get('sourceName'))
+            elif iid not in ingredient_map:
+                errors.append(f'{rid}: unknown qualitative ingredient ID {iid}')
+            else:
+                derived_allergens.update(ingredient_map[iid].get('allergens', []))
+                derived_allergens.update(IDENTITY_ALLERGENS.get(iid, set()))
+        if qualitative and record.get('importStatus') == 'live_verified':
+            errors.append(f'{rid}: qualitative ingredients are research-only until production support is reviewed')
         assessment = record.get('allergenAssessment', {})
         if record.get('importStatus') == 'live_verified':
             imported_id = record.get('importedRecipeId')
@@ -90,7 +114,7 @@ def validate(package, atlas, extra):
         if not derived_allergens.issubset(set(assessment.get('known', []))):
             errors.append(f'{rid}: missing known ingredient allergen(s)')
         norm = record.get('normalization100g')
-        all_grams = bool(record.get('ingredients')) and all(p.get('unit') == 'g' for p in record['ingredients'])
+        all_grams = bool(record.get('ingredients')) and not qualitative and all(p.get('unit') == 'g' for p in record['ingredients'])
         if record.get('batchGrams') is not None:
             if not all_grams or not math.isclose(sum(p['amount'] for p in record['ingredients']), record['batchGrams'], abs_tol=1e-8):
                 errors.append(f'{rid}: batchGrams must equal the selected weighed inputs')
@@ -115,11 +139,13 @@ def validate(package, atlas, extra):
             errors.append(f'{rid}: complete HTTPS source metadata required')
         if not record.get('methodSteps') or not record.get('storageNotes'):
             errors.append(f'{rid}: preparation and storage notes required')
-        if unresolved or record.get('openIssues') or assessment.get('complete') is not True:
+        if unresolved or qualitative or record.get('openIssues') or assessment.get('complete') is not True:
             if record.get('readyForImport') is not False:
                 errors.append(f'{rid}: unresolved research cannot be marked import-ready')
         if record.get('readyForImport') is not True:
             blocked.append({'id': rid, 'unmapped': unresolved, 'issues': record.get('openIssues', []), 'reason': 'already_imported' if record.get('importStatus') == 'live_verified' else 'research_pending'})
+            if qualitative:
+                blocked[-1]['qualitativeIngredients'] = [p.get('sourceName') for p in qualitative if isinstance(p, dict)]
     return errors, blocked
 
 
