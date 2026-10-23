@@ -1,0 +1,29 @@
+{
+  "checkedAt": "2026-10-23",
+  "productionImport": false,
+  "status": "PASS_SOURCE_REVIEW",
+  "candidateId": "mk-research-20261023-is-eatrvk-grill-seasoning",
+  "catalogBaseline": {
+    "commit": "c9cd1d147ac5922c560859dab1075ee7506c4823",
+    "ingredients": 297,
+    "recipes": 658
+  },
+  "sourceRead": true,
+  "countryEvidenceChecked": true,
+  "allergenAssessment": {
+    "known": [],
+    "complete": true,
+    "note": "Aus den sieben reinen Zutaten keines der 14 benannten Allergene abgeleitet. Produktetiketten und Spuren separat prüfen; keine Allergenfrei-Garantie."
+  },
+  "unknownIngredientIds": [],
+  "duplicateReview": {
+    "sameSourceFound": false,
+    "sameIngredientSetRecipeIds": [],
+    "exactUnitProfileFound": false
+  },
+  "quantityBasis": "Originale Tassen und EL; kein ml-Wert für bolli und keine Grammkonvertierung angenommen.",
+  "selectedSourceOption": "Geräuchertes Paprikapulver, wie von der Autorin empfohlen.",
+  "dailyCandidateCountIncludingOpenBranches": 4,
+  "importStatus": "pending_database_activation",
+  "remainingBlockers": []
+}

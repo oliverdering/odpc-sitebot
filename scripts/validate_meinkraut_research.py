@@ -64,7 +64,7 @@ def validate(package, atlas, extra):
             amount = part.get('amount')
             if isinstance(amount, bool) or not isinstance(amount, (int, float)) or not math.isfinite(amount) or amount <= 0:
                 errors.append(f'{rid}: invalid quantity for {part.get("sourceName")}')
-            if part.get('unit') not in {'g', 'TL', 'EL', 'ml', 'Stück'}:
+            if part.get('unit') not in {'g', 'TL', 'EL', 'ml', 'Stück', 'Tasse'}:
                 errors.append(f'{rid}: unsupported or missing unit')
             iid = part.get('ingredient')
             proposed = part.get('proposedIngredient')

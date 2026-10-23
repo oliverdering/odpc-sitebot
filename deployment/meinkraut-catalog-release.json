@@ -1,18 +1,18 @@
 {
-  "version": "3.0.12",
-  "baselineRevision": "925fcdb5ad2cdb9a9a666dd6c4a0206eaa3ab440",
+  "version": "3.0.13",
+  "baselineRevision": "c9cd1d147ac5922c560859dab1075ee7506c4823",
   "expectedBaseline": {
-    "ingredients": 297,
-    "recipes": 657
-  },
-  "expectedTarget": {
     "ingredients": 297,
     "recipes": 658
   },
+  "expectedTarget": {
+    "ingredients": 297,
+    "recipes": 659
+  },
   "addedIngredients": [],
   "addedRecipes": [
-    "mk-source-no-beeco-pepperkakekrydder"
+    "mk-source-is-eatrvk-grill-seasoning"
   ],
   "checkedAt": "2026-10-23",
-  "sourceReview": "research/meinkraut/2026-10-23-block-b/validation.json"
+  "sourceReview": "research/meinkraut/2026-10-23-block-d/validation.json"
 }
