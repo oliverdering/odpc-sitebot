@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 1,
+  "batchId": "oxana-research-2026-10-23-i",
+  "createdAt": "2026-10-23",
+  "productionImport": false,
+  "dailyCandidateCountIncludingOpenBranches": 9,
+  "dailyCountNote": "Sechs heutige Kandidaten live; SI in Entwurf 10 und AL in Entwurf 14. Dieser Maghreb-Kandidat ist Nummer neun.",
+  "candidates": [
+    {
+      "id": "mk-research-20261023-maghreb-ileauxepices-ras-el-hanout",
+      "name": "Ras el Hanout – veröffentlichte L’île-aux-épices-Variante",
+      "kind": "Trockenmischung",
+      "countries": [
+        "DZ",
+        "MA",
+        "TN"
+      ],
+      "region": "Maghreb; vereinfachte veröffentlichte Händlervariante",
+      "description": "Zwölfteilige Gewürzmischung mit Kreuzkümmel, Ingwer, Kurkuma, zwei Pfeffersorten und warmen Gewürzen.",
+      "editorialType": "Veröffentlichte Autorenvariante; sachliche Rezeptdaten, deutsche Kurzfassung eigenständig formuliert",
+      "reviewStatus": "Originalquelle, Mengen, gemahlene Zutatenformen, Länderbezug und Allergene am 23.10.2026 geprüft; noch nicht verkostet.",
+      "ingredients": [
+        {
+          "sourceName": "sel",
+          "ingredient": "salz",
+          "amount": 1,
+          "unit": "TL",
+          "preparation": "Trocken und gemahlen vor dem Abmessen; Salz als Salz abmessen."
+        },
+        {
+          "sourceName": "cumin moulu",
+          "ingredient": "kreuzkummel",
+          "amount": 1,
+          "unit": "TL",
+          "preparation": "Gemahlen vor dem Abmessen; keine gleiche Löffelmenge ganzer Samen oder Körner verwenden."
+        },
+        {
+          "sourceName": "gingembre en poudre",
+          "ingredient": "ingwer",
+          "amount": 1,
+          "unit": "TL",
+          "preparation": "Gemahlen vor dem Abmessen; keine gleiche Löffelmenge ganzer Samen oder Körner verwenden."
+        },
+        {
+          "sourceName": "curcuma en poudre",
+          "ingredient": "kurkuma",
+          "amount": 1,
+          "unit": "TL",
+          "preparation": "Gemahlen vor dem Abmessen; keine gleiche Löffelmenge ganzer Samen oder Körner verwenden."
+        },
+        {
+          "sourceName": "cannelle en poudre",
+          "ingredient": "zimt",
+          "amount": 0.75,
+          "unit": "TL",
+          "preparation": "Gemahlen vor dem Abmessen; keine gleiche Löffelmenge ganzer Samen oder Körner verwenden."
+        },
+        {
+          "sourceName": "poivre noir moulu",
+          "ingredient": "schwarzer-pfeffer",
+          "amount": 0.75,
+          "unit": "TL",
+          "preparation": "Gemahlen vor dem Abmessen; keine gleiche Löffelmenge ganzer Samen oder Körner verwenden."
+        },
+        {
+          "sourceName": "poivre blanc moulu",
+          "ingredient": "weier-pfeffer",
+          "amount": 0.5,
+          "unit": "TL",
+          "preparation": "Gemahlen vor dem Abmessen; keine gleiche Löffelmenge ganzer Samen oder Körner verwenden."
+        },
+        {
+          "sourceName": "coriandre moulue",
+          "ingredient": "koriandersaat",
+          "amount": 0.5,
+          "unit": "TL",
+          "preparation": "Gemahlen vor dem Abmessen; keine gleiche Löffelmenge ganzer Samen oder Körner verwenden."
+        },
+        {
+          "sourceName": "piment de Cayenne",
+          "ingredient": "cayennepfeffer",
+          "amount": 0.5,
+          "unit": "TL",
+          "preparation": "Gemahlen vor dem Abmessen; keine gleiche Löffelmenge ganzer Samen oder Körner verwenden."
+        },
+        {
+          "sourceName": "bois d’Inde (poivre de la Jamaïque)",
+          "ingredient": "piment",
+          "amount": 0.5,
+          "unit": "TL",
+          "preparation": "Gemahlen vor dem Abmessen; keine gleiche Löffelmenge ganzer Samen oder Körner verwenden."
+        },
+        {
+          "sourceName": "muscade en poudre",
+          "ingredient": "muskatnuss",
+          "amount": 0.5,
+          "unit": "TL",
+          "preparation": "Gemahlen vor dem Abmessen; keine gleiche Löffelmenge ganzer Samen oder Körner verwenden."
+        },
+        {
+          "sourceName": "clous de girofle en poudre",
+          "ingredient": "gewurznelken",
+          "amount": 0.25,
+          "unit": "TL",
+          "preparation": "Gemahlen vor dem Abmessen; keine gleiche Löffelmenge ganzer Samen oder Körner verwenden."
+        }
+      ],
+      "methodSteps": [
+        "Alle trockenen Gewürze gemahlen und das Salz in den Original-TL-Mengen abmessen.",
+        "In einer sauberen Gewürzmühle oder einem geeigneten Mixer kurz gleichmäßig vermischen.",
+        "In ein sauberes, trockenes und gut schließendes Gewürzglas füllen."
+      ],
+      "application": "Als Ras-el-Hanout-Würze nach dem jeweiligen Kochrezept verwenden; keine unbelegte Dosierempfehlung pro Kilogramm.",
+      "serving": "Originaler TL-Ansatz für ein Gewürzglas laut Quelle. Keine belegte Grammumrechnung; Dosierung richtet sich nach dem verwendeten Kochrezept.",
+      "massBasis": "Originale TL-Mengen bereits gemahlener Gewürze; keine Volumen-Grammumrechnung",
+      "normalization100g": null,
+      "allergenAssessment": {
+        "known": [],
+        "complete": true,
+        "note": "Nur die zwölf genannten reinen Zutaten bewertet. Produktetiketten und mögliche Spuren separat prüfen; keine Allergenfrei-Garantie."
+      },
+      "storageNotes": [
+        "Trocken, lichtgeschützt und gut verschlossen lagern; Produktetiketten beachten. Keine eigene Haltbarkeitsfrist ergänzt."
+      ],
+      "sources": [
+        {
+          "title": "Ras el hanout maison",
+          "url": "https://ileauxepices.com/blog/2018/11/12/recette-ras-el-hanout-maison-melange-depices-maison/wpid17726/",
+          "author": "Benjamin – L’île aux épices",
+          "publishedAt": "2018-11-12",
+          "updatedAt": "2025-11-17",
+          "accessedAt": "2026-10-23",
+          "primarySource": true,
+          "contentChecked": true,
+          "evidenceScope": "Vollständige Zwölf-Zutaten-Rezeptur in TL, ausdrückliche vereinfachte Variante statt geheimer Handelsrezeptur und Nennung MA/DZ/TN. Autorenantwort vom 19.09.2022 bestätigt das Homogenisieren bereits gemahlener Gewürze.",
+          "license": "Nur sachliche Zutaten, Mengen und Quellenbelege; deutsche Kurzfassung eigenständig formuliert, keine Bilder oder fremden Artikeltexte übernommen."
+        }
+      ],
+      "countryEvidence": "Die Einführung der Originalveröffentlichung nennt ausdrücklich die Küchen Marokkos, Algeriens und Tunesiens. Dies belegt die kulinarische Zuordnung des Mischungstyps, nicht eine einheitliche traditionelle Rezeptur dieser Länder.",
+      "scopeNotes": [
+        "Die Quelle erklärt ausdrücklich, dass die veröffentlichte vereinfachte Variante nicht ihre geheime Handelsrezeptur ist. Kein identischer Marken-Nachbau behauptet.",
+        "Piment wird durch den in der Quelle genannten Jamaikapfeffer eindeutig bezeichnet. Gemahlene Form aus Rezeptkontext und Autorenantwort bestätigt.",
+        "Keine Änderungen aus Leserkommentaren übernommen; insbesondere kein zusätzlicher Paprika, Anis, Fenchel oder Weglassen von Ingwer.",
+        "Keine pauschale Aussage unbegrenzter Haltbarkeit aus den Kommentaren übernommen."
+      ],
+      "readyForImport": true,
+      "openIssues": [],
+      "importStatus": "pending_database_activation",
+      "bundledRecipeId": "mk-source-maghreb-ileauxepices-ras-el-hanout"
+    }
+  ]
+}

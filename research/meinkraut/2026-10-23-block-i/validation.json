@@ -1,0 +1,29 @@
+{
+  "checkedAt": "2026-10-23",
+  "status": "PASS_SOURCE_REVIEW",
+  "productionImport": false,
+  "candidateId": "mk-research-20261023-maghreb-ileauxepices-ras-el-hanout",
+  "catalogBaseline": {
+    "commit": "b9b7a2b356f5775e7052b243fb588ff9d4e12b4f",
+    "ingredients": 299,
+    "recipes": 662
+  },
+  "sourceRead": true,
+  "countryEvidenceChecked": true,
+  "quantityBasis": "Originale TL-Mengen bereits gemahlener Gewürze; keine Volumen-Grammumrechnung",
+  "allergenAssessment": {
+    "known": [],
+    "complete": true,
+    "note": "Nur die zwölf genannten reinen Zutaten bewertet. Produktetiketten und mögliche Spuren separat prüfen; keine Allergenfrei-Garantie."
+  },
+  "unknownIngredientIds": [],
+  "duplicateReview": {
+    "sameSourceFound": false,
+    "sameIngredientSetRecipeIds": [],
+    "closestRelatedRecipeId": "m14",
+    "difference": "Vorhandene Hausmischung enthält neun Zutaten einschließlich Kardamom und andere Verhältnisse. Neue Quellvariante hat zwölf Zutaten einschließlich Salz, weißem Pfeffer, Cayenne und Piment, ohne Kardamom."
+  },
+  "dailyCandidateCountIncludingOpenBranches": 9,
+  "importStatus": "pending_database_activation",
+  "remainingBlockers": []
+}
