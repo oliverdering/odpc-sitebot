@@ -1,20 +1,18 @@
 {
-  "version": "3.0.15",
-  "baselineRevision": "22835be94c4e490f465e10c6c7a8215183da1036",
+  "version": "3.0.16",
+  "baselineRevision": "a93c42b54346f7e4188c1031d05dfb0a66fa5668",
   "expectedBaseline": {
-    "ingredients": 298,
-    "recipes": 660
-  },
-  "expectedTarget": {
     "ingredients": 299,
     "recipes": 661
   },
-  "addedIngredients": [
-    "zwiebelpulver"
-  ],
+  "expectedTarget": {
+    "ingredients": 299,
+    "recipes": 662
+  },
+  "addedIngredients": [],
   "addedRecipes": [
-    "mk-source-hr-bilicic-all-purpose"
+    "mk-source-be-libelle-speculaas"
   ],
   "checkedAt": "2026-10-23",
-  "sourceReview": "research/meinkraut/2026-10-23-block-f/validation.json"
+  "sourceReview": "research/meinkraut/2026-10-23-block-h/validation.json"
 }

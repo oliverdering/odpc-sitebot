@@ -1,0 +1,29 @@
+{
+  "checkedAt": "2026-10-23",
+  "status": "PASS_SOURCE_REVIEW",
+  "productionImport": false,
+  "candidateId": "mk-research-20261023-be-libelle-speculaas",
+  "catalogBaseline": {
+    "commit": "a93c42b54346f7e4188c1031d05dfb0a66fa5668",
+    "ingredients": 299,
+    "recipes": 661
+  },
+  "sourceRead": true,
+  "countryEvidenceChecked": true,
+  "quantityBasis": "Originale Gramm-Einwaage; Summe 17 g. Alle Gewürze gemahlen abwiegen.",
+  "allergenAssessment": {
+    "known": [],
+    "complete": true,
+    "note": "Nur die sieben reinen trockenen Gewürze bewertet. Milch, Ei und Getreide des getrennten Keksrezepts sind nicht Bestandteil der Mischung. Produktetiketten und Spuren separat prüfen; keine Allergenfrei-Garantie."
+  },
+  "unknownIngredientIds": [],
+  "duplicateReview": {
+    "sameSourceFound": false,
+    "sameIngredientSetRecipeIds": [],
+    "closestRecipeId": "mk-source-nl-laura-speculaas",
+    "difference": "NL-Variante hat sechs Zutaten ohne weißen Pfeffer und verwendet EL/TL. BE-Variante hat sieben Zutaten, andere Verhältnisse und durchgehend Original-Gramm-Mengen. Kein Umrechnen oder bloßes Länder-Umetikettieren."
+  },
+  "dailyCandidateCountIncludingOpenBranches": 8,
+  "importStatus": "pending_database_activation",
+  "remainingBlockers": []
+}
