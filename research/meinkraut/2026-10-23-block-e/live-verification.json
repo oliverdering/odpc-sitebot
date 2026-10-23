@@ -1,0 +1,121 @@
+{
+  "checkedAt": "2026-10-23",
+  "dateTimezone": "Europe/Berlin",
+  "status": "PASS_LIVE",
+  "version": "3.0.14",
+  "catalog": "database",
+  "ingredients": 298,
+  "recipes": 660,
+  "importedRecipeId": "mk-source-am-kalajian-chaimen-spice",
+  "addedIngredientId": "paprika-gemahlen-unspezifiziert",
+  "deployment": {
+    "runId": 39901263406,
+    "url": "https://github.com/oliverdering/odpc-sitebot/actions/runs/39901263406",
+    "commit": "07ba0788ffca0adb33256d6417b4ef708ba068c2",
+    "conclusion": "success",
+    "catalogActivation": "success"
+  },
+  "validation": {
+    "runId": 39901208788,
+    "url": "https://github.com/oliverdering/odpc-sitebot/actions/runs/39901208788",
+    "commit": "ead1f45d97d94f7c55734bfbc220288316650b4b",
+    "conclusion": "success"
+  },
+  "checks": {
+    "health": {
+      "url": "https://meinkraut.odpc.de/health.php",
+      "http": 200
+    },
+    "recipe": {
+      "url": "https://meinkraut.odpc.de/mischung/mk-source-am-kalajian-chaimen-spice/",
+      "http": 200
+    },
+    "country": {
+      "url": "https://meinkraut.odpc.de/land/AM/",
+      "http": 200
+    },
+    "ingredient": {
+      "url": "https://meinkraut.odpc.de/gewuerz/paprika-gemahlen-unspezifiziert/",
+      "http": 200
+    },
+    "data": {
+      "url": "https://meinkraut.odpc.de/data.php",
+      "http": 200
+    },
+    "sitemap": {
+      "url": "https://meinkraut.odpc.de/sitemap.xml",
+      "http": 200
+    },
+    "javascript": {
+      "url": "https://meinkraut.odpc.de/meinkraut.js",
+      "http": 200
+    }
+  },
+  "sourceAttribution": true,
+  "notTastedLabel": true,
+  "sourceFractionsVisible": true,
+  "preciseBrowserQuantityCodePublished": true,
+  "publicDataRecipeExactMatch": true,
+  "liveCountryCounts": {
+    "AM": {
+      "recipes": 4,
+      "dryMixes": 1
+    }
+  },
+  "sitemapUniqueURLs": 1011,
+  "shopMode": "test",
+  "checkoutEnabled": false,
+  "originalQuantities": [
+    {
+      "ingredient": "cayennepfeffer",
+      "amount": 0.25,
+      "unit": "TL"
+    },
+    {
+      "ingredient": "paprika-gemahlen-unspezifiziert",
+      "amount": 2,
+      "unit": "EL"
+    },
+    {
+      "ingredient": "bockshornkleesamen",
+      "amount": 1,
+      "unit": "EL"
+    },
+    {
+      "ingredient": "piment",
+      "amount": 1,
+      "unit": "TL"
+    },
+    {
+      "ingredient": "schwarzer-pfeffer",
+      "amount": 0.5,
+      "unit": "TL"
+    },
+    {
+      "ingredient": "kreuzkummel",
+      "amount": 0.5,
+      "unit": "TL"
+    },
+    {
+      "ingredient": "muskatnuss",
+      "amount": 0.125,
+      "unit": "TL"
+    },
+    {
+      "ingredient": "gewurznelken",
+      "amount": 0.125,
+      "unit": "TL"
+    },
+    {
+      "ingredient": "salz",
+      "amount": 0.75,
+      "unit": "TL"
+    },
+    {
+      "ingredient": "knoblauchpulver",
+      "amount": 0.25,
+      "unit": "TL"
+    }
+  ],
+  "quantityBasis": "Originale EL- und TL-Mengen; Gewürze gemahlen abmessen, keine belegte Grammumrechnung"
+}
