@@ -1,0 +1,16 @@
+{
+  "status": "PASS_STAGING",
+  "productionImport": false,
+  "candidateCount": 1,
+  "createdToday": 1,
+  "errors": [],
+  "blockedFromImport": [],
+  "duplicateReview": {"activeRecipesChecked":656,"matchingSource":[],"matchingVolumeProfile":[]},
+  "ingredientReview": {"activeIngredientsChecked":297,"unmapped":[],"newIngredients":[]},
+  "quantityReview": {"originalUnit":"TL","sum":9,"sourceYield":"3 EL","gramsConverted":false},
+  "countryReview": {"FI":{"recipesBefore":3,"dryMixesBefore":0,"evidence":"Finnische Kochschulveröffentlichung, keine nationale Standardrezeptur behauptet."}},
+  "sourceReview": {"originalPDFTextRead":true,"page3ImageRead":true,"foreignImagesCopied":false},
+  "importStatus": "bundled_pending_live_verification",
+  "targetVersion": "3.0.11",
+  "expectedTarget": {"ingredients":297,"recipes":657}
+}

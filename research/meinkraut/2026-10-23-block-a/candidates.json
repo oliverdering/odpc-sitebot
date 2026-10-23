@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "batchId": "oxana-research-2026-10-23-a",
+  "createdAt": "2026-10-23",
+  "productionImport": false,
+  "candidates": [
+    {
+      "id": "mk-research-20261023-fi-mkn-piparkakkumauste",
+      "name": "Piparkakkumauste – MKN-Kochschulvariante",
+      "kind": "Trockenmischung",
+      "countries": ["FI"],
+      "region": "Finnische Kochschulveröffentlichung; Weihnachtsgebäck",
+      "description": "Zimtbetonte Backgewürzmischung mit Ingwer, Nelken und Piment.",
+      "ingredients": [
+        {"sourceName":"kanelia","ingredient":"zimt","amount":6,"unit":"TL","optional":false,"preparation":"Gemahlen abmessen."},
+        {"sourceName":"inkivääriä","ingredient":"ingwer","amount":1.5,"unit":"TL","optional":false,"preparation":"Getrocknet und gemahlen verwenden."},
+        {"sourceName":"neilikkaa","ingredient":"gewurznelken","amount":0.75,"unit":"TL","optional":false,"preparation":"Vor dem Abmessen fein mahlen."},
+        {"sourceName":"jauhettua maustepippuria","ingredient":"piment","amount":0.75,"unit":"TL","optional":false,"preparation":"Vor dem Abmessen fein mahlen; die Quelle fordert gemahlenen Piment."}
+      ],
+      "methodSteps": ["Die trockenen Gewürze fein gemahlen in den angegebenen Löffelmengen abmessen.","Gleichmäßig vermischen."],
+      "application": "Für Piparkakku-Weihnachtsgebäck nach Backrezept.",
+      "serving": "Originalansatz: 9 TL; die Quelle nennt 3 EL. Keine Grammumrechnung.",
+      "allergenAssessment": {"known":[],"complete":true,"note":"Reine Gewürze; Etiketten und Spuren separat prüfen. Keine Allergenfrei-Garantie."},
+      "storageNotes": ["Redaktionell: trocken und verschlossen aufbewahren; keine Haltbarkeitsfrist ergänzt."],
+      "sources": [
+        {"title":"Maa- ja kotitalousnaisten ruokakoulu – Piparkakkumauste itse tehden","url":"https://www.maajakotitalousnaiset.fi/uploads/archive/attachment/piparitalotehdas_mkn_a4_2017.pdf","author":"Asta Asunmaa / Maa- ja kotitalousnaiset","accessedAt":"2026-10-23","primarySource":true,"contentChecked":true,"page":3,"license":"Nur sachliche Mengen und eigenständige deutsche Kurzfassung; keine Bilder übernommen."}
+      ],
+      "editorialType": "Veröffentlichte Kochschulvariante",
+      "reviewStatus": "Original-PDF einschließlich Seitenbild, Mengen, Zuordnungen und Allergene geprüft; noch nicht verkostet.",
+      "countryEvidence": "Veröffentlicht von der finnischen Organisation Maa- ja kotitalousnaiset in ihrer Kochschule. Zuordnung als dort publizierte Variante, kein Anspruch auf eine nationale Standardrezeptur.",
+      "scopeNotes": ["Nur den separat ausgewiesenen Gewürzmix erfasst; der Gebäckteig mit Milch und Mehl gehört nicht dazu.","Feinmahlen vor dem Abmessen und Lagerhinweis sind redaktionelle Präzisierungen. Keine Gleichsetzung von Löffeln ganzer Gewürze mit Löffeln gemahlener Gewürze."],
+      "readyForImport": true,
+      "openIssues": [],
+      "importStatus": "bundled_pending_live_verification",
+      "bundledRecipeId": "mk-source-fi-mkn-piparkakkumauste"
+    }
+  ],
+  "ingredientProposals": []
+}
