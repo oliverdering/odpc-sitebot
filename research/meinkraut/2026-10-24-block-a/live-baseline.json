@@ -1,0 +1,23 @@
+{
+  "checkedAt": "2026-10-23T23:56:20.062451+00:00",
+  "type": "live_baseline_only_no_import",
+  "dataHttp": 200,
+  "catalogHeader": "database",
+  "version": "3.0.17",
+  "recipes": 663,
+  "ingredients": 299,
+  "country": {
+    "code": "MT",
+    "url": "https://meinkraut.odpc.de/land/MT/",
+    "http": 200,
+    "recipeIds": [
+      "atlas6-maltesische-kunserva-tomaten-wuerzsauce",
+      "atlas6-mediterranes-zitronen-kapern-dressing",
+      "c014"
+    ],
+    "recipeCount": 3,
+    "dryMixCount": 0
+  },
+  "newCandidateIsLive": false,
+  "sameSourceAlreadyPresent": false
+}
