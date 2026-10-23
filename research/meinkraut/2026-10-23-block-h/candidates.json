@@ -4,7 +4,7 @@
   "createdAt": "2026-10-23",
   "productionImport": false,
   "dailyCandidateCountIncludingOpenBranches": 8,
-  "dailyCountNote": "Fünf heutige Kandidaten auf main bereits live; SI in Entwurf 10 und AL in Entwurf 14; dieser BE-Kandidat ist Nummer acht.",
+  "dailyCountNote": "FI, NO, IS, AM, HR und BE sind live; SI bleibt in Entwurf 10 und AL in Entwurf 14. Insgesamt acht heutige Kandidaten einschließlich offener Branches.",
   "candidates": [
     {
       "id": "mk-research-20261023-be-libelle-speculaas",
@@ -113,10 +113,11 @@
         "Kardamomart nicht spezifiziert; keine grüne Art oder Kapselhülle hineininterpretiert.",
         "Kein direkter Nachbau einer Handelsmarke. Mengen sind veröffentlichte Gramm-Mengen, keine Schätzung aus einer Hersteller-Zutatenliste."
       ],
-      "readyForImport": true,
+      "readyForImport": false,
       "openIssues": [],
-      "importStatus": "pending_database_activation",
-      "bundledRecipeId": "mk-source-be-libelle-speculaas"
+      "importStatus": "live_verified",
+      "bundledRecipeId": "mk-source-be-libelle-speculaas",
+      "importedRecipeId": "mk-source-be-libelle-speculaas"
     }
   ]
 }

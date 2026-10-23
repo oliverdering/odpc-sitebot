@@ -1,0 +1,97 @@
+{
+  "checkedAt": "2026-10-23",
+  "dateTimezone": "Europe/Berlin",
+  "status": "PASS_LIVE",
+  "version": "3.0.16",
+  "catalog": "database",
+  "ingredients": 299,
+  "recipes": 662,
+  "importedRecipeId": "mk-source-be-libelle-speculaas",
+  "addedIngredientIds": [],
+  "deployment": {
+    "runId": 39915135085,
+    "url": "https://github.com/oliverdering/odpc-sitebot/actions/runs/39915135085",
+    "commit": "f490c07b8dd3f5e54faac5ec84ca9305392c62c5",
+    "catalogActivation": "success",
+    "conclusion": "success"
+  },
+  "validation": {
+    "runId": 39914700231,
+    "url": "https://github.com/oliverdering/odpc-sitebot/actions/runs/39914700231",
+    "commit": "2bdb5bc4a547649d8bf3e8982ba0fd39329aef6a",
+    "conclusion": "success"
+  },
+  "checks": {
+    "health": {
+      "url": "https://meinkraut.odpc.de/health.php",
+      "http": 200
+    },
+    "recipe": {
+      "url": "https://meinkraut.odpc.de/mischung/mk-source-be-libelle-speculaas/",
+      "http": 200
+    },
+    "country": {
+      "url": "https://meinkraut.odpc.de/land/BE/",
+      "http": 200
+    },
+    "data": {
+      "url": "https://meinkraut.odpc.de/data.php",
+      "http": 200
+    },
+    "sitemap": {
+      "url": "https://meinkraut.odpc.de/sitemap.xml",
+      "http": 200
+    }
+  },
+  "sourceAttribution": true,
+  "notTastedLabel": true,
+  "ingredientIcons": {
+    "count": 6,
+    "allHTTP200": true
+  },
+  "countryCounts": {
+    "BE": 4,
+    "dryMixes": 1
+  },
+  "sitemapUniqueURLs": 1014,
+  "originalBatchGrams": 17,
+  "selectedSourceIngredients": [
+    {
+      "ingredient": "zimt",
+      "amount": 8,
+      "unit": "g"
+    },
+    {
+      "ingredient": "muskatnuss",
+      "amount": 2,
+      "unit": "g"
+    },
+    {
+      "ingredient": "gewurznelken",
+      "amount": 2,
+      "unit": "g"
+    },
+    {
+      "ingredient": "macis-gemahlen",
+      "amount": 2,
+      "unit": "g"
+    },
+    {
+      "ingredient": "ingwer",
+      "amount": 1,
+      "unit": "g"
+    },
+    {
+      "ingredient": "kardamom-gemahlen-unspezifiziert",
+      "amount": 1,
+      "unit": "g"
+    },
+    {
+      "ingredient": "weier-pfeffer",
+      "amount": 1,
+      "unit": "g"
+    }
+  ],
+  "gramCalculatorCheck": "PASS: 100 g total with cinnamon 800/17 g; source attribution preserved",
+  "dailyCandidateCountIncludingOpenBranches": 8
+}

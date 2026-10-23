@@ -4,5 +4,14 @@
   "candidateCount": 1,
   "createdToday": 6,
   "errors": [],
-  "blockedFromImport": []
+  "blockedFromImport": [
+    {
+      "id": "mk-research-20261023-be-libelle-speculaas",
+      "unmapped": [],
+      "issues": [],
+      "reason": "already_imported"
+    }
+  ],
+  "createdTodayIncludingOpenBranches": 8,
+  "countScopeNote": "createdToday zählt die sechs heute auf diesem Branch sichtbaren Pakete; zwei weitere Kandidaten liegen ausschließlich in den Entwürfen 10 und 14."
 }
