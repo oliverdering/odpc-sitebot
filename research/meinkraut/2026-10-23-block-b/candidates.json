@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "batchId": "oxana-research-2026-10-23-b",
+  "createdAt": "2026-10-23",
+  "productionImport": false,
+  "candidates": [
+    {
+      "id": "mk-research-20261023-no-beeco-pepperkakekrydder",
+      "name": "Pepperkakekrydder – Be:Eco-Variante",
+      "kind": "Trockenmischung",
+      "countries": ["NO"],
+      "region": "Norwegischer Anbieterblog; Weihnachtsküche",
+      "description": "Zimtbetonte Mischung mit Kardamom, Ingwer und Nelken.",
+      "ingredients": [
+        {"sourceName":"kanelpulver","ingredient":"zimt","amount":3,"unit":"EL","optional":false,"preparation":"Gemahlen abmessen. Ceylon wird empfohlen, ist aber keine zwingende Vorgabe."},
+        {"sourceName":"kardemommepulver","ingredient":"kardamom-gemahlen-unspezifiziert","amount":1,"unit":"EL","optional":false,"preparation":"Gemahlen; die Quelle nennt keine Kardamomart."},
+        {"sourceName":"ingefærpulver","ingredient":"ingwer","amount":1,"unit":"EL","optional":false,"preparation":"Getrocknet und gemahlen verwenden."},
+        {"sourceName":"nellikpulver","ingredient":"gewurznelken","amount":1,"unit":"EL","optional":false,"preparation":"Vor dem Abmessen fein mahlen."}
+      ],
+      "methodSteps": ["Die vier Gewürze gemahlen in den Original-Löffelmengen abmessen.","In einer trockenen Schüssel gründlich vermischen.","In ein sauberes, dicht schließendes Glas füllen."],
+      "application": "Für Weihnachtsgebäck und Grøt nach Geschmack beziehungsweise Rezept.",
+      "serving": "Originalansatz: 6 EL. Keine genaue Dosierung oder Grammumrechnung ergänzt.",
+      "allergenAssessment": {"known":[],"complete":true,"note":"Reine Gewürze; Etiketten und Spuren separat prüfen. Keine Allergenfrei-Garantie."},
+      "storageNotes": ["Laut Quelle dicht verschlossen aufbewahren. Keine eigene Haltbarkeitsfrist ergänzt."],
+      "sources": [
+        {"title":"Oppskrift: lag pepperkakekrydder","url":"https://www.beeco.no/2020/11/oppskrift-lag-pepperkakekrydder.html","author":"Be:Eco AS","publishedAt":"2020-11-15","accessedAt":"2026-10-23","primarySource":true,"contentChecked":true,"license":"Nur sachliche Mengen und eigene deutsche Kurzfassung; keine Bilder übernommen."},
+        {"title":"Grønt entreprenørskap","url":"https://www.beeco.no/p/grnt-entreprenrskap.html","author":"Be:Eco AS","accessedAt":"2026-10-23","primarySource":true,"contentChecked":true,"evidenceScope":"Norwegen-Bezug des Herausgebers","license":"Nur Herausgeberkontext ausgewertet; keine Bilder übernommen."}
+      ],
+      "editorialType": "Veröffentlichte Anbietervariante",
+      "reviewStatus": "Originalquelle, Mengen, Zutatenformen, Länderbezug und Allergene am 23.10.2026 geprüft; noch nicht verkostet.",
+      "countryEvidence": "Die zweite Originalseite beschreibt die eigene Unternehmertätigkeit in Norwegen. Zuordnung als veröffentlichte DIY-Variante dieses Anbieters; keine nationale Standardrezeptur behauptet.",
+      "scopeNotes": ["Veröffentlichte DIY-Rezeptur aus dem Be:Eco-Blog.","Die Zimtsorte ist in der Quelle eine Empfehlung. Gemahlenen Kardamom nicht mit ganzen Kapseln gleichsetzen; ganze Nelken vor dem Abmessen mahlen."],
+      "readyForImport": true,
+      "openIssues": [],
+      "importStatus": "bundled_pending_live_verification",
+      "bundledRecipeId": "mk-source-no-beeco-pepperkakekrydder"
+    }
+  ],
+  "ingredientProposals": []
+}
