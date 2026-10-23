@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "batchId": "oxana-research-2026-10-23-e",
+  "createdAt": "2026-10-23",
+  "productionImport": false,
+  "dailyCandidateCountIncludingOpenBranches": 5,
+  "dailyCountNote": "FI, NO und IS im Hauptbranch; SI im offenen Entwurfs-PR 10; dieser AM-Kandidat ist Nummer fünf.",
+  "candidates": [{
+    "id": "mk-research-20261023-am-kalajian-chaimen-spice",
+    "name": "Chaimen – Robyn Kalajians Trockenmischung",
+    "kind": "Trockenmischung",
+    "countries": ["AM"],
+    "region": "Armenische Diasporaküche; veröffentlichte Autorenvariante",
+    "description": "Paprika-Bockshornklee-Würze mit Piment, Kreuzkümmel und Knoblauchpulver.",
+    "editorialType": "Veröffentlichte Autorenvariante",
+    "reviewStatus": "Originalquelle, Originalmengen, Zutatenformen, armenischer Küchenbezug und Allergene am 23.10.2026 geprüft; noch nicht verkostet.",
+    "ingredients": [
+      {"sourceName":"cayenne pepper","ingredient":"cayennepfeffer","amount":0.25,"unit":"TL","preparation":"Gemahlen."},
+      {"sourceName":"paprika","ingredient":"paprika-gemahlen-unspezifiziert","amount":2,"unit":"EL","preparation":"Paprikapulver; Quelle nennt weder Sorte noch Schärfe oder Räucherung."},
+      {"sourceName":"chaimen (ground fenugreek)","ingredient":"bockshornkleesamen","amount":1,"unit":"EL","preparation":"Samen vor dem Abmessen fein mahlen; keine Blätter und kein blauer Bockshornklee."},
+      {"sourceName":"allspice","ingredient":"piment","amount":1,"unit":"TL","preparation":"Piment vor dem Abmessen mahlen."},
+      {"sourceName":"black pepper","ingredient":"schwarzer-pfeffer","amount":0.5,"unit":"TL","preparation":"Pfeffer vor dem Abmessen mahlen."},
+      {"sourceName":"cumin","ingredient":"kreuzkummel","amount":0.5,"unit":"TL","preparation":"Kreuzkümmel vor dem Abmessen mahlen."},
+      {"sourceName":"nutmeg","ingredient":"muskatnuss","amount":0.125,"unit":"TL","sourceFraction":"1/8","preparation":"Frisch reiben, dann abmessen; im Original ausdrücklich frisch gemahlen."},
+      {"sourceName":"ground cloves","ingredient":"gewurznelken","amount":0.125,"unit":"TL","sourceFraction":"1/8","preparation":"Nelken vor dem Abmessen fein mahlen."},
+      {"sourceName":"salt","ingredient":"salz","amount":0.75,"unit":"TL","preparation":"Keine Salzart in diesem Autorenansatz spezifiziert."},
+      {"sourceName":"garlic powder","ingredient":"knoblauchpulver","amount":0.25,"unit":"TL","preparation":"Pulver, kein mengenidentischer Ersatz durch Granulat."}
+    ],
+    "methodSteps": ["Ganze Gewürze vor dem Abmessen fein mahlen; Muskatnuss frisch reiben. Paprika- und Knoblauchpulver bereithalten.","Die trockenen Zutaten in den Original-Löffelmengen abmessen, zusammen sieben und gleichmäßig vermischen.","In einen sauberen, trockenen und dicht schließenden Behälter füllen. Für die trockene Basis weder Wasser noch Milchprodukte ergänzen."],
+    "application": "Trockene Würzbasis für frisch angerührte Dips. Eine spätere Zugabe von Milchprodukten ist eine gesonderte frische Zubereitung.",
+    "serving": "Robyns kleiner Originalansatz: 2 EL Paprikapulver, 1 EL gemahlene Bockshornkleesamen, 1 TL gemahlener Piment, je 1/2 TL gemahlener schwarzer Pfeffer und Kreuzkümmel, je 1/8 TL Muskat und gemahlene Nelken, 3/4 TL Salz sowie je 1/4 TL Cayenne und Knoblauchpulver. Die Tabellenanzeige kleiner Brüche kann gerundet sein; diese Originalbrüche gelten. Keine Grammumrechnung.",
+    "massBasis": "Originale EL- und TL-Mengen; Gewürze gemahlen abmessen, keine belegte Grammumrechnung",
+    "normalization100g": null,
+    "allergenAssessment": {"known":[],"complete":true,"note":"Nur die trockene Zehn-Zutaten-Basis bewertet. Milchprodukte des gesonderten Dip-Rezepts sind nicht enthalten. Produktetiketten und Spuren separat prüfen; keine Allergenfrei-Garantie."},
+    "storageNotes": ["Trocken und dicht verschlossen aufbewahren. Keine eigene Haltbarkeitsfrist ergänzt."],
+    "sources": [
+      {"title":"Chaimen Dip","url":"https://thearmeniankitchen.com/chaimen-dip/","author":"Robyn Kalajian / The Armenian Kitchen","publishedAt":"2013-02-09","accessedAt":"2026-10-23","primarySource":true,"contentChecked":true,"evidenceScope":"Eigener kleiner Trockenansatz unter Chaimen Dip ingredient proportions, my version; nicht die große historische Broschürenrezeptur. Pimentmenge 1 TL im Autorenkommentar am Veröffentlichungstag bestätigt.","license":"Sachliche Mengen und eigene deutsche Kurzfassung; keine Bilder, Fremdtexte oder Broschürenseiten übernommen."},
+      {"title":"Chemen – Fenugreek","url":"https://thearmeniankitchen.com/chemen-fenugreek/","author":"Robyn Kalajian / The Armenian Kitchen","publishedAt":"2012-03-18","accessedAt":"2026-10-23","primarySource":true,"contentChecked":true,"evidenceScope":"Armenischer Küchenkontext und gemahlene Bockshornkleesamen. Diese andere feuchte Rezeptur liefert keine Mengen für den ausgewählten Trockenansatz."}
+    ],
+    "countryEvidence": "Die Autorin veröffentlicht den eigenen Trockenansatz in The Armenian Kitchen unter Armenian food / armenian recipes. Ihre eigene Chemen-Seite beschreibt den armenischen Kirchenkochbuch-Kontext und verweist auf diesen Dip. AM bezeichnet hier die armenische Diasporaküche, keinen Wohnort in Armenien oder nationalen Standard.",
+    "scopeNotes": ["Ausgewählt ist ausschließlich der zehnteilige Trockenansatz der Autorin. Wasser, Joghurt und Sauerrahm sowie Fleisch der anderen Abschnitte sind keine Zutaten dieses Datensatzes.","Keine Anleitung zur Pökelung, Fermentation oder Lufttrocknung von Fleisch übernommen.","Paprikasorte bleibt unbestimmt; Edelsüß, scharfe und geräucherte Sorten werden nicht als identische Quellenangabe ausgegeben."],
+    "readyForImport": true,
+    "openIssues": [],
+    "importStatus": "bundled_pending_database_activation",
+    "bundledRecipeId": "mk-source-am-kalajian-chaimen-spice"
+  }],
+  "ingredientProposals": [{
+    "id":"paprika-gemahlen-unspezifiziert",
+    "name":"Paprikapulver (Sorte nicht spezifiziert)",
+    "group":"Gewürze & Kräuter",
+    "form":"gemahlen",
+    "allergens":[],
+    "reason":"Die Autorenquelle nennt Paprika als trockene, zu siebende Zutat ohne Sorten-, Schärfe- oder Räucherangabe. Dafür fehlt eine allgemeine gemahlene Identität.",
+    "allergenNote":"Aus reinem Paprikapulver keines der 14 benannten Allergene abgeleitet; Produktetiketten und Spuren separat prüfen.",
+    "notEquivalentTo":["paprika-edelsu","paprika-rosenscharf","rauchpaprika","paprika-frisch"],
+    "sources":[{"url":"https://thearmeniankitchen.com/chaimen-dip/","primarySource":true,"contentChecked":true}],
+    "active":false,
+    "readyForImport":false,
+    "status":"bundled"
+  }]
+}

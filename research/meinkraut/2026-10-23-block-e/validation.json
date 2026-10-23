@@ -1,0 +1,39 @@
+{
+  "checkedAt": "2026-10-23",
+  "productionImport": false,
+  "status": "PASS_SOURCE_REVIEW",
+  "candidateId": "mk-research-20261023-am-kalajian-chaimen-spice",
+  "catalogBaseline": {
+    "commit": "3e3528400d9bdf5e119f25869505a6f3d5a9cd10",
+    "ingredients": 297,
+    "recipes": 659
+  },
+  "sourceRead": true,
+  "sourceVariant": "Eigener kleiner Trockenansatz der Autorin von 2013, einschließlich Pimentkorrektur im Kommentar.",
+  "countryEvidenceChecked": true,
+  "allergenAssessment": {
+    "known": [],
+    "complete": true,
+    "note": "Nur die trockene Zehn-Zutaten-Basis bewertet. Milchprodukte des gesonderten Dip-Rezepts sind nicht enthalten. Produktetiketten und Spuren separat prüfen; keine Allergenfrei-Garantie."
+  },
+  "unknownIngredientIds": [],
+  "ingredientMapping": {
+    "newGenericPaprika": "paprika-gemahlen-unspezifiziert",
+    "groundBeforeMeasuring": [
+      "bockshornkleesamen",
+      "piment",
+      "schwarzer-pfeffer",
+      "kreuzkummel",
+      "muskatnuss",
+      "gewurznelken"
+    ]
+  },
+  "duplicateReview": {
+    "sameSourceFound": false,
+    "sameIngredientSetRecipeIds": []
+  },
+  "quantityBasis": "Originale EL- und TL-Mengen; Gewürze gemahlen abmessen, keine belegte Grammumrechnung",
+  "dailyCandidateCountIncludingOpenBranches": 5,
+  "importStatus": "pending_database_activation",
+  "remainingBlockers": []
+}
