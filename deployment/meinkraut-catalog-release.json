@@ -1,18 +1,18 @@
 {
-  "version": "3.0.10",
-  "baselineRevision": "78830ce734d9d7ea1b0801774982d9ab37d4e3f1",
+  "version": "3.0.11",
+  "baselineRevision": "1f722222a9769f678235e8dc464e1c74c59f64aa",
   "expectedBaseline": {
-    "ingredients": 296,
-    "recipes": 655
-  },
-  "expectedTarget": {
     "ingredients": 297,
     "recipes": 656
   },
-  "addedIngredients": ["kardamom-gemahlen-unspezifiziert"],
+  "expectedTarget": {
+    "ingredients": 297,
+    "recipes": 657
+  },
+  "addedIngredients": [],
   "addedRecipes": [
-    "mk-source-nl-laura-speculaas"
+    "mk-source-fi-mkn-piparkakkumauste"
   ],
-  "checkedAt": "2026-10-22",
-  "sourceReview": "research/meinkraut/2026-10-22-block-e/validation.json"
+  "checkedAt": "2026-10-23",
+  "sourceReview": "research/meinkraut/2026-10-23-block-a/validation.json"
 }
