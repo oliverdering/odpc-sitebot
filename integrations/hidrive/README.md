@@ -4,7 +4,7 @@ Status 2026-10-23: browser upload and byte-identical download verified on IONOS 
 
 ## Simplest deployment
 
-Use the existing GitHub Actions runner with the IONOS HTTPS WebDAV endpoint, if WebDAV is already included and active. Do not purchase a protocol upgrade. The public share link is for uncritical exchange and is **not** a private backup destination. Authenticating to a publicly shared folder does not make that folder private.
+Use the existing GitHub Actions runner with the IONOS HTTPS WebDAV endpoint. Owner-authenticated account inspection on 2026-10-23 confirmed WebDAV is included and active. Do not purchase a protocol upgrade. The public share link is for uncritical exchange and is **not** a private backup destination. Authenticating to a publicly shared folder does not make that folder private.
 
 Before enabling writes, the owner must verify a separate, unshared target ending in `ODPC-AI-STORAGE` and containing `07_BACKUPS`, or explicitly change the existing sharing arrangement. Check inherited parent shares as well. This implementation does not change shares or create directories outside its configured root. The private target has not been verified yet.
 
@@ -52,9 +52,9 @@ The workflow is manual only (`workflow_dispatch`), defaults to `plan`, and accep
 | Route | Assessment |
 | --- | --- |
 | Browser share | Actually tested: upload, listing, ZIP download, byte comparison, folder creation. No login needed. Unsuitable for private content. Browser availability is session-dependent. |
-| WebDAV | Simplest prepared route for automated selected-file transfers. Account login, enabled protocol, verified private root and secure secret injection still required. |
+| WebDAV | Simplest prepared route for automated selected-file transfers. Browser account login and enabled WebDAV confirmed. A verified private root, secure secret injection and an actual WebDAV client round trip are still required. |
 | HiDrive REST + OAuth2 | Official API supports file operations; requires registered application client credentials and owner consent. Request minimum `user,rw`, not administrative scope. Provider role/data scope does not by itself isolate one project directory. Token lifecycle and secure refresh-token storage must be implemented before deployment. No application was registered and no OAuth consent was granted. |
-| SFTP | IONOS documentation requires HiDrive Pro or the additional-protocol option. Actual existing entitlement is unknown. No upgrade ordered. Host-key verification and account credentials would be required. |
+| SFTP | IONOS documentation requires HiDrive Pro or the additional-protocol option. Owner-authenticated account inspection confirmed SFTP is not included. Do not use this route under the no-added-cost requirement. No upgrade ordered. Host-key verification and account credentials would be required. |
 | IONOS webhosting | Existing repository uses Python/Paramiko to deploy WordPress assets to webhosting. A server-side transfer could run there if the existing package supports a suitable runtime/scheduler and outbound HTTPS. That runtime/cron capability was not inspected live. |
 | Google Drive | Can remain an editing and exchange surface; there is no proven automatic HiDrive mirror. Do not synchronize whole accounts. No Drive files were read or copied. |
 | ODPC agent gateway | Optional later: authenticated MCP adapter backed by this transfer layer or HiDrive OAuth. Define only list/read/create-directory/write-new-file tools, restrict project roots, enforce limits and keep secrets outside the webroot. No delete, overwrite, arbitrary URL fetch or anonymous endpoint. Existing hosting suitability and end-to-end authentication must be established before implementation. No gateway deployed. |
