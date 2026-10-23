@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "batchId": "oxana-research-2026-10-23-h",
+  "createdAt": "2026-10-23",
+  "productionImport": false,
+  "dailyCandidateCountIncludingOpenBranches": 8,
+  "dailyCountNote": "Fünf heutige Kandidaten auf main bereits live; SI in Entwurf 10 und AL in Entwurf 14; dieser BE-Kandidat ist Nummer acht.",
+  "candidates": [
+    {
+      "id": "mk-research-20261023-be-libelle-speculaas",
+      "name": "Speculaaskruiden – Libelle-Lekker-Redaktionsvariante",
+      "kind": "Trockenmischung",
+      "countries": [
+        "BE"
+      ],
+      "region": "Belgische Backküche; veröffentlichte Redaktionsvariante",
+      "description": "Zimtbetonte Backgewürzmischung mit Muskatnuss, Macis, Nelken, Ingwer, Kardamom und weißem Pfeffer.",
+      "editorialType": "Veröffentlichte Redaktionsvariante; sachliche Rezeptdaten, deutsche Kurzfassung eigenständig formuliert",
+      "reviewStatus": "Originalquelle, Gramm-Mengen, Zutatenformen, belgischer Veröffentlichungsbezug und Allergene am 23.10.2026 geprüft; noch nicht verkostet.",
+      "ingredients": [
+        {
+          "sourceName": "kaneelpoeder",
+          "ingredient": "zimt",
+          "amount": 8,
+          "unit": "g",
+          "preparation": "Gemahlen abwiegen; ausschließlich die trockene Gewürzzutat verwenden."
+        },
+        {
+          "sourceName": "nootmuskaatpoeder",
+          "ingredient": "muskatnuss",
+          "amount": 2,
+          "unit": "g",
+          "preparation": "Gemahlen abwiegen; ausschließlich die trockene Gewürzzutat verwenden."
+        },
+        {
+          "sourceName": "kruidnagelpoeder",
+          "ingredient": "gewurznelken",
+          "amount": 2,
+          "unit": "g",
+          "preparation": "Gemahlen abwiegen; ausschließlich die trockene Gewürzzutat verwenden."
+        },
+        {
+          "sourceName": "foeliepoeder",
+          "ingredient": "macis-gemahlen",
+          "amount": 2,
+          "unit": "g",
+          "preparation": "Gemahlen abwiegen; ausschließlich die trockene Gewürzzutat verwenden."
+        },
+        {
+          "sourceName": "gemberpoeder",
+          "ingredient": "ingwer",
+          "amount": 1,
+          "unit": "g",
+          "preparation": "Gemahlen abwiegen; ausschließlich die trockene Gewürzzutat verwenden."
+        },
+        {
+          "sourceName": "kardemompoeder",
+          "ingredient": "kardamom-gemahlen-unspezifiziert",
+          "amount": 1,
+          "unit": "g",
+          "preparation": "Gemahlen abwiegen; ausschließlich die trockene Gewürzzutat verwenden."
+        },
+        {
+          "sourceName": "gemalen witte peper",
+          "ingredient": "weier-pfeffer",
+          "amount": 1,
+          "unit": "g",
+          "preparation": "Gemahlen abwiegen; ausschließlich die trockene Gewürzzutat verwenden."
+        }
+      ],
+      "methodSteps": [
+        "Alle sieben trockenen Gewürze gemahlen in den angegebenen Gramm-Mengen abwiegen.",
+        "In einer trockenen Schüssel gründlich vermischen.",
+        "In ein sauberes, trockenes und gut schließendes Gewürzglas füllen."
+      ],
+      "application": "Für Speculaas und andere gewürzte Backwaren nach dem jeweiligen Backrezept.",
+      "serving": "Originalansatz: 17 g. Die Quelle nennt die Mischung als Gewürzbasis; keine zusätzliche Dosierung pro Kilogramm ergänzt.",
+      "massBasis": "Originale Gramm-Einwaage; Summe 17 g. Alle Gewürze gemahlen abwiegen.",
+      "batchGrams": 17,
+      "normalization100g": null,
+      "allergenAssessment": {
+        "known": [],
+        "complete": true,
+        "note": "Nur die sieben reinen trockenen Gewürze bewertet. Milch, Ei und Getreide des getrennten Keksrezepts sind nicht Bestandteil der Mischung. Produktetiketten und Spuren separat prüfen; keine Allergenfrei-Garantie."
+      },
+      "storageNotes": [
+        "Trocken, lichtgeschützt und gut verschlossen lagern; Produktetiketten beachten. Keine eigene Haltbarkeitsfrist ergänzt."
+      ],
+      "sources": [
+        {
+          "title": "Speculaaskoekjes – Gewürzbasis im Redaktionstipp",
+          "url": "https://www.libelle-lekker.be/bekijk-recept/87769/speculaaskoekjes-3",
+          "author": "Libelle Lekker, Redaktionstipp von Sofie",
+          "accessedAt": "2026-10-23",
+          "primarySource": true,
+          "contentChecked": true,
+          "evidenceScope": "Sieben Gramm-Mengen im eigenständigen Gewürzbasis-Tipp; Rezept trägt Tag Belgisch. Keine Zutaten des Keks- oder Glasurrezepts übernommen.",
+          "license": "Nur sachliche Zutaten und Mengen; eigene deutsche Kurzfassung. Keine Fremdbilder, Artikeltexte oder Werbetexte übernommen."
+        },
+        {
+          "title": "Contact opnemen met Libelle Lekker?",
+          "url": "https://www.libelle-lekker.be/artikelen/221517/contact-opnemen-met-libelle-lekker",
+          "author": "Libelle Lekker / Roularta Media Group",
+          "accessedAt": "2026-10-23",
+          "primarySource": true,
+          "contentChecked": true,
+          "evidenceScope": "Redaktion in Brüssel und Herausgeber in Roeselare; Beleg der belgischen Veröffentlichung."
+        }
+      ],
+      "countryEvidence": "Das Originalrezept trägt das Tag Belgisch; die eigene Kontaktseite belegt Redaktion und Herausgeber in Belgien. Zuordnung BE bezeichnet diese veröffentlichte Variante, keine exklusive oder einheitliche Nationalrezeptur.",
+      "scopeNotes": [
+        "Nur die ausdrücklich als eigene Gewürzbasis genannte Teilrezeptur übernommen, kein Keksrezept.",
+        "Kardamomart nicht spezifiziert; keine grüne Art oder Kapselhülle hineininterpretiert.",
+        "Kein direkter Nachbau einer Handelsmarke. Mengen sind veröffentlichte Gramm-Mengen, keine Schätzung aus einer Hersteller-Zutatenliste."
+      ],
+      "readyForImport": true,
+      "openIssues": [],
+      "importStatus": "pending_database_activation",
+      "bundledRecipeId": "mk-source-be-libelle-speculaas"
+    }
+  ]
+}
