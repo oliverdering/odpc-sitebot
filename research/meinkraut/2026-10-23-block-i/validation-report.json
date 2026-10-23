@@ -4,5 +4,14 @@
   "candidateCount": 1,
   "createdToday": 7,
   "errors": [],
-  "blockedFromImport": []
+  "blockedFromImport": [
+    {
+      "id": "mk-research-20261023-maghreb-ileauxepices-ras-el-hanout",
+      "unmapped": [],
+      "issues": [],
+      "reason": "already_imported"
+    }
+  ],
+  "createdTodayIncludingOpenBranches": 9,
+  "countScopeNote": "createdToday zählt sieben auf diesem Branch sichtbare Pakete; SI und AL liegen ausschließlich in den Entwürfen 10 und 14."
 }

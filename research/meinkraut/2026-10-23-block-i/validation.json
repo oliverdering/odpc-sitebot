@@ -21,9 +21,16 @@
     "sameSourceFound": false,
     "sameIngredientSetRecipeIds": [],
     "closestRelatedRecipeId": "m14",
-    "difference": "Vorhandene Hausmischung enthält neun Zutaten einschließlich Kardamom und andere Verhältnisse. Neue Quellvariante hat zwölf Zutaten einschließlich Salz, weißem Pfeffer, Cayenne und Piment, ohne Kardamom."
+    "difference": "Vorhandene Hausmischung enthält neun Zutaten einschließlich Kardamom und andere Verhältnisse. Neue Quellvariante hat zwölf Zutaten einschließlich Salz, weißem Pfeffer, Cayenne und Piment, ohne Kardamom.",
+    "relatedRecipeIds": [
+      "m14",
+      "mk-ras-el-hanout"
+    ],
+    "additionalDifference": "Auch die vorhandene 100-g-Hausmischung mk-ras-el-hanout enthält andere Zutaten und Verhältnisse: unter anderem Paprika, Kardamom und Rosenblüten statt Salz, weißem Pfeffer und Cayenne. Keine Mengenumrechnung zum Gleichsetzen der Varianten."
   },
   "dailyCandidateCountIncludingOpenBranches": 9,
-  "importStatus": "pending_database_activation",
-  "remainingBlockers": []
+  "importStatus": "live_verified",
+  "remainingBlockers": [],
+  "importedRecipeId": "mk-source-maghreb-ileauxepices-ras-el-hanout",
+  "liveVerification": "live-verification.json"
 }

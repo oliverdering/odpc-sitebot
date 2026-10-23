@@ -4,7 +4,7 @@
   "createdAt": "2026-10-23",
   "productionImport": false,
   "dailyCandidateCountIncludingOpenBranches": 9,
-  "dailyCountNote": "Sechs heutige Kandidaten live; SI in Entwurf 10 und AL in Entwurf 14. Dieser Maghreb-Kandidat ist Nummer neun.",
+  "dailyCountNote": "Sieben heutige Kandidaten sind live; SI bleibt in Entwurf 10 und AL in Entwurf 14. Insgesamt neun einschließlich offener Branches.",
   "candidates": [
     {
       "id": "mk-research-20261023-maghreb-ileauxepices-ras-el-hanout",
@@ -143,10 +143,11 @@
         "Keine Änderungen aus Leserkommentaren übernommen; insbesondere kein zusätzlicher Paprika, Anis, Fenchel oder Weglassen von Ingwer.",
         "Keine pauschale Aussage unbegrenzter Haltbarkeit aus den Kommentaren übernommen."
       ],
-      "readyForImport": true,
+      "readyForImport": false,
       "openIssues": [],
-      "importStatus": "pending_database_activation",
-      "bundledRecipeId": "mk-source-maghreb-ileauxepices-ras-el-hanout"
+      "importStatus": "live_verified",
+      "bundledRecipeId": "mk-source-maghreb-ileauxepices-ras-el-hanout",
+      "importedRecipeId": "mk-source-maghreb-ileauxepices-ras-el-hanout"
     }
   ]
 }
