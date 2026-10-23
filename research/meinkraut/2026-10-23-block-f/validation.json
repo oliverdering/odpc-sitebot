@@ -1,0 +1,42 @@
+{
+  "checkedAt": "2026-10-23",
+  "productionImport": false,
+  "status": "PASS_SOURCE_REVIEW",
+  "candidateId": "mk-research-20261023-hr-bilicic-all-purpose",
+  "catalogBaseline": {
+    "commit": "22835be94c4e490f465e10c6c7a8215183da1036",
+    "ingredients": 298,
+    "recipes": 660
+  },
+  "sourceRead": true,
+  "countryEvidenceChecked": true,
+  "sourceVariant": "Ausdrücklich erlaubte Variante ohne 2 EL scharfe Paprika; keine Ersatzmenge.",
+  "selectedIngredientCount": 5,
+  "selectedBatchTablespoons": 15,
+  "allergenAssessment": {
+    "known": [],
+    "complete": true,
+    "note": "Nur die fünf ausgewählten reinen Trocken-Zutaten bewertet. Produktetiketten und Spuren separat prüfen; keine Allergenfrei-Garantie."
+  },
+  "unknownIngredientIds": [],
+  "ingredientMapping": {
+    "newPowder": "zwiebelpulver",
+    "notEquivalentTo": [
+      "zwiebelgranulat",
+      "zwiebelflocken-getrocknet",
+      "zwiebel-frisch"
+    ],
+    "groundBeforeMeasuring": [
+      "schwarzer-pfeffer"
+    ]
+  },
+  "duplicateReview": {
+    "sameSourceFound": false,
+    "similarIngredientSetRecipeIds": [],
+    "normalizationForSearchOnly": "Zwiebelgranulat/-flocken und Knoblauchgranulat auch als mögliche Namensdubletten geprüft; keine Mengenübertragung daraus."
+  },
+  "quantityBasis": "Originale EL-Mengen; Pulver und trockene Kräuter in der angegebenen Form abmessen",
+  "dailyCandidateCountIncludingOpenBranches": 6,
+  "importStatus": "pending_database_activation",
+  "remainingBlockers": []
+}

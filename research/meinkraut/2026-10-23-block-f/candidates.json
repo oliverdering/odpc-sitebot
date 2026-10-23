@@ -1,0 +1,51 @@
+{
+  "schemaVersion":1,
+  "batchId":"oxana-research-2026-10-23-f",
+  "createdAt":"2026-10-23",
+  "productionImport":false,
+  "dailyCandidateCountIncludingOpenBranches":6,
+  "dailyCountNote":"FI, NO, IS und AM im Hauptbranch; SI im Entwurfs-PR 10; dieser HR-Kandidat ist Nummer sechs.",
+  "candidates":[{
+    "id":"mk-research-20261023-hr-bilicic-all-purpose",
+    "name":"Allzweckwürze – Biličićs Variante ohne scharfe Paprika",
+    "kind":"Trockenmischung",
+    "countries":["HR"],
+    "region":"Veröffentlichte Autorenvariante aus Kroatien; kein traditioneller Nationalstandard",
+    "description":"Zwiebel-Knoblauchwürze mit schwarzem Pfeffer, Petersilie und süßem Paprikapulver.",
+    "editorialType":"Veröffentlichte Autorenvariante · ausdrücklich erlaubte Quelloption",
+    "reviewStatus":"Originalquelle, Mengen, Zutatenformen, kroatischer Autoren-/Herausgeberbezug und Allergene am 23.10.2026 geprüft; noch nicht verkostet.",
+    "ingredients":[
+      {"sourceName":"luk u prahu","ingredient":"zwiebelpulver","amount":4,"unit":"EL","preparation":"Getrocknetes Zwiebelpulver, kein mengenidentischer Ersatz durch Granulat oder Flocken."},
+      {"sourceName":"češnjak u prahu","ingredient":"knoblauchpulver","amount":4,"unit":"EL","preparation":"Getrocknetes Knoblauchpulver."},
+      {"sourceName":"mljeveni crni papar","ingredient":"schwarzer-pfeffer","amount":3,"unit":"EL","preparation":"Vor dem Abmessen mahlen."},
+      {"sourceName":"peršin","ingredient":"petersilie","amount":2,"unit":"EL","preparation":"Getrocknet und zerkleinert; Quelle bezeichnet den gesamten Ansatz ausdrücklich als trocken."},
+      {"sourceName":"slatka paprika","ingredient":"paprika-edelsu","amount":2,"unit":"EL","preparation":"Süßes Paprikapulver, nicht geräuchert."}
+    ],
+    "sourceOptions":[{"sourceName":"ljuta paprika","amount":2,"unit":"EL","selected":false,"reason":"Die Autorin erlaubt ausdrücklich, die scharfe Paprika wegzulassen. Diese Option ist gewählt; keine Zutatenmenge als Ersatz ergänzt."}],
+    "methodSteps":["Schwarzen Pfeffer vor dem Abmessen mahlen. Petersilie ausschließlich getrocknet und zerkleinert verwenden.","Pulver und trockene Kräuter in den Original-EL-Mengen abmessen und gleichmäßig vermischen.","In einen sauberen, trockenen und dicht schließenden Behälter füllen. Die in der Quelle erlaubte Variante ohne scharfe Paprika ist ausgewählt."],
+    "application":"Allzweckwürze für Suppen, Eintöpfe und Saucen nach Geschmack; kein unbelegter Dosierwert pro Kilogramm.",
+    "serving":"Originalansatz der erlaubten Variante: 4 EL Zwiebelpulver, 4 EL Knoblauchpulver, 3 EL gemahlener schwarzer Pfeffer, 2 EL getrocknete Petersilie und 2 EL süßes Paprikapulver. Die 2 EL scharfe Paprika des vollständigen Quellansatzes werden ausdrücklich weggelassen. Keine Grammumrechnung.",
+    "massBasis":"Originale EL-Mengen; Pulver und trockene Kräuter in der angegebenen Form abmessen",
+    "normalization100g":null,
+    "allergenAssessment":{"known":[],"complete":true,"note":"Nur die fünf ausgewählten reinen Trocken-Zutaten bewertet. Produktetiketten und Spuren separat prüfen; keine Allergenfrei-Garantie."},
+    "storageNotes":["Trocken, lichtgeschützt und gut verschlossen aufbewahren. Keine eigene Haltbarkeitsfrist ergänzt."],
+    "sources":[
+      {"title":"Začinske mješavine otvaraju tek i obogaćuju jelo","url":"https://gospodarski.hr/rubrike/ljekovito-bilje-rubrike/zacinske-mjesavine-otvaraju-tek-i-obogacuju-jelo/","author":"Irena Biličić / Gospodarski list","publishedAt":"2025-11-27","accessedAt":"2026-10-23","primarySource":true,"contentChecked":true,"evidenceScope":"Abschnitt Višenamjenska suha mješavina, Originalmengen und ausdrücklich erlaubtes Weglassen scharfer Paprika. Autorenbiografie auf derselben Seite nennt Duga Resa in Kroatien.","license":"Sachliche Mengen und eigene deutsche Kurzfassung; keine Fremdbilder, Werbe- oder Artikeltexte übernommen."},
+      {"title":"Impressum","url":"https://gospodarski.hr/impressum/","author":"Gospodarski list d.d.","accessedAt":"2026-10-23","primarySource":true,"contentChecked":true,"evidenceScope":"Herausgeber und Redaktion in Zagreb, Kroatien; nur Ortsbeleg ausgewertet."}
+    ],
+    "countryEvidence":"Die Autorin veröffentlicht den Ansatz unter häuslichen Gewürzmischungen; ihre Autorenbiografie nennt Duga Resa, das Impressum Zagreb in Kroatien. HR steht für diese lokale Autorenveröffentlichung; keine traditionelle Nationalrezeptur oder zusätzliche Balkan-Länderzuordnung behauptet.",
+    "scopeNotes":["Nur die ausdrücklich als trocken bezeichnete Allzweckmischung erfasst. Andere feuchte Gemüsewürzen, Ölansätze und internationale Mischungen desselben Artikels bleiben getrennt.","Scharfe Paprika wird auf ausdrückliche Erlaubnis der Quelle weggelassen. Keine Aussage, dass die pfefferhaltige Mischung völlig mild sei.","Kein Salz ergänzt; allgemeine Ratschläge des Artikels sind keine zusätzliche Originalmenge."],
+    "readyForImport":true,
+    "openIssues":[],
+    "importStatus":"bundled_pending_database_activation",
+    "bundledRecipeId":"mk-source-hr-bilicic-all-purpose"
+  }],
+  "ingredientProposals":[{
+    "id":"zwiebelpulver","name":"Zwiebelpulver","group":"Gewürze & Kräuter","form":"gemahlen","allergens":[],
+    "reason":"Die Quelle verlangt ausdrücklich Zwiebelpulver. Im aktuellen Atlas existieren Granulat, frische Zwiebeln und Flocken, aber kein Pulver.",
+    "allergenNote":"Aus reinem Zwiebelpulver keines der 14 benannten Allergene abgeleitet; Produktetiketten und Spuren separat prüfen.",
+    "notEquivalentTo":["zwiebelgranulat","zwiebelflocken-getrocknet","zwiebel-frisch"],
+    "sources":[{"url":"https://gospodarski.hr/rubrike/ljekovito-bilje-rubrike/zacinske-mjesavine-otvaraju-tek-i-obogacuju-jelo/","primarySource":true,"contentChecked":true}],
+    "active":false,"readyForImport":false,"status":"bundled"
+  }]
+}
