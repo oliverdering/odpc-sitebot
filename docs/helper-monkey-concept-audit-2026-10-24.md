@@ -71,7 +71,8 @@ KI-Dienst oder autonomes Agentensystem ausgegeben.
   Dokumentenvorschau, Bewerbungsregister, Kalenderexport und Übersetzer-Prompt
   mit dem ausgewählten Sprachpaar funktionieren mit Beispieldaten.
 - Begleittext für direkte Aufgabenstarts anschließend in
-  `86719d6f2350381deb923bccc84a713ca9339b02` präzisiert und live visuell geprüft.
+  `86719d6f2350381deb923bccc84a713ca9339b02` präzisiert und live visuell geprüft. Die abschließende vollständige Pipeline
+  https://github.com/oliverdering/odpc-sitebot/actions/runs/40136875025 war ebenfalls erfolgreich.
 - Original-Logos und CSS unverändert; keine Besucher-Konten verbunden oder
   Nachrichten versendet. Keine neuen Abos, kostenpflichtigen APIs oder
   Hintergrundaufgaben eingerichtet.
