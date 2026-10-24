@@ -64,7 +64,27 @@ zu prüfen. Der Webdialog selbst ist weiterhin regelbasiert.
   qualitativ vergleichen, sofern ein vorhandener kostenloser KI-Zugang verfügbar ist.
 - Mehrsprachige Bedienung außerhalb Deutsch/Englisch auf vollständige Beschriftungen
   prüfen; keine vollständig übersetzte Webseite versprechen.
+- Die Hilfe bei fehlenden Gerätestimmen passend zum tatsächlich gewählten Gerät
+  formulieren; der bisherige Hinweis nennt Samsung auch bei anderen Geräten.
 - Weiterhin nur konkrete belegte Verbesserungen veröffentlichen; unveränderte
   Ergebnisse nicht wiederholt als Fortschritt melden.
 
-Release- und Live-Nachweis werden nach abgeschlossener Pipeline ergänzt.
+## Release- und Live-Nachweis
+
+- Version des Gesprächsmoduls: 0.12.0.
+- Hauptänderung: `0837fea62ff2c364601aa6c12c83902f24190447`.
+- Ergänzung für Aufgabenwechsel innerhalb eines direkten Agentenstarts:
+  `316f17d95ba06fe745165166fd560037c0ba8848`.
+- Erste vollständige Pipeline erfolgreich:
+  https://github.com/oliverdering/odpc-sitebot/actions/runs/40137671134
+- Abschließende vollständige Pipeline erfolgreich:
+  https://github.com/oliverdering/odpc-sitebot/actions/runs/40137808175
+- 48 JavaScript- und 8 Python-Prüfungen bestanden; PHP-Syntax und Metadatenprüfung
+  ebenfalls erfolgreich. 39 Live-Browser-Prüfgruppen auf Desktop und Mobilgeräten
+  bestanden, einschließlich der drei zusätzlichen Fortsetzungs-/Einstiegsszenarien.
+- Direkte Browserprüfung: natürlicher kostenloser Bewerbungswunsch, kopierter
+  Auftrag mit ATS-Vorgaben, Ablehnung kostenpflichtiger Verbindung, Neuladen und
+  Rückkehr zum ursprünglichen sowie zu einem nachträglich gewechselten Monkey.
+- CSS, Layout und Original-Logos unverändert. Keine Besucherkonten verbunden und
+  keine Nachrichten versendet. Die eingerichtete Morgenroutine ist ausschließlich
+  für die fortlaufende Verbesserung von ai.odpc.de bestimmt.
