@@ -66,6 +66,17 @@ def validate(package, atlas, extra):
                 errors.append(f'{rid}: invalid quantity for {part.get("sourceName")}')
             if part.get('unit') not in {'g', 'TL', 'EL', 'ml', 'Stück', 'Tasse'}:
                 errors.append(f'{rid}: unsupported or missing unit')
+            # Range endpoints are research evidence, not executable fixed amounts.
+            if part.get('quantityMode') == 'approximate_range' or 'amountMax' in part:
+                maximum = part.get('amountMax')
+                valid_range = (not isinstance(amount, bool) and isinstance(amount, (int, float))
+                               and math.isfinite(amount) and amount > 0
+                               and not isinstance(maximum, bool) and isinstance(maximum, (int, float))
+                               and math.isfinite(maximum) and maximum > amount)
+                if not valid_range or part.get('quantityMode') != 'approximate_range' or not part.get('sourceQuantity') or part.get('amountRole') != 'lower_bound_only':
+                    errors.append(f'{rid}: research range needs ordered bounds and explicit source/lower-bound role')
+                if record.get('readyForImport') is not False or record.get('importStatus') == 'live_verified':
+                    errors.append(f'{rid}: unresolved quantity range cannot be imported or live')
             iid = part.get('ingredient')
             proposed = part.get('proposedIngredient')
             if proposed is not None:
