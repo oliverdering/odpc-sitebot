@@ -1,0 +1,30 @@
+{
+  "status": "PASS_SOURCE_REVIEW_PENDING_DEPLOYMENT",
+  "productionImport": false,
+  "candidateCount": 1,
+  "dailyCandidateCountIncludingOpenBranches": 9,
+  "ingredientCount": 11,
+  "ingredientsAllMapped": true,
+  "originalUnitsPreserved": true,
+  "volumeToGramsConversion": false,
+  "allergenAssessment": {
+    "known": [
+      "Senf"
+    ],
+    "complete": true,
+    "note": "Senf aus Senfpulver ausdrücklich abgeleitet. Sonstige reine Gewürze, Zucker und Salz ergeben kein weiteres benanntes Allergen; Etiketten und Spuren prüfen."
+  },
+  "sameSourceFound": false,
+  "sameIngredientSetFound": false,
+  "target": {
+    "ingredients": 299,
+    "recipes": 668
+  },
+  "semanticBaselineCheck": "Existing catalog values unchanged; one source recipe and version added.",
+  "negativeProbes": [
+    "missing_mustard",
+    "unknown_id",
+    "unproved_grams"
+  ],
+  "liveVerified": false
+}
