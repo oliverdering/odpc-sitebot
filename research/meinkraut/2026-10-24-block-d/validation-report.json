@@ -1,0 +1,21 @@
+{
+  "status": "PASS_STAGING",
+  "productionImport": false,
+  "candidateCount": 1,
+  "createdToday": 3,
+  "errors": [],
+  "blockedFromImport": [
+    {
+      "id": "mk-research-20261024-pt-clara-piri-piri",
+      "unmapped": [
+        "piri-piri em flocos (ou a gosto)"
+      ],
+      "issues": [
+        "Piri-Piri-Flocken als passende Zutatenidentität prüfen; keine ungeprüfte Gleichsetzung mit beliebigen Chiliflocken oder Cayennepulver.",
+        "Mahlzustand des schwarzen Pfeffers vor dem Abmessen anhand weiterer Originalbelege prüfen.",
+        "Dublettenprüfung nach endgültiger Zutatenzuordnung nochmals durchführen."
+      ],
+      "reason": "research_pending"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "checkedAt": "2026-10-24T02:04:37.812744+00:00",
+  "type": "live_baseline_only_no_import",
+  "version": "3.0.19",
+  "source": "database",
+  "recipes": 665,
+  "ingredients": 299,
+  "country": {
+    "code": "PT",
+    "http": 200,
+    "recipeIds": [
+      "m47",
+      "r061",
+      "r069"
+    ],
+    "recipeCount": 3,
+    "dryMixCount": 1
+  },
+  "newCandidateIsLive": false,
+  "sameSourceFound": false,
+  "shopMode": "test",
+  "checkoutEnabled": false
+}
