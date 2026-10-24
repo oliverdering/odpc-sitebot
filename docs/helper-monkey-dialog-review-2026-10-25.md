@@ -32,6 +32,8 @@ geplanten Lauf. Layout, CSS und Original-Logos unverändert erhalten.
    neu besuchter Sprachlink darf die Sprache initialisieren; beim Neuladen bleibt
    eine danach ausgewählte Sprache bestehen. Sichtbare übersetzte Agententitel
    lassen sich auch eintippen, ohne dass sie einem anderen Agenten zugeordnet werden.
+   Ein innerhalb des Dialogs gewechselter Arbeitsauftrag bleibt auch nach dem
+   Neuladen erhalten; der ursprüngliche Agentenparameter überschreibt ihn nicht.
 
 ## Technische Umsetzung
 
@@ -62,4 +64,23 @@ Physische Mikrofon- und Hörtests bleiben separat zu prüfen. Die Arbeitsaufträ
 werden weiterhin an das eigene KI-Konto übergeben; keine Behauptung eines
 modellübergreifenden Tests tatsächlich generierter KI-Antworten.
 
-Release- und Live-Nachweis werden nach der Abnahme ergänzt.
+## Release- und Live-Nachweis
+
+- Gesprächsmodul 0.13.0, Hauptcommit `9df39a6a76c22529b56fb964ede74de9986a52b9`.
+- Ergänzung zum Erhalt des gewechselten Agenten:
+  `f88c473618ff0a5b793217c0ef46b771489e64ea`.
+- Erster erfolgreicher vollständiger Lauf:
+  https://github.com/oliverdering/odpc-sitebot/actions/runs/40139200122
+- Abschließender erfolgreicher vollständiger Lauf:
+  https://github.com/oliverdering/odpc-sitebot/actions/runs/40139357197
+- 53 JavaScript- und 8 Python-Prüfungen bestanden. PHP-Syntax, Metadaten,
+  SFTP-Prüfsummen und öffentliche Auslieferung der Sprachdatei ebenfalls geprüft.
+- 43 Live-Browser-Prüfgruppen: einschließlich aller acht Sprachen auf Desktop und
+  Mobilgerät, Sprache nach Reset/Reload, Sprach-Einstiegslinks, Agentenwechsel,
+  Bedienbarkeit, öffentliche Seiten und Downloads.
+- Zusätzlicher Direktcheck im Browser: französische Agentenaktionen und passende
+  Computerhilfe, Türkisch nach Neustart/Neuladen, Kopieren mit türkischer
+  Sprachvorgabe sowie Berichtsheft-Auswahl nach Neuladen erhalten.
+- Inline-CSS, Stylesheet und Layoutvorlage bytegleich zum vorherigen Stand.
+  Original-Logos unverändert. Keine neue Automation gestartet, keine externen
+  Nachrichten und keine neuen Kontoberechtigungen.
