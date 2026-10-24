@@ -1,18 +1,18 @@
 {
-  "version": "3.0.20",
-  "baselineRevision": "caed05fe64fe4f900320bc2d7aa4974276d728e2",
+  "version": "3.0.21",
+  "baselineRevision": "27420415bd966fb9746a09ca3e879e41a421f1cd",
   "expectedBaseline": {
-    "ingredients": 299,
-    "recipes": 665
-  },
-  "expectedTarget": {
     "ingredients": 299,
     "recipes": 666
   },
+  "expectedTarget": {
+    "ingredients": 299,
+    "recipes": 667
+  },
   "addedIngredients": [],
   "addedRecipes": [
-    "mk-source-np-century-curry-type6"
+    "mk-source-nz-chelsea-chai"
   ],
   "checkedAt": "2026-10-24",
-  "sourceReview": "research/meinkraut/2026-10-24-block-e/validation.json"
+  "sourceReview": "research/meinkraut/2026-10-24-block-f/validation.json"
 }
