@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 1,
+  "batchId": "oxana-research-2026-10-24-e",
+  "createdAt": "2026-10-24",
+  "productionImport": false,
+  "dailyCandidateCountIncludingOpenBranches": 5,
+  "dailyCountNote": "CH/NA bereits live; MT/PT als offene Entwürfe; dieser Nepal-Kandidat als fünfter neuer Kandidat.",
+  "candidates": [
+    {
+      "id": "mk-research-20261024-np-century-curry-type6",
+      "name": "Currymischung Typ 6 – Century-Herstellerrezept",
+      "kind": "Trockenmischung",
+      "countries": [
+        "NP"
+      ],
+      "region": "Nepalesische Herstellerveröffentlichung; kein Nationalstandard",
+      "description": "Kardamom-Koriander-Curry mit Kreuzkümmel, Senf, Kurkuma, Cayenne, Ingwer und schwarzem Pfeffer.",
+      "editorialType": "Veröffentlichte Hersteller-/Autorenvariante; eigene deutsche Kurzfassung",
+      "reviewStatus": "Originalquelle, acht Pulverformen und Mengen, Nepal-Bezug, Dubletten und Senf am 24.10.2026 geprüft; noch nicht verkostet.",
+      "ingredients": [
+        {
+          "sourceName": "Ground Cardamom",
+          "ingredient": "kardamom-gemahlen-unspezifiziert",
+          "amount": 1,
+          "unit": "EL",
+          "preparation": "Gemahlen beziehungsweise als trockenes Pulver vor dem Abmessen; Kardamomart nicht näher spezifiziert."
+        },
+        {
+          "sourceName": "Ground coriander",
+          "ingredient": "koriandersaat",
+          "amount": 1,
+          "unit": "EL",
+          "preparation": "Gemahlen beziehungsweise als trockenes Pulver vor dem Abmessen; Kardamomart nicht näher spezifiziert."
+        },
+        {
+          "sourceName": "Cumin powder",
+          "ingredient": "kreuzkummel",
+          "amount": 2,
+          "unit": "TL",
+          "preparation": "Gemahlen beziehungsweise als trockenes Pulver vor dem Abmessen; Kardamomart nicht näher spezifiziert."
+        },
+        {
+          "sourceName": "Dry mustard",
+          "ingredient": "senfpulver",
+          "amount": 1,
+          "unit": "TL",
+          "preparation": "Gemahlen beziehungsweise als trockenes Pulver vor dem Abmessen; Kardamomart nicht näher spezifiziert."
+        },
+        {
+          "sourceName": "Turmeric",
+          "ingredient": "kurkuma",
+          "amount": 1,
+          "unit": "TL",
+          "preparation": "Gemahlen beziehungsweise als trockenes Pulver vor dem Abmessen; Kardamomart nicht näher spezifiziert."
+        },
+        {
+          "sourceName": "Cayenne powder",
+          "ingredient": "cayennepfeffer",
+          "amount": 1,
+          "unit": "TL",
+          "preparation": "Gemahlen beziehungsweise als trockenes Pulver vor dem Abmessen; Kardamomart nicht näher spezifiziert."
+        },
+        {
+          "sourceName": "Ground ginger",
+          "ingredient": "ingwer",
+          "amount": 0.5,
+          "unit": "TL",
+          "preparation": "Gemahlen beziehungsweise als trockenes Pulver vor dem Abmessen; Kardamomart nicht näher spezifiziert."
+        },
+        {
+          "sourceName": "Ground black pepper",
+          "ingredient": "schwarzer-pfeffer",
+          "amount": 0.5,
+          "unit": "TL",
+          "preparation": "Gemahlen beziehungsweise als trockenes Pulver vor dem Abmessen; Kardamomart nicht näher spezifiziert."
+        }
+      ],
+      "methodSteps": [
+        "Alle acht trockenen Pulver in den angegebenen Löffelmengen abmessen. Koriander, Kreuzkümmel und schwarzen Pfeffer vor dem Abmessen mahlen, falls sie ganz vorliegen.",
+        "Gleichmäßig vermischen und trocken in einen sauberen, gut schließenden Behälter füllen."
+      ],
+      "application": "Trockene Currymischung zum Würzen; kein belegter Dosierwert pro Kilogramm.",
+      "serving": "Originalansatz aus zwei EL und sechs TL; keine Gramm-Ausbeute bestimmt.",
+      "massBasis": "Originale EL-/TL-Mengen; keine Umrechnung in Gramm.",
+      "normalization100g": null,
+      "allergenAssessment": {
+        "known": [
+          "Senf"
+        ],
+        "complete": true,
+        "note": "Senf aus Senfpulver abgeleitet, unabhängig vom unvollständigen Atlas-Allergenfeld. Produktetiketten und Spuren gesondert prüfen."
+      },
+      "storageNotes": [
+        "Trocken und gut verschlossen lagern, Produktetiketten beachten. Keine eigene Haltbarkeitsfrist ergänzt."
+      ],
+      "sources": [
+        {
+          "title": "Home Recipes: 6 Types of Curry Masala Powder – Type 6",
+          "url": "https://century.com.np/types-of-masala-powder-recipes/",
+          "author": "Kapil Maharjan / Century Spices & Snacks",
+          "publishedAt": "2020-10-16",
+          "accessedAt": "2026-10-24",
+          "primarySource": true,
+          "contentChecked": true,
+          "evidenceScope": "Vollständige Herstellerveröffentlichung gelesen; ausschließlich die acht bezifferten Pulverzutaten von Type 6 ausgewertet.",
+          "license": "Sachliche Mengen und eigene deutsche Kurzfassung; keine Bilder, Artikel- oder Werbetexte übernommen."
+        },
+        {
+          "title": "Corporate Office",
+          "url": "https://century.com.np/corporate/",
+          "author": "Century Spices & Snacks / Dugar Spices & Food Products Pvt. Ltd",
+          "accessedAt": "2026-10-24",
+          "primarySource": true,
+          "contentChecked": true,
+          "evidenceScope": "Eigene Unternehmensangabe Biratnagar, Nepal; geografischer Publikationskontext, keine nationale Traditionsbehauptung."
+        }
+      ],
+      "countryEvidence": "NP kennzeichnet die Veröffentlichung des in Biratnagar, Nepal, ansässigen Herstellers Century/Dugar. Keine Gleichsetzung mit einer einheitlichen traditionellen nepalesischen Currymischung oder einer geheimen Handelsproduktrezeptur.",
+      "duplicateReview": {
+        "catalogRecipeCount": 665,
+        "sameSourceFound": false,
+        "sameIngredientSetFound": false,
+        "comparisonRecipeIds": [
+          "r047",
+          "x001",
+          "atlas6-nepalesischer-sesam-tomaten-achar"
+        ],
+        "result": "Keine Century-Quelle und kein identisches Zutaten-Set im aktuellen Katalog. Bestehende Nepal-Einträge sind frische Tomaten-/Sesamzubereitungen."
+      },
+      "scopeNotes": [
+        "Nur Type 6 übernommen; keine anderen fünf Varianten als Kandidaten angelegt.",
+        "Kardamom bleibt ausdrücklich artunspezifiziert. Mahlformen in Zubereitung erhalten; keine gleiche Löffelmenge ganzer Samen abmessen.",
+        "Senfpulver als reine Zutat, keine zubereitete Senfsauce."
+      ],
+      "openIssues": [],
+      "readyForImport": true,
+      "importStatus": "approved_pending_deployment",
+      "bundledRecipeId": "mk-source-np-century-curry-type6"
+    }
+  ]
+}

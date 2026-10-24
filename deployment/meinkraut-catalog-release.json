@@ -1,18 +1,18 @@
 {
-  "version": "3.0.19",
-  "baselineRevision": "affa95b98cd5e67fe510c8245ab4f6b49b6bf678",
+  "version": "3.0.20",
+  "baselineRevision": "caed05fe64fe4f900320bc2d7aa4974276d728e2",
   "expectedBaseline": {
-    "ingredients": 299,
-    "recipes": 664
-  },
-  "expectedTarget": {
     "ingredients": 299,
     "recipes": 665
   },
+  "expectedTarget": {
+    "ingredients": 299,
+    "recipes": 666
+  },
   "addedIngredients": [],
   "addedRecipes": [
-    "mk-source-na-ester-kapana"
+    "mk-source-np-century-curry-type6"
   ],
   "checkedAt": "2026-10-24",
-  "sourceReview": "research/meinkraut/2026-10-24-block-c/validation.json"
+  "sourceReview": "research/meinkraut/2026-10-24-block-e/validation.json"
 }

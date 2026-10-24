@@ -1,0 +1,35 @@
+{
+  "status": "PASS_SOURCE_REVIEW_PENDING_DEPLOYMENT",
+  "productionImport": false,
+  "candidateCount": 1,
+  "dailyCandidateCountIncludingOpenBranches": 5,
+  "ingredientCount": 8,
+  "ingredientsAllMapped": true,
+  "originalUnitsPreserved": true,
+  "volumeToGramsConversion": false,
+  "allergenAssessment": {
+    "known": [
+      "Senf"
+    ],
+    "complete": true,
+    "note": "Senf aus Senfpulver abgeleitet, unabhängig vom unvollständigen Atlas-Allergenfeld. Produktetiketten und Spuren gesondert prüfen."
+  },
+  "sameSourceFound": false,
+  "sameIngredientSetFound": false,
+  "target": {
+    "ingredients": 299,
+    "recipes": 666
+  },
+  "semanticBaselineCheck": "Existing catalog values unchanged; one source recipe and version added",
+  "liveVerified": false,
+  "localChecks": {
+    "javascript": "PASS",
+    "sourceQuantityAndHalfScaling": "PASS",
+    "negativeProbes": [
+      "missing_mustard",
+      "unknown_ingredient",
+      "unproved_gram_conversion"
+    ],
+    "phpRoutes": "pending CI"
+  }
+}
