@@ -2,14 +2,14 @@
 /**
  * Plugin Name: ODPC Monkey Voice Interview
  * Description: Accessible opt-in voice interview and guided setup for Helper Monkey.
- * Version: 0.14.0
+ * Version: 0.14.1
  * License: GPL-3.0-or-later
  */
 if (!defined('ABSPATH')) exit;
 add_action('wp_footer', function () {
  if (is_admin()) return;
  ?>
- <div id="odpc-voice" class="odpc-voice" data-version="0.14.0" hidden role="dialog" aria-modal="true" aria-labelledby="odpc-voice-title" aria-describedby="odpc-voice-status">
+ <div id="odpc-voice" class="odpc-voice" data-version="0.14.1" hidden role="dialog" aria-modal="true" aria-labelledby="odpc-voice-title" aria-describedby="odpc-voice-status">
   <h2 id="odpc-voice-title">Monkey Einrichtungsassistent</h2><button type="button" id="odpc-voice-topclose" aria-label="Schließen">✕</button>
   <p id="odpc-voice-status" role="status" aria-live="polite">Bereit. Starte das Interview.</p>
   <p id="hm-guide-progress" aria-live="polite"></p>
@@ -209,7 +209,7 @@ add_action('wp_footer', function () {
   const result=guide.reply(flow,value,guideLang());stopAudio();
   const selectedChoice=guide.choices(flow,guideLang()).find(c=>c.value===value);
   if(!result.sensitive)append(tx('you'),selectedChoice?selectedChoice.label:value);
-  if(result.accepted&&!result.help){history.push(JSON.parse(JSON.stringify(flow)));flow=result.state;persist()}
+  if(result.accepted&&!result.help){status.textContent=tx('guideStatus');history.push(JSON.parse(JSON.stringify(flow)));flow=result.state;persist()}
   input.value='';append('Monkey',result.text);lastPrompt=result.text;controls();if(result.accepted&&!result.help){panel.focus({preventScroll:true});revealStep()}say(result.text);
  }
  function openConnector(){

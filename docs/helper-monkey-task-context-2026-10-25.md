@@ -2,7 +2,7 @@
 
 ## Ergebnis
 
-Version 0.14.0 übernimmt kurze, selbst eingegebene Auftragsdetails in die
+Version 0.14.1 übernimmt kurze, selbst eingegebene Auftragsdetails in die
 KI-Arbeitsvorlage. Ergänzungen und Korrekturen bleiben in zeitlicher Reihenfolge
 bei der gewählten Aufgabe, auch beim Neuladen und nach einer Verbindungseinrichtung.
 Eine Bewerbung für Marketing oder eine Kanzlei wird vorrangig als Bewerbung
@@ -14,7 +14,8 @@ Reine Textaufgaben verlangen auch bei beiläufig erwähnten Diensten keine Verbi
 - Maximal die letzten sechs Angaben mit jeweils höchstens 600 Zeichen bleiben
   lokal in der laufenden Browsersitzung. Für längere Unterlagen dient das eigene
   KI-Konto. FAQ und Dialoghinweis erklären die lokale Speicherung.
-- Eine ausdrückliche andere Aufgabenwahl beginnt mit leerem Auftragskontext;
+- Eine Ergänzung setzt den alten Kopierstatus zurück; die aktualisierte Vorlage
+  muss neu kopiert werden. Eine ausdrückliche andere Aufgabenwahl beginnt mit leerem Auftragskontext;
   die Aufgabenauswahl bleibt nach Neuladen sichtbar. „Neu starten“ löscht die Sitzung.
 - Erkannte Zugangsdaten werden vor einer Übernahme verworfen; dieselbe Prüfung
   erfolgt beim Wiederherstellen. Dies ist keine vollständige Erkennung aller
