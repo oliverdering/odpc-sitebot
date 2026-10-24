@@ -1,0 +1,26 @@
+{
+  "status": "PASS_SOURCE_REVIEW_PENDING_CI",
+  "productionImport": false,
+  "candidateCount": 1,
+  "dailyCandidateCountIncludingOpenBranches": 3,
+  "ingredientCount": 13,
+  "ingredientsAllMapped": true,
+  "originalUnitsPreserved": true,
+  "volumeToGramsConversion": false,
+  "sourceYieldUsedForCalculation": false,
+  "allergenAssessment": {
+    "known": [
+      "Senf"
+    ],
+    "complete": true,
+    "note": "Senf aus ground mustard sicher abgeleitet; die übrigen reinen Gewürz-/Salz-/Zuckerzutaten ergeben kein weiteres benanntes Allergen. Produktetiketten und Spuren prüfen; keine Allergenfrei-Garantie."
+  },
+  "sameSourceFound": false,
+  "sameIngredientSetFound": false,
+  "sourceVersionSelection": "English original only; German version differences documented, not combined",
+  "target": {
+    "ingredients": 299,
+    "recipes": 665
+  },
+  "liveVerified": false
+}
