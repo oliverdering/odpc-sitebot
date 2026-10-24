@@ -1,5 +1,5 @@
 {
-  "status": "PASS_SOURCE_REVIEW_PENDING_DEPLOYMENT",
+  "status": "PASS_LIVE_VERIFIED",
   "productionImport": false,
   "candidateCount": 1,
   "dailyCandidateCountIncludingOpenBranches": 5,
@@ -21,7 +21,7 @@
     "recipes": 666
   },
   "semanticBaselineCheck": "Existing catalog values unchanged; one source recipe and version added",
-  "liveVerified": false,
+  "liveVerified": true,
   "localChecks": {
     "javascript": "PASS",
     "sourceQuantityAndHalfScaling": "PASS",
@@ -30,6 +30,21 @@
       "unknown_ingredient",
       "unproved_gram_conversion"
     ],
-    "phpRoutes": "pending CI"
-  }
+    "phpRoutes": "PASS CI"
+  },
+  "importStatus": "live_verified",
+  "ci": {
+    "url": "https://github.com/oliverdering/odpc-sitebot/actions/runs/40056095552",
+    "jobId": 120759297983,
+    "headSha": "aa2d9b252d50ebf590db991b6054390e0d631b56",
+    "conclusion": "success"
+  },
+  "mergedCommit": "acde5da2f3c1052f94c70fc7110b958ad67863bd",
+  "deployment": {
+    "url": "https://github.com/oliverdering/odpc-sitebot/actions/runs/40056169497",
+    "jobId": 120759521634,
+    "conclusion": "success",
+    "databaseActivation": "success"
+  },
+  "liveEvidence": "live-verification.json"
 }
