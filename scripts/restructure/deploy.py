@@ -7,6 +7,7 @@ import paramiko
 from deploy_helpermonkey_v4 import HOST,USER,PIN,find_theme
 SOURCE=Path('site-deploy/ai.odpc.de')
 FILES={
+ 'odpc-monkey-experience/dialog-copy.js':SOURCE/'experience/dialog-copy.js',
  'odpc-monkey-experience/guide-core.js':SOURCE/'experience/guide-core.js',
  'odpc-monkey-experience/experience.css':SOURCE/'experience/experience.css',
  'odpc-monkey-experience/page.php':SOURCE/'experience/page.php',
@@ -62,7 +63,7 @@ def main():
     for attempt in range(3):
      code,body=get('https://ai.odpc.de'+path+'?hm_release=1.0.0-'+str(int(time.time())))
      html=body.decode('utf-8','replace')
-     if code==200 and 'hm-experience-page' in html and 'data-version="0.12.0"' in html and 'hm-guide-help' in html:
+     if code==200 and 'hm-experience-page' in html and 'data-version="0.13.0"' in html and 'hm-guide-help' in html:
       good=True;break
      time.sleep(2)
     if not good:raise RuntimeError('Live release absent '+path)
@@ -72,7 +73,7 @@ def main():
     code,body=get(path)
     if code!=200:raise RuntimeError('Preserved page failed '+path)
     report['checks'].append({'path':path,'status':code,'bytes':len(body)})
-   for name in ['guide-core.js','experience.css']:
+   for name in ['dialog-copy.js','guide-core.js','experience.css']:
     code,data=get('https://ai.odpc.de/wp-content/mu-plugins/odpc-monkey-experience/'+name+'?v=1.0.0')
     if data!=(SOURCE/'experience'/name).read_bytes():raise RuntimeError('Public asset mismatch '+name)
    for name in DOWNLOADS:

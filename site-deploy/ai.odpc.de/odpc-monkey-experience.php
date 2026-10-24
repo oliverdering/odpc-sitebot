@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Helper Monkey Guided Experience
  * Description: Conversation-first entry and focused agent overview using the existing brand.
- * Version: 1.1.0
+ * Version: 1.2.0
  */
 if (!defined('ABSPATH')) exit;
 function hm_experience_route() {
@@ -14,7 +14,8 @@ function hm_experience_route() {
  return '';
 }
 add_action('wp_enqueue_scripts', function () {
- wp_enqueue_script('hm-guide-core', content_url('/mu-plugins/odpc-monkey-experience/guide-core.js'), [], (string)filemtime(__DIR__.'/odpc-monkey-experience/guide-core.js'), false);
+ wp_enqueue_script('hm-dialog-copy', content_url('/mu-plugins/odpc-monkey-experience/dialog-copy.js'), [], (string)filemtime(__DIR__.'/odpc-monkey-experience/dialog-copy.js'), false);
+ wp_enqueue_script('hm-guide-core', content_url('/mu-plugins/odpc-monkey-experience/guide-core.js'), ['hm-dialog-copy'], (string)filemtime(__DIR__.'/odpc-monkey-experience/guide-core.js'), false);
  wp_enqueue_style('hm-experience', content_url('/mu-plugins/odpc-monkey-experience/experience.css'), [], (string)filemtime(__DIR__.'/odpc-monkey-experience/experience.css'));
 }, 20);
 add_filter('template_include', function ($template) {

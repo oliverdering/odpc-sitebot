@@ -2,15 +2,18 @@ import {readFileSync} from 'node:fs';
 import vm from 'node:vm';
 import assert from 'node:assert/strict';
 import {test} from 'node:test';
+import {createRequire} from 'node:module';
+const guide=createRequire(import.meta.url)('../site-deploy/ai.odpc.de/experience/guide-core.js');
 const source=readFileSync('site-deploy/ai.odpc.de/odpc-monkey-voice-interview.php','utf8');
 const script=source.split('<script>')[1].split('</script>')[0];new vm.Script(script);
 const helpers=script.slice(script.indexOf(' function voiceGender('),script.indexOf(" $('odpc-voice-preview').addEventListener"));
-function setup(voices,locale='de-DE',gender='female'){
+function setup(voices,locale='de-DE',gender='female',device=''){
  const controls=Object.fromEntries(['language','gender','profile','preview','voicehelp','audio'].map(id=>['odpc-voice-'+id,{value:'',disabled:false,textContent:'',checked:true,children:[],replaceChildren(){this.children=[]},append(x){this.children.push(x)}}]));
  controls['odpc-voice-language'].value=locale;controls['odpc-voice-gender'].value=gender;
  const spoken=[],timers=[],status={textContent:''};let available=voices;const panel={hidden:false,dataset:{}};
  const synth={getVoices:()=>available,cancel(){},speak:u=>spoken.push(u)};
- const ctx=vm.createContext({$:id=>controls[id],document:{createElement:()=>({value:'',textContent:''})},status,panel,window:{speechSynthesis:synth,SpeechSynthesisUtterance:class{}},speechSynthesis:synth,SpeechSynthesisUtterance:class{constructor(t){this.text=t}},setTimeout(fn){timers.push(fn);return timers.length},clearTimeout(){}});
+ const guideLang=()=>controls['odpc-voice-language'].value.split('-')[0];
+ const ctx=vm.createContext({guide,guideLang,flow:{device},tx:(key,values)=>guide.text(guideLang(),key,values),$:id=>controls[id],document:{createElement:()=>({value:'',textContent:''})},status,panel,window:{speechSynthesis:synth,SpeechSynthesisUtterance:class{}},speechSynthesis:synth,SpeechSynthesisUtterance:class{constructor(t){this.text=t}},setTimeout(fn){timers.push(fn);return timers.length},clearTimeout(){}});
  vm.runInContext('let voiceCatalog=[],speechTicket=0,speaking="",voiceWaitTimer=null;'+helpers,ctx);
  return{controls,spoken,timers,status,panel,run:code=>vm.runInContext(code,ctx),setVoices:v=>available=v};
 }
@@ -27,3 +30,10 @@ test('device errors do not activate a robot voice',()=>{const s=setup([voice('An
 test('all eight languages use matching device voices',()=>{for(const lang of ['de-DE','en-US','es-ES','fr-FR','it-IT','pt-PT','pl-PL','tr-TR']){const s=setup([voice('Female Natural',lang)],lang);s.run('say("Test.")');assert.equal(s.spoken[0].voice.lang,lang);}});
 test('sentence pauses and cancellation prevent queued continuation after stop',()=>{const s=setup([voice('Anna')]);s.run('say("Ein Satz. Noch ein Satz.")');assert.equal(s.spoken.length,1);s.spoken[0].onend();assert.equal(s.timers.length,1);s.run('speechTicket++;stopLocalAudio()');s.timers.shift()();assert.equal(s.spoken.length,1);});
 test('preview does not overwrite the question and can be requested while muted',()=>{const s=setup([voice('Anna')]);s.controls['odpc-voice-audio'].checked=false;s.run('say("Frage.");say("Hörprobe.",false,true)');assert.equal(s.run('speaking'),'Frage.');assert.equal(s.spoken.length,1);});
+test('missing device voices give localized help for the actual device',()=>{
+ for(const locale of ['de-DE','en-US','es-ES','fr-FR','it-IT','pt-PT','pl-PL','tr-TR'])for(const device of ['android','iphone','computer','']){
+  const s=setup([],locale,'female',device);s.run('say("Test.")');s.timers.shift()();
+  assert.equal(s.panel.dataset.audioState,'voice-unavailable');assert.equal(s.status.textContent,guide.voiceHelp(locale.split('-')[0],device));
+  if(device==='computer')assert(!s.status.textContent.includes('Samsung'));
+ }
+});

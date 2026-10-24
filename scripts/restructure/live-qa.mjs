@@ -89,6 +89,23 @@ for(const [name,viewport]of [['desktop',{width:1440,height:1000}],['mobile',{wid
  await answer('Ich möchte kostenlos Bewerbungen schreiben');assert.equal(await page.locator('#odpc-voice').getAttribute('data-phase'),'platform');await page.locator('[data-choice="ChatGPT"]').click();
  assert.equal(await page.locator('#odpc-voice').getAttribute('data-phase'),'work');assert.match(await page.locator('#hm-guide-work-prompt').inputValue(),/ATS-Abgleich/);
  assert.equal(await page.locator('[data-choice="Android"]').count(),0);pass(name+' natural free-text application starts without an unnecessary device or connection question');
+ const copyLabels={'de-DE':'Auftrag kopieren','en-US':'Copy task prompt','es-ES':'Copiar instrucciones','fr-FR':'Copier les instructions','it-IT':'Copia le istruzioni','pt-PT':'Copiar instruções','pl-PL':'Kopiuj instrukcję','tr-TR':'Görev metnini kopyala'};
+ for(const [locale,label]of Object.entries(copyLabels)){
+  if(!await page.locator('#odpc-voice-settings').evaluate(el=>el.open))await page.locator('#odpc-voice-settings summary').click();
+  await page.locator('#odpc-voice-language').selectOption(locale);
+  assert.equal(await page.locator('#odpc-voice').getAttribute('lang'),locale.split('-')[0]);
+  assert.equal(await page.locator('#hm-guide-work-copy').innerText(),label);
+  if(!['de-DE','en-US'].includes(locale)){assert.notEqual(await page.locator('#hm-guide-work-preview summary').innerText(),'View task prompt');assert(!/Schritt|Aufgabe auswählen|Mit deiner KI arbeiten/.test(await page.locator('#hm-guide-progress').innerText()));}
+  await page.locator('#odpc-voice-reset').click();await page.reload({waitUntil:'networkidle'});
+  assert.equal(await page.locator('#odpc-voice-language').inputValue(),locale,'reset and reload preserve '+locale);
+  if(await page.locator('#odpc-voice').getAttribute('data-phase')==='platform')await page.locator('[data-choice="ChatGPT"]').click();
+  assert.equal(await page.locator('#hm-guide-work-copy').innerText(),label);
+ }
+ pass(name+' all eight languages localize task actions, progress and handoff; reset and reload keep the selected language');
+ await page.goto('https://ai.odpc.de/connector-einrichten/?agent=application&lang=fr',{waitUntil:'networkidle'});assert.equal(await page.locator('#odpc-voice-language').inputValue(),'fr-FR');
+ await page.locator('#odpc-voice-settings summary').click();await page.locator('#odpc-voice-language').selectOption('tr-TR');await page.reload({waitUntil:'networkidle'});assert.equal(await page.locator('#odpc-voice-language').inputValue(),'tr-TR');
+ await page.goto('https://ai.odpc.de/connector-einrichten/?agent=application&lang=es',{waitUntil:'networkidle'});assert.equal(await page.locator('#odpc-voice-language').inputValue(),'es-ES');
+ pass(name+' a language entry link initializes the language without overriding later choices on reload');
  assert.equal(errors.length,0,JSON.stringify(errors));pass(name+' agent overview and no page errors');await context.close();
 }
 const audioContext=await browser.newContext();const audio=await audioContext.newPage();await audio.goto('https://ai.odpc.de/connector-einrichten/',{waitUntil:'networkidle'});await audio.getByRole('button',{name:'Mit Sprache einrichten',exact:true}).click();

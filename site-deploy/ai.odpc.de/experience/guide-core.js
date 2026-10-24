@@ -1,5 +1,8 @@
-(function(root,factory){const api=factory();if(typeof module==='object'&&module.exports)module.exports=api;else root.MonkeyGuide=api})(typeof window==='undefined'?globalThis:window,function(){
+(function(root,factory){const copy=typeof module==='object'&&module.exports?require('./dialog-copy.js'):root.MonkeyDialogCopy;if(!copy){root.MonkeyGuide=null;return}const api=factory(copy);if(typeof module==='object'&&module.exports)module.exports=api;else root.MonkeyGuide=api})(typeof window==='undefined'?globalThis:window,function(dialogCopy){
 'use strict';
+const ui=(lang='de')=>dialogCopy[lang]||dialogCopy.en;
+function text(lang,key,values={}){return String(ui(lang).text[key]||'').replace(/\{(\w+)\}/g,(match,name)=>Object.hasOwn(values,name)?String(values[name]):match)}
+function voiceHelp(lang='de',device=''){const copy=ui(lang);return copy.text.voiceMissing+' '+(copy.device[device]||copy.device.unknown)}
 const platformLinks={chatgpt:'https://chatgpt.com/',gemini:'https://gemini.google.com/',claude:'https://claude.ai/'};
 const helpLinks={chatgpt:'https://help.openai.com/en/articles/11487775-connected-apps-in-chatgpt',gemini:'https://support.google.com/gemini/answer/13695044?hl=de',claude:'https://support.claude.com/en/articles/10166901-use-google-workspace-connectors'};
 const patterns={platform:{chatgpt:/chat\s*gpt|openai/i,gemini:/gemini|google.?ki/i,claude:/claude|anthropic/i},device:{android:/android|samsung|galaxy|s24/i,iphone:/iphone|ipad|ios/i,computer:/computer|windows|mac|laptop|desktop|pc\b|ordinateur|ordenador|computador|komputer|bilgisayar/i},service:{gmail:/gmail|google.?mail/i,outlook:/outlook|hotmail|microsoft|office.?365|m365/i,calendar:/kalender|calendar|calendrier|calendario|takvim|kalendarz/i,drive:/drive|datei|files|fichier|archivo|document|dokument/i,wordpress:/wordpress|website|webseite|homepage|seo|web.?site/i,github:/github|repository/i},goal:{interview:/interview|vorstellungsgespr[aä]ch/i,report:/berichtsheft|ausbildungsbericht|tagesbericht/i,marketing:/marketing|redaktionsplan|social.?media|kampagne/i,finance:/finanz|finance|beleg|vertrag/i,mail:/mail|postfach|email|e-mail|correo|posta|courriel|poczta/i,application:/bewerb|lebenslauf|job|application|candidatur|curr[ií]cul|başvuru|praca|cv\b/i,web:/wordpress|website|webseite|homepage|seo|web.?site/i,office:/kalender|calendar|termin|datei|dokument|b[uü]ro|office|document/i,car:/auto|fahrzeug|obd|motor|car\b|voiture|araç/i,legal:/kanzlei|anwalt|praelex|legal|lawyer/i,setup:/einricht|verbinden|connect|start|ki\b|assistant|assistent|einsteiger|anfänger|beginner|configur|kurulum|yapay|konfigur|ai\b/i}};
@@ -14,7 +17,7 @@ words["tr"]={"goal": "Merhaba! Ben Monkey. Yapay zekânız neye yardımcı olsun
 const state=()=>({phase:'goal',goal:'',platform:'',device:'',services:[],experience:'',business:false,result:'open',reportedServices:[],task:'',targetTask:'',returnTask:'',language:'de'});
 function secret(t){return /(?:passwort|password|kennwort|token|api.?key|zugangscode|einmalcode|2fa|otp|contraseña|mot de passe|senha|hasło|şifre)\s*(?:[:=]|ist\b|is\b|lautet\b)\s*\S+|\b(?:sk-[a-z0-9_-]{16,}|gh[pousr]_[a-z0-9]{20,}|AIza[a-z0-9_-]{25,})\b/i.test(t)}
 function extract(t){const out={services:[]};for(const kind of ['platform','device','goal'])for(const[k,re]of Object.entries(patterns[kind]))if(re.test(t)){out[kind]=k;break}for(const[k,re]of Object.entries(patterns.service))if(re.test(t))out.services.push(k);if(/anfänger|einsteiger|keine ahnung|beginner|neu hier/i.test(t))out.experience='beginner';if(/profi|technisch|admin|experte|advanced|expert/i.test(t))out.experience='advanced';if(/unternehmen|firma|geschäft|mitarbeiter|business|company|team/i.test(t))out.business=true;return out}
-function message(s,lang='de'){const w=words[lang]||words.en;if(s.phase==='setup')return w.setup;if(s.phase==='test')return w.test;if(s.phase==='done')return (lang==='de'?(s.result==='user-reported'?'Du hast einen erfolgreichen Test gemeldet. Eine technische Kontoprüfung durch diese Webseite fand nicht statt. ':'Dein Verbindungstest ist noch offen. Du kannst schon einen Entwurf mit Beispieldaten vorbereiten. '):'Your account access still needs to be checked in your AI account. ')+(lang==='de'?'Welche Aufgabe möchtest du jetzt starten?':'Which task would you like to start?');if(s.phase==='work')return lang==='de'?'Dein Arbeitsauftrag ist vorbereitet. Kopiere ihn und öffne dein KI-Konto. Dort geht es mit deinen freigegebenen Werkzeugen weiter.':'Your task prompt is ready. Copy it and open your AI account to continue with your authorized tools.';return w[s.phase]||w.goal}
+function message(s,lang='de'){const w=words[lang]||words.en;if(s.phase==='setup')return w.setup;if(s.phase==='test')return w.test;if(s.phase==='done')return text(lang,s.result==='user-reported'?'doneReported':'doneOpen')+' '+text(lang,'taskIntro');if(s.phase==='work')return text(lang,'workReady');return w[s.phase]||w.goal}
 function merge(s,e){for(const k of ['platform','device','goal','experience'])if(e[k]&&(k!=='goal'||!s.goal))s[k]=e[k];s.services=[...new Set([...s.services,...e.services])];s.business=s.business||!!e.business}
 function route(s){
  const textTask=({application:'application',car:'car',legal:'legal',marketing:'marketing',interview:'interview',report:'report',finance:'finance'})[s.goal];
@@ -33,8 +36,8 @@ function finishConnection(s){
  if(taskCatalog.some(t=>t.id===s.returnTask)){s.task=s.returnTask;s.targetTask=s.returnTask;s.returnTask='';s.phase='work'}
  else{s.phase='done';s.task=''}
 }
-function reply(current,text,lang='de'){
- const s=JSON.parse(JSON.stringify(current)),w=words[lang]||words.en,t=String(text||'').trim().slice(0,600);if(!t)return {state:s,text:message(s,lang),accepted:false};
+function reply(current,inputText,lang='de'){
+ const s=JSON.parse(JSON.stringify(current)),w=words[lang]||words.en,t=String(inputText||'').trim().slice(0,600);if(!t)return {state:s,text:message(s,lang),accepted:false};
  if(secret(t))return {state:s,text:w.secret,accepted:false,sensitive:true};
  if(/^(?:ohne (?:konto)?verbindung starten|mit beispieldaten starten|start without connection|use sample data)$/i.test(t)){
   const id=s.targetTask||s.returnTask||({mail:'mail',office:'documents',web:'web',application:'application',car:'car',legal:'legal',marketing:'marketing',interview:'interview',report:'report',finance:'finance'})[s.goal]||'custom';
@@ -48,7 +51,7 @@ function reply(current,text,lang='de'){
   if(/^(?:andere Aufgabe|Aufgaben auswählen|zur Aufgabenauswahl|choose another task)$/i.test(t)){s.phase='done';s.task='';s.targetTask='';s.returnTask='';return {state:s,text:message(s,lang),accepted:true}}
   const id=taskId(t),item=tasks(s,lang).find(x=>x.id===id);
   if(item){s.task=item.id;s.phase='work';return {state:s,text:message(s,lang),accepted:true}}
-  return {state:s,text:lang==='de'?'Welche Aufgabe möchtest du starten? Wähle unten eine Aufgabe oder beschreibe deinen Wunsch. Für weitere Dienste wähle „Weitere Verbindung einrichten“.':'Choose a task below or describe your goal. You can also connect another service.',accepted:false};
+  return {state:s,text:text(lang,'taskIntro'),accepted:false};
  }
  if(['setup','test'].includes(s.phase)&&/^(Einrichtung abgeschlossen|Aufgabe wählen|ich bin (?:mit der Einrichtung )?fertig|alle (?:Dienste|Konten) (?:sind )?verbunden|setup complete)$/i.test(t)){
   finishConnection(s);return {state:s,text:message(s,lang),accepted:true};
@@ -83,21 +86,21 @@ function setup(s,lang='de'){
  let test=en?'Check whether you can use '+service+' with my authorized account. State which account and tools are actually available. Start with a harmless read-only test using test data or a test item I choose. Do not send, delete, publish or change anything. If you lack access, state that clearly.':'Prüfe, ob du '+service+' mit meinem freigegebenen Konto nutzen kannst. Nenne das verwendete Konto und die tatsächlich verfügbaren Werkzeuge. Starte mit einem harmlosen Lesetest anhand von Beispieldaten oder einem von mir benannten Testeintrag. Nichts senden, löschen, veröffentlichen oder verändern. Falls dir der Zugriff fehlt, sage das klar.';
  const local=localizedSetup[lang];if(local){steps=local[0]+(s.services.includes('wordpress')?' '+local[2]:'')+(s.business?' '+local[3]:'');test=local[1].replace('{service}',service)}
  if(!s.services.length){steps=lang==='de'?'Für einen ersten Entwurf brauchst du keine Kontoverbindung. Öffne deine KI und probiere den Auftrag mit Beispieldaten.':'No account connection is needed for a first draft. Open your AI and try the prompt with sample data.';test=s.goal==='application'?(lang==='de'?'Hilf mir, ein kurzes persönliches Bewerbungsanschreiben vorzubereiten. Frage mich zuerst nach Stellenanzeige und meinem tatsächlichen Werdegang. Erfinde keine Qualifikationen oder Arbeitgeber. Nichts versenden.':'Help me prepare a short personal cover letter. First ask for the job description and my actual experience. Do not invent qualifications or employers. Do not send anything.'):(lang==='de'?'Hilf mir Schritt für Schritt bei meiner Aufgabe. Arbeite zunächst mit Beispieldaten, frage gezielt nach fehlenden Angaben und erfinde keine Ergebnisse oder Zugriffe. Nichts extern verändern.':'Help with my task step by step. Start with sample data, ask for missing details and do not invent results or access. Do not change anything externally.') }
- const cost=lang==='de'?(p==='chatgpt'?'Kostencheck: Nutze nur Apps, die dein vorhandenes Konto ohne Zusatzkosten anbietet. Verfügbarkeit hängt unter anderem von Tarif und Region ab.':'Kostencheck: Beginne im kostenlosen Konto mit den angebotenen Verbindungen. Nutzungslimits und Kontovorgaben gelten weiter.')+' Wenn ein Upgrade verlangt wird: nicht kaufen, sondern „Nicht verfügbar“ wählen oder Oliver fragen.':'Use only connections available without extra cost in your account. If an upgrade is required, choose unavailable or ask Oliver.';
+ const cost=text(lang,'cost');
  return {cost,url:platformLinks[p]||platformLinks.chatgpt,help:helpLinks[p]||helpLinks.chatgpt,steps,test,service};
 }
 // Buttons and free text use the same state transition; no separate click-only workflow.
 function choices(s,lang='de'){
- const de=lang==='de';
+ const a=ui(lang).actions;
  const goals={de:['E-Mails organisieren','Termine und Dokumente','Webseite betreuen','Bewerbungen schreiben','KI einrichten'],en:['Organize email','Calendar and documents','Manage a website','Job applications','Set up AI'],es:['Organizar correo','Calendario y documentos','Gestionar una web','Candidaturas','Configurar IA'],fr:['Organiser les emails','Calendrier et documents','Gérer un site','Candidatures','Configurer IA'],it:['Organizzare email','Calendario e documenti','Gestire un sito','Candidature','Configurare IA'],pt:['Organizar email','Calendário e documentos','Gerir um site','Candidaturas','Configurar IA'],pl:['Poczta','Kalendarz i dokumenty','Strona internetowa','CV i praca','Konfiguracja AI'],tr:['E-posta','Takvim ve belgeler','Web sitesi','İş başvurusu','Yapay zekâ kurulumu']};
  const values=['E-Mails organisieren','Termine und Dokumente','Webseite betreuen','Bewerbungen schreiben','KI einrichten'];
  if(s.phase==='goal')return (goals[lang]||goals.en).map((label,i)=>({label,value:values[i]}));
- if(s.phase==='platform')return ['ChatGPT','Gemini','Claude'].map(label=>({label,value:label})).concat({label:de?'Ich habe noch keine KI':'No AI account yet',value:'noch keine'});
- if(s.phase==='device')return ['Android / Samsung','iPhone / iPad',de?'Computer / Laptop':'Computer / laptop'].map((label,i)=>({label,value:['Android','iPhone','Computer'][i]}));
- if(s.phase==='service')return ['Gmail',de?'Google Kalender':'Google Calendar','Google Drive','Gmail + Kalender + Drive','Outlook','WordPress','GitHub'].map(label=>({label,value:label})).concat({label:de?'Ohne Verbindung starten':'Start without connection',value:'ohne Verbindung starten'});
- if(s.phase==='setup')return [{label:de?'Ich habe verbunden':'I connected it',value:'verbunden'},{label:de?'Nicht verfügbar / kostet extra':'Unavailable / costs extra',value:'nicht verfügbar'},{label:de?'Ohne Verbindung starten':'Start without connection',value:'ohne Verbindung starten'},{label:de?'Aufgabe wählen (Test später)':'Choose a task (test later)',value:'Einrichtung abgeschlossen'},{label:de?'Ich brauche Hilfe':'I need help',value:'Hilfe'}];
- if(s.phase==='test')return [{label:de?'Test erfolgreich':'Test successful',value:'Test erfolgreich'},{label:de?'Test fehlgeschlagen':'Test failed',value:'Test fehlgeschlagen'},{label:de?'Aufgabe wählen (Test später)':'Choose a task (test later)',value:'Aufgabe wählen'}];
- if(['done','work'].includes(s.phase))return (s.phase==='done'?tasks(s,lang).filter(t=>['mail','calendar','documents','web','application','custom'].includes(t.id)).map(t=>({label:t.title,value:'Aufgabe:'+t.id})):[{label:de?'Andere Aufgabe auswählen':'Choose another task',value:'andere Aufgabe'}]).concat({label:de?'Weitere Verbindung einrichten':'Connect another service',value:'KI einrichten'});
+ if(s.phase==='platform')return ['ChatGPT','Gemini','Claude'].map(label=>({label,value:label})).concat({label:a[0],value:'noch keine'});
+ if(s.phase==='device')return ['Android / Samsung','iPhone / iPad',a[1]].map((label,i)=>({label,value:['Android','iPhone','Computer'][i]}));
+ if(s.phase==='service')return ['Gmail',a[2],'Google Drive',a[3],'Outlook','WordPress','GitHub'].map((label,i)=>({label,value:['Gmail','Google Kalender','Google Drive','Gmail + Kalender + Drive','Outlook','WordPress','GitHub'][i]})).concat({label:a[4],value:'ohne Verbindung starten'});
+ if(s.phase==='setup')return [{label:a[5],value:'verbunden'},{label:a[6],value:'nicht verfügbar'},{label:a[4],value:'ohne Verbindung starten'},{label:a[7],value:'Einrichtung abgeschlossen'},{label:a[8],value:'Hilfe'}];
+ if(s.phase==='test')return [{label:a[9],value:'Test erfolgreich'},{label:a[10],value:'Test fehlgeschlagen'},{label:a[7],value:'Aufgabe wählen'}];
+ if(['done','work'].includes(s.phase))return (s.phase==='done'?tasks(s,lang).filter(t=>['mail','calendar','documents','web','application','custom'].includes(t.id)).map(t=>({label:t.title,value:'Aufgabe:'+t.id})):[{label:a[11],value:'andere Aufgabe'}]).concat({label:a[12],value:'KI einrichten'});
  return [];
 }
 const serviceNames={gmail:'Gmail',outlook:'Microsoft 365 / Outlook',calendar:'Google Kalender',drive:'Google Drive',wordpress:'WordPress',github:'GitHub'};
@@ -131,9 +134,9 @@ const taskBriefs={
 };
 function tasks(s,lang='de'){
  const reported=s.reportedServices||[];
- return [...taskCatalog].sort((a,b)=>Number(b.services.some(x=>reported.includes(x)))-Number(a.services.some(x=>reported.includes(x)))).map(t=>({id:t.id,title:lang==='de'?t.title:t.en}));
+ return [...taskCatalog].sort((a,b)=>Number(b.services.some(x=>reported.includes(x)))-Number(a.services.some(x=>reported.includes(x)))).map(t=>({id:t.id,title:ui(lang).tasks[taskCatalog.indexOf(t)]}));
 }
-function taskId(text){const t=String(text).toLowerCase();if(/^aufgabe:/.test(t))return t.slice(8);if(/interview|vorstellungsgespräch|job interview/.test(t))return 'interview';if(/berichtsheft|ausbildungsbericht|tagesbericht|training report/.test(t))return 'report';if(/marketing|redaktionsplan|social.?media|werbe|kampagne/.test(t))return 'marketing';if(/praelex|kanzlei|anwalt|legal/.test(t))return 'legal';if(/finance|finanz|vertrag|beleg/.test(t))return 'finance';if(/obd|fahrzeug|motor|auto-monkey/.test(t))return 'car';if(/mail|postfach|email/.test(t))return 'mail';if(/termin|kalender|calendar|meeting/.test(t))return 'calendar';if(/dokument|document|datei|zusammenfass|drive/.test(t))return 'documents';if(/webseite|website|wordpress|beitrag|content|github|seo/.test(t))return 'web';if(/bewerb|lebenslauf|application|anschreiben/.test(t))return 'application';if(/eigene|andere|custom|meine aufgabe/.test(t))return 'custom';return '';}
+function taskId(text){const t=String(text).toLowerCase();for(const copy of Object.values(dialogCopy)){const i=copy.tasks.findIndex(label=>label.toLowerCase()===t);if(i>=0)return taskCatalog[i].id}if(/^aufgabe:/.test(t))return t.slice(8);if(/interview|vorstellungsgespräch|job interview/.test(t))return 'interview';if(/berichtsheft|ausbildungsbericht|tagesbericht|training report/.test(t))return 'report';if(/marketing|redaktionsplan|social.?media|werbe|kampagne/.test(t))return 'marketing';if(/praelex|kanzlei|anwalt|legal/.test(t))return 'legal';if(/finance|finanz|vertrag|beleg/.test(t))return 'finance';if(/obd|fahrzeug|motor|auto-monkey/.test(t))return 'car';if(/mail|postfach|email/.test(t))return 'mail';if(/termin|kalender|calendar|meeting/.test(t))return 'calendar';if(/dokument|document|datei|zusammenfass|drive/.test(t))return 'documents';if(/webseite|website|wordpress|beitrag|content|github|seo/.test(t))return 'web';if(/bewerb|lebenslauf|application|anschreiben/.test(t))return 'application';if(/eigene|andere|custom|meine aufgabe/.test(t))return 'custom';return '';}
 function work(s,lang='de'){
  const item=taskCatalog.find(t=>t.id===s.task),offered=tasks(s,lang).find(t=>t.id===s.task);if(!item||!offered)return null;
  const brief=taskBriefs[item.id];
@@ -158,5 +161,5 @@ function restore(v){
  return clean;
 }
 
-return {state,reply,extract,message,setup,restore,secret,choices,tasks,work,selectAgent};
+return {state,reply,extract,message,setup,restore,secret,choices,tasks,work,selectAgent,ui,text,voiceHelp};
 });

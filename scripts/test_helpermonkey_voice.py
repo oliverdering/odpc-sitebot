@@ -19,7 +19,7 @@ class VoiceRegression(unittest.TestCase):
                 self.assertIn('id="'+control+'"', self.source)
 
     def test_accessible_text_fallback(self):
-        for feature in ("SpeechRecognition", "Bitte tippe deine Antwort",
+        for feature in ("SpeechRecognition", "tx('micUnsupported')",
                         "aria-live", "aria-labelledby", "Escape", "focus()"):
             with self.subTest(feature=feature):
                 self.assertIn(feature, self.source)

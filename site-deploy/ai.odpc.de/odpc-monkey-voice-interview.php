@@ -2,14 +2,14 @@
 /**
  * Plugin Name: ODPC Monkey Voice Interview
  * Description: Accessible opt-in voice interview and guided setup for Helper Monkey.
- * Version: 0.12.0
+ * Version: 0.13.0
  * License: GPL-3.0-or-later
  */
 if (!defined('ABSPATH')) exit;
 add_action('wp_footer', function () {
  if (is_admin()) return;
  ?>
- <div id="odpc-voice" class="odpc-voice" data-version="0.12.0" hidden role="dialog" aria-modal="true" aria-labelledby="odpc-voice-title" aria-describedby="odpc-voice-status">
+ <div id="odpc-voice" class="odpc-voice" data-version="0.13.0" hidden role="dialog" aria-modal="true" aria-labelledby="odpc-voice-title" aria-describedby="odpc-voice-status">
   <h2 id="odpc-voice-title">Monkey Einrichtungsassistent</h2><button type="button" id="odpc-voice-topclose" aria-label="Schließen">✕</button>
   <p id="odpc-voice-status" role="status" aria-live="polite">Bereit. Starte das Interview.</p>
   <p id="hm-guide-progress" aria-live="polite"></p>
@@ -69,11 +69,21 @@ add_action('wp_footer', function () {
  const inlineMount=$('hm-connector-mount');
  let modalOpen=false,inertBefore=[],pagePosition={x:0,y:0};
  const backdrop=document.createElement('div');backdrop.id='hm-connector-backdrop';backdrop.hidden=true;document.body.append(backdrop);
- let flow=guide.state(),history=[],lastPrompt='';
- try{const saved=JSON.parse(sessionStorage.getItem('hm-guide-v1')||'null');flow=guide.restore(saved)}catch(e){}
+ let flow=guide.state(),history=[],lastPrompt='',restoredLanguage=false;
+ try{const saved=JSON.parse(sessionStorage.getItem('hm-guide-v1')||'null');flow=guide.restore(saved);restoredLanguage=['de','en','es','fr','it','pt','pl','tr'].includes(saved?.language)}catch(e){}
  const guideLang=()=> $('odpc-voice-language').value.split('-')[0];
+ const tx=(key,values={})=>guide.text(guideLang(),key,values);
  function persist(){try{sessionStorage.setItem('hm-guide-v1',JSON.stringify(flow))}catch(e){}}
- function localize(){const l=languages[$('odpc-voice-language').value];uiIds.forEach((id,i)=>{const el=$(id);if(el){if(id==='label-audio'){const cb=$('odpc-voice-audio');el.replaceChildren(cb,document.createTextNode(' '+l.ui[i]))}else el.textContent=l.ui[i]}});$('odpc-voice-topclose').setAttribute('aria-label',l.ui[12]);if(active){stopAudio();ask();}}
+ function localize(){
+  const l=languages[$('odpc-voice-language').value];
+  uiIds.forEach((id,i)=>{const el=$(id);if(el){if(id==='label-audio'){const cb=$('odpc-voice-audio');el.replaceChildren(cb,document.createTextNode(' '+l.ui[i]))}else el.textContent=l.ui[i]}});
+  panel.lang=guideLang();$('odpc-voice-topclose').setAttribute('aria-label',l.ui[12]);
+  $('odpc-voice-settings').querySelector('summary').textContent=tx('settings');$('hm-guide-history').querySelector('summary').textContent=tx('history');
+  $('hm-guide-privacy').textContent=tx('privacy');document.querySelector('label[for="odpc-voice-profile"]').textContent=tx('profileLabel');
+  $('odpc-voice-gender').options[0].textContent=tx('female');$('odpc-voice-gender').options[1].textContent=tx('male');
+  $('hm-guide-choices').setAttribute('aria-label',l.ui[5]);log.setAttribute('aria-label',tx('history'));
+  if(active){stopAudio();ask();}
+ }
 
  let voiceCatalog=[],speechTicket=0,voiceWaitTimer=null;
  function voiceGender(v){
@@ -91,13 +101,13 @@ add_action('wp_footer', function () {
   let all=[];try{all=window.speechSynthesis?.getVoices()||[]}catch(e){}
   voiceCatalog=all.filter(v=>(v.lang||'').toLowerCase().replace(/_/g,'-').split('-')[0]===lang && (voiceGender(v)===gender || (gender==='female'&&voiceGender(v)==='unknown')) && !/espeak/i.test(v.name||'')).sort((a,b)=>voiceQuality(b)-voiceQuality(a)||Number(b.lang.toLowerCase()===locale)-Number(a.lang.toLowerCase()===locale));
   const menu=$('odpc-voice-profile'),previous=menu.value;menu.replaceChildren();
-  const auto=document.createElement('option');auto.value='';auto.textContent='Automatisch die passendste Stimme wählen';menu.append(auto);
-  voiceCatalog.forEach(v=>{const option=document.createElement('option');option.value=v.voiceURI||v.name;option.textContent=v.name+(voiceGender(v)==='unknown'?' · Geschlecht nicht angegeben':'');menu.append(option)});
+  const auto=document.createElement('option');auto.value='';auto.textContent=tx('autoVoice');menu.append(auto);
+  voiceCatalog.forEach(v=>{const option=document.createElement('option');option.value=v.voiceURI||v.name;option.textContent=v.name+(voiceGender(v)==='unknown'?' · '+tx('unknownGender'):'');menu.append(option)});
   if(voiceCatalog.some(v=>(v.voiceURI||v.name)===previous))menu.value=previous;
   const selected=voiceCatalog.find(v=>(v.voiceURI||v.name)===menu.value)||voiceCatalog[0];
   const native=!!window.speechSynthesis&&!!window.SpeechSynthesisUtterance&&!!selected;
   const help=$('odpc-voice-voicehelp');help.hidden=false;
-  help.textContent=native?'Gerätestimme: '+selected.name+'. Zügiges, natürliches Sprechtempo.'+(voiceGender(selected)==='unknown'?' Der Anbieter nennt kein Geschlecht. Bitte mit der Hörprobe prüfen.':''):'Noch keine passende Gerätestimme verfügbar. Auf Samsung: Einstellungen → Allgemeine Verwaltung → Text-zu-Sprache → Samsung oder Google → deutsche Sprachdaten. Danach diese Seite neu öffnen. Texteingabe funktioniert weiter.';
+  help.textContent=native?tx('voiceReady',{name:selected.name})+(voiceGender(selected)==='unknown'?' '+tx('voiceNoGender'):''):guide.voiceHelp(guideLang(),flow.device);
   $('odpc-voice-preview').disabled=!native;menu.disabled=!native;
   return selected;
  }
@@ -110,17 +120,17 @@ add_action('wp_footer', function () {
    const selected=refreshVoices();
    if(!selected||!window.speechSynthesis||!window.SpeechSynthesisUtterance){
     if(retry){panel.dataset.audioState='waiting-for-device-voice';voiceWaitTimer=setTimeout(()=>speakWhenReady(false),1200);return}
-    panel.dataset.audioState='voice-unavailable';panel.dataset.audioVoice='';status.textContent='Keine passende Gerätestimme verfügbar. Bitte deutsche Sprachdaten in den Geräteeinstellungen aktivieren oder die Texteingabe nutzen.';return;
+    panel.dataset.audioState='voice-unavailable';panel.dataset.audioVoice='';status.textContent=guide.voiceHelp(guideLang(),flow.device);return;
    }
    panel.dataset.audioVoice=selected.voiceURI||selected.name;panel.dataset.audioEngine='device';
    const parts=(String(t).match(/[^.!?]+[.!?]+|[^.!?]+$/g)||[String(t)]).flatMap(sentence=>sentence.match(/.{1,220}(?:\s|$)|.{1,220}/g)||[sentence]);let index=0;
    const next=()=>{
     if(ticket!==speechTicket||panel.hidden)return;
-    if(index>=parts.length){panel.dataset.audioState='ended';status.textContent='Sprachausgabe beendet.';return}
+    if(index>=parts.length){panel.dataset.audioState='ended';status.textContent=tx('voiceEnded');return}
     const u=new SpeechSynthesisUtterance(parts[index++].trim());u.lang=$('odpc-voice-language').value;u.rate=1.12;u.pitch=1;u.volume=1;u.voice=selected;
     u.onstart=()=>{if(ticket===speechTicket)panel.dataset.audioState='playing'};
     u.onend=()=>{if(ticket===speechTicket)voiceWaitTimer=setTimeout(next,140)};
-    u.onerror=()=>{if(ticket!==speechTicket)return;panel.dataset.audioState='error';status.textContent='Die Gerätestimme konnte nicht starten. Bitte „Stimme testen“ erneut antippen oder eine andere verfügbare Stimme wählen. Es wird keine künstliche Ersatzstimme zugeschaltet.'};
+    u.onerror=()=>{if(ticket!==speechTicket)return;panel.dataset.audioState='error';status.textContent=tx('voiceError')};
     try{speechSynthesis.speak(u)}catch(e){u.onerror()}
    };next();
   };speakWhenReady(true);
@@ -128,7 +138,7 @@ add_action('wp_footer', function () {
  $('odpc-voice-preview').addEventListener('click',()=>say(languages[$('odpc-voice-language').value].preview,false,true));
  $('odpc-voice-language').addEventListener('change',()=>{flow.language=guideLang();persist();$('odpc-voice-profile').value='';refreshVoices();localize()});
  $('odpc-voice-profile').addEventListener('change',()=>{stopAudio();refreshVoices();if(active)say(languages[$('odpc-voice-language').value].preview,false,true)});
- $('odpc-voice-gender').addEventListener('change',()=>{stopAudio();$('odpc-voice-profile').value='';refreshVoices();status.textContent='Stimme ausgewählt. Mit „Stimme testen“ anhören.';if(active&&$('odpc-voice-audio').checked)say(languages[$('odpc-voice-language').value].preview,false)});
+ $('odpc-voice-gender').addEventListener('change',()=>{stopAudio();$('odpc-voice-profile').value='';refreshVoices();status.textContent=tx('voiceSelected');if(active&&$('odpc-voice-audio').checked)say(languages[$('odpc-voice-language').value].preview,false)});
  $('odpc-voice-audio').addEventListener('change',()=>{if(!$('odpc-voice-audio').checked)stopAudio()});
  if('speechSynthesis' in window){speechSynthesis.addEventListener?.('voiceschanged',refreshVoices);setTimeout(refreshVoices,700);setTimeout(refreshVoices,2000);}refreshVoices();localize();
 
@@ -151,54 +161,54 @@ add_action('wp_footer', function () {
  window.visualViewport?.addEventListener('resize',sizeViewport);window.addEventListener('resize',sizeViewport);
 
  function updateHelp(){
-  const phaseNames={goal:'Bedarf klären',platform:'KI-Konto auswählen',device:'Gerät auswählen',service:'Dienst auswählen',setup:'Konto offiziell verbinden',test:'Verbindung testen',done:'Aufgabe auswählen',work:'Mit deiner KI arbeiten'};
-  const text='Hallo Oliver, ich richte gerade helper · monkey ein und benötige Hilfe beim Schritt „'+phaseNames[flow.phase]+'“.';
+  const phaseNames=Object.fromEntries(['goal','platform','device','service','setup','test','done','work'].map((key,i)=>[key,guide.ui(guideLang()).phases[i]]));
+  const text=tx('helpMessage',{step:phaseNames[flow.phase]});
   const href='https://wa.me/492654882183?text='+encodeURIComponent(text);
-  $('hm-guide-help').href=href;$('hm-personal-help').href=href;
+  $('hm-guide-help').href=href;$('hm-personal-help').href=href;$('hm-guide-help').textContent=tx('helpLabel')+' ↗';$('hm-personal-help').textContent='Oliver · WhatsApp ↗';
   panel.dataset.phase=flow.phase;panel.dataset.connectionResult=flow.result;
   const stage={goal:1,platform:2,device:3,service:3,setup:4,test:5,done:5,work:5};
-  $('hm-guide-progress').textContent=(['done','work'].includes(flow.phase)?(guideLang()==='de'?'Dein nächster Schritt · ':'Your next step · '):(guideLang()==='de'?'Schritt ':'Step ')+stage[flow.phase]+' / 5 · ')+phaseNames[flow.phase];
+  $('hm-guide-progress').textContent=(['done','work'].includes(flow.phase)?tx('next')+' · ':tx('step')+' '+stage[flow.phase]+' / 5 · ')+phaseNames[flow.phase];
   $('odpc-voice-back').disabled=!history.length;
  }
  function controls(){
-  log.querySelectorAll('.hm-guide-next').forEach(e=>e.remove());updateHelp();
+  log.querySelectorAll('.hm-guide-next').forEach(e=>e.remove());updateHelp();refreshVoices();
   const selectedTask=guide.tasks(flow,guideLang()).find(t=>t.id===(flow.task||flow.targetTask));
   $('odpc-voice-title').textContent=selectedTask?selectedTask.title:languages[$('odpc-voice-language').value].ui[0];
   const output=$('hm-guide-output');output.replaceChildren();
   const choices=$('hm-guide-choices');choices.replaceChildren();
   for(const choice of guide.choices(flow,guideLang())){const b=document.createElement('button');b.type='button';b.textContent=choice.label;b.dataset.choice=choice.value;b.onclick=()=>{input.value=choice.value;submit()};choices.append(b)}
   if(flow.phase==='done'){
-   const p=document.createElement('p');p.className='hm-task-intro';p.textContent=guideLang()==='de'?'Was möchtest du jetzt tatsächlich machen? Wähle eine Aufgabe. Wir bereiten den passenden Arbeitsauftrag für deine KI vor.':'What would you like to do now? Choose a task to prepare the prompt for your AI.';output.append(p);return;
+   const p=document.createElement('p');p.className='hm-task-intro';p.textContent=tx('taskIntro');output.append(p);return;
   }
   if(flow.phase==='work'){
    const data=guide.work(flow,guideLang());if(!data)return;
    const title=document.createElement('h3');title.textContent=data.title;output.append(title);
-   const note=document.createElement('p');note.textContent=guideLang()==='de'?'1. Auftrag kopieren. 2. Dein KI-Konto öffnen. 3. Dort einfügen und absenden. Deine KI fragt nach den Details und prüft ihre Zugriffe.':'1. Copy the prompt. 2. Open your AI account. 3. Paste and send it there. Your AI will ask for details and check its access.';output.append(note);
-   const prompt=document.createElement('textarea');prompt.id='hm-guide-work-prompt';prompt.readOnly=true;prompt.setAttribute('aria-label',guideLang()==='de'?'Dein Arbeitsauftrag':'Your task prompt');prompt.value=data.prompt;const preview=document.createElement('details');preview.id='hm-guide-work-preview';const summary=document.createElement('summary');summary.textContent=guideLang()==='de'?'Arbeitsauftrag ansehen':'View task prompt';preview.append(summary,prompt);preview.addEventListener('toggle',fitPrompts);output.append(preview);
-   const copy=document.createElement('button');copy.type='button';copy.id='hm-guide-work-copy';copy.textContent=guideLang()==='de'?'Auftrag kopieren':'Copy task prompt';copy.onclick=async()=>{try{await navigator.clipboard.writeText(data.prompt);status.textContent=guideLang()==='de'?'Auftrag kopiert. Öffne jetzt '+data.platform+' und füge ihn dort ein.':'Copied. Open '+data.platform+' and paste it there.'}catch(e){preview.open=true;fitPrompts();prompt.focus();prompt.select();status.textContent=guideLang()==='de'?'Bitte den markierten Auftrag kopieren.':'Please copy the selected text.'}};output.append(copy);
-   const link=document.createElement('a');link.id='hm-guide-work-open';link.href=data.url;link.target='_blank';link.rel='noopener noreferrer';link.textContent=data.platform+(guideLang()==='de'?' öffnen ↗':' open ↗');output.append(link);
-   const fine=document.createElement('p');fine.className='hm-fine';fine.textContent=guideLang()==='de'?'Die Arbeit läuft in deinem KI-Konto mit dessen Freigaben. Diese Webseite kann deine Konten weder prüfen noch selbst Aufgaben dort ausführen.':'The task runs in your AI account with its permissions. This website cannot inspect or operate your accounts.';output.append(fine);return;
+   const note=document.createElement('p');note.textContent=tx('workNote');output.append(note);
+   const prompt=document.createElement('textarea');prompt.id='hm-guide-work-prompt';prompt.readOnly=true;prompt.setAttribute('aria-label',tx('promptLabel'));prompt.value=data.prompt;const preview=document.createElement('details');preview.id='hm-guide-work-preview';const summary=document.createElement('summary');summary.textContent=tx('viewPrompt');preview.append(summary,prompt);preview.addEventListener('toggle',fitPrompts);output.append(preview);
+   const copy=document.createElement('button');copy.type='button';copy.id='hm-guide-work-copy';copy.textContent=tx('copy');copy.onclick=async()=>{try{await navigator.clipboard.writeText(data.prompt);status.textContent=tx('copied',{platform:data.platform})}catch(e){preview.open=true;fitPrompts();prompt.focus();prompt.select();status.textContent=tx('manualCopy')}};output.append(copy);
+   const link=document.createElement('a');link.id='hm-guide-work-open';link.href=data.url;link.target='_blank';link.rel='noopener noreferrer';link.textContent=data.platform+' '+tx('open')+' ↗';output.append(link);
+   const fine=document.createElement('p');fine.className='hm-fine';fine.textContent=tx('workFine');output.append(fine);return;
   }
-  if(flow.phase==='platform'){const box=document.createElement('div');box.className='hm-guide-next';const p=document.createElement('p');p.textContent=guideLang()==='de'?'Wähle deine KI oben aus. Noch kein Konto? Beim jeweiligen Originalanbieter kannst du ein kostenloses Konto anlegen.':'Choose your AI above. You can create a free account at its official website.';box.append(p);for(const name of ['chatgpt','gemini','claude']){const a=document.createElement('a');a.href=guide.setup({platform:name,services:[]},guideLang()).url;a.target='_blank';a.rel='noopener noreferrer';a.textContent=({chatgpt:'ChatGPT',gemini:'Gemini',claude:'Claude'})[name]+' ↗';box.append(a)}log.append(box);return;}
+  if(flow.phase==='platform'){const box=document.createElement('div');box.className='hm-guide-next';const p=document.createElement('p');p.textContent=tx('platformNote');box.append(p);for(const name of ['chatgpt','gemini','claude']){const a=document.createElement('a');a.href=guide.setup({platform:name,services:[]},guideLang()).url;a.target='_blank';a.rel='noopener noreferrer';a.textContent=({chatgpt:'ChatGPT',gemini:'Gemini',claude:'Claude'})[name]+' ↗';box.append(a)}log.append(box);return;}
   if(!['setup','test'].includes(flow.phase))return;
   const data=guide.setup(flow,guideLang()),box=document.createElement('div');box.className='hm-guide-next';
   const p=document.createElement('p');p.textContent=data.steps;box.append(p);const cost=document.createElement('p');cost.className='hm-cost-note';cost.textContent=data.cost;box.append(cost);
   const link=document.createElement('a');link.href=data.url;link.textContent=(flow.platform||'KI-Konto')+' ↗';link.target='_blank';link.rel='noopener noreferrer';box.append(link);
-  const help=document.createElement('a');help.href=data.help;help.textContent=guideLang()==='de'?'Offizielle Anleitung ↗':'Official guide ↗';help.target='_blank';help.rel='noopener noreferrer';box.append(help);
+  const help=document.createElement('a');help.href=data.help;help.textContent=tx('official')+' ↗';help.target='_blank';help.rel='noopener noreferrer';box.append(help);
   if(flow.phase==='test'){
-   const label=document.createElement('label');label.htmlFor='hm-guide-test';label.textContent=guideLang()==='de'?'Dein Testauftrag für das KI-Konto':'Test prompt for your AI account';box.append(label);
+   const label=document.createElement('label');label.htmlFor='hm-guide-test';label.textContent=tx('testPrompt');box.append(label);
    const prompt=document.createElement('textarea');prompt.id='hm-guide-test';prompt.readOnly=true;prompt.value=data.test;box.append(prompt);
-   const copy=document.createElement('button');copy.type='button';copy.textContent=guideLang()==='de'?'Testauftrag kopieren':'Copy test prompt';copy.onclick=async()=>{try{await navigator.clipboard.writeText(data.test);status.textContent=guideLang()==='de'?'Kopiert. Jetzt im KI-Konto einfügen.':'Copied. Paste in your AI account.'}catch(e){prompt.focus();prompt.select();status.textContent='Bitte markierten Text kopieren.'}};box.append(copy);
+   const copy=document.createElement('button');copy.type='button';copy.textContent=tx('copyTest');copy.onclick=async()=>{try{await navigator.clipboard.writeText(data.test);status.textContent=tx('copiedTest')}catch(e){prompt.focus();prompt.select();status.textContent=tx('manualCopy')}};box.append(copy);
   }
   log.append(box);fitPrompts();
  }
- function ask(){if(panel.hidden)return;const q=guide.message(flow,guideLang());lastPrompt=q;status.textContent=guideLang()==='de'?'Dein Einrichtungsdialog':'Your setup guide';append('Monkey',q);controls();say(q)}
+ function ask(){if(panel.hidden)return;const q=guide.message(flow,guideLang());lastPrompt=q;status.textContent=tx('guideStatus');append('Monkey',q);controls();say(q)}
  function finish(){controls()}
  function submit(){
   const value=input.value.trim().slice(0,600);if(!value)return;
   const result=guide.reply(flow,value,guideLang());stopAudio();
   const selectedChoice=guide.choices(flow,guideLang()).find(c=>c.value===value);
-  if(!result.sensitive)append(guideLang()==='de'?'Du':'You',selectedChoice?selectedChoice.label:value);
+  if(!result.sensitive)append(tx('you'),selectedChoice?selectedChoice.label:value);
   if(result.accepted&&!result.help){history.push(JSON.parse(JSON.stringify(flow)));flow=result.state;persist()}
   input.value='';append('Monkey',result.text);lastPrompt=result.text;controls();if(result.accepted&&!result.help){panel.focus({preventScroll:true});revealStep()}say(result.text);
  }
@@ -223,29 +233,29 @@ add_action('wp_footer', function () {
  $('odpc-voice-close').addEventListener('click',closeConnector);
  backdrop.addEventListener('click',closeConnector);
  $('odpc-voice-send').addEventListener('click',submit);
- $('odpc-voice-stop').addEventListener('click',()=>{stopAudio();status.textContent='Audio gestoppt. Texteingabe ist weiterhin möglich.'});
- $('odpc-voice-reset').addEventListener('click',()=>{stopAudio();flow=guide.state();history=[];persist();active=true;panel.dataset.finished='no';log.replaceChildren();$('hm-guide-history-log').replaceChildren();$('hm-guide-history').hidden=true;$('hm-guide-history').open=false;input.value='';input.disabled=false;$('odpc-voice-send').disabled=false;$('odpc-voice-mic').disabled=false;ask();panel.focus({preventScroll:true});revealStep()});
+ $('odpc-voice-stop').addEventListener('click',()=>{stopAudio();status.textContent=tx('voiceStopped')});
+ $('odpc-voice-reset').addEventListener('click',()=>{stopAudio();flow=guide.state();flow.language=guideLang();history=[];persist();active=true;panel.dataset.finished='no';log.replaceChildren();$('hm-guide-history-log').replaceChildren();$('hm-guide-history').hidden=true;$('hm-guide-history').open=false;input.value='';input.disabled=false;$('odpc-voice-send').disabled=false;$('odpc-voice-mic').disabled=false;ask();panel.focus({preventScroll:true});revealStep()});
  input.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();submit()}});
  $('odpc-voice-repeat').addEventListener('click',()=>say(speaking));
- $('odpc-voice-back').addEventListener('click',()=>{if(!history.length){status.textContent=guideLang()==='de'?'Kein vorheriger Schritt in dieser Sitzung.':'No earlier step in this session.';return}stopAudio();flow=history.pop();persist();input.value='';ask();panel.focus({preventScroll:true});revealStep();});
+ $('odpc-voice-back').addEventListener('click',()=>{if(!history.length){status.textContent=tx('noHistory');return}stopAudio();flow=history.pop();flow.language=guideLang();persist();input.value='';ask();panel.focus({preventScroll:true});revealStep();});
  $('odpc-voice-mic').addEventListener('click',()=>{
-  if(!SpeechRecognition){status.textContent='Spracheingabe wird hier nicht unterstützt. Bitte tippe deine Antwort.';input.focus();return}
+  if(!SpeechRecognition){status.textContent=tx('micUnsupported');input.focus();return}
   stopAudio();
   $('odpc-voice-audio').checked=true;
   const ticket=++session;recognition=new SpeechRecognition();recognition.lang=$('odpc-voice-language').value;recognition.interimResults=false;recognition.maxAlternatives=1;
-  recognition.onresult=e=>{if(ticket!==session||panel.hidden)return;input.value=e.results[0][0].transcript;status.textContent='Antwort erkannt.';submit();panel.focus({preventScroll:true})};
-  recognition.onerror=e=>{if(ticket!==session||panel.hidden)return;status.textContent='Mikrofonfehler: '+e.error+'. Bitte nutze die Texteingabe.'};
-  recognition.onend=()=>{if(ticket===session)recognition=null};try{recognition.start();status.textContent='Ich höre zu …'}catch(e){status.textContent='Mikrofon konnte nicht gestartet werden.'}
+  recognition.onresult=e=>{if(ticket!==session||panel.hidden)return;input.value=e.results[0][0].transcript;status.textContent=tx('micRecognized');submit();panel.focus({preventScroll:true})};
+  recognition.onerror=e=>{if(ticket!==session||panel.hidden)return;status.textContent=tx('micError',{error:e.error})};
+  recognition.onend=()=>{if(ticket===session)recognition=null};try{recognition.start();status.textContent=tx('micListening')}catch(e){status.textContent=tx('micStartError')}
  });
  document.addEventListener('keydown',e=>{if(panel.hidden||!modalOpen)return;if(e.key==='Escape'){$('odpc-voice-close').click();return}if(e.key==='Tab'){const nodes=Array.from(panel.querySelectorAll('button:not([disabled]),input:not([disabled]),select:not([disabled]),textarea:not([disabled]),summary,a[href]')).filter(el=>el.getClientRects().length);if(!nodes.length)return;const first=nodes[0],last=nodes[nodes.length-1];if(e.shiftKey&&(document.activeElement===first||document.activeElement===panel)){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}}});
  updateHelp();
  const extra=document.createElement('div');extra.className='odpc-voice-actions';
  ['odpc-voice-repeat','odpc-voice-reset','odpc-voice-close'].forEach(id=>extra.append($(id)));$('odpc-voice-settings').append(extra);
  const alias={de:'de-DE',en:'en-US',es:'es-ES',fr:'fr-FR',it:'it-IT',pt:'pt-PT',pl:'pl-PL',tr:'tr-TR'},requested=new URLSearchParams(location.search).get('lang');
- if(alias[requested])flow.language=requested;
- $('odpc-voice-language').value=alias[flow.language]||alias.de;localize();refreshVoices();
- const requestedAgent=new URLSearchParams(location.search).get('agent');
  const navigationKind=window.performance?.getEntriesByType?.('navigation')[0]?.type;
+ if(alias[requested]&&(navigationKind==='navigate'||!restoredLanguage))flow.language=requested;
+ $('odpc-voice-language').value=alias[flow.language]||alias.de;persist();localize();refreshVoices();
+ const requestedAgent=new URLSearchParams(location.search).get('agent');
  if(requestedAgent&&(navigationKind==='navigate'||(flow.targetTask!==requestedAgent&&!flow.returnTask))){flow=guide.selectAgent(flow,requestedAgent);persist()}
  if(inlineMount){inlineMount.append(panel);panel.tabIndex=-1;panel.classList.add('hm-inline-connector');panel.setAttribute('role','region');panel.removeAttribute('aria-modal');panel.hidden=false;$('odpc-voice-topclose').hidden=true;$('odpc-voice-close').hidden=true;$('odpc-voice-open').setAttribute('aria-expanded','false');active=true;ask();}
  if(requestedAgent&&flow.targetTask===requestedAgent&&inlineMount){panel.focus({preventScroll:true});revealStep()}
