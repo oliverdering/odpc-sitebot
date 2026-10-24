@@ -175,3 +175,12 @@ test('a sentence starting with a different field remains a detail, and task list
  assert.equal(s.task,'application');assert(g.work(s).prompt.includes('bisherigen Aufgaben'));
  s=g.reply(s,'andere Aufgabe').state;assert.equal(g.restore(s).phase,'done');assert.equal(g.restore(s).task,'');
 });
+
+
+test('returning to an earlier preference remains the latest correction in the handoff',()=>{
+ let s=g.selectAgent({...g.state(),platform:'chatgpt'},'application');
+ for(const detail of ['Bitte maximal 120 Wörter.','Bitte maximal 150 Wörter.','Bitte maximal 120 Wörter.'])s=g.reply(s,detail).state;
+ assert.deepEqual(s.brief.entries,['Bitte maximal 120 Wörter.','Bitte maximal 150 Wörter.','Bitte maximal 120 Wörter.']);
+ assert.equal(g.restore(s).brief.entries.at(-1),'Bitte maximal 120 Wörter.');
+ assert(g.work(s).prompt.indexOf('150 Wörter')<g.work(s).prompt.lastIndexOf('120 Wörter'));
+});

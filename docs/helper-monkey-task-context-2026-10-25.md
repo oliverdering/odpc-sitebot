@@ -26,9 +26,9 @@ Reine Textaufgaben verlangen auch bei beiläufig erwähnten Diensten keine Verbi
 
 ## Prüfung
 
-60 JavaScript- und 8 Python-Prüfungen lokal bestanden. Neue Fälle umfassen alle
+61 JavaScript- und 8 Python-Prüfungen lokal bestanden. Neue Fälle umfassen alle
 zwölf Aufgaben in acht Sprachen, Auftragsübergabe, mehrdeutige Fachwörter,
-Korrekturen, Neuladen, Verbindungsumweg, Aufgabenwechsel, begrenzte Speicherung
+Korrekturen (auch die Rückkehr zu einer früheren Vorgabe), Neuladen, Verbindungsumweg, Aufgabenwechsel, begrenzte Speicherung
 und verworfene Zugangsdaten. Ergänzende Live-Prüfungen auf Desktop und Mobilgerät
 prüfen die sichtbare Aufgabenwahl, Prompt, Zwischenablage und Sitzungsfortsetzung.
 Live-Ergebnis wird nach Abschluss des Releases dokumentiert.

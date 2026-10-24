@@ -40,7 +40,7 @@ function cleanBrief(value){
 function remember(s,id,value){
  const brief=cleanBrief(s.brief);if(brief.task!==id){brief.task=id;brief.entries=[]}
  const entry=String(value||'').trim().slice(0,600);
- if(entry&&!secret(entry)&&!brief.entries.includes(entry))brief.entries.push(entry);
+ if(entry&&!secret(entry)&&brief.entries.at(-1)!==entry)brief.entries.push(entry);
  brief.entries=brief.entries.slice(-6);s.brief=brief;
 }
 function taskSelection(t){
