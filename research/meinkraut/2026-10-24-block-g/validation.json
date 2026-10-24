@@ -2,11 +2,11 @@
   "status": "PASS_STAGING_WITH_IMPORT_BLOCKS",
   "productionImport": false,
   "candidateCount": 1,
-  "dailyCandidateCountIncludingOpenBranches": 7,
-  "catalogRecipeCount": 667,
+  "dailyCandidateCountIncludingOpenBranches": 10,
+  "catalogRecipeCount": 668,
   "ingredientCount": 7,
-  "mappedCount": 5,
-  "unmappedCount": 2,
+  "mappedCount": 6,
+  "unmappedCount": 1,
   "sourcePagesFullyRead": true,
   "originalUnitsPreserved": true,
   "volumeToGramsConversion": false,
@@ -14,7 +14,7 @@
   "allergenAssessment": {
     "known": [],
     "complete": false,
-    "note": "Aus den fünf sicher zugeordneten reinen Gewürzen kein benanntes Allergen abgeleitet. Vollständige Bewertung erst nach den beiden Identitätsklärungen; Etiketten und Spuren separat prüfen."
+    "note": "Aus den sechs zugeordneten reinen Gewürz-/Kräuterzutaten kein benanntes Allergen abgeleitet. Gesamtbewertung bleibt bis zur Chimen/Cumin-Klärung unvollständig; Etiketten und Spuren separat prüfen."
   },
   "sameSourceFound": false,
   "negativeProbes": [
@@ -26,7 +26,7 @@
   "liveVerified": false,
   "openIssues": [
     "Botanische Identität für Chimen/Cumin und Messform vor Mahlen anhand weiterer Originalbelege klären.",
-    "Cimbru uscat/Dry savory eindeutig zuordnen, keine stille Ersetzung durch Thymian oder Bohnenkraut.",
     "Nach Mapping vollständige Dubletten- und Allergenprüfung erneut durchführen."
-  ]
+  ],
+  "followupNewCandidates": 0
 }

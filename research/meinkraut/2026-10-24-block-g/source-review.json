@@ -6,7 +6,7 @@
   ],
   "versionDifferences": [
     "English: Cumin; Romanian: Chimen. Identity unresolved.",
-    "English: Dry savory; Romanian: Cimbru uscat. Botanical identity not silently inferred.",
+    "Resolved: English introduction explicitly identifies summer savory, while the ingredient list says Dry savory (1 tbsp). Map to the existing generic dried bohnenkraut entry; do not infer thyme from ambiguous Romanian naming.",
     "English: sweet paprika; Romanian permits sweet or hot. Sweet option selected."
   ],
   "sourceYield": {
@@ -25,5 +25,25 @@
       "reason": "Separate six/seven-ingredient gram list and five-ingredient ratio; approximate yield differs from sum. No candidate extracted or formulas combined."
     }
   ],
-  "newCandidatesInScreening": 0
+  "newCandidatesInScreening": 0,
+  "followup": {
+    "checkedAt": "2026-10-24",
+    "newCandidates": 0,
+    "resolvedMapping": "bohnenkraut",
+    "sourceLocation": "English introduction before Ingredients, two explicit summer-savory mentions",
+    "sourceEvidenceScope": "Generic culinary herb identity and dried form only; no species/cultivar or package claim added.",
+    "remainingIdentityIssue": "Cumin versus Romanian Chimen and measuring form; neither cumin nor caraway chosen without evidence.",
+    "readerComments": "Romanian page comments reread; no author clarification of the cumin/caraway identity found.",
+    "catalogBaselineRevision": "5637b0b16754241eea1dfcb4128a9a3b3276a498",
+    "catalogRecipes": 668,
+    "catalogIngredients": 299,
+    "sameSourceRecipeIds": [],
+    "preliminaryNearest": [
+      {
+        "id": "m17",
+        "overlapWithSixMapped": 4,
+        "ingredientSetScore": 0.5
+      }
+    ]
+  }
 }

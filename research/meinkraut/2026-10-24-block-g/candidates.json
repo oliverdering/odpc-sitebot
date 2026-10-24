@@ -3,8 +3,8 @@
   "batchId": "oxana-research-2026-10-24-g",
   "createdAt": "2026-10-24",
   "productionImport": false,
-  "dailyCandidateCountIncludingOpenBranches": 7,
-  "dailyCountNote": "Vier live (CH/NA/NP/NZ), MT/PT sowie dieser RO-Kandidat in offenen Branches.",
+  "dailyCandidateCountIncludingOpenBranches": 10,
+  "dailyCountNote": "24.10.2026: fünf live (CH/NA/NP/NZ/AU), fünf offene Entwürfe (MT/PT/RO/LY/SG). Nur vorhandener RO-Kandidat nachgeprüft; kein neuer Kandidat.",
   "candidates": [
     {
       "id": "mk-research-20261024-ro-butuc-mici",
@@ -14,9 +14,9 @@
         "RO"
       ],
       "region": "Autorenvariante für rumänische Mici",
-      "description": "Sieben trockene Gewürzpositionen mit Pfeffer, Piment, Koriander, Paprika und Lorbeer; zwei Zutatenidentitäten noch offen.",
+      "description": "Sieben trockene Gewürzpositionen mit schwarzem Pfeffer, Bohnenkraut, Piment, Koriander, Paprika und Lorbeer; Chimen/Cumin noch nicht eindeutig zugeordnet.",
       "editorialType": "Veröffentlichte Autorenvariante; Sprachfassungen getrennt geprüft",
-      "reviewStatus": "Originalquellen und sieben Mengen am 24.10.2026 gelesen. Nicht verkostet; nicht importfreigegeben.",
+      "reviewStatus": "Originalquellen einschließlich englischer Einleitung am 24.10.2026 erneut gelesen. Sommerbohnenkraut ausdrücklich belegt und dem bestehenden generischen Bohnenkraut-Eintrag zugeordnet. Chimen/Cumin und dessen Messform bleiben offen. Nicht verkostet.",
       "ingredients": [
         {
           "sourceName": "Whole black pepper / Piper negru (boabe)",
@@ -27,11 +27,19 @@
         },
         {
           "sourceName": "Dry savory / Cimbru uscat",
-          "ingredient": null,
+          "ingredient": "bohnenkraut",
           "amount": 1,
           "unit": "EL",
-          "mappingIssue": "Englische Fassung nennt savory, rumänische cimbru. Botanische Autorenidentität vor Zuordnung zu bohnenkraut oder thymian bestätigen.",
-          "preparation": "Getrocknet vor dem Mahlen abmessen."
+          "preparation": "Getrocknet vor dem Mahlen abmessen. Die englische Einleitung nennt ausdrücklich summer savory; der vorhandene generische Bohnenkraut-Eintrag passt. Kein Thymian und keine zusätzliche botanische Sortenbehauptung.",
+          "mappingEvidence": {
+            "url": "https://www.bylena.com/recipe/1023/Romanian-Mici-Spice-Mix/",
+            "locations": [
+              "introductory paragraph",
+              "paragraph immediately before Ingredients"
+            ],
+            "decision": "Eigene englische Autorenfassung bezeichnet das Kraut ausdrücklich als summer savory; Zutatenliste Dry savory mit 1 EL. Zuordnung zu bohnenkraut, form=getrocknet.",
+            "checkedAt": "2026-10-24"
+          }
         },
         {
           "sourceName": "Whole allspice / Ienibahar boabe",
@@ -82,7 +90,7 @@
       "allergenAssessment": {
         "known": [],
         "complete": false,
-        "note": "Aus den fünf sicher zugeordneten reinen Gewürzen kein benanntes Allergen abgeleitet. Vollständige Bewertung erst nach den beiden Identitätsklärungen; Etiketten und Spuren separat prüfen."
+        "note": "Aus den sechs zugeordneten reinen Gewürz-/Kräuterzutaten kein benanntes Allergen abgeleitet. Gesamtbewertung bleibt bis zur Chimen/Cumin-Klärung unvollständig; Etiketten und Spuren separat prüfen."
       },
       "storageNotes": [
         "Trocken in einem sauberen, gut schließenden Glas lagern. Keine eigene Haltbarkeitsfrist."
@@ -96,7 +104,7 @@
           "accessedAt": "2026-10-24",
           "primarySource": true,
           "contentChecked": true,
-          "evidenceScope": "Vollständige englische Autorenveröffentlichung mit sieben Mengen gelesen; enthält Cumin und Dry savory.",
+          "evidenceScope": "Vollständige eigene englische Rezeptveröffentlichung; Einleitung nennt ausdrücklich summer savory, Zutatenliste Dry savory mit 1 EL. Sieben Originalmengen; eigenständige Cumin-Bezeichnung bleibt gegenüber rumänischer Fassung offen.",
           "license": "Sachliche Mengen und eigene deutsche Prüfanmerkungen; keine Bilder oder Artikeltexte kopiert."
         },
         {
@@ -112,14 +120,14 @@
       ],
       "countryEvidence": "Beide eigenen Veröffentlichungen der Autorin bezeichnen die Mischung ausdrücklich für rumänische Mici beziehungsweise mititei. Nur RO; keine Nationalstandard- oder Exklusivitätsbehauptung.",
       "duplicateReview": {
-        "catalogRecipeCount": 667,
+        "catalogRecipeCount": 668,
         "sameSourceFound": false,
         "comparisonRecipeIds": [
           "c021",
           "atlas6-zacusc-rumaenische-paprika-auberginenpaste",
           "atlas6-rumaenische-paprika-knoblauch-bratwuerze"
         ],
-        "result": "Keine identische Autorenquelle. Bestehende trockene Bratwürze hat Knoblauchgranulat und weder Piment noch Lorbeer. Vollständige Dublettenprüfung nach den zwei endgültigen Zuordnungen wiederholen."
+        "result": "Erneuter Abgleich mit 668 Rezepturen: keine identische Autorenquelle. Sechs bekannte Zutaten vorläufig verglichen; endgültige Mengen-/Formen-Dublettenprüfung nach Chimen/Cumin-Entscheidung weiterhin offen."
       },
       "scopeNotes": [
         "Kein Fleisch, Knoblauch, Natron oder Wasser in die trockene Gewürzbasis übernommen.",
@@ -128,7 +136,6 @@
       ],
       "openIssues": [
         "Botanische Identität für Chimen/Cumin und Messform vor Mahlen anhand weiterer Originalbelege klären.",
-        "Cimbru uscat/Dry savory eindeutig zuordnen, keine stille Ersetzung durch Thymian oder Bohnenkraut.",
         "Nach Mapping vollständige Dubletten- und Allergenprüfung erneut durchführen."
       ],
       "readyForImport": false,

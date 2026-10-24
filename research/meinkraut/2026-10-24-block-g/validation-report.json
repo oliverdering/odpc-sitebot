@@ -3,20 +3,37 @@
   "productionImport": false,
   "candidateCount": 1,
   "createdToday": 5,
+  "branchLocalCountNote": "Branch contains five dated packages; global ten includes other isolated branches. No new candidate in this follow-up.",
+  "dailyCandidateCountIncludingOpenBranches": 10,
+  "catalogBaselineRevision": "5637b0b16754241eea1dfcb4128a9a3b3276a498",
+  "catalogRecipeCount": 668,
+  "catalogIngredientCount": 299,
   "errors": [],
   "blockedFromImport": [
     {
       "id": "mk-research-20261024-ro-butuc-mici",
       "unmapped": [
-        "Dry savory / Cimbru uscat",
         "Cumin / Chimen"
       ],
       "issues": [
         "Botanische Identität für Chimen/Cumin und Messform vor Mahlen anhand weiterer Originalbelege klären.",
-        "Cimbru uscat/Dry savory eindeutig zuordnen, keine stille Ersetzung durch Thymian oder Bohnenkraut.",
         "Nach Mapping vollständige Dubletten- und Allergenprüfung erneut durchführen."
       ],
       "reason": "research_pending"
+    }
+  ],
+  "negativeProbes": [
+    {
+      "name": "premature_ready",
+      "rejected": true
+    },
+    {
+      "name": "unknown_id",
+      "rejected": true
+    },
+    {
+      "name": "unproved_grams",
+      "rejected": true
     }
   ]
 }

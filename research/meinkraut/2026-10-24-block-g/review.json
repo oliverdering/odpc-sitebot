@@ -1,8 +1,15 @@
 {
   "status": "PASS_STAGING_WITH_IMPORT_BLOCKS",
   "checkedAt": "2026-10-24",
-  "dataCommit": "78916f1a296a96fca3c9e5caa6bd61f252fa9235",
-  "ci": {
+  "changedFilesScope": "research/meinkraut/2026-10-24-block-g/ only",
+  "activeCatalogChanged": false,
+  "readyForImport": false,
+  "unresolved": [
+    "Cumin/Chimen identity and measuring form",
+    "Repeat full duplicate and allergen review after mapping"
+  ],
+  "previousDataCommit": "78916f1a296a96fca3c9e5caa6bd61f252fa9235",
+  "previousCi": {
     "url": "https://github.com/oliverdering/odpc-sitebot/actions/runs/40062925230",
     "jobId": 120780090706,
     "conclusion": "success",
@@ -12,12 +19,11 @@
       "PHP routes, catalog transactions and source attribution"
     ]
   },
-  "changedFilesScope": "research/meinkraut/2026-10-24-block-g/ only",
-  "activeCatalogChanged": false,
-  "readyForImport": false,
-  "unresolved": [
-    "Cumin/Chimen identity and measuring form",
-    "Dry savory/Cimbru botanical identity",
-    "Repeat full duplicate and allergen review after mapping"
-  ]
+  "followup": {
+    "mappedIngredient": "bohnenkraut",
+    "mappedCount": 6,
+    "unmappedCount": 1,
+    "newCandidates": 0,
+    "ciStatus": "pending"
+  }
 }

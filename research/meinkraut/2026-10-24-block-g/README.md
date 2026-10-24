@@ -1,7 +1,7 @@
 # Romanian Mici: Elena Butuc source review
 
-Seven exact original quantities retained. Five ingredient references mapped; Cumin/Chimen and Dry savory/Cimbru remain unresolved. The two author-language versions are not treated as interchangeable ingredient identities. No 100 g conversion or shelf life inferred. No copied images or prose. Not tasted.
+Seven original quantities retained. Follow-up on 24 October resolves dried savory to the existing generic **bohnenkraut** ingredient: the author explicitly calls it summer savory in her English introduction. Six ingredient references now mapped. Cumin/Chimen and its measuring form remain unresolved; cumin and caraway are not treated as synonyms. Original quantities, no inferred 100 g conversion, no shelf life and no copied prose or images. Not tasted.
 
-Blocked draft, no production change. Existing RO baseline three recipes / one dry. Seventh new candidate today across all branches: four live, MT/PT/RO staged. Other blocked drafts remain blocked.
+Existing candidate only; zero new candidates in this follow-up. Global daily total is ten across all branches (five live, five blocked). Draft remains unmerged and unapproved. No active catalog, calculator, renderer, routes or design changed. Current verified database is 3.0.22 / 668 recipes / 299 ingredients. Romania still has three recipes, one dry.
 
-Local staging validation and three negative probes passed. CI pending; technical success does not resolve the ingredient questions.
+Current-catalog staging validation and negative probes for premature readiness, unknown ingredient ID and unproved gram total pass. Preliminary source/duplicate review rerun against 668 recipes; final full review waits for the unresolved ingredient. Previous CI is historical; follow-up CI is recorded in review.json when complete.
