@@ -2,14 +2,14 @@
 /**
  * Plugin Name: ODPC Monkey Voice Interview
  * Description: Accessible opt-in voice interview and guided setup for Helper Monkey.
- * Version: 0.13.0
+ * Version: 0.14.0
  * License: GPL-3.0-or-later
  */
 if (!defined('ABSPATH')) exit;
 add_action('wp_footer', function () {
  if (is_admin()) return;
  ?>
- <div id="odpc-voice" class="odpc-voice" data-version="0.13.0" hidden role="dialog" aria-modal="true" aria-labelledby="odpc-voice-title" aria-describedby="odpc-voice-status">
+ <div id="odpc-voice" class="odpc-voice" data-version="0.14.0" hidden role="dialog" aria-modal="true" aria-labelledby="odpc-voice-title" aria-describedby="odpc-voice-status">
   <h2 id="odpc-voice-title">Monkey Einrichtungsassistent</h2><button type="button" id="odpc-voice-topclose" aria-label="Schließen">✕</button>
   <p id="odpc-voice-status" role="status" aria-live="polite">Bereit. Starte das Interview.</p>
   <p id="hm-guide-progress" aria-live="polite"></p>
@@ -187,7 +187,7 @@ add_action('wp_footer', function () {
    const prompt=document.createElement('textarea');prompt.id='hm-guide-work-prompt';prompt.readOnly=true;prompt.setAttribute('aria-label',tx('promptLabel'));prompt.value=data.prompt;const preview=document.createElement('details');preview.id='hm-guide-work-preview';const summary=document.createElement('summary');summary.textContent=tx('viewPrompt');preview.append(summary,prompt);preview.addEventListener('toggle',fitPrompts);output.append(preview);
    const copy=document.createElement('button');copy.type='button';copy.id='hm-guide-work-copy';copy.textContent=tx('copy');copy.onclick=async()=>{try{await navigator.clipboard.writeText(data.prompt);status.textContent=tx('copied',{platform:data.platform})}catch(e){preview.open=true;fitPrompts();prompt.focus();prompt.select();status.textContent=tx('manualCopy')}};output.append(copy);
    const link=document.createElement('a');link.id='hm-guide-work-open';link.href=data.url;link.target='_blank';link.rel='noopener noreferrer';link.textContent=data.platform+' '+tx('open')+' ↗';output.append(link);
-   const fine=document.createElement('p');fine.className='hm-fine';fine.textContent=tx('workFine');output.append(fine);return;
+   const fine=document.createElement('p');fine.className='hm-fine';fine.textContent=tx('workFine')+' '+tx('briefPrivacy');output.append(fine);return;
   }
   if(flow.phase==='platform'){const box=document.createElement('div');box.className='hm-guide-next';const p=document.createElement('p');p.textContent=tx('platformNote');box.append(p);for(const name of ['chatgpt','gemini','claude']){const a=document.createElement('a');a.href=guide.setup({platform:name,services:[]},guideLang()).url;a.target='_blank';a.rel='noopener noreferrer';a.textContent=({chatgpt:'ChatGPT',gemini:'Gemini',claude:'Claude'})[name]+' ↗';box.append(a)}log.append(box);return;}
   if(!['setup','test'].includes(flow.phase))return;

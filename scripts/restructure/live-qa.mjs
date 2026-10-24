@@ -90,6 +90,19 @@ for(const [name,viewport]of [['desktop',{width:1440,height:1000}],['mobile',{wid
  await answer('Ich möchte kostenlos Bewerbungen schreiben');assert.equal(await page.locator('#odpc-voice').getAttribute('data-phase'),'platform');await page.locator('[data-choice="ChatGPT"]').click();
  assert.equal(await page.locator('#odpc-voice').getAttribute('data-phase'),'work');assert.match(await page.locator('#hm-guide-work-prompt').inputValue(),/ATS-Abgleich/);
  assert.equal(await page.locator('[data-choice="Android"]').count(),0);pass(name+' natural free-text application starts without an unnecessary device or connection question');
+ const taskDetail='Ich brauche ein Anschreiben als Marketingmanager, maximal 150 Wörter, freundlich und ohne Floskeln.';
+ await page.locator('#odpc-voice-settings summary').click();await page.locator('#odpc-voice-reset').click();await page.locator('#odpc-voice-settings summary').click();
+ await answer(taskDetail);await page.locator('[data-choice="ChatGPT"]').click();
+ assert.match(await page.locator('#odpc-voice-title').innerText(),/Bewerbung/);assert((await page.locator('#hm-guide-work-prompt').inputValue()).includes(taskDetail));
+ await answer('Die Stelle ist im Marketing und ich betreue auch E-Mails.');await answer('Korrektur: vier Jahre Berufserfahrung, bitte maximal 120 Wörter.');
+ assert.match(await page.locator('#odpc-voice-title').innerText(),/Bewerbung/);await page.reload({waitUntil:'networkidle'});
+ const detailed=await page.locator('#hm-guide-work-prompt').inputValue();assert(detailed.includes(taskDetail));assert(detailed.includes('vier Jahre Berufserfahrung'));
+ await page.locator('#hm-guide-work-copy').click();assert.equal(await page.evaluate(()=>navigator.clipboard.readText()),detailed);
+ pass(name+' specific task details, follow-up corrections, reload and clipboard keep the application context');
+ await answer('Berichtsheft schreiben');assert(!(await page.locator('#hm-guide-work-prompt').inputValue()).includes('vier Jahre Berufserfahrung'));
+ await page.locator('[data-choice="andere Aufgabe"]').click();await page.reload({waitUntil:'networkidle'});assert.equal(await page.locator('#odpc-voice').getAttribute('data-phase'),'done');
+ await page.locator('[data-choice="Aufgabe:application"]').click();assert(!(await page.locator('#hm-guide-work-prompt').inputValue()).includes(taskDetail));
+ pass(name+' another Monkey and task-list reload do not inherit the previous private task details');
  const copyLabels={'de-DE':'Auftrag kopieren','en-US':'Copy task prompt','es-ES':'Copiar instrucciones','fr-FR':'Copier les instructions','it-IT':'Copia le istruzioni','pt-PT':'Copiar instruções','pl-PL':'Kopiuj instrukcję','tr-TR':'Görev metnini kopyala'};
  for(const [locale,label]of Object.entries(copyLabels)){
   if(!await page.locator('#odpc-voice-settings').evaluate(el=>el.open))await page.locator('#odpc-voice-settings summary').click();

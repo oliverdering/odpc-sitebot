@@ -123,3 +123,55 @@ test('voice help follows the selected device and never prescribes German data fo
  assert(!g.voiceHelp('de','computer').includes('Samsung'));assert(!g.voiceHelp('fr','computer').includes('Samsung'));
  for(const lang of ['en','es','fr','it','pt','pl','tr']){assert(!g.voiceHelp(lang,'').includes('deutsche Sprachdaten'));assert(g.voiceHelp(lang,'').startsWith(g.ui(lang).text.voiceMissing));}
 });
+
+test('a concrete initial application request reaches the AI prompt without losing its requirements',()=>{
+ const request='Ich brauche ein Anschreiben als Marketingmanager, maximal 150 Wörter, freundlich und ohne Floskeln.';
+ const s=run([request,'ChatGPT']);assert.equal(s.task,'application');assert.equal(s.phase,'work');assert(g.work(s).prompt.includes(request));assert(g.work(g.restore(s)).prompt.includes(request));
+});
+test('application, interview, legal and OBD requests take priority over incidental topic words',()=>{
+ for(const [request,id]of [
+  ['Bewerbung als Marketingmanager per E-Mail','application'],
+  ['Anschreiben für eine Kanzlei mit Finance-Schwerpunkt','application'],
+  ['Vorstellungsgespräch für eine Marketing-Stelle üben','interview'],
+  ['PraeLex: Vertrag für den Anwalt strukturieren','legal'],
+  ['OBD Fehlercode P0300 im Werkstattbericht einordnen','car']
+ ]){let s=run([request,'ChatGPT']);assert.equal(s.phase,'work',request);assert.equal(s.task,id,request);assert(g.work(s).prompt.includes(request));}
+});
+test('follow-up details update the chosen Monkey instead of switching on incidental keywords',()=>{
+ let s=g.selectAgent({...g.state(),platform:'chatgpt'},'application');
+ for(const detail of ['Die Stelle ist im Marketing und ich betreue auch E-Mails.','Bitte maximal 120 Wörter, erwähne meine drei Jahre Erfahrung.','Korrektur: Es sind vier Jahre Erfahrung.']){
+  const r=g.reply(s,detail);assert.equal(r.accepted,true);assert.equal(r.state.task,'application');assert.match(r.text,/ergänzt/);s=r.state;assert(g.work(s).prompt.includes(detail));
+ }
+ assert.equal(g.restore(s).task,'application');assert.match(g.work(s).prompt,/spätere Korrekturen berücksichtigen/);
+});
+test('all twelve selected Monkeys retain free-text details and localized acknowledgements',()=>{
+ for(const task of g.tasks(g.state()))for(const lang of ['de','en','es','fr','it','pt','pl','tr']){
+  const s=g.selectAgent({...g.state(),platform:'claude'},task.id),detail='Bitte berücksichtige diese zusätzliche Angabe: Beispiel 42.';
+  const r=g.reply(s,detail,lang);assert(r.accepted);assert.equal(r.state.task,task.id);assert.equal(r.text,g.text(lang,'briefUpdated'));
+  assert(g.work(g.restore(r.state),lang).prompt.includes(detail));
+ }
+});
+test('task context survives connection setup but is cleared when choosing another agent or task list',()=>{
+ let s=g.selectAgent({...g.state(),platform:'chatgpt'},'report');s=g.reply(s,'Ausbildungsberuf: Fachinformatiker, Bericht für den 23. Oktober.').state;
+ for(const t of ['KI einrichten','Computer','Google Drive','verbunden','Test erfolgreich'])s=g.reply(s,t).state;
+ assert.equal(s.task,'report');assert(g.work(g.restore(s)).prompt.includes('Fachinformatiker'));
+ s=g.reply(s,'Bewerbung schreiben').state;assert.equal(s.task,'application');assert(!g.work(s).prompt.includes('Fachinformatiker'));
+ assert.deepEqual(g.selectAgent(s,'legal').brief,{task:'legal',entries:[]});
+ assert.deepEqual(g.reply(s,'andere Aufgabe').state.brief,{task:'',entries:[]});assert.deepEqual(g.state().brief,{task:'',entries:[]});
+});
+test('brief restore rejects credentials and malformed data and bounds stored context',()=>{
+ const s=g.selectAgent({...g.state(),platform:'chatgpt'},'marketing');
+ const r=g.reply(s,'Passwort: test-secret');assert.equal(r.sensitive,true);assert.deepEqual(r.state,s);
+ const restored=g.restore({...s,brief:{task:'marketing',entries:[null,{},'Passwort: test-secret','x'.repeat(2000),'Gültiges Beispiel']}});
+ assert.equal(restored.brief.entries.length,2);assert.equal(restored.brief.entries[0].length,600);assert(!g.work(restored).prompt.includes('test-secret'));
+ assert.deepEqual(g.restore({...s,brief:{task:'evil',entries:['private']}}).brief,{task:'',entries:[]});
+ let next=s;for(let i=0;i<12;i++)next=g.reply(next,'Zusatzangabe Nummer '+i).state;assert.equal(next.brief.entries.length,6);
+ assert(!g.work({...next,task:'legal'}).prompt.includes('Zusatzangabe'));
+});
+
+test('a sentence starting with a different field remains a detail, and task list survives reload',()=>{
+ let s=g.selectAgent({...g.state(),platform:'chatgpt'},'application');
+ s=g.reply(s,'Marketing und E-Mails gehören zu meinen bisherigen Aufgaben.').state;
+ assert.equal(s.task,'application');assert(g.work(s).prompt.includes('bisherigen Aufgaben'));
+ s=g.reply(s,'andere Aufgabe').state;assert.equal(g.restore(s).phase,'done');assert.equal(g.restore(s).task,'');
+});
