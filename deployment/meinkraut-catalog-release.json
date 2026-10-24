@@ -1,18 +1,18 @@
 {
-  "version": "3.0.21",
-  "baselineRevision": "27420415bd966fb9746a09ca3e879e41a421f1cd",
+  "version": "3.0.22",
+  "baselineRevision": "ef852b0a71561780e2301e1f71a0a5d2bda351c7",
   "expectedBaseline": {
-    "ingredients": 299,
-    "recipes": 666
-  },
-  "expectedTarget": {
     "ingredients": 299,
     "recipes": 667
   },
+  "expectedTarget": {
+    "ingredients": 299,
+    "recipes": 668
+  },
   "addedIngredients": [],
   "addedRecipes": [
-    "mk-source-nz-chelsea-chai"
+    "mk-source-au-coles-texan-rub"
   ],
   "checkedAt": "2026-10-24",
-  "sourceReview": "research/meinkraut/2026-10-24-block-f/validation.json"
+  "sourceReview": "research/meinkraut/2026-10-24-block-i/validation.json"
 }

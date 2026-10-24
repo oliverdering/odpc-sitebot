@@ -1,0 +1,162 @@
+{
+  "schemaVersion": 1,
+  "batchId": "oxana-research-2026-10-24-i",
+  "createdAt": "2026-10-24",
+  "productionImport": false,
+  "dailyCandidateCountIncludingOpenBranches": 9,
+  "dailyCountNote": "Vier live CH/NA/NP/NZ, vier offene Entwürfe MT/PT/RO/LY, dieser Coles-Kandidat als neunter.",
+  "candidates": [
+    {
+      "id": "mk-research-20261024-au-coles-texan-rub",
+      "name": "BBQ-Rub im Texas-Stil – Coles-Variante",
+      "kind": "Trockenmischung",
+      "countries": [
+        "AU",
+        "US"
+      ],
+      "region": "Australische Handelsveröffentlichung im texanischen Stil",
+      "description": "Paprika-Senf-Rub mit Knoblauch, Zwiebel, Kräutern, Kreuzkümmel, Pfeffer, braunem Zucker und Zimt.",
+      "editorialType": "Veröffentlichte Händlerrezeptur im Texas-Stil; kein regionaler Standard",
+      "reviewStatus": "Originalquelle, elf Mengen und Trockenformen, Länderrollen, Senf und Dubletten am 24.10.2026 geprüft; noch nicht verkostet.",
+      "ingredients": [
+        {
+          "sourceName": "ground paprika",
+          "ingredient": "paprika-gemahlen-unspezifiziert",
+          "amount": 2,
+          "unit": "TL",
+          "preparation": "In der ausdrücklich genannten Pulver-/Trockenform abmessen; Paprikasorte nicht weiter spezifiziert."
+        },
+        {
+          "sourceName": "mustard powder",
+          "ingredient": "senfpulver",
+          "amount": 1,
+          "unit": "TL",
+          "preparation": "In der ausdrücklich genannten Pulver-/Trockenform abmessen; Paprikasorte nicht weiter spezifiziert."
+        },
+        {
+          "sourceName": "salt",
+          "ingredient": "salz",
+          "amount": 1,
+          "unit": "TL",
+          "preparation": "In der ausdrücklich genannten Pulver-/Trockenform abmessen; Paprikasorte nicht weiter spezifiziert."
+        },
+        {
+          "sourceName": "garlic powder",
+          "ingredient": "knoblauchpulver",
+          "amount": 1,
+          "unit": "TL",
+          "preparation": "In der ausdrücklich genannten Pulver-/Trockenform abmessen; Paprikasorte nicht weiter spezifiziert."
+        },
+        {
+          "sourceName": "onion powder",
+          "ingredient": "zwiebelpulver",
+          "amount": 1,
+          "unit": "TL",
+          "preparation": "In der ausdrücklich genannten Pulver-/Trockenform abmessen; Paprikasorte nicht weiter spezifiziert."
+        },
+        {
+          "sourceName": "dried thyme",
+          "ingredient": "thymian",
+          "amount": 1,
+          "unit": "TL",
+          "preparation": "In der ausdrücklich genannten Pulver-/Trockenform abmessen; Paprikasorte nicht weiter spezifiziert."
+        },
+        {
+          "sourceName": "ground cumin",
+          "ingredient": "kreuzkummel",
+          "amount": 1,
+          "unit": "TL",
+          "preparation": "In der ausdrücklich genannten Pulver-/Trockenform abmessen; Paprikasorte nicht weiter spezifiziert."
+        },
+        {
+          "sourceName": "dried oregano",
+          "ingredient": "oregano",
+          "amount": 1,
+          "unit": "TL",
+          "preparation": "In der ausdrücklich genannten Pulver-/Trockenform abmessen; Paprikasorte nicht weiter spezifiziert."
+        },
+        {
+          "sourceName": "ground black pepper",
+          "ingredient": "schwarzer-pfeffer",
+          "amount": 1,
+          "unit": "TL",
+          "preparation": "In der ausdrücklich genannten Pulver-/Trockenform abmessen; Paprikasorte nicht weiter spezifiziert."
+        },
+        {
+          "sourceName": "brown sugar",
+          "ingredient": "brauner-zucker",
+          "amount": 1,
+          "unit": "TL",
+          "preparation": "In der ausdrücklich genannten Pulver-/Trockenform abmessen; Paprikasorte nicht weiter spezifiziert."
+        },
+        {
+          "sourceName": "ground cinnamon",
+          "ingredient": "zimt",
+          "amount": 0.5,
+          "unit": "TL",
+          "preparation": "In der ausdrücklich genannten Pulver-/Trockenform abmessen; Paprikasorte nicht weiter spezifiziert."
+        }
+      ],
+      "methodSteps": [
+        "Alle Gewürze als Pulver beziehungsweise getrocknete Kräuter abmessen. Kreuzkümmel, schwarzen Pfeffer und Zimt gegebenenfalls vor dem Abmessen mahlen.",
+        "Die elf trockenen Zutaten gleichmäßig vermischen und in einen sauberen, gut schließenden Behälter füllen."
+      ],
+      "application": "Trockene BBQ-Würze, etwa für Tacos oder Fleischgerichte; kein unbelegter Dosierwert pro Kilogramm.",
+      "serving": "Originalansatz aus elf Zutatenpositionen; keine Gramm-Ausbeute oder belastbare Portionsgröße bestimmt.",
+      "massBasis": "Originale TL-Mengen; keine Grammumrechnung.",
+      "normalization100g": null,
+      "allergenAssessment": {
+        "known": [
+          "Senf"
+        ],
+        "complete": true,
+        "note": "Senf aus Senfpulver ausdrücklich abgeleitet. Sonstige reine Gewürze, Zucker und Salz ergeben kein weiteres benanntes Allergen; Etiketten und Spuren prüfen."
+      },
+      "storageNotes": [
+        "Trocken und gut verschlossen lagern. Keine eigene Haltbarkeitsfrist ergänzt."
+      ],
+      "sources": [
+        {
+          "title": "Texan-style spice rub",
+          "url": "https://www.coles.com.au/recipes-inspiration/recipes/texan-style-spice-rub",
+          "author": "Coles",
+          "accessedAt": "2026-10-24",
+          "primarySource": true,
+          "contentChecked": true,
+          "evidenceScope": "Vollständige Händlerveröffentlichung mit zwei übereinstimmenden Listen aus elf trockenen Zutaten und exakten TL-Mengen.",
+          "license": "Sachliche Zutaten/Mengen und eigene deutsche Kurzfassung; keine Bilder, Werbe- oder Artikeltexte übernommen."
+        },
+        {
+          "title": "About Coles",
+          "url": "https://www.coles.com.au/about",
+          "author": "Coles",
+          "accessedAt": "2026-10-24",
+          "primarySource": true,
+          "contentChecked": true,
+          "evidenceScope": "Eigene Unternehmensdarstellung und Footer Hawthorn East, Victoria, Australia bestätigen australischen Publikationskontext."
+        }
+      ],
+      "countryEvidence": "AU bezeichnet den ausdrücklich belegten australischen Herausgeber Coles. US bezeichnet ausschließlich den vom Herausgeber benannten Texas-Stil; keine Behauptung einer historischen oder einheitlichen texanischen Rezeptur.",
+      "duplicateReview": {
+        "catalogRecipeCount": 667,
+        "sameSourceFound": false,
+        "sameIngredientSetFound": false,
+        "comparisonRecipeIds": [
+          "r087",
+          "atlas-au-native-lemon-myrtle-knoblauch-pfeffer-rub",
+          "atlas-au-macadamia-zitronenmyrte-kruste"
+        ],
+        "result": "Keine identische Coles-Quelle und kein identisches Zutaten-Set. Bestehende australische Varianten arbeiten mit Zitronenmyrte, Pepperberry oder Macadamia."
+      },
+      "scopeNotes": [
+        "Paprika nur artunspezifiziert gemahlen, nicht edelsüß oder geräuchert ergänzt.",
+        "Keine Nährwert-, Gesundheits- oder Qualitätsbehauptungen aus der Shopseite übernommen.",
+        "AU und US haben unterschiedliche dokumentierte Rollen; kein traditioneller australischer Ursprung behauptet."
+      ],
+      "openIssues": [],
+      "readyForImport": true,
+      "importStatus": "approved_pending_deployment",
+      "bundledRecipeId": "mk-source-au-coles-texan-rub"
+    }
+  ]
+}
