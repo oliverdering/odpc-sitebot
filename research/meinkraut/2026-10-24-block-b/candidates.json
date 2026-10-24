@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 1,
+  "batchId": "oxana-research-2026-10-24-b",
+  "createdAt": "2026-10-24",
+  "productionImport": false,
+  "dailyCandidateCountIncludingOpenBranches": 2,
+  "dailyCountNote": "Malta-Aljoli in Entwurf 19 ist erster Tageskandidat; dieser Schweizer Gewürzansatz ist der zweite.",
+  "candidates": [
+    {
+      "id": "mk-research-20261024-ch-qookster-raclette",
+      "name": "Raclette- und Fonduegewürz – Qookster-Variante",
+      "kind": "Trockenmischung",
+      "countries": [
+        "CH"
+      ],
+      "region": "Veröffentlichte Schweizer Autorenvariante; kein traditioneller Nationalstandard",
+      "description": "Paprika-Knoblauchwürze mit schwarzem Pfeffer, Muskat, Koriander, Kümmel und Nelken; enthält Salz.",
+      "editorialType": "Veröffentlichte Autorenvariante; eigene deutsche Kurzfassung",
+      "reviewStatus": "Originalquelle, acht Grammangaben, Zutatenformen, Schweizer Herausgeberbezug, Dubletten und Allergene am 24.10.2026 geprüft; noch nicht verkostet.",
+      "ingredients": [
+        {
+          "sourceName": "Salz",
+          "ingredient": "salz",
+          "amount": 10,
+          "unit": "g",
+          "preparation": "Trocken; in der im Quellnamen genannten Form abwiegen."
+        },
+        {
+          "sourceName": "edelsüsses Paprikapulver",
+          "ingredient": "paprika-edelsu",
+          "amount": 10,
+          "unit": "g",
+          "preparation": "Trocken; in der im Quellnamen genannten Form abwiegen."
+        },
+        {
+          "sourceName": "schwarzer Pfeffer, fein gemahlen",
+          "ingredient": "schwarzer-pfeffer",
+          "amount": 6,
+          "unit": "g",
+          "preparation": "Trocken; in der im Quellnamen genannten Form abwiegen."
+        },
+        {
+          "sourceName": "Knoblauchpulver",
+          "ingredient": "knoblauchpulver",
+          "amount": 5,
+          "unit": "g",
+          "preparation": "Trocken; in der im Quellnamen genannten Form abwiegen."
+        },
+        {
+          "sourceName": "gemahlene Muskatnuss",
+          "ingredient": "muskatnuss",
+          "amount": 1,
+          "unit": "g",
+          "preparation": "Trocken; in der im Quellnamen genannten Form abwiegen."
+        },
+        {
+          "sourceName": "gemahlener Koriander",
+          "ingredient": "koriandersaat",
+          "amount": 1,
+          "unit": "g",
+          "preparation": "Trocken; in der im Quellnamen genannten Form abwiegen."
+        },
+        {
+          "sourceName": "gemahlener Kümmel",
+          "ingredient": "kummel",
+          "amount": 1,
+          "unit": "g",
+          "preparation": "Trocken; in der im Quellnamen genannten Form abwiegen."
+        },
+        {
+          "sourceName": "gemahlene Nelken",
+          "ingredient": "gewurznelken",
+          "amount": 1,
+          "unit": "g",
+          "preparation": "Trocken; in der im Quellnamen genannten Form abwiegen."
+        }
+      ],
+      "methodSteps": [
+        "Eine saubere, vollständig trockene Schüssel und ein gut schließendes Gewürzglas bereitstellen.",
+        "Die trockenen Zutaten in der angegebenen Form abwiegen: Pfeffer fein gemahlen, Muskatnuss, Koriandersaat, Kümmel und Nelken gemahlen. Knoblauchpulver verwenden.",
+        "Alle acht Zutaten gleichmäßig vermischen und das Glas gut verschließen. Der Originalansatz ergibt rechnerisch 35 g."
+      ],
+      "application": "Als Würze zu Raclette und Fondue nach Geschmack; keine unbelegte Dosierung pro Kilogramm.",
+      "serving": "Originalansatz: 35 g aus acht ausschließlich gewogenen Zutaten. Keine Portionszahl pro Gramm und keine Haltbarkeit hinzuerfunden.",
+      "massBasis": "Originale Gramm-Mengen, rechnerische Summe 35 g; keine Volumenumrechnung",
+      "batchGrams": 35,
+      "normalization100g": null,
+      "allergenAssessment": {
+        "known": [],
+        "complete": true,
+        "note": "Die acht reinen Gewürz-/Salzzutaten enthalten kein daraus abzuleitendes benanntes Allergen. Käse/Beilagen separat beurteilen; Etiketten und Spuren prüfen, keine Allergenfrei-Garantie."
+      },
+      "storageNotes": [
+        "Trocken, lichtgeschützt und gut verschlossen aufbewahren; Produktetiketten beachten. Keine eigene Haltbarkeitsfrist ergänzt.",
+        "Knoblauchpulver nicht bei gleicher Menge durch frischen Knoblauch ersetzen. Alle Zutaten trocken verwenden.",
+        "Nur die Gewürzmischung bewertet; Käse und andere Beilagen gehören nicht zu den Zutaten dieses Datensatzes.",
+        "Von MeinKraut noch nicht verkostet. Produktetiketten und mögliche Spuren separat prüfen; keine Allergenfrei-Garantie."
+      ],
+      "sources": [
+        {
+          "title": "Gewürzmischung für Raclette und Fondue – Abschnitt Gewürzmischung",
+          "url": "https://www.qoqa.ch/de/posts/3443.pdf",
+          "author": "Qookster / QoQa",
+          "publishedAt": "2018-10-21",
+          "accessedAt": "2026-10-24",
+          "primarySource": true,
+          "contentChecked": true,
+          "evidenceScope": "Vollständiges dreiseitiges Original-PDF gelesen; Zutaten auf Seite 2 visuell geprüft. Nur der separate Acht-Zutaten-Gewürzabschnitt, nicht die zweite Kräutermischung.",
+          "license": "Sachliche Zutaten/Mengen und eigene deutsche Kurzfassung; keine Fotos, Werbe- oder Artikeltexte übernommen."
+        },
+        {
+          "title": "Gewürzmischung für Raclette und Fondue",
+          "url": "https://www.qoqa.ch/de/posts/3443",
+          "author": "Qookster / QoQa",
+          "publishedAt": "2018-10-21",
+          "accessedAt": "2026-10-24",
+          "primarySource": true,
+          "contentChecked": true,
+          "evidenceScope": "Eigene Originalseite bestätigt Autor, Titel und Veröffentlichungsdatum."
+        },
+        {
+          "title": "UID-Register – QoQa Services SA",
+          "url": "https://www.uid.admin.ch/Detail.aspx?uid_id=CHE112640276",
+          "author": "Bundesamt für Statistik, Schweiz",
+          "accessedAt": "2026-10-24",
+          "primarySource": true,
+          "contentChecked": true,
+          "evidenceScope": "Amtlicher Sitzbeleg des Herausgebers in Bussigny, Schweiz. Nur Ortsbezug ausgewertet."
+        }
+      ],
+      "countryEvidence": "Qookster veröffentlicht die Mischung ausdrücklich zu Raclette und Fondue bei QoQa. Der amtliche UID-Eintrag belegt QoQa Services SA in Bussigny, Schweiz. CH bezeichnet diese Schweizer Autorenveröffentlichung; kein Nationalstandard und kein zusätzlicher Länderbezug behauptet.",
+      "duplicateReview": {
+        "catalogRecipeCount": 663,
+        "sameSourceFound": false,
+        "sameIngredientSetFound": false,
+        "comparisonRecipeIds": [
+          "c025",
+          "atlas6-apfel-kren-sauce-mit-milder-saeure",
+          "atlas6-mitteleuropaeische-senf-schalotten-sauce"
+        ],
+        "result": "Keine QoQa-Quelle und kein identischer Acht-Zutaten-Satz im aktuellen Atlas. Die drei CH-Rezepte sind Butter-/Sauce-/Dip-Zubereitungen."
+      },
+      "scopeNotes": [
+        "Nur der separate Abschnitt Gewürzmischung auf PDF-Seite 2. Die ebenfalls publizierte Kräutermischung wird weder eingemischt noch als zusätzlicher Kandidat angelegt.",
+        "Keine Handelsrezeptur rekonstruiert; es handelt sich um eine ausdrücklich veröffentlichte Eigenmischung."
+      ],
+      "readyForImport": true,
+      "openIssues": [],
+      "importStatus": "approved_pending_deployment",
+      "bundledRecipeId": "mk-source-ch-qookster-raclette"
+    }
+  ]
+}

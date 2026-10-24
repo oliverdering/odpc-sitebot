@@ -1,18 +1,18 @@
 {
-  "version": "3.0.17",
-  "baselineRevision": "b9b7a2b356f5775e7052b243fb588ff9d4e12b4f",
+  "version": "3.0.18",
+  "baselineRevision": "608f65de8f02c31362bd76c00eaa427b63358135",
   "expectedBaseline": {
-    "ingredients": 299,
-    "recipes": 662
-  },
-  "expectedTarget": {
     "ingredients": 299,
     "recipes": 663
   },
+  "expectedTarget": {
+    "ingredients": 299,
+    "recipes": 664
+  },
   "addedIngredients": [],
   "addedRecipes": [
-    "mk-source-maghreb-ileauxepices-ras-el-hanout"
+    "mk-source-ch-qookster-raclette"
   ],
-  "checkedAt": "2026-10-23",
-  "sourceReview": "research/meinkraut/2026-10-23-block-i/validation.json"
+  "checkedAt": "2026-10-24",
+  "sourceReview": "research/meinkraut/2026-10-24-block-b/validation.json"
 }
