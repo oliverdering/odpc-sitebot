@@ -60,6 +60,19 @@ for(const [name,viewport]of [['desktop',{width:1440,height:1000}],['mobile',{wid
  await page.locator('#odpc-voice-settings summary').click();await page.locator('#odpc-voice-reset').click();await answer('Passwort: private-secret');assert.equal((await page.locator('#odpc-voice-log').innerText()).includes('private-secret'),false);assert.equal(await page.evaluate(()=>sessionStorage.getItem('hm-guide-v1').includes('private-secret')),false);
  await page.locator('#odpc-voice-topclose').click();await page.goto('https://ai.odpc.de/start/',{waitUntil:'networkidle'});assert.equal(await page.locator('.hm-agent').count(),10);assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),true);await page.screenshot({path:out+'/'+name+'-agents.png',fullPage:true});
  await page.locator('#odpc-voice-open').click();assert.equal(await page.locator('#odpc-voice').getAttribute('role'),'dialog');await page.locator('#odpc-voice-topclose').click();assert.equal(await page.locator('#odpc-voice').isVisible(),false);assert.equal(await page.locator('main').evaluate(e=>e.inert),false);
+ const agentLinks=await page.locator('.hm-agent a').evaluateAll(nodes=>nodes.map(a=>({name:a.getAttribute('aria-label'),url:a.href})));
+ assert.equal(agentLinks.length,10);assert.equal(agentLinks.filter(a=>new URL(a.url).searchParams.has('agent')).length,9);
+ for(const a of agentLinks.filter(a=>new URL(a.url).searchParams.has('agent'))){
+  const id=new URL(a.url).searchParams.get('agent');await page.goto(a.url,{waitUntil:'networkidle'});
+  if(await page.locator('#odpc-voice').getAttribute('data-phase')==='platform')await page.locator('[data-choice="ChatGPT"]').click();
+  assert.equal(await page.locator('#odpc-voice').getAttribute('data-phase'),'work',id);
+  assert.equal(await page.locator('#hm-guide-work-prompt').count(),1,id);
+  assert.match(await page.locator('#hm-guide-work-prompt').inputValue(),/tatsächlich zur Verfügung/);
+  assert.equal(await page.locator('#hm-guide-test').count(),0,id+' must not require a connection test for a draft');
+  assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),true);
+ }
+ await page.screenshot({path:out+'/'+name+'-specialist-handoff.png',fullPage:true});
+ pass(name+' all nine agent cards lead to their own usable task prompts without a mandatory connection test');
  assert.equal(errors.length,0,JSON.stringify(errors));pass(name+' agent overview and no page errors');await context.close();
 }
 const audioContext=await browser.newContext();const audio=await audioContext.newPage();await audio.goto('https://ai.odpc.de/connector-einrichten/',{waitUntil:'networkidle'});await audio.getByRole('button',{name:'Mit Sprache einrichten',exact:true}).click();

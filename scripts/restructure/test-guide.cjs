@@ -14,7 +14,7 @@ test('unrecognized platform never silently becomes ChatGPT',()=>{const s=run(['E
 test('restore accepts enumerated progress only',()=>{const s=g.restore({goal:'mail',platform:'chatgpt',device:'android',services:['gmail','password-secret'],phase:'setup',raw:'private'});assert.equal(s.raw,undefined);assert.deepEqual(s.services,['gmail']);assert.equal(g.restore({platform:'javascript:evil'}).platform,'');});
 test('asking for calendar does not rewrite an application goal',()=>{const s=run(['Bewerbungen schreiben','ChatGPT','Samsung mit Gmail und Kalender']);assert.equal(s.goal,'application');});
 
-test('plain application writing needs no service authorization',()=>{const s=run(['Bewerbungen schreiben','ChatGPT','Android']);assert.equal(s.phase,'test');assert.match(g.setup(s).steps,/keine Kontoverbindung/);assert.match(g.setup(s).test,/Erfinde keine/);});
+test('plain application writing needs no service authorization',()=>{const s=run(['Bewerbungen schreiben','ChatGPT','Android']);assert.equal(s.phase,'work');assert.equal(s.task,'application');assert.match(g.work(s).prompt,/Erfinde keine/);assert.deepEqual(s.reportedServices,[]);});
 test('connector explanation preserves current question',()=>{const s=run(['E-Mails organisieren']);const r=g.reply(s,'Was ist ein Connector?','de');assert.equal(r.state.phase,'platform');assert.match(r.text,/freigegebene Verbindung/);});
 test('eight language confirmation paths retain user-report status',()=>{for(const [l,yes,ok]of [['de','verbunden','Test erfolgreich'],['en','connected','test successful'],['es','conectado','prueba correcta'],['fr','connecté','test réussi'],['it','collegato','test riuscito'],['pt','ligado','teste bem sucedido'],['pl','połączono','test udany'],['tr','bağlandı','test başarılı']]){let s=g.reply(g.state(),'Gmail ChatGPT Android',l).state;s=g.reply(s,yes,l).state;s=g.reply(s,ok,l).state;assert.equal(s.result,'user-reported',l);}});
 
@@ -27,4 +27,31 @@ test('completed connector offers useful tasks and an honest handoff instead of r
 test('connecting another service retains previous reports and task selection',()=>{let s=run(['Gmail ChatGPT Android','verbunden','Test erfolgreich','KI einrichten','Google Kalender','verbunden','Test erfolgreich']);assert.deepEqual(s.reportedServices,['gmail','calendar']);assert.equal(s.platform,'chatgpt');s=g.reply(s,'Einen Termin planen').state;assert.equal(s.phase,'work');assert.match(g.work(s).prompt,/Gmail, Google Kalender/);s=g.reply(s,'andere Aufgabe').state;assert.equal(s.phase,'done');});
 test('legacy completed sessions continue to tasks and do not claim other access',()=>{const s=g.restore({phase:'done',goal:'mail',platform:'chatgpt',device:'android',services:['gmail'],result:'user-reported'});assert.deepEqual(s.reportedServices,['gmail']);assert(g.tasks(s).some(t=>t.id==='web'));const next=g.reply(s,'Webseite bearbeiten').state;assert.match(g.work(next).prompt,/Fehlt ein Zugriff, sage das klar/);assert.deepEqual(next.reportedServices,['gmail']);assert.equal(g.restore({...next,task:'untrusted-task'}).phase,'done');});
 test('all selected services are named in the combined connection test',()=>{const s=run(['Gmail Kalender Drive WordPress GitHub ChatGPT Android']);for(const name of ['Gmail','Google Kalender','Google Drive','WordPress','GitHub'])assert(g.setup(s).test.includes(name));});
-test('finishing without a test never becomes a verified or successful test',()=>{let s=run(['Gmail ChatGPT Android','Einrichtung abgeschlossen']);assert.equal(s.phase,'done');assert.equal(s.result,'user-connected');s=run(['Gmail ChatGPT Android','nicht verfügbar','Einrichtung abgeschlossen']);assert.equal(s.phase,'done');assert.equal(s.result,'unavailable');assert.deepEqual(s.reportedServices,[]);});
+test('finishing without a test never becomes a verified or successful test',()=>{let s=run(['Gmail ChatGPT Android','Einrichtung abgeschlossen']);assert.equal(s.phase,'done');assert.equal(s.result,'open');assert.deepEqual(s.reportedServices,[]);s=run(['Gmail ChatGPT Android','nicht verfügbar','Einrichtung abgeschlossen']);assert.equal(s.phase,'done');assert.equal(s.result,'unavailable');assert.deepEqual(s.reportedServices,[]);});
+
+test('every Monkey card prepares its own task after platform selection without a fake connection test',()=>{
+ for(const id of ['application','mail','web','documents','marketing','interview','report','car','legal','finance']){
+  let s=g.selectAgent(g.state(),id);assert.equal(s.phase,'platform',id);s=g.reply(s,'ChatGPT').state;
+  assert.equal(s.phase,'work',id);assert.equal(s.task,id);assert.equal(s.device,'');assert.equal(s.result,'open');assert.deepEqual(s.reportedServices,[]);
+  assert(g.work(s).prompt.length>500,id);assert.equal(g.restore(s).task,id);
+ }
+});
+test('agent links preserve platform and previous reports but never assign new account access',()=>{
+ const previous=run(['Gmail ChatGPT Android','verbunden','Test erfolgreich']);const s=g.selectAgent(previous,'web');
+ assert.equal(s.phase,'work');assert.equal(s.task,'web');assert.deepEqual(s.reportedServices,['gmail']);assert.deepEqual(s.services,[]);
+ assert.match(g.work(s).prompt,/Webseitenzugang|Veröffentlichungszugang/);assert.deepEqual(g.selectAgent(previous,'javascript:evil'),previous);
+});
+test('unavailable services have a usable sample-data exit without inventing authorization',()=>{
+ let s=run(['E-Mails organisieren','ChatGPT','Android','Gmail','nicht verfügbar','ohne Verbindung starten']);
+ assert.equal(s.phase,'work');assert.equal(s.task,'mail');assert.deepEqual(s.reportedServices,[]);assert.equal(s.result,'open');assert.match(g.work(s).prompt,/Beispieldaten/);
+ s=g.reply(s,'KI einrichten').state;assert.equal(s.phase,'service');assert.equal(s.targetTask,'');
+});
+test('interview, marketing, reports and specialist requests do not fall into unrelated tasks',()=>{
+ for(const [answer,id]of [['Vorstellungsgespräch üben','interview'],['Marketing Beiträge planen','marketing'],['Berichtsheft schreiben','report'],['OBD Motor auswerten','car'],['PraeLex Vorarbeit','legal'],['Finanzen sortieren','finance']]){
+  const s=run([answer,'Claude','Computer']);assert.equal(s.phase,'work',id);assert.equal(s.task,id);assert.equal(g.restore(s).task,id);
+ }
+});
+test('handoff includes the requested language and keeps specialist boundaries',()=>{
+ for(const lang of ['de','en','es','fr','it','pt','pl','tr']){const s=g.selectAgent({...g.state(),platform:'claude'},'interview');assert.match(g.work(s,lang).prompt,/gewünschten Sprache/);}
+ for(const [id,guard] of [['report',/Erfinde keine Tätigkeiten/],['car',/keine gesicherte Diagnose/],['legal',/keine erfundenen Quellen/],['finance',/keine Zahlung/i]])assert.match(g.work(g.selectAgent({...g.state(),platform:'chatgpt'},id)).prompt,guard);
+});

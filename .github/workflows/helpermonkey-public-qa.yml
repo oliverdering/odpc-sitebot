@@ -82,10 +82,11 @@ jobs:
               with urlopen(req,timeout=25) as f:
                 status=f.status
                 start=f.read(4)
-              ok=status in (200,206) and start.startswith(b"PK")
+              is_zip=urlparse(url).path.lower().endswith('.zip')
+              ok=status in (200,206) and (start.startswith(b"PK") if is_zip else bool(start) and not start.lstrip().startswith(b"<"))
               print(("PASS" if ok else "FAIL"),url,"status",status,"signature",start)
               if not ok: failures.append(url)
             except Exception as e:
               print("FAIL",url,e);failures.append(url)
-          if failures:raise SystemExit("Unavailable/invalid ZIP: "+", ".join(failures))
+          if failures:raise SystemExit("Unavailable/invalid download: "+", ".join(failures))
           PY

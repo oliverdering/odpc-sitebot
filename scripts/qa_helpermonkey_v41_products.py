@@ -40,7 +40,7 @@ for name,url in PAGES.items():
   if name in ("home","start","business"):
    check(name+" interview link",any("helper-monkey-einfach-starten-sprachassistent" in x for x in p.links),"interview discoverability","WARN")
   if name=="interview":
-   check("interview wizard marker","hmv4-wizard" in html,"wizard DOM marker")
+   check("interview wizard marker",'id="odpc-voice"' in html and 'id="hm-connector-mount"' in html,"wizard DOM marker")
  except Exception as e:
   check(name+" fetch",False,type(e).__name__+": "+str(e))
 for file in sorted(pathlib.Path("downloads").glob("*.zip")):

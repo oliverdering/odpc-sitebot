@@ -2,14 +2,14 @@
 /**
  * Plugin Name: ODPC Monkey Voice Interview
  * Description: Accessible opt-in voice interview and guided setup for Helper Monkey.
- * Version: 0.10.1
+ * Version: 0.11.0
  * License: GPL-3.0-or-later
  */
 if (!defined('ABSPATH')) exit;
 add_action('wp_footer', function () {
  if (is_admin()) return;
  ?>
- <div id="odpc-voice" class="odpc-voice" data-version="0.10.1" hidden role="dialog" aria-modal="true" aria-labelledby="odpc-voice-title" aria-describedby="odpc-voice-status">
+ <div id="odpc-voice" class="odpc-voice" data-version="0.11.0" hidden role="dialog" aria-modal="true" aria-labelledby="odpc-voice-title" aria-describedby="odpc-voice-status">
   <h2 id="odpc-voice-title">Monkey Einrichtungsassistent</h2><button type="button" id="odpc-voice-topclose" aria-label="Schließen">✕</button>
   <p id="odpc-voice-status" role="status" aria-live="polite">Bereit. Starte das Interview.</p>
   <p id="hm-guide-progress" aria-live="polite"></p>
@@ -126,7 +126,7 @@ add_action('wp_footer', function () {
   };speakWhenReady(true);
  }
  $('odpc-voice-preview').addEventListener('click',()=>say(languages[$('odpc-voice-language').value].preview,false,true));
- $('odpc-voice-language').addEventListener('change',()=>{$('odpc-voice-profile').value='';refreshVoices();localize()});
+ $('odpc-voice-language').addEventListener('change',()=>{flow.language=guideLang();persist();$('odpc-voice-profile').value='';refreshVoices();localize()});
  $('odpc-voice-profile').addEventListener('change',()=>{stopAudio();refreshVoices();if(active)say(languages[$('odpc-voice-language').value].preview,false,true)});
  $('odpc-voice-gender').addEventListener('change',()=>{stopAudio();$('odpc-voice-profile').value='';refreshVoices();status.textContent='Stimme ausgewählt. Mit „Stimme testen“ anhören.';if(active&&$('odpc-voice-audio').checked)say(languages[$('odpc-voice-language').value].preview,false)});
  $('odpc-voice-audio').addEventListener('change',()=>{if(!$('odpc-voice-audio').checked)stopAudio()});
@@ -157,11 +157,13 @@ add_action('wp_footer', function () {
   $('hm-guide-help').href=href;$('hm-personal-help').href=href;
   panel.dataset.phase=flow.phase;panel.dataset.connectionResult=flow.result;
   const stage={goal:1,platform:2,device:3,service:3,setup:4,test:5,done:5,work:5};
-  $('hm-guide-progress').textContent=(['done','work'].includes(flow.phase)?(guideLang()==='de'?'Einrichtung abgeschlossen · ':'Setup complete · '):'')+(guideLang()==='de'?'Schritt ':'Step ')+stage[flow.phase]+' / 5 · '+phaseNames[flow.phase];
+  $('hm-guide-progress').textContent=(['done','work'].includes(flow.phase)?(guideLang()==='de'?'Dein nächster Schritt · ':'Your next step · '):(guideLang()==='de'?'Schritt ':'Step ')+stage[flow.phase]+' / 5 · ')+phaseNames[flow.phase];
   $('odpc-voice-back').disabled=!history.length;
  }
  function controls(){
   log.querySelectorAll('.hm-guide-next').forEach(e=>e.remove());updateHelp();
+  const selectedTask=guide.tasks(flow,guideLang()).find(t=>t.id===(flow.task||flow.targetTask));
+  $('odpc-voice-title').textContent=selectedTask?selectedTask.title:languages[$('odpc-voice-language').value].ui[0];
   const output=$('hm-guide-output');output.replaceChildren();
   const choices=$('hm-guide-choices');choices.replaceChildren();
   for(const choice of guide.choices(flow,guideLang())){const b=document.createElement('button');b.type='button';b.textContent=choice.label;b.dataset.choice=choice.value;b.onclick=()=>{input.value=choice.value;submit()};choices.append(b)}
@@ -240,8 +242,12 @@ add_action('wp_footer', function () {
  const extra=document.createElement('div');extra.className='odpc-voice-actions';
  ['odpc-voice-repeat','odpc-voice-reset','odpc-voice-close'].forEach(id=>extra.append($(id)));$('odpc-voice-settings').append(extra);
  const alias={de:'de-DE',en:'en-US',es:'es-ES',fr:'fr-FR',it:'it-IT',pt:'pt-PT',pl:'pl-PL',tr:'tr-TR'},requested=new URLSearchParams(location.search).get('lang');
- if(alias[requested]){$('odpc-voice-language').value=alias[requested];localize();refreshVoices()}
+ if(alias[requested])flow.language=requested;
+ $('odpc-voice-language').value=alias[flow.language]||alias.de;localize();refreshVoices();
+ const requestedAgent=new URLSearchParams(location.search).get('agent');
+ if(requestedAgent){flow=guide.selectAgent(flow,requestedAgent);persist()}
  if(inlineMount){inlineMount.append(panel);panel.tabIndex=-1;panel.classList.add('hm-inline-connector');panel.setAttribute('role','region');panel.removeAttribute('aria-modal');panel.hidden=false;$('odpc-voice-topclose').hidden=true;$('odpc-voice-close').hidden=true;$('odpc-voice-open').setAttribute('aria-expanded','false');active=true;ask();}
+ if(requestedAgent&&flow.targetTask===requestedAgent&&inlineMount){panel.focus({preventScroll:true});revealStep()}
  document.addEventListener('visibilitychange' ,()=>{if(document.hidden)stopAudio()});
  })();
  </script>
