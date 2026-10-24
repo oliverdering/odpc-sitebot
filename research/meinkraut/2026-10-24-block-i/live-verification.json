@@ -1,0 +1,85 @@
+{
+  "checkedAt": "2026-10-24T06:51:49.165601+00:00",
+  "status": "PASS_LIVE_VERIFIED",
+  "catalogSource": "database",
+  "version": "3.0.22",
+  "recipes": 668,
+  "ingredients": 299,
+  "newRecipeId": "mk-source-au-coles-texan-rub",
+  "recipeUrl": "https://meinkraut.odpc.de/mischung/mk-source-au-coles-texan-rub/",
+  "countryRoutes": {
+    "AU": {
+      "status": 200,
+      "recipeCount": 4
+    },
+    "US": {
+      "status": 200,
+      "recipeCount": 20
+    }
+  },
+  "australiaRecipeIds": [
+    "r087",
+    "atlas-au-native-lemon-myrtle-knoblauch-pfeffer-rub",
+    "atlas-au-macadamia-zitronenmyrte-kruste",
+    "mk-source-au-coles-texan-rub"
+  ],
+  "australiaDryRecipeIds": [
+    "r087",
+    "atlas-au-native-lemon-myrtle-knoblauch-pfeffer-rub",
+    "mk-source-au-coles-texan-rub"
+  ],
+  "originalQuantitiesMatch": true,
+  "sourceAttributionPresent": true,
+  "mustardAllergenPresent": true,
+  "untastedLabelPresent": true,
+  "shopMode": "test",
+  "checkoutEnabled": false,
+  "icons": [
+    {
+      "photo": "s00",
+      "status": 200
+    },
+    {
+      "photo": "s02",
+      "status": 200
+    },
+    {
+      "photo": "s06",
+      "status": 200
+    },
+    {
+      "photo": "s10",
+      "status": 200
+    },
+    {
+      "photo": "s11",
+      "status": 200
+    },
+    {
+      "photo": "s20",
+      "status": 200
+    },
+    {
+      "photo": "s21",
+      "status": 200
+    },
+    {
+      "photo": "s22",
+      "status": 200
+    },
+    {
+      "photo": "s47",
+      "status": 200
+    },
+    {
+      "photo": "w21",
+      "status": 200
+    },
+    {
+      "photo": "w27",
+      "status": 200
+    }
+  ],
+  "sitemapUniqueUrls": 1020,
+  "userShelvesChanged": false
+}

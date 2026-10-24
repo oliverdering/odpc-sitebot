@@ -1,5 +1,5 @@
 {
-  "status": "PASS_SOURCE_REVIEW_PENDING_DEPLOYMENT",
+  "status": "PASS_LIVE_VERIFIED",
   "productionImport": false,
   "candidateCount": 1,
   "dailyCandidateCountIncludingOpenBranches": 9,
@@ -26,5 +26,25 @@
     "unknown_id",
     "unproved_grams"
   ],
-  "liveVerified": false
+  "liveVerified": true,
+  "importStatus": "live_verified",
+  "ci": {
+    "url": "https://github.com/oliverdering/odpc-sitebot/actions/runs/40071450217",
+    "jobId": 120805564685,
+    "headSha": "6256ccd925b4c72b71c277e2ececbb85d511e024",
+    "conclusion": "success"
+  },
+  "mergedCommit": "a0feadcb806c199f7a116fda0a44b70d96c71054",
+  "deployment": {
+    "url": "https://github.com/oliverdering/odpc-sitebot/actions/runs/40071531444",
+    "jobId": 120805810686,
+    "conclusion": "success",
+    "databaseActivation": "success"
+  },
+  "liveEvidence": "live-verification.json",
+  "localChecks": {
+    "application": "PASS",
+    "originalQuantitiesHalfScalingSourceAndMustard": "PASS",
+    "phpRoutes": "PASS CI"
+  }
 }
