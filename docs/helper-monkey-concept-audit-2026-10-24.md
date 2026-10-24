@@ -58,4 +58,20 @@ Kontozugriffe von Besuchern können durch diese Prüfungen nicht bestätigt werd
 Der Browserdialog bleibt regelbasiert; er wird nicht als eigener frei sprechender
 KI-Dienst oder autonomes Agentensystem ausgegeben.
 
-Live-Abnahme und Release-Nachweis werden nach Abschluss ergänzt.
+## Live-Nachweis
+
+- Funktionsrelease: `482755b0a3a86a50b23ca697e896244aa4445ba3`.
+- Erfolgreiche vollständige Pipeline: https://github.com/oliverdering/odpc-sitebot/actions/runs/40136603958
+- 41 JavaScript- und 8 Python-Prüfungen sowie PHP-Syntax und Metadatenprüfung bestanden.
+- 33 Browser-Prüfgruppen bestanden: alle veröffentlichten Seiten, Downloads auf
+  eigener Domain, Desktop/Mobil, Scrollen, Dialogschließen, Fortschritt,
+  Verbindungstests, Kopieren und alle neun direkten Agentenstarts.
+- Produkt-/FAQ-Audit: https://github.com/oliverdering/odpc-sitebot/actions/runs/40136603990 erfolgreich.
+- Zusätzliche direkte Browserprüfung: Interview-Start und kopierter Auftrag,
+  Dokumentenvorschau, Bewerbungsregister, Kalenderexport und Übersetzer-Prompt
+  mit dem ausgewählten Sprachpaar funktionieren mit Beispieldaten.
+- Begleittext für direkte Aufgabenstarts anschließend in
+  `86719d6f2350381deb923bccc84a713ca9339b02` präzisiert und live visuell geprüft.
+- Original-Logos und CSS unverändert; keine Besucher-Konten verbunden oder
+  Nachrichten versendet. Keine neuen Abos, kostenpflichtigen APIs oder
+  Hintergrundaufgaben eingerichtet.
