@@ -1,0 +1,29 @@
+{
+  "checkedAt": "2026-10-24T05:22:35.296589+00:00",
+  "health": {
+    "status": "ok",
+    "platformVersion": "3.0.0-test",
+    "shopMode": "test",
+    "checkoutEnabled": false,
+    "products": 21,
+    "version": "3.0.21",
+    "catalog": "database",
+    "ingredients": 299,
+    "recipes": 667,
+    "countries": 195,
+    "countryProfiles": 24,
+    "spiceProfiles": 35
+  },
+  "country": "LY",
+  "routeStatus": 200,
+  "countryRecipeIds": [
+    "c074",
+    "atlas6-libysches-hararat-warme-gewuerzmischung",
+    "atlas6-libysche-tomaten-kuemmel-schmorbasis"
+  ],
+  "countryDryRecipeIds": [
+    "c074",
+    "atlas6-libysches-hararat-warme-gewuerzmischung"
+  ],
+  "newCandidateLive": false
+}
