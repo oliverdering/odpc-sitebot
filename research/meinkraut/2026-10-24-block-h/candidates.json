@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "batchId": "oxana-research-2026-10-24-h",
+  "createdAt": "2026-10-24",
+  "productionImport": false,
+  "dailyCandidateCountIncludingOpenBranches": 8,
+  "dailyCountNote": "Vier live CH/NA/NP/NZ, vier offen MT/PT/RO/LY über alle Branches.",
+  "candidates": [
+    {
+      "id": "mk-research-20261024-ly-assia-bzaar",
+      "name": "Bzaar – Assias veröffentlichte Ersatzvariante",
+      "kind": "Trockenmischung",
+      "countries": [
+        "LY"
+      ],
+      "region": "Annäherung an familiäre Gheryan-Variante, kein Nationalstandard",
+      "description": "Kurkuma-Kümmel-Koriander-Basis mit einer zusammengesetzten Sieben-Gewürze-Komponente.",
+      "editorialType": "Veröffentlichte Autorenvariante; von der Autorin ausdrücklich als Annäherung beschrieben",
+      "reviewStatus": "Vier bezifferte Komponenten am 24.10.2026 geprüft. Nicht verkostet; gehäuftes Maß und Komponentenmodell offen.",
+      "ingredients": [
+        {
+          "sourceName": "turmeric",
+          "sourceQuantity": "1 heaping tablespoon",
+          "ingredient": "kurkuma",
+          "amount": 1,
+          "unit": "EL",
+          "measureQualifier": "gehäuft",
+          "preparation": "Gehäuften Esslöffel ausdrücklich erhalten. Nicht zu einem gestrichenen oder beliebig größeren EL umrechnen."
+        },
+        {
+          "sourceName": "caraway powder",
+          "ingredient": "kummel",
+          "amount": 1,
+          "unit": "EL",
+          "preparation": "Kümmelpulver, vor Abmessen mahlen; kein Kreuzkümmel."
+        },
+        {
+          "sourceName": "coriander powder",
+          "ingredient": "koriandersaat",
+          "amount": 2,
+          "unit": "TL",
+          "preparation": "Gemahlen vor dem Abmessen."
+        },
+        {
+          "sourceName": "7-spice",
+          "ingredient": null,
+          "amount": 1,
+          "unit": "TL",
+          "mappingIssue": "Zusammengesetzte Gewürzzutat nicht als vorhandene Einzelzutat abbildbar. Original verlinkt konkrete achtteilige Bokharat-Rezeptur; Komponentenmodell und Mengenbezug vor Import festlegen, keine beliebige Baharat-Hausmischung gleichsetzen.",
+          "componentSource": "https://www.food.com/recipe/arabic-7-seven-spice-bokharat-194721"
+        }
+      ],
+      "methodSteps": [
+        "Kurkuma als gehäuften Esslöffel erhalten; Kümmel und Koriander als Pulver abmessen.",
+        "Die vier Komponenten nach der Quelle vermischen und trocken in einen gut schließenden Behälter geben. Vor ausführbarem Import Maßqualifikation und verschachtelte Gewürzkomponente klären."
+      ],
+      "application": "Würzbasis für die Libyen-Rezepte der Autorin; kein belegter Dosierwert pro Kilogramm.",
+      "serving": "Vier originale Komponentenpositionen, keine Gramm-Ausbeute.",
+      "massBasis": "EL-/TL-Mengen mit ausdrücklich gehäuftem Kurkumamaß, keine Grammumrechnung.",
+      "normalization100g": null,
+      "allergenAssessment": {
+        "known": [],
+        "complete": false,
+        "note": "Drei eindeutig zugeordnete reine Gewürze ergeben kein benanntes Allergen. Die zusammengesetzte Zutat muss vor Import vollständig zugeordnet und geprüft werden; Etiketten und Spuren beachten."
+      },
+      "storageNotes": [
+        "Trocken, hygienisch und gut verschlossen lagern. Keine eigene Haltbarkeitsfrist."
+      ],
+      "sources": [
+        {
+          "title": "The Bzaar Mix",
+          "url": "https://www.thelibyankitchen.com/2012/12/the-bzaar-mix.html",
+          "author": "Assia / The Libyan Kitchen",
+          "publishedAt": "2012-12-13",
+          "accessedAt": "2026-10-24",
+          "primarySource": true,
+          "contentChecked": true,
+          "evidenceScope": "Vollständige eigene Veröffentlichung einschließlich Mengenliste und verlinkter Komponente gelesen. Beschreibt ausdrücklich eine eigene Annäherung an die Familienmischung aus Gheryan.",
+          "license": "Sachliche Zutaten und Mengen mit eigenen deutschen Notizen; keine Bilder oder Artikeltexte übernommen."
+        },
+        {
+          "title": "Arabic 7 Seven Spice (Bokharat)",
+          "url": "https://www.food.com/recipe/arabic-7-seven-spice-bokharat-194721",
+          "author": "cooking in cairo... / Food.com",
+          "accessedAt": "2026-10-24",
+          "primarySource": true,
+          "contentChecked": true,
+          "evidenceScope": "Von Assia direkt verlinkte Autorenrezeptur mit acht Gewürzen und eigenen EL-/TL-Mengen vollständig gelesen. Nur Komponentenbeleg, keine eigenständige neue Kandidatenrezeptur oder Ersatz durch eine beliebige Atlasmischung."
+        }
+      ],
+      "countryEvidence": "Assia nennt Libyen sowie den Familienbezug zu Gheryan und beschreibt ihre eigene Ersatzmischung. Kein Anspruch auf identische überlieferte Originalrezeptur oder Standard ganz Libyens.",
+      "duplicateReview": {
+        "catalogRecipeCount": 667,
+        "sameSourceFound": false,
+        "comparisonRecipeIds": [
+          "c074",
+          "atlas6-libysches-hararat-warme-gewuerzmischung",
+          "atlas6-libysche-tomaten-kuemmel-schmorbasis"
+        ],
+        "result": "Keine gleiche Autorenquelle. Vorhandene Bzaar-/Hararat-Hausvarianten ersetzen die verlinkte konkrete Gewürzkomponente nicht. Vollprüfung nach Komponentenauflösung wiederholen."
+      },
+      "scopeNotes": [
+        "Die Quelle spricht von fünf Gewürzen, listet jedoch vier Komponentenpositionen; keine fünfte Position erfunden.",
+        "Kein Öl oder frische Zutat aufgenommen.",
+        "Verlinkte Bokharat-Rezeptur nur als Komponentennachweis, nicht als weiterer Kandidat angelegt."
+      ],
+      "openIssues": [
+        "Gehäuftes EL-Maß verlustfrei im Produktionsmodell, in Anzeige und Rezeptskalierung erhalten; keine stille Umdeutung zu gestrichenem EL.",
+        "Verlinkte Bokharat-Komponente fachlich und technisch abbilden, Einzelzutaten und Allergene prüfen.",
+        "Dublettenprüfung nach vollständiger Komponentenauflösung erneut durchführen."
+      ],
+      "readyForImport": false,
+      "importStatus": "research_pending"
+    }
+  ]
+}
