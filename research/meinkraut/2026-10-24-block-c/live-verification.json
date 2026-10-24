@@ -1,0 +1,84 @@
+{
+  "status": "PASS_LIVE_VERIFIED",
+  "checkedAt": "2026-10-24T00:56:54.849891+00:00",
+  "healthHttp": 200,
+  "version": "3.0.19",
+  "source": "database",
+  "recipes": 665,
+  "ingredients": 299,
+  "recipeId": "mk-source-na-ester-kapana",
+  "recipeHttp": 200,
+  "sourceAttributionVerified": true,
+  "originalSpoonQuantitiesVerified": true,
+  "untestedLabelVerified": true,
+  "country": {
+    "code": "NA",
+    "http": 200,
+    "recipeCount": 4,
+    "dryMixCount": 2,
+    "recipeIds": [
+      "atlas6-suedafrikanische-chakalaka-wuerzbasis",
+      "atlas6-suedliches-afrika-tomaten-zwiebel-grillsosse",
+      "c080",
+      "mk-source-na-ester-kapana"
+    ]
+  },
+  "icons": [
+    {
+      "path": "/assets/icons/s00.webp",
+      "http": 200
+    },
+    {
+      "path": "/assets/icons/s02.webp",
+      "http": 200
+    },
+    {
+      "path": "/assets/icons/s03.webp",
+      "http": 200
+    },
+    {
+      "path": "/assets/icons/s04.webp",
+      "http": 200
+    },
+    {
+      "path": "/assets/icons/s05.webp",
+      "http": 200
+    },
+    {
+      "path": "/assets/icons/s06.webp",
+      "http": 200
+    },
+    {
+      "path": "/assets/icons/s11.webp",
+      "http": 200
+    },
+    {
+      "path": "/assets/icons/s20.webp",
+      "http": 200
+    },
+    {
+      "path": "/assets/icons/s21.webp",
+      "http": 200
+    },
+    {
+      "path": "/assets/icons/s32.webp",
+      "http": 200
+    },
+    {
+      "path": "/assets/icons/s47.webp",
+      "http": 200
+    },
+    {
+      "path": "/assets/icons/w21.webp",
+      "http": 200
+    },
+    {
+      "path": "/assets/icons/w27.webp",
+      "http": 200
+    }
+  ],
+  "sitemapUniqueUrls": 1017,
+  "shopMode": "test",
+  "checkoutEnabled": false,
+  "mustardAllergenDisplayed": true
+}

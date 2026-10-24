@@ -1,5 +1,5 @@
 {
-  "status": "PASS_SOURCE_REVIEW_PENDING_CI",
+  "status": "PASS_LIVE_VERIFIED",
   "productionImport": false,
   "candidateCount": 1,
   "dailyCandidateCountIncludingOpenBranches": 3,
@@ -22,5 +22,21 @@
     "ingredients": 299,
     "recipes": 665
   },
-  "liveVerified": false
+  "liveVerified": true,
+  "ci": {
+    "url": "https://github.com/oliverdering/odpc-sitebot/actions/runs/40046985000",
+    "jobId": 120730869909,
+    "conclusion": "success",
+    "headSha": "52affd3ede929a87ebd270b3cbd95c891fefcd0b"
+  },
+  "mergedCommit": "fb4a6fda7f45e4efd861b7656736b9a0488ee553",
+  "semanticBaselineCheck": "Existing catalog values unchanged; one source recipe and catalog version added",
+  "importStatus": "live_verified",
+  "deployment": {
+    "url": "https://github.com/oliverdering/odpc-sitebot/actions/runs/40047057370",
+    "jobId": 120731096692,
+    "conclusion": "success",
+    "databaseActivation": "success"
+  },
+  "liveEvidence": "live-verification.json"
 }
