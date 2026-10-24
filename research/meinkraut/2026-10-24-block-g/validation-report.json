@@ -1,0 +1,22 @@
+{
+  "status": "PASS_STAGING",
+  "productionImport": false,
+  "candidateCount": 1,
+  "createdToday": 5,
+  "errors": [],
+  "blockedFromImport": [
+    {
+      "id": "mk-research-20261024-ro-butuc-mici",
+      "unmapped": [
+        "Dry savory / Cimbru uscat",
+        "Cumin / Chimen"
+      ],
+      "issues": [
+        "Botanische Identität für Chimen/Cumin und Messform vor Mahlen anhand weiterer Originalbelege klären.",
+        "Cimbru uscat/Dry savory eindeutig zuordnen, keine stille Ersetzung durch Thymian oder Bohnenkraut.",
+        "Nach Mapping vollständige Dubletten- und Allergenprüfung erneut durchführen."
+      ],
+      "reason": "research_pending"
+    }
+  ]
+}

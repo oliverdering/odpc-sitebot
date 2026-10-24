@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 1,
+  "batchId": "oxana-research-2026-10-24-g",
+  "createdAt": "2026-10-24",
+  "productionImport": false,
+  "dailyCandidateCountIncludingOpenBranches": 7,
+  "dailyCountNote": "Vier live (CH/NA/NP/NZ), MT/PT sowie dieser RO-Kandidat in offenen Branches.",
+  "candidates": [
+    {
+      "id": "mk-research-20261024-ro-butuc-mici",
+      "name": "Mici-Trockenwürze – Elena Butucs Variante, Identitäten offen",
+      "kind": "Trockenmischung",
+      "countries": [
+        "RO"
+      ],
+      "region": "Autorenvariante für rumänische Mici",
+      "description": "Sieben trockene Gewürzpositionen mit Pfeffer, Piment, Koriander, Paprika und Lorbeer; zwei Zutatenidentitäten noch offen.",
+      "editorialType": "Veröffentlichte Autorenvariante; Sprachfassungen getrennt geprüft",
+      "reviewStatus": "Originalquellen und sieben Mengen am 24.10.2026 gelesen. Nicht verkostet; nicht importfreigegeben.",
+      "ingredients": [
+        {
+          "sourceName": "Whole black pepper / Piper negru (boabe)",
+          "ingredient": "schwarzer-pfeffer",
+          "amount": 2,
+          "unit": "TL",
+          "preparation": "Ganze Körner abmessen, erst danach mit der Mischung mahlen."
+        },
+        {
+          "sourceName": "Dry savory / Cimbru uscat",
+          "ingredient": null,
+          "amount": 1,
+          "unit": "EL",
+          "mappingIssue": "Englische Fassung nennt savory, rumänische cimbru. Botanische Autorenidentität vor Zuordnung zu bohnenkraut oder thymian bestätigen.",
+          "preparation": "Getrocknet vor dem Mahlen abmessen."
+        },
+        {
+          "sourceName": "Whole allspice / Ienibahar boabe",
+          "ingredient": "piment",
+          "amount": 10,
+          "unit": "Stück",
+          "unitLabel": "Körner",
+          "preparation": "Zehn ganze Pimentkörner zählen; kein Grammgewicht erfunden."
+        },
+        {
+          "sourceName": "Coriander seeds / Coriandru",
+          "ingredient": "koriandersaat",
+          "amount": 1,
+          "unit": "TL",
+          "preparation": "Ausdrücklich erlaubte ganze Samenoption gewählt; vor dem Mahlen abmessen."
+        },
+        {
+          "sourceName": "Cumin / Chimen",
+          "ingredient": null,
+          "amount": 1,
+          "unit": "TL",
+          "mappingIssue": "Englische und rumänische Bezeichnungen weisen auf verschiedene mögliche Identitäten; Kümmel und Kreuzkümmel nicht gleichsetzen. Zudem Messform vor Mahlen bestätigen."
+        },
+        {
+          "sourceName": "Sweet paprika / Boia ardei dulce sau iute",
+          "ingredient": "paprika-edelsu",
+          "amount": 2,
+          "unit": "EL",
+          "preparation": "Englische süße Option entspricht der ausdrücklich erlaubten süßen rumänischen Option; keine scharfe Sorte zusätzlich angelegt."
+        },
+        {
+          "sourceName": "Laurel leaves / Frunză de dafin",
+          "ingredient": "lorbeer",
+          "amount": 2,
+          "unit": "Stück",
+          "unitLabel": "Blätter",
+          "preparation": "Zwei Blätter zählen, anschließend zerkleinern und mitmahlen."
+        }
+      ],
+      "methodSteps": [
+        "Bezifferte Zutaten laut Quelle vor dem Mahlen abmessen beziehungsweise zählen; Lorbeerblätter zerbrechen.",
+        "Erst die vollständige Mischung fein mahlen und trocken in ein gut schließendes Glas füllen. Vor ausführbarem Import zwei Zutatenidentitäten klären."
+      ],
+      "application": "Trockene Würze für rumänische Mici; frischer Knoblauch gehört laut Autorin erst in die separate Fleischzubereitung.",
+      "serving": "Originale Löffel- und Stückmengen. Die pauschale Quellangabe 100 g ist nicht als gewogene Ausbeute bestätigt.",
+      "massBasis": "Keine Mengen- oder Stückgewichte geschätzt; keine Grammumrechnung.",
+      "normalization100g": null,
+      "allergenAssessment": {
+        "known": [],
+        "complete": false,
+        "note": "Aus den fünf sicher zugeordneten reinen Gewürzen kein benanntes Allergen abgeleitet. Vollständige Bewertung erst nach den beiden Identitätsklärungen; Etiketten und Spuren separat prüfen."
+      },
+      "storageNotes": [
+        "Trocken in einem sauberen, gut schließenden Glas lagern. Keine eigene Haltbarkeitsfrist."
+      ],
+      "sources": [
+        {
+          "title": "Romanian Mici Spice Mix",
+          "url": "https://www.bylena.com/recipe/1023/Romanian-Mici-Spice-Mix/",
+          "author": "Elena Butuc / ByLena",
+          "publishedAt": "2021-05-06",
+          "accessedAt": "2026-10-24",
+          "primarySource": true,
+          "contentChecked": true,
+          "evidenceScope": "Vollständige englische Autorenveröffentlichung mit sieben Mengen gelesen; enthält Cumin und Dry savory.",
+          "license": "Sachliche Mengen und eigene deutsche Prüfanmerkungen; keine Bilder oder Artikeltexte kopiert."
+        },
+        {
+          "title": "Amestec de condimente pentru Mici",
+          "url": "https://www.lalena.ro/reteta/1707/Amestec-de-condimente-pentru-Mici/",
+          "author": "Elena Butuc / LaLena",
+          "publishedAt": "2018-11-20",
+          "accessedAt": "2026-10-24",
+          "primarySource": true,
+          "contentChecked": true,
+          "evidenceScope": "Rumänisches Original einschließlich Kommentare vollständig gelesen; Chimen und Cimbru uscat sowie Paprikaoption. Die Kommentare lösen die Identitätsfragen nicht."
+        }
+      ],
+      "countryEvidence": "Beide eigenen Veröffentlichungen der Autorin bezeichnen die Mischung ausdrücklich für rumänische Mici beziehungsweise mititei. Nur RO; keine Nationalstandard- oder Exklusivitätsbehauptung.",
+      "duplicateReview": {
+        "catalogRecipeCount": 667,
+        "sameSourceFound": false,
+        "comparisonRecipeIds": [
+          "c021",
+          "atlas6-zacusc-rumaenische-paprika-auberginenpaste",
+          "atlas6-rumaenische-paprika-knoblauch-bratwuerze"
+        ],
+        "result": "Keine identische Autorenquelle. Bestehende trockene Bratwürze hat Knoblauchgranulat und weder Piment noch Lorbeer. Vollständige Dublettenprüfung nach den zwei endgültigen Zuordnungen wiederholen."
+      },
+      "scopeNotes": [
+        "Kein Fleisch, Knoblauch, Natron oder Wasser in die trockene Gewürzbasis übernommen.",
+        "Englische und rumänische Publikationsdaten nicht gleichgesetzt.",
+        "Optionales Weglassen von Piment in Kommentaren nicht als zweite Rezeptur angelegt."
+      ],
+      "openIssues": [
+        "Botanische Identität für Chimen/Cumin und Messform vor Mahlen anhand weiterer Originalbelege klären.",
+        "Cimbru uscat/Dry savory eindeutig zuordnen, keine stille Ersetzung durch Thymian oder Bohnenkraut.",
+        "Nach Mapping vollständige Dubletten- und Allergenprüfung erneut durchführen."
+      ],
+      "readyForImport": false,
+      "importStatus": "research_pending"
+    }
+  ]
+}
