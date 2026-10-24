@@ -1,0 +1,32 @@
+{
+  "status": "PASS_SOURCE_REVIEW_PENDING_DEPLOYMENT",
+  "productionImport": false,
+  "candidateCount": 1,
+  "dailyCandidateCountIncludingOpenBranches": 6,
+  "ingredientCount": 6,
+  "ingredientsAllMapped": true,
+  "originalUnitsPreserved": true,
+  "volumeToGramsConversion": false,
+  "allergenAssessment": {
+    "known": [],
+    "complete": true,
+    "note": "Sechs reine trockene Gewürze ergeben kein benanntes Allergen. Milch gehört erst ins separat zubereitete Getränk; verwendete Produkte und Spuren prüfen. Keine Allergenfrei-Garantie."
+  },
+  "sameSourceFound": false,
+  "sameIngredientSetFound": false,
+  "target": {
+    "ingredients": 299,
+    "recipes": 667
+  },
+  "semanticBaselineCheck": "Existing catalog values unchanged; one recipe and version added.",
+  "liveVerified": false,
+  "localChecks": {
+    "application": "PASS",
+    "sourceQuantitiesHalfScalingAndOmission": "PASS",
+    "negativeProbes": [
+      "unknown_id",
+      "unproved_grams"
+    ],
+    "phpRoutes": "pending CI"
+  }
+}

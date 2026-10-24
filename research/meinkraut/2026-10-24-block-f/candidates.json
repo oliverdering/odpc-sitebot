@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "batchId": "oxana-research-2026-10-24-f",
+  "createdAt": "2026-10-24",
+  "productionImport": false,
+  "dailyCandidateCountIncludingOpenBranches": 6,
+  "dailyCountNote": "CH/NA/NP live, MT/PT offene Entwürfe, NZ hier als sechster neuer Kandidat.",
+  "candidates": [
+    {
+      "id": "mk-research-20261024-nz-chelsea-chai",
+      "name": "Chai-Trockenbasis – Chelsea Winters Variante ohne Vanilleschote",
+      "kind": "Trockenmischung",
+      "countries": [
+        "NZ"
+      ],
+      "region": "Neuseeländische Autorenveröffentlichung; keine Ursprungsbehauptung für Chai",
+      "description": "Sechs warme Gewürze für ein Chai-Getränk: Zimt, Ingwer, Kardamom, Muskat, Piment und schwarzer Pfeffer.",
+      "editorialType": "Veröffentlichte Autorenvariante; erlaubte Variante ohne optionale Vanilleschote",
+      "reviewStatus": "Originalmengen, Pulverformen, Autorenbezug, Zutaten, Allergene und Dubletten am 24.10.2026 geprüft; noch nicht verkostet.",
+      "ingredients": [
+        {
+          "sourceName": "ground cinnamon",
+          "ingredient": "zimt",
+          "amount": 3,
+          "unit": "EL",
+          "preparation": "Gemahlen beziehungsweise fein vor dem Abmessen; Pulverform im Zubereitungstext bestätigt."
+        },
+        {
+          "sourceName": "ground ginger",
+          "ingredient": "ingwer",
+          "amount": 3,
+          "unit": "EL",
+          "preparation": "Gemahlen beziehungsweise fein vor dem Abmessen; Pulverform im Zubereitungstext bestätigt."
+        },
+        {
+          "sourceName": "ground cardamom",
+          "ingredient": "kardamom-gemahlen-unspezifiziert",
+          "amount": 1.5,
+          "unit": "EL",
+          "preparation": "Vor dem Abmessen gemahlen; Kardamomart nicht spezifiziert."
+        },
+        {
+          "sourceName": "ground nutmeg",
+          "ingredient": "muskatnuss",
+          "amount": 1.5,
+          "unit": "TL",
+          "preparation": "Gemahlen beziehungsweise fein vor dem Abmessen; Pulverform im Zubereitungstext bestätigt."
+        },
+        {
+          "sourceName": "allspice",
+          "ingredient": "piment",
+          "amount": 1.5,
+          "unit": "TL",
+          "preparation": "Gemahlen beziehungsweise fein vor dem Abmessen; Pulverform im Zubereitungstext bestätigt."
+        },
+        {
+          "sourceName": "fine black pepper",
+          "ingredient": "schwarzer-pfeffer",
+          "amount": 0.75,
+          "unit": "TL",
+          "preparation": "Gemahlen beziehungsweise fein vor dem Abmessen; Pulverform im Zubereitungstext bestätigt."
+        }
+      ],
+      "methodSteps": [
+        "Alle sechs Gewürze gemahlen beziehungsweise fein in den genannten Löffelmengen abmessen. Muskat, Piment und schwarzen Pfeffer gegebenenfalls vorher mahlen.",
+        "Die Pulver gleichmäßig mischen und trocken in ein sauberes, gut schließendes Glas füllen. Die ausdrücklich optionale Vanilleschote ist in dieser Variante nicht enthalten."
+      ],
+      "application": "Trockene Gewürzbasis für Chai; Milch und Süßungsmittel separat zugeben und deren Allergene beachten.",
+      "serving": "Originalansatz aus sechs Gewürzpositionen; keine Gramm-Ausbeute bestimmt.",
+      "massBasis": "Originale EL-/TL-Mengen, keine Grammumrechnung.",
+      "normalization100g": null,
+      "allergenAssessment": {
+        "known": [],
+        "complete": true,
+        "note": "Sechs reine trockene Gewürze ergeben kein benanntes Allergen. Milch gehört erst ins separat zubereitete Getränk; verwendete Produkte und Spuren prüfen. Keine Allergenfrei-Garantie."
+      },
+      "storageNotes": [
+        "Trocken, kühl, lichtgeschützt und gut verschlossen aufbewahren. Keine eigene Haltbarkeitsfrist ergänzt."
+      ],
+      "sources": [
+        {
+          "title": "Soulful Chai",
+          "url": "https://chelseawinter.co.nz/soulful-chai/",
+          "author": "Chelsea Winter",
+          "publishedAt": "2025-08-11",
+          "accessedAt": "2026-10-24",
+          "primarySource": true,
+          "contentChecked": true,
+          "evidenceScope": "Vollständiges Originalrezept gelesen; sechs Pflichtgewürze der Trockenbasis. Optionale Vanilleschote nicht ausgewählt. Getränkezutaten getrennt.",
+          "license": "Sachliche Zutaten und Mengen, eigene deutsche Kurzfassung; keine Bilder oder Artikel-/Werbetexte übernommen."
+        },
+        {
+          "title": "Chelsea Winter – The Food Show",
+          "url": "https://foodshow.co.nz/user/chelseawinter/",
+          "author": "The Food Show / XPO Exhibitions",
+          "accessedAt": "2026-10-24",
+          "primarySource": true,
+          "contentChecked": true,
+          "evidenceScope": "Eigenes Teilnehmerprofil des Veranstalters belegt neuseeländischen Autorenkontext und verweist auf ihre Rezeptwebsite."
+        }
+      ],
+      "countryEvidence": "NZ bezeichnet Chelsea Winters neuseeländischen Autorenkontext, belegt durch das Profil des Veranstalters The Food Show. Keine Behauptung, Chai stamme aus Neuseeland; keine weiteren Länder allein aus dem Namen ergänzt.",
+      "duplicateReview": {
+        "catalogRecipeCount": 666,
+        "sameSourceFound": false,
+        "sameIngredientSetFound": false,
+        "comparisonRecipeIds": [
+          "r088",
+          "atlas6-neuseelaendische-minz-senf-grillwuerze",
+          "atlas6-neuseelaendische-zitronen-petersilien-fischwuerze"
+        ],
+        "result": "Kein gleiches Zutaten-Set oder Chelsea-Winter-Quellenlink. Bisherige drei NZ-Rezepte sind frische Marinaden/Würzen."
+      },
+      "scopeNotes": [
+        "Nur die separate trockene Basis, ausdrücklich ohne optionale Vanilleschote.",
+        "Milch, Sirup/Zucker, Salz, Vanilleextrakt und optionale Getränkezusätze nicht als Trockenmischungszutaten importiert.",
+        "Keine Tassenumrechnung oder garantierte Portionszahl abgeleitet."
+      ],
+      "openIssues": [],
+      "readyForImport": true,
+      "importStatus": "approved_pending_deployment",
+      "bundledRecipeId": "mk-source-nz-chelsea-chai"
+    }
+  ]
+}
