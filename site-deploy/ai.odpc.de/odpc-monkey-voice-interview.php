@@ -2,14 +2,14 @@
 /**
  * Plugin Name: ODPC Monkey Voice Interview
  * Description: Accessible opt-in voice interview and guided setup for Helper Monkey.
- * Version: 0.11.0
+ * Version: 0.12.0
  * License: GPL-3.0-or-later
  */
 if (!defined('ABSPATH')) exit;
 add_action('wp_footer', function () {
  if (is_admin()) return;
  ?>
- <div id="odpc-voice" class="odpc-voice" data-version="0.11.0" hidden role="dialog" aria-modal="true" aria-labelledby="odpc-voice-title" aria-describedby="odpc-voice-status">
+ <div id="odpc-voice" class="odpc-voice" data-version="0.12.0" hidden role="dialog" aria-modal="true" aria-labelledby="odpc-voice-title" aria-describedby="odpc-voice-status">
   <h2 id="odpc-voice-title">Monkey Einrichtungsassistent</h2><button type="button" id="odpc-voice-topclose" aria-label="Schließen">✕</button>
   <p id="odpc-voice-status" role="status" aria-live="polite">Bereit. Starte das Interview.</p>
   <p id="hm-guide-progress" aria-live="polite"></p>
@@ -245,7 +245,7 @@ add_action('wp_footer', function () {
  if(alias[requested])flow.language=requested;
  $('odpc-voice-language').value=alias[flow.language]||alias.de;localize();refreshVoices();
  const requestedAgent=new URLSearchParams(location.search).get('agent');
- if(requestedAgent){flow=guide.selectAgent(flow,requestedAgent);persist()}
+ if(requestedAgent&&flow.targetTask!==requestedAgent&&flow.returnTask!==requestedAgent){flow=guide.selectAgent(flow,requestedAgent);persist()}
  if(inlineMount){inlineMount.append(panel);panel.tabIndex=-1;panel.classList.add('hm-inline-connector');panel.setAttribute('role','region');panel.removeAttribute('aria-modal');panel.hidden=false;$('odpc-voice-topclose').hidden=true;$('odpc-voice-close').hidden=true;$('odpc-voice-open').setAttribute('aria-expanded','false');active=true;ask();}
  if(requestedAgent&&flow.targetTask===requestedAgent&&inlineMount){panel.focus({preventScroll:true});revealStep()}
  document.addEventListener('visibilitychange' ,()=>{if(document.hidden)stopAudio()});

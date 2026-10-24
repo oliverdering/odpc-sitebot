@@ -73,6 +73,19 @@ for(const [name,viewport]of [['desktop',{width:1440,height:1000}],['mobile',{wid
  }
  await page.screenshot({path:out+'/'+name+'-specialist-handoff.png',fullPage:true});
  pass(name+' all nine agent cards lead to their own usable task prompts without a mandatory connection test');
+ await page.locator('[data-choice="KI einrichten"]').click();
+ if(await page.locator('#odpc-voice').getAttribute('data-phase')==='device')await page.locator('[data-choice="Android"]').click();
+ await page.locator('[data-choice="Google Drive"]').click();await answer('Das kostet extra');
+ assert.equal(await page.locator('#odpc-voice').getAttribute('data-connection-result'),'unavailable');
+ await page.reload({waitUntil:'networkidle'});assert.equal(await page.locator('#odpc-voice').getAttribute('data-connection-result'),'unavailable');
+ await page.locator('[data-choice="ohne Verbindung starten"]').click();assert.equal(await page.locator('#odpc-voice').getAttribute('data-phase'),'work');assert.match(await page.locator('#hm-guide-work-prompt').inputValue(),/anwaltliche Prüfung/);
+ await page.locator('[data-choice="KI einrichten"]').click();await page.locator('[data-choice="Google Drive"]').click();await page.locator('[data-choice="verbunden"]').click();await page.locator('[data-choice="Test erfolgreich"]').click();
+ assert.equal(await page.locator('#odpc-voice').getAttribute('data-phase'),'work');assert.match(await page.locator('#hm-guide-work-prompt').inputValue(),/anwaltliche Prüfung/);assert.match(await page.locator('#hm-guide-work-prompt').inputValue(),/Google Drive/);
+ pass(name+' selected specialist survives unavailable service, reload and a successful connection');
+ await page.locator('#odpc-voice-settings summary').click();await page.locator('#odpc-voice-reset').click();await page.locator('#odpc-voice-settings summary').click();
+ await answer('Ich möchte kostenlos Bewerbungen schreiben');assert.equal(await page.locator('#odpc-voice').getAttribute('data-phase'),'platform');await page.locator('[data-choice="ChatGPT"]').click();
+ assert.equal(await page.locator('#odpc-voice').getAttribute('data-phase'),'work');assert.match(await page.locator('#hm-guide-work-prompt').inputValue(),/ATS-Abgleich/);
+ assert.equal(await page.locator('[data-choice="Android"]').count(),0);pass(name+' natural free-text application starts without an unnecessary device or connection question');
  assert.equal(errors.length,0,JSON.stringify(errors));pass(name+' agent overview and no page errors');await context.close();
 }
 const audioContext=await browser.newContext();const audio=await audioContext.newPage();await audio.goto('https://ai.odpc.de/connector-einrichten/',{waitUntil:'networkidle'});await audio.getByRole('button',{name:'Mit Sprache einrichten',exact:true}).click();
