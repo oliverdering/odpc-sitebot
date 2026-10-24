@@ -245,7 +245,8 @@ add_action('wp_footer', function () {
  if(alias[requested])flow.language=requested;
  $('odpc-voice-language').value=alias[flow.language]||alias.de;localize();refreshVoices();
  const requestedAgent=new URLSearchParams(location.search).get('agent');
- if(requestedAgent&&flow.targetTask!==requestedAgent&&flow.returnTask!==requestedAgent){flow=guide.selectAgent(flow,requestedAgent);persist()}
+ const navigationKind=window.performance?.getEntriesByType?.('navigation')[0]?.type;
+ if(requestedAgent&&(navigationKind==='navigate'||(flow.targetTask!==requestedAgent&&!flow.returnTask))){flow=guide.selectAgent(flow,requestedAgent);persist()}
  if(inlineMount){inlineMount.append(panel);panel.tabIndex=-1;panel.classList.add('hm-inline-connector');panel.setAttribute('role','region');panel.removeAttribute('aria-modal');panel.hidden=false;$('odpc-voice-topclose').hidden=true;$('odpc-voice-close').hidden=true;$('odpc-voice-open').setAttribute('aria-expanded','false');active=true;ask();}
  if(requestedAgent&&flow.targetTask===requestedAgent&&inlineMount){panel.focus({preventScroll:true});revealStep()}
  document.addEventListener('visibilitychange' ,()=>{if(document.hidden)stopAudio()});

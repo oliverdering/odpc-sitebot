@@ -82,6 +82,9 @@ for(const [name,viewport]of [['desktop',{width:1440,height:1000}],['mobile',{wid
  await page.locator('[data-choice="KI einrichten"]').click();await page.locator('[data-choice="Google Drive"]').click();await page.locator('[data-choice="verbunden"]').click();await page.locator('[data-choice="Test erfolgreich"]').click();
  assert.equal(await page.locator('#odpc-voice').getAttribute('data-phase'),'work');assert.match(await page.locator('#hm-guide-work-prompt').inputValue(),/anwaltliche Prüfung/);assert.match(await page.locator('#hm-guide-work-prompt').inputValue(),/Google Drive/);
  pass(name+' selected specialist survives unavailable service, reload and a successful connection');
+ await answer('Berichtsheft schreiben');await page.locator('[data-choice="KI einrichten"]').click();await page.locator('[data-choice="Google Drive"]').click();await answer('nicht verfügbar');
+ await page.reload({waitUntil:'networkidle'});assert.equal(await page.locator('#odpc-voice').getAttribute('data-phase'),'setup');await page.locator('[data-choice="ohne Verbindung starten"]').click();assert.match(await page.locator('#hm-guide-work-prompt').inputValue(),/Ausbildungsbericht/);
+ pass(name+' changing tasks inside a direct agent page also preserves the chosen task on reload');
  await page.locator('#odpc-voice-settings summary').click();await page.locator('#odpc-voice-reset').click();await page.locator('#odpc-voice-settings summary').click();
  await answer('Ich möchte kostenlos Bewerbungen schreiben');assert.equal(await page.locator('#odpc-voice').getAttribute('data-phase'),'platform');await page.locator('[data-choice="ChatGPT"]').click();
  assert.equal(await page.locator('#odpc-voice').getAttribute('data-phase'),'work');assert.match(await page.locator('#hm-guide-work-prompt').inputValue(),/ATS-Abgleich/);
