@@ -24,6 +24,17 @@
     "mappedCount": 6,
     "unmappedCount": 1,
     "newCandidates": 0,
-    "ciStatus": "pending"
+    "ciStatus": "success"
+  },
+  "dataCommit": "93c4038f2486555ad3399d03999af86c8591651d",
+  "ci": {
+    "url": "https://github.com/oliverdering/odpc-sitebot/actions/runs/40080448032",
+    "jobId": 120832701434,
+    "conclusion": "success",
+    "checks": [
+      "research packages",
+      "JavaScript application",
+      "PHP routes, catalog transactions and source attribution"
+    ]
   }
 }
