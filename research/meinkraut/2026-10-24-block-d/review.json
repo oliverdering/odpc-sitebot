@@ -1,0 +1,21 @@
+{
+  "status": "PASS_STAGING_WITH_IMPORT_BLOCKS",
+  "checkedAt": "2026-10-24",
+  "dataCommit": "f521eca7111102595e45de5569d7253a612bd3a9",
+  "pullRequest": 22,
+  "workflow": {
+    "url": "https://github.com/oliverdering/odpc-sitebot/actions/runs/40052694456",
+    "jobId": 120748626613,
+    "conclusion": "success",
+    "checks": [
+      "research packages",
+      "JavaScript application",
+      "PHP routes",
+      "catalog transactions",
+      "source attribution"
+    ]
+  },
+  "importApproved": false,
+  "productionFilesChanged": false,
+  "note": "Technische Prüfungen ersetzen keine Freigabe der Piri-Piri-Identität oder der Pfefferform. Entwurf bleibt ungemergt."
+}
