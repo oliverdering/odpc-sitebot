@@ -1,18 +1,18 @@
 {
-  "version": "3.0.18",
-  "baselineRevision": "608f65de8f02c31362bd76c00eaa427b63358135",
+  "version": "3.0.19",
+  "baselineRevision": "affa95b98cd5e67fe510c8245ab4f6b49b6bf678",
   "expectedBaseline": {
-    "ingredients": 299,
-    "recipes": 663
-  },
-  "expectedTarget": {
     "ingredients": 299,
     "recipes": 664
   },
+  "expectedTarget": {
+    "ingredients": 299,
+    "recipes": 665
+  },
   "addedIngredients": [],
   "addedRecipes": [
-    "mk-source-ch-qookster-raclette"
+    "mk-source-na-ester-kapana"
   ],
   "checkedAt": "2026-10-24",
-  "sourceReview": "research/meinkraut/2026-10-24-block-b/validation.json"
+  "sourceReview": "research/meinkraut/2026-10-24-block-c/validation.json"
 }
