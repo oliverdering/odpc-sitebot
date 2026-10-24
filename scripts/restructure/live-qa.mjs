@@ -21,7 +21,7 @@ for(const url of paths){
 assert(downloadLinks>=9,'preserved language downloads must remain available on our own domain');
 pass('all published pages keep repository links internal and downloads on our domain',{pages:paths.length,localDownloadLinks:downloadLinks});await linkContext.close();
 for(const [name,viewport]of [['desktop',{width:1440,height:1000}],['mobile',{width:390,height:844}]]){
- const context=await browser.newContext({viewport,isMobile:name==='mobile',hasTouch:name==='mobile'});await context.addInitScript(()=>{window.__hmMicStarts=0;window.SpeechRecognition=class{start(){window.__hmMicStarts++}abort(){}}});const page=await context.newPage();const errors=[];page.on('pageerror',e=>errors.push(e.message));
+ const context=await browser.newContext({viewport,isMobile:name==='mobile',hasTouch:name==='mobile'});await context.grantPermissions(['clipboard-read','clipboard-write'],{origin:'https://ai.odpc.de'});await context.addInitScript(()=>{window.__hmMicStarts=0;window.SpeechRecognition=class{start(){window.__hmMicStarts++}abort(){}}});const page=await context.newPage();const errors=[];page.on('pageerror',e=>errors.push(e.message));
  const start=Date.now();const res=await page.goto('https://ai.odpc.de/?hm_qa='+Date.now(),{waitUntil:'networkidle'});assert.equal(res.status(),200);assert.equal(await page.locator('h1').count(),1);
  assert.equal(await page.locator('.hm-header img').evaluate(e=>e.complete&&e.naturalWidth>0),true);
  assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),true);
