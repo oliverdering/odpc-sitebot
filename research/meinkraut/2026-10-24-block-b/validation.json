@@ -1,0 +1,34 @@
+{
+  "status": "PASS_SOURCE_REVIEW_PENDING_CI",
+  "productionImport": false,
+  "candidateCount": 1,
+  "dailyCandidateCountIncludingOpenBranches": 2,
+  "sourceReviewed": true,
+  "pdfIngredientPageVisuallyChecked": 2,
+  "originalGrams": [
+    10,
+    10,
+    6,
+    5,
+    1,
+    1,
+    1,
+    1
+  ],
+  "batchGrams": 35,
+  "ingredientReferencesValid": true,
+  "sameSourceFound": false,
+  "sameIngredientSetFound": false,
+  "allergenAssessment": {
+    "known": [],
+    "complete": true,
+    "note": "Die acht reinen Gewürz-/Salzzutaten enthalten kein daraus abzuleitendes benanntes Allergen. Käse/Beilagen separat beurteilen; Etiketten und Spuren prüfen, keine Allergenfrei-Garantie."
+  },
+  "countryEvidence": "Qookster veröffentlicht die Mischung ausdrücklich zu Raclette und Fondue bei QoQa. Der amtliche UID-Eintrag belegt QoQa Services SA in Bussigny, Schweiz. CH bezeichnet diese Schweizer Autorenveröffentlichung; kein Nationalstandard und kein zusätzlicher Länderbezug behauptet.",
+  "target": {
+    "ingredients": 299,
+    "recipes": 664
+  },
+  "importStatus": "approved_pending_deployment",
+  "liveVerified": false
+}
