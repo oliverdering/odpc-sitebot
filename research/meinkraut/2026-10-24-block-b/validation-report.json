@@ -4,7 +4,12 @@
   "candidateCount": 1,
   "createdToday": 1,
   "errors": [],
-  "blockedFromImport": [],
-  "globalDailyCandidateCountIncludingOpenBranches": 2,
-  "note": "Branchlokal ein heutiger Kandidat; Malta-Aljoli in Entwurf 19 zusätzlich im Tagesgesamt mitgezählt."
+  "blockedFromImport": [
+    {
+      "id": "mk-research-20261024-ch-qookster-raclette",
+      "unmapped": [],
+      "issues": [],
+      "reason": "already_imported"
+    }
+  ]
 }

@@ -1,0 +1,63 @@
+{
+  "status": "PASS_LIVE_VERIFIED",
+  "checkedAt": "2026-10-24T00:45:14.311320+00:00",
+  "healthHttp": 200,
+  "version": "3.0.18",
+  "source": "database",
+  "recipes": 664,
+  "ingredients": 299,
+  "recipeId": "mk-source-ch-qookster-raclette",
+  "recipeHttp": 200,
+  "sourceAttributionVerified": true,
+  "originalGramsVerified": true,
+  "untestedLabelVerified": true,
+  "country": {
+    "code": "CH",
+    "http": 200,
+    "recipeCount": 4,
+    "dryMixCount": 1,
+    "recipeIds": [
+      "atlas6-apfel-kren-sauce-mit-milder-saeure",
+      "atlas6-mitteleuropaeische-senf-schalotten-sauce",
+      "c025",
+      "mk-source-ch-qookster-raclette"
+    ]
+  },
+  "icons": [
+    {
+      "path": "/assets/icons/s00.webp",
+      "http": 200
+    },
+    {
+      "path": "/assets/icons/s02.webp",
+      "http": 200
+    },
+    {
+      "path": "/assets/icons/s05.webp",
+      "http": 200
+    },
+    {
+      "path": "/assets/icons/s06.webp",
+      "http": 200
+    },
+    {
+      "path": "/assets/icons/s20.webp",
+      "http": 200
+    },
+    {
+      "path": "/assets/icons/s23.webp",
+      "http": 200
+    },
+    {
+      "path": "/assets/icons/s26.webp",
+      "http": 200
+    },
+    {
+      "path": "/assets/icons/s47.webp",
+      "http": 200
+    }
+  ],
+  "sitemapUniqueUrls": 1016,
+  "shopMode": "test",
+  "checkoutEnabled": false
+}

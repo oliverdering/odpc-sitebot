@@ -6,6 +6,8 @@ Die dreiseitige Original-PDF und deren Zutatenblatt wurden gelesen beziehungswei
 
 Alle acht Zutatenreferenzen existieren. Kein gleicher Quelllink oder gleicher Zutaten-Satz unter 663 Ausgangsrezepten; CH hatte drei Butter-/Sauce-/Dip-Einträge. Die reinen Gewürz-/Salzzutaten ergeben keine benannten Allergene; Käse und Beilagen sind separat zu beurteilen, Etiketten/Spuren bleiben produktabhängig. Noch nicht verkostet.
 
-Lokale Staging- und JavaScript-Prüfung bestanden. Sitemap enthält 1016 eindeutige URLs. PHP-Routen und transaktionale Katalogfreigabe werden zusätzlich in CI geprüft. Der Releaseplan zielt auf die tatsächliche aktive Datenbank: Version 3.0.18, 664 Rezepte, 299 Zutaten. Vor einem Live-Nachweis bleibt `liveVerified` ausdrücklich false.
+Lokale Staging- und JavaScript-Prüfung bestanden. Sitemap enthält 1016 eindeutige URLs. PHP-Routen und transaktionale Katalogfreigabe werden zusätzlich in CI geprüft. Der Releaseplan zielt auf die tatsächliche aktive Datenbank: Version 3.0.18, 664 Rezepte, 299 Zutaten. Live am 24.10.2026 nachgewiesen: Version 3.0.18, aktive Datenbank, 664 Rezepte und 299 Zutaten. `live-verification.json` dokumentiert Rezeptseite, Quellenanzeige, Originalmengen, Noch-nicht-verkostet-Hinweis, acht Symbole und 1016 eindeutige Sitemap-URLs. CH liefert vier Treffer, darunter erstmals eine Trockenmischung.
 
 Tagesgesamt einschließlich offener Branches: zwei neue Kandidaten am 24.10.2026; Malta-Aljoli aus Entwurf 19 bleibt gesperrt. Keine privaten Kommunikationsinhalte in diesem Paket. Keine Änderungen an Nutzerregalen, Shop-Testmodus, Logo oder Design.
+
+CI: https://github.com/oliverdering/odpc-sitebot/actions/runs/40046195086 erfolgreich. Zusammengeführt über PR 20 (ee44a7016d298a5096de6acf34b634e3671c1e28). Deployment und tatsächliche Datenbankaktivierung: https://github.com/oliverdering/odpc-sitebot/actions/runs/40046242759 erfolgreich. Bereits importierten Kandidaten nicht erneut importieren.
