@@ -1,0 +1,40 @@
+{
+  "status": "PASS_STAGING_WITH_IMPORT_BLOCKS",
+  "checkedAt": "2026-10-24",
+  "changedFilesScope": "research/meinkraut/2026-10-24-block-g/ only",
+  "activeCatalogChanged": false,
+  "readyForImport": false,
+  "unresolved": [
+    "Cumin/Chimen identity and measuring form",
+    "Repeat full duplicate and allergen review after mapping"
+  ],
+  "previousDataCommit": "78916f1a296a96fca3c9e5caa6bd61f252fa9235",
+  "previousCi": {
+    "url": "https://github.com/oliverdering/odpc-sitebot/actions/runs/40062925230",
+    "jobId": 120780090706,
+    "conclusion": "success",
+    "checks": [
+      "research packages",
+      "JavaScript application",
+      "PHP routes, catalog transactions and source attribution"
+    ]
+  },
+  "followup": {
+    "mappedIngredient": "bohnenkraut",
+    "mappedCount": 6,
+    "unmappedCount": 1,
+    "newCandidates": 0,
+    "ciStatus": "success"
+  },
+  "dataCommit": "93c4038f2486555ad3399d03999af86c8591651d",
+  "ci": {
+    "url": "https://github.com/oliverdering/odpc-sitebot/actions/runs/40080448032",
+    "jobId": 120832701434,
+    "conclusion": "success",
+    "checks": [
+      "research packages",
+      "JavaScript application",
+      "PHP routes, catalog transactions and source attribution"
+    ]
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "checkedAt": "2026-10-24T09:02:44.984304+00:00",
+  "catalog": {
+    "status": "ok",
+    "platformVersion": "3.0.0-test",
+    "shopMode": "test",
+    "checkoutEnabled": false,
+    "products": 21,
+    "version": "3.0.22",
+    "catalog": "database",
+    "ingredients": 299,
+    "recipes": 668,
+    "countries": 195,
+    "countryProfiles": 24,
+    "spiceProfiles": 35
+  },
+  "country": "RO",
+  "countryRouteStatus": 200,
+  "countryRecipeIds": [
+    "c021",
+    "atlas6-zacusc-rumaenische-paprika-auberginenpaste",
+    "atlas6-rumaenische-paprika-knoblauch-bratwuerze"
+  ],
+  "countryDryRecipeIds": [
+    "atlas6-rumaenische-paprika-knoblauch-bratwuerze"
+  ],
+  "candidateLive": false,
+  "newCandidates": 0,
+  "sourceMappingResolved": "bohnenkraut",
+  "noProductionChange": true
+}
