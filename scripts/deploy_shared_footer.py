@@ -149,7 +149,7 @@ def main():
             targets = [
                 ('lenchen', [(roots['tante-lenchen'] + '/wp-content/themes/tante-lenchen/footer.php', focus_existing)], ['https://tante-lenchen.odpc.de/', 'https://tante-lenchen.odpc.de/impressum/']),
                 ('atrium', [(roots['atrium191-odpc'] + '/wp-content/themes/atrium191-odpc/footer.php', focus_existing)], ['https://atrium191-rb.odpc.de/']),
-                ('helper-monkey', [(roots['helpermonkey-business-v34-child'] + '/wp-content/mu-plugins/odpc-helpermonkey-v4.php', focus_existing)], ['https://ai.odpc.de/', 'https://ai.odpc.de/impressum/']),
+                ('helper-monkey', [(roots['helpermonkey-business-v34-child'] + '/wp-content/mu-plugins/odpc-helpermonkey-v4.php', focus_existing)], ['https://ai.odpc.de/', 'https://ai.odpc.de/start/']),
                 ('justen-preview', [('/Justen/index.html', focus_existing)], ['https://ra-justen.odpc.de/']),
                 ('grenzau', [('/Bahnhof-Grenzau/index.html', grenzau)], ['https://bahnhof-grenzau.odpc.de/']),
                 ('meinkraut', [('/MeinKraut/server/public.php', meinkraut), ('/MeinKraut/meinkraut.js', lambda value: meinkraut(value, True))], ['https://meinkraut.odpc.de/', 'https://meinkraut.odpc.de/gewuerze/'])]
