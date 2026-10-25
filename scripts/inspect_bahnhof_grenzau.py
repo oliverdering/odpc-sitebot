@@ -15,7 +15,7 @@ try:
   for folder in [ROOT,ROOT+"/wp-admin",ROOT+"/wp-includes",ROOT+"/wp-content",ROOT+"/.odpc-staging"]:
    try:
     entries=s.listdir_attr(folder)
-    print("DIR",folder,"items",len(entries))
+    print("DIR",folder,"items",len(entries),"mode",oct(stat.S_IMODE(s.stat(folder).st_mode)))
     for e in sorted(entries,key=lambda x:x.filename)[:35]:
      if folder==ROOT or e.filename in ("themes","plugins","uploads","install.php","upgrade.php","version.php","index.php","wordpress-latest.zip"):
       print(" ",e.filename,"dir" if stat.S_ISDIR(e.st_mode) else "file","bytes",e.st_size)
@@ -25,3 +25,14 @@ try:
    except FileNotFoundError:print("MISSING",file)
  finally:s.close()
 finally:tr.close()
+
+# Public HTTP diagnostics: report status only, never cookies, headers or response bodies.
+import urllib.request, urllib.error
+for path in ["/", "/wp-login.php", "/wp-admin/install.php", "/wp-admin/setup-config.php"]:
+ try:
+  with urllib.request.urlopen("https://bahnhof-grenzau.odpc.de"+path, timeout=20) as response:
+   print("HTTPS",path,"status",response.status,"final_url",response.url)
+ except urllib.error.HTTPError as exc:
+  print("HTTPS",path,"status",exc.code)
+ except Exception as exc:
+  print("HTTPS",path,"error_type",type(exc).__name__)
