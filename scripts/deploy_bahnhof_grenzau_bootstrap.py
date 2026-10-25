@@ -9,6 +9,7 @@ import secrets
 import stat
 import time
 import urllib.request
+import urllib.error
 import paramiko
 
 HOST = "home119567219.1and1-data.host"
@@ -54,7 +55,7 @@ def read(sftp, path):
 def atomic_write(sftp, path, data, mode=0o644):
     temporary = path + ".odpc-" + secrets.token_hex(8)
     try:
-        with sftp.open(temporary, "x") as output:
+        with sftp.open(temporary, "wx") as output:
             output.write(data)
         sftp.chmod(temporary, mode)
         sftp.posix_rename(temporary, path)
