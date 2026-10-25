@@ -98,7 +98,7 @@ for(const [name,viewport]of [['desktop',{width:1440,height:1000}],['mobile',{wid
  assert.match(await page.locator('#odpc-voice-title').innerText(),/Bewerbung/);await page.reload({waitUntil:'networkidle'});
  const detailed=await page.locator('#hm-guide-work-prompt').inputValue();assert(detailed.includes(taskDetail));assert(detailed.includes('vier Jahre Berufserfahrung'));
  await page.locator('#hm-guide-work-copy').click();assert.equal(await page.evaluate(()=>navigator.clipboard.readText()),detailed);
- await answer('Bitte sachlich formulieren.');assert.notMatch(await page.locator('#odpc-voice-status').innerText(),/Auftrag kopiert/);
+ await answer('Bitte sachlich formulieren.');assert.doesNotMatch(await page.locator('#odpc-voice-status').innerText(),/Auftrag kopiert/);
  pass(name+' specific task details, follow-up corrections, reload and clipboard keep the application context');
  await answer('Berichtsheft schreiben');assert(!(await page.locator('#hm-guide-work-prompt').inputValue()).includes('vier Jahre Berufserfahrung'));
  await page.locator('[data-choice="andere Aufgabe"]').click();await page.reload({waitUntil:'networkidle'});assert.equal(await page.locator('#odpc-voice').getAttribute('data-phase'),'done');
