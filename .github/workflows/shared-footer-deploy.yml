@@ -1,0 +1,36 @@
+name: ODPC / Shared portrait footer
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/footer_credit.py'
+      - 'scripts/deploy_shared_footer.py'
+      - '.github/workflows/shared-footer-deploy.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: odpc-shared-footer
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate scoped footer transformations
+        run: |
+          python3 -m py_compile scripts/footer_credit.py scripts/deploy_shared_footer.py
+          python3 scripts/test_footer_credit.py
+      - run: python3 -m pip install 'paramiko>=3.4,<5'
+      - name: Update footer files with per-site backup and rollback
+        env:
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+        run: python3 scripts/deploy_shared_footer.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: prior-footer-files
+          path: backup-shared-footer/
+          if-no-files-found: ignore
+          retention-days: 15
