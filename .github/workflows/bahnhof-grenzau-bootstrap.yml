@@ -1,8 +1,8 @@
-name: Bahnhof Grenzau / WordPress bootstrap
+name: Bahnhof Grenzau / Guarded start-page deployment
 on:
   push:
     paths:
-      - 'site-deploy/bahnhof-grenzau/install.php'
+      - 'site-deploy/bahnhof-grenzau/**'
       - 'scripts/deploy_bahnhof_grenzau_bootstrap.py'
       - '.github/workflows/bahnhof-grenzau-bootstrap.yml'
   workflow_dispatch:
@@ -19,11 +19,13 @@ jobs:
       - uses: actions/checkout@v4
       - name: Validate PHP and Python
         run: |
-          php -l site-deploy/bahnhof-grenzau/install.php
+          php -l site-deploy/bahnhof-grenzau/install-wordpress.php
+          php -l site-deploy/bahnhof-grenzau/theme/front-page.php
+          php -l site-deploy/bahnhof-grenzau/theme/index.php
           python3 -m py_compile scripts/deploy_bahnhof_grenzau_bootstrap.py
       - name: Install SFTP client
         run: python3 -m pip install 'paramiko>=3.4,<5'
-      - name: Upload official WordPress ZIP and one-time browser extractor
+      - name: Publish start page with backup and HTTP verification
         env:
           ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
         run: python3 scripts/deploy_bahnhof_grenzau_bootstrap.py
