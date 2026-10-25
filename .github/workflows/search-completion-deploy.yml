@@ -1,0 +1,41 @@
+name: ODPC / Public search completion
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'site-deploy/search-completion/**'
+      - 'scripts/deploy_search_completion.py'
+      - 'scripts/test_search_completion.php'
+      - '.github/workflows/search-completion-deploy.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: odpc-search-completion
+  cancel-in-progress: false
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate metadata and public/private boundaries
+        run: |
+          php -l site-deploy/search-completion/odpc-seo-completion.php
+          php -l site-deploy/search-completion/odpc-google-index-audit.php
+          php scripts/test_search_completion.php
+          python3 -m py_compile scripts/deploy_search_completion.py
+      - run: python3 -m pip install 'paramiko>=3.4,<5'
+      - name: Release with prior-file backups and rollback
+        env:
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+        run: python3 scripts/deploy_search_completion.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: search-completion-release
+          path: |
+            search-completion-results.json
+            backup-search-completion/
+          if-no-files-found: ignore
+          retention-days: 15
