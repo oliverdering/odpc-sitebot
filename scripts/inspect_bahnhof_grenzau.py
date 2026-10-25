@@ -36,3 +36,20 @@ for path in ["/", "/wp-login.php", "/wp-admin/install.php", "/wp-admin/setup-con
   print("HTTPS",path,"status",exc.code)
  except Exception as exc:
   print("HTTPS",path,"error_type",type(exc).__name__)
+
+# Report only known non-sensitive access-control directives.
+tr=paramiko.Transport((HOST,22));tr.start_client(timeout=30)
+try:
+ fp="SHA256:"+base64.b64encode(hashlib.sha256(tr.get_remote_server_key().asbytes()).digest()).decode().rstrip("=")
+ if not hmac.compare_digest(fp,PIN):raise RuntimeError("Host key mismatch")
+ tr.auth_password(USER,os.environ["ODPC_SFTP_PASSWORD"])
+ s=paramiko.SFTPClient.from_transport(tr)
+ with s.open(ROOT+"/.htaccess","rb") as f:raw=f.read(4096).decode("utf-8","replace")
+ safe={"Options -Indexes","Require all denied","Deny from all","Order allow,deny","Order deny,allow","</IfModule>"}
+ for line in raw.splitlines():
+  q=line.strip()
+  if q in safe or q.startswith("<IfModule "):print("ACCESS_RULE",q)
+  elif q.startswith("#"):print("ACCESS_RULE comment")
+  elif q:print("ACCESS_RULE other",len(q))
+ s.close()
+finally:tr.close()
