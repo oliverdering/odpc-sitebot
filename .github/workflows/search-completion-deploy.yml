@@ -12,7 +12,7 @@ permissions:
   contents: read
 concurrency:
   group: odpc-search-completion
-  cancel-in-progress: false
+  cancel-in-progress: true
 jobs:
   release:
     runs-on: ubuntu-latest

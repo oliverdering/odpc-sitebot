@@ -1,5 +1,5 @@
 """Publish scoped head-only corrections, crawl files and protected direct-Google support."""
-import base64, concurrent.futures, gzip, hashlib, hmac, json, os, posixpath, re, stat, subprocess, time, urllib.request, urllib.error
+import base64, concurrent.futures, gzip, hashlib, hmac, json, os, posixpath, re, stat, subprocess, time, urllib.request, urllib.error, urllib.parse
 import paramiko
 from pathlib import Path
 from html import escape
@@ -61,32 +61,36 @@ def check_maps(base):
     if 'Sitemap: '+base+'/sitemap.xml'not in fetch(base+'/robots.txt'):raise RuntimeError('Sitemap declaration missing')
 
 def expire_target_cache(sf,root,urls):
-    targets={u.rstrip('/')for u in urls};queue=[];seen=0
+    targets={urllib.parse.unquote(u).rstrip('/')for u in urls};slugs=[urllib.parse.urlparse(u).path.strip('/')for u in urls]
+    queue=[];seen=0
     for part in ['all','wpfc-mobile-cache','wpo-cache','supercache']:
         base=root+'/wp-content/cache/'+part
         try:
-            if stat.S_ISDIR(sf.lstat(base).st_mode):queue.append((base,0))
+            if stat.S_ISDIR(sf.lstat(base).st_mode):queue.append((base,base,0))
         except FileNotFoundError:pass
-    while queue and seen<2000:
-        folder,depth=queue.pop(0)
-        try: entries=sf.listdir_attr(folder)
-        except FileNotFoundError: continue
+    while queue and seen<400:
+        folder,base,depth=queue.pop(0)
+        try:entries=sf.listdir_attr(folder)
+        except FileNotFoundError:continue
         for item in entries:
             seen+=1
-            if seen>2000:break
+            if seen>400:break
             path=posixpath.join(folder,item.filename)
-            if stat.S_ISDIR(item.st_mode) and depth<6:queue.append((path,depth+1));continue
+            if stat.S_ISDIR(item.st_mode):
+                rel=posixpath.relpath(path,base);prefix=rel.split('/',1)[0]
+                if prefix in ['odpc.de','www.odpc.de']:rel=rel[len(prefix):].strip('/')
+                if depth<6 and (not rel or any(rel==slug or slug.startswith(rel+'/')for slug in slugs)):queue.append((path,base,depth+1))
+                continue
             if not stat.S_ISREG(item.st_mode) or item.st_size>2000000 or not re.search(r'\.html(?:[._-](?:gz|gzip))?$',item.filename):continue
             try:
                 with sf.open(path,'rb')as handle:raw=handle.read(2000001)
             except FileNotFoundError:continue
             try:text=(gzip.decompress(raw)if raw.startswith(b'\x1f\x8b')else raw).decode('utf-8')
             except (OSError,UnicodeError):continue
-            links=re.findall(r'<link\b[^>]*>',text,re.I)
             canonical=[]
-            for tag in links:
+            for tag in re.findall(r'<link\b[^>]*>',text,re.I):
                 if re.search(r'rel=[\"\x27]canonical[\"\x27]',tag,re.I):canonical+=re.findall(r'href=[\"\x27]([^\"\x27]+)',tag,re.I)
-            if len(canonical)==1 and canonical[0].rstrip('/')in targets:
+            if len(canonical)==1 and urllib.parse.unquote(canonical[0]).rstrip('/')in targets:
                 saved=BACKUP/'public-html-cache'/hashlib.sha256(raw).hexdigest();saved.parent.mkdir(parents=True,exist_ok=True);saved.write_bytes(raw)
                 try:sf.remove(path)
                 except FileNotFoundError:pass
