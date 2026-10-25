@@ -1,35 +1,149 @@
 #!/usr/bin/env python3
-import os,base64,hashlib,hmac,io,pathlib,posixpath,stat,urllib.request,secrets
+"""Scoped, reversible SFTP release of the Bahnhof Grenzau holding page."""
+import base64
+import hashlib
+import hmac
+import os
+from pathlib import Path
+import secrets
+import stat
+import time
+import urllib.request
 import paramiko
-HOST="home119567219.1and1-data.host";USER="acc1461323326"
-PIN="SHA256:1gx2w8Rtv3wCgi7Jh8myf/KVd72cRQbow03UP8P095Q"
-ROOT="/Bahnhof-Grenzau"
-def main():
- password=os.environ["ODPC_SFTP_PASSWORD"]
- url="https://wordpress.org/latest.zip"
- with urllib.request.urlopen(url,timeout=120) as r: archive=r.read()
- if len(archive)<10000000 or not archive[:2]==b"PK": raise RuntimeError("Invalid WordPress archive")
- php=pathlib.Path("site-deploy/bahnhof-grenzau/install.php").read_bytes()
- token=secrets.token_urlsafe(32)
- php=php.replace(b"__INSTALL_TOKEN__",token.encode())
- tr=paramiko.Transport((HOST,22));tr.start_client(timeout=30)
- try:
-  fp="SHA256:"+base64.b64encode(hashlib.sha256(tr.get_remote_server_key().asbytes()).digest()).decode().rstrip("=")
-  if not hmac.compare_digest(fp,PIN):raise RuntimeError("SSH host fingerprint mismatch")
-  tr.auth_password(USER,password)
-  if not tr.is_authenticated():raise RuntimeError("SFTP authentication failed")
-  s=paramiko.SFTPClient.from_transport(tr)
-  try:
-   if not stat.S_ISDIR(s.stat(ROOT).st_mode):raise RuntimeError("Target directory missing")
-   existing=set(s.listdir(ROOT))
-   if existing-{"wordpress-latest.zip","install.php"}:
-    raise RuntimeError("Target not empty; refusing to overwrite: "+", ".join(sorted(existing)[:12]))
-   for name,data in [("wordpress-latest.zip",archive),("install.php",php)]:
-    with s.open(ROOT+"/"+name+".uploading","wb") as f:f.write(data)
-    s.rename(ROOT+"/"+name+".uploading",ROOT+"/"+name)
-   print("BOOTSTRAP DEPLOYED: "+ROOT)
-   print("Open https://bahnhof-grenzau.odpc.de/install.php?token="+token)
-   print("After extraction, delete install.php and wordpress-latest.zip; then complete wp-admin/install.php")
-  finally:s.close()
- finally:tr.close()
-if __name__=="__main__":main()
+
+HOST = "home119567219.1and1-data.host"
+USER = "acc1461323326"
+ROOT = "/Bahnhof-Grenzau"
+URL = "https://bahnhof-grenzau.odpc.de"
+PIN = "SHA256:1gx2w8Rtv3wCgi7Jh8myf/KVd72cRQbow03UP8P095Q"
+MARKER = b'id="bahnhof-grenzau-start"'
+GUARD = b'''# ODPC Bahnhof Grenzau: public holding page, unfinished PHP stays private
+DirectoryIndex index.html index.php
+Options -Indexes
+<FilesMatch "(^\\.|\\.php$|\\.(?:zip|json|md|py|sh|bak|sql|log)$)">
+  Require all denied
+</FilesMatch>
+'''
+
+def connect():
+    password = os.environ.get("ODPC_SFTP_PASSWORD")
+    if not password:
+        raise RuntimeError("ODPC_SFTP_PASSWORD is required; no server changes made")
+    transport = paramiko.Transport((HOST, 22))
+    transport.start_client(timeout=30)
+    actual = "SHA256:" + base64.b64encode(hashlib.sha256(transport.get_remote_server_key().asbytes()).digest()).decode().rstrip("=")
+    if not hmac.compare_digest(actual, PIN):
+        transport.close()
+        raise RuntimeError("SFTP host fingerprint mismatch")
+    transport.auth_password(USER, password)
+    if not transport.is_authenticated():
+        transport.close()
+        raise RuntimeError("SFTP authentication failed")
+    return transport, paramiko.SFTPClient.from_transport(transport)
+
+def read(sftp, path):
+    try:
+        info = sftp.lstat(path)
+    except FileNotFoundError:
+        return None
+    if not stat.S_ISREG(info.st_mode):
+        raise RuntimeError("Expected regular file: " + path)
+    with sftp.open(path, "rb") as source:
+        return source.read()
+
+def atomic_write(sftp, path, data, mode=0o644):
+    temporary = path + ".odpc-" + secrets.token_hex(8)
+    try:
+        with sftp.open(temporary, "x") as output:
+            output.write(data)
+        sftp.chmod(temporary, mode)
+        sftp.posix_rename(temporary, path)
+    finally:
+        try:
+            sftp.remove(temporary)
+        except FileNotFoundError:
+            pass
+
+def find_landing():
+    for path in [Path(__file__).resolve().parent / "index.html", Path("site-deploy/bahnhof-grenzau/index.html")]:
+        if path.is_file():
+            data = path.read_bytes()
+            if MARKER not in data:
+                raise RuntimeError("Unexpected landing page")
+            return data
+    raise RuntimeError("Packaged index.html missing")
+
+def release():
+    landing = find_landing()
+    transport, sftp = connect()
+    changed = False
+    backup = None
+    old_html = old_guard = None
+    try:
+        if not stat.S_ISDIR(sftp.lstat(ROOT).st_mode):
+            raise RuntimeError("Target is not a regular directory")
+        if read(sftp, ROOT + "/wp-config.php") is not None:
+            raise RuntimeError("Configured WordPress found; refusing holding-page takeover")
+        old_guard = read(sftp, ROOT + "/.htaccess")
+        old_html = read(sftp, ROOT + "/index.html")
+        staging = read(sftp, ROOT + "/.odpc-staging")
+        if old_html is not None and MARKER not in old_html:
+            raise RuntimeError("Unrecognized existing index.html; refusing replacement")
+        if old_guard != GUARD:
+            if staging is None or old_guard is None or b"Require all denied" not in old_guard:
+                raise RuntimeError("Expected unconfigured, protected staging installation not found")
+            meaningful = [line.strip() for line in old_guard.decode("utf-8").splitlines() if line.strip() and not line.lstrip().startswith("#")]
+            allowed = {"Options -Indexes", "Require all denied", "<IfModule mod_authz_core.c>", "</IfModule>", "DirectoryIndex index.php"}
+            if any(line not in allowed for line in meaningful):
+                raise RuntimeError("Unrecognized access rules; refusing automatic replacement")
+        for name in ["index.php", "wp-admin/install.php", "wp-includes/version.php"]:
+            if read(sftp, ROOT + "/" + name) is None:
+                raise RuntimeError("Incomplete WordPress core; missing " + name)
+        folder = ROOT + "/.odpc-backups"
+        try:
+            sftp.mkdir(folder, 0o700)
+        except IOError:
+            if not stat.S_ISDIR(sftp.lstat(folder).st_mode):
+                raise
+        atomic_write(sftp, folder + "/.htaccess", b"Require all denied\n", 0o600)
+        backup = folder + "/" + time.strftime("%Y%m%dT%H%M%SZ", time.gmtime()) + "-" + secrets.token_hex(4)
+        sftp.mkdir(backup, 0o700)
+        for name, data in [("htaccess.previous", old_guard), ("index.previous", old_html)]:
+            if data is not None:
+                atomic_write(sftp, backup + "/" + name, data, 0o600)
+        # Publishing the access rules is the final mutation; PHP remains denied.
+        changed = True
+        atomic_write(sftp, ROOT + "/index.html", landing)
+        atomic_write(sftp, ROOT + "/.htaccess", GUARD)
+        with urllib.request.urlopen(URL + "/?release=" + secrets.token_hex(6), timeout=30) as response:
+            if response.status != 200 or MARKER not in response.read(100000):
+                raise RuntimeError("Public start page verification failed")
+        for path in ["/wp-login.php", "/wp-admin/install.php", "/wp-admin/setup-config.php"]:
+            try:
+                with urllib.request.urlopen(URL + path, timeout=20) as response:
+                    raise RuntimeError("Unfinished PHP exposed: " + path)
+            except urllib.error.HTTPError as error:
+                if error.code not in (403, 404):
+                    raise
+        print("PUBLIC_START_PAGE_OK HTTP 200; unfinished PHP protected")
+        print("BACKUP", backup)
+        print("EXISTING_WORDPRESS_CORE_UNCHANGED; database configuration still required")
+    except Exception:
+        if changed:
+            if old_guard is not None:
+                atomic_write(sftp, ROOT + "/.htaccess", old_guard)
+            if old_html is None:
+                try:
+                    sftp.remove(ROOT + "/index.html")
+                except FileNotFoundError:
+                    pass
+            else:
+                atomic_write(sftp, ROOT + "/index.html", old_html)
+            print("ROLLBACK_COMPLETED")
+        raise
+    finally:
+        sftp.close()
+        transport.close()
+
+if __name__ == "__main__":
+    release()
