@@ -62,13 +62,13 @@ Letzte Güterleistungen auf Restabschnitten enden bis 2001. Der Verein nennt 200
 
 Laut Gebäudedokumentation wird das Empfangsgebäude verkauft. Eine vollständige Eigentümerkette ist öffentlich noch nicht nachgewiesen. Quellen: [3](https://bf-g2.zielbahnhof.de/grenzau.htm).
 
+## März 2007 · Ein Verein setzt neu an
+
+Der Brexbachtalbahn e. V. wird gegründet. Mit Partnern folgen Arbeiten zur Wiederbelebung der Strecke. Quellen: [1](https://diebrex.de/die-brex/), [7](https://signalarchiv.de/amp/Meldungen/10000855).
+
 ## September 2007 · Die Sanierung ist abgeschlossen
 
 Zielbahnhof datiert den Abschluss der Kernsanierung auf diesen Monat. Quellen: [3](https://bf-g2.zielbahnhof.de/grenzau.htm).
-
-## 2007 · Ein Verein setzt neu an
-
-Der Brexbachtalbahn e. V. beginnt mit Partnern, die Strecke für eine Wiederbelebung herzurichten. Quellen: [1](https://diebrex.de/die-brex/), [7](https://signalarchiv.de/amp/Meldungen/10000855).
 
 ## 30.–31. Mai 2009 · Zum Jubiläum kehrt der Dampf zurück
 
