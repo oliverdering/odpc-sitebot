@@ -3,9 +3,11 @@
 import base64
 import hashlib
 import hmac
+import json
 import os
 from pathlib import Path
 import secrets
+import re
 import stat
 import time
 import urllib.request
@@ -74,8 +76,43 @@ def find_landing():
             return data
     raise RuntimeError("Packaged index.html missing")
 
+def find_media():
+    for base in [Path(__file__).resolve().parent, Path('site-deploy/bahnhof-grenzau')]:
+        manifest = base / 'media.json'
+        if not manifest.is_file():
+            continue
+        result = []
+        for entry in json.loads(manifest.read_text()):
+            name = entry['file']
+            if not re.fullmatch(r'grenzau-[a-z0-9-]+\.webp', name):
+                raise RuntimeError('Invalid media filename')
+            data = (base / 'assets' / name).read_bytes()
+            if len(data) > 2000000 or not data.startswith(b'RIFF') or data[8:12] != b'WEBP' or hashlib.sha256(data).hexdigest() != entry['sha256']:
+                raise RuntimeError('Media checksum or format mismatch')
+            result.append((name, data))
+        return result
+    return []
+
+def upload_media(sftp, media):
+    if not media:
+        return
+    folder = ROOT + '/assets'
+    try:
+        sftp.mkdir(folder, 0o755)
+    except IOError:
+        if not stat.S_ISDIR(sftp.lstat(folder).st_mode):
+            raise
+    for name, data in media:
+        existing = read(sftp, folder + '/' + name)
+        if existing is not None:
+            if existing != data:
+                raise RuntimeError('Immutable media path contains unexpected data')
+        else:
+            atomic_write(sftp, folder + '/' + name, data)
+
 def release():
     landing = find_landing()
+    media = find_media()
     transport, sftp = connect()
     changed = False
     backup = None
@@ -112,13 +149,19 @@ def release():
         for name, data in [("htaccess.previous", old_guard), ("index.previous", old_html)]:
             if data is not None:
                 atomic_write(sftp, backup + "/" + name, data, 0o600)
+        upload_media(sftp, media)
         # Publishing the access rules is the final mutation; PHP remains denied.
         changed = True
         atomic_write(sftp, ROOT + "/index.html", landing)
         atomic_write(sftp, ROOT + "/.htaccess", GUARD)
         with urllib.request.urlopen(URL + "/?release=" + secrets.token_hex(6), timeout=30) as response:
-            if response.status != 200 or MARKER not in response.read(100000):
+            published = response.read(200000)
+            if response.status != 200 or MARKER not in published or hashlib.sha256(published).digest() != hashlib.sha256(landing).digest():
                 raise RuntimeError("Public start page verification failed")
+        for name, data in media:
+            with urllib.request.urlopen(URL + '/assets/' + name, timeout=30) as response:
+                if response.status != 200 or hashlib.sha256(response.read(2000001)).digest() != hashlib.sha256(data).digest():
+                    raise RuntimeError('Public media verification failed')
         for path in ["/wp-login.php", "/wp-admin/install.php", "/wp-admin/setup-config.php"]:
             try:
                 with urllib.request.urlopen(URL + path, timeout=20) as response:
@@ -127,6 +170,8 @@ def release():
                 if error.code not in (403, 404):
                     raise
         print("PUBLIC_START_PAGE_OK HTTP 200; unfinished PHP protected")
+        if b'data-story-version=' in published:
+            print('HISTORY_PAGE_OK; full HTML checksum verified; media files', len(media))
         print("BACKUP", backup)
         print("EXISTING_WORDPRESS_CORE_UNCHANGED; database configuration still required")
     except Exception:
