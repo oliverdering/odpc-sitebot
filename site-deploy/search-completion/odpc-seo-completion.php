@@ -10,7 +10,6 @@ function odpc_search_completion_description($host, $path, $title, $excerpt = '')
         'odpc.de' => [
             '/schach' => 'Schach im Browser spielen: Das Schachprojekt von Oliver Dering auf ODPC entdecken und die vorhandenen Spielmöglichkeiten kennenlernen.',
             '/wga' => 'Weltgewürz Atlas von ODPC: Gewürze, Zutaten und internationale Gewürzmischungen entdecken und die digitale Rezeptdatenbank kennenlernen.',
-            '/leck-im-system' => 'Leck im System: das Projekt auf ODPC entdecken. Hintergründe und Informationen von Oliver Dering im Überblick.',
         ],
         'ra-justen.de' => [
             '/impressum' => 'Impressum der Rechtsanwaltskanzlei Anne-Kathrin Justen: Anbieterangaben, Kontakt und berufsrechtliche Informationen zur Kanzlei.',

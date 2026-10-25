@@ -29,6 +29,8 @@ jobs:
       - name: Release with prior-file backups and rollback
         env:
           ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+          STRATO_JUSTEN_SFTP_PASSWORD: ${{ secrets.STRATO_JUSTEN_SFTP_PASSWORD }}
+          STRATO_JUSTEN_HOSTKEY_SHA256: ${{ secrets.STRATO_JUSTEN_HOSTKEY_SHA256 }}
         run: python3 scripts/deploy_search_completion.py
       - uses: actions/upload-artifact@v4
         if: always()
