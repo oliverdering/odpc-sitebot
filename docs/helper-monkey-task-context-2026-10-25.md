@@ -31,7 +31,13 @@ zwölf Aufgaben in acht Sprachen, Auftragsübergabe, mehrdeutige Fachwörter,
 Korrekturen (auch die Rückkehr zu einer früheren Vorgabe), Neuladen, Verbindungsumweg, Aufgabenwechsel, begrenzte Speicherung
 und verworfene Zugangsdaten. Ergänzende Live-Prüfungen auf Desktop und Mobilgerät
 prüfen die sichtbare Aufgabenwahl, Prompt, Zwischenablage und Sitzungsfortsetzung.
-Live-Ergebnis wird nach Abschluss des Releases dokumentiert.
+Die vollständige Veröffentlichung für Commit
+`257ecc84b1c5aabb79bdae33a67b5c1d62db4e87` ist erfolgreich:
+https://github.com/oliverdering/odpc-sitebot/actions/runs/40173793689.
+Neben PHP-, JavaScript- und Pythonprüfungen bestanden 47 Live-Prüfgruppen.
+Desktop und Mobilgerät bestätigten insbesondere Auftragsdetails, nachträgliche
+Korrekturen, Neuladen, Kopieren sowie die Trennung der Angaben beim Wechsel zu
+einem anderen Monkey.
 
 Layout, CSS und Original-Logo bleiben unverändert. Nur ein bestehender FAQ-Text
 und der vorhandene Übergabehinweis erläutern die neue Speicherfunktion.
