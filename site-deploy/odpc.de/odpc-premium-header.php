@@ -2,9 +2,31 @@
 /**
  * Plugin Name: ODPC Premium Header
  * Description: Responsive header presentation and compact navigation; no content changes.
- * Version: 1.2.0
+ * Version: 1.2.1
  */
 if (!defined('ABSPATH')) { exit; }
+
+add_filter('wp_get_attachment_image_attributes', function ($attr, $attachment) {
+  if (is_admin() || (int) $attachment->ID !== (int) get_theme_mod('custom_logo')) {
+    return $attr;
+  }
+  $metadata = wp_get_attachment_metadata($attachment->ID);
+  $source = wp_get_attachment_url($attachment->ID);
+  if (!$source || empty($metadata['width']) || empty($metadata['height'])) {
+    return $attr;
+  }
+  $attr['src'] = $source;
+  $attr['width'] = (int) $metadata['width'];
+  $attr['height'] = (int) $metadata['height'];
+  $srcset = wp_calculate_image_srcset(
+    array($attr['width'], $attr['height']), $source, $metadata, $attachment->ID
+  );
+  if ($srcset) {
+    $attr['srcset'] = $srcset;
+  }
+  $attr['sizes'] = '(max-width: 800px) calc(100vw - 24px), (max-width: 1316px) calc(100vw - 56px), 1260px';
+  return $attr;
+}, 99, 2);
 
 add_action('wp_head', function () {
   if (is_admin()) { return; }
