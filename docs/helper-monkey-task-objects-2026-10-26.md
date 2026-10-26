@@ -26,7 +26,7 @@ gelöscht, weil vorher noch keine aktive Aufgabe gesetzt war.
 sowie Kalenderkontext über Verbindungsweg und Beispieldaten. Die Live-Prüfung
 wurde um drei entsprechende Szenarien auf Desktop und Mobil erweitert.
 Der vorhandene Releaseweg sichert Dateien für Rollback und prüft anschließend
-die öffentliche Auslieferung. Der endgültige Live-Nachweis folgt nach dem Lauf.
+die öffentliche Auslieferung. Die vollständige Live-Prüfung ist erfolgreich abgeschlossen.
 
 Layout, Stylesheets und Original-Logos bleiben unverändert. Keine neuen Kosten,
 Kontofreigaben oder Nachrichten. Geprüft werden Browserdialog und Arbeitsauftrag;
@@ -37,3 +37,17 @@ Mikrofon-/Hörtests.
 
 Mehrdeutige Aufträge in den sechs weiteren Sprachen mit konkreten Gegenbeispielen
 prüfen. Die zusätzlichen Regeln sind keine allgemeine semantische Spracherkennung.
+
+
+## Live-Nachweis
+
+- Funktionscommit: `62a795503494b7c1310d88317f9b6b8e7365c611`.
+- [Release 40292370864](https://github.com/oliverdering/odpc-sitebot/actions/runs/40292370864)
+  am 26.10.2026 erfolgreich: 65 JavaScript-, 8 Pythonprüfungen, PHP-Syntax,
+  Metadaten, SFTP-Prüfsummen und öffentliche Auslieferung.
+- 51 Live-Prüfgruppen bestanden. Die neuen drei Aufträge wurden sowohl auf
+  Desktop als auch im mobilen Browser durchgespielt; Aufgabe, vollständiger
+  Originaltext im Prompt und Erhalt nach Neuladen wurden jeweils geprüft.
+- [Sicherungs- und QA-Artefakt](https://github.com/oliverdering/odpc-sitebot/actions/runs/40292370864/artifacts/12637380244)
+  enthält Rückrolldateien, Veröffentlichungsprotokoll und Browserbelege.
+- Kein Diff an Stylesheet, Layoutvorlage oder Original-Logos.
