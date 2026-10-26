@@ -1,6 +1,22 @@
 const {test}=require('node:test'),assert=require('node:assert/strict');
 const g=require('../../site-deploy/ai.odpc.de/experience/guide-core.js');
 const run=(answers)=>answers.reduce((s,t)=>g.reply(s,t,'de').state,g.state());
+test('personal names and WhatsApp topics do not hijack real tasks',()=>{
+ for(const request of ['Ich heiße Oliver und möchte ein Anschreiben erstellen','Meine Bewerbung ist für Oliver Wyman']){
+  let r=g.reply(g.state(),request);assert(!r.help);r=g.reply(r.state,'ChatGPT');assert.equal(r.state.task,'application');assert(g.work(r.state).prompt.includes(request));
+ }
+ const request='Ich möchte einen Beitrag über WhatsApp für unser Café schreiben';let r=g.reply(g.state(),request);assert(!r.help);assert.equal(g.reply(r.state,'ChatGPT').state.task,'marketing');
+ const marketing=g.selectAgent({...g.state(),platform:'chatgpt'},'marketing');r=g.reply(marketing,'Schreibe einen Beitrag über WhatsApp für unser Beispielcafé.');assert(!r.help);assert(g.work(r.state).prompt.includes('Beispielcafé'));
+ const s=run(['Bewerbung schreiben','ChatGPT']);for(const help of ['Oliver','WhatsApp','Ich brauche Hilfe von Oliver bei meiner Bewerbung','Oliver, bitte hilf mir bei der Bewerbung']){const r=g.reply(s,help);assert(r.help,help);assert.deepEqual(r.state,s);}
+});
+test('natural credential disclosures in eight languages are rejected before storage and restore',()=>{
+ const samples={de:'Mein Passwort lautet demo-secret',en:'My password is demo-secret',es:'Mi contraseña es demo-secret',fr:'Mon mot de passe est demo-secret',it:'La mia password è demo-secret',pt:'A minha senha é demo-secret',pl:'Moje hasło to demo-secret',tr:'Şifrem: demo-secret'};
+ for(const[lang,secret]of Object.entries(samples)){
+  const s=g.selectAgent({...g.state(),platform:'chatgpt'},'application'),r=g.reply(s,secret,lang);assert(r.sensitive,lang);assert.deepEqual(r.state,s);assert(!g.work(r.state,lang).prompt.includes('demo-secret'));
+  const restored=g.restore({...s,brief:{task:'application',entries:[secret,'Bitte kurz halten.']}});assert.deepEqual(restored.brief.entries,['Bitte kurz halten.']);
+ }
+ for(const question of ['Was ist ein Passwort?','What is a password?','Comment changer mon mot de passe ?','Come cambio la password?'])assert(!g.secret(question),question);
+});
 test('requested deliverables win over application and legal topics',()=>{
  for(const [request,goal] of [['Ich möchte die E-Mails zur Bewerbung sichten','mail'],['Review my job application emails','mail'],['Ich möchte einen Beitrag über Bewerbungstipps schreiben','marketing'],['Write a post about job applications','marketing'],['Ich möchte einen Beitrag über OBD-Fehlercodes erstellen','marketing'],['E-Mails vom Anwalt zusammenfassen','mail']]){
   let s=run([request,'ChatGPT','ohne Verbindung starten']);assert.equal(s.task,goal,request);assert(g.work(s).prompt.includes(request),request);

@@ -62,6 +62,7 @@ for(const [name,viewport]of [['desktop',{width:1440,height:1000}],['mobile',{wid
  await page.locator('#odpc-voice-open').click();assert.equal(await page.locator('#odpc-voice').getAttribute('role'),'dialog');await page.locator('#odpc-voice-topclose').click();assert.equal(await page.locator('#odpc-voice').isVisible(),false);assert.equal(await page.locator('main').evaluate(e=>e.inert),false);
  const agentLinks=await page.locator('.hm-agent a').evaluateAll(nodes=>nodes.map(a=>({name:a.getAttribute('aria-label'),url:a.href})));
  assert.equal(agentLinks.length,10);assert.equal(agentLinks.filter(a=>new URL(a.url).searchParams.has('agent')).length,9);
+ const examples={application:'Ich heiße Oliver und brauche ein Anschreiben für eine IT-Stelle. Tatsächlich fünf Jahre Support, maximal 120 Wörter.',mail:'Beispieldaten: Nachricht vom Musterbetrieb vom 20. Oktober, Betreff Rückfrage, Antwort bis Freitag. Nur Antwortentwurf.',documents:'Erstelle aus diesen Beispieldaten eine Besprechungsnotiz: Projekt Alpha, zwei offene Fragen, Verantwortliche noch unbekannt.',web:'Beispielseite https://example.org: Bereite einen sachlichen Startseitentext mit maximal 100 Wörtern als Entwurf vor.',marketing:'Schreibe einen Beitrag über WhatsApp für unser Beispielcafé. Zielgruppe Nachbarn, keine erfundenen Preise.',interview:'Übe mit mir für eine IT-Support-Stelle. Drei Jahre tatsächliche Supporterfahrung. Eine Frage je Runde.',report:'Ausbildung Fachinformatik, Tagesbericht 20. Oktober: zwei Stunden Netzwerktechnik und vier Stunden Support. Keine weiteren Stunden ergänzen.',car:'Beispielfahrzeug Baujahr 2012, Diesel. Leerlauf unruhig, keine Fehlercodes. Bitte für die Werkstatt ordnen.',legal:'Anonymisiertes Beispiel: Partei A erhielt am 20. Oktober ein Schreiben von Partei B. Erstelle eine Chronologie; Rechtsfragen bleiben offen.'};
  for(const a of agentLinks.filter(a=>new URL(a.url).searchParams.has('agent'))){
   const id=new URL(a.url).searchParams.get('agent');await page.goto(a.url,{waitUntil:'networkidle'});
   if(await page.locator('#odpc-voice').getAttribute('data-phase')==='platform')await page.locator('[data-choice="ChatGPT"]').click();
@@ -70,7 +71,22 @@ for(const [name,viewport]of [['desktop',{width:1440,height:1000}],['mobile',{wid
   assert.match(await page.locator('#hm-guide-work-prompt').inputValue(),/tatsächlich zur Verfügung/);
   assert.equal(await page.locator('#hm-guide-test').count(),0,id+' must not require a connection test for a draft');
   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),true);
+  const detail=examples[id];await answer(detail);
+  const prompt=await page.locator('#hm-guide-work-prompt').inputValue();assert(prompt.includes(detail),id+' retains examples');
+  assert.equal(await page.evaluate(()=>JSON.parse(sessionStorage.getItem('hm-guide-v1')).task),id,id+' keeps selected Monkey');
+  await answer('Hilfe');assert.equal(await page.locator('#hm-guide-work-prompt').inputValue(),prompt,id+' help keeps work');
+  const help=new URL(await page.locator('#hm-guide-help').getAttribute('href'));assert.equal(help.hostname,'wa.me');assert(!help.searchParams.get('text').includes(detail));
+  await page.locator('#hm-guide-work-copy').click();assert.equal(await page.evaluate(()=>navigator.clipboard.readText()),prompt,id+' clipboard');
+  await page.reload({waitUntil:'networkidle'});assert.equal(await page.locator('#hm-guide-work-prompt').inputValue(),prompt,id+' reload');
  }
+ pass(name+' all nine full task workflows retain examples, keep context during help, copy exact prompts and resume after reload');
+ await page.evaluate(()=>{navigator.clipboard.writeText=async()=>{throw new Error('Synthetic clipboard denial')}});
+ await page.locator('#hm-guide-work-copy').click();
+ assert.equal(await page.locator('#hm-guide-work-preview').evaluate(e=>e.open),true);
+ assert.equal(await page.locator('#hm-guide-work-prompt').evaluate(e=>e.selectionStart===0&&e.selectionEnd===e.value.length),true);
+ assert.equal(await page.evaluate(()=>document.activeElement.id),'hm-guide-work-prompt');
+ await page.screenshot({path:out+'/'+name+'-manual-copy.png'});await page.reload({waitUntil:'networkidle'});
+ pass(name+' denied clipboard access opens and selects the full prompt for manual copying');
  await page.screenshot({path:out+'/'+name+'-specialist-handoff.png',fullPage:true});
  pass(name+' all nine agent cards lead to their own usable task prompts without a mandatory connection test');
  await page.locator('[data-choice="KI einrichten"]').click();
@@ -148,6 +164,16 @@ for(const [name,viewport]of [['desktop',{width:1440,height:1000}],['mobile',{wid
   await page.reload({waitUntil:'networkidle'});assert((await page.locator('#hm-guide-work-prompt').inputValue()).includes(request));
  }
  pass(name+' requested deliverable wins over its topic and calendar details survive sample-data exit and reload');
+ for(const[locale,disclosure]of [['de-DE','Mein Passwort lautet demo-secret'],['en-US','My password is demo-secret'],['es-ES','Mi contraseña es demo-secret'],['fr-FR','Mon mot de passe est demo-secret'],['it-IT','La mia password è demo-secret'],['pt-PT','A minha senha é demo-secret'],['pl-PL','Moje hasło to demo-secret'],['tr-TR','Şifrem: demo-secret']]){
+  if(!await page.locator('#odpc-voice-settings').evaluate(e=>e.open))await page.locator('#odpc-voice-settings summary').click();
+  await page.locator('#odpc-voice-language').selectOption(locale);
+  const before=await page.locator('#hm-guide-work-prompt').inputValue();await answer(disclosure);
+  assert.equal(await page.locator('#hm-guide-work-prompt').inputValue(),before,locale+' rejected before handoff');
+  assert(!(await page.locator('#hm-guide-history-log').innerText()).includes('demo-secret'),locale+' history');
+  assert(!(await page.evaluate(()=>sessionStorage.getItem('hm-guide-v1'))).includes('demo-secret'),locale+' persistence');
+  assert.equal(await page.locator('#odpc-voice-answer').inputValue(),'');
+ }
+ pass(name+' credential disclosures in eight languages never enter task prompt, history or saved progress');
  assert.equal(errors.length,0,JSON.stringify(errors));pass(name+' agent overview and no page errors');await context.close();
 }
 const audioContext=await browser.newContext();const audio=await audioContext.newPage();await audio.goto('https://ai.odpc.de/connector-einrichten/',{waitUntil:'networkidle'});await audio.getByRole('button',{name:'Mit Sprache einrichten',exact:true}).click();
