@@ -1,6 +1,18 @@
 const {test}=require('node:test'),assert=require('node:assert/strict');
 const g=require('../../site-deploy/ai.odpc.de/experience/guide-core.js');
 const run=(answers)=>answers.reduce((s,t)=>g.reply(s,t,'de').state,g.state());
+test('requested deliverables win over application and legal topics',()=>{
+ for(const [request,goal] of [['Ich möchte die E-Mails zur Bewerbung sichten','mail'],['Review my job application emails','mail'],['Ich möchte einen Beitrag über Bewerbungstipps schreiben','marketing'],['Write a post about job applications','marketing'],['Ich möchte einen Beitrag über OBD-Fehlercodes erstellen','marketing'],['E-Mails vom Anwalt zusammenfassen','mail']]){
+  let s=run([request,'ChatGPT','ohne Verbindung starten']);assert.equal(s.task,goal,request);assert(g.work(s).prompt.includes(request),request);
+ }
+ for(const [request,goal]of [['Bewerbung als Marketingmanager schreiben','application'],['Dokumente für den Anwalt vorbereiten','legal'],['Vorstellungsgespräch für Marketing üben','interview']])assert.equal(g.extract(request).goal,goal,request);
+});
+test('calendar requests keep their details through setup, sample-data exit and reload',()=>{
+ const request='Ich möchte einen Termin am 30. Oktober um 10 Uhr in Berlin planen';
+ let s=run([request,'ChatGPT','Computer','Google Kalender','verbunden','Test erfolgreich','Aufgabe:calendar']);
+ assert.equal(s.task,'calendar');assert(g.work(g.restore(s)).prompt.includes(request));
+ s=run([request,'ChatGPT','ohne Verbindung starten']);assert.equal(s.task,'calendar');assert(g.work(g.restore(s)).prompt.includes(request));assert.deepEqual(s.reportedServices,[]);
+});
 test('beginner gets platform choice before any account claim',()=>{const s=run(['Ich bin Anfänger und möchte meine KI einrichten']);assert.equal(s.phase,'platform');assert.equal(s.experience,'beginner');assert.equal(g.reply(s,'noch keine','de').state.phase,'platform');});
 test('Android email user can supply all context together',()=>{const s=run(['Ich möchte mit ChatGPT auf meinem Samsung Gmail Kalender und Drive nutzen']);assert.equal(s.phase,'setup');assert.equal(s.device,'android');assert.equal(s.platform,'chatgpt');assert.deepEqual(s.services,['gmail','calendar','drive']);assert.equal(s.result,'open');});
 test('mail to platform to device retains answered details',()=>{const s=run(['E-Mails organisieren','ChatGPT','Android mit Gmail']);assert.equal(s.phase,'setup');assert.equal(s.goal,'mail');assert.equal(s.platform,'chatgpt');});

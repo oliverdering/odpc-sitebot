@@ -138,6 +138,16 @@ for(const [name,viewport]of [['desktop',{width:1440,height:1000}],['mobile',{wid
   assert((await page.locator('#hm-guide-work-prompt').inputValue()).includes(request),locale+' prompt retains request');
  }
  pass(name+' natural requests in six non-German languages select and brief the intended specialist');
+ for(const[request,task]of [['Ich möchte die E-Mails zur Bewerbung sichten','mail'],['Ich möchte einen Beitrag über Bewerbungstipps schreiben','marketing'],['Ich möchte einen Termin am 30. Oktober um 10 Uhr in Berlin planen','calendar']]){
+  await page.goto('https://ai.odpc.de/connector-einrichten/?lang=de&hm_qa='+Date.now(),{waitUntil:'networkidle'});
+  if(!await page.locator('#odpc-voice-settings').evaluate(el=>el.open))await page.locator('#odpc-voice-settings summary').click();
+  await page.locator('#odpc-voice-reset').click();await answer(request);await page.locator('[data-choice="ChatGPT"]').click();
+  if(task!=='marketing')await answer('ohne Verbindung starten');
+  assert.equal(await page.evaluate(()=>JSON.parse(sessionStorage.getItem('hm-guide-v1')).task),task,request);
+  assert((await page.locator('#hm-guide-work-prompt').inputValue()).includes(request),request);
+  await page.reload({waitUntil:'networkidle'});assert((await page.locator('#hm-guide-work-prompt').inputValue()).includes(request));
+ }
+ pass(name+' requested deliverable wins over its topic and calendar details survive sample-data exit and reload');
  assert.equal(errors.length,0,JSON.stringify(errors));pass(name+' agent overview and no page errors');await context.close();
 }
 const audioContext=await browser.newContext();const audio=await audioContext.newPage();await audio.goto('https://ai.odpc.de/connector-einrichten/',{waitUntil:'networkidle'});await audio.getByRole('button',{name:'Mit Sprache einrichten',exact:true}).click();
