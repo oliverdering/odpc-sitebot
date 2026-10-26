@@ -184,3 +184,34 @@ test('returning to an earlier preference remains the latest correction in the ha
  assert.equal(g.restore(s).brief.entries.at(-1),'Bitte maximal 120 Wörter.');
  assert(g.work(s).prompt.indexOf('150 Wörter')<g.work(s).prompt.lastIndexOf('120 Wörter'));
 });
+
+test('natural requests in all eight languages select the intended Monkey',()=>{
+ const scenarios={
+  de:[['Ich möchte eine Bewerbung schreiben','application'],['E-Mails organisieren','mail'],['Dokumente für das Büro zusammenfassen','office'],['Meine Webseite bearbeiten','web'],['Einen Marketingbeitrag erstellen','marketing'],['Ein Vorstellungsgespräch üben','interview'],['Mein Berichtsheft schreiben','report'],['OBD Fehlercodes ordnen','car'],['Unterlagen für einen Anwalt strukturieren','legal']],
+  en:[['Prepare a job application','application'],['Organize my email','mail'],['Summarize office documents','office'],['Edit my website','web'],['Create a marketing post','marketing'],['Practice a job interview','interview'],['Write a training report','report'],['Organize OBD error codes','car'],['Prepare documents for legal review','legal']],
+  es:[['Quiero preparar una solicitud de empleo','application'],['Quiero organizar mis correos','mail'],['Quiero resumir documentos de oficina','office'],['Quiero editar mi sitio web','web'],['Quiero crear una publicación de marketing','marketing'],['Quiero preparar una entrevista de trabajo','interview'],['Necesito escribir un informe de formación','report'],['Quiero ordenar los códigos OBD','car'],['Necesito preparar documentos para un abogado','legal']],
+  fr:[['Je veux préparer une candidature','application'],['Je veux organiser mes courriels','mail'],['Je veux résumer des documents de bureau','office'],['Je veux modifier mon site web','web'],['Je veux créer une publication marketing','marketing'],['Je veux préparer un entretien d’embauche','interview'],['Je dois rédiger mon rapport de formation','report'],['Je veux classer des codes OBD','car'],['Préparer des documents pour un avocat','legal']],
+  it:[['Voglio preparare una candidatura','application'],['Voglio organizzare la posta elettronica','mail'],['Voglio riassumere documenti di ufficio','office'],['Voglio modificare il mio sito web','web'],['Voglio creare un post marketing','marketing'],['Voglio preparare un colloquio di lavoro','interview'],['Devo scrivere un rapporto di formazione','report'],['Voglio ordinare i codici OBD','car'],['Preparare documenti per un avvocato','legal']],
+  pt:[['Quero preparar uma candidatura','application'],['Quero organizar os meus emails','mail'],['Quero resumir documentos de escritório','office'],['Quero editar o meu site web','web'],['Quero criar uma publicação de marketing','marketing'],['Quero preparar uma entrevista de emprego','interview'],['Preciso escrever um relatório de formação','report'],['Quero organizar códigos OBD','car'],['Preparar documentos para um advogado','legal']],
+  pl:[['Chcę przygotować aplikację o pracę','application'],['Chcę uporządkować pocztę','mail'],['Chcę podsumować dokumenty biurowe','office'],['Chcę edytować stronę internetową','web'],['Chcę utworzyć post marketingowy','marketing'],['Chcę przygotować rozmowę kwalifikacyjną','interview'],['Muszę napisać raport szkoleniowy','report'],['Chcę uporządkować kody OBD','car'],['Przygotować dokumenty dla prawnika','legal']],
+  tr:[['İş başvurusu hazırlamak istiyorum','application'],['E-postalarımı düzenlemek istiyorum','mail'],['Ofis belgelerini özetlemek istiyorum','office'],['Web sitesini düzenlemek istiyorum','web'],['Pazarlama gönderisi oluşturmak istiyorum','marketing'],['İş görüşmesine hazırlanmak istiyorum','interview'],['Eğitim raporu yazmak istiyorum','report'],['OBD kodlarını düzenlemek istiyorum','car'],['Avukat incelemesi için belge hazırlamak','legal']]
+ };
+ for(const[lang,items]of Object.entries(scenarios))for(const[request,goal]of items){
+  let s=g.reply(g.state(),request,lang).state;assert.equal(s.goal,goal,lang+' '+request);assert.equal(s.phase,'platform',lang+' '+request);
+  s=g.reply(s,'ChatGPT',lang).state;
+  if(['application','marketing','interview','report','car','legal'].includes(goal)){
+   assert.equal(s.phase,'work',lang+' '+request);assert.equal(s.task,goal);assert(g.work(s,lang).prompt.includes(request));
+  }else assert.equal(s.phase,'device',lang+' '+request);
+ }
+});
+
+test('multilingual legal and interview intent outrank incidental document and marketing words',()=>{
+ for(const[lang,request,id]of [
+  ['es','Preparar documentos de marketing para un abogado','legal'],
+  ['fr','Préparer un entretien pour un poste en marketing','interview'],
+  ['it','Preparare documenti finanziari per un avvocato','legal'],
+  ['pt','Preparar uma entrevista para marketing','interview'],
+  ['pl','Przygotować dokumenty marketingowe dla prawnika','legal'],
+  ['tr','Pazarlama işi için iş görüşmesine hazırlanmak','interview']
+ ]){let s=g.reply(g.state(),request,lang).state;s=g.reply(s,'ChatGPT',lang).state;assert.equal(s.task,id,lang+' '+request);assert.equal(s.phase,'work');}
+});

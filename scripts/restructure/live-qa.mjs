@@ -121,6 +121,23 @@ for(const [name,viewport]of [['desktop',{width:1440,height:1000}],['mobile',{wid
  await page.locator('#odpc-voice-settings summary').click();await page.locator('#odpc-voice-language').selectOption('tr-TR');await page.reload({waitUntil:'networkidle'});assert.equal(await page.locator('#odpc-voice-language').inputValue(),'tr-TR');
  await page.goto('https://ai.odpc.de/connector-einrichten/?agent=application&lang=es',{waitUntil:'networkidle'});assert.equal(await page.locator('#odpc-voice-language').inputValue(),'es-ES');
  pass(name+' a language entry link initializes the language without overriding later choices on reload');
+ const naturalLanguageTasks={
+  'es':['Necesito preparar documentos para un abogado','legal'],
+  'fr':['Je veux préparer un entretien d’embauche','interview'],
+  'it':['Devo scrivere un rapporto di formazione','report'],
+  'pt':['Quero preparar uma candidatura','application'],
+  'pl':['Chcę utworzyć post marketingowy','marketing'],
+  'tr':['OBD kodlarını düzenlemek istiyorum','car']
+ };
+ for(const[locale,[request,task]]of Object.entries(naturalLanguageTasks)){
+  await page.goto('https://ai.odpc.de/connector-einrichten/?lang='+locale+'&hm_qa='+Date.now(),{waitUntil:'networkidle'});
+  if(!await page.locator('#odpc-voice-settings').evaluate(el=>el.open))await page.locator('#odpc-voice-settings summary').click();
+  await page.locator('#odpc-voice-reset').click();await answer(request);await page.locator('[data-choice="ChatGPT"]').click();
+  assert.equal(await page.locator('#odpc-voice').getAttribute('data-phase'),'work',locale+' '+request);
+  assert.equal(await page.evaluate(()=>JSON.parse(sessionStorage.getItem('hm-guide-v1')).task),task,locale+' '+request);
+  assert((await page.locator('#hm-guide-work-prompt').inputValue()).includes(request),locale+' prompt retains request');
+ }
+ pass(name+' natural requests in six non-German languages select and brief the intended specialist');
  assert.equal(errors.length,0,JSON.stringify(errors));pass(name+' agent overview and no page errors');await context.close();
 }
 const audioContext=await browser.newContext();const audio=await audioContext.newPage();await audio.goto('https://ai.odpc.de/connector-einrichten/',{waitUntil:'networkidle'});await audio.getByRole('button',{name:'Mit Sprache einrichten',exact:true}).click();
