@@ -36,7 +36,7 @@ Die bisherigen Regressionen decken weiterhin Verbindungsaufbau, Nichtverfügbark
 fehlgeschlagene und gemeldete erfolgreiche Tests, Aufgabenwechsel, Sprachwahl,
 Scrollen, Dialogsteuerung und schrittbezogene WhatsApp-Links ab. WhatsApp-Nachrichten
 werden nicht versendet. Der kontrollierte Release sichert Dateien für Rollback.
-Der Live-Nachweis wird nach Abschluss ergänzt.
+Die Live-Abnahme ist vollständig erfolgreich abgeschlossen.
 
 ## Grenzen und nächste Priorität
 
@@ -47,3 +47,19 @@ Stylesheets und Original-Logos sind unverändert; keine neuen Kosten oder Rechte
 Nächster sinnvoller Schritt ist ein qualitativer Ergebnisvergleich anhand dieser
 anonymisierten Aufträge, sobald ein vorhandener kostenloser Modellzugang dafür
 tatsächlich verfügbar ist.
+
+
+## Live-Nachweis
+
+- Version 0.14.4, Commit `30cebd46b07f8a3c25954610d216e47805e6eda6`.
+- [Release-Lauf 40318746619](https://github.com/oliverdering/odpc-sitebot/actions/runs/40318746619)
+  erfolgreich am 26.10.2026, abgeschlossen um 13:00 Uhr Europe/Berlin.
+- 67 JavaScript-, 8 Pythonprüfungen, PHP-Syntax und Metadatenprüfung bestanden.
+  Dateisicherung, SFTP-Prüfsummen und öffentliche Auslieferung erfolgreich.
+- 57 Live-Prüfgruppen bestanden, einschließlich aller neun vollständigen
+  Beispielabläufe auf Desktop und Mobil, exaktem Clipboard-Inhalt, Wiederherstellen,
+  Hilfe ohne Datenverlust, simulierter Clipboard-Verweigerung und acht
+  Sprachbeispielen für verworfene Passwortangaben.
+- [Rollback- und QA-Belege](https://github.com/oliverdering/odpc-sitebot/actions/runs/40318746619/artifacts/12648576700)
+  enthalten gesicherte Dateien, Veröffentlichungsprotokoll und Browserbilder,
+  darunter den manuellen Kopierweg auf Desktop und Mobil.
