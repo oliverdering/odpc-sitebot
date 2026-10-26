@@ -40,3 +40,24 @@ Layout, Stylesheets, Original-Logo, Kostenmodell, Kontoberechtigungen und
 WhatsApp-Hilfe bleiben unverändert. Physische Mikrofon-/Hörqualität und private
 Besucherkonten werden weiterhin nicht als real geprüft ausgegeben.
 
+## Veröffentlichungsnachweis
+
+- Funktionsänderung: Commit `3a63c297f829ed70ed611d75a95d64e19c1605b7`.
+- Kontrollierte Veröffentlichung mit Sicherungs- und Rollback-Artefakt:
+  [GitHub-Actions-Lauf 40291140364](https://github.com/oliverdering/odpc-sitebot/actions/runs/40291140364), erfolgreich am 26.10.2026.
+- 49 Live-Prüfgruppen bestanden: Desktop, Mobilansicht, Touch-Scroll,
+  Sprachkomponenten und sechs nichtdeutsche freie Aufgaben je Ansichtsgröße.
+- Zusätzliche manuelle Live-Prüfung auf `ai.odpc.de`: Version 0.14.2 wurde
+  geladen; der französische Beispielsatz „Je veux préparer un entretien pour
+  un poste de développeur et m’entraîner aux questions.“ führte zum
+  Interview-Monkey und blieb vollständig im kopierbaren Arbeitsauftrag
+  enthalten.
+- Die Live-Oberfläche trennt weiterhin Einrichtungsdialog, kopierbaren Auftrag
+  für das eigene KI-Konto und dort erst mögliche Werkzeugaktionen. Echte
+  Kontoaktionen wurden nicht ausgelöst.
+
+## Nächste Priorität
+
+Die nächste Prüfung soll kurze, mehrdeutige Alltagssätze ohne eindeutige
+Fachbegriffe untersuchen und nur dann weitere Regeln ergänzen, wenn ein
+reproduzierbarer Fehlweg nachgewiesen ist.
