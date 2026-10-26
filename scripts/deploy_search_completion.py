@@ -2,7 +2,7 @@
 import base64, concurrent.futures, gzip, hashlib, hmac, json, os, posixpath, re, stat, subprocess, time, urllib.request, urllib.error, urllib.parse
 import paramiko
 from pathlib import Path
-from html import escape
+from html import escape, unescape
 from xml.etree import ElementTree as ET
 from deploy_bahnhof_grenzau_bootstrap import connect, read as optional_read, atomic_write
 from deploy_shared_footer import find_roots
@@ -18,7 +18,18 @@ def fetch(url):
 def content(source):
     m=re.search(r'<body\b[^>]*>.*?</body>',source,re.I|re.S)
     if not m:raise RuntimeError('Missing body')
-    return re.sub(r'(name="(?:_wpnonce|tl_booking_nonce)" value=")[^"]+',r'\1NONCE',m[0])
+    body=re.sub(r'(name="(?:_wpnonce|tl_booking_nonce)" value=")[^"]+',r'\1NONCE',m[0])
+    # Our earlier cache probes propagated their query parameter into pagination links.
+    # Normalize those known diagnostic parameters only; preserve every functional URL.
+    probe_keys={'odpc_search_snapshot','odpc_seo_check','odpc_search_release_snapshot','odpc_footer_check','odpc_cache_preflight','odpc_release_check'}
+    def clean_link(match):
+        url=unescape(match[2]);parts=urllib.parse.urlsplit(url);query=urllib.parse.parse_qsl(parts.query,keep_blank_values=True)
+        if not any(k in probe_keys for k,v in query):return match[0]
+        remaining=[(k,v)for k,v in query if k not in probe_keys]
+        cleaned=urllib.parse.urlunsplit((parts.scheme,parts.netloc,parts.path,urllib.parse.urlencode(remaining),parts.fragment))
+        return match[1]+escape(cleaned,quote=True)+match[3]
+    return re.sub(r'(<a\b[^>]*\bhref=")([^"]*)(")',clean_link,body,flags=re.I)
+
 def validate(url,before,release=False):
     after=fetch(url)
     head=after.split('</head>',1)[0]
@@ -134,26 +145,6 @@ def deploy_station(sf):
                 if e.code not in (403,404):raise
     write_files(sf,'bahnhof-grenzau.odpc.de',files,verify)
 
-def deploy_justen():
-    password=os.environ.get('STRATO_JUSTEN_SFTP_PASSWORD','');pin=os.environ.get('STRATO_JUSTEN_HOSTKEY_SHA256','')
-    if not password or not pin.startswith('SHA256:'):
-        RESULTS.append({'site':'ra-justen.de','status':'not_available','reason':'No protected STRATO SFTP connection configured'});print(json.dumps(RESULTS[-1]),flush=True);return
-    tr=paramiko.Transport(('59432978.ssh.w1.strato.hosting',22))
-    try:
-        tr.start_client(timeout=25)
-        actual='SHA256:'+base64.b64encode(hashlib.sha256(tr.get_remote_server_key().asbytes()).digest()).decode().rstrip('=')
-        if not hmac.compare_digest(actual,pin):raise RuntimeError('STRATO fingerprint mismatch')
-        tr.auth_password('stu471359126',password)
-        with paramiko.SFTPClient.from_transport(tr)as sf:
-            home=sf.normalize('.')
-            roots=[posixpath.normpath(home+'/STRATO-apps/wordpress_01/app'),'/STRATO-apps/wordpress_01/app']
-            for root in dict.fromkeys(roots):
-                try:sf.stat(root+'/wp-config.php');sf.stat(root+'/wp-content/themes/akj-kanzlei-v1/style.css');break
-                except FileNotFoundError:continue
-            else:raise RuntimeError('Documented STRATO installation not found')
-            deploy_wp(sf,root,'ra-justen.de',['/','/impressum/','/datenschutz/'])
-    finally:tr.close()
-
 def main():
     transport,sf=connect()
     try:
@@ -163,14 +154,16 @@ def main():
             (roots['helpermonkey-business-v34-child'],'ai.odpc.de',['/','/author/odpc_master/','/category/praxis/'],False),
             (roots['tante-lenchen'],'tante-lenchen.odpc.de',['/','/tl_dish/bayerischer-wurstsalat/','/author/lenchen_webmaster/','/category/allgemein/','/2026/10/17/hallo-welt/'],False),
             (roots['atrium191-odpc'],'atrium191-rb.odpc.de',['/']+['/index.php/'+p+'/'for p in ['wohnungen','erleben','geschichte','architektur','lage','faq','kontakt','impressum','datenschutz','barrierefreiheit']],True)]
+        scope=os.environ.get('SEARCH_COMPLETION_SCOPE','all')
         for args in jobs:
+            if scope not in ('all',args[1]):continue
             try:deploy_wp(sf,*args)
             except Exception as e:RESULTS.append({'site':args[1],'status':'unchanged','reason':str(e)});print(json.dumps(RESULTS[-1]),flush=True)
-        try:deploy_station(sf)
-        except Exception as e:RESULTS.append({'site':'bahnhof-grenzau.odpc.de','status':'unchanged','reason':str(e)});print(json.dumps(RESULTS[-1]),flush=True)
+        if scope in ('all','bahnhof-grenzau.odpc.de'):
+            try:deploy_station(sf)
+            except Exception as e:RESULTS.append({'site':'bahnhof-grenzau.odpc.de','status':'unchanged','reason':str(e)});print(json.dumps(RESULTS[-1]),flush=True)
     finally:sf.close();transport.close()
-    try:deploy_justen()
-    except Exception as e:RESULTS.append({'site':'ra-justen.de','status':'unchanged','reason':str(e)});print(json.dumps(RESULTS[-1]),flush=True)
+    RESULTS.append({'site':'ra-justen.de','status':'pending_approval','reason':'Specific Kanzlei module upload awaits explicit approval; no indirect deployment attempted'})
     Path('search-completion-results.json').write_text(json.dumps(RESULTS,indent=2))
-    if any(r['status'] not in ('verified','not_available')for r in RESULTS):raise SystemExit('Some sites require follow-up; verified sites retained')
+    if any(r['status'] not in ('verified','pending_approval')for r in RESULTS):raise SystemExit('Some sites require follow-up; verified sites retained')
 if __name__=='__main__':main()

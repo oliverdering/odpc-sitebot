@@ -6,6 +6,7 @@ on:
       - 'site-deploy/search-completion/**'
       - 'scripts/deploy_search_completion.py'
       - 'scripts/test_search_completion.php'
+      - 'scripts/test_search_completion_cache.py'
       - '.github/workflows/search-completion-deploy.yml'
   workflow_dispatch:
 permissions:
@@ -25,12 +26,12 @@ jobs:
           php -l site-deploy/search-completion/odpc-google-index-audit.php
           php scripts/test_search_completion.php
           python3 -m py_compile scripts/deploy_search_completion.py
+          python3 scripts/test_search_completion_cache.py
       - run: python3 -m pip install 'paramiko>=3.4,<5'
       - name: Release with prior-file backups and rollback
         env:
           ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
-          STRATO_JUSTEN_SFTP_PASSWORD: ${{ secrets.STRATO_JUSTEN_SFTP_PASSWORD }}
-          STRATO_JUSTEN_HOSTKEY_SHA256: ${{ secrets.STRATO_JUSTEN_HOSTKEY_SHA256 }}
+          SEARCH_COMPLETION_SCOPE: ${{ contains(github.event.head_commit.message, '[odpc-only]') && 'odpc.de' || 'all' }}
         run: python3 scripts/deploy_search_completion.py
       - uses: actions/upload-artifact@v4
         if: always()
