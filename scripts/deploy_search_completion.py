@@ -113,6 +113,10 @@ def deploy_wp(sf,root,host,paths,release=False):
     except IOError:
         if not stat.S_ISDIR(sf.lstat(directory).st_mode):raise
     urls=['https://'+host+p for p in paths]
+    # Warm the refreshed cache before taking the baseline: first-build minification
+    # and stale page content are not changes made by the head-only module.
+    expire_target_cache(sf,root,urls)
+    with concurrent.futures.ThreadPoolExecutor(max_workers=5)as ex:list(ex.map(fetch,urls))
     with concurrent.futures.ThreadPoolExecutor(max_workers=5)as ex:before=dict(zip(urls,ex.map(fetch,urls)))
     files=[(directory+'/odpc-seo-completion.php',(BASE/'odpc-seo-completion.php').read_bytes())]
     if host=='odpc.de':files.append((directory+'/odpc-google-index-audit.php',(BASE/'odpc-google-index-audit.php').read_bytes()))
@@ -120,6 +124,7 @@ def deploy_wp(sf,root,host,paths,release=False):
         files.extend([(root+'/sitemap.xml',sitemap('https://'+host,paths)),(root+'/robots.txt',robots(optional_read(sf,root+'/robots.txt'),'https://'+host))])
     def verify():
         expire_target_cache(sf,root,urls)
+        with concurrent.futures.ThreadPoolExecutor(max_workers=5)as ex:list(ex.map(fetch,urls))
         for url in urls:validate(url,before[url],release)
         if release:check_maps('https://'+host)
         if host=='odpc.de':
