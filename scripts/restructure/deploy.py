@@ -1,5 +1,5 @@
 """Publish a coordinated Helper Monkey release; no database or theme modifications."""
-import base64,hashlib,hmac,json,os,posixpath,stat,subprocess,sys,time
+import base64,gzip,hashlib,hmac,json,os,posixpath,re,stat,subprocess,sys,time
 from pathlib import Path
 from urllib.request import Request,urlopen
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
@@ -21,6 +21,38 @@ DOWNLOADS=['helpermonkey-connector-multilingual-v3.1.zip','helpermonkey-lebensla
 FILES.update({'odpc-monkey-experience/downloads/'+name:Path('downloads')/name for name in DOWNLOADS})
 def get(url):
  with urlopen(Request(url,headers={'Cache-Control':'no-cache','User-Agent':'HelperMonkey-Release-QA/1'}),timeout=35) as f:return f.status,f.read()
+ODPC_PATHS=['/','/struktur-portfolio','/praelex-ai','/praetax','/praedium','/initiq','/webdesign','/ki-gestuetzte-dienstleistungen-automatisierung','/prompt-engineering-digitale-mitarbeiter-ki-sinnvoll-nutzen','/einsatz-von-ki-je-nach-branche']
+def expire_offer_cache(s,rollback,expired):
+ cache='/clickandbuilds/Dering/wp-content/cache'
+ allowed={('https://odpc.de'+p).rstrip('/') for p in ODPC_PATHS}
+ slugs={p.strip('/') for p in ODPC_PATHS}
+ queue=[]
+ for base in ['all','wpfc-mobile-cache','wpo-cache']:
+  path=cache+'/'+base
+  try:
+   if stat.S_ISDIR(s.lstat(path).st_mode):queue.append((path,path,0))
+  except FileNotFoundError:pass
+ inspected=0
+ while queue and inspected<400:
+  folder,base,depth=queue.pop(0)
+  for item in s.listdir_attr(folder):
+   inspected+=1
+   if inspected>400:break
+   if item.filename in {'.','..'} or '/' in item.filename:continue
+   path=folder+'/'+item.filename
+   if stat.S_ISDIR(item.st_mode) and depth<3:
+    relative=posixpath.relpath(path,base).removeprefix('odpc.de/').rstrip('/')
+    if relative=='odpc.de' or relative in slugs:queue.append((path,base,depth+1))
+   if not stat.S_ISREG(item.st_mode) or item.st_size>2000000 or not re.search(r'\.html(?:[._-](?:gz|gzip))?$',item.filename):continue
+   with s.open(path,'rb') as f:raw=f.read(2000001)
+   if len(raw)>2000000:continue
+   try:html=(gzip.decompress(raw) if raw.startswith(b'\x1f\x8b') else raw).decode('utf-8')
+   except (OSError,UnicodeError):continue
+   canonical=re.findall(r'<link\b[^>]*rel=[\"\x27]canonical[\"\x27][^>]*href=[\"\x27]([^\"\x27]+)',html,re.I) or re.findall(r'<link\b[^>]*href=[\"\x27]([^\"\x27]+)[\"\x27][^>]*rel=[\"\x27]canonical[\"\x27]',html,re.I)
+   if len(canonical)!=1 or canonical[0].rstrip('/') not in allowed or 'id="om-premium"' in html:continue
+   dest=rollback/'odpc-page-cache'/posixpath.relpath(path,cache);dest.parent.mkdir(parents=True,exist_ok=True);dest.write_bytes(raw)
+   expired[path]=raw;s.remove(path)
+   print('EXPIRED: backed-up stale offer cache',posixpath.relpath(path,cache))
 def main():
  subprocess.run(['php','-l','site-deploy/shared/odpc-monkey-offers.php'],check=True)
  subprocess.run(['php','scripts/restructure/test-offers.php'],check=True)
@@ -47,7 +79,7 @@ def main():
   s.stat('/clickandbuilds/Dering/wp-config.php')
   if not stat.S_ISDIR(s.lstat(corporate).st_mode):raise RuntimeError('Unexpected ODPC plugin directory')
   targets={name:(corporate+'/odpc-monkey-offers.php' if name=='odpc-dachseite/odpc-monkey-offers.php' else folder+'/'+name) for name in FILES}
-  previous={};written=[];report={'sites':['https://ai.odpc.de','https://odpc.de'],'commit':os.environ.get('GITHUB_SHA'),'files':{},'checks':[],'full_backup':'User confirmed pre-existing full backup; additional full backup skipped'}
+  previous={};written=[];expired={};report={'sites':['https://ai.odpc.de','https://odpc.de'],'commit':os.environ.get('GITHUB_SHA'),'files':{},'checks':[],'full_backup':'User confirmed pre-existing full backup; additional full backup skipped'}
   rollback=Path('rollback-helpermonkey-experience');rollback.mkdir(exist_ok=True)
   for name,source in FILES.items():
    if not source.is_file() or source.stat().st_size>100000:raise RuntimeError('Invalid source '+name)
@@ -88,9 +120,13 @@ def main():
     code,data=get('https://ai.odpc.de/wp-content/mu-plugins/odpc-monkey-experience/downloads/'+name)
     if code!=200 or data!=(Path('downloads')/name).read_bytes():raise RuntimeError('Public download mismatch '+name)
     report['checks'].append({'download':name,'status':code,'bytes':len(data)})
-   for path in ['/','/struktur-portfolio','/praelex-ai','/praetax','/praedium','/initiq','/webdesign','/ki-gestuetzte-dienstleistungen-automatisierung','/prompt-engineering-digitale-mitarbeiter-ki-sinnvoll-nutzen','/einsatz-von-ki-je-nach-branche']:
+   expire_offer_cache(s,rollback,expired)
+   report['expired_offer_cache']=[posixpath.relpath(path,'/clickandbuilds/Dering/wp-content/cache') for path in expired]
+   for path in ODPC_PATHS:
     code,body=get('https://odpc.de'+path+'?om_release='+str(time.time_ns()))
     if code!=200 or b'id="om-premium"' not in body or b'id="om-wege"' not in body:raise RuntimeError('ODPC offer bridge missing '+path)
+    normal_code,normal=get('https://odpc.de'+path)
+    if normal_code!=200 or b'id="om-premium"' not in normal:raise RuntimeError('Canonical ODPC page still stale '+path)
     report['checks'].append({'path':'https://odpc.de'+path,'status':code,'bytes':len(body)})
    print('PASS: coordinated release, uploaded checksums, four entry pages and four retained pages verified')
    Path('helpermonkey-release-result.json').write_text(json.dumps(report,indent=2))
@@ -101,6 +137,9 @@ def main():
     else:
      with s.open(target+'.rollback','wb') as f:f.write(previous[name])
      s.posix_rename(target+'.rollback',target)
-   print('ROLLBACK: previous files restored');raise
+   for path,raw in expired.items():
+    with s.open(path+'.rollback','wb') as f:f.write(raw)
+    s.posix_rename(path+'.rollback',path)
+   print('ROLLBACK: previous files and scoped page caches restored');raise
  finally:t.close()
 if __name__=='__main__':main()

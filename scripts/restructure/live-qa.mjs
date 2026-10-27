@@ -191,11 +191,11 @@ for(const [name,viewport]of [['desktop',{width:1440,height:1000}],['mobile',{wid
  pass(name+' credential disclosures in eight languages never enter task prompt, history or saved progress');
  const offerPages=['https://ai.odpc.de/start/','https://odpc.de/','https://odpc.de/struktur-portfolio','https://odpc.de/praelex-ai','https://odpc.de/praetax','https://odpc.de/praedium','https://odpc.de/initiq','https://odpc.de/webdesign','https://odpc.de/ki-gestuetzte-dienstleistungen-automatisierung','https://odpc.de/prompt-engineering-digitale-mitarbeiter-ki-sinnvoll-nutzen','https://odpc.de/einsatz-von-ki-je-nach-branche'];
  for(const url of offerPages){
-  const response=await page.goto(url+'?om_qa='+Date.now(),{waitUntil:'domcontentloaded'});assert.equal(response.status(),200,url);
+  const response=await page.goto(url,{waitUntil:'domcontentloaded'});assert.equal(response.status(),200,url);
   assert.equal(await page.locator('#om-premium').count(),1,url);assert.equal(await page.locator('#om-wege').count(),1,url);
   assert.match(await page.locator('#om-premium').innerText(),/Kostenpflichtige persönliche Leistung/);
   const cards=page.locator('#om-premium .om-card');assert((await cards.count())>=1,url);
-  assert.equal(await cards.first().locator('img').evaluate(e=>e.complete&&e.naturalWidth>0),true,url);
+  await cards.first().scrollIntoViewIfNeeded();await page.waitForFunction(()=>{const image=document.querySelector('#om-premium .om-card img');return image.complete&&image.naturalWidth>0});
   assert.match(await cards.first().locator('img').evaluate(e=>getComputedStyle(e).filter),/om-blue-accents/);
   assert.equal(await page.locator('#om-blue-accents').count(),1);
   for(const card of await cards.all()){const box=await card.boundingBox();assert(box.x>=0&&box.x+box.width<=viewport.width+1,url+' premium card fits viewport');}
