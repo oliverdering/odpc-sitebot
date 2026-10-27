@@ -173,7 +173,7 @@ for(const [name,viewport]of [['desktop',{width:1440,height:1000}],['mobile',{wid
  assert.equal(await page.locator('#odpc-voice').getAttribute('data-phase'),'test');assert.equal(await page.locator('#odpc-voice').getAttribute('data-connection-result'),'failed');
  assert.deepEqual(await page.evaluate(()=>JSON.parse(sessionStorage.getItem('hm-guide-v1')).reportedServices),[]);
  await page.reload({waitUntil:'networkidle'});assert.equal(await page.locator('#odpc-voice').getAttribute('data-connection-result'),'failed');
- await page.locator('[data-choice="ohne Verbindung starten"]').click();
+ await answer('ohne Verbindung starten');
  const mixedPrompt=await page.locator('#hm-guide-work-prompt').inputValue();for(const detail of ['nur Antwortentwürfe','nur diese Woche','keine Löschungen'])assert(mixedPrompt.includes(detail));
  await page.locator('#hm-guide-work-copy').click();assert.equal(await page.evaluate(()=>navigator.clipboard.readText()),mixedPrompt);
  await page.reload({waitUntil:'networkidle'});assert.equal(await page.locator('#hm-guide-work-prompt').inputValue(),mixedPrompt);
