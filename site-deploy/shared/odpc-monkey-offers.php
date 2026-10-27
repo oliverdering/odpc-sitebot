@@ -2,7 +2,7 @@
 /**
  * Plugin Name: ODPC Helper Monkey – Grün & Premium Blau
  * Description: Shared offer map and reciprocal links for ODPC and Helper Monkey.
- * Version: 1.0.0
+ * Version: 1.1.0
  */
 if (!defined('ABSPATH')) exit;
 function om_catalog() {
@@ -26,7 +26,7 @@ function om_paths() { ?>
 function om_premium($selected='') {
  $catalog=om_catalog();$items=isset($catalog[$selected])?[$selected=>$catalog[$selected]]:$catalog;
  ?>
-<section class="om-premium" id="om-premium" aria-labelledby="om-premium-title" data-offer-version="1.0.0">
+<section class="om-premium" id="om-premium" aria-labelledby="om-premium-title" data-offer-version="1.1.0">
  <p class="om-kicker">BLAU · HELPER · MONKEY PREMIUM · PERSÖNLICHE EINRICHTUNG</p>
  <h2 id="om-premium-title"><?php echo isset($catalog[$selected])?'Dein Premium-Monkey: '.esc_html($catalog[$selected][0]):'Dein Business. Dein persönlich eingerichteter Monkey.'; ?></h2>
  <p>Du möchtest KI in deinem Betrieb einsetzen? Ich bin Oliver Dering. Ich kläre mit dir die Aufgabe, richte die passenden Verbindungen und Arbeitsabläufe ein und zeige dir, wie du deinen Monkey führst und weiterentwickelst – vor Ort oder gemeinsam online.</p>

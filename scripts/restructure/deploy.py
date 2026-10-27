@@ -49,7 +49,7 @@ def expire_offer_cache(s,rollback,expired):
    try:html=(gzip.decompress(raw) if raw.startswith(b'\x1f\x8b') else raw).decode('utf-8')
    except (OSError,UnicodeError):continue
    canonical=re.findall(r'<link\b[^>]*rel=[\"\x27]canonical[\"\x27][^>]*href=[\"\x27]([^\"\x27]+)',html,re.I) or re.findall(r'<link\b[^>]*href=[\"\x27]([^\"\x27]+)[\"\x27][^>]*rel=[\"\x27]canonical[\"\x27]',html,re.I)
-   if len(canonical)!=1 or canonical[0].rstrip('/') not in allowed or 'id="om-premium"' in html:continue
+   if len(canonical)!=1 or canonical[0].rstrip('/') not in allowed or 'data-offer-version="1.1.0"' in html:continue
    dest=rollback/'odpc-page-cache'/posixpath.relpath(path,cache);dest.parent.mkdir(parents=True,exist_ok=True);dest.write_bytes(raw)
    expired[path]=raw;s.remove(path)
    print('EXPIRED: backed-up stale offer cache',posixpath.relpath(path,cache))
@@ -124,9 +124,9 @@ def main():
    report['expired_offer_cache']=[posixpath.relpath(path,'/clickandbuilds/Dering/wp-content/cache') for path in expired]
    for path in ODPC_PATHS:
     code,body=get('https://odpc.de'+path+'?om_release='+str(time.time_ns()))
-    if code!=200 or b'id="om-premium"' not in body or b'id="om-wege"' not in body:raise RuntimeError('ODPC offer bridge missing '+path)
+    if code!=200 or b'data-offer-version="1.1.0"' not in body or b'id="om-wege"' not in body:raise RuntimeError('ODPC offer bridge missing '+path)
     normal_code,normal=get('https://odpc.de'+path)
-    if normal_code!=200 or b'id="om-premium"' not in normal:raise RuntimeError('Canonical ODPC page still stale '+path)
+    if normal_code!=200 or b'data-offer-version="1.1.0"' not in normal:raise RuntimeError('Canonical ODPC page still stale '+path)
     report['checks'].append({'path':'https://odpc.de'+path,'status':code,'bytes':len(body)})
    print('PASS: coordinated release, uploaded checksums, four entry pages and four retained pages verified')
    Path('helpermonkey-release-result.json').write_text(json.dumps(report,indent=2))

@@ -193,6 +193,7 @@ for(const [name,viewport]of [['desktop',{width:1440,height:1000}],['mobile',{wid
  for(const url of offerPages){
   const response=await page.goto(url,{waitUntil:'domcontentloaded'});assert.equal(response.status(),200,url);
   assert.equal(await page.locator('#om-premium').count(),1,url);assert.equal(await page.locator('#om-wege').count(),1,url);
+  assert.equal(await page.locator('#om-premium').getAttribute('data-offer-version'),'1.1.0',url);
   assert.match(await page.locator('#om-premium').innerText(),/Kostenpflichtige persönliche Leistung/);
   const cards=page.locator('#om-premium .om-card');assert((await cards.count())>=1,url);
   await cards.first().scrollIntoViewIfNeeded();await page.waitForFunction(()=>{const image=document.querySelector('#om-premium .om-card img');return image.complete&&image.naturalWidth>0});
@@ -201,7 +202,7 @@ for(const [name,viewport]of [['desktop',{width:1440,height:1000}],['mobile',{wid
   for(const card of await cards.all()){const box=await card.boundingBox();assert(box.x>=0&&box.x+box.width<=viewport.width+1,url+' premium card fits viewport');}
   assert.equal(await page.locator('#om-premium .om-links a[href="https://ai.odpc.de/start/#monkeys"]').count(),1,url+' free return link');
   const slug=new URL(url).pathname.replaceAll('/','');
-  if(['praelex-ai','praetax','praedium','initiq','webdesign','ki-gestuetzte-dienstleistungen-automatisierung','praedoc'].includes(slug))assert.equal(await cards.count(),1,url+' focused premium offer');
+  if(['praelex-ai','praetax','praedium','initiq','webdesign','ki-gestuetzte-dienstleistungen-automatisierung','praedoc'].includes(slug))assert.equal(await cards.count(),1,url+' focused premium offer');else assert.equal(await cards.count(),7,url+' complete portfolio');
  }
  await page.goto('https://ai.odpc.de/start/',{waitUntil:'networkidle'});
  assert.equal(await page.locator('#monkeys .hm-agent').count(),10);assert.equal(await page.locator('#om-premium .om-card').count(),7);
