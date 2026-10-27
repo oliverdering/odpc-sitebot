@@ -21,7 +21,7 @@ DOWNLOADS=['helpermonkey-connector-multilingual-v3.1.zip','helpermonkey-lebensla
 FILES.update({'odpc-monkey-experience/downloads/'+name:Path('downloads')/name for name in DOWNLOADS})
 def get(url):
  with urlopen(Request(url,headers={'Cache-Control':'no-cache','User-Agent':'HelperMonkey-Release-QA/1'}),timeout=35) as f:return f.status,f.read()
-ODPC_PATHS=['/','/struktur-portfolio','/praelex-ai','/praetax','/praedium','/initiq','/webdesign','/ki-gestuetzte-dienstleistungen-automatisierung','/prompt-engineering-digitale-mitarbeiter-ki-sinnvoll-nutzen','/einsatz-von-ki-je-nach-branche']
+ODPC_PATHS=['/','/struktur-portfolio','/praelex-ai','/praetax','/praedium','/initiq','/webdesign','/ki-gestuetzte-dienstleistungen-automatisierung','/praedoc','/prompt-engineering-digitale-mitarbeiter-ki-sinnvoll-nutzen','/einsatz-von-ki-je-nach-branche']
 def expire_offer_cache(s,rollback,expired):
  cache='/clickandbuilds/Dering/wp-content/cache'
  allowed={('https://odpc.de'+p).rstrip('/') for p in ODPC_PATHS}

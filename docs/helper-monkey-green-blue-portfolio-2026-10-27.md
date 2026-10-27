@@ -15,8 +15,9 @@ Automationen bleiben unberührt. Es werden keine Preise erfunden oder Abos gekau
   vor Ort oder online. Kosten- und Leistungsgrenze steht ausgeschrieben am Angebot.
 - Premium-Rollen führen zu vorhandenen Produkten: Anwalt → PraeLex.ai,
   Buchhaltung/Lohn → PraeTax, Immobilien → PRAEDIUM, Unternehmensaufbau → initIQ,
-  Webdesigner/Webmaster → Webdesign, Marketing/Büro → KI-Dienstleistungen.
-- Auf ODPC-Startseite, Portfolio, sechs Fachseiten und zwei Lernseiten sind
+  Webdesigner/Webmaster → Webdesign, Marketing/Büro → KI-Dienstleistungen,
+  Dokumente/Wissen → PraeDoc.ai.
+- Auf ODPC-Startseite, Portfolio, sieben Fachseiten und zwei Lernseiten sind
   Gegenverbindungen und die Einordnung als helper · monkey Premium ergänzt.
   Die vorhandenen Fachinhalte und Produktmarken bleiben erhalten. Ausgewählte
   Fachseiten zeigen nur das passende Premium-Paket statt des ganzen Katalogs.
@@ -42,9 +43,18 @@ wieder her. Neue PHP-Prüfung erfolgt vor SFTP-Schreibzugriff.
 69 JavaScript- und 8 Pythonprüfungen vor Veröffentlichung bestanden. Zusätzliche
 PHP-Prüfung kontrolliert Inhaltserhalt, Fachzuordnung, Einmaligkeit und Seitengrenzen.
 Die Live-Abnahme prüft alle neun grünen Arbeitsabläufe sowie die sechs blauen
-Produktziele, Rücklinks, Bildungslinks, geladene Originalbilder, Filter und mobile
+Produktziele einschließlich PraeDoc.ai, Rücklinks, Bildungslinks, geladene Originalbilder, Filter und mobile
 Karten. Desktop-/Mobil-Screenshots werden im Release-Artefakt abgelegt.
 Der konkrete Veröffentlichungsnachweis wird nach Abschluss ergänzt.
+
+Die direkte Browserprüfung zeigte einen zusätzlichen Auslieferungsunterschied:
+Prüf-URLs enthielten die neuen Bereiche, normale ODPC-Produktadressen teilweise
+noch alte HTML-Caches. Der Release erneuert deshalb nur gesicherte HTML-Cachedateien,
+deren Canonical exakt einer der elf betroffenen ODPC-Seiten entspricht. Bei
+Fehlern werden auch diese Cachedateien zurückgespielt. Andere Cacheinhalte bleiben
+unangetastet. Die Live-Prüfung verwendet nun normale Adressen ohne Prüfparameter.
+Lazy-Loading-Bilder werden erst nach Scrollen geprüft; vorhandene Analytics-Parameter
+werden bei der Navigation nicht als fehlerhaftes Linkziel behandelt.
 
 ## Grenzen
 

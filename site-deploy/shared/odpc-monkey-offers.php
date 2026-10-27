@@ -13,6 +13,7 @@ function om_catalog() {
   'initiq'=>['Unternehmen starten & organisieren','initIQ','Die digitale Arbeitsbasis aufbauen: Konten, Geräte, Dokumente, Prozesse und individuell eingerichtete KI-Mitarbeiter.'],
   'webdesign'=>['Webdesigner & Webmaster','Webdesign','Websites persönlich aufbauen und betreuen. Wiederkehrende Inhalts- und Webmaster-Aufgaben als geprüfte KI-Abläufe einrichten.'],
   'ki-gestuetzte-dienstleistungen-automatisierung'=>['Marketing & Büro','KI-Services','Beiträge, Kommunikation und administrative Aufgaben als passende Arbeitsabläufe einrichten – mit Vorlagen, Einweisung und vereinbarten Freigaben.'],
+  'praedoc'=>['Dokumente & Wissen','PraeDoc.ai','Scannen, Texterkennung und strukturierte Ablage als Grundlage für Suche und KI-Arbeit. Dokumentenabläufe persönlich an deine vorhandenen Unterlagen und Systeme anpassen.'],
  ];
 }
 function om_symbol() { return 'https://ai.odpc.de/wp-content/themes/helpermonkey-business-v3/assets/brand/helper-monkey-symbol.png'; }
