@@ -104,7 +104,7 @@ function reply(current,inputText,lang='de'){
   return {state:s,text:w.setupAgain,accepted:false};
  }
  if(s.phase==='test'){
-  if(/fehl|fail|nicht|error|fehler|fallida|échoué|fallito|falhou|nieudany|başarısız/i.test(t)){s.result='failed';return {state:s,text:w.failed,accepted:true}}
+  if(/fehl|fail|nicht|\bnot\b|error|fehler|fallida|échoué|fallito|falhou|nieudany|başarısız|kein(?:en)? Zugriff|no access|sin acceso|aucun accès|nessun accesso|sem acesso|brak dostępu|erişim yok/i.test(t)){s.result='failed';return {state:s,text:w.failed,accepted:true}}
   if(/erfolgreich|successful|success|funktioniert|hat geklappt|correcta|réussi|riuscito|bem sucedido|udany|başarılı/i.test(t)){s.result='user-reported';s.reportedServices=[...new Set([...(s.reportedServices||[]),...s.services])];finishConnection(s);return {state:s,text:message(s,lang),accepted:true}}
   return {state:s,text:w.testAgain,accepted:false};
  }
@@ -113,7 +113,11 @@ function reply(current,inputText,lang='de'){
  if(current.phase==='platform'&&!s.platform)return {state:s,text:/keine|none|noch nicht/i.test(t)?w.choose:w.retryPlatform,accepted:false};
  if(current.phase==='device'&&!s.device)return {state:s,text:w.retryDevice,accepted:false};
  if(current.phase==='goal'&&s.goal&&s.goal!=='setup')remember(s,s.targetTask||(s.goal==='office'?(calendarIntent.test(t)?'calendar':'documents'):s.goal),t);
- if(current.phase==='platform'&&s.targetTask&&t.length>35)remember(s,s.targetTask,t);
+ if(['platform','device','service'].includes(current.phase)){
+  const id=s.targetTask||s.returnTask||s.brief.task;
+  const choice=choices(current,lang).some(c=>c.value.toLowerCase()===t.toLowerCase()||c.label.toLowerCase()===t.toLowerCase());
+  if(id&&!choice)remember(s,id,t);
+ }
  route(s);let answer=message(s,lang);if(e.experience)answer=(e.experience==='beginner'?w.simple:w.fast)+' '+answer;
  return {state:s,text:answer,accepted:true};
 }

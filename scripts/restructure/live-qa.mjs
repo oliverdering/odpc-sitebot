@@ -164,6 +164,21 @@ for(const [name,viewport]of [['desktop',{width:1440,height:1000}],['mobile',{wid
   await page.reload({waitUntil:'networkidle'});assert((await page.locator('#hm-guide-work-prompt').inputValue()).includes(request));
  }
  pass(name+' requested deliverable wins over its topic and calendar details survive sample-data exit and reload');
+ await page.goto('https://ai.odpc.de/connector-einrichten/?lang=de&hm_qa='+Date.now(),{waitUntil:'networkidle'});
+ if(!await page.locator('#odpc-voice-settings').evaluate(e=>e.open))await page.locator('#odpc-voice-settings summary').click();
+ await page.locator('#odpc-voice-reset').click();await answer('Bewerbung schreiben');await answer('ChatGPT, maximal 120 Wörter.');
+ assert((await page.locator('#hm-guide-work-prompt').inputValue()).includes('maximal 120 Wörter'));
+ await page.locator('#odpc-voice-reset').click();
+ for(const request of ['E-Mails organisieren','ChatGPT, nur Antwortentwürfe.','Computer, nur diese Woche.','Gmail, keine Löschungen.','verbunden','Test erfolgreich, aber kein Zugriff auf mein Postfach'])await answer(request);
+ assert.equal(await page.locator('#odpc-voice').getAttribute('data-phase'),'test');assert.equal(await page.locator('#odpc-voice').getAttribute('data-connection-result'),'failed');
+ assert.deepEqual(await page.evaluate(()=>JSON.parse(sessionStorage.getItem('hm-guide-v1')).reportedServices),[]);
+ await page.reload({waitUntil:'networkidle'});assert.equal(await page.locator('#odpc-voice').getAttribute('data-connection-result'),'failed');
+ await page.locator('[data-choice="ohne Verbindung starten"]').click();
+ const mixedPrompt=await page.locator('#hm-guide-work-prompt').inputValue();for(const detail of ['nur Antwortentwürfe','nur diese Woche','keine Löschungen'])assert(mixedPrompt.includes(detail));
+ await page.locator('#hm-guide-work-copy').click();assert.equal(await page.evaluate(()=>navigator.clipboard.readText()),mixedPrompt);
+ await page.reload({waitUntil:'networkidle'});assert.equal(await page.locator('#hm-guide-work-prompt').inputValue(),mixedPrompt);
+ await page.screenshot({path:out+'/'+name+'-mixed-setup-handoff.png'});
+ pass(name+' mixed setup answers retain requirements and contradictory success never grants reported access');
  for(const[locale,disclosure]of [['de-DE','Mein Passwort lautet demo-secret'],['en-US','My password is demo-secret'],['es-ES','Mi contraseña es demo-secret'],['fr-FR','Mon mot de passe est demo-secret'],['it-IT','La mia password è demo-secret'],['pt-PT','A minha senha é demo-secret'],['pl-PL','Moje hasło to demo-secret'],['tr-TR','Şifrem: demo-secret']]){
   if(!await page.locator('#odpc-voice-settings').evaluate(e=>e.open))await page.locator('#odpc-voice-settings summary').click();
   await page.locator('#odpc-voice-language').selectOption(locale);

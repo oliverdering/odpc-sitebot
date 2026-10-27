@@ -1,6 +1,22 @@
 const {test}=require('node:test'),assert=require('node:assert/strict');
 const g=require('../../site-deploy/ai.odpc.de/experience/guide-core.js');
 const run=(answers)=>answers.reduce((s,t)=>g.reply(s,t,'de').state,g.state());
+test('mixed setup answers keep short task requirements without storing standard choices',()=>{
+ const detail='ChatGPT, maximal 120 Wörter.';let s=run(['Bewerbung schreiben',detail]);assert(g.work(g.restore(s)).prompt.includes(detail));
+ s=g.selectAgent(g.state(),'interview');s=g.reply(s,'Claude, bitte auf Englisch.').state;assert(g.work(s).prompt.includes('bitte auf Englisch'));
+ s=run(['E-Mails organisieren','ChatGPT','Computer, nur diese Woche.','Gmail, nur Antwortentwürfe.','verbunden','Test erfolgreich','Aufgabe:mail']);
+ const prompt=g.work(g.restore(s)).prompt;assert(prompt.includes('nur diese Woche'));assert(prompt.includes('nur Antwortentwürfe'));assert(!s.brief.entries.includes('ChatGPT'));
+ s=g.reply(s,'KI einrichten').state;s=g.reply(s,'Google Drive, die Datei heißt Projekt Alpha.').state;s=g.reply(s,'ohne Verbindung starten').state;assert(g.work(s).prompt.includes('Projekt Alpha'));
+ s=g.selectAgent(s,'report');assert(!g.work(s).prompt.includes('Projekt Alpha'));
+});
+test('contradictory successful tests with explicit missing access never report a connection',()=>{
+ const cases={de:'Test erfolgreich, aber kein Zugriff auf mein Postfach',en:'Test successful but no access to Gmail',es:'Prueba correcta pero sin acceso',fr:'Test réussi mais aucun accès',it:'Test riuscito ma nessun accesso',pt:'Teste bem sucedido mas sem acesso',pl:'Test udany ale brak dostępu',tr:'Test başarılı ama erişim yok'};
+ for(const[lang,reply]of Object.entries(cases)){
+  let s=run(['Gmail ChatGPT Android','verbunden']);s=g.reply(s,reply,lang).state;assert.equal(s.phase,'test',lang);assert.equal(s.result,'failed',lang);assert.deepEqual(s.reportedServices,[]);
+  const restored=g.restore(s);assert.equal(restored.result,'failed');const work=g.reply(restored,'ohne Verbindung starten',lang).state;assert.equal(work.task,'mail');assert.deepEqual(work.reportedServices,[]);
+ }
+ const s=run(['Gmail ChatGPT Android','verbunden']);assert.equal(g.reply(s,'Test not successful','en').state.result,'failed');
+});
 test('personal names and WhatsApp topics do not hijack real tasks',()=>{
  for(const request of ['Ich heiße Oliver und möchte ein Anschreiben erstellen','Meine Bewerbung ist für Oliver Wyman']){
   let r=g.reply(g.state(),request);assert(!r.help);r=g.reply(r.state,'ChatGPT');assert.equal(r.state.task,'application');assert(g.work(r.state).prompt.includes(request));
