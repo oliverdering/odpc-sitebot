@@ -93,6 +93,23 @@ def find_media():
         return result
     return []
 
+def find_pages():
+    base = Path('site-deploy/bahnhof-grenzau')
+    result = []
+    for name in ['impressum.html', 'datenschutz.html', 'sitemap.xml']:
+        path = base / name
+        data = path.read_bytes()
+        if len(data) > 200000:
+            raise RuntimeError('Static page exceeds size limit')
+        if name.endswith('.html'):
+            marker = ('data-legal-page="' + name[:-5] + '"').encode()
+            if marker not in data or b'Cengiz G' not in data:
+                raise RuntimeError('Unexpected legal page')
+        elif b'<urlset' not in data or b'https://bahnhof-grenzau.odpc.de/' not in data:
+            raise RuntimeError('Unexpected sitemap')
+        result.append((name, data))
+    return result
+
 def upload_media(sftp, media):
     if not media:
         return
@@ -113,6 +130,8 @@ def upload_media(sftp, media):
 def release():
     landing = find_landing()
     media = find_media()
+    pages = find_pages()
+    previous_pages = {}
     transport, sftp = connect()
     changed = False
     backup = None
@@ -149,15 +168,29 @@ def release():
         for name, data in [("htaccess.previous", old_guard), ("index.previous", old_html)]:
             if data is not None:
                 atomic_write(sftp, backup + "/" + name, data, 0o600)
+        for name, data in pages:
+            previous = read(sftp, ROOT + '/' + name)
+            if previous is not None:
+                expected = b'<urlset' if name == 'sitemap.xml' else ('data-legal-page="' + name[:-5] + '"').encode()
+                if expected not in previous:
+                    raise RuntimeError('Unrecognized existing static page: ' + name)
+                atomic_write(sftp, backup + '/' + name + '.previous', previous, 0o600)
+            previous_pages[name] = previous
         upload_media(sftp, media)
         # Publishing the access rules is the final mutation; PHP remains denied.
         changed = True
+        for name, data in pages:
+            atomic_write(sftp, ROOT + '/' + name, data)
         atomic_write(sftp, ROOT + "/index.html", landing)
         atomic_write(sftp, ROOT + "/.htaccess", GUARD)
         with urllib.request.urlopen(URL + "/?release=" + secrets.token_hex(6), timeout=30) as response:
             published = response.read(200000)
             if response.status != 200 or MARKER not in published or hashlib.sha256(published).digest() != hashlib.sha256(landing).digest():
                 raise RuntimeError("Public start page verification failed")
+        for name, data in pages:
+            with urllib.request.urlopen(URL + '/' + name + '?release=' + secrets.token_hex(6), timeout=30) as response:
+                if response.status != 200 or hashlib.sha256(response.read(200001)).digest() != hashlib.sha256(data).digest():
+                    raise RuntimeError('Public static page verification failed: ' + name)
         for name, data in media:
             with urllib.request.urlopen(URL + '/assets/' + name, timeout=30) as response:
                 if response.status != 200 or hashlib.sha256(response.read(2000001)).digest() != hashlib.sha256(data).digest():
@@ -176,6 +209,14 @@ def release():
         print("EXISTING_WORDPRESS_CORE_UNCHANGED; database configuration still required")
     except Exception:
         if changed:
+            for name, previous in previous_pages.items():
+                if previous is None:
+                    try:
+                        sftp.remove(ROOT + '/' + name)
+                    except FileNotFoundError:
+                        pass
+                else:
+                    atomic_write(sftp, ROOT + '/' + name, previous)
             if old_guard is not None:
                 atomic_write(sftp, ROOT + "/.htaccess", old_guard)
             if old_html is None:
@@ -193,3 +234,4 @@ def release():
 
 if __name__ == "__main__":
     release()
+
