@@ -42,10 +42,10 @@ wieder her. Neue PHP-Prüfung erfolgt vor SFTP-Schreibzugriff.
 
 69 JavaScript- und 8 Pythonprüfungen vor Veröffentlichung bestanden. Zusätzliche
 PHP-Prüfung kontrolliert Inhaltserhalt, Fachzuordnung, Einmaligkeit und Seitengrenzen.
-Die Live-Abnahme prüft alle neun grünen Arbeitsabläufe sowie die sechs blauen
+Die Live-Abnahme prüft alle neun grünen Arbeitsabläufe sowie die sieben blauen
 Produktziele einschließlich PraeDoc.ai, Rücklinks, Bildungslinks, geladene Originalbilder, Filter und mobile
 Karten. Desktop-/Mobil-Screenshots werden im Release-Artefakt abgelegt.
-Der konkrete Veröffentlichungsnachweis wird nach Abschluss ergänzt.
+Die abschließende Live-Abnahme ist erfolgreich; Nachweise folgen unten.
 
 Die direkte Browserprüfung zeigte einen zusätzlichen Auslieferungsunterschied:
 Prüf-URLs enthielten die neuen Bereiche, normale ODPC-Produktadressen teilweise
@@ -63,3 +63,42 @@ Integrationen. Umfang, Daten, Kosten und tatsächliche Zugänge werden je Projek
 vereinbart und geprüft. Keine Buchung, Nachricht oder Zahlung ausgelöst. Keine
 Rechts- oder Steuerentscheidung durch die KI zugesagt. Private Besucherkonten und
 physische Mikrofon-/Hörqualität sind nicht getestet.
+
+## Veröffentlichungsnachweis und Rücksicherung
+
+- Veröffentlichter Quellstand: `3f935db3a25a78ab90de6702afd55f96b590e116`,
+  Angebotsmodul `1.1.0`, bestehender Dialogstand `0.14.5`.
+- [Release 40474178382](https://github.com/oliverdering/odpc-sitebot/actions/runs/40474178382)
+  am 27.10.2026 erfolgreich abgeschlossen: PHP-Syntax, Angebotsprüfung,
+  69 JavaScript- und 8 Pythonprüfungen sowie **61 bestandene Live-Prüfgruppen**.
+- Desktop und emuliertes Mobilgerät prüfen beide Domains an normalen öffentlichen
+  Adressen, alle neun Arbeitsaufträge, acht Dialogsprachen, Clipboard-Fallback,
+  Wiederaufnahme, Fehlerfälle und die Grün-Blau-Wege. Alle sieben Fachseiten
+  zeigen jeweils nur das passende Premium-Paket. Ein echter Browserklick führt
+  vom blauen Anwalt-Monkey zu PraeLex und über den grünen Rücklink wieder zum
+  kostenlosen Katalog. WhatsApp wurde als Link geprüft; keine Nachricht versandt.
+- Zusätzlich im interaktiven Browser bestätigt: ODPC-Portfolio liefert Version
+  `1.1.0` mit sieben Karten; AI-Startseite zeigt beide Wege. Screenshot:
+  [Grün-Blau-Einstieg](evidence/odpc-green-blue-live-2026-10-27.jpg).
+- [Abschlussartefakt mit Dateisicherung, Release-JSON und Desktop-/Mobil-Screenshots](https://github.com/oliverdering/odpc-sitebot/actions/runs/40474178382/artifacts/12720970589).
+  SHA-256: `b541055f4556495c94701c88a105e4f62a6f63d5fa73d98a21e38285a47e17ae`.
+  Die Artefaktaufbewahrung beträgt 30 Tage.
+- Für die vollständige Rückkehr zum Stand vor dieser Neuausrichtung liegt die
+  [erste Dateisicherung](https://github.com/oliverdering/odpc-sitebot/actions/runs/40472550279/artifacts/12718792677)
+  vor. Beim Wiederherstellen müssen die beiden gemeinsamen mu-plugin-Dateien
+  und die gesicherten AI-Dateien zusammen behandelt werden. Ein vorher nicht
+  vorhandenes Modul wird anhand des Sicherungsmanifests entfernt. Gesicherte
+  ODPC-Cachedateien und die genaue Zuordnung stehen im jeweiligen Release-Artefakt.
+- Zwei anfängliche Browserprüfungen wurden korrigiert: Lazy-Loading-Bilder vor
+  dem Laden prüfen und Analytics-Parameter als falsches Ziel bewerten. Der
+  zusätzliche reale Cachefehler wurde durch die oben beschriebene begrenzte
+  Cacheerneuerung behoben. Ein überholter Release mit langsamer Browserinstallation
+  wurde beendet; ausschließlich die abschließende Fassung gilt als abgenommen.
+
+## Nächste Priorität
+
+Die bestehenden Fachprodukttexte bei einer Folgeprüfung auf einheitliche Angaben
+zu Einrichtung, Übergabe, benötigten Zugängen und vereinbartem Leistungsumfang
+prüfen. Bestehende Preise oder Zusagen werden dabei nicht erfunden. Für diesen
+Durchlauf bleibt es bei Angebotszuordnung, Rückverknüpfungen und belastbarer
+öffentlicher Auslieferung.
