@@ -48,7 +48,7 @@ add_filter('the_content', function($content){
    $link->setAttribute('href',home_url('/connector-einrichten/?agent='.$agent));$link->textContent='Arbeitsauftrag starten →';continue;
   }
   if(preg_match('/initIQ|Unternehmensberatung per WhatsApp|Einrichtung gegen Honorar|Webdesign und Leistungen|Webdesign und Live-Referenzen|Remote-Unterstützung direkt von ODPC|Kunden\s*(?:&|und)\s*Referenzen/u',$text)){
-   $link->setAttribute('href',home_url('/start/'));$link->textContent='Monkeys und Arbeitsaufträge →';continue;
+   $link->setAttribute('href','https://odpc.de/'.(stripos($text,'initIQ')!==false?'initiq':(stripos($text,'Webdesign')!==false?'webdesign':'struktur-portfolio#om-premium')));$link->textContent='Persönliche Einrichtung · helper monkey Premium →';continue;
   }
   // Public downloads stay on our domain; repository and release evidence are internal.
   $host=strtolower((string)parse_url($url,PHP_URL_HOST));
@@ -60,7 +60,6 @@ add_filter('the_content', function($content){
    }else{$remove[]=$link;}
    continue;
   }
-  if(preg_match('~odpc\.de/(?:init|webdesign|ki-agenten-persoenlich|ki-dienstleistungen)~i',$url) || preg_match('/initIQ|Webdesign und Leistungen|Einrichtung gegen Honorar|IT, Unternehmen und Beratung|Webdesign und Live-Referenzen|Remote-Unterstützung direkt von ODPC/i',$text)) $remove[]=$link;
  }
  foreach($remove as $link)if($link->parentNode)$link->parentNode->removeChild($link);
  $root=$dom->getElementById('hm-preserved-content');if(!$root)return $content;

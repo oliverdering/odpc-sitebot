@@ -1,5 +1,5 @@
 """Publish a coordinated Helper Monkey release; no database or theme modifications."""
-import base64,hashlib,hmac,json,os,posixpath,stat,sys,time
+import base64,hashlib,hmac,json,os,posixpath,stat,subprocess,sys,time
 from pathlib import Path
 from urllib.request import Request,urlopen
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
@@ -14,12 +14,16 @@ FILES={
  'odpc-monkey-experience.php':SOURCE/'odpc-monkey-experience.php',
  'odpc-monkey-voice-interview.php':SOURCE/'odpc-monkey-voice-interview.php',
  'odpc-search-metadata.php':SOURCE/'odpc-search-metadata.php',
+ 'odpc-monkey-offers.php':Path('site-deploy/shared/odpc-monkey-offers.php'),
+ 'odpc-dachseite/odpc-monkey-offers.php':Path('site-deploy/shared/odpc-monkey-offers.php'),
 }
 DOWNLOADS=['helpermonkey-connector-multilingual-v3.1.zip','helpermonkey-lebenslauf-multilingual-v3.1.zip','helpermonkey-bewerbung-multilingual-v3.1.zip','helpermonkey-postfach-multilingual-v3.1.zip','helpermonkey-gespraechsuebersetzer-multilingual-v1.0.zip','helpermonkey-gespraechsuebersetzer-v1.0.txt','helpermonkey-sprachmodul-v1.0.txt']
 FILES.update({'odpc-monkey-experience/downloads/'+name:Path('downloads')/name for name in DOWNLOADS})
 def get(url):
  with urlopen(Request(url,headers={'Cache-Control':'no-cache','User-Agent':'HelperMonkey-Release-QA/1'}),timeout=35) as f:return f.status,f.read()
 def main():
+ subprocess.run(['php','-l','site-deploy/shared/odpc-monkey-offers.php'],check=True)
+ subprocess.run(['php','scripts/restructure/test-offers.php'],check=True)
  t=paramiko.Transport((HOST,22));t.start_client(timeout=25)
  try:
   actual='SHA256:'+base64.b64encode(hashlib.sha256(t.get_remote_server_key().asbytes()).digest()).decode().rstrip('=')
@@ -39,11 +43,15 @@ def main():
   try:
    if not stat.S_ISDIR(s.lstat(downloads).st_mode):raise RuntimeError('Unsafe downloads directory')
   except FileNotFoundError:s.mkdir(downloads)
-  previous={};written=[];report={'site':'https://ai.odpc.de','commit':os.environ.get('GITHUB_SHA'),'files':{},'checks':[],'full_backup':'User confirmed pre-existing full backup; additional full backup skipped'}
+  corporate='/clickandbuilds/Dering/wp-content/mu-plugins'
+  s.stat('/clickandbuilds/Dering/wp-config.php')
+  if not stat.S_ISDIR(s.lstat(corporate).st_mode):raise RuntimeError('Unexpected ODPC plugin directory')
+  targets={name:(corporate+'/odpc-monkey-offers.php' if name=='odpc-dachseite/odpc-monkey-offers.php' else folder+'/'+name) for name in FILES}
+  previous={};written=[];report={'sites':['https://ai.odpc.de','https://odpc.de'],'commit':os.environ.get('GITHUB_SHA'),'files':{},'checks':[],'full_backup':'User confirmed pre-existing full backup; additional full backup skipped'}
   rollback=Path('rollback-helpermonkey-experience');rollback.mkdir(exist_ok=True)
   for name,source in FILES.items():
    if not source.is_file() or source.stat().st_size>100000:raise RuntimeError('Invalid source '+name)
-   target=folder+'/'+name
+   target=targets[name]
    try:
     info=s.lstat(target)
     if not stat.S_ISREG(info.st_mode) or info.st_size>100000:raise RuntimeError('Unexpected target '+name)
@@ -53,7 +61,7 @@ def main():
   (rollback/'manifest.json').write_text(json.dumps({n:('restore' if b is not None else 'remove-new-file') for n,b in previous.items()},indent=2))
   try:
    for name,source in FILES.items():
-    target=folder+'/'+name;s.put(str(source),target+'.uploading',confirm=True);s.posix_rename(target+'.uploading',target);written.append(name)
+    target=targets[name];s.put(str(source),target+'.uploading',confirm=True);s.posix_rename(target+'.uploading',target);written.append(name)
     with s.open(target,'rb') as f:remote=f.read()
     digest=hashlib.sha256(source.read_bytes()).hexdigest()
     if hashlib.sha256(remote).hexdigest()!=digest:raise RuntimeError('Uploaded checksum mismatch '+name)
@@ -80,11 +88,15 @@ def main():
     code,data=get('https://ai.odpc.de/wp-content/mu-plugins/odpc-monkey-experience/downloads/'+name)
     if code!=200 or data!=(Path('downloads')/name).read_bytes():raise RuntimeError('Public download mismatch '+name)
     report['checks'].append({'download':name,'status':code,'bytes':len(data)})
+   for path in ['/','/struktur-portfolio','/praelex-ai','/praetax','/praedium','/initiq','/webdesign','/ki-gestuetzte-dienstleistungen-automatisierung','/prompt-engineering-digitale-mitarbeiter-ki-sinnvoll-nutzen','/einsatz-von-ki-je-nach-branche']:
+    code,body=get('https://odpc.de'+path+'?om_release='+str(time.time_ns()))
+    if code!=200 or b'id="om-premium"' not in body or b'id="om-wege"' not in body:raise RuntimeError('ODPC offer bridge missing '+path)
+    report['checks'].append({'path':'https://odpc.de'+path,'status':code,'bytes':len(body)})
    print('PASS: coordinated release, uploaded checksums, four entry pages and four retained pages verified')
    Path('helpermonkey-release-result.json').write_text(json.dumps(report,indent=2))
   except Exception:
    for name in reversed(written):
-    target=folder+'/'+name
+    target=targets[name]
     if previous[name] is None:s.remove(target)
     else:
      with s.open(target+'.rollback','wb') as f:f.write(previous[name])

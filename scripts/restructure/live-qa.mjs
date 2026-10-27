@@ -189,6 +189,30 @@ for(const [name,viewport]of [['desktop',{width:1440,height:1000}],['mobile',{wid
   assert.equal(await page.locator('#odpc-voice-answer').inputValue(),'');
  }
  pass(name+' credential disclosures in eight languages never enter task prompt, history or saved progress');
+ const offerPages=['https://ai.odpc.de/start/','https://odpc.de/','https://odpc.de/struktur-portfolio','https://odpc.de/praelex-ai','https://odpc.de/praetax','https://odpc.de/praedium','https://odpc.de/initiq','https://odpc.de/webdesign','https://odpc.de/ki-gestuetzte-dienstleistungen-automatisierung','https://odpc.de/prompt-engineering-digitale-mitarbeiter-ki-sinnvoll-nutzen','https://odpc.de/einsatz-von-ki-je-nach-branche'];
+ for(const url of offerPages){
+  const response=await page.goto(url+'?om_qa='+Date.now(),{waitUntil:'domcontentloaded'});assert.equal(response.status(),200,url);
+  assert.equal(await page.locator('#om-premium').count(),1,url);assert.equal(await page.locator('#om-wege').count(),1,url);
+  assert.match(await page.locator('#om-premium').innerText(),/Kostenpflichtige persönliche Leistung/);
+  const cards=page.locator('#om-premium .om-card');assert((await cards.count())>=1,url);
+  assert.equal(await cards.first().locator('img').evaluate(e=>e.complete&&e.naturalWidth>0),true,url);
+  assert.match(await cards.first().locator('img').evaluate(e=>getComputedStyle(e).filter),/om-blue-accents/);
+  assert.equal(await page.locator('#om-blue-accents').count(),1);
+  for(const card of await cards.all()){const box=await card.boundingBox();assert(box.x>=0&&box.x+box.width<=viewport.width+1,url+' premium card fits viewport');}
+  assert.equal(await page.locator('#om-premium .om-links a[href="https://ai.odpc.de/start/#monkeys"]').count(),1,url+' free return link');
+  const slug=new URL(url).pathname.replaceAll('/','');
+  if(['praelex-ai','praetax','praedium','initiq','webdesign','ki-gestuetzte-dienstleistungen-automatisierung'].includes(slug))assert.equal(await cards.count(),1,url+' focused premium offer');
+ }
+ await page.goto('https://ai.odpc.de/start/',{waitUntil:'networkidle'});
+ assert.equal(await page.locator('#monkeys .hm-agent').count(),10);assert.equal(await page.locator('#om-premium .om-card').count(),6);
+ assert.match(await page.locator('#monkeys').innerText(),/GRÜN.*KOSTENLOS/s);
+ await page.locator('#om-premium').screenshot({path:out+'/'+name+'-premium-blue.png'});
+ await page.locator('#om-wege').screenshot({path:out+'/'+name+'-green-blue-paths.png'});
+ await page.locator('#om-premium [data-product="praelex-ai"] a').click();await page.waitForURL('**/praelex-ai');
+ assert.equal(await page.locator('#om-premium [data-product="praelex-ai"]').count(),1);
+ await page.locator('#om-premium .om-links a[href="https://ai.odpc.de/start/#monkeys"]').click();await page.waitForURL('**/start/#monkeys');
+ assert.equal(await page.locator('#monkeys .hm-agent').count(),10);
+ pass(name+' green self-service and six blue paid offers link to ODPC products and back; education, original logo and mobile cards verified');
  assert.equal(errors.length,0,JSON.stringify(errors));pass(name+' agent overview and no page errors');await context.close();
 }
 const audioContext=await browser.newContext();const audio=await audioContext.newPage();await audio.goto('https://ai.odpc.de/connector-einrichten/',{waitUntil:'networkidle'});await audio.getByRole('button',{name:'Mit Sprache einrichten',exact:true}).click();
