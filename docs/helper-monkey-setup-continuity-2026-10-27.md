@@ -39,7 +39,13 @@ Startlinks, Auftragsinhalt, Hilfe, Kopieren, Kopierfehler, Neuladen und Sprachwa
 auf Desktop und Mobil ab. Neue Live-Szenarien prüfen die Zusatzangaben bis zur
 Zwischenablage sowie die Rückkehr nach widersprüchlicher Testrückmeldung.
 Kontrollierter Release mit Dateisicherung/Rollback und öffentlicher Prüfsumme;
-der konkrete Live-Nachweis wird nach Abschluss ergänzt.
+die abschließende Live-Abnahme ist erfolgreich.
+
+Der erste Live-Lauf stoppte im neuen Prüfschritt, weil dieser in der Testphase
+eine dort nicht angebotene Beispieldaten-Schaltfläche anklicken wollte. Der
+Prüfschritt nutzt nun den vorhandenen Textbefehl „ohne Verbindung starten“.
+Die Produktlogik wurde dafür nicht erweitert. Der vollständige Lauf wurde erneut
+ausgeführt und erfolgreich abgeschlossen.
 
 ## Grenzen und nächste Priorität
 
@@ -51,3 +57,20 @@ Die Auswertung bleibt regelbasiert; widersprüchliche freie Aussagen können nic
 allgemein semantisch verstanden werden. Nächste Priorität: echte Ergebnisqualität
 mit anonymisierten Unterlagen über einen tatsächlich verfügbaren kostenlosen
 Modellzugang vergleichen, ohne Zugang oder Ausführung zu behaupten.
+
+## Live-Nachweis
+
+- Produktänderung: Commit `6b210709ffd88c56812894d32ca595bf64676718`.
+- Korrektur des neuen Prüfschritts: `5e63a40aca9a81dd2d147c3a6cacc863d3b737a4`.
+- [Abschließender Release 40469359730](https://github.com/oliverdering/odpc-sitebot/actions/runs/40469359730)
+  erfolgreich am 27.10.2026. 69 JavaScript-, 8 Pythonprüfungen, PHP-Syntax,
+  Metadaten, SFTP-Prüfsummen und öffentliche Auslieferung bestanden.
+- 59 Live-Prüfgruppen bestanden. Alle neun Monkey-Beispielabläufe sowie die neuen
+  kombinierten Antworten, Kopierinhalt, widersprüchliche Testrückmeldung und
+  Wiederherstellung wurden auf Desktop und Mobil bestätigt.
+- [QA- und Rückrollartefakt des abschließenden Laufs](https://github.com/oliverdering/odpc-sitebot/actions/runs/40469359730/artifacts/12718316683)
+  enthält Browserbilder einschließlich `desktop-mixed-setup-handoff.png` und
+  `mobile-mixed-setup-handoff.png` sowie das Veröffentlichungsprotokoll.
+- [Sicherung vor dem ersten Funktionsrelease](https://github.com/oliverdering/odpc-sitebot/actions/runs/40468896656/artifacts/12717457777)
+  bewahrt den vorherigen Produktstand 0.14.4 für eine Rücknahme. Der erste Lauf
+  stoppte ausschließlich beim oben dokumentierten fehlerhaften Prüfschritt.
