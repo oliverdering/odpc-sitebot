@@ -15,10 +15,10 @@ import paramiko
 from deploy_helpermonkey_v4 import HOST, USER, PIN
 
 ROOT = '/clickandbuilds/Dering'
-EXPECTED = 'Von Hardware und Software'
+EXPECTED = 'object-position:50% 0%!important'
 TARGETS = {
     'https://odpc.de': EXPECTED,
-    'https://odpc.de/webdesign-live-projekte-48h-sichtbarkeit': 'Websites, die deinen Betrieb verständlich zeigen.',
+    'https://odpc.de/webdesign-live-projekte-48h-sichtbarkeit': EXPECTED,
 }
 
 def fetch(url):
