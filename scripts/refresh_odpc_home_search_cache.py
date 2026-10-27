@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Expire only cached ODPC homepage HTML after verified WordPress SEO updates."""
+"""Expire only stale HTML for the approved ODPC home and webdesign updates."""
 import base64
 import gzip
 import hashlib
@@ -15,14 +15,10 @@ import paramiko
 from deploy_helpermonkey_v4 import HOST, USER, PIN
 
 ROOT = '/clickandbuilds/Dering'
-EXPECTED = 'Für Unternehmen in Koblenz, Mayen-Koblenz und im Westerwald'
+EXPECTED = 'Von Hardware und Software'
 TARGETS = {
     'https://odpc.de': EXPECTED,
-    'https://odpc.de/einsatz-von-ki-je-nach-branche': 'KI nach Branche:',
-    'https://odpc.de/kunden-referenzen': 'WordPress und KI-Projekte',
-    'https://odpc.de/initiq': 'initIQ – Startflow, powered by odpc.de',
-    'https://odpc.de/praelex-ai': 'PraeLex.ai – Legal AI Assistant',
-    'https://odpc.de/praedoc': 'PraeDoc.ai – Logo für Dokumentendigitalisierung',
+    'https://odpc.de/webdesign-live-projekte-48h-sichtbarkeit': 'Websites, die deinen Betrieb verständlich zeigen.',
 }
 
 def fetch(url):
@@ -32,8 +28,10 @@ def fetch(url):
         return response.read(1000000).decode('utf-8')
 
 def main():
-    if EXPECTED not in fetch('https://odpc.de/?odpc_cache_preflight='+str(time.time_ns())):
-        raise RuntimeError('Updated WordPress metadata not present; cache unchanged')
+    for target_url, expected in TARGETS.items():
+        separator = '&' if '?' in target_url else '?'
+        if expected not in fetch(target_url+separator+'odpc_cache_preflight='+str(time.time_ns())):
+            raise RuntimeError('Updated WordPress content not present; cache unchanged: '+target_url)
     password = os.environ.get('ODPC_SFTP_PASSWORD')
     if not password:
         raise RuntimeError('Missing protected SFTP credential')
