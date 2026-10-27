@@ -95,7 +95,7 @@ function hm_experience_copy(){
   'Fachpaket und Datenfreigabe klären'=>'Textvorlage und Datenfreigabe prüfen',
  ];
  if(is_page('konfliktlotse-anwaltsvorarbeit'))$copy += [
-  'Ein kostenpflichtiges, individuell abgestimmtes Paket kann Sachverhalte, Chronologien und Dokumente für ein sachliches Gespräch oder eine anschließende anwaltliche Prüfung aufbereiten. Eine verbindliche Rechtsberatung oder neutrale Mediation mit allen Beteiligten ersetzt es nicht.'=>'Der kostenlose PraeLex-Arbeitsauftrag strukturiert freigegebene Sachverhalte, Chronologien und offene Fragen. Er ist eine Textvorlage für die anwaltliche Vorarbeit. Ein produktives Kanzleisystem, verbindliche Rechtsberatung oder neutrale Mediation sind damit nicht freigegeben.',
+  'Ein kostenpflichtiges, individuell abgestimmtes Paket kann Sachverhalte, Chronologien und Dokumente für ein sachliches Gespräch oder eine anschließende anwaltliche Prüfung aufbereiten. Eine verbindliche Rechtsberatung oder neutrale Mediation mit allen Beteiligten ersetzt es nicht.'=>'Der kostenlose Rechtsunterlagen-Monkey strukturiert freigegebene Sachverhalte, Chronologien und offene Fragen. Er ist eine Textvorlage für die anwaltliche Vorarbeit. Die persönliche Kanzlei-Einrichtung als PraeLex Premium findest du auf odpc.de/praelex-ai. Ein produktives Kanzleisystem, verbindliche Rechtsberatung oder neutrale Mediation sind mit der Textvorlage nicht freigegeben.',
  ];
  if(is_page('sprachen'))$copy += [
   '(Premium)'=>'(Textstart)',
