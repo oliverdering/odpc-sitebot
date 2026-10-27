@@ -208,9 +208,9 @@ for(const [name,viewport]of [['desktop',{width:1440,height:1000}],['mobile',{wid
  assert.match(await page.locator('#monkeys').innerText(),/GRÜN.*KOSTENLOS/s);
  await page.locator('#om-premium').screenshot({path:out+'/'+name+'-premium-blue.png'});
  await page.locator('#om-wege').screenshot({path:out+'/'+name+'-green-blue-paths.png'});
- await page.locator('#om-premium [data-product="praelex-ai"] a').click();await page.waitForURL('**/praelex-ai');
+ await page.locator('#om-premium [data-product="praelex-ai"] a').click();await page.waitForURL(u=>u.hostname==='odpc.de'&&u.pathname.replace(/\/$/,'')==='/praelex-ai');
  assert.equal(await page.locator('#om-premium [data-product="praelex-ai"]').count(),1);
- await page.locator('#om-premium .om-links a[href="https://ai.odpc.de/start/#monkeys"]').click();await page.waitForURL('**/start/#monkeys');
+ await page.locator('#om-premium .om-links a[href="https://ai.odpc.de/start/#monkeys"]').click();await page.waitForURL(u=>u.hostname==='ai.odpc.de'&&u.pathname==='/start/'&&u.hash==='#monkeys');
  assert.equal(await page.locator('#monkeys .hm-agent').count(),10);
  pass(name+' green self-service and six blue paid offers link to ODPC products and back; education, original logo and mobile cards verified');
  assert.equal(errors.length,0,JSON.stringify(errors));pass(name+' agent overview and no page errors');await context.close();
