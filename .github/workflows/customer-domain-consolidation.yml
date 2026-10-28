@@ -1,0 +1,40 @@
+name: ODPC / Consolidate retired customer subdomains
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/consolidate_customer_domains.py'
+      - 'scripts/test_customer_domain_consolidation.py'
+      - '.github/workflows/customer-domain-consolidation.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: odpc-customer-domain-consolidation
+  cancel-in-progress: false
+jobs:
+  consolidate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check host boundaries and legacy routes
+        run: |
+          python3 -m py_compile scripts/consolidate_customer_domains.py
+          python3 scripts/test_customer_domain_consolidation.py
+      - name: Install existing deployment dependencies
+        run: python3 -m pip install 'paramiko>=3.4,<5'
+      - name: Check production dependencies, redirect duplicate HTML, verify production
+        env:
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+        run: python3 scripts/consolidate_customer_domains.py --deploy
+      - name: Retain results and encrypted prior configurations
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: customer-domain-consolidation
+          path: |
+            customer-domain-consolidation-results.json
+            backup-customer-domain-consolidation/
+          if-no-files-found: ignore
+          retention-days: 15
