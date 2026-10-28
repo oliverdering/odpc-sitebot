@@ -1,0 +1,41 @@
+name: ODPC / SEO corrections with homepage freeze
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'site-deploy/seo-maintenance/**'
+      - 'scripts/test_seo_maintenance.php'
+      - 'scripts/deploy_scoped_seo_maintenance.py'
+      - '.github/workflows/scoped-seo-maintenance.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: odpc-scoped-seo-maintenance
+  cancel-in-progress: false
+jobs:
+  seo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify PHP, homepage freeze and metadata boundaries
+        run: |
+          php -l site-deploy/seo-maintenance/odpc-seo-maintenance.php
+          php scripts/test_seo_maintenance.php
+          python3 -m py_compile scripts/deploy_scoped_seo_maintenance.py
+      - run: python3 -m pip install 'paramiko>=3.4,<5'
+      - name: Apply narrow SEO corrections with rollback
+        env:
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+        run: python3 scripts/deploy_scoped_seo_maintenance.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: scoped-seo-maintenance
+          path: |
+            scoped-seo-maintenance-results.json
+            backup-scoped-seo-maintenance/
+            backup-search-completion/
+          if-no-files-found: ignore
+          retention-days: 15
