@@ -75,11 +75,11 @@ for(const [name,viewport]of [['desktop',{width:1440,height:1000}],['mobile',{wid
   const prompt=await page.locator('#hm-guide-work-prompt').inputValue();assert(prompt.includes(detail),id+' retains examples');
   assert.equal(await page.evaluate(()=>JSON.parse(sessionStorage.getItem('hm-guide-v1')).task),id,id+' keeps selected Monkey');
   await answer('Hilfe');assert.equal(await page.locator('#hm-guide-work-prompt').inputValue(),prompt,id+' help keeps work');
-  const help=new URL(await page.locator('#hm-guide-help').getAttribute('href'));assert.equal(help.hostname,'wa.me');assert(!help.searchParams.get('text').includes(detail));
+  const help=new URL(await page.locator('#hm-guide-help').getAttribute('href')),helpText=help.searchParams.get('text');assert.equal(help.hostname,'wa.me');assert(!helpText.includes(detail));assert(helpText.includes(await page.locator('#odpc-voice-title').innerText()),id+' help names selected Monkey');assert(helpText.includes('ChatGPT'),id+' help names selected platform');
   await page.locator('#hm-guide-work-copy').click();assert.equal(await page.evaluate(()=>navigator.clipboard.readText()),prompt,id+' clipboard');
   await page.reload({waitUntil:'networkidle'});assert.equal(await page.locator('#hm-guide-work-prompt').inputValue(),prompt,id+' reload');
  }
- pass(name+' all nine full task workflows retain examples, keep context during help, copy exact prompts and resume after reload');
+ pass(name+' all nine full task workflows retain examples, keep context during help, identify Monkey and platform, copy exact prompts and resume after reload');
  await page.evaluate(()=>{navigator.clipboard.writeText=async()=>{throw new Error('Synthetic clipboard denial')}});
  await page.locator('#hm-guide-work-copy').click();
  assert.equal(await page.locator('#hm-guide-work-preview').evaluate(e=>e.open),true);

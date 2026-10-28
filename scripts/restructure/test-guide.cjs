@@ -51,6 +51,13 @@ test('mail to platform to device retains answered details',()=>{const s=run(['E-
 test('business instructions mention administrator approval',()=>{const s=run(['Firma möchte Dokumente mit Claude auf Windows und Drive bearbeiten']);assert.equal(s.business,true);assert.match(g.setup(s).steps,/betriebliche Freigabe/);});
 test('WordPress access is not inferred from a Google account',()=>{const s=run(['WordPress und SEO mit Gemini auf Android']);assert.equal(s.phase,'setup');assert.match(g.setup(s).steps,/eigene offizielle/);});
 test('WhatsApp help does not advance or discard context',()=>{const s=run(['E-Mails organisieren','ChatGPT']);const r=g.reply(s,'Ich verstehe nicht, Hilfe','de');assert.equal(r.help,true);assert.deepEqual(r.state,s);});
+test('WhatsApp help context identifies the selected Monkey and platform without task details',()=>{
+ let s=g.selectAgent(g.state(),'application');assert.equal(g.helpContext(s,'de'),'Eine Bewerbung vorbereiten');
+ s=g.reply(s,'ChatGPT').state;s=g.reply(s,'Maximal 120 Wörter für Beispiel GmbH.').state;
+ assert.equal(g.helpContext(s,'de'),'Eine Bewerbung vorbereiten · ChatGPT');
+ assert(!g.helpContext(s,'de').includes('Beispiel GmbH'));
+ assert.equal(g.helpContext(g.state(),'de'),'');
+});
 test('failed and unavailable connections never become verified',()=>{let s=run(['Gmail ChatGPT Android']);s=g.reply(s,'nicht verfügbar','de').state;assert.equal(s.result,'unavailable');assert.equal(s.phase,'setup');s=g.reply(s,'verbunden','de').state;assert.equal(s.phase,'test');s=g.reply(s,'Test fehlgeschlagen','de').state;assert.equal(s.result,'failed');assert.equal(s.phase,'test');});
 test('successful test is explicitly user-reported',()=>{const s=run(['Gmail ChatGPT Android','verbunden','Test erfolgreich']);assert.equal(s.result,'user-reported');assert.equal(s.phase,'done');assert.match(g.message(s,'de'),/keine technische|technische Kontoprüfung.*nicht/);});
 test('secrets are rejected without changing progress',()=>{const s=run(['E-Mails organisieren']);for(const t of ['Passwort: secret123','token=abcdef','sk-abcdefghijklmnopqrstuvwxyz']){const r=g.reply(s,t,'de');assert.equal(r.sensitive,true);assert.deepEqual(r.state,s);}});

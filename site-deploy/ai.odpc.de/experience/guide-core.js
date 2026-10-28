@@ -184,6 +184,11 @@ function tasks(s,lang='de'){
  const reported=s.reportedServices||[];
  return [...taskCatalog].sort((a,b)=>Number(b.services.some(x=>reported.includes(x)))-Number(a.services.some(x=>reported.includes(x)))).map(t=>({id:t.id,title:ui(lang).tasks[taskCatalog.indexOf(t)]}));
 }
+function helpContext(s,lang='de'){
+ const selected=tasks(s,lang).find(t=>t.id===(s.task||s.targetTask||s.returnTask));
+ const platform=({chatgpt:'ChatGPT',gemini:'Gemini',claude:'Claude'})[s.platform];
+ return [selected&&selected.title,platform].filter(Boolean).join(' · ');
+}
 function taskId(text){const t=String(text).toLowerCase();for(const copy of Object.values(dialogCopy)){const i=copy.tasks.findIndex(label=>label.toLowerCase()===t);if(i>=0)return taskCatalog[i].id}if(/^aufgabe:/.test(t))return t.slice(8);const localized=localizedGoal(t);if(localized)return localized==='office'?(calendarIntent.test(t)?'calendar':'documents'):(localized==='setup'?'':localized);if(/eigene|andere|custom|meine aufgabe/.test(t))return 'custom';return '';}
 function work(s,lang='de'){
  const item=taskCatalog.find(t=>t.id===s.task),offered=tasks(s,lang).find(t=>t.id===s.task);if(!item||!offered)return null;
@@ -212,5 +217,5 @@ function restore(v){
  return clean;
 }
 
-return {state,reply,extract,message,setup,restore,secret,choices,tasks,work,selectAgent,ui,text,voiceHelp};
+return {state,reply,extract,message,setup,restore,secret,choices,tasks,work,selectAgent,helpContext,ui,text,voiceHelp};
 });

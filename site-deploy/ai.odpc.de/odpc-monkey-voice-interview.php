@@ -2,14 +2,14 @@
 /**
  * Plugin Name: ODPC Monkey Voice Interview
  * Description: Accessible opt-in voice interview and guided setup for Helper Monkey.
- * Version: 0.14.5
+ * Version: 0.14.6
  * License: GPL-3.0-or-later
  */
 if (!defined('ABSPATH')) exit;
 add_action('wp_footer', function () {
  if (is_admin()) return;
  ?>
-<div id="odpc-voice" class="odpc-voice" data-version="0.14.5" hidden role="dialog" aria-modal="true" aria-labelledby="odpc-voice-title" aria-describedby="odpc-voice-status">
+<div id="odpc-voice" class="odpc-voice" data-version="0.14.6" hidden role="dialog" aria-modal="true" aria-labelledby="odpc-voice-title" aria-describedby="odpc-voice-status">
   <h2 id="odpc-voice-title">Monkey Einrichtungsassistent</h2><button type="button" id="odpc-voice-topclose" aria-label="Schließen">✕</button>
   <p id="odpc-voice-status" role="status" aria-live="polite">Bereit. Starte das Interview.</p>
   <p id="hm-guide-progress" aria-live="polite"></p>
@@ -162,7 +162,8 @@ add_action('wp_footer', function () {
 
  function updateHelp(){
   const phaseNames=Object.fromEntries(['goal','platform','device','service','setup','test','done','work'].map((key,i)=>[key,guide.ui(guideLang()).phases[i]]));
-  const text=tx('helpMessage',{step:phaseNames[flow.phase]});
+  const context=guide.helpContext(flow,guideLang());
+  const text=tx('helpMessage',{step:phaseNames[flow.phase]})+(context?' ['+context+']':'');
   const href='https://wa.me/492654882183?text='+encodeURIComponent(text);
   $('hm-guide-help').href=href;$('hm-personal-help').href=href;$('hm-guide-help').textContent=tx('helpLabel')+' ↗';$('hm-personal-help').textContent='Oliver · WhatsApp ↗';
   panel.dataset.phase=flow.phase;panel.dataset.connectionResult=flow.result;
