@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Deploy head/sitemap-only SEO fixes, freezing all existing homepages and bodies."""
-import concurrent.futures,hashlib,json,posixpath,re,secrets,stat,time,urllib.request,urllib.error
+import concurrent.futures,difflib,hashlib,json,posixpath,re,secrets,stat,time,urllib.request,urllib.error
 from pathlib import Path
 from xml.etree import ElementTree as ET
 from deploy_bahnhof_grenzau_bootstrap import connect,read,atomic_write
@@ -62,7 +62,7 @@ def find_primary_roots(sf,known):
     No configuration or credential files are read. The probe contains only a
     random verification string and is removed in every path.
     """
-    found={};candidates={known['atrium191-odpc'],'/Bahnhof-Grenzau'}
+    found={};candidates={known['atrium191-odpc'],'/Atrium','/Bahnhof-Grenzau'}
     for root in candidates:
         try:sf.stat(root+'/wp-config.php')
         except FileNotFoundError:continue
@@ -81,10 +81,14 @@ def find_primary_roots(sf,known):
 
 def verify(before,dishes,additional):
     after=batch(list(before))
+    (BACKUP/'public-after.json').write_text(json.dumps(after,ensure_ascii=False))
     for url,old in before.items():
         new=after[url]
         if new['status']!=200:raise RuntimeError('Page unavailable: '+url)
-        if content(new['text'])!=content(old['text']):raise RuntimeError('Visible content changed: '+url)
+        if content(new['text'])!=content(old['text']):
+            diff='\n'.join(difflib.unified_diff(content(old['text']).splitlines(),content(new['text']).splitlines(),fromfile='before',tofile='after'))
+            (BACKUP/'body-difference.txt').write_text(url+'\n'+diff)
+            raise RuntimeError('Visible content changed: '+url)
         if url in HOME and home_signature(new['text'])!=home_signature(old['text']):raise RuntimeError('Protected homepage changed: '+url)
     for url in ['https://odpc.de/leck-im-system','https://tante-lenchen.odpc.de/2026/10/17/hallo-welt/','https://tante-lenchen.odpc.de/author/lenchen_webmaster/','https://tante-lenchen.odpc.de/category/allgemein/']+dishes:
         if not any('noindex'in v for v in metas(after[url]['text'],'robots')):raise RuntimeError('Noindex missing: '+url)
@@ -125,6 +129,18 @@ def main():
         if any(h in additional for h in ['atrium191.de','atrium191.com']):
             extra=['https://'+h+('/wohnungen/we01/'if h.endswith('.de')else'/apartments/we01/')for h in additional if h.startswith('atrium191.')]
             before.update(batch(extra));targets=list(before)
+        # A stale HTML cache can contain pre-existing differences unrelated to
+        # this head-only release. Warm only selected non-homepage URLs before
+        # recording the comparison baseline; homepages remain untouched.
+        for host,root in roots.items():
+            if host=='bahnhof-grenzau.de':continue
+            expire_target_cache(sf,root,[u for u in targets if u.startswith('https://'+host+'/')and u not in HOME])
+        batch(targets)
+        fresh=batch(targets)
+        for url in targets:
+            if url not in HOME:before[url]=fresh[url]
+        if any(r['status']!=200 for r in before.values()):raise RuntimeError('Baseline unavailable; no deployment')
+        (BACKUP/'public-before.json').write_text(json.dumps(before,ensure_ascii=False))
         for host,root in roots.items():
             if host=='bahnhof-grenzau.de':continue # No verified, scoped Bahnhof correction in this patch.
             sf.stat(root+'/wp-config.php')
