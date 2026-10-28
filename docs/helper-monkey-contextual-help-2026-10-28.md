@@ -29,8 +29,27 @@ Berichtsheft, Auto und Rechtsunterlagen auf Desktop und Mobil. Die Links werden
 nur gelesen; keine WhatsApp-Nachricht wird versendet. Private Besucherkonten sowie
 physische Mikrofon- und Hörqualität werden nicht als getestet ausgegeben.
 
-Veröffentlichungscommit, Release-Lauf, Rückrollartefakt und Live-Ergebnis werden
-nach der kontrollierten Veröffentlichung ergänzt.
+## Live-Nachweis und Rücksicherung
+
+- Funktionscommit: `dacbdf15d12ede5b4865e372cf403a5fcb3b64fc`,
+  Dialogversion `0.14.6`.
+- [Release 40652219193](https://github.com/oliverdering/odpc-sitebot/actions/runs/40652219193)
+  am 28.10.2026 vollständig erfolgreich: PHP-Syntax, Angebotsprüfung,
+  70 JavaScript- und 8 Pythonprüfungen sowie 62 Live-Prüfgruppen.
+- Die neun realistischen Monkey-Szenarien wurden auf Desktop und emuliertem
+  Mobilgerät erneut geprüft. Der WhatsApp-Link nennt jeweils den Monkey und
+  ChatGPT; die jeweilige Beispielanforderung fehlt bewusst im Nachrichtentext.
+  Kopieren, manueller Kopierfallback, Wiederaufnahme, Sprachwahl, Fehlerfälle,
+  Kontogrenzen sowie die grünen und blauen Wege blieben erfolgreich.
+- Eine zusätzliche direkte Browserprüfung bestätigte auf der öffentlichen
+  Bewerbungsseite Version `0.14.6` und den Text
+  „Eine Bewerbung vorbereiten · ChatGPT“. Eine eingegebene Musteranforderung
+  wurde nicht in den Link übernommen. WhatsApp wurde nicht geöffnet.
+- [QA- und Rückrollartefakt](https://github.com/oliverdering/odpc-sitebot/actions/runs/40652219193/artifacts/12799679431)
+  mit Sicherungsmanifest, vorherigen Dateien, Release-Protokoll und
+  Desktop-/Mobilbildern. SHA-256:
+  `4c5ac500e44acea31350b9cf2da212bb818246563d008601ed2a8c7e72ca0051`.
+  Aufbewahrung bis 27.11.2026.
 
 ## Nächste Priorität
 
