@@ -258,9 +258,17 @@ def inspect_redirects():
     checks = []
     for source, destination in expected:
         response = fetch(source, follow=False)
+        upgrade = None
+        # Some hosting configurations upgrade HTTP before document-root rules.
+        # Permit that exact same-host HTTPS hop, then require our 301 to production.
+        if source.startswith('http://') and response['status'] in (301, 308):
+            https_source = 'https://' + source[len('http://'):]
+            if response['location'] == https_source:
+                upgrade = https_source
+                response = fetch(https_source, follow=False)
         if response['status'] != 301 or response['location'] != destination:
             raise RuntimeError('Unexpected redirect: ' + source + ' -> ' + str(response['status']) + ' ' + str(response['location']))
-        checks.append({'source': source, 'status': 301, 'destination': destination})
+        checks.append({'source': source, 'status': 301, 'destination': destination, 'hosting_https_upgrade': upgrade})
     return checks
 
 
