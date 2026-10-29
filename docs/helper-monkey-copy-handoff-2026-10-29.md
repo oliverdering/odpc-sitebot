@@ -38,14 +38,33 @@ tatsächlich dort autorisierte Werkzeuge bleiben ausdrücklich getrennt. Private
 Besucherkonten, echte Kontoaktionen sowie physische Mikrofon- und Hörqualität
 werden nicht als getestet ausgegeben. Es wurden keine Nachrichten versendet.
 
-## Prüfstand vor Veröffentlichung
+## Live-Nachweis und Rücksicherung
 
-- Dialogversion `0.14.7`.
-- 70 JavaScript-Prüfungen und 9 Pythonprüfungen lokal erfolgreich.
-- JavaScript-Syntax und Python-Kompilierung erfolgreich. Eine lokale
-  PHP-Laufzeit steht in dieser Arbeitsumgebung nicht zur Verfügung; PHP-Syntax,
-  kontrollierte Veröffentlichung, Rücksicherung und vollständige Desktop-/Mobil-
-  Prüfung laufen deshalb im bestehenden Release-Workflow.
+- Funktionscommit `4b09457642d7489e62a5b1142d6b97d092f96578`,
+  abschließender Prüfstand `5dd8188c0cb9a86b1d66ddb72e26f757918fffc1`,
+  Dialogversion `0.14.7`.
+- [Release 40839365239](https://github.com/oliverdering/odpc-sitebot/actions/runs/40839365239)
+  am 29.10.2026 vollständig erfolgreich: PHP-Syntax, 70 JavaScript- und
+  9 Pythonprüfungen sowie 62 Live-Prüfgruppen.
+- Bewerbung, Postfach, Büro, Webmaster, Marketing, Interview, Berichtsheft,
+  Auto und PraeLex wurden mit realistischen Beispieldaten auf Desktop und im
+  emulierten Mobil-Viewport 390 × 844 geprüft. Der kopierte Auftrag entsprach
+  jeweils exakt der sichtbaren Fassung; die lokale Bestätigung nannte das
+  Zielkonto. Auch verweigerte Zwischenablage, Wiederaufnahme, acht Sprachen,
+  Kontogrenzen und WhatsApp-Hilfe blieben erfolgreich.
+- Eine zusätzliche direkte Browserprüfung bestätigte auf der öffentlichen
+  Bewerbungsseite Version `0.14.7`, die Verknüpfung der Kopierschaltfläche mit
+  der lokalen Statusmeldung und den Text „Auftrag kopiert. Öffne jetzt ChatGPT
+  und füge ihn dort ein.“ Der ChatGPT-Link zeigte auf den Originalanbieter;
+  das Konto wurde nicht geöffnet.
+- Der Browserlauf bleibt gemäß Auftrag auf `ai.odpc.de`. Externe Produktziele
+  werden dort als Linkadressen geprüft, aber nicht aufgerufen. Es wurden keine
+  Nachrichten an Dritte gesendet.
+- [QA- und Rückrollartefakt](https://github.com/oliverdering/odpc-sitebot/actions/runs/40839365239/artifacts/12881744391)
+  mit 48 Sicherungs- und Prüfdateien, Release-Protokoll sowie Desktop-/Mobilbildern.
+  SHA-256:
+  `f46f0988449b21c76c0bb1f0951bd3cf1e059caa6d00280bf50cb5e1c87b51c5`.
+  Aufbewahrung bis 28.11.2026.
 
 ## Nächste Priorität
 
