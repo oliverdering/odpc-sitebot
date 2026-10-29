@@ -197,7 +197,7 @@ for(const [name,viewport]of [['desktop',{width:1440,height:1000}],['mobile',{wid
   assert.equal(await page.locator('#om-premium').count(),1,url);assert.equal(await page.locator('#om-wege').count(),1,url);
   assert.equal(await page.locator('#om-premium').getAttribute('data-offer-version'),'1.1.0',url);
   assert.match(await page.locator('#om-premium').innerText(),/Kostenpflichtige persönliche Leistung/);
-  const cards=page.locator('#om-premium .om-card');assert((await cards.count())>=1,url);
+  const cards=page.locator('#om-premium .om-card:visible');assert((await cards.count())>=1,url);
   await cards.first().scrollIntoViewIfNeeded();await page.waitForFunction(()=>{const image=document.querySelector('#om-premium .om-card img');return image.complete&&image.naturalWidth>0});
   assert.match(await cards.first().locator('img').evaluate(e=>getComputedStyle(e).filter),/om-blue-accents/);
   assert.equal(await page.locator('#om-blue-accents').count(),1);
