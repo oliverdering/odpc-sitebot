@@ -2,14 +2,14 @@
 /**
  * Plugin Name: ODPC Monkey Voice Interview
  * Description: Accessible opt-in voice interview and guided setup for Helper Monkey.
- * Version: 0.14.6
+ * Version: 0.14.7
  * License: GPL-3.0-or-later
  */
 if (!defined('ABSPATH')) exit;
 add_action('wp_footer', function () {
  if (is_admin()) return;
  ?>
-<div id="odpc-voice" class="odpc-voice" data-version="0.14.6" hidden role="dialog" aria-modal="true" aria-labelledby="odpc-voice-title" aria-describedby="odpc-voice-status">
+<div id="odpc-voice" class="odpc-voice" data-version="0.14.7" hidden role="dialog" aria-modal="true" aria-labelledby="odpc-voice-title" aria-describedby="odpc-voice-status">
   <h2 id="odpc-voice-title">Monkey Einrichtungsassistent</h2><button type="button" id="odpc-voice-topclose" aria-label="Schließen">✕</button>
   <p id="odpc-voice-status" role="status" aria-live="polite">Bereit. Starte das Interview.</p>
   <p id="hm-guide-progress" aria-live="polite"></p>
@@ -186,7 +186,8 @@ add_action('wp_footer', function () {
    const title=document.createElement('h3');title.textContent=data.title;output.append(title);
    const note=document.createElement('p');note.textContent=tx('workNote');output.append(note);
    const prompt=document.createElement('textarea');prompt.id='hm-guide-work-prompt';prompt.readOnly=true;prompt.setAttribute('aria-label',tx('promptLabel'));prompt.value=data.prompt;const preview=document.createElement('details');preview.id='hm-guide-work-preview';const summary=document.createElement('summary');summary.textContent=tx('viewPrompt');preview.append(summary,prompt);preview.addEventListener('toggle',fitPrompts);output.append(preview);
-   const copy=document.createElement('button');copy.type='button';copy.id='hm-guide-work-copy';copy.textContent=tx('copy');copy.onclick=async()=>{try{await navigator.clipboard.writeText(data.prompt);status.textContent=tx('copied',{platform:data.platform})}catch(e){preview.open=true;fitPrompts();prompt.focus();prompt.select();status.textContent=tx('manualCopy')}};output.append(copy);
+   const handoff=document.createElement('p');handoff.id='hm-guide-work-handoff';handoff.className='hm-fine';handoff.hidden=true;handoff.setAttribute('role','status');handoff.setAttribute('aria-live','polite');
+   const copy=document.createElement('button');copy.type='button';copy.id='hm-guide-work-copy';copy.setAttribute('aria-describedby',handoff.id);copy.textContent=tx('copy');copy.onclick=async()=>{try{await navigator.clipboard.writeText(data.prompt);const message=tx('copied',{platform:data.platform});status.textContent=message;handoff.textContent=message;handoff.hidden=false}catch(e){preview.open=true;fitPrompts();prompt.focus();prompt.select();const message=tx('manualCopy');status.textContent=message;handoff.textContent=message;handoff.hidden=false}};output.append(copy,handoff);
    const link=document.createElement('a');link.id='hm-guide-work-open';link.href=data.url;link.target='_blank';link.rel='noopener noreferrer';link.textContent=data.platform+' '+tx('open')+' ↗';output.append(link);
    const fine=document.createElement('p');fine.className='hm-fine';fine.textContent=tx('workFine')+' '+tx('briefPrivacy');output.append(fine);return;
   }

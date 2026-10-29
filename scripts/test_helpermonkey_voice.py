@@ -24,6 +24,12 @@ class VoiceRegression(unittest.TestCase):
             with self.subTest(feature=feature):
                 self.assertIn(feature, self.source)
 
+    def test_copy_handoff_has_action_local_status(self):
+        for feature in ("hm-guide-work-handoff", "aria-describedby",
+                        "handoff.hidden=false", "handoff.setAttribute('role','status')"):
+            with self.subTest(feature=feature):
+                self.assertIn(feature, self.source)
+
     def test_privacy_and_safety(self):
         self.assertIn("Bitte nenne niemals Passwörter", self.source)
         self.assertIn("textContent", self.source)
