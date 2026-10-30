@@ -36,13 +36,32 @@ vorhandene Freigaben. Private Besucherkonten, echte Kontoaktionen sowie
 physische Mikrofon- und Hörqualität werden nicht als getestet ausgegeben. Es
 werden keine WhatsApp-Nachrichten versendet.
 
-## Prüfstand vor Veröffentlichung
+## Live-Nachweis und Rücksicherung
 
-- Dialogversion `0.14.8`.
-- 70 JavaScript-Prüfungen und 9 Pythonprüfungen lokal erfolgreich.
-- JavaScript-Syntax und Python-Kompilierung erfolgreich. PHP-Syntax,
-  Veröffentlichung, Rücksicherung sowie die vollständige Desktop-/Mobilprüfung
-  folgen im bestehenden Release-Workflow.
+- Funktionscommit `96d1117aa4d10ab50431081b08dd79ae09ad01b0`,
+  abschließender Prüfstand `489685393d277908e2c298903bc3f15413f5318f`,
+  Dialogversion `0.14.8`.
+- [Release 41023905478](https://github.com/oliverdering/odpc-sitebot/actions/runs/41023905478)
+  am 30.10.2026 vollständig erfolgreich: PHP-Syntax, 70 JavaScript- und
+  9 Pythonprüfungen sowie 62 Live-Prüfgruppen.
+- Der erste Mobil-Lauf belegte, dass ein sofortiges Scrollen noch vor Abschluss
+  der Vorschauerweiterung zu früh erfolgte. Die Rückmeldung wird deshalb im
+  nächsten Layout-Zyklus positioniert. Der abschließende Lauf bestätigte den
+  Hinweis vollständig im 390 × 844-Viewport, den weiterhin markierten Auftrag
+  und den Fokus im Textfeld.
+- Bewerbung, Postfach, Büro, Webmaster, Marketing, Interview, Berichtsheft,
+  Auto und PraeLex wurden mit realistischen Beispieldaten erneut auf Desktop
+  und Mobil geprüft. Kopieren, manueller Fehlerweg, Wiederaufnahme, acht
+  Sprachen, Kontogrenzen und WhatsApp-Hilfe blieben erfolgreich.
+- Eine zusätzliche direkte Browserprüfung bestätigte auf der öffentlichen
+  Bewerbungsseite Version `0.14.8`, den unveränderten normalen Kopierweg und
+  den offiziellen Ziel-Link `https://chatgpt.com/`. Ein KI-Konto wurde nicht
+  geöffnet.
+- [QA- und Rückrollartefakt](https://github.com/oliverdering/odpc-sitebot/actions/runs/41023905478/artifacts/12963161693)
+  mit 48 Sicherungs- und Prüfdateien, Release-Protokoll sowie Desktop-/Mobilbildern.
+  SHA-256:
+  `5e8a2e98fb5acb172b6cb83d444927734b9bdd903789acedf87a5404a6e3b567`.
+  Aufbewahrung bis 29.11.2026.
 
 ## Nächste Priorität
 
