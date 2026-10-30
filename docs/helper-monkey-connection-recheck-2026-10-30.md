@@ -48,6 +48,26 @@ Keine neuen Kosten und keine Aktionen in fremden Konten.
   sichert die vorherigen Dateien für einen Rollback. Private Kontozugriffe,
   physische Mikrofon- und Hörtests sind nicht Gegenstand dieser Prüfung.
 
+## Live-Nachweis und Rücksicherung
+
+- Quellstand `8e596bdd7e8388af77abd0507ce244c44a983e5b`, Dialogversion `0.14.9`.
+- [Release 41035183481](https://github.com/oliverdering/odpc-sitebot/actions/runs/41035183481)
+  am 30.10.2026 vollständig erfolgreich: PHP-Syntax, 71 JavaScript- und
+  9 Pythonprüfungen sowie 65 Live-Prüfgruppen im Browser-Prüfschritt.
+- Neue Desktop- und Mobilprüfungen bestanden für beide negativen Rückmeldungen:
+  alter Gmail-Bericht entfernt, Kalender und Drive erhalten, Auftragsangaben
+  nach Neuladen erhalten, korrigierter Auftrag exakt kopiert und spätere
+  erfolgreiche Rückmeldung wieder aufgenommen. Alle neun Monkey-Szenarien,
+  acht Dialogsprachen sowie die 45 FAQ-Antworten blieben erfolgreich.
+- Zusätzliche direkte Browserprüfung auf der öffentlichen Connector-Seite:
+  Version `0.14.9` und nach „nicht verfügbar“ die Auftragszeile
+  „Ich habe folgende Dienste als eingerichtet gemeldet: Google Kalender,
+  Google Drive.“ Kein echtes Konto wurde dabei geprüft.
+- [QA- und Rückrollartefakt](https://github.com/oliverdering/odpc-sitebot/actions/runs/41035183481/artifacts/12967274001)
+  mit 49 Sicherungs- und Prüfdateien. SHA-256:
+  `34fdcd5bb07eff50140d68d2cc0c13c9b8ec24547dab7d8d4c1b1ea43837d7f6`.
+  Aufbewahrung bis 29.11.2026.
+
 ## Nächste Priorität
 
 Bei einem weiteren belegten Fall prüfen, ob ein Plattformwechsel innerhalb
