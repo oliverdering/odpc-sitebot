@@ -84,7 +84,8 @@ for(const [name,viewport]of [['desktop',{width:1440,height:1000}],['mobile',{wid
  await page.locator('#hm-guide-work-copy').click();
  assert.equal(await page.locator('#hm-guide-work-preview').evaluate(e=>e.open),true);
  await page.locator('#hm-guide-work-handoff').waitFor({state:'visible'});
- assert((await page.locator('#hm-guide-work-handoff').innerText()).length>0);
+ assert.match(await page.locator('#hm-guide-work-handoff').innerText(),/ChatGPT|Gemini|Claude/);
+ if(name==='mobile'){const box=await page.locator('#hm-guide-work-handoff').boundingBox();assert(box&&box.y>=0&&box.y+box.height<=viewport.height,'mobile manual-copy guidance remains in the viewport')}
  assert.equal(await page.locator('#hm-guide-work-prompt').evaluate(e=>e.selectionStart===0&&e.selectionEnd===e.value.length),true);
  assert.equal(await page.evaluate(()=>document.activeElement.id),'hm-guide-work-prompt');
  await page.screenshot({path:out+'/'+name+'-manual-copy.png'});await page.reload({waitUntil:'networkidle'});

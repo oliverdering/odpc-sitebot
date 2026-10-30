@@ -26,7 +26,8 @@ class VoiceRegression(unittest.TestCase):
 
     def test_copy_handoff_has_action_local_status(self):
         for feature in ("hm-guide-work-handoff", "aria-describedby",
-                        "handoff.hidden=false", "handoff.setAttribute('role','status')"):
+                        "handoff.hidden=false", "handoff.setAttribute('role','status')",
+                        "manualWorkCopy", "handoff.scrollIntoView({block:'nearest'})"):
             with self.subTest(feature=feature):
                 self.assertIn(feature, self.source)
 
