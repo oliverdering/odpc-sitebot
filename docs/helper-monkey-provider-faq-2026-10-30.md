@@ -77,6 +77,30 @@ Private Besucherkonten, echte Dienstaktionen sowie physische Mikrofon- und
 Hörtests sind nicht Gegenstand dieser Inhaltsprüfung. Externe Produktlinks
 werden in der öffentlichen FAQ geprüft, nicht als eingeloggte Konten verwendet.
 
+## Veröffentlichungsnachweis
+
+- Quellstand `baea845387966bfafb9052cfd3d9dae526c96f9a`, FAQ-Stand
+  `2026-10-30`, unveränderte Dialogversion `0.14.8`.
+- [Release 41033459082](https://github.com/oliverdering/odpc-sitebot/actions/runs/41033459082)
+  am 30.10.2026 vollständig erfolgreich: PHP-Syntax und Metadaten,
+  70 JavaScript- und 9 Pythonprüfungen sowie 63 Live-Prüfgruppen.
+  Die Zahl der Live-Gruppen wurde ausschließlich im Browser-Prüfschritt gezählt;
+  vorgelagerte Veröffentlichungsprüfungen sind darin nicht enthalten.
+- Alle 45 Antworten wurden auf Desktop und im emulierten 390 × 844-Viewport
+  geöffnet und geschlossen. Die sieben Themenziele, Tastaturbedienung,
+  neun Monkey-Startlinks und die horizontale Darstellung bestanden. Die
+  vorhandenen neun Agentenabläufe einschließlich Beispieldaten, Clipboard,
+  manueller Kopie, Wiederaufnahme und acht Dialogsprachen bestanden ebenfalls.
+- Zusätzliche direkte Browserprüfung an `https://ai.odpc.de/#fragen`:
+  45 Fragen, sieben Themen und der richtige FAQ-Stand. Themennavigation und
+  aufgeklappte Work-Erklärung visuell im unveränderten Markenbild bestätigt.
+  [Desktop-Bildbeleg](helper-monkey-faq-desktop-1793352750559.jpg).
+- [QA- und Rückrollartefakt](https://github.com/oliverdering/odpc-sitebot/actions/runs/41033459082/artifacts/12966927990)
+  mit 49 Sicherungs- und Prüfdateien, Release-Protokoll und Desktop-/Mobilbildern.
+  SHA-256:
+  `0c0f2b1a9715ff91f341d0042b4bbe0daa64e511c637ad321988582ba44f18dc`.
+  Aufbewahrung bis 29.11.2026.
+
 ## Nächste Priorität
 
 Konkrete Rückfragen von Besuchern sammeln. Weitere geführte Anbieterstarts erst
