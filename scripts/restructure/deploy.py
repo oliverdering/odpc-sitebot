@@ -6,6 +6,7 @@ sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 import paramiko
 from deploy_helpermonkey_v4 import HOST,USER,PIN,find_theme
 SOURCE=Path('site-deploy/ai.odpc.de')
+AI_ONLY='--include-odpc-offers' not in sys.argv
 FILES={
  'odpc-monkey-experience/dialog-copy.js':SOURCE/'experience/dialog-copy.js',
  'odpc-monkey-experience/guide-core.js':SOURCE/'experience/guide-core.js',
@@ -19,6 +20,7 @@ FILES={
 }
 DOWNLOADS=['helpermonkey-connector-multilingual-v3.1.zip','helpermonkey-lebenslauf-multilingual-v3.1.zip','helpermonkey-bewerbung-multilingual-v3.1.zip','helpermonkey-postfach-multilingual-v3.1.zip','helpermonkey-gespraechsuebersetzer-multilingual-v1.0.zip','helpermonkey-gespraechsuebersetzer-v1.0.txt','helpermonkey-sprachmodul-v1.0.txt']
 FILES.update({'odpc-monkey-experience/downloads/'+name:Path('downloads')/name for name in DOWNLOADS})
+if AI_ONLY:FILES.pop('odpc-dachseite/odpc-monkey-offers.php')
 def get(url):
  with urlopen(Request(url,headers={'Cache-Control':'no-cache','User-Agent':'HelperMonkey-Release-QA/1'}),timeout=35) as f:return f.status,f.read()
 ODPC_PATHS=['/','/struktur-portfolio','/praelex-ai','/praetax','/praedium','/initiq','/webdesign','/ki-gestuetzte-dienstleistungen-automatisierung','/praedoc','/prompt-engineering-digitale-mitarbeiter-ki-sinnvoll-nutzen','/einsatz-von-ki-je-nach-branche']
@@ -76,10 +78,11 @@ def main():
    if not stat.S_ISDIR(s.lstat(downloads).st_mode):raise RuntimeError('Unsafe downloads directory')
   except FileNotFoundError:s.mkdir(downloads)
   corporate='/clickandbuilds/Dering/wp-content/mu-plugins'
-  s.stat('/clickandbuilds/Dering/wp-config.php')
-  if not stat.S_ISDIR(s.lstat(corporate).st_mode):raise RuntimeError('Unexpected ODPC plugin directory')
+  if not AI_ONLY:
+   s.stat('/clickandbuilds/Dering/wp-config.php')
+   if not stat.S_ISDIR(s.lstat(corporate).st_mode):raise RuntimeError('Unexpected ODPC plugin directory')
   targets={name:(corporate+'/odpc-monkey-offers.php' if name=='odpc-dachseite/odpc-monkey-offers.php' else folder+'/'+name) for name in FILES}
-  previous={};written=[];expired={};report={'sites':['https://ai.odpc.de','https://odpc.de'],'commit':os.environ.get('GITHUB_SHA'),'files':{},'checks':[],'full_backup':'User confirmed pre-existing full backup; additional full backup skipped'}
+  previous={};written=[];expired={};report={'sites':['https://ai.odpc.de'] if AI_ONLY else ['https://ai.odpc.de','https://odpc.de'],'commit':os.environ.get('GITHUB_SHA'),'files':{},'checks':[],'full_backup':'User confirmed pre-existing full backup; additional full backup skipped'}
   rollback=Path('rollback-helpermonkey-experience');rollback.mkdir(exist_ok=True)
   for name,source in FILES.items():
    if not source.is_file() or source.stat().st_size>100000:raise RuntimeError('Invalid source '+name)
@@ -103,13 +106,13 @@ def main():
     for attempt in range(3):
      code,body=get('https://ai.odpc.de'+path+'?hm_release=1.0.0-'+str(int(time.time())))
      html=body.decode('utf-8','replace')
-     if code==200 and 'hm-experience-page' in html and 'data-version="0.14.8"' in html and 'hm-guide-help' in html:
+     if code==200 and 'hm-experience-page' in html and 'data-version="0.14.8"' in html and 'data-faq-version="2026-10-30"' in html and 'hm-guide-help' in html:
       good=True;break
      time.sleep(2)
     if not good:raise RuntimeError('Live release absent '+path)
     if 'initIQ / ODPC' in html or 'Dein KI-Team. Ein Klick zum Start.' in html:raise RuntimeError('Legacy homepage still served')
     report['checks'].append({'path':path,'status':code,'bytes':len(body)})
-   for path in ['https://odpc.de/impressum','https://odpc.de/datenschutzerklaerung','https://ai.odpc.de/werkstatt/','https://ai.odpc.de/webmaster-agent/']:
+   for path in (['https://ai.odpc.de/werkstatt/','https://ai.odpc.de/webmaster-agent/'] if AI_ONLY else ['https://odpc.de/impressum','https://odpc.de/datenschutzerklaerung','https://ai.odpc.de/werkstatt/','https://ai.odpc.de/webmaster-agent/']):
     code,body=get(path)
     if code!=200:raise RuntimeError('Preserved page failed '+path)
     report['checks'].append({'path':path,'status':code,'bytes':len(body)})
@@ -120,9 +123,9 @@ def main():
     code,data=get('https://ai.odpc.de/wp-content/mu-plugins/odpc-monkey-experience/downloads/'+name)
     if code!=200 or data!=(Path('downloads')/name).read_bytes():raise RuntimeError('Public download mismatch '+name)
     report['checks'].append({'download':name,'status':code,'bytes':len(data)})
-   expire_offer_cache(s,rollback,expired)
+   if not AI_ONLY:expire_offer_cache(s,rollback,expired)
    report['expired_offer_cache']=[posixpath.relpath(path,'/clickandbuilds/Dering/wp-content/cache') for path in expired]
-   for path in ODPC_PATHS:
+   for path in ([] if AI_ONLY else ODPC_PATHS):
     code,body=get('https://odpc.de'+path+'?om_release='+str(time.time_ns()))
     if code!=200 or b'data-offer-version="1.1.0"' not in body or b'id="om-wege"' not in body:raise RuntimeError('ODPC offer bridge missing '+path)
     normal_code,normal=get('https://odpc.de'+path)

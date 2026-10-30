@@ -26,6 +26,18 @@ for(const [name,viewport]of [['desktop',{width:1440,height:1000}],['mobile',{wid
  assert.equal(await page.locator('.hm-header img').evaluate(e=>e.complete&&e.naturalWidth>0),true);
  assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),true);
  await page.screenshot({path:out+'/'+name+'-home.png',fullPage:true});pass(name+' homepage layout',{viewport,loadToNetworkIdleMs:Date.now()-start});
+ const faq=page.locator('#fragen');assert.equal(await faq.getAttribute('data-faq-version'),'2026-10-30');
+ assert.equal(await faq.locator('h3').count(),7);const faqItems=faq.locator('details');assert((await faqItems.count())>=40);
+ for(const item of await faqItems.all()){await item.locator('summary').click();assert.equal(await item.evaluate(e=>e.open),true);assert((await item.locator('p').first().innerText()).length>50);await item.locator('summary').click()}
+ for(const id of ['faq-chatgpt','faq-work','faq-codex','faq-claude','faq-gemini','faq-deepseek','faq-copilot','faq-workspace','faq-gmail','faq-kalender','faq-drive','faq-microsoft','faq-webzugriff','faq-lesetest','faq-beispielauftrag','dialog-datenschutz','faq-whatsapp'])assert.equal(await faq.locator('#'+id).count(),1,id);
+ const faqAnchors=await faq.locator('a[href^="#"]').evaluateAll(nodes=>nodes.map(a=>a.getAttribute('href')));for(const href of faqAnchors)assert.equal(await page.locator(href).count(),1,href+' FAQ destination');
+ assert.match(await faq.locator('#faq-anbieterauswahl').innerText(),/ChatGPT, Gemini und Claude/);assert.equal(await faq.locator('a[href*="agent="]').count(),9);
+ await faq.getByRole('navigation',{name:'FAQ-Themen'}).getByRole('link',{name:'KI-Angebote',exact:true}).click();
+ await page.waitForFunction(()=>{const e=document.querySelector('#faq-ki h3'),r=e.getBoundingClientRect();return r.top>=0&&r.top<innerHeight});
+ const keyboardSummary=faq.locator('#faq-work summary');await keyboardSummary.focus();await page.keyboard.press('Enter');assert.equal(await faq.locator('#faq-work').evaluate(e=>e.open),true);
+ assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),true);await page.screenshot({path:out+'/'+name+'-faq-work.png'});
+ await page.keyboard.press('Enter');assert.equal(await faq.locator('#faq-work').evaluate(e=>e.open),false);await page.evaluate(()=>window.scrollTo(0,0));await page.waitForFunction(()=>window.scrollY===0);
+ pass(name+' expanded provider-neutral FAQ opens all answers; seven topics, keyboard controls, nine Monkey starts and mobile width verified');
  await page.screenshot({path:out+'/'+name+'-home-viewport.png'});assert.equal(await page.locator('#kosten').count(),1);assert.equal(await page.locator('#praxis').count(),1);assert.match(await page.locator('#smartphone').innerText(),/SAMSUNG GALAXY S24 ULTRA/);
  await page.evaluate(()=>window.scrollTo(0,1000));await page.waitForFunction(()=>window.scrollY>500);
  const sticky=await page.locator('.hm-header').boundingBox(),logo=await page.locator('.hm-header img').boundingBox();assert(sticky.y>=0&&sticky.y<25,name+' header remains pinned');assert(logo.y>=sticky.y&&logo.y+logo.height<=sticky.y+sticky.height+1,name+' logo stays visible');
