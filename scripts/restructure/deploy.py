@@ -106,7 +106,7 @@ def main():
     for attempt in range(3):
      code,body=get('https://ai.odpc.de'+path+'?hm_release=1.0.0-'+str(int(time.time())))
      html=body.decode('utf-8','replace')
-     if code==200 and 'hm-experience-page' in html and 'data-version="0.14.8"' in html and 'data-faq-version="2026-10-30"' in html and 'hm-guide-help' in html:
+     if code==200 and 'hm-experience-page' in html and 'data-version="0.14.9"' in html and 'data-faq-version="2026-10-30"' in html and 'hm-guide-help' in html:
       good=True;break
      time.sleep(2)
     if not good:raise RuntimeError('Live release absent '+path)

@@ -227,6 +227,19 @@ for(const [name,viewport]of [['desktop',{width:1440,height:1000}],['mobile',{wid
  await page.locator('#om-premium .om-links a[href="https://ai.odpc.de/start/#monkeys"]').click();await page.waitForURL(u=>u.hostname==='ai.odpc.de'&&u.pathname==='/start/'&&u.hash==='#monkeys');
  assert.equal(await page.locator('#monkeys .hm-agent').count(),10);
  pass(name+' green self-service and seven blue paid offers expose the correct ODPC targets; education, original logo and mobile cards verified without leaving ai.odpc.de');
+ for(const outcome of ['unavailable','failed']){
+  await page.goto('https://ai.odpc.de/connector-einrichten/',{waitUntil:'networkidle'});
+  if(!await page.locator('#odpc-voice-settings').evaluate(e=>e.open))await page.locator('#odpc-voice-settings summary').click();
+  await page.locator('#odpc-voice-reset').click();await page.locator('#odpc-voice-settings summary').click();
+  await answer('Gmail Kalender Drive ChatGPT Android');await answer('verbunden');await answer('Test erfolgreich');await answer('Aufgabe:mail');await answer('Nur Antwortentwürfe für diese Woche.');await answer('KI einrichten');await answer('Gmail');
+  if(outcome==='failed')await answer('verbunden');await answer(outcome==='failed'?'Test fehlgeschlagen':'nicht verfügbar');
+  assert.deepEqual(await page.evaluate(()=>JSON.parse(sessionStorage.getItem('hm-guide-v1')).reportedServices),['calendar','drive']);
+  await page.reload({waitUntil:'networkidle'});assert.equal(await page.locator('#odpc-voice').getAttribute('data-connection-result'),outcome);
+  await answer('ohne Verbindung starten');const corrected=await page.locator('#hm-guide-work-prompt').inputValue();assert(corrected.includes('gemeldet: Google Kalender, Google Drive.'));assert(!corrected.includes('gemeldet: Gmail'));assert(corrected.includes('Nur Antwortentwürfe für diese Woche.'));
+  await page.locator('#hm-guide-work-copy').click();await page.locator('#hm-guide-work-handoff').waitFor({state:'visible'});assert.equal(await page.evaluate(()=>navigator.clipboard.readText()),corrected);
+  await answer('KI einrichten');await answer('Gmail');await answer('verbunden');await answer('Test erfolgreich');assert.deepEqual(await page.evaluate(()=>JSON.parse(sessionStorage.getItem('hm-guide-v1')).reportedServices),['calendar','drive','gmail']);
+ }
+ pass(name+' failed retest and unavailable service retract earlier Gmail reports, retain other services and task details across reload, and allow a new successful report');
  assert.equal(errors.length,0,JSON.stringify(errors));pass(name+' agent overview and no page errors');await context.close();
 }
 const audioContext=await browser.newContext();const audio=await audioContext.newPage();await audio.goto('https://ai.odpc.de/connector-einrichten/',{waitUntil:'networkidle'});await audio.getByRole('button',{name:'Mit Sprache einrichten',exact:true}).click();

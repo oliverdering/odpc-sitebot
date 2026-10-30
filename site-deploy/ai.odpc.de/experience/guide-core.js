@@ -77,6 +77,7 @@ function finishConnection(s){
  if(taskCatalog.some(t=>t.id===s.returnTask)){s.task=s.returnTask;s.targetTask=s.returnTask;s.returnTask='';s.phase='work'}
  else{s.phase='done';s.task=''}
 }
+function retractCurrentReports(s){s.reportedServices=(s.reportedServices||[]).filter(id=>!s.services.includes(id))}
 function reply(current,inputText,lang='de'){
  const s=JSON.parse(JSON.stringify(current)),w=words[lang]||words.en,t=String(inputText||'').trim().slice(0,600);if(!t)return {state:s,text:message(s,lang),accepted:false};
  if(secret(t))return {state:s,text:w.secret,accepted:false,sensitive:true};
@@ -99,12 +100,12 @@ function reply(current,inputText,lang='de'){
   finishConnection(s);return {state:s,text:message(s,lang),accepted:true};
  }
  if(s.phase==='setup'){
-  if(/nicht verfügbar|nicht verf[uü]gbar|unavailable|geht nicht|fehlt|sehe.*nicht|nicht verbunden|kostet extra|upgrade|nur.*abo|costs extra|paid subscription|no disponible|indisponible|non disponibile|indisponível|niedostępne|kullanılamıyor/i.test(t)){s.result='unavailable';return {state:s,text:w.notAvailable,accepted:true}}
+  if(/nicht verfügbar|nicht verf[uü]gbar|unavailable|geht nicht|fehlt|sehe.*nicht|nicht verbunden|kostet extra|upgrade|nur.*abo|costs extra|paid subscription|no disponible|indisponible|non disponibile|indisponível|niedostępne|kullanılamıyor/i.test(t)){s.result='unavailable';retractCurrentReports(s);return {state:s,text:w.notAvailable,accepted:true}}
   if(/^(ja|yes|fertig|done|verbunden|connected|freigegeben|conectado|connecté|collegato|ligado|połączono|bağlandı)[.! ]*$/i.test(t)||/^(konto )?ist (jetzt )?verbunden[.! ]*$/i.test(t)){s.phase='test';s.result='user-connected';return {state:s,text:w.test,accepted:true}}
   return {state:s,text:w.setupAgain,accepted:false};
  }
  if(s.phase==='test'){
-  if(/fehl|fail|nicht|\bnot\b|error|fehler|fallida|échoué|fallito|falhou|nieudany|başarısız|kein(?:en)? Zugriff|no access|sin acceso|aucun accès|nessun accesso|sem acesso|brak dostępu|erişim yok/i.test(t)){s.result='failed';return {state:s,text:w.failed,accepted:true}}
+  if(/fehl|fail|nicht|\bnot\b|error|fehler|fallida|échoué|fallito|falhou|nieudany|başarısız|kein(?:en)? Zugriff|no access|sin acceso|aucun accès|nessun accesso|sem acesso|brak dostępu|erişim yok/i.test(t)){s.result='failed';retractCurrentReports(s);return {state:s,text:w.failed,accepted:true}}
   if(/erfolgreich|successful|success|funktioniert|hat geklappt|correcta|réussi|riuscito|bem sucedido|udany|başarılı/i.test(t)){s.result='user-reported';s.reportedServices=[...new Set([...(s.reportedServices||[]),...s.services])];finishConnection(s);return {state:s,text:message(s,lang),accepted:true}}
   return {state:s,text:w.testAgain,accepted:false};
  }
@@ -214,6 +215,7 @@ function restore(v){
   if(!Array.isArray(v.reportedServices)&&clean.result==='user-reported')clean.reportedServices=[...clean.services];
   if(v.phase==='work'){if(tasks(clean).some(t=>t.id===v.task))clean.task=v.task;else clean.phase='done'}
  }
+ if(['failed','unavailable'].includes(clean.result))retractCurrentReports(clean);
  return clean;
 }
 

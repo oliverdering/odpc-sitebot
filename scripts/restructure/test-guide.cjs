@@ -1,6 +1,23 @@
 const {test}=require('node:test'),assert=require('node:assert/strict');
 const g=require('../../site-deploy/ai.odpc.de/experience/guide-core.js');
 const run=(answers)=>answers.reduce((s,t)=>g.reply(s,t,'de').state,g.state());
+test('a failed retest or unavailable service retracts only its earlier reports',()=>{
+ const replies={de:['nicht verfügbar','Test fehlgeschlagen'],en:['unavailable','test failed'],es:['no disponible','prueba fallida'],fr:['indisponible','test échoué'],it:['non disponibile','test fallito'],pt:['indisponível','teste falhou'],pl:['niedostępne','test nieudany'],tr:['kullanılamıyor','test başarısız']};
+ for(const[lang,[unavailable,failed]]of Object.entries(replies))for(const mode of ['unavailable','failed']){
+  let s=run(['Gmail Kalender Drive ChatGPT Android','verbunden','Test erfolgreich','Aufgabe:mail','KI einrichten','Gmail']);
+  if(mode==='failed')s=g.reply(s,'verbunden',lang).state;
+  s=g.reply(s,mode==='failed'?failed:unavailable,lang).state;
+  assert.equal(s.result,mode,lang);assert.deepEqual(s.reportedServices,['calendar','drive']);
+  s=g.restore(s);assert.deepEqual(s.reportedServices,['calendar','drive']);
+  s=g.reply(s,'ohne Verbindung starten',lang).state;
+  assert.equal(s.task,'mail');assert(!g.work(s,lang).prompt.includes('gemeldet: Gmail'));assert(g.work(s,lang).prompt.includes('Google Kalender, Google Drive'));
+  s=g.reply(s,'KI einrichten',lang).state;s=g.reply(s,'Gmail',lang).state;s=g.reply(s,'verbunden',lang).state;s=g.reply(s,'Test erfolgreich',lang).state;
+  assert.deepEqual(s.reportedServices,['calendar','drive','gmail']);
+ }
+ let s=run(['Gmail Kalender Drive ChatGPT Android','verbunden','Test erfolgreich','Aufgabe:mail','KI einrichten','Gmail + Kalender + Drive','verbunden','Test fehlgeschlagen']);assert.deepEqual(s.reportedServices,[]);
+ const old={...run(['Gmail Kalender Drive ChatGPT Android','verbunden','Test erfolgreich']),phase:'test',services:['gmail'],result:'failed'};
+ assert.deepEqual(g.restore(old).reportedServices,['calendar','drive']);assert.deepEqual(g.restore({...old,phase:'setup',result:'unavailable'}).reportedServices,['calendar','drive']);
+});
 test('mixed setup answers keep short task requirements without storing standard choices',()=>{
  const detail='ChatGPT, maximal 120 Wörter.';let s=run(['Bewerbung schreiben',detail]);assert(g.work(g.restore(s)).prompt.includes(detail));
  s=g.selectAgent(g.state(),'interview');s=g.reply(s,'Claude, bitte auf Englisch.').state;assert(g.work(s).prompt.includes('bitte auf Englisch'));
