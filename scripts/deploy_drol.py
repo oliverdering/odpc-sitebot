@@ -8,7 +8,7 @@ SOURCE=Path("site-deploy/drol.odpc.de")
 def main():
     if not (SOURCE/"index.html").is_file():raise RuntimeError("Missing D.R.O.L. homepage")
     payload=(SOURCE/"index.html").read_bytes()
-    if b"Wir machen Ihre Drohne intelligenter." not in payload:raise RuntimeError("Invalid release")
+    if b"Wir machen Ihre Drohnendaten nutzbar." not in payload:raise RuntimeError("Invalid release")
     transport=paramiko.Transport((HOST,22));transport.start_client(timeout=25)
     try:
         actual="SHA256:"+base64.b64encode(hashlib.sha256(transport.get_remote_server_key().asbytes()).digest()).decode().rstrip("=")
