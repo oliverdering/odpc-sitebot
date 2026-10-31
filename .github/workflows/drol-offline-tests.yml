@@ -1,0 +1,27 @@
+name: DROL Offline Protocol Tests
+
+on:
+  push:
+    paths:
+      - 'research/drol/**'
+      - '.github/workflows/drol-offline-tests.yml'
+  pull_request:
+    paths:
+      - 'research/drol/**'
+      - '.github/workflows/drol-offline-tests.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  unittest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Offline unit tests (no hardware or network required)
+        run: python -m unittest discover -s research/drol -p 'test_*.py' -v
