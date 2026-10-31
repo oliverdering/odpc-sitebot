@@ -117,6 +117,11 @@ class Handler(BaseHTTPRequestHandler):
             self._reply(404, {"error": "not found"})
 
     def do_POST(self):
+        host = self.headers.get("Host", "")
+        origin = self.headers.get("Origin")
+        allowed_hosts = {f"127.0.0.1:{self.server.server_address[1]}", f"localhost:{self.server.server_address[1]}"}
+        if host not in allowed_hosts or (origin is not None and origin not in {f"http://{h}" for h in allowed_hosts}):
+            return self._reply(403, {"error": "non-local host or cross-origin request blocked"})
         if urlsplit(self.path).path != "/api/action":
             return self._reply(404, {"error": "not found"})
         try:
