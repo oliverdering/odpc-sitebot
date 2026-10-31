@@ -43,6 +43,7 @@ class OfflineBridge:
         return self._event('connected')
 
     def heartbeat(self):
+        self.tick()  # Reject a stale heartbeat instead of reviving an expired link.
         if self.state in (State.DISCONNECTED, State.LINK_LOST):
             raise RuntimeError('link not active; reconnect explicitly')
         self.last_heartbeat = self.clock()
