@@ -50,6 +50,15 @@ class BridgeTests(unittest.TestCase):
         self.assertIsNone(b.tick())
         self.assertEqual(b.state, State.READY)
 
+    def test_expired_heartbeat_cannot_revive_link(self):
+        b = self.bridge
+        b.connect()
+        self.clock.now = 2.1
+        with self.assertRaises(RuntimeError):
+            b.heartbeat()
+        self.assertEqual(b.state, State.LINK_LOST)
+        self.assertEqual(b.events[-1]['event'], 'link_timeout')
+
     def test_no_telemetry_claim(self):
         self.assertFalse(self.bridge.capabilities().telemetry)
         self.assertFalse(self.bridge.capabilities().verified_on_hardware)
