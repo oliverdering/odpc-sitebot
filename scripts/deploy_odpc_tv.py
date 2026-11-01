@@ -4,7 +4,9 @@ from pathlib import Path
 import paramiko
 from deploy_helpermonkey_v4 import HOST,USER,PIN
 source=Path("site-deploy/odpc.de/odpc-tv-lab.php").read_bytes()
-def is_tv_plugin(data):\n return any(line.strip() in (b"* Plugin Name: ODPC TV", b"* Plugin Name: ODPC TV Lab", b"Plugin Name: ODPC TV", b"Plugin Name: ODPC TV Lab") for line in data.splitlines())\nif not is_tv_plugin(source):raise RuntimeError("Invalid TV plugin")
+def is_tv_plugin(data):
+ return any(line.strip() in (b"* Plugin Name: ODPC TV", b"* Plugin Name: ODPC TV Lab", b"Plugin Name: ODPC TV", b"Plugin Name: ODPC TV Lab") for line in data.splitlines())
+if not is_tv_plugin(source):raise RuntimeError("Invalid TV plugin")
 root=os.environ.get("ODPC_WORDPRESS_ROOT","").rstrip("/")
 if not root.startswith("/") or root=="/":raise RuntimeError("Set ODPC_WORDPRESS_ROOT to verified WordPress directory")
 transport=paramiko.Transport((HOST,22))
