@@ -2,7 +2,7 @@
 /**
  * Plugin Name: ODPC TV
  * Description: Minimal embedded TV with automatic in-browser stream verification.
- * Version: 0.9.6
+ * Version: 0.9.7
  */
 if (!defined('ABSPATH')) exit;
 add_filter('the_content', function($content) {
@@ -11,7 +11,10 @@ add_filter('the_content', function($content) {
  $html='<section id="odpc-tv" data-channels="'.esc_attr($channels).'"><video id="odpc-tv-video" controls playsinline preload="none"></video><p id="odpc-tv-status" role="status">Sender auswählen und Wiedergabe starten.</p><div id="odpc-tv-grid" aria-label="Senderliste">';
  foreach ((json_decode($channels, true) ?: []) as $channel) {
    $name = $channel['name'];
-   $html .= '<button type="button" data-name="'.esc_attr($name).'" title="'.esc_attr($name).'"><strong class="odpc-tv-wordmark">'.esc_html($name).'</strong><span>'.esc_html($name).'</span></button>';
+   $logo = !empty($channel['logo']) ? esc_url($channel['logo']) : '';
+   $html .= '<button type="button" data-name="'.esc_attr($name).'" title="'.esc_attr($name).'"><strong class="odpc-tv-wordmark">'.esc_html($name).'</strong>';
+   if ($logo) $html .= '<img alt="" loading="lazy" src="'.$logo.'" onload="this.previousElementSibling.hidden=true" onerror="this.remove()">';
+   $html .= '<span>'.esc_html($name).'</span></button>';
  }
  $html.='</div></section>';
  $html.='<style>#odpc-tv{max-width:1040px;margin:auto}#odpc-tv-video{display:block;width:100%;aspect-ratio:16/9;background:#080d18;border-radius:12px}#odpc-tv-status{font-size:13px;color:#68788c;margin:10px 0 16px}#odpc-tv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px}#odpc-tv-grid button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;min-height:86px;border:1px solid #d7e1ed;border-radius:12px;background:#fff;color:#15263b;cursor:pointer;padding:10px;font:inherit;font-size:13px}#odpc-tv-grid button:hover,#odpc-tv-grid button:focus-visible{border-color:#2275b6;background:#f1f8ff}#odpc-tv-grid img{height:35px;max-width:95px;object-fit:contain}#odpc-tv-grid .odpc-tv-wordmark{display:block;font-size:19px;font-weight:800;line-height:1.1;letter-spacing:-.5px;text-align:center;overflow-wrap:anywhere;color:#123a62}#odpc-tv-grid [hidden]{display:none!important}@media(max-width:480px){#odpc-tv-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}</style>';
