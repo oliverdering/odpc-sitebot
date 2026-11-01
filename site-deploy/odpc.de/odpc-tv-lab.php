@@ -2,7 +2,7 @@
 /**
  * Plugin Name: ODPC TV Lab
  * Description: TV browser on /tv/ with HLS trials and official broadcaster links.
- * Version: 0.3.0
+ * Version: 0.4.0
  */
 if (!defined('ABSPATH')) exit;
 add_filter('the_content', function($content) {
@@ -41,7 +41,11 @@ add_filter('the_content', function($content) {
  ['Pluto TV','FAST & Streaming','link','https://pluto.tv/de/live-tv'],
  ['Joyn','FAST & Streaming','link','https://www.joyn.de/live-tv'],
  ['waipu.tv','FAST & Streaming','link','https://play.waipu.tv/'],
- ['Zattoo','FAST & Streaming','link','https://zattoo.com/de/watch']
+ ['Zattoo','FAST & Streaming','link','https://zattoo.com/de/watch'],
+ ['2ix2 Senderübersicht','Weitere Quellen','link','https://www.2ix2.com/'],
+ ['RTL auf 2ix2','Weitere Quellen','link','https://www.2ix2.com/rtl-live/'],
+ ['ProSieben auf 2ix2','Weitere Quellen','link','https://www.2ix2.com/pro7/'],
+ ['Das Erste auf 2ix2','Weitere Quellen','link','https://www.2ix2.com/ard-de/']
  ];
  $json=wp_json_encode($channels,JSON_HEX_TAG|JSON_HEX_AMP|JSON_HEX_APOS|JSON_HEX_QUOT);
  $html='<section id="odpc-tv-lab" style="background:#101c30;color:#fff;padding:20px;border-radius:16px;max-width:1100px;margin:auto"><h2 style="color:#fff">ODPC TV</h2><p>Ein Senderkatalog für Direktstreams und deine angemeldeten Anbieter. Joyn, waipu.tv und Zattoo spielen in ihren offiziellen Webplayern.</p><nav aria-label="TV-Anbieter" style="display:flex;flex-wrap:wrap;gap:8px;margin:12px 0"><a href="https://www.joyn.de/live-tv" target="_blank" rel="noopener noreferrer" style="color:white;background:#294e7c;padding:10px;border-radius:8px">Joyn öffnen ↗</a><a href="https://play.waipu.tv/" target="_blank" rel="noopener noreferrer" style="color:white;background:#294e7c;padding:10px;border-radius:8px">waipu.tv öffnen ↗</a><a href="https://zattoo.com/de/watch" target="_blank" rel="noopener noreferrer" style="color:white;background:#294e7c;padding:10px;border-radius:8px">Zattoo öffnen ↗</a></nav><video id="odpc-tv-player" controls playsinline style="width:100%;aspect-ratio:16/9;background:#000;border-radius:12px"></video><p id="odpc-tv-status" role="status">Sender auswählen.</p><input id="odpc-tv-search" type="search" placeholder="Sender suchen…" aria-label="Sender suchen" style="width:100%;padding:12px;border-radius:8px;margin-bottom:12px"><label style="display:block;margin-bottom:12px"><input type="checkbox" id="odpc-tv-only-favorites"> Nur Favoriten anzeigen</label><div id="odpc-tv-filters" style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px"></div><div id="odpc-tv-buttons" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px"></div><small>Bei Anbieterlinks erfolgt die Wiedergabe auf der offiziellen Website mit deiner dortigen Anmeldung. Favoriten werden nur lokal in diesem Browser gespeichert. Externe Anbieter können Anmeldung, Geoblocking oder ein Abonnement verlangen. Direkte HLS-Quellen sind noch nicht vollständig verifiziert.</small></section>';
