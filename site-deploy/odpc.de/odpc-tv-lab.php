@@ -1,23 +1,51 @@
 <?php
 /**
  * Plugin Name: ODPC TV Lab
- * Description: Renders the isolated TV lab only on the WordPress page /tv/.
- * Version: 0.1.0
+ * Description: TV browser on /tv/ with HLS trials and official broadcaster links.
+ * Version: 0.2.0
  */
 if (!defined('ABSPATH')) exit;
 add_filter('the_content', function($content) {
-  if (!is_page('tv') || !is_main_query() || !in_the_loop()) return $content;
-  $channels = [
-    ['Das Erste','https://daserste-live.ard-mcdn.de/daserste/live/hls/de/master.m3u8'],
-    ['ZDF','https://zdf-hls-15.akamaized.net/hls/live/2016498/de/high/master.m3u8'],
-    ['arte','https://artesimulcast.akamaized.net/hls/live/2030993/artelive_de/master.m3u8'],
-    ['ZDFneo','https://zdf-hls-16.akamaized.net/hls/live/2016499/de/high/master.m3u8'],
-    ['ZDFinfo','https://zdf-hls-17.akamaized.net/hls/live/2016500/de/high/master.m3u8'],
-    ['3sat','https://zdf-hls-18.akamaized.net/hls/live/2016501/dach/veryhigh/master.m3u8']
-  ];
-  $json = wp_json_encode($channels, JSON_HEX_TAG|JSON_HEX_AMP|JSON_HEX_APOS|JSON_HEX_QUOT);
-  $html = '<section id="odpc-tv-lab" style="background:#101c30;color:white;padding:20px;border-radius:16px"><h2 style="color:white">ODPC TV · Live Lab</h2><video id="odpc-tv-player" controls playsinline style="width:100%;aspect-ratio:16/9;background:#000;border-radius:12px"></video><p id="odpc-tv-status">Sender wählen – Quellen noch nicht verifiziert.</p><div id="odpc-tv-buttons" style="display:flex;flex-wrap:wrap;gap:8px"></div></section>';
-  $html .= '<script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.20/dist/hls.min.js"></script>';
-  $html .= '<script>(function(){const channels='.$json.';const v=document.getElementById("odpc-tv-player"),s=document.getElementById("odpc-tv-status"),g=document.getElementById("odpc-tv-buttons");if(!v||!g)return;let h=null;channels.forEach(c=>{const b=document.createElement("button");b.textContent=c[0];b.style.cssText="padding:13px;background:#254d80;color:#fff;border:0;border-radius:9px;cursor:pointer";b.onclick=()=>{if(h){h.destroy();h=null}v.pause();v.removeAttribute("src");v.load();s.textContent="Verbinde mit "+c[0];if(window.Hls&&Hls.isSupported()){h=new Hls();h.loadSource(c[1]);h.attachMedia(v);h.on(Hls.Events.MANIFEST_PARSED,()=>v.play().catch(()=>s.textContent="Play drücken"));h.on(Hls.Events.ERROR,(_,e)=>{if(e.fatal)s.textContent="Streamfehler: "+e.type})}else if(v.canPlayType("application/vnd.apple.mpegurl")){v.src=c[1];v.play().catch(()=>s.textContent="Play drücken")}else s.textContent="HLS nicht verfügbar"};g.appendChild(b)})})();</script>';
-  return $html;
-}, 20);
+ if (!is_page('tv') || !is_main_query() || !in_the_loop()) return $content;
+ $channels = [
+ ['Das Erste','Öffentlich-rechtlich','hls','https://daserste-live.ard-mcdn.de/daserste/live/hls/de/master.m3u8'],
+ ['ZDF','Öffentlich-rechtlich','hls','https://zdf-hls-15.akamaized.net/hls/live/2016498/de/high/master.m3u8'],
+ ['arte','Öffentlich-rechtlich','hls','https://artesimulcast.akamaized.net/hls/live/2030993/artelive_de/master.m3u8'],
+ ['3sat','Öffentlich-rechtlich','hls','https://zdf-hls-18.akamaized.net/hls/live/2016501/dach/veryhigh/master.m3u8'],
+ ['ZDFneo','Öffentlich-rechtlich','hls','https://zdf-hls-16.akamaized.net/hls/live/2016499/de/high/master.m3u8'],
+ ['ZDFinfo','Nachrichten & Wissen','hls','https://zdf-hls-17.akamaized.net/hls/live/2016500/de/high/master.m3u8'],
+ ['phoenix','Nachrichten & Wissen','link','https://www.phoenix.de/livestream.html'],
+ ['tagesschau24','Nachrichten & Wissen','link','https://www.tagesschau.de/multimedia/livestreams/'],
+ ['Deutsche Welle','Nachrichten & Wissen','link','https://www.dw.com/de/media-center/live-tv/s-100817'],
+ ['KiKA','Familie','link','https://www.kika.de/livestream'],
+ ['ONE','Öffentlich-rechtlich','link','https://www.ardmediathek.de/live'],
+ ['ARD alpha','Nachrichten & Wissen','link','https://www.ardmediathek.de/live'],
+ ['BR Fernsehen','Regional','link','https://www.br.de/mediathek/live'],
+ ['WDR Fernsehen','Regional','link','https://www.ardmediathek.de/live'],
+ ['NDR Fernsehen','Regional','link','https://www.ardmediathek.de/live'],
+ ['SWR Fernsehen','Regional','link','https://www.ardmediathek.de/live'],
+ ['MDR Fernsehen','Regional','link','https://www.ardmediathek.de/live'],
+ ['rbb Fernsehen','Regional','link','https://www.ardmediathek.de/live'],
+ ['hr-fernsehen','Regional','link','https://www.ardmediathek.de/live'],
+ ['SR Fernsehen','Regional','link','https://www.ardmediathek.de/live'],
+ ['RTL','Private Sender','link','https://www.rtlplus.de/live-tv'],
+ ['VOX','Private Sender','link','https://www.rtlplus.de/live-tv'],
+ ['RTLZWEI','Private Sender','link','https://www.rtlplus.de/live-tv'],
+ ['ntv','Nachrichten & Wissen','link','https://www.n-tv.de/mediathek/livestream/'],
+ ['ProSieben','Private Sender','link','https://www.joyn.de/live-tv'],
+ ['SAT.1','Private Sender','link','https://www.joyn.de/live-tv'],
+ ['Kabel Eins','Private Sender','link','https://www.joyn.de/live-tv'],
+ ['sixx','Private Sender','link','https://www.joyn.de/live-tv'],
+ ['SPORT1','Sport','link','https://www.sport1.de/tv-video'],
+ ['Eurosport','Sport','link','https://www.eurosport.de/'],
+ ['Pluto TV','FAST & Streaming','link','https://pluto.tv/de/live-tv'],
+ ['Joyn','FAST & Streaming','link','https://www.joyn.de/live-tv'],
+ ['waipu.tv','FAST & Streaming','link','https://www.waipu.tv/'],
+ ['Zattoo','FAST & Streaming','link','https://zattoo.com/de']
+ ];
+ $json=wp_json_encode($channels,JSON_HEX_TAG|JSON_HEX_AMP|JSON_HEX_APOS|JSON_HEX_QUOT);
+ $html='<section id="odpc-tv-lab" style="background:#101c30;color:#fff;padding:20px;border-radius:16px;max-width:1100px;margin:auto"><h2 style="color:#fff">ODPC TV</h2><p>Live-TV im Browser. Direkte Streams sind Testquellen; weitere Sender öffnen ihr offizielles Angebot.</p><video id="odpc-tv-player" controls playsinline style="width:100%;aspect-ratio:16/9;background:#000;border-radius:12px"></video><p id="odpc-tv-status" role="status">Sender auswählen.</p><input id="odpc-tv-search" type="search" placeholder="Sender suchen…" aria-label="Sender suchen" style="width:100%;padding:12px;border-radius:8px;margin-bottom:12px"><div id="odpc-tv-filters" style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px"></div><div id="odpc-tv-buttons" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px"></div><small>Externe Anbieter können Anmeldung, Geoblocking oder ein Abonnement verlangen. Die Wiedergabe ist nicht für alle Quellen verifiziert.</small></section>';
+ $html.='<script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.20/dist/hls.min.js"></script>';
+ $html.='<script>(function(){const data='.$json.',root=document.getElementById("odpc-tv-lab");if(!root)return;const video=root.querySelector("video"),status=root.querySelector("#odpc-tv-status"),buttons=root.querySelector("#odpc-tv-buttons"),filters=root.querySelector("#odpc-tv-filters"),search=root.querySelector("#odpc-tv-search");let h=null,group="Alle";const groups=["Alle",...new Set(data.map(x=>x[1]))];function play(c){if(h){h.destroy();h=null}video.pause();video.removeAttribute("src");video.load();status.textContent="Verbinde mit "+c[0];if(window.Hls&&Hls.isSupported()){h=new Hls();h.loadSource(c[3]);h.attachMedia(video);h.on(Hls.Events.MANIFEST_PARSED,()=>video.play().catch(()=>status.textContent="Play drücken"));h.on(Hls.Events.ERROR,(_,e)=>{if(e.fatal)status.textContent="Stream nicht verfügbar: "+e.type})}else if(video.canPlayType("application/vnd.apple.mpegurl")){video.src=c[3];video.play().catch(()=>status.textContent="Play drücken")}else status.textContent="Dieser Browser unterstützt den Stream nicht"}function render(){buttons.replaceChildren();for(const c of data){if(group!=="Alle"&&c[1]!==group||!c[0].toLowerCase().includes(search.value.toLowerCase()))continue;const b=document.createElement(c[2]==="link"?"a":"button");b.textContent=c[0]+(c[2]==="link"?" ↗":" ▶");b.style.cssText="display:block;text-align:center;padding:13px;background:#254d80;color:#fff;border:0;border-radius:9px;cursor:pointer;text-decoration:none";if(c[2]==="link"){b.href=c[3];b.target="_blank";b.rel="noopener noreferrer";b.title="Offizielle Senderseite öffnen"}else b.onclick=()=>play(c);buttons.appendChild(b)}}for(const name of groups){const b=document.createElement("button");b.textContent=name;b.style.cssText="padding:9px;border:0;border-radius:8px;background:#36536f;color:#fff;cursor:pointer";b.onclick=()=>{group=name;render()};filters.appendChild(b)}search.addEventListener("input",render);render()})();</script>';
+ return $html;
+},20);
