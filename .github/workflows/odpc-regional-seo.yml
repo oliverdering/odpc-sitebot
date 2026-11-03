@@ -1,0 +1,36 @@
+name: ODPC / Regional SEO release
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'site-deploy/odpc.de/odpc-regional-seo.php'
+      - 'scripts/deploy_odpc_regional_seo.py'
+      - '.github/workflows/odpc-regional-seo.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: odpc-regional-seo
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Static checks
+        run: |
+          php -l site-deploy/odpc.de/odpc-regional-seo.php
+          python3 -m py_compile scripts/deploy_odpc_regional_seo.py
+      - run: python3 -m pip install 'paramiko>=3.4,<5'
+      - name: Deploy with rollback and verify live schema
+        env:
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+        run: python3 scripts/deploy_odpc_regional_seo.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: previous-odpc-regional-seo
+          path: odpc-regional-seo-backup/
+          if-no-files-found: ignore
+          retention-days: 15
