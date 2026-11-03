@@ -2,7 +2,7 @@
 /**
  * Plugin Name: ODPC Premium Header
  * Description: Responsive header presentation and compact navigation; no content changes.
- * Version: 1.2.1
+ * Version: 1.2.2
  */
 if (!defined('ABSPATH')) { exit; }
 
@@ -25,6 +25,11 @@ add_filter('wp_get_attachment_image_attributes', function ($attr, $attachment) {
     $attr['srcset'] = $srcset;
   }
   $attr['sizes'] = '(max-width: 800px) calc(100vw - 24px), (max-width: 1316px) calc(100vw - 56px), 1260px';
+  // The above-the-fold masthead image is a likely mobile LCP candidate.
+  // Prioritize it without changing its source, dimensions, crop, or layout.
+  $attr['loading'] = 'eager';
+  $attr['fetchpriority'] = 'high';
+  $attr['decoding'] = 'async';
   return $attr;
 }, 99, 2);
 
