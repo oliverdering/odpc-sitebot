@@ -17,8 +17,8 @@ reset.addEventListener('click',()=>{search.value='';maker.value='';use.value='';
 document.getElementById('export-csv').addEventListener('click',()=>{
  const headers=['Hersteller','Modell','Einsatz','Daten / Sensorik (redaktionell)','Integrationsansatz (zu prüfen)','Prüfstatus','Quellenportal','Quellentyp'];
  const rows=filteredModels().map(m=>[...m,modelSources[m[1]]||sources[m[0]],modelSources[m[1]]?'Modellbezogene Herstellerseite':'Allgemeines Hersteller-/Entwicklerportal']);
- const csv=[headers,...rows].map(row=>row.map(v=>'"'+String(v).replace(/"/g,'""')+'"').join(';')).join('\\r\\n');
- const blob=new Blob(['\\uFEFF'+csv],{type:'text/csv;charset=utf-8;'});
+ const csv=[headers,...rows].map(row=>row.map(v=>'"'+String(v).replace(/"/g,'""')+'"').join(';')).join('\r\n');
+ const blob=new Blob(['\uFEFF'+csv],{type:'text/csv;charset=utf-8;'});
  const url=URL.createObjectURL(blob);const link=document.createElement('a');link.href=url;link.download='drol-katalog-redaktionell-'+new Date().toISOString().slice(0,10)+'.csv';document.body.append(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),1500);
 });
 render();
