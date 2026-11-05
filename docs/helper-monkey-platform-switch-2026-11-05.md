@@ -37,8 +37,24 @@ jeweiligen KI-Gespräch tatsächlich verfügbaren Werkzeuge und Konten.
 
 ## Veröffentlichung
 
-Ausstehend: kontrollierter ai.odpc.de-Release mit Dateisicherung/Rollback und
-anschließender öffentlicher Desktop-/Mobilprüfung. Erfolg erst danach melden.
+Am 05.11.2026 erfolgreich veröffentlicht: Quellstand
+`ed3712103f387ff35452de449e27ddcd73c3ff6c`, Dialogversion 0.14.10.
+[Release 41987829843](https://github.com/oliverdering/odpc-sitebot/actions/runs/41987829843)
+vollständig erfolgreich: PHP-Syntax, Metadaten, 72 JavaScript-, neun Python-
+und 67 Live-Browserprüfgruppen. Der Live-Prüfschritt enthält beide neuen
+Plattformwechsel auf Desktop (1440 × 1000) und Mobil (390 × 844), alle neun
+Monkey-Szenarien, acht Dialogsprachen und 45 FAQ-Antworten.
+
+Die zusätzliche direkte öffentliche Browserprüfung bestätigt Version 0.14.10
+und den Gemini-Auftrag ohne übernommene ChatGPT-Dienstmeldungen. Der Auftrag
+fordert weiterhin die tatsächliche Prüfung der verfügbaren Werkzeuge.
+Dateiübertragung und Prüfaufrufe blieben auf ai.odpc.de beschränkt.
+
+[QA- und Rückrollartefakt mit 49 Dateien](https://github.com/oliverdering/odpc-sitebot/actions/runs/41987829843/artifacts/13397321760).
+SHA-256: `f6e11728eefa5783c10a583ecfe6db377fa649fcb8b25a124d78fc6b1c413e21`.
+Die Sicherung enthält die vor dem Release veröffentlichten Dateien; der
+bestehende Ablauf stellt sie bei Upload- oder öffentlichem Abgleichfehler
+wieder her. Browser-Regressionen wurden anschließend vollständig bestanden.
 
 ## Nächste Priorität
 
