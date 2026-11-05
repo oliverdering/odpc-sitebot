@@ -17,8 +17,19 @@ def main():
         sf=paramiko.SFTPClient.from_transport(transport)
         try:
             if not stat.S_ISDIR(sf.lstat(ROOT).st_mode):raise RuntimeError("User-created /drol directory missing")
-            for source in sorted(SOURCE.glob("*.html")):
-                target=ROOT+"/"+source.name
+            # Deploy the Lab demo as one explicitly scoped nested page.
+            lab_source=SOURCE/"lab"/"index.html"
+            if not lab_source.is_file():raise RuntimeError("Missing D.R.O.L. Lab page")
+            lab_dir=ROOT+"/lab"
+            try:
+                lab_stat=sf.lstat(lab_dir)
+            except FileNotFoundError:
+                sf.mkdir(lab_dir,0o755)
+                lab_stat=sf.lstat(lab_dir)
+            if not stat.S_ISDIR(lab_stat.st_mode):raise RuntimeError("D.R.O.L. Lab path is not a directory")
+            files=[(source,ROOT+"/"+source.name) for source in sorted(SOURCE.glob("*.html"))]
+            files.append((lab_source,lab_dir+"/index.html"))
+            for source,target in files:
                 payload=source.read_bytes()
                 try:
                     with sf.open(target,"rb") as f:old=f.read()
