@@ -240,6 +240,21 @@ for(const [name,viewport]of [['desktop',{width:1440,height:1000}],['mobile',{wid
   await answer('KI einrichten');await answer('Gmail');await answer('verbunden');await answer('Test erfolgreich');assert.deepEqual(await page.evaluate(()=>JSON.parse(sessionStorage.getItem('hm-guide-v1')).reportedServices),['calendar','drive','gmail']);
  }
  pass(name+' failed retest and unavailable service retract earlier Gmail reports, retain other services and task details across reload, and allow a new successful report');
+ for(const target of ['Gemini','Claude']){
+  await page.goto('https://ai.odpc.de/connector-einrichten/',{waitUntil:'networkidle'});
+  if(!await page.locator('#odpc-voice-settings').evaluate(e=>e.open))await page.locator('#odpc-voice-settings summary').click();
+  await page.locator('#odpc-voice-reset').click();await page.locator('#odpc-voice-settings summary').click();
+  await answer('Gmail Kalender Drive ChatGPT Android');await answer('verbunden');await answer('Test erfolgreich');await answer('Aufgabe:mail');await answer('Nur Antwortentwürfe für diese Woche.');await answer('KI einrichten');await answer(target+' Gmail');
+  assert.deepEqual(await page.evaluate(()=>JSON.parse(sessionStorage.getItem('hm-guide-v1')).reportedServices),[]);
+  await page.reload({waitUntil:'networkidle'});await answer('ohne Verbindung starten');
+  const prompt=await page.locator('#hm-guide-work-prompt').inputValue();assert(!prompt.includes('als eingerichtet gemeldet:'));assert(prompt.includes('Nur Antwortentwürfe für diese Woche.'));
+  assert.equal(await page.locator('#hm-guide-work-open').getAttribute('href'),target==='Gemini'?'https://gemini.google.com/':'https://claude.ai/');
+  await page.locator('#hm-guide-work-copy').click();await page.locator('#hm-guide-work-handoff').waitFor({state:'visible'});assert.equal(await page.evaluate(()=>navigator.clipboard.readText()),prompt);
+  const help=decodeURIComponent(await page.locator('#hm-guide-help').getAttribute('href'));assert(help.includes(target));assert(!help.includes('Antwortentwürfe'));
+  await answer('KI einrichten');await answer('Gmail');await answer('verbunden');await answer('Test erfolgreich');
+  assert.deepEqual(await page.evaluate(()=>JSON.parse(sessionStorage.getItem('hm-guide-v1')).reportedServices),['gmail']);
+ }
+ pass(name+' platform switch to Gemini and Claude clears old reports, preserves brief across reload, copies correct prompt and help context, and accepts a fresh test');
  assert.equal(errors.length,0,JSON.stringify(errors));pass(name+' agent overview and no page errors');await context.close();
 }
 const audioContext=await browser.newContext();const audio=await audioContext.newPage();await audio.goto('https://ai.odpc.de/connector-einrichten/',{waitUntil:'networkidle'});await audio.getByRole('button',{name:'Mit Sprache einrichten',exact:true}).click();

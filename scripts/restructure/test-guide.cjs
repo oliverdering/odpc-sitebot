@@ -283,3 +283,20 @@ test('multilingual legal and interview intent outrank incidental document and ma
   ['tr','Pazarlama işi için iş görüşmesine hazırlanmak','interview']
  ]){let s=g.reply(g.state(),request,lang).state;s=g.reply(s,'ChatGPT',lang).state;assert.equal(s.task,id,lang+' '+request);assert.equal(s.phase,'work');}
 });
+
+
+test('switching AI platforms clears earlier service reports but preserves task details',()=>{
+ for(const lang of ['de','en','es','fr','it','pt','pl','tr'])for(const from of ['ChatGPT','Gemini','Claude'])for(const to of ['ChatGPT','Gemini','Claude']){
+  let s=run(['Gmail Kalender Drive '+from+' Android','verbunden','Test erfolgreich','Aufgabe:mail','Nur Antwortentwürfe für diese Woche.','KI einrichten']);
+  s=g.reply(s,to+' Gmail',lang).state;
+  assert.equal(s.platform,to.toLowerCase());assert.equal(s.result,'open');
+  assert.deepEqual(s.reportedServices,from===to?['gmail','calendar','drive']:[]);
+  assert.equal(s.phase,'setup');s=g.restore(s);
+  const sample=g.reply(s,'ohne Verbindung starten',lang).state;
+  assert(g.work(sample,lang).prompt.includes('Nur Antwortentwürfe für diese Woche.'));
+  assert.equal(g.work(sample,lang).prompt.includes('als eingerichtet gemeldet:'),from===to);
+  for(const t of ['verbunden','Test erfolgreich'])s=g.reply(s,t,lang).state;
+  assert.deepEqual(s.reportedServices,from===to?['gmail','calendar','drive']:['gmail']);
+  assert.equal(s.task,'mail');
+ }
+});
