@@ -19,7 +19,7 @@ exportButton.addEventListener('click',()=>{
  const headers=['Hersteller','Modell','Einsatz','Daten / Sensorik (redaktionell)','Integrationsansatz (zu prüfen)','Prüfstatus','Quellenportal','Quellentyp'];
  const rows=filteredModels().map(m=>[...m,modelSources[m[1]]||sources[m[0]],modelSources[m[1]]?'Modellbezogene Herstellerseite':'Allgemeines Hersteller-/Entwicklerportal']);
  // Guard against spreadsheet formula execution when CSV is opened in office software.
- const safeCell=v=>{const value=String(v);return '"'+(/^[\\s]*[=+@-]/.test(value)?"'"+value:value).replace(/"/g,'""')+'"'};
+ const safeCell=v=>{const value=String(v);return '"'+(/^\s*[=+@-]/.test(value)?"'"+value:value).replace(/"/g,'""')+'"'};
  const csv=[headers,...rows].map(row=>row.map(safeCell).join(';')).join('\r\n');
  const blob=new Blob(['\uFEFF'+csv],{type:'text/csv;charset=utf-8;'});
  const url=URL.createObjectURL(blob);const link=document.createElement('a');link.href=url;link.download='drol-katalog-redaktionell-'+new Date().toISOString().slice(0,10)+'.csv';document.body.append(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),1500);
