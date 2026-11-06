@@ -51,3 +51,10 @@ Dies ist eine Datei- und Quelltextinventur, kein vollständiger Funktionstest. K
 Implementiert, funktional nur teilweise separat geprüft: Studio-Importvalidierung und Stücklisten-Code.
 Implementiert, nicht im Browser geprüft: Wissenseinstieg, Suche, Studio-Import/CSV, Entwurf und mobile Navigation.
 Geplant: vollständig migrierte Plattform, vollständige Hardware-Datenbank, native Mobile-App, Community-Backend, KI-gestützter Editor, tatsächlich lokalisierte Sprachen und Live-Veröffentlichung.
+
+## Fortschreibung: Suche, Studio-Test und Mobile
+- Der Suchindex enthält den extrahierten Text von 17 Bestands-HTML-Dateien. Dynamisch erzeugte Inhalte und externe Inhalte sind nicht vollständig abgedeckt. Der Index ist eine Momentaufnahme des Git-Basisstands und muss bei Änderungen neu erzeugt werden.
+- Suche mit simulierten DOM-Objekten geprüft: 17 indizierte Einträge, Treffer für Pixhawk, kein Treffer bei Fantasiebegriff. Keine Browserprüfung.
+- Reproduzierbarer Node-Test unter tests/studio.test.cjs bestanden: JSON-Export und -Import, fehlerhaftes JSON, unbekannte Komponente, Größen-/Anzahlgrenzen, lokale Speicherung und CSV-BOM/Zeilen. DOM und Browser-APIs wurden simuliert; es ist kein echter Browser-End-to-End-Test.
+- mobile.html dokumentiert die geplante Adapterarchitektur und enthält einen kleinen lokalen Text-/CSV-Inspektor ohne Flugfunktion. Tests mit simulierten Eingaben: gültige Datei und Überschreiten von 2 MB. Keine native App.
+- Vor Veröffentlichung: automatischen Index-Neuaufbau einrichten, Browser- und echte Gerätetests ausführen und Ergebnisse von Claude/Claire mit Primärquellen abgleichen.
