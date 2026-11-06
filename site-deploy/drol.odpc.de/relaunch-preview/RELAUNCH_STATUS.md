@@ -65,3 +65,10 @@ Der vorhandene Deployment-Code überträgt ausschließlich HTML-Dateien im Wurze
 Statische Prüfung: Inline-JavaScript aller vier neu vorbereiteten bzw. geänderten Hauptdateien parsesicher; interne Anker und erkannte relative HTML-Links vorhanden; die bestehende automatische Deploy-Prüfung auf den alten Text wird erfüllt. Diese Prüfungen ersetzen keinen Browser- und Gerätetest. Der Entwicklungsbranch wurde nicht zusammengeführt oder bereitgestellt.
 
 Die früheren Aussagen oben, dass sich die neue Startseite ausschließlich in relaunch-preview befindet und der Wissensindex nur acht Einträge enthält, beschreiben ältere Zwischenstände. Die Veröffentlichungsvoraussetzungen bleiben bestehen.
+
+## Prüfung der Veröffentlichungsvorbereitung
+- 14 Bestandsseiten referenzieren die historischen Startseitenziele /#intelligence und /#kontakt. Beide Ziele wurden samt projektbezogenem Leistungs- und Kontaktbereich in der neuen Hauptseite wiederhergestellt.
+- `node tests/release.test.cjs`: bestanden für Syntax der Inline-Skripte der vier geänderten Hauptseiten, Viewport, historische Anker und erkannte relative HTML-Links. Existenzprüfung erfolgte auf Basis der Git-Dateiliste.
+- `node tests/studio.test.cjs`: bestanden für simulierten JSON-Roundtrip, ungültige Eingaben, lokale Speicherung und CSV.
+- Sechs Navigationstests mit simulierten DOM-Objekten bestanden. Keine echten Browser- oder Gerätetests; Datenqualität, vollständige Migration, Serverbackup und Live-Prüfung bleiben offen.
+- Der letzte auf main sichtbare D.R.O.L.-Deploymentlauf vom 6. November 2026 20:42 UTC war erfolgreich; er betrifft den alten Produktionsstand. Dieser Relaunch wurde nicht bereitgestellt.
