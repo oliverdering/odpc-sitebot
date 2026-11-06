@@ -1,6 +1,10 @@
 <?php
 /** Plugin Name: ODPC Sonde – D.R.O.L. */
 if (!defined('ABSPATH')) { exit; }
+add_action('wp_head', function () {
+ if (!is_page(2973)) { return; }
+ echo '<style id="sonde-page-shell">body.page-id-2973 #masthead{display:none!important}body.page-id-2973 #content,body.page-id-2973 .site-content{background:#031322!important}body.page-id-2973 .site-content>.ast-container{max-width:100%!important;padding:0!important}body.page-id-2973 .site-main,body.page-id-2973 .ast-article-single{margin:0!important;padding:0!important;background:#031322!important}body.page-id-2973 .entry-content{margin:0!important}body.page-id-2973 .entry-header{display:none!important}</style>';
+}, 9999);
 add_filter('the_content', function ($content) {
  if (!is_page(2973) || !in_the_loop() || !is_main_query()) { return $content; }
  ob_start(); ?>
