@@ -58,3 +58,10 @@ Geplant: vollständig migrierte Plattform, vollständige Hardware-Datenbank, nat
 - Reproduzierbarer Node-Test unter tests/studio.test.cjs bestanden: JSON-Export und -Import, fehlerhaftes JSON, unbekannte Komponente, Größen-/Anzahlgrenzen, lokale Speicherung und CSV-BOM/Zeilen. DOM und Browser-APIs wurden simuliert; es ist kein echter Browser-End-to-End-Test.
 - mobile.html dokumentiert die geplante Adapterarchitektur und enthält einen kleinen lokalen Text-/CSV-Inspektor ohne Flugfunktion. Tests mit simulierten Eingaben: gültige Datei und Überschreiten von 2 MB. Keine native App.
 - Vor Veröffentlichung: automatischen Index-Neuaufbau einrichten, Browser- und echte Gerätetests ausführen und Ergebnisse von Claude/Claire mit Primärquellen abgleichen.
+
+## Vorbereitung der Veröffentlichung – 06.11.2026
+Der vorhandene Deployment-Code überträgt ausschließlich HTML-Dateien im Wurzelverzeichnis und lab/index.html; Dateien im Relaunch-Vorschauordner und externe CSS-/JS-Dateien würden nicht mit übertragen. Daher wurden die neue Startseite (index.html), drol-wissen.html und drol-mobile.html als eigenständige HTML-Dateien vorbereitet; Design, Skripte und Suchindex sind darin eingebettet. Der frühere Startseitenstand liegt zusätzlich als bestand-start.html vor und bleibt auch über den Basiscommit wiederherstellbar. Dies ist eine Quellsicherung, kein Serverbackup.
+
+Statische Prüfung: Inline-JavaScript aller vier neu vorbereiteten bzw. geänderten Hauptdateien parsesicher; interne Anker und erkannte relative HTML-Links vorhanden; die bestehende automatische Deploy-Prüfung auf den alten Text wird erfüllt. Diese Prüfungen ersetzen keinen Browser- und Gerätetest. Der Entwicklungsbranch wurde nicht zusammengeführt oder bereitgestellt.
+
+Die früheren Aussagen oben, dass sich die neue Startseite ausschließlich in relaunch-preview befindet und der Wissensindex nur acht Einträge enthält, beschreiben ältere Zwischenstände. Die Veröffentlichungsvoraussetzungen bleiben bestehen.
