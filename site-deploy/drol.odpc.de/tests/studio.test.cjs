@@ -1,7 +1,7 @@
 'use strict';
 const fs=require('fs'),path=require('path'),vm=require('vm'),assert=require('assert');
 const html=fs.readFileSync(path.join(__dirname,'../engineering-studio.html'),'utf8');
-const code=html.match(/<script>([\s\S]*?)<\/script>/)[1];
+const code=[...html.matchAll(/<script>([\s\S]*?)<\/script>/g)].map(m=>m[1]).find(s=>s.includes('const catalog=')); assert(code,'Studio script not found');
 const els={}, blobs=[], memory={};
 class Element{constructor(){this.value='';this.textContent='';this.children=[];this.files=[]}add(o){this.children.push(o);if(!this.value)this.value=o.value}append(...a){this.children.push(...a)}replaceChildren(){this.children=[]}setAttribute(){}click(){}}
 const document={getElementById:id=>els[id]||(els[id]=new Element()),createElement:()=>new Element()};
