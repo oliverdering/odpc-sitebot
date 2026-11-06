@@ -34,6 +34,19 @@ test('contradictory successful tests with explicit missing access never report a
  }
  const s=run(['Gmail ChatGPT Android','verbunden']);assert.equal(g.reply(s,'Test not successful','en').state.result,'failed');
 });
+test('a partial test cannot report a selected group as successfully read',()=>{
+ const partial={de:'Test teilweise erfolgreich',en:'Test partially successful',es:'Prueba parcialmente correcta',fr:'Test partiellement réussi',it:'Test parzialmente riuscito',pt:'Teste parcialmente bem sucedido',pl:'Test częściowo udany',tr:'Test kısmen başarılı'};
+ for(const [lang,answer] of Object.entries(partial)){
+  const testState=run(['Gmail Kalender Drive ChatGPT Android','verbunden']);
+  const failure=g.reply(testState,answer,lang).state;
+  assert.equal(failure.phase,'test',lang);
+  assert.equal(failure.result,'failed',lang);
+  assert.deepEqual(failure.reportedServices,[],lang);
+  const restored=g.restore(failure);
+  assert.equal(restored.result,'failed',lang);
+  assert.deepEqual(g.reply(restored,'Test erfolgreich',lang).state.reportedServices,['gmail','calendar','drive']);
+ }
+});
 test('personal names and WhatsApp topics do not hijack real tasks',()=>{
  for(const request of ['Ich heiße Oliver und möchte ein Anschreiben erstellen','Meine Bewerbung ist für Oliver Wyman']){
   let r=g.reply(g.state(),request);assert(!r.help);r=g.reply(r.state,'ChatGPT');assert.equal(r.state.task,'application');assert(g.work(r.state).prompt.includes(request));
