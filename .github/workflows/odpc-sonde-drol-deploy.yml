@@ -1,6 +1,7 @@
 name: ODPC / Sonde DROL presentation deploy
 on:
   push:
+    branches: [main]
     paths:
       - 'site-deploy/odpc.de/odpc-sonde-drol.php'
       - 'scripts/deploy_odpc_sonde_drol.py'
