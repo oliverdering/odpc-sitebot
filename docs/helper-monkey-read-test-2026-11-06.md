@@ -40,7 +40,21 @@ unverändert. Der Release ist auf ai.odpc.de begrenzt.
 
 ## Veröffentlichung
 
-Veröffentlichungs- und Rücksicherungsnachweis folgt nach der Live-Prüfung.
+Am 6. November 2026 wurde Version 0.14.11 mit Quellstand
+`8c0cacc429743c70c67876dcadbc8a505e29c4b4` veröffentlicht. PHP-Syntax, Metadaten, 73
+JavaScript-, neun Python- und 69 Live-Browserprüfgruppen bestanden.
+Auf Desktop (1440 × 1000) und Mobil (390 × 844) wurde der neue Testauftrag
+exakt kopiert. Die teilweise Erfolgsmeldung bestätigte in beiden Prüfungen
+keinen ausgewählten Dienst. Ein anschließend vollständig gemeldeter Erfolg
+und die neun Monkey-Beispielabläufe bestanden ebenfalls.
+[Release und Prüfprotokoll](https://github.com/oliverdering/odpc-sitebot/actions/runs/42180356437).
+
+Die Sicherung und die Prüfbilder enthalten zusammen 49 Dateien.
+[QA- und Rückrollartefakt](https://github.com/oliverdering/odpc-sitebot/actions/runs/42180356437/artifacts/13484704054).
+SHA-256 `4db3afba361612d7e632ccbf70d30607e22496a19199039cb2615655f55231e5`.
+Aufbewahrung bis 6. Dezember 2026. Der vorhandene Release stellt die
+vorherigen Dateien bei einem Upload- oder öffentlichen Abgleichfehler
+wieder her.
 
 ## Nächste Priorität
 
