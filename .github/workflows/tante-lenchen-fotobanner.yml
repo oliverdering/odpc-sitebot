@@ -1,0 +1,26 @@
+name: Tante Lenchen Fotobanner
+on:
+  push:
+    paths:
+      - '.github/workflows/tante-lenchen-fotobanner.yml'
+      - 'lenchen-banner-assets/**'
+      - 'scripts/deploy_lenchen_banner.py'
+permissions:
+  contents: read
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m pip install 'paramiko>=3.4,<5'
+      - name: Update only header and banner photos
+        env:
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+        run: python3 scripts/deploy_lenchen_banner.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: tante-lenchen-header-before-banner
+          path: header-before-banner.php
+          if-no-files-found: ignore
