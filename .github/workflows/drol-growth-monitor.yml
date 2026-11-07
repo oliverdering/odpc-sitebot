@@ -1,0 +1,44 @@
+name: D.R.O.L. / Catalog growth telemetry
+on:
+  schedule:
+    - cron: '52 */6 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/drol_growth_monitor.py'
+      - '.github/workflows/drol-growth-monitor.yml'
+permissions:
+  contents: write
+concurrency:
+  group: drol-growth-monitor
+  cancel-in-progress: false
+jobs:
+  measure:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Validate growth monitor
+        run: python3 -m py_compile scripts/drol_growth_monitor.py
+      - name: Measure live MariaDB-backed catalog and growth velocity
+        run: python3 scripts/drol_growth_monitor.py
+      - name: Retain machine-readable telemetry
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: drol-growth-telemetry
+          path: data/drol-growth-history.json
+          if-no-files-found: ignore
+          retention-days: 90
+      - name: Commit historical samples without touching website design
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/drol-growth-history.json
+          if ! git diff --cached --quiet; then
+            git commit -m "data(drol): record catalog growth sample [skip ci]"
+            git push
+          fi
