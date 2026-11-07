@@ -49,5 +49,16 @@ jobs:
           git add data/drol-growth-history.json
           if ! git diff --cached --quiet; then
             git commit -m "data(drol): record catalog growth sample [skip ci]"
-            git push
+            # Another workflow may have updated main while this measurement ran.
+            # Rebase and retry without force-pushing or discarding telemetry.
+            for attempt in 1 2 3; do
+              git fetch origin main
+              git rebase origin/main || { git rebase --abort; exit 1; }
+              if git push origin HEAD:main; then
+                exit 0
+              fi
+              sleep 2
+            done
+            echo "Could not push telemetry after three safe retries" >&2
+            exit 1
           fi
