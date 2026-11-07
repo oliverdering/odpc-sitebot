@@ -1,0 +1,44 @@
+name: D.R.O.L. / Verified additive schema migration
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/drol-db-migrate.yml'
+permissions:
+  contents: read
+concurrency:
+  group: drol-db-production
+  cancel-in-progress: false
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate Python scripts
+        run: python3 -m py_compile scripts/drol_ionos_db_backup.py scripts/drol_ionos_db_migrate.py scripts/drol_ionos_db_inventory.py
+      - name: Install pinned SFTP dependency
+        run: python3 -m pip install 'paramiko>=3.4,<5'
+      - name: Back up production tables before any schema changes
+        env:
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+          DROL_DB_PASSWORD: ${{ secrets.DROL_DB_PASSWORD }}
+        run: python3 scripts/drol_ionos_db_backup.py
+      - name: Persist backup before migration
+        uses: actions/upload-artifact@v4
+        with:
+          name: drol-pre-migration-backup
+          path: drol-db-backup.json
+          if-no-files-found: error
+          retention-days: 1
+      - name: Apply allowlisted additive schema extensions
+        env:
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+          DROL_DB_PASSWORD: ${{ secrets.DROL_DB_PASSWORD }}
+        run: python3 scripts/drol_ionos_db_migrate.py
+      - name: Verify live schema inventory
+        env:
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+          DROL_DB_PASSWORD: ${{ secrets.DROL_DB_PASSWORD }}
+        run: python3 scripts/drol_ionos_db_inventory.py
