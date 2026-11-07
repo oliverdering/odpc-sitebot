@@ -31,12 +31,12 @@ def summarize_release_notes(raw):
     """Bounded upstream note extraction; E0 only, never inferred compatibility."""
     if not isinstance(raw,str):return {"excerpt":"","sha256":None,"topics":[]}
     clean=re.sub(r"<[^>]{0,200}>"," ",raw)
-    clean=re.sub(r"\\s+"," ",clean).strip()
-    keywords={"security":r"\\b(security|vulnerabilit|cve-|authentication)\\b",
-              "api_change":r"\\b(api|deprecated|breaking change|migration)\\b",
-              "firmware":r"\\b(firmware|bootloader|flight controller)\\b",
-              "sensor":r"\\b(lidar|camera|imu|gps|gnss|sensor)\\b",
-              "navigation":r"\\b(navigation|mission|waypoint|geofence)\\b"}
+    clean=re.sub(r"\s+"," ",clean).strip()
+    keywords={"security":r"\b(security|vulnerabilit|cve-|authentication)\b",
+              "api_change":r"\b(api|deprecated|breaking change|migration)\b",
+              "firmware":r"\b(firmware|bootloader|flight controller)\b",
+              "sensor":r"\b(lidar|camera|imu|gps|gnss|sensor)\b",
+              "navigation":r"\b(navigation|mission|waypoint|geofence)\b"}
     topics=[name for name,pattern in keywords.items() if re.search(pattern,clean,re.I)]
     return {"excerpt":clean[:1200],"sha256":hashlib.sha256(raw.encode()).hexdigest(),"topics":topics}
 
