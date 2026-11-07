@@ -91,6 +91,9 @@ def main():
             if not stat.S_ISDIR(lab_stat.st_mode):raise RuntimeError("D.R.O.L. Lab path is not a directory")
             files=[(source,ROOT+"/"+source.name) for source in sorted(SOURCE.glob("*.html"))]
             files.append((lab_source,lab_dir+"/index.html"))
+            for seo_name in ("robots.txt","sitemap.xml"):
+                seo_file=SOURCE/seo_name
+                if seo_file.is_file():files.append((seo_file,ROOT+"/"+seo_name))
             # Publish the canonical, non-sensitive editorial registry as a public JSON resource.
             # Do not deploy SQL migrations or private database configuration.
             registry_source=SOURCE/"database"/"model-schema.json"
