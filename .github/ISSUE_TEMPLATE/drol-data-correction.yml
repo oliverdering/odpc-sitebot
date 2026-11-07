@@ -1,0 +1,53 @@
+name: D.R.O.L. – Datenfehler oder fehlendes Modell
+description: Quellenbasierte Korrektur für Drohnenmodelle, SDKs, Sensoren und technische Anleitungen melden
+title: "[DROL-Daten] "
+labels: ["drol", "data-review"]
+body:
+  - type: markdown
+    attributes:
+      value: "Bitte keine Zugangsdaten, privaten Flugprotokolle oder sensiblen Fundortkoordinaten veröffentlichen. Eine Meldung ist keine bestätigte technische Aussage."
+  - type: dropdown
+    id: category
+    attributes:
+      label: Bereich
+      options:
+        - Modell / Datenblatt
+        - SDK / Kompatibilität
+        - Firmware / Protokoll
+        - Sensorik / Hardware
+        - Anleitung / Labortest
+        - Navigation / defekter Link
+        - Sonstiges
+    validations:
+      required: true
+  - type: input
+    id: model
+    attributes:
+      label: Modell / Hardware-Revision
+      placeholder: "Hersteller, Modell und ggf. Revision"
+  - type: textarea
+    id: issue
+    attributes:
+      label: Konkreter Fehler oder Ergänzung
+      description: Was ist falsch, veraltet oder fehlt? Welche Aussage soll korrigiert werden?
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Primärquelle / exakter Deep-Link
+      placeholder: "https://..."
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Geltungsbereich und Reproduzierbarkeit
+      description: Firmware, SDK, Fernsteuerung, Betriebssystem, Testmethode und Datum (soweit bekannt)
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Datenschutz und Evidenz
+      options:
+        - label: Ich habe keine Zugangsdaten oder sensiblen privaten Ortsdaten angegeben.
+          required: true
