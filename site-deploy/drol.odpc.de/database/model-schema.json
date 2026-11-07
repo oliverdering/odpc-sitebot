@@ -215,6 +215,118 @@
         }
       },
       "sources": []
+    },
+    {
+      "id": "dji-mavic-4-pro",
+      "manufacturer": "DJI",
+      "name": "Mavic 4 Pro",
+      "category": "camera_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": [
+        "https://www.dji.com/mavic-4-pro/specs"
+      ]
+    },
+    {
+      "id": "dji-mavic-3-pro",
+      "manufacturer": "DJI",
+      "name": "Mavic 3 Pro",
+      "category": "camera_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": [
+        "https://www.dji.com/mavic-3-pro/specs"
+      ]
+    },
+    {
+      "id": "dji-mavic-3-classic",
+      "manufacturer": "DJI",
+      "name": "Mavic 3 Classic",
+      "category": "camera_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": [
+        "https://www.dji.com/mavic-3-classic/specs"
+      ]
+    },
+    {
+      "id": "dji-mavic-3",
+      "manufacturer": "DJI",
+      "name": "Mavic 3",
+      "category": "camera_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": [
+        "https://www.dji.com/mavic-3/specs"
+      ]
+    },
+    {
+      "id": "dji-air-3s",
+      "manufacturer": "DJI",
+      "name": "Air 3S",
+      "category": "camera_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": [
+        "https://www.dji.com/air-3s/specs"
+      ]
+    },
+    {
+      "id": "dji-flip",
+      "manufacturer": "DJI",
+      "name": "Flip",
+      "category": "camera_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": [
+        "https://www.dji.com/flip/specs"
+      ]
+    },
+    {
+      "id": "dji-neo-2",
+      "manufacturer": "DJI",
+      "name": "Neo 2",
+      "category": "camera_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": [
+        "https://www.dji.com/neo-2/specs"
+      ]
     }
   ]
 }
