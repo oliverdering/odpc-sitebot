@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "policy": "Discovery targets only; URLs and category labels are not proof of technical compatibility. E0 until reviewed. Respect site terms, robots and rate limits.",
+  "policy": "Discovery targets only; URLs and category labels are not proof of technical compatibility. E0 until reviewed. Respect site terms, robots and rate limits. Community and competitor sources are discovery signals only: no republishing protected content, no bypassing access controls, and respect robots, terms and rate limits.",
   "sources": [
     {
       "name": "DJI",
@@ -177,6 +177,166 @@
       "scope": "open UAV ecosystem",
       "evidence": "E0",
       "status": "monitor_only"
+    },
+    {
+      "name": "Dronecode Discuss",
+      "category": "community",
+      "url": "https://discuss.px4.io/",
+      "scope": "PX4 developer discussions",
+      "evidence": "E0",
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required"
+    },
+    {
+      "name": "ArduPilot Discourse",
+      "category": "community",
+      "url": "https://discuss.ardupilot.org/",
+      "scope": "flight stack support and integration",
+      "evidence": "E0",
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required"
+    },
+    {
+      "name": "ROS Discourse",
+      "category": "community",
+      "url": "https://discourse.ros.org/",
+      "scope": "robotics ecosystem",
+      "evidence": "E0",
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required"
+    },
+    {
+      "name": "OpenDroneMap Community",
+      "category": "community",
+      "url": "https://community.opendronemap.org/",
+      "scope": "photogrammetry practice",
+      "evidence": "E0",
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required"
+    },
+    {
+      "name": "DJI Developer Forum",
+      "category": "community",
+      "url": "https://sdk-forum.dji.net/",
+      "scope": "DJI SDK development",
+      "evidence": "E0",
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required"
+    },
+    {
+      "name": "DroneDeploy",
+      "category": "service_provider",
+      "url": "https://www.dronedeploy.com/",
+      "scope": "enterprise reality capture",
+      "evidence": "E0",
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required"
+    },
+    {
+      "name": "Pix4D",
+      "category": "service_provider",
+      "url": "https://www.pix4d.com/",
+      "scope": "mapping and photogrammetry",
+      "evidence": "E0",
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required"
+    },
+    {
+      "name": "Agisoft",
+      "category": "service_provider",
+      "url": "https://www.agisoft.com/",
+      "scope": "photogrammetric processing",
+      "evidence": "E0",
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required"
+    },
+    {
+      "name": "UgCS",
+      "category": "service_provider",
+      "url": "https://www.ugcs.com/",
+      "scope": "drone mission planning",
+      "evidence": "E0",
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required"
+    },
+    {
+      "name": "Flyability",
+      "category": "service_provider",
+      "url": "https://www.flyability.com/",
+      "scope": "indoor inspection UAV",
+      "evidence": "E0",
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required"
+    },
+    {
+      "name": "Drone Industry Insights",
+      "category": "industry_analysis",
+      "url": "https://droneii.com/",
+      "scope": "drone market research",
+      "evidence": "E0",
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required"
+    },
+    {
+      "name": "sUAS News",
+      "category": "industry_media",
+      "url": "https://www.suasnews.com/",
+      "scope": "industry news",
+      "evidence": "E0",
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required"
+    },
+    {
+      "name": "DroneXL",
+      "category": "industry_media",
+      "url": "https://dronexl.co/",
+      "scope": "UAV news and products",
+      "evidence": "E0",
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required"
+    },
+    {
+      "name": "GitHub Dronecode",
+      "category": "developer_platform",
+      "url": "https://github.com/Dronecode",
+      "scope": "open-source ecosystem",
+      "evidence": "E0",
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required"
+    },
+    {
+      "name": "GitHub ArduPilot",
+      "category": "developer_platform",
+      "url": "https://github.com/ArduPilot",
+      "scope": "open autopilot engineering",
+      "evidence": "E0",
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required"
+    },
+    {
+      "name": "GitHub PX4",
+      "category": "developer_platform",
+      "url": "https://github.com/PX4",
+      "scope": "open autopilot engineering",
+      "evidence": "E0",
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required"
     }
   ]
 }
