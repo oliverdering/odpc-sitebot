@@ -9,7 +9,9 @@ jobs:
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
-      - name: Install pinned MariaDB client\n        run: python3 -m pip install 'PyMySQL==1.1.1'\n      - name: Verify DB connectivity without exposing credentials
+      - name: Install pinned MariaDB client
+        run: python3 -m pip install 'PyMySQL==1.1.1'
+      - name: Verify DB connectivity without exposing credentials
         env:
           DROL_DB_HOST: db5021788879.hosting-data.io
           DROL_DB_PORT: "3306"
