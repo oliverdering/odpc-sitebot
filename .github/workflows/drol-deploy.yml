@@ -26,6 +26,10 @@ jobs:
           p=Path('site-deploy/drol.odpc.de/index.html').read_text()
           assert 'Wir machen Ihre Drohnendaten nutzbar.' in p
           assert 'https://odpc.de/wp-content/uploads/2026/10/' in p
+          assert 'mission-control.html' in p
+          mission=Path('site-deploy/drol.odpc.de/mission-control.html').read_text()
+          assert 'DEINE DROHNE. DEINE MÖGLICHKEITEN.' in mission
+          assert 'data/models-db.json' in mission
           PY
       - run: python3 -m pip install 'paramiko>=3.4,<5'
       - name: Deploy only /drol
