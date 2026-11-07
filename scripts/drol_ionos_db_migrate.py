@@ -16,8 +16,8 @@ if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST' ||
     http_response_code(404); exit;
 }
 try {
-    $raw = file_get_contents('php://input', false, null, 0, 8193);
-    if ($raw === false || strlen($raw) > 8192) throw new RuntimeException('request_invalid');
+    $raw = file_get_contents('php://input', false, null, 0, 65537);
+    if ($raw === false || strlen($raw) > 65536) throw new RuntimeException('request_invalid');
     $cfg = json_decode($raw, true, 32, JSON_THROW_ON_ERROR);
     foreach (['host','database','username','password'] as $key)
         if (!isset($cfg[$key]) || !is_string($cfg[$key]) || $cfg[$key] === '')
@@ -99,7 +99,7 @@ def main():
             statements = []
             for filename in ("002_evidence_model.sql", "003_knowledge_core.sql"):
                 sql = (Path("site-deploy/drol.odpc.de/database") / filename).read_text(encoding="utf-8")
-                sql = "\\n".join(line for line in sql.splitlines() if not line.lstrip().startswith("--"))
+                sql = "\n".join(line for line in sql.splitlines() if not line.lstrip().startswith("--"))
                 statements.extend(s.strip() for s in sql.split(";") if s.strip())
             if len(statements) != 10:
                 raise RuntimeError("Unexpected migration statement count")
