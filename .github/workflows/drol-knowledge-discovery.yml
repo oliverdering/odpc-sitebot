@@ -9,6 +9,7 @@ on:
       - '.github/workflows/drol-knowledge-discovery.yml'
       - 'scripts/drol_release_watch.py'
       - 'tests/test_drol_release_watch.py'
+      - 'scripts/drol_growth_monitor.py'
 permissions:
   contents: read
   issues: write
