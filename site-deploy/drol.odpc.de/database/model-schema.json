@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "updated": "2026-11-07",
-  "purpose": "Single source of truth for catalog, model profiles and SDK matrix; editorial seed, not verified specifications",
+  "purpose": "Editorial cross-manufacturer E0 catalog seeds; entries without a verified source are unverified discovery records, not technical specifications",
   "evidence_levels": {
     "E0": "unverified",
     "E1": "primary source documented",
@@ -89,6 +89,132 @@
       "sources": [
         "https://holybro.com/"
       ]
+    },
+    {
+      "id": "dji-air-3",
+      "manufacturer": "DJI",
+      "name": "Air 3",
+      "category": "camera_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": []
+    },
+    {
+      "id": "dji-mavic-3-enterprise",
+      "manufacturer": "DJI",
+      "name": "Mavic 3 Enterprise",
+      "category": "camera_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": []
+    },
+    {
+      "id": "dji-matrice-350-rtk",
+      "manufacturer": "DJI",
+      "name": "Matrice 350 RTK",
+      "category": "camera_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": []
+    },
+    {
+      "id": "parrot-anafi-usa",
+      "manufacturer": "Parrot",
+      "name": "ANAFI USA",
+      "category": "camera_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": []
+    },
+    {
+      "id": "autel-evo-ii-pro",
+      "manufacturer": "Autel Robotics",
+      "name": "EVO II Pro",
+      "category": "camera_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": []
+    },
+    {
+      "id": "skydio-x10",
+      "manufacturer": "Skydio",
+      "name": "X10",
+      "category": "camera_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": []
+    },
+    {
+      "id": "sensefly-ebee-x",
+      "manufacturer": "senseFly",
+      "name": "eBee X",
+      "category": "camera_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": []
+    },
+    {
+      "id": "wingtraone-gen-ii",
+      "manufacturer": "Wingtra",
+      "name": "WingtraOne GEN II",
+      "category": "camera_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": []
+    },
+    {
+      "id": "freefly-alta-x",
+      "manufacturer": "Freefly Systems",
+      "name": "ALTA X",
+      "category": "camera_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": []
     }
   ]
 }
