@@ -26,7 +26,22 @@ for url in urls:
             result="reachable" if status<400 else "review"
     except urllib.error.HTTPError as exc:
         status=exc.code
-        result="restricted_or_missing" if status in (403,404,405,429) else "review"
+        if status == 405:
+            # Some documentation servers reject HEAD while allowing GET.
+            # Read no response body: this is an availability check, not evidence validation.
+            try:
+                get_req=urllib.request.Request(url,headers={"User-Agent":"DROL-SourceMonitor/1.0 (+https://drol.odpc.de/; documentation health check)","Accept":"text/html,application/json;q=0.9,*/*;q=0.5"},method="GET")
+                with urllib.request.urlopen(get_req,timeout=12) as response:
+                    status=response.status
+                    result="reachable" if status<400 else "review"
+            except urllib.error.HTTPError as get_exc:
+                status=get_exc.code
+                result="restricted_or_missing" if status in (403,404,429) else "review"
+            except (urllib.error.URLError,TimeoutError,OSError):
+                status=None
+                result="network_unavailable"
+        else:
+            result="restricted_or_missing" if status in (403,404,429) else "review"
     except (urllib.error.URLError,TimeoutError,OSError) as exc:
         status=None
         result="network_unavailable"
