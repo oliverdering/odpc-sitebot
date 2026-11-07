@@ -269,6 +269,36 @@ for(const [name,viewport]of [['desktop',{width:1440,height:1000}],['mobile',{wid
   assert.deepEqual(await page.evaluate(()=>JSON.parse(sessionStorage.getItem('hm-guide-v1')).reportedServices),['gmail']);
  }
  pass(name+' platform switch to Gemini and Claude clears old reports, preserves brief across reload, copies correct prompt and help context, and accepts a fresh test');
+ for(const outcome of ['partial','unavailable']){
+  await page.goto('https://ai.odpc.de/connector-einrichten/',{waitUntil:'networkidle'});
+  if(!await page.locator('#odpc-voice-settings').evaluate(e=>e.open))await page.locator('#odpc-voice-settings summary').click();
+  await page.locator('#odpc-voice-reset').click();
+  await page.locator('#odpc-voice-settings summary').click();
+  await answer('KI einrichten GitHub ChatGPT Android');
+  await answer('verbunden');await answer('Test erfolgreich');await answer('Aufgabe:report');
+  await answer('Ausbildung Fachinformatik, vier Stunden Support.');
+  await answer('KI einrichten');await answer('Gmail + Kalender + Drive');
+  if(outcome==='partial')await answer('verbunden');
+  await answer(outcome==='partial'?'Test teilweise erfolgreich':'nicht verfügbar');
+  await page.getByRole('button',{name:'Dienste neu wählen',exact:true}).click();
+  assert.equal(await page.locator('#odpc-voice').getAttribute('data-phase'),'service');
+  assert.deepEqual(await page.evaluate(()=>JSON.parse(sessionStorage.getItem('hm-guide-v1')).services),[]);
+  await page.reload({waitUntil:'networkidle'});
+  assert.equal(await page.locator('#odpc-voice').getAttribute('data-phase'),'service');
+  await page.locator('[data-choice="Gmail"]').click();
+  await answer('verbunden');
+  const singleTest=await page.locator('#hm-guide-test').inputValue();
+  assert(singleTest.includes('Gmail'));assert(!singleTest.includes('Google Kalender'));assert(!singleTest.includes('Google Drive'));
+  await page.getByRole('button',{name:'Testauftrag kopieren',exact:true}).click();
+  await page.waitForFunction(async prompt=>await navigator.clipboard.readText()===prompt,singleTest);
+  await answer('Test erfolgreich');
+  const resumed=await page.locator('#hm-guide-work-prompt').inputValue();
+  assert(resumed.includes('vier Stunden Support'));
+  assert.deepEqual(await page.evaluate(()=>JSON.parse(sessionStorage.getItem('hm-guide-v1')).reportedServices),['github','gmail']);
+  assert.equal(await page.evaluate(()=>JSON.parse(sessionStorage.getItem('hm-guide-v1')).task),'report');
+ }
+ await page.screenshot({path:out+'/'+name+'-single-service-recovery.png',fullPage:true});
+ pass(name+' failed group recovery selects Gmail alone, preserves task and other reports across reload, and copies the narrowed test');
  assert.equal(errors.length,0,JSON.stringify(errors));pass(name+' agent overview and no page errors');await context.close();
 }
 const audioContext=await browser.newContext();const audio=await audioContext.newPage();await audio.goto('https://ai.odpc.de/connector-einrichten/',{waitUntil:'networkidle'});await audio.getByRole('button',{name:'Mit Sprache einrichten',exact:true}).click();

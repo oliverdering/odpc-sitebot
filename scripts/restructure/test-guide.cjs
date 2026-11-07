@@ -313,3 +313,33 @@ test('switching AI platforms clears earlier service reports but preserves task d
   assert.equal(s.task,'mail');
  }
 });
+
+
+test('failed or unavailable groups can be replaced by a single service without losing the task',()=>{
+ for(const lang of ['de','en','es','fr','it','pt','pl','tr']){
+  for(const outcome of ['Test teilweise erfolgreich','Test fehlgeschlagen','nicht verfügbar']){
+   let s=run(['KI einrichten GitHub ChatGPT Android','verbunden','Test erfolgreich','Aufgabe:report','Ausbildung Fachinformatik, vier Stunden Support.','KI einrichten','Gmail + Kalender + Drive']);
+   if(outcome!=='nicht verfügbar')s=g.reply(s,'verbunden',lang).state;
+   assert(!g.choices(s,lang).some(c=>c.value==='Dienste neu wählen'));
+   s=g.reply(s,outcome,lang).state;
+   const choice=g.choices(s,lang).find(c=>c.value==='Dienste neu wählen');
+   assert(choice,lang+' '+outcome);
+   assert.equal(choice.label,g.text(lang,'chooseServices'));
+   s=g.reply(s,choice.label,lang).state;
+   assert.equal(s.phase,'service');
+   assert.deepEqual(s.services,[]);
+   assert.deepEqual(s.reportedServices,['github']);
+   s=g.restore(s);
+   assert.equal(s.phase,'service');
+   s=g.reply(s,'Gmail',lang).state;
+   const prompt=g.setup(s,lang).test;
+   assert(prompt.includes('Gmail'));
+   assert(!prompt.includes('Google Kalender'));
+   assert(!prompt.includes('Google Drive'));
+   for(const value of ['verbunden','Test erfolgreich'])s=g.reply(s,value,lang).state;
+   assert.equal(s.task,'report');
+   assert.deepEqual(s.reportedServices,['github','gmail']);
+   assert(g.work(g.restore(s),lang).prompt.includes('vier Stunden Support'));
+  }
+ }
+});

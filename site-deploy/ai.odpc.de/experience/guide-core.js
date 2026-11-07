@@ -81,6 +81,12 @@ function retractCurrentReports(s){s.reportedServices=(s.reportedServices||[]).fi
 function reply(current,inputText,lang='de'){
  const s=JSON.parse(JSON.stringify(current)),w=words[lang]||words.en,t=String(inputText||'').trim().slice(0,600);if(!t)return {state:s,text:message(s,lang),accepted:false};
  if(secret(t))return {state:s,text:w.secret,accepted:false,sensitive:true};
+ if(['setup','test'].includes(s.phase)&&['failed','unavailable'].includes(s.result)&&(t==='Dienste neu wählen'||t===text(lang,'chooseServices'))){
+  s.services=[];
+  s.result='open';
+  s.phase='service';
+  return {state:s,text:message(s,lang),accepted:true};
+ }
  if(/^(?:ohne (?:konto)?verbindung starten|mit beispieldaten starten|start without connection|use sample data)$/i.test(t)){
   const id=s.targetTask||s.returnTask||(s.goal==='office'&&s.brief.task==='calendar'?'calendar':'')||({mail:'mail',office:'documents',web:'web',application:'application',car:'car',legal:'legal',marketing:'marketing',interview:'interview',report:'report',finance:'finance'})[s.goal]||'custom';
   s.targetTask=id;s.returnTask='';s.task=id;s.services=[];s.result='open';route(s);return {state:s,text:message(s,lang),accepted:true};
@@ -152,14 +158,16 @@ function setup(s,lang='de'){
 // Buttons and free text use the same state transition; no separate click-only workflow.
 function choices(s,lang='de'){
  const a=ui(lang).actions;
+ const retryServices=['failed','unavailable'].includes(s.result)
+  ?[{label:text(lang,'chooseServices'),value:'Dienste neu wählen'}]:[];
  const goals={de:['E-Mails organisieren','Termine und Dokumente','Webseite betreuen','Bewerbungen schreiben','KI einrichten'],en:['Organize email','Calendar and documents','Manage a website','Job applications','Set up AI'],es:['Organizar correo','Calendario y documentos','Gestionar una web','Candidaturas','Configurar IA'],fr:['Organiser les emails','Calendrier et documents','Gérer un site','Candidatures','Configurer IA'],it:['Organizzare email','Calendario e documenti','Gestire un sito','Candidature','Configurare IA'],pt:['Organizar email','Calendário e documentos','Gerir um site','Candidaturas','Configurar IA'],pl:['Poczta','Kalendarz i dokumenty','Strona internetowa','CV i praca','Konfiguracja AI'],tr:['E-posta','Takvim ve belgeler','Web sitesi','İş başvurusu','Yapay zekâ kurulumu']};
  const values=['E-Mails organisieren','Termine und Dokumente','Webseite betreuen','Bewerbungen schreiben','KI einrichten'];
  if(s.phase==='goal')return (goals[lang]||goals.en).map((label,i)=>({label,value:values[i]}));
  if(s.phase==='platform')return ['ChatGPT','Gemini','Claude'].map(label=>({label,value:label})).concat({label:a[0],value:'noch keine'});
  if(s.phase==='device')return ['Android / Samsung','iPhone / iPad',a[1]].map((label,i)=>({label,value:['Android','iPhone','Computer'][i]}));
  if(s.phase==='service')return ['Gmail',a[2],'Google Drive',a[3],'Outlook','WordPress','GitHub'].map((label,i)=>({label,value:['Gmail','Google Kalender','Google Drive','Gmail + Kalender + Drive','Outlook','WordPress','GitHub'][i]})).concat({label:a[4],value:'ohne Verbindung starten'});
- if(s.phase==='setup')return [{label:a[5],value:'verbunden'},{label:a[6],value:'nicht verfügbar'},{label:a[4],value:'ohne Verbindung starten'},{label:a[7],value:'Einrichtung abgeschlossen'},{label:a[8],value:'Hilfe'}];
- if(s.phase==='test')return [{label:a[9],value:'Test erfolgreich'},{label:a[10],value:'Test fehlgeschlagen'},{label:a[7],value:'Aufgabe wählen'}];
+ if(s.phase==='setup')return [{label:a[5],value:'verbunden'},{label:a[6],value:'nicht verfügbar'},{label:a[4],value:'ohne Verbindung starten'},{label:a[7],value:'Einrichtung abgeschlossen'},{label:a[8],value:'Hilfe'}].concat(retryServices);
+ if(s.phase==='test')return [{label:a[9],value:'Test erfolgreich'},{label:a[10],value:'Test fehlgeschlagen'},{label:a[7],value:'Aufgabe wählen'}].concat(retryServices);
  if(['done','work'].includes(s.phase))return (s.phase==='done'?tasks(s,lang).filter(t=>['mail','calendar','documents','web','application','custom'].includes(t.id)).map(t=>({label:t.title,value:'Aufgabe:'+t.id})):[{label:a[11],value:'andere Aufgabe'}]).concat({label:a[12],value:'KI einrichten'});
  return [];
 }
