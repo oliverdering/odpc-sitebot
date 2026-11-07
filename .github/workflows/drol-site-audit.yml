@@ -9,6 +9,9 @@ on:
       - '.github/workflows/drol-site-audit.yml'
       - 'scripts/drol_site_audit.py'
       - 'site-deploy/drol.odpc.de/**'
+concurrency:
+  group: drol-site-audit-${{ github.ref }}
+  cancel-in-progress: true
 permissions:
   contents: read
 jobs:
