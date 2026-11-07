@@ -1,7 +1,7 @@
 name: D.R.O.L. / Autonomous knowledge discovery
 on:
   schedule:
-    - cron: '41 6 * * *'
+    - cron: '11 2,8,14,20 * * *'
   workflow_dispatch:
   push:
     branches: [main]
