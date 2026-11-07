@@ -327,6 +327,262 @@
       "sources": [
         "https://www.dji.com/neo-2/specs"
       ]
+    },
+    {
+      "id": "dji-mini-2",
+      "manufacturer": "DJI",
+      "name": "Mini 2",
+      "category": "camera_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": [
+        "https://www.dji.com/mini-2/specs"
+      ]
+    },
+    {
+      "id": "dji-mini-2-se",
+      "manufacturer": "DJI",
+      "name": "Mini 2 SE",
+      "category": "camera_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": [
+        "https://www.dji.com/mini-2-se/specs"
+      ]
+    },
+    {
+      "id": "dji-mini-4k",
+      "manufacturer": "DJI",
+      "name": "Mini 4K",
+      "category": "camera_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": [
+        "https://www.dji.com/mini-4k/specs"
+      ]
+    },
+    {
+      "id": "dji-mavic-3-thermal",
+      "manufacturer": "DJI",
+      "name": "Mavic 3 Thermal",
+      "category": "camera_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": [
+        "https://enterprise.dji.com/mavic-3-enterprise/specs"
+      ]
+    },
+    {
+      "id": "dji-matrice-30",
+      "manufacturer": "DJI",
+      "name": "Matrice 30",
+      "category": "camera_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": [
+        "https://enterprise.dji.com/matrice-30/specs"
+      ]
+    },
+    {
+      "id": "dji-matrice-300-rtk",
+      "manufacturer": "DJI",
+      "name": "Matrice 300 RTK",
+      "category": "camera_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": [
+        "https://enterprise.dji.com/matrice-300/specs"
+      ]
+    },
+    {
+      "id": "dji-inspire-3",
+      "manufacturer": "DJI",
+      "name": "Inspire 3",
+      "category": "camera_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": [
+        "https://www.dji.com/inspire-3/specs"
+      ]
+    },
+    {
+      "id": "dji-avata-2",
+      "manufacturer": "DJI",
+      "name": "Avata 2",
+      "category": "camera_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": [
+        "https://www.dji.com/avata-2/specs"
+      ]
+    },
+    {
+      "id": "dji-air-2s",
+      "manufacturer": "DJI",
+      "name": "Air 2S",
+      "category": "camera_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": [
+        "https://www.dji.com/air-2s/specs"
+      ]
+    },
+    {
+      "id": "dji-mavic-air-2",
+      "manufacturer": "DJI",
+      "name": "Mavic Air 2",
+      "category": "camera_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": [
+        "https://www.dji.com/mavic-air-2/specs"
+      ]
+    },
+    {
+      "id": "parrot-anafi",
+      "manufacturer": "Parrot",
+      "name": "ANAFI",
+      "category": "camera_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": [
+        "https://www.parrot.com/"
+      ]
+    },
+    {
+      "id": "autel-evo-max-4t",
+      "manufacturer": "Autel Robotics",
+      "name": "EVO Max 4T",
+      "category": "camera_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": [
+        "https://www.autelrobotics.com/"
+      ]
+    },
+    {
+      "id": "autel-evo-lite-plus",
+      "manufacturer": "Autel Robotics",
+      "name": "EVO Lite+",
+      "category": "camera_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": [
+        "https://www.autelrobotics.com/"
+      ]
+    },
+    {
+      "id": "skydio-2-plus",
+      "manufacturer": "Skydio",
+      "name": "2+",
+      "category": "camera_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": [
+        "https://www.skydio.com/"
+      ]
+    },
+    {
+      "id": "freefly-astro",
+      "manufacturer": "Freefly Systems",
+      "name": "Astro",
+      "category": "camera_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": [
+        "https://freeflysystems.com/"
+      ]
+    },
+    {
+      "id": "wingtraone",
+      "manufacturer": "Wingtra",
+      "name": "WingtraOne",
+      "category": "camera_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": [
+        "https://wingtra.com/"
+      ]
     }
   ]
 }
