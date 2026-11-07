@@ -36,3 +36,29 @@ jobs:
         env:
           ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
         run: python3 scripts/deploy_drol.py
+      - name: Verify public release and dynamic feed
+        run: |
+          python3 - <<'PY'
+          import json, time
+          from urllib.request import urlopen, Request
+          checks = {
+              "https://drol.odpc.de/mission-control.html": b"DEINE DROHNE. DEINE M",
+              "https://drol.odpc.de/data/events.json": b'"events"',
+          }
+          for url, expected in checks.items():
+              for attempt in range(6):
+                  try:
+                      with urlopen(Request(url, headers={"Cache-Control":"no-cache"}), timeout=15) as response:
+                          body=response.read(300000)
+                      if expected not in body:
+                          raise RuntimeError("Expected release marker missing")
+                      if url.endswith(".json"):
+                          payload=json.loads(body)
+                          assert payload["schema_version"] == 1 and isinstance(payload["events"],list)
+                      print("PASS public release:", url)
+                      break
+                  except Exception as exc:
+                      if attempt == 5:
+                          raise RuntimeError("Public release verification failed: "+url) from exc
+                      time.sleep(10)
+          PY
