@@ -40,18 +40,18 @@ def with_drol_seo(payload: bytes, filename: str) -> bytes:
     head = source[:source.lower().find("</head>")]
     title_match = re.search(r"<title[^>]*>(.*?)</title>", head, re.I | re.S)
     title = html.unescape(re.sub(r"<[^>]+>", "", title_match.group(1))).strip() if title_match else "D.R.O.L."
-    description_match = re.search(r'<meta\\s+name=["\\']description["\\']\\s+content=["\\']([^"\\']+)', head, re.I)
+    description_match = re.search(r'<meta\s+name=[\x22\x27]description[\x22\x27]\s+content=[\x22\x27]([^"\']+)', head, re.I)
     description = html.unescape(description_match.group(1)) if description_match else "D.R.O.L. – technische Wissensplattform für Drohnen, Sensorik, Firmware, KI und Datenverarbeitung."
     additions = []
-    if not re.search(r'<link[^>]+rel=["\\']canonical["\\']', head, re.I):
+    if not re.search(r'<link[^>]+rel=[\x22\x27]canonical[\x22\x27]', head, re.I):
         additions.append('<link rel="canonical" href="' + html.escape(canonical, quote=True) + '">')
-    if not re.search(r'<meta[^>]+property=["\\']og:title["\\']', head, re.I):
+    if not re.search(r'<meta[^>]+property=[\x22\x27]og:title[\x22\x27]', head, re.I):
         additions.append('<meta property="og:type" content="website"><meta property="og:title" content="' + html.escape(title, quote=True) + '"><meta property="og:description" content="' + html.escape(description, quote=True) + '"><meta property="og:url" content="' + html.escape(canonical, quote=True) + '">')
-    if not re.search(r'<meta[^>]+name=["\\']twitter:card["\\']', head, re.I):
+    if not re.search(r'<meta[^>]+name=[\x22\x27]twitter:card[\x22\x27]', head, re.I):
         additions.append('<meta name="twitter:card" content="summary">')
     if not additions:
         return payload
-    return source.replace("</head>", "\\n" + "\\n".join(additions) + "\\n</head>", 1).encode("utf-8")
+    return source.replace("</head>", "\n".join(additions) + "</head>", 1).encode("utf-8")
 
 def with_odpc_credit(payload: bytes) -> bytes:
     # Preserve approved geometry; append only color overrides and ODPC credit.
