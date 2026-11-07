@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>D.R.O.L. Engineering Atlas | Flugsteuerung, SDK, Sensorik und KI</title>
+<meta name="description" content="Technischer D.R.O.L. Engineering-Atlas: Autopiloten, MAVLink, DJI SDK, ROS 2, Kameras, Photogrammetrie, KI und Evidenzmethodik.">
+<style>
+:root{color-scheme:dark;--bg:#031322;--panel:#0b2031;--ink:#f4f9fd;--muted:#bdd0dc;--line:#34576d;--accent:#53e8f3}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 system-ui,-apple-system,"Segoe UI",sans-serif}
+header{border-bottom:1px solid var(--line);padding:18px max(20px,calc((100% - 1160px)/2));display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+header strong{letter-spacing:.12em}a{color:var(--accent)}nav{display:flex;gap:16px;flex-wrap:wrap}
+main{max-width:1160px;margin:auto;padding:44px 20px 80px}.eyebrow{font-weight:750;color:var(--accent);letter-spacing:.13em;text-transform:uppercase;font-size:.8rem}
+h1{font-size:clamp(2rem,5vw,3.8rem);line-height:1.1;margin:8px 0 22px}h2{font-size:1.7rem;margin:0 0 12px}h3{font-size:1.14rem;margin:10px 0}
+.lead{font-size:1.2rem;max-width:850px;color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:16px;margin:24px 0}
+.card,.section{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px}.section{margin:26px 0;padding:28px}
+.card p,.section p,.section li{color:var(--muted)}.tag{display:inline-block;border:1px solid var(--line);border-radius:100px;padding:2px 10px;font-size:.77rem;color:var(--accent);margin-bottom:8px}
+table{border-collapse:collapse;width:100%;min-width:620px}th,td{padding:12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}th{color:var(--accent)}.scroll{overflow-x:auto}
+code{color:#b9f8cb}ol li{margin:9px 0}footer{padding:28px 20px;text-align:center;border-top:1px solid var(--line);color:var(--muted)}
+a:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+@media(max-width:700px){.section{padding:20px}}
+</style></head><body>
+<header><strong>D.R.O.L. / ENGINEERING ATLAS</strong><nav aria-label="Navigation"><a href="/">Start</a><a href="/katalog.html">Modelle</a><a href="/drol-wissen.html">Wissen</a><a href="/sdk-kompatibilitaet.html">SDK</a><a href="/werkstatt.html">Werkstatt</a></nav></header>
+<main>
+<p class="eyebrow">Drone Recon Operation Lab · Technical Knowledge Base · Ausgabe 01</p>
+<h1>Von der Drohne zum reproduzierbaren Datensystem</h1>
+<p class="lead">D.R.O.L. untersucht nicht nur Fluggeräte. Die entscheidende Frage lautet: Welche Sensoren, Flugsteuerungen, Schnittstellen, Datenformate und KI-Werkzeuge lassen sich in einer nachprüfbaren Prozesskette kombinieren?</p>
+<div class="grid">
+<article class="card"><span class="tag">01 / Flight Stack</span><h3>Autopilot &amp; Telemetrie</h3><p>Flugstabilisierung, Zustandsdaten, Missionsplanung und Failsafes sind getrennte Verantwortlichkeiten. MAVLink transportiert Nachrichten; es ist kein Ersatz für einen Flugregler.</p><a href="#flugsteuerung">Architektur verstehen</a></article>
+<article class="card"><span class="tag">02 / Integration</span><h3>SDK, API &amp; Firmware</h3><p>Ein Hersteller-SDK bedeutet nicht, dass jede Drohne, Firmware, Fernsteuerung und Betriebssystemversion unterstützt wird.</p><a href="#schnittstellen">Kompatibilität prüfen</a></article>
+<article class="card"><span class="tag">03 / Perception</span><h3>Kamera, GNSS &amp; LiDAR</h3><p>Sensorfusion verlangt Zeitstempel, Kalibrierung, Koordinatensysteme und einen nachvollziehbaren Datenpfad.</p><a href="#sensorik">Messkette planen</a></article>
+<article class="card"><span class="tag">04 / Intelligence</span><h3>KI &amp; Geodaten</h3><p>Detektion, Segmentierung, Photogrammetrie und Kartenprodukte haben unterschiedliche Eingabedaten und Qualitätskriterien.</p><a href="#ki">Pipeline aufbauen</a></article>
+</div>
+<section class="section" id="flugsteuerung"><h2>01 · Referenzarchitektur einer offenen UAV-Plattform</h2>
+<div class="scroll"><table><thead><tr><th>Schicht</th><th>Aufgabe</th><th>Typische Technologien</th><th>Prüffrage</th></tr></thead><tbody>
+<tr><td>Flight Controller</td><td>Regelkreise, Sensorfusion, Aktuatorausgabe, Failsafes</td><td>ArduPilot, PX4</td><td>Bleibt die Flugstabilisierung ohne Companion Computer funktionsfähig?</td></tr>
+<tr><td>Kommunikation</td><td>Telemetrie, Kommandos, Missionsdaten</td><td>MAVLink 2, serielle Verbindung, UDP</td><td>Welche Nachrichtentypen und Betriebsmodi sind wirklich implementiert?</td></tr>
+<tr><td>Ground Control</td><td>Parameter, Mission, Karten, Diagnose</td><td>QGroundControl, Mission Planner</td><td>Welche Funktionen werden vom konkreten Autopiloten unterstützt?</td></tr>
+<tr><td>Companion Computer</td><td>Bildverarbeitung, KI, High-Level-Planung</td><td>Raspberry Pi, Jetson, ROS 2, MAVSDK</td><td>Was geschieht bei Neustart, Paketverlust oder Überlast?</td></tr>
+<tr><td>Datenspeicher</td><td>Medien, Telemetrie, Metadaten, Provenienz</td><td>EXIF, CSV, GeoJSON, GeoTIFF</td><td>Lassen sich Aufnahme und Ort später eindeutig zuordnen?</td></tr>
+</tbody></table></div>
+<p><strong>Engineering-Regel:</strong> Kritische Flugfunktionen gehören auf den Flight Controller. Ein KI-Modul darf nicht stillschweigend zum einzigen Stabilisierungspfad werden. Entwicklungsversuche beginnen im Simulator und erfolgen nur innerhalb der jeweils geltenden Luftfahrtregeln.</p>
+<p>Primärdokumentation: <a href="https://ardupilot.org/dev/" target="_blank" rel="noopener noreferrer">ArduPilot Developer</a> · <a href="https://docs.px4.io/" target="_blank" rel="noopener noreferrer">PX4 Docs</a> · <a href="https://mavlink.io/en/" target="_blank" rel="noopener noreferrer">MAVLink</a> · <a href="https://mavsdk.mavlink.io/" target="_blank" rel="noopener noreferrer">MAVSDK</a>.</p></section>
+<section class="section" id="schnittstellen"><h2>02 · SDK- und Firmware-Kompatibilität als Evidenzmatrix</h2>
+<p>Für eine belastbare Aussage werden <strong>Modell, Hardware-Revision, Firmware, Controller, SDK-Version, Host-Betriebssystem und konkrete Funktion</strong> gemeinsam geprüft. Eine allgemeine SDK-Produktseite ist kein Kompatibilitätsnachweis.</p>
+<div class="scroll"><table><thead><tr><th>Plattform</th><th>Integrationsweg</th><th>Grenze / Risiko</th><th>Erforderlicher Nachweis</th></tr></thead><tbody>
+<tr><td>ArduPilot / PX4</td><td>MAVLink, MAVSDK, ggf. ROS 2</td><td>Funktionsumfang abhängig von Firmware, Parametern und Hardware</td><td>Versionsgebundener SITL-Test und Telemetrielog</td></tr>
+<tr><td>DJI Kamera-Drohnen</td><td>Hersteller-Apps, dokumentierte SDK-Familien, Medienexport</td><td>SDK-Unterstützung ist modell- und versionsabhängig; Videoexport ≠ autonome Flugsteuerung</td><td>Offizielle Supportmatrix für genaues Modell und Firmware</td></tr>
+<tr><td>Parrot / ANAFI</td><td>Herstellerdokumentation, SDK-/API-Ökosystem</td><td>Produkt- und Firmwarevarianten müssen separat bewertet werden</td><td>API-Dokumentation plus reproduzierbarer Funktionstest</td></tr>
+<tr><td>Unbekannte Wi-Fi-Drohne</td><td>Eventuell proprietäres App-Protokoll</td><td>Reverse Engineering ist kein Beleg für sichere, vollständige Steuerbarkeit</td><td>Reproduzierbares Laborprotokoll ohne riskanten Flugbetrieb</td></tr>
+</tbody></table></div>
+<p>Quellen: <a href="https://developer.dji.com/" target="_blank" rel="noopener noreferrer">DJI Developer</a> · <a href="https://developer.parrot.com/" target="_blank" rel="noopener noreferrer">Parrot Developer</a> · <a href="/sdk-kompatibilitaet.html">D.R.O.L.-Prüfmatrix</a>.</p></section>
+<section class="section" id="sensorik"><h2>03 · Sensorik: von Rohdaten zu messbaren Ergebnissen</h2>
+<div class="grid"><article class="card"><h3>RGB / Photogrammetrie</h3><p>Überlappende, scharfe Bilder mit ausreichender Textur ermöglichen Structure-from-Motion und dichte Rekonstruktion. Für belastbare Maßangaben sind geeignete Referenzpunkte oder Georeferenzierung erforderlich.</p></article>
+<article class="card"><h3>Thermografie</h3><p>Thermische Auffälligkeiten sind zunächst Beobachtungen, keine automatische Schadensdiagnose. Emissionsgrad, Reflexionen, Umgebungsbedingungen und Sensorkalibrierung beeinflussen die Interpretation.</p></article>
+<article class="card"><h3>LiDAR / Tiefensensoren</h3><p>Ein zusätzlicher USB-C-Sensor wird nicht automatisch zur nutzbaren Drohnen-Nutzlast. Entscheidend sind Masse, Energie, mechanische Montage, Zeitabgleich, Positionierung und Zugriff auf die Daten.</p></article>
+<article class="card"><h3>GNSS / RTK / PPK</h3><p>Georeferenzierung benötigt ein definiertes Koordinatenreferenzsystem und nachvollziehbare Qualitätsmetriken. RTK allein garantiert keine vollständige geometrische Genauigkeit des Endprodukts.</p></article></div>
+<p>Referenzen: <a href="https://docs.opendronemap.org/" target="_blank" rel="noopener noreferrer">OpenDroneMap Dokumentation</a> · <a href="https://www.ros.org/" target="_blank" rel="noopener noreferrer">ROS</a> · <a href="https://www.ogc.org/" target="_blank" rel="noopener noreferrer">Open Geospatial Consortium</a>.</p></section>
+<section class="section" id="ki"><h2>04 · KI-Datenpipeline und Qualitätskontrolle</h2>
+<ol><li><strong>Erfassen:</strong> Originalmedien, Zeitstempel, Fluglog und Sensor-Metadaten unverändert sichern.</li>
+<li><strong>Validieren:</strong> Unvollständige Dateien, fehlende Geodaten, Unschärfe und Dubletten kennzeichnen.</li>
+<li><strong>Verarbeiten:</strong> Geometrische Rekonstruktion, Objekterkennung oder Segmentierung passend zur Aufgabenstellung ausführen.</li>
+<li><strong>Georeferenzieren:</strong> Ergebnisse mit dokumentiertem CRS und räumlicher Unsicherheit exportieren.</li>
+<li><strong>Prüfen:</strong> Falschpositive, Stichproben, Referenzmessungen und Modellversionen dokumentieren.</li>
+<li><strong>Freigeben:</strong> KI-Ergebnisse bleiben Vorschläge, bis ein nachvollziehbarer Prüfprozess sie bestätigt.</li></ol>
+<p>Geeignete offene Werkzeuge je nach Anwendungsfall: <a href="https://opencv.org/" target="_blank" rel="noopener noreferrer">OpenCV</a>, <a href="https://www.opendronemap.org/" target="_blank" rel="noopener noreferrer">OpenDroneMap</a>, <a href="https://docs.ros.org/" target="_blank" rel="noopener noreferrer">ROS 2</a>. Die Auflistung ist keine Aussage über Unterstützung durch eine bestimmte DJI-Drohne.</p></section>
+<section class="section" id="anwendungen"><h2>05 · Konkrete D.R.O.L.-Anwendungsprofile</h2>
+<div class="grid"><article class="card"><span class="tag">Gastronomie / Immobilien</span><h3>Foto- und Videodokumentation</h3><p>Planung → Aufnahme → Medienexport → Auswahl → Bildbearbeitung → Website. Der Nutzen liegt in reproduzierbaren Medien-Workflows; eine direkte SDK-Steuerung ist nicht zwingend erforderlich.</p></article>
+<article class="card"><span class="tag">Bausachverständige</span><h3>Fassade, Dach, Baustelle</h3><p>Wiederholbare Perspektiven, Bildprotokolle, Zeitvergleich und geordnete Ablage. Visuelle Inspektion ist von normgerechter Vermessung und gutachterlicher Bewertung zu trennen.</p></article>
+<article class="card"><span class="tag">Kartierung</span><h3>Orthofoto und 3D-Modell</h3><p>Aufnahmeplanung, Bildüberlappung, Referenzpunkte, Verarbeitung und Genauigkeitsprüfung. Ein schönes 3D-Modell ist noch kein vermessungstechnisch belastbares Produkt.</p></article>
+<article class="card"><span class="tag">Offene Entwicklung</span><h3>Autopilot + Companion AI</h3><p>Simulation, MAVLink-Telemetrie, definierte Sicherheitszustände, KI-Prototypen und dokumentierte Versuchsreihen. Reproduzierbarkeit geht vor spektakulären Demo-Videos.</p></article></div></section>
+<section class="section" id="evidenz"><h2>06 · D.R.O.L.-Evidenzstandard</h2>
+<div class="scroll"><table><thead><tr><th>Stufe</th><th>Bedeutung</th><th>Veröffentlichungsregel</th></tr></thead><tbody>
+<tr><td>E0</td><td>Ungeprüft / unklar</td><td>Nur als offene Frage oder Hypothese anzeigen</td></tr>
+<tr><td>E1</td><td>Modell- und versionsbezogene Primärdokumentation</td><td>Quelle, Datum und Geltungsbereich nennen</td></tr>
+<tr><td>E2</td><td>Reproduzierbarer Labortest</td><td>Testaufbau, Versionen, Logs und Ergebnis dokumentieren</td></tr>
+<tr><td>E3</td><td>Unabhängig wiederholter Test</td><td>Abweichungen und unabhängige Replikation belegen</td></tr>
+</tbody></table></div>
+<p>Ein Herstellerlink ohne konkrete Funktionsbelege ist nicht automatisch E1. Technische Fähigkeiten werden als <code>YES</code>, <code>PARTIAL</code>, <code>NO</code> oder <code>UNKNOWN</code> bewertet. Der <a href="/katalog.html#evidenz-register">Datenbankkatalog</a> veröffentlicht den bekannten Status; unbewiesene Fähigkeiten bleiben ausdrücklich unbekannt.</p>
+<p><strong>Redaktioneller Stand:</strong> 07.11.2026. Diese Seite ist eine technische Methodik und Architekturübersicht, keine Behauptung bereits durchgeführter Labortests.</p></section>
+</main><footer>D.R.O.L. – Drone Recon Operation Lab · <a href="https://odpc.de/">powered by ODPC</a> · <a href="https://odpc.de/impressum/">Impressum</a> · <a href="https://odpc.de/datenschutzerklaerung/">Datenschutz</a></footer></body></html>
