@@ -1,0 +1,226 @@
+{
+  "schema_version": "1.0",
+  "purpose": "Cross-manufacturer entity discovery seed, not compatibility or specification claims",
+  "evidence": "E0",
+  "verified_compatibilities": [],
+  "entities": [
+    {
+      "key": "dji-mini-4-pro",
+      "type": "drone",
+      "manufacturer": "DJI",
+      "name": "Mini 4 Pro",
+      "review_status": "seed"
+    },
+    {
+      "key": "dji-mini-3",
+      "type": "drone",
+      "manufacturer": "DJI",
+      "name": "Mini 3",
+      "review_status": "seed"
+    },
+    {
+      "key": "dji-mini-3-pro",
+      "type": "drone",
+      "manufacturer": "DJI",
+      "name": "Mini 3 Pro",
+      "review_status": "seed"
+    },
+    {
+      "key": "dji-air-3",
+      "type": "drone",
+      "manufacturer": "DJI",
+      "name": "Air 3",
+      "review_status": "seed"
+    },
+    {
+      "key": "dji-mavic-3-enterprise",
+      "type": "drone",
+      "manufacturer": "DJI",
+      "name": "Mavic 3 Enterprise",
+      "review_status": "seed"
+    },
+    {
+      "key": "dji-matrice-350-rtk",
+      "type": "drone",
+      "manufacturer": "DJI",
+      "name": "Matrice 350 RTK",
+      "review_status": "seed"
+    },
+    {
+      "key": "parrot-anafi-ai",
+      "type": "drone",
+      "manufacturer": "Parrot",
+      "name": "ANAFI Ai",
+      "review_status": "seed"
+    },
+    {
+      "key": "parrot-anafi-usa",
+      "type": "drone",
+      "manufacturer": "Parrot",
+      "name": "ANAFI USA",
+      "review_status": "seed"
+    },
+    {
+      "key": "autel-evo-ii-pro",
+      "type": "drone",
+      "manufacturer": "Autel Robotics",
+      "name": "EVO II Pro",
+      "review_status": "seed"
+    },
+    {
+      "key": "skydio-x10",
+      "type": "drone",
+      "manufacturer": "Skydio",
+      "name": "X10",
+      "review_status": "seed"
+    },
+    {
+      "key": "sensefly-ebee-x",
+      "type": "drone",
+      "manufacturer": "senseFly",
+      "name": "eBee X",
+      "review_status": "seed"
+    },
+    {
+      "key": "wingtraone-gen-ii",
+      "type": "drone",
+      "manufacturer": "Wingtra",
+      "name": "WingtraOne GEN II",
+      "review_status": "seed"
+    },
+    {
+      "key": "holybro-x500-v2",
+      "type": "drone",
+      "manufacturer": "Holybro",
+      "name": "X500 V2",
+      "review_status": "seed"
+    },
+    {
+      "key": "freefly-alta-x",
+      "type": "drone",
+      "manufacturer": "Freefly Systems",
+      "name": "ALTA X",
+      "review_status": "seed"
+    },
+    {
+      "key": "dji-rc-2",
+      "type": "controller",
+      "manufacturer": "DJI",
+      "name": "RC 2",
+      "review_status": "seed"
+    },
+    {
+      "key": "dji-rc-n2",
+      "type": "controller",
+      "manufacturer": "DJI",
+      "name": "RC-N2",
+      "review_status": "seed"
+    },
+    {
+      "key": "dji-rc-n3",
+      "type": "controller",
+      "manufacturer": "DJI",
+      "name": "RC-N3",
+      "review_status": "seed"
+    },
+    {
+      "key": "pixhawk-6c",
+      "type": "flight_controller",
+      "manufacturer": "Holybro",
+      "name": "Pixhawk 6C",
+      "review_status": "seed"
+    },
+    {
+      "key": "ardupilot",
+      "type": "software",
+      "manufacturer": "ArduPilot",
+      "name": "ArduPilot",
+      "review_status": "seed"
+    },
+    {
+      "key": "px4",
+      "type": "software",
+      "manufacturer": "PX4",
+      "name": "PX4 Autopilot",
+      "review_status": "seed"
+    },
+    {
+      "key": "mavlink",
+      "type": "software",
+      "manufacturer": "Dronecode",
+      "name": "MAVLink",
+      "review_status": "seed"
+    },
+    {
+      "key": "mavsdk",
+      "type": "sdk",
+      "manufacturer": "Dronecode",
+      "name": "MAVSDK",
+      "review_status": "seed"
+    },
+    {
+      "key": "dji-mobile-sdk",
+      "type": "sdk",
+      "manufacturer": "DJI",
+      "name": "DJI Mobile SDK",
+      "review_status": "seed"
+    },
+    {
+      "key": "qgroundcontrol",
+      "type": "software",
+      "manufacturer": "Dronecode",
+      "name": "QGroundControl",
+      "review_status": "seed"
+    },
+    {
+      "key": "lidar",
+      "type": "sensor",
+      "manufacturer": null,
+      "name": "LiDAR (technology category)",
+      "review_status": "seed"
+    },
+    {
+      "key": "gnss",
+      "type": "sensor",
+      "manufacturer": null,
+      "name": "GNSS (technology category)",
+      "review_status": "seed"
+    },
+    {
+      "key": "photogrammetry",
+      "type": "use_case",
+      "manufacturer": null,
+      "name": "Photogrammetry",
+      "review_status": "seed"
+    },
+    {
+      "key": "roof-inspection",
+      "type": "use_case",
+      "manufacturer": null,
+      "name": "Roof inspection",
+      "review_status": "seed"
+    },
+    {
+      "key": "gastronomy-video",
+      "type": "use_case",
+      "manufacturer": null,
+      "name": "Hospitality video",
+      "review_status": "seed"
+    },
+    {
+      "key": "historical-fieldwork",
+      "type": "use_case",
+      "manufacturer": null,
+      "name": "Historical fieldwork",
+      "review_status": "seed"
+    },
+    {
+      "key": "social-media-video",
+      "type": "use_case",
+      "manufacturer": null,
+      "name": "Social media video",
+      "review_status": "seed"
+    }
+  ],
+  "relations": []
+}
