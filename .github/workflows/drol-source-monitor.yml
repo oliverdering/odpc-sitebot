@@ -1,0 +1,27 @@
+name: D.R.O.L. / Daily source monitoring
+on:
+  schedule:
+    - cron: '23 5 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/drol-source-monitor.yml'
+      - 'scripts/drol_source_monitor.py'
+permissions:
+  contents: read
+jobs:
+  source-health:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Monitor official editorial sources
+        run: python3 scripts/drol_source_monitor.py
+      - name: Save auditable source health report
+        uses: actions/upload-artifact@v4
+        with:
+          name: drol-source-health
+          path: drol-source-health.json
+          if-no-files-found: error
+          retention-days: 30
