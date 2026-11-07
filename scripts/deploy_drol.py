@@ -14,15 +14,28 @@ ODPC_CREDIT = """<style id="drol-odpc-credit-style">
 @media(max-width:640px){#drol-odpc-credit{margin-bottom:100px;padding:18px}}
 </style><aside id="drol-odpc-credit" aria-label="Website erstellt von ODPC"><a href="https://odpc.de/" target="_blank" rel="noopener noreferrer" aria-label="ODPC – Oliver Dering"><img src="https://odpc.de/wp-content/uploads/2026/08/1786371119667.png.webp" alt="Oliver Dering" width="64" height="64" loading="lazy" decoding="async"></a><div><span class="odpc-credit-label">Webdesign, Technik &amp; KI-Integration</span><a class="odpc-credit-link" href="https://odpc.de/" target="_blank" rel="noopener noreferrer">Powered by odpc.de · Oliver Dering</a></div></aside>"""
 
+DROL_CONTRAST_PATCH = """<style id="drol-global-contrast-v1">
+body main .catalog-audit,body main .audit,body main .info-box,body main .notice,body main .note,body main .callout,body main .filters,body main .card,body main article.card,body main .panel,body main .box,body main .method,body main .usecase,body main .report-sheet,body main .faq-jump,body main .toc{background:var(--ui-panel,var(--surface,#0b2031))!important;color:var(--ui-text,var(--ink,#f4f9fd))!important;border-color:var(--ui-line,var(--line,#34576d))!important}
+body main .catalog-audit h2,body main .catalog-audit h3,body main .card h2,body main .card h3,body main .panel h2{color:var(--ui-text,var(--ink,#f4f9fd))!important}
+body main .catalog-audit p,body main .catalog-audit li,body main .card p,body main .panel p,body main .note p,body main .notice p,body main .meta,body main .filter-hint{color:var(--ui-muted,var(--muted,#bdd0dc))!important}
+body main .meta b,body main .catalog-audit strong,body main .card strong{color:var(--ui-text,var(--ink,#f4f9fd))!important}
+body main input,body main select,body main textarea{background:var(--ui-panel2,var(--surface2,#163447))!important;color:var(--ui-text,var(--ink,#f4f9fd))!important;border-color:var(--ui-line,var(--line,#34576d))!important}
+body main input::placeholder,body main textarea::placeholder{color:var(--ui-muted,var(--muted,#bdd0dc))!important;opacity:1}
+body main select option{background:var(--ui-panel,var(--surface,#0b2031))!important;color:var(--ui-text,var(--ink,#f4f9fd))!important}
+body main a{color:var(--ui-accent,var(--accent,#53e8f3))!important}
+</style>"""
+
 def with_odpc_credit(payload: bytes) -> bytes:
-    if b'id="drol-odpc-credit"' in payload:
-        return payload
-    # Preserve existing footer and scripts. Only append a self-contained credit.
+    # Preserve approved geometry; append only color overrides and ODPC credit.
+    has_credit = b'id="drol-odpc-credit"' in payload
+    has_contrast = b'id="drol-global-contrast-v1"' in payload
     lower = payload.lower()
     pos = lower.rfind(b"</body>")
     if pos < 0:
-        raise RuntimeError("Cannot append ODPC footer: missing </body>")
-    return payload[:pos] + ODPC_CREDIT.encode("utf-8") + payload[pos:]
+        raise RuntimeError("Cannot append D.R.O.L. enhancements: missing </body>")
+    additions = (b"" if has_contrast else DROL_CONTRAST_PATCH.encode("utf-8"))
+    additions += (b"" if has_credit else ODPC_CREDIT.encode("utf-8"))
+    return payload[:pos] + additions + payload[pos:]
 
 ROOT="/drol"
 SOURCE=Path("site-deploy/drol.odpc.de")
