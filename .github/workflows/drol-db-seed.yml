@@ -1,10 +1,13 @@
 name: D.R.O.L. / Seed verified editorial registry
 on:
+  schedule:
+    - cron: '17 3 * * *'
   workflow_dispatch:
   push:
     branches: [main]
     paths:
       - '.github/workflows/drol-db-seed.yml'
+      - 'site-deploy/drol.odpc.de/database/model-schema.json'
 permissions:
   contents: read
 concurrency:
