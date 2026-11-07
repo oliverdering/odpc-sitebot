@@ -8,6 +8,7 @@ on:
     paths:
       - '.github/workflows/drol-knowledge-discovery.yml'
       - 'scripts/drol_release_watch.py'
+      - 'tests/test_drol_release_watch.py'
 permissions:
   contents: read
   issues: write
@@ -19,6 +20,8 @@ jobs:
       - uses: actions/checkout@v4
       - name: Validate discovery script
         run: python3 -m py_compile scripts/drol_release_watch.py scripts/drol_ionos_candidate_ingest.py
+      - name: Verify evidence extraction regression tests
+        run: python3 -m unittest discover -s tests -p 'test_drol_release_watch.py' -v
       - name: Discover new releases and create deduplicated review issues
         env:
           GH_TOKEN: ${{ github.token }}
