@@ -122,6 +122,26 @@ def main():
                 if not stat.S_ISDIR(data_stat.st_mode):
                     raise RuntimeError("D.R.O.L. data path is not a directory")
                 files.append((registry_source,data_dir+"/models.json"))
+            # Publish only the explicitly approved public event feed. Never touch
+            # models-db.json: it is owned by the independent MariaDB exporter.
+            events_source=SOURCE/"data"/"events.json"
+            if events_source.is_file():
+                import json
+                events=json.loads(events_source.read_text(encoding="utf-8"))
+                if events.get("schema_version")!=1 or not isinstance(events.get("events"),list):
+                    raise RuntimeError("Invalid public D.R.O.L. event feed")
+                for event in events["events"]:
+                    if not isinstance(event,dict) or not all(isinstance(event.get(k),str) and event[k].strip() for k in ("title","start","url")) or not event["url"].startswith("https://"):
+                        raise RuntimeError("Unverified event entry; refusing publication")
+                data_dir=ROOT+"/data"
+                try:
+                    data_stat=sf.lstat(data_dir)
+                except FileNotFoundError:
+                    sf.mkdir(data_dir,0o755)
+                    data_stat=sf.lstat(data_dir)
+                if not stat.S_ISDIR(data_stat.st_mode):
+                    raise RuntimeError("D.R.O.L. data path is not a directory")
+                files.append((events_source,data_dir+"/events.json"))
             for source,target in files:
                 payload=with_odpc_credit(with_drol_seo(with_asset_version(source.read_bytes()),source.name)) if source.suffix==".html" else source.read_bytes()
                 try:
