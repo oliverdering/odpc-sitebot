@@ -1,0 +1,29 @@
+name: D.R.O.L. / Site quality audit
+on:
+  schedule:
+    - cron: '13 7 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/drol-site-audit.yml'
+      - 'scripts/drol_site_audit.py'
+      - 'site-deploy/drol.odpc.de/**'
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Audit navigation, languages, content and contrast risks
+        run: python3 scripts/drol_site_audit.py
+      - name: Preserve complete quality report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: drol-site-audit
+          path: drol-site-audit.json
+          if-no-files-found: warn
+          retention-days: 30
