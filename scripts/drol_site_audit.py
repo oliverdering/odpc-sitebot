@@ -30,7 +30,7 @@ def main():
   if re.search(r'background(?:-color)?\s*:\s*(?:white|#fff(?:fff)?)(?:[;}]|\s*!important)',raw,re.I):
    warnings.append(f"{name}: legacy white CSS background (check theme contrast)")
   for img in p.images:
-   if not img.get("alt"):warnings.append(f"{name}: image without alt")
+   if "alt" not in img:warnings.append(f"{name}: image without alt attribute")
   for href in p.links:
    if href.startswith(("mailto:","tel:","javascript:","data:")):continue
    u=urlsplit(href)
