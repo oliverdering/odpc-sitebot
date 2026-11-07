@@ -65,6 +65,15 @@ def with_odpc_credit(payload: bytes) -> bytes:
     additions += (b"" if has_credit else ODPC_CREDIT.encode("utf-8"))
     return payload[:pos] + additions + payload[pos:]
 
+def with_asset_version(payload: bytes) -> bytes:
+    """Cache-bust the shared header stylesheet using its deployed content hash."""
+    import re
+    stylesheet = Path("site-deploy/drol.odpc.de/brand-header.css")
+    if not stylesheet.is_file():
+        return payload
+    version = hashlib.sha256(stylesheet.read_bytes()).hexdigest()[:12].encode("ascii")
+    return re.sub(rb'(brand-header\.css)(?:\?v=[A-Za-z0-9_-]+)?', lambda m: m.group(1) + b'?v=' + version, payload)
+
 ROOT="/drol"
 SOURCE=Path("site-deploy/drol.odpc.de")
 def main():
@@ -114,7 +123,7 @@ def main():
                     raise RuntimeError("D.R.O.L. data path is not a directory")
                 files.append((registry_source,data_dir+"/models.json"))
             for source,target in files:
-                payload=with_odpc_credit(with_drol_seo(source.read_bytes(),source.name)) if source.suffix==".html" else source.read_bytes()
+                payload=with_odpc_credit(with_drol_seo(with_asset_version(source.read_bytes()),source.name)) if source.suffix==".html" else source.read_bytes()
                 try:
                     with sf.open(target,"rb") as f:old=f.read()
                     if source.suffix==".html" and b"D.R.O.L." not in old:raise RuntimeError("Refusing to overwrite unrelated content: "+target)
