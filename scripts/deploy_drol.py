@@ -90,6 +90,8 @@ def main():
                 lab_stat=sf.lstat(lab_dir)
             if not stat.S_ISDIR(lab_stat.st_mode):raise RuntimeError("D.R.O.L. Lab path is not a directory")
             files=[(source,ROOT+"/"+source.name) for source in sorted(SOURCE.glob("*.html"))]
+            # Publish shared stylesheets referenced by the HTML pages.
+            files.extend((source,ROOT+"/"+source.name) for source in sorted(SOURCE.glob("*.css")))
             files.append((lab_source,lab_dir+"/index.html"))
             for seo_name in ("robots.txt","sitemap.xml"):
                 seo_file=SOURCE/seo_name
