@@ -25,6 +25,34 @@ body main select option{background:var(--ui-panel,var(--surface,#0b2031))!import
 body main a{color:var(--ui-accent,var(--accent,#53e8f3))!important}
 </style>"""
 
+def with_drol_seo(payload: bytes, filename: str) -> bytes:
+    """Inject canonical and social metadata without changing approved design."""
+    import html
+    import re
+    if filename == "index.html":
+        canonical = "https://drol.odpc.de/"
+    else:
+        canonical = "https://drol.odpc.de/" + filename
+    head_end = payload.lower().find(b"</head>")
+    if head_end < 0:
+        raise RuntimeError("D.R.O.L. SEO: missing head: " + filename)
+    source = payload.decode("utf-8")
+    head = source[:source.lower().find("</head>")]
+    title_match = re.search(r"<title[^>]*>(.*?)</title>", head, re.I | re.S)
+    title = html.unescape(re.sub(r"<[^>]+>", "", title_match.group(1))).strip() if title_match else "D.R.O.L."
+    description_match = re.search(r'<meta\\s+name=["\\']description["\\']\\s+content=["\\']([^"\\']+)', head, re.I)
+    description = html.unescape(description_match.group(1)) if description_match else "D.R.O.L. – technische Wissensplattform für Drohnen, Sensorik, Firmware, KI und Datenverarbeitung."
+    additions = []
+    if not re.search(r'<link[^>]+rel=["\\']canonical["\\']', head, re.I):
+        additions.append('<link rel="canonical" href="' + html.escape(canonical, quote=True) + '">')
+    if not re.search(r'<meta[^>]+property=["\\']og:title["\\']', head, re.I):
+        additions.append('<meta property="og:type" content="website"><meta property="og:title" content="' + html.escape(title, quote=True) + '"><meta property="og:description" content="' + html.escape(description, quote=True) + '"><meta property="og:url" content="' + html.escape(canonical, quote=True) + '">')
+    if not re.search(r'<meta[^>]+name=["\\']twitter:card["\\']', head, re.I):
+        additions.append('<meta name="twitter:card" content="summary">')
+    if not additions:
+        return payload
+    return source.replace("</head>", "\\n" + "\\n".join(additions) + "\\n</head>", 1).encode("utf-8")
+
 def with_odpc_credit(payload: bytes) -> bytes:
     # Preserve approved geometry; append only color overrides and ODPC credit.
     has_credit = b'id="drol-odpc-credit"' in payload
@@ -81,7 +109,7 @@ def main():
                     raise RuntimeError("D.R.O.L. data path is not a directory")
                 files.append((registry_source,data_dir+"/models.json"))
             for source,target in files:
-                payload=with_odpc_credit(source.read_bytes()) if source.suffix==".html" else source.read_bytes()
+                payload=with_odpc_credit(with_drol_seo(source.read_bytes(),source.name)) if source.suffix==".html" else source.read_bytes()
                 try:
                     with sf.open(target,"rb") as f:old=f.read()
                     if source.suffix==".html" and b"D.R.O.L." not in old:raise RuntimeError("Refusing to overwrite unrelated content: "+target)
