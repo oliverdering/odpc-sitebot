@@ -3,6 +3,27 @@ import base64,hashlib,hmac,os,posixpath,stat
 from pathlib import Path
 import paramiko
 from deploy_helpermonkey_v4 import HOST,USER,PIN
+# Shared ODPC attribution on every published D.R.O.L. HTML page.
+# Keep the approved page design; the credit is appended immediately before </body>.
+ODPC_CREDIT = """<style id="drol-odpc-credit-style">
+#drol-odpc-credit{box-sizing:border-box;display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;max-width:1100px;margin:24px auto 96px;padding:20px 24px;border-top:1px solid rgba(135,176,191,.35);color:inherit;font:inherit}
+#drol-odpc-credit a{color:inherit;text-decoration:none}#drol-odpc-credit a:hover{text-decoration:underline}
+#drol-odpc-credit img{display:block;width:64px;height:64px;object-fit:cover;object-position:50% 12%;border-radius:50%;border:2px solid rgba(255,255,255,.55)}
+#drol-odpc-credit .odpc-credit-label{display:block;font-size:.8rem;opacity:.8}
+#drol-odpc-credit .odpc-credit-link{display:inline-block;font-weight:750}
+@media(max-width:640px){#drol-odpc-credit{margin-bottom:100px;padding:18px}}
+</style><aside id="drol-odpc-credit" aria-label="Website erstellt von ODPC"><a href="https://odpc.de/" target="_blank" rel="noopener noreferrer" aria-label="ODPC – Oliver Dering"><img src="https://odpc.de/wp-content/uploads/2026/08/1786371119667.png.webp" alt="Oliver Dering" width="64" height="64" loading="lazy" decoding="async"></a><div><span class="odpc-credit-label">Webdesign, Technik &amp; KI-Integration</span><a class="odpc-credit-link" href="https://odpc.de/" target="_blank" rel="noopener noreferrer">Powered by odpc.de · Oliver Dering</a></div></aside>"""
+
+def with_odpc_credit(payload: bytes) -> bytes:
+    if b'id="drol-odpc-credit"' in payload:
+        return payload
+    # Preserve existing footer and scripts. Only append a self-contained credit.
+    lower = payload.lower()
+    pos = lower.rfind(b"</body>")
+    if pos < 0:
+        raise RuntimeError("Cannot append ODPC footer: missing </body>")
+    return payload[:pos] + ODPC_CREDIT.encode("utf-8") + payload[pos:]
+
 ROOT="/drol"
 SOURCE=Path("site-deploy/drol.odpc.de")
 def main():
@@ -30,7 +51,7 @@ def main():
             files=[(source,ROOT+"/"+source.name) for source in sorted(SOURCE.glob("*.html"))]
             files.append((lab_source,lab_dir+"/index.html"))
             for source,target in files:
-                payload=source.read_bytes()
+                payload=with_odpc_credit(source.read_bytes())
                 try:
                     with sf.open(target,"rb") as f:old=f.read()
                     if b"D.R.O.L." not in old:raise RuntimeError("Refusing to overwrite unrelated content: "+target)
