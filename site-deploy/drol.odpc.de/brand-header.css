@@ -12,6 +12,7 @@
 .header .actions{grid-column:2;grid-row:1;gap:5px!important}
 .header .icon-button,.header .menu-button,.header .languages summary{min-width:38px!important;min-height:42px!important;padding:4px 7px!important;font-size:.88rem!important;border-radius:11px!important}
 .header .menu-button{font-size:0!important;gap:0!important}
+.header .menu-button span[aria-hidden="true"]{font-size:22px!important;line-height:1!important;display:inline-block!important}
 .header .menu-button svg{width:22px;height:22px}
 .drol-unified-header{display:flex!important;flex-wrap:wrap!important;align-items:center!important;gap:7px!important;padding:12px 14px!important;min-height:112px!important}
 .drol-unified-brand{margin-right:auto!important;display:flex!important;align-items:center!important;gap:10px!important;font-size:clamp(1rem,4vw,1.3rem)!important;letter-spacing:.04em!important}
