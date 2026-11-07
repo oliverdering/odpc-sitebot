@@ -8,6 +8,7 @@ on:
     paths:
       - '.github/workflows/drol-source-monitor.yml'
       - 'scripts/drol_source_monitor.py'
+      - 'site-deploy/drol.odpc.de/database/source-registry.json'
 permissions:
   contents: read
 jobs:
