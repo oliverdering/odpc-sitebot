@@ -1,0 +1,28 @@
+/* D.R.O.L. global brand hierarchy v1: shared across content pages */
+.header-row,.drol-unified-header{box-sizing:border-box}
+.brand img,.drol-unified-brand img{display:block;aspect-ratio:1/1;object-fit:cover!important;border-radius:50%!important;flex-shrink:0;box-shadow:0 0 0 2px #25b9cf,0 0 16px #21bbd466!important;background:#092332}
+.brand,.drol-unified-brand{min-width:0;flex-shrink:0}
+.brand span,.drol-unified-brand span{line-height:1.2}
+.actions,.drol-unified-header>button,.drol-unified-header>details{flex-shrink:0}
+@media(max-width:800px){
+.header .shell.header-row{width:calc(100% - 28px)!important;min-height:116px!important;display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;gap:8px!important;padding:12px 0!important;align-items:center!important}
+.header .brand{grid-column:1;grid-row:1;gap:10px!important;margin:0!important;font-size:clamp(1rem,4vw,1.3rem)!important;letter-spacing:.04em!important}
+.header .brand img{width:clamp(76px,21vw,104px)!important;height:clamp(76px,21vw,104px)!important}
+.header .brand small{font-size:.5rem!important;letter-spacing:.06em!important;max-width:120px}
+.header .actions{grid-column:2;grid-row:1;gap:5px!important}
+.header .icon-button,.header .menu-button,.header .languages summary{min-width:38px!important;min-height:42px!important;padding:4px 7px!important;font-size:.88rem!important;border-radius:11px!important}
+.header .menu-button{font-size:0!important;gap:0!important}
+.header .menu-button svg{width:22px;height:22px}
+.drol-unified-header{display:flex!important;flex-wrap:wrap!important;align-items:center!important;gap:7px!important;padding:12px 14px!important;min-height:112px!important}
+.drol-unified-brand{margin-right:auto!important;display:flex!important;align-items:center!important;gap:10px!important;font-size:clamp(1rem,4vw,1.3rem)!important;letter-spacing:.04em!important}
+.drol-unified-brand img{width:clamp(76px,21vw,104px)!important;height:clamp(76px,21vw,104px)!important}
+.drol-unified-brand small{font-size:.5rem!important;letter-spacing:.04em!important}
+.drol-unified-header .drol-unified-nav{order:10}
+.drol-unified-header .drol-unified-toggle,.drol-unified-header .drol-lang summary,.drol-unified-header .drol-unified-menu{min-width:38px!important;min-height:42px!important;padding:5px 7px!important;font-size:.9rem!important}
+}
+@media(max-width:390px){
+.header .brand img,.drol-unified-brand img{width:72px!important;height:72px!important}
+.header .brand small,.drol-unified-brand small{font-size:.43rem!important}
+.header .actions{gap:3px!important}
+.header .icon-button,.header .menu-button,.header .languages summary{min-width:34px!important;padding:3px 5px!important}
+}
