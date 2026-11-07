@@ -1,0 +1,27 @@
+name: D.R.O.L. / Database offline preflight
+on:
+  push:
+    paths:
+      - 'scripts/drol_migration_preflight.py'
+      - 'scripts/drol_validate_registry.py'
+      - 'site-deploy/drol.odpc.de/database/**'
+      - '.github/workflows/drol-data-preflight.yml'
+  pull_request:
+    paths:
+      - 'scripts/drol_migration_preflight.py'
+      - 'scripts/drol_validate_registry.py'
+      - 'site-deploy/drol.odpc.de/database/**'
+      - '.github/workflows/drol-data-preflight.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  offline-preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check migrations and editorial seed
+        run: |
+          python3 scripts/drol_migration_preflight.py
+          python3 scripts/drol_validate_registry.py
