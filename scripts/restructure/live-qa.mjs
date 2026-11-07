@@ -273,6 +273,7 @@ for(const [name,viewport]of [['desktop',{width:1440,height:1000}],['mobile',{wid
   await page.goto('https://ai.odpc.de/connector-einrichten/',{waitUntil:'networkidle'});
   if(!await page.locator('#odpc-voice-settings').evaluate(e=>e.open))await page.locator('#odpc-voice-settings summary').click();
   await page.locator('#odpc-voice-reset').click();
+  await page.locator('#odpc-voice-language').selectOption('de-DE');
   await page.locator('#odpc-voice-settings summary').click();
   await answer('KI einrichten GitHub ChatGPT Android');
   await answer('verbunden');await answer('Test erfolgreich');await answer('Aufgabe:report');
@@ -280,7 +281,7 @@ for(const [name,viewport]of [['desktop',{width:1440,height:1000}],['mobile',{wid
   await answer('KI einrichten');await answer('Gmail + Kalender + Drive');
   if(outcome==='partial')await answer('verbunden');
   await answer(outcome==='partial'?'Test teilweise erfolgreich':'nicht verfügbar');
-  await page.getByRole('button',{name:'Dienste neu wählen',exact:true}).click();
+  await page.locator('[data-choice="Dienste neu wählen"]').click();
   assert.equal(await page.locator('#odpc-voice').getAttribute('data-phase'),'service');
   assert.deepEqual(await page.evaluate(()=>JSON.parse(sessionStorage.getItem('hm-guide-v1')).services),[]);
   await page.reload({waitUntil:'networkidle'});
