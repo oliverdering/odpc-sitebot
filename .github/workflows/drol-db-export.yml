@@ -1,10 +1,13 @@
 name: D.R.O.L. / Publish database-backed catalog
 on:
+  schedule:
+    - cron: '37 */6 * * *'
   workflow_dispatch:
   push:
     branches: [main]
     paths:
       - '.github/workflows/drol-db-export.yml'
+      - 'scripts/drol_ionos_db_export.py'
 permissions:
   contents: read
 concurrency:
