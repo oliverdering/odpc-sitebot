@@ -50,11 +50,28 @@ def main():
             if not stat.S_ISDIR(lab_stat.st_mode):raise RuntimeError("D.R.O.L. Lab path is not a directory")
             files=[(source,ROOT+"/"+source.name) for source in sorted(SOURCE.glob("*.html"))]
             files.append((lab_source,lab_dir+"/index.html"))
+            # Publish the canonical, non-sensitive editorial registry as a public JSON resource.
+            # Do not deploy SQL migrations or private database configuration.
+            registry_source=SOURCE/"database"/"model-schema.json"
+            if registry_source.is_file():
+                import json
+                registry=json.loads(registry_source.read_text(encoding="utf-8"))
+                if registry.get("schema_version")!="1.0" or not isinstance(registry.get("models"),list):
+                    raise RuntimeError("Invalid D.R.O.L. model registry")
+                data_dir=ROOT+"/data"
+                try:
+                    data_stat=sf.lstat(data_dir)
+                except FileNotFoundError:
+                    sf.mkdir(data_dir,0o755)
+                    data_stat=sf.lstat(data_dir)
+                if not stat.S_ISDIR(data_stat.st_mode):
+                    raise RuntimeError("D.R.O.L. data path is not a directory")
+                files.append((registry_source,data_dir+"/models.json"))
             for source,target in files:
-                payload=with_odpc_credit(source.read_bytes())
+                payload=with_odpc_credit(source.read_bytes()) if source.suffix==".html" else source.read_bytes()
                 try:
                     with sf.open(target,"rb") as f:old=f.read()
-                    if b"D.R.O.L." not in old:raise RuntimeError("Refusing to overwrite unrelated content: "+target)
+                    if source.suffix==".html" and b"D.R.O.L." not in old:raise RuntimeError("Refusing to overwrite unrelated content: "+target)
                 except FileNotFoundError:old=None
                 temp=target+".uploading"
                 with sf.open(temp,"wb") as f:f.write(payload)
