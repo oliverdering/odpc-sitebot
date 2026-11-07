@@ -8,6 +8,7 @@ on:
     paths:
       - '.github/workflows/drol-db-export.yml'
       - 'scripts/drol_ionos_db_export.py'
+      - '.github/workflows/drol-knowledge-discovery.yml'
 permissions:
   contents: read
 concurrency:
