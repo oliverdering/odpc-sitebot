@@ -1,0 +1,94 @@
+{
+  "schema_version": "1.0",
+  "updated": "2026-11-07",
+  "purpose": "Single source of truth for catalog, model profiles and SDK matrix; editorial seed, not verified specifications",
+  "evidence_levels": {
+    "E0": "unverified",
+    "E1": "primary source documented",
+    "E2": "reproducible lab test",
+    "E3": "independently repeated lab test"
+  },
+  "models": [
+    {
+      "id": "dji-mini-3",
+      "manufacturer": "DJI",
+      "name": "Mini 3",
+      "category": "camera_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": [
+        "https://www.dji.com/mini-3/specs"
+      ]
+    },
+    {
+      "id": "dji-mini-3-pro",
+      "manufacturer": "DJI",
+      "name": "Mini 3 Pro",
+      "category": "camera_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": [
+        "https://www.dji.com/mini-3-pro/specs"
+      ]
+    },
+    {
+      "id": "dji-mini-4-pro",
+      "manufacturer": "DJI",
+      "name": "Mini 4 Pro",
+      "category": "camera_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": [
+        "https://www.dji.com/mini-4-pro/specs",
+        "https://developer.dji.com/doc/mobile-sdk-tutorial/en/index.html"
+      ]
+    },
+    {
+      "id": "parrot-anafi-ai",
+      "manufacturer": "Parrot",
+      "name": "ANAFI Ai",
+      "category": "camera_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": [
+        "https://www.parrot.com/"
+      ]
+    },
+    {
+      "id": "holybro-x500-v2",
+      "manufacturer": "Holybro",
+      "name": "X500 V2",
+      "category": "development_kit",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": [
+        "https://holybro.com/"
+      ]
+    }
+  ]
+}
