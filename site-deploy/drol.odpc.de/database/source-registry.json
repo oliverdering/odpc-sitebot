@@ -1,0 +1,182 @@
+{
+  "schema_version": "1.0",
+  "policy": "Discovery targets only; URLs and category labels are not proof of technical compatibility. E0 until reviewed. Respect site terms, robots and rate limits.",
+  "sources": [
+    {
+      "name": "DJI",
+      "category": "manufacturer",
+      "url": "https://www.dji.com/",
+      "scope": "camera drones",
+      "evidence": "E0",
+      "status": "monitor_only"
+    },
+    {
+      "name": "DJI Developer",
+      "category": "sdk",
+      "url": "https://developer.dji.com/",
+      "scope": "mobile SDK and developer documentation",
+      "evidence": "E0",
+      "status": "monitor_only"
+    },
+    {
+      "name": "Parrot",
+      "category": "manufacturer",
+      "url": "https://www.parrot.com/",
+      "scope": "professional UAV",
+      "evidence": "E0",
+      "status": "monitor_only"
+    },
+    {
+      "name": "Parrot Developer",
+      "category": "sdk",
+      "url": "https://developer.parrot.com/",
+      "scope": "open development interfaces",
+      "evidence": "E0",
+      "status": "monitor_only"
+    },
+    {
+      "name": "Autel Robotics",
+      "category": "manufacturer",
+      "url": "https://www.autelrobotics.com/",
+      "scope": "camera UAV",
+      "evidence": "E0",
+      "status": "monitor_only"
+    },
+    {
+      "name": "Skydio",
+      "category": "manufacturer",
+      "url": "https://www.skydio.com/",
+      "scope": "autonomous inspection UAV",
+      "evidence": "E0",
+      "status": "monitor_only"
+    },
+    {
+      "name": "Holybro",
+      "category": "hardware",
+      "url": "https://holybro.com/",
+      "scope": "flight controllers and frames",
+      "evidence": "E0",
+      "status": "monitor_only"
+    },
+    {
+      "name": "CubePilot",
+      "category": "hardware",
+      "url": "https://www.cubepilot.org/",
+      "scope": "autopilot hardware",
+      "evidence": "E0",
+      "status": "monitor_only"
+    },
+    {
+      "name": "ArduPilot",
+      "category": "autopilot",
+      "url": "https://ardupilot.org/",
+      "scope": "open flight stack",
+      "evidence": "E0",
+      "status": "monitor_only"
+    },
+    {
+      "name": "PX4",
+      "category": "autopilot",
+      "url": "https://docs.px4.io/",
+      "scope": "open flight stack",
+      "evidence": "E0",
+      "status": "monitor_only"
+    },
+    {
+      "name": "MAVLink",
+      "category": "protocol",
+      "url": "https://mavlink.io/",
+      "scope": "UAV communications",
+      "evidence": "E0",
+      "status": "monitor_only"
+    },
+    {
+      "name": "MAVSDK",
+      "category": "sdk",
+      "url": "https://mavsdk.mavlink.io/",
+      "scope": "application programming",
+      "evidence": "E0",
+      "status": "monitor_only"
+    },
+    {
+      "name": "QGroundControl",
+      "category": "ground_station",
+      "url": "https://qgroundcontrol.com/",
+      "scope": "mission planning",
+      "evidence": "E0",
+      "status": "monitor_only"
+    },
+    {
+      "name": "ROS 2",
+      "category": "robotics",
+      "url": "https://docs.ros.org/",
+      "scope": "robotics middleware",
+      "evidence": "E0",
+      "status": "monitor_only"
+    },
+    {
+      "name": "OpenCV",
+      "category": "computer_vision",
+      "url": "https://docs.opencv.org/",
+      "scope": "image processing",
+      "evidence": "E0",
+      "status": "monitor_only"
+    },
+    {
+      "name": "OpenDroneMap",
+      "category": "photogrammetry",
+      "url": "https://www.opendronemap.org/",
+      "scope": "mapping and reconstruction",
+      "evidence": "E0",
+      "status": "monitor_only"
+    },
+    {
+      "name": "COLMAP",
+      "category": "photogrammetry",
+      "url": "https://colmap.github.io/",
+      "scope": "structure from motion",
+      "evidence": "E0",
+      "status": "monitor_only"
+    },
+    {
+      "name": "Open3D",
+      "category": "point_cloud",
+      "url": "https://www.open3d.org/",
+      "scope": "3D point cloud processing",
+      "evidence": "E0",
+      "status": "monitor_only"
+    },
+    {
+      "name": "OpenStreetMap",
+      "category": "geodata",
+      "url": "https://www.openstreetmap.org/",
+      "scope": "geospatial data",
+      "evidence": "E0",
+      "status": "monitor_only"
+    },
+    {
+      "name": "EASA",
+      "category": "regulation",
+      "url": "https://www.easa.europa.eu/",
+      "scope": "EU aviation rules",
+      "evidence": "E0",
+      "status": "monitor_only"
+    },
+    {
+      "name": "LBA",
+      "category": "regulation",
+      "url": "https://www.lba.de/",
+      "scope": "German aviation authority",
+      "evidence": "E0",
+      "status": "monitor_only"
+    },
+    {
+      "name": "Dronecode",
+      "category": "ecosystem",
+      "url": "https://dronecode.org/",
+      "scope": "open UAV ecosystem",
+      "evidence": "E0",
+      "status": "monitor_only"
+    }
+  ]
+}
