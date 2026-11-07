@@ -1,6 +1,11 @@
 name: D.R.O.L. / Private database backup
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/drol_ionos_db_backup.py'
+      - '.github/workflows/drol-db-backup.yml'
 permissions:
   contents: read
 concurrency:
