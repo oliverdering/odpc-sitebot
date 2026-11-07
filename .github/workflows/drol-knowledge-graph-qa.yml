@@ -1,0 +1,31 @@
+name: D.R.O.L. / Knowledge graph quality gate
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'site-deploy/drol.odpc.de/database/knowledge-graph-seed.json'
+      - 'site-deploy/drol.odpc.de/database/004_uav_relationships.sql'
+      - 'scripts/drol_validate_knowledge_graph.py'
+      - '.github/workflows/drol-knowledge-graph-qa.yml'
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate graph seed, cross-vendor scope and evidence safety
+        run: python3 scripts/drol_validate_knowledge_graph.py
+      - name: Confirm additive schema and absence of destructive SQL
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          sql=Path('site-deploy/drol.odpc.de/database/004_uav_relationships.sql').read_text()
+          stripped=re.sub(r'--[^\n]*','',sql)
+          assert not re.search(r'\b(DROP|TRUNCATE|DELETE|ALTER)\b',stripped,re.I)
+          assert stripped.count('CREATE TABLE IF NOT EXISTS') == 3
+          print('PASS: three additive graph tables; no destructive statements')
+          PY
