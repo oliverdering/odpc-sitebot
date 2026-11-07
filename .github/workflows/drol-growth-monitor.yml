@@ -8,6 +8,7 @@ on:
     paths:
       - 'scripts/drol_growth_monitor.py'
       - '.github/workflows/drol-growth-monitor.yml'
+      - '.github/workflows/drol-db-export.yml'
 permissions:
   contents: write
 concurrency:
