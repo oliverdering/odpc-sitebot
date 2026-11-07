@@ -1,0 +1,23 @@
+name: D.R.O.L. / Live schema inventory
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: drol-live-schema-inventory
+  cancel-in-progress: false
+jobs:
+  inventory:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate read-only inventory
+        run: python3 -m py_compile scripts/drol_ionos_db_inventory.py
+      - name: Install SFTP client
+        run: python3 -m pip install 'paramiko>=3.4,<5'
+      - name: Inventory live D.R.O.L. schema without modifying data
+        env:
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+          DROL_DB_PASSWORD: ${{ secrets.DROL_DB_PASSWORD }}
+        run: python3 scripts/drol_ionos_db_inventory.py
