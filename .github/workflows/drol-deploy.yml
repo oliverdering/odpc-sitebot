@@ -30,6 +30,11 @@ jobs:
           mission=Path('site-deploy/drol.odpc.de/mission-control.html').read_text()
           assert 'DEINE DROHNE. DEINE MÖGLICHKEITEN.' in mission
           assert 'data/models-db.json' in mission
+          assert 'file_00000000c37c81f49cf793debb38a1c5.png' in mission
+          import json
+          feed=json.loads(Path('site-deploy/drol.odpc.de/data/events.json').read_text())
+          assert feed['schema_version']==1 and isinstance(feed['events'],list)
+          assert 'events.json' in Path('scripts/deploy_drol.py').read_text()
           PY
       - run: python3 -m pip install 'paramiko>=3.4,<5'
       - name: Deploy only /drol
