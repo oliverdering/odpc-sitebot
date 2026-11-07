@@ -20,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Validate seed and backup scripts
-        run: python3 -m py_compile scripts/drol_ionos_db_seed.py scripts/drol_ionos_db_backup.py scripts/drol_ionos_db_inventory.py
+        run: python3 -m py_compile scripts/drol_ionos_db_seed.py scripts/drol_ionos_db_backup.py scripts/drol_ionos_db_inventory.py scripts/drol_ionos_db_export.py
       - name: Install SFTP library
         run: python3 -m pip install 'paramiko>=3.4,<5'
       - name: Back up all production tables
@@ -45,3 +45,8 @@ jobs:
           ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
           DROL_DB_PASSWORD: ${{ secrets.DROL_DB_PASSWORD }}
         run: python3 scripts/drol_ionos_db_inventory.py
+      - name: Publish updated MariaDB catalog immediately after successful seed
+        env:
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+          DROL_DB_PASSWORD: ${{ secrets.DROL_DB_PASSWORD }}
+        run: python3 scripts/drol_ionos_db_export.py
