@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>D.R.O.L. Live-Labor | Wachstum der Wissensplattform</title>
+<meta name="description" content="D.R.O.L. Live-Labor: automatisch entdeckte Software-Releases, offene Prüfaufträge und wachsende Drohnen-Wissensdatenbank transparent verfolgen.">
+<style>
+:root{color-scheme:dark;--bg:#08131b;--surface:#101f29;--ink:#eaf5f2;--muted:#a6bec0;--line:#2b454c;--accent:#8ce6cf}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 system-ui,sans-serif}a{color:var(--accent)}
+header,main,footer{max-width:1120px;margin:auto;padding:24px}header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;border-bottom:1px solid var(--line)}
+nav{display:flex;flex-wrap:wrap;gap:18px}h1{font-size:clamp(2rem,5vw,3.3rem);line-height:1.2}h2{margin-top:38px}
+.lead{color:var(--muted);max-width:780px}.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin:26px 0}
+.card{border:1px solid var(--line);border-radius:16px;background:var(--surface);padding:22px;min-width:0}
+.number{font-size:2rem;font-weight:750;color:var(--accent)}.muted,small{color:var(--muted)}.feed{display:grid;gap:12px}.feed article{padding:18px 22px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+.feed h3{margin:0 0 8px;font-size:1.12rem}.meta{display:flex;gap:14px;flex-wrap:wrap;color:var(--muted);font-size:.9rem}
+.status{display:inline-block;padding:3px 10px;border:1px solid var(--line);border-radius:30px;color:var(--accent);font-size:.8rem}
+button{background:var(--accent);color:#05231e;border:0;border-radius:10px;padding:10px 17px;font-weight:700;cursor:pointer}
+footer{border-top:1px solid var(--line);color:var(--muted)}@media(prefers-reduced-motion:no-preference){.pulse{animation:pulse 2.5s infinite}@keyframes pulse{50%{opacity:.5}}}
+</style></head><body>
+<header><strong>D.R.O.L. / LIVE LAB</strong><nav aria-label="Navigation"><a href="/">Start</a><a href="/katalog.html">Katalog</a><a href="/engineering-atlas.html">Engineering Atlas</a><a href="/drol-wissen.html">Wissen</a></nav></header>
+<main><p class="status"><span class="pulse">●</span> Automatische Forschung · öffentlich nachvollziehbar</p>
+<h1>Sieh zu, wie D.R.O.L. wächst.</h1>
+<p class="lead">Hier erscheinen neue Recherchefunde und Prüfaufträge aus der laufenden GitHub-Automatisierung. Die Liste aktualisiert sich während du auf der Seite bist. Ein entdeckter Release ist noch keine bestätigte Drohnen-Kompatibilität.</p>
+<div class="metrics" aria-label="Live-Kennzahlen">
+<div class="card"><div class="number" id="total">–</div><div>Erkannte Forschungsaufträge</div></div>
+<div class="card"><div class="number" id="open">–</div><div>Offene Prüfaufträge</div></div>
+<div class="card"><div class="number" id="updated">–</div><div>Letzter Datenabruf</div></div>
+</div>
+<div style="display:flex;align-items:center;gap:15px;flex-wrap:wrap"><button id="refresh" type="button">Jetzt aktualisieren</button><span class="muted" id="state" role="status" aria-live="polite">Lade Forschungsdaten …</span></div>
+<h2>Neu im Forschungslabor</h2><div id="feed" class="feed" aria-live="polite"><p>Recherchedaten werden geladen.</p></div>
+<h2>Wie Wissen entsteht</h2><div class="metrics"><section class="card"><h3>1 · Entdecken</h3><p>Automatische Prüfung offizieller Open-Source-Releases.</p></section><section class="card"><h3>2 · Dokumentieren</h3><p>Neue Kandidaten erhalten eine Quellenadresse und einen nachvollziehbaren Prüfauftrag.</p></section><section class="card"><h3>3 · Verifizieren</h3><p>Technische Aussagen bleiben E0, bis die Primärquellen und konkrete Kompatibilität geprüft wurden.</p></section></div>
+<p class="muted">Transparenzhinweis: Die Live-Liste zeigt GitHub-Prüfaufträge. Sie ist kein Live-Zugriff auf die private MariaDB und enthält keine ungeprüften Aussagen als bestätigte Fakten.</p>
+</main><footer>D.R.O.L. · Drone Recon Operation Lab · <a href="https://odpc.de/">powered by ODPC</a></footer>
+<script>
+(function(){
+const api='https://api.github.com/repos/oliverdering/odpc-sitebot/issues?state=all&per_page=100';
+const feed=document.getElementById('feed'),state=document.getElementById('state');
+let busy=false;
+function node(tag,text,cls){const el=document.createElement(tag);if(text!==undefined)el.textContent=text;if(cls)el.className=cls;return el}
+async function refresh(){
+if(busy)return;busy=true;state.textContent='Prüfe GitHub-Daten …';
+try{
+const r=await fetch(api,{headers:{Accept:'application/vnd.github+json'},cache:'no-store'});
+if(!r.ok)throw new Error('HTTP '+r.status);
+const data=await r.json();
+if(!Array.isArray(data))throw new Error('Ungültige Antwort');
+const issues=data.filter(x=>!x.pull_request&&x.title&&x.title.startsWith('[D.R.O.L. Review]')).sort((a,b)=>new Date(b.created_at)-new Date(a.created_at));
+document.getElementById('total').textContent=issues.length+(data.length===100?'+':'');
+document.getElementById('open').textContent=issues.filter(x=>x.state==='open').length;
+document.getElementById('updated').textContent=new Date().toLocaleTimeString('de-DE',{hour:'2-digit',minute:'2-digit'});
+feed.replaceChildren();
+for(const issue of issues.slice(0,30)){
+const article=node('article');const title=node('h3');const link=node('a',issue.title.replace('[D.R.O.L. Review] ',''));link.href=issue.html_url;link.target='_blank';link.rel='noopener noreferrer';title.append(link);article.append(title);
+const meta=node('div',undefined,'meta');meta.append(node('span',issue.state==='open'?'Prüfung offen':'Prüfung geschlossen'));meta.append(node('span','Erkannt: '+new Date(issue.created_at).toLocaleDateString('de-DE')));meta.append(node('span','E0 · automatisch entdeckt'));article.append(meta);feed.append(article);
+}
+if(!issues.length)feed.append(node('p','Noch keine öffentlich sichtbaren Forschungsaufträge.'));
+state.textContent='Live-Daten geladen · Aktualisierung alle 60 Sekunden';
+}catch(e){state.textContent='Live-Abruf derzeit nicht verfügbar. Bitte später erneut versuchen.';if(!feed.children.length)feed.append(node('p','GitHub-Daten konnten nicht geladen werden.'))}
+finally{busy=false}
+}
+document.getElementById('refresh').addEventListener('click',refresh);
+refresh();setInterval(function(){if(!document.hidden)refresh()},60000);
+})();
+</script></body></html>
