@@ -1,0 +1,32 @@
+name: D.R.O.L. / Autonomous knowledge discovery
+on:
+  schedule:
+    - cron: '41 6 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/drol-knowledge-discovery.yml'
+      - 'scripts/drol_release_watch.py'
+permissions:
+  contents: read
+  issues: write
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate discovery script
+        run: python3 -m py_compile scripts/drol_release_watch.py
+      - name: Discover new releases and create deduplicated review issues
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/drol_release_watch.py
+      - name: Retain machine-readable candidates
+        uses: actions/upload-artifact@v4
+        with:
+          name: drol-release-candidates
+          path: drol-release-candidates.json
+          if-no-files-found: error
+          retention-days: 30
