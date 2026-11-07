@@ -97,8 +97,8 @@ def main():
             from pathlib import Path
             import datetime
             backup = result.get("backup")
-            if not isinstance(backup, list) or len(backup) != 4:
-                raise RuntimeError("Unexpected database table count; refusing incomplete backup")
+            if not isinstance(backup, list) or len(backup) != 14:
+                raise RuntimeError("Expected all 14 production D.R.O.L. tables; refusing incomplete backup")
             out = Path("drol-db-backup.json")
             if out.exists():
                 raise RuntimeError("Refusing to overwrite existing backup")
