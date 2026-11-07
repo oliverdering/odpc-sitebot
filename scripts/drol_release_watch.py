@@ -3,7 +3,7 @@
 A release is a *candidate*, not evidence of model compatibility. Never writes
 unreviewed technical claims to the public database.
 """
-import json,os,urllib.request,urllib.error
+import json,os,re,hashlib,urllib.request,urllib.error
 from datetime import datetime,timezone
 from pathlib import Path
 
@@ -27,6 +27,19 @@ def request(url,method="GET",payload=None):
     if body is not None:headers["Content-Type"]="application/json"
     with urllib.request.urlopen(urllib.request.Request(url,headers=headers,data=body,method=method),timeout=25) as r:
         return json.load(r)
+def summarize_release_notes(raw):
+    """Bounded upstream note extraction; E0 only, never inferred compatibility."""
+    if not isinstance(raw,str):return {"excerpt":"","sha256":None,"topics":[]}
+    clean=re.sub(r"<[^>]{0,200}>"," ",raw)
+    clean=re.sub(r"\\s+"," ",clean).strip()
+    keywords={"security":r"\\b(security|vulnerabilit|cve-|authentication)\\b",
+              "api_change":r"\\b(api|deprecated|breaking change|migration)\\b",
+              "firmware":r"\\b(firmware|bootloader|flight controller)\\b",
+              "sensor":r"\\b(lidar|camera|imu|gps|gnss|sensor)\\b",
+              "navigation":r"\\b(navigation|mission|waypoint|geofence)\\b"}
+    topics=[name for name,pattern in keywords.items() if re.search(pattern,clean,re.I)]
+    return {"excerpt":clean[:1200],"sha256":hashlib.sha256(raw.encode()).hexdigest(),"topics":topics}
+
 def main():
     out=[]
     for product,repo in REPOS.items():
@@ -35,7 +48,8 @@ def main():
             tag=release.get("tag_name")
             url=release.get("html_url")
             if not tag or not url or not url.startswith("https://github.com/"):raise ValueError("invalid release")
-            item={"product":product,"repository":repo,"tag":tag,"url":url,
+            notes=summarize_release_notes(release.get("body",""))
+            item={"product":product,"repository":repo,"tag":tag,"url":url,"release_notes":notes,
                   "published_at":release.get("published_at"),"status":"UNREVIEWED",
                   "evidence_level":"E0","model_compatibility":"UNKNOWN"}
             out.append(item)
@@ -47,7 +61,7 @@ def main():
                 if not any(marker in (i.get("body") or "") for i in issues if "pull_request" not in i):
                     body=(f"Automatisch entdeckter Software-Release-Kandidat.\\n\\n"
                           f"- Projekt: {product}\\n- Upstream: {repo}\\n- Version: {tag}\\n"
-                          f"- Primärquelle: {url}\\n- Veröffentlicht: {release.get('published_at') or 'unbekannt'}\\n"
+                          f"- Primärquelle: {url}\\n- Automatisch erkannte Themen (E0): {\", \".join(notes[\"topics\"]) or \"keine\"}\\n- Auszug aus Release Notes (unverifiziert): {notes[\"excerpt\"][:600]}\\n- Veröffentlicht: {release.get('published_at') or 'unbekannt'}\\n"
                           f"- Evidenz: E0 / UNREVIEWED\\n- Modell- und Firmware-Kompatibilität: UNKNOWN\\n\\n"
                           "Prüfauftrag: offizielle Release Notes lesen; sicherheitsrelevante Änderungen, "
                           "API-Brüche und betroffene Versionen prüfen. Erst nach redaktioneller Prüfung "
