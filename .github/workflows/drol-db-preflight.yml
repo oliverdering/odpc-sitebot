@@ -1,0 +1,55 @@
+name: D.R.O.L. / MariaDB connection preflight
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install pinned MariaDB client\n        run: python3 -m pip install 'PyMySQL==1.1.1'\n      - name: Verify DB connectivity without exposing credentials
+        env:
+          DROL_DB_HOST: db5021788879.hosting-data.io
+          DROL_DB_PORT: "3306"
+          DROL_DB_NAME: dbs16292022
+          DROL_DB_USER: dbu1397392
+          DROL_DB_PASSWORD: ${{ secrets.DROL_DB_PASSWORD }}
+        run: |
+          python3 - <<'PY'
+          import os,sys,socket
+          from contextlib import closing
+          required=['DROL_DB_HOST','DROL_DB_PORT','DROL_DB_NAME','DROL_DB_USER','DROL_DB_PASSWORD']
+          missing=[k for k in required if not os.environ.get(k)]
+          if missing:
+              print('BLOCKED: required GitHub Actions secret DROL_DB_PASSWORD not configured' if 'DROL_DB_PASSWORD' in missing else 'BLOCKED: missing database configuration')
+              sys.exit(2)
+          try:
+              with closing(socket.create_connection((os.environ['DROL_DB_HOST'],int(os.environ['DROL_DB_PORT'])),timeout=7)):
+                  print('PASS: MariaDB TCP port reachable from GitHub runner')
+          except OSError:
+              print('BLOCKED: MariaDB TCP port not reachable from GitHub runner; use IONOS-local PHP PDO adapter')
+              sys.exit(3)
+          try:
+              import pymysql
+          except ImportError:
+              print('BLOCKED: PyMySQL missing')
+              sys.exit(4)
+          try:
+              conn=pymysql.connect(host=os.environ['DROL_DB_HOST'],port=int(os.environ['DROL_DB_PORT']),
+                  user=os.environ['DROL_DB_USER'],password=os.environ['DROL_DB_PASSWORD'],
+                  database=os.environ['DROL_DB_NAME'],connect_timeout=7,read_timeout=7,
+                  ssl={'check_hostname': True})
+              with conn.cursor() as cur:
+                  cur.execute("SELECT DATABASE(), VERSION()")
+                  cur.fetchone()
+                  cur.execute("SHOW TABLES LIKE 'drol_%'")
+                  names=[row[0] for row in cur.fetchall()]
+              conn.close()
+              print('PASS: authenticated MariaDB connection; D.R.O.L. table count:',len(names))
+              print('D.R.O.L. tables:',', '.join(sorted(names)))
+          except Exception:
+              print('BLOCKED: authenticated connection failed; check secret, TLS and IONOS remote-access policy')
+              sys.exit(5)
+          PY
