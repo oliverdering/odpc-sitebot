@@ -61,9 +61,9 @@ def main():
         transport.auth_password(USER, sftp_password)
         sf = paramiko.SFTPClient.from_transport(transport)
         target = ROOT + "/" + name
-        with sf.open(target, "x") as f:
+        with sf.open(target, "wx") as f:
+            uploaded = True
             f.write(script)
-        uploaded = True
         sf.chmod(target, 0o644)
         try:
             req = Request(URL + "/" + name, data=b"{}", method="POST")
