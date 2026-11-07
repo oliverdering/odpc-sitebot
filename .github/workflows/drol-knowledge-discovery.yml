@@ -18,11 +18,18 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Validate discovery script
-        run: python3 -m py_compile scripts/drol_release_watch.py
+        run: python3 -m py_compile scripts/drol_release_watch.py scripts/drol_ionos_candidate_ingest.py
       - name: Discover new releases and create deduplicated review issues
         env:
           GH_TOKEN: ${{ github.token }}
         run: python3 scripts/drol_release_watch.py
+      - name: Install secured SFTP bridge
+        run: python3 -m pip install 'paramiko>=3.4,<5'
+      - name: Import newly discovered facts into MariaDB as pending E0 knowledge
+        env:
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+          DROL_DB_PASSWORD: ${{ secrets.DROL_DB_PASSWORD }}
+        run: python3 scripts/drol_ionos_candidate_ingest.py
       - name: Retain machine-readable candidates
         uses: actions/upload-artifact@v4
         with:
