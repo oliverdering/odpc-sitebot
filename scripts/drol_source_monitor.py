@@ -8,7 +8,12 @@ from urllib.parse import urlparse
 
 root=Path("site-deploy/drol.odpc.de/database/model-schema.json")
 data=json.loads(root.read_text(encoding="utf-8"))
-urls=sorted({url for model in data["models"] for url in model.get("sources",[]) if isinstance(url,str) and url.startswith("https://")})
+registry_path=Path("site-deploy/drol.odpc.de/database/source-registry.json")
+registry=json.loads(registry_path.read_text(encoding="utf-8"))
+urls=sorted(
+    {url for model in data["models"] for url in model.get("sources",[]) if isinstance(url,str) and url.startswith("https://")}
+    | {source["url"] for source in registry["sources"] if source.get("status")=="monitor_only" and isinstance(source.get("url"),str) and source["url"].startswith("https://")}
+)
 results=[]
 for url in urls:
     parsed=urlparse(url)
