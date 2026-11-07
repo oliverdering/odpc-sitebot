@@ -10,6 +10,7 @@ on:
       - 'scripts/drol_release_watch.py'
       - 'tests/test_drol_release_watch.py'
       - 'scripts/drol_growth_monitor.py'
+      - 'scripts/drol_publish_release_feed.py'
 permissions:
   contents: read
   issues: write
@@ -20,7 +21,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Validate discovery script
-        run: python3 -m py_compile scripts/drol_release_watch.py scripts/drol_ionos_candidate_ingest.py
+        run: python3 -m py_compile scripts/drol_release_watch.py scripts/drol_ionos_candidate_ingest.py scripts/drol_publish_release_feed.py
       - name: Verify evidence extraction regression tests
         run: python3 -m unittest discover -s tests -p 'test_drol_release_watch.py' -v
       - name: Discover new releases and create deduplicated review issues
@@ -34,6 +35,10 @@ jobs:
           ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
           DROL_DB_PASSWORD: ${{ secrets.DROL_DB_PASSWORD }}
         run: python3 scripts/drol_ionos_candidate_ingest.py
+      - name: Publish public E0 release feed
+        env:
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+        run: python3 scripts/drol_publish_release_feed.py
       - name: Retain machine-readable candidates
         uses: actions/upload-artifact@v4
         with:
