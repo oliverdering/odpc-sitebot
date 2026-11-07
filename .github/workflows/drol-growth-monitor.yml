@@ -25,6 +25,14 @@ jobs:
         run: python3 -m py_compile scripts/drol_growth_monitor.py
       - name: Measure live MariaDB-backed catalog and growth velocity
         run: python3 scripts/drol_growth_monitor.py
+      - name: Show latest growth measurement in GitHub run summary
+        if: always()
+        run: |
+          if test -f data/drol-growth-history.json; then
+            python3 -c 'import json; d=json.load(open("data/drol-growth-history.json")); print("### D.R.O.L. growth measurement\\n\\n```json\\n"+json.dumps(d["samples"][-1],indent=2)+"\\n```")' >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo 'Growth measurement unavailable; inspect failed measurement step.' >> "$GITHUB_STEP_SUMMARY"
+          fi
       - name: Retain machine-readable telemetry
         if: always()
         uses: actions/upload-artifact@v4
