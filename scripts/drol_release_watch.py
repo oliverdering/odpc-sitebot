@@ -14,6 +14,9 @@ REPOS={
  "QGroundControl":"mavlink/qgroundcontrol",
  "OpenDroneMap":"OpenDroneMap/ODM",
  "ROS 2":"ros2/ros2",
+ "OpenCV":"opencv/opencv",
+ "COLMAP":"colmap/colmap",
+ "MAVLink protocol":"mavlink/mavlink",
 }
 API="https://api.github.com"
 TOKEN=os.environ.get("GH_TOKEN","")
