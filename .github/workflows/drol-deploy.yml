@@ -44,6 +44,7 @@ jobs:
           checks = {
               "https://drol.odpc.de/mission-control.html": b"DEINE DROHNE. DEINE M",
               "https://drol.odpc.de/data/events.json": b'"events"',
+              "https://drol.odpc.de/data/models-db.json": b'"models"',
           }
           for url, expected in checks.items():
               for attempt in range(6):
@@ -52,9 +53,14 @@ jobs:
                           body=response.read(300000)
                       if expected not in body:
                           raise RuntimeError("Expected release marker missing")
-                      if url.endswith(".json"):
+                      if url.endswith("events.json"):
                           payload=json.loads(body)
                           assert payload["schema_version"] == 1 and isinstance(payload["events"],list)
+                      if url.endswith("models-db.json"):
+                          payload=json.loads(body)
+                          assert payload["schema_version"] == "1.1"
+                          assert isinstance(payload["models"],list) and len(payload["models"]) >= 5
+                          assert payload["model_count"] == len(payload["models"])
                       print("PASS public release:", url)
                       break
                   except Exception as exc:
