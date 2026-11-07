@@ -1,0 +1,27 @@
+name: D.R.O.L. / Publish database-backed catalog
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/drol-db-export.yml'
+permissions:
+  contents: read
+concurrency:
+  group: drol-db-export
+  cancel-in-progress: false
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate exporter
+        run: python3 -m py_compile scripts/drol_ionos_db_export.py
+      - name: Install SFTP library
+        run: python3 -m pip install 'paramiko>=3.4,<5'
+      - name: Export allowlisted MariaDB catalog fields to public JSON
+        env:
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+          DROL_DB_PASSWORD: ${{ secrets.DROL_DB_PASSWORD }}
+        run: python3 scripts/drol_ionos_db_export.py
