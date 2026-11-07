@@ -337,6 +337,54 @@
       "status": "monitor_only",
       "collection_policy": "metadata_and_original_analysis_only",
       "verification": "manual_or_primary_source_required"
+    },
+    {
+      "name": "DJI Aircraft Specifications Index",
+      "category": "manufacturer",
+      "url": "https://support.dji.com/help/content?customId=en-us03400006554&lang=en&re=US&spaceId=34",
+      "scope": "official aircraft specifications index",
+      "evidence": "E0",
+      "status": "monitor_only"
+    },
+    {
+      "name": "DJI Mavic 4 Pro Specifications",
+      "category": "manufacturer",
+      "url": "https://www.dji.com/mavic-4-pro/specs",
+      "scope": "official aircraft and camera specifications",
+      "evidence": "E0",
+      "status": "monitor_only"
+    },
+    {
+      "name": "DJI Air 3S Specifications",
+      "category": "manufacturer",
+      "url": "https://www.dji.com/air-3s/specs",
+      "scope": "official camera drone specifications",
+      "evidence": "E0",
+      "status": "monitor_only"
+    },
+    {
+      "name": "DJI Mavic 3 Pro Specifications",
+      "category": "manufacturer",
+      "url": "https://www.dji.com/mavic-3-pro/specs",
+      "scope": "official camera drone specifications",
+      "evidence": "E0",
+      "status": "monitor_only"
+    },
+    {
+      "name": "Parrot ANAFI UKR Release Notes",
+      "category": "firmware",
+      "url": "https://www.parrot.com/en/release-notes-anafi-ukr",
+      "scope": "official firmware and application release notes",
+      "evidence": "E0",
+      "status": "monitor_only"
+    },
+    {
+      "name": "Parrot ANAFI UKR User Guide",
+      "category": "manufacturer",
+      "url": "https://www.parrot.com/assets/s3fs-public/document/ANAFI%20UKR%20GOV%20user%20guide.pdf",
+      "scope": "official product documentation",
+      "evidence": "E0",
+      "status": "monitor_only"
     }
   ]
 }
