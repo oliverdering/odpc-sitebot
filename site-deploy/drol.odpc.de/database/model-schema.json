@@ -583,6 +583,22 @@
       "sources": [
         "https://wingtra.com/"
       ]
+    },
+    {
+      "id": "dji-matrice-4e",
+      "manufacturer": "DJI",
+      "name": "Matrice 4E",
+      "category": "camera_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": [
+        "https://enterprise.dji.com/matrice-4-series/specs"
+      ]
     }
   ]
 }
