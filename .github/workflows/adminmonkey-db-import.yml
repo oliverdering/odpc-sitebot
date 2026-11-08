@@ -1,0 +1,43 @@
+name: AdminMonkey MariaDB migration and knowledge import
+on:
+  workflow_dispatch:
+    inputs:
+      apply:
+        description: 'Write to existing MariaDB after verifying a current backup (true/false)'
+        required: true
+        default: 'false'
+permissions:
+  contents: read
+concurrency:
+  group: adminmonkey-db-import
+  cancel-in-progress: false
+jobs:
+  migrate-import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment: adminmonkey-production
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install MariaDB Python driver
+        run: python -m pip install 'PyMySQL==1.1.1'
+      - name: Restore crawler knowledge cache
+        uses: actions/cache/restore@v4
+        with:
+          path: adminmonkey/knowledge/crawl_state.json
+          key: adminmonkey-crawl-${{ github.run_id }}
+          restore-keys: |
+            adminmonkey-crawl-
+      - name: Inspect planned import (no DB connection)
+        run: python adminmonkey/database/migrate_import.py
+      - name: Apply additive schema and import documents
+        if: ${{ inputs.apply == 'true' }}
+        env:
+          AMK_DB_HOST: ${{ secrets.AMK_DB_HOST }}
+          AMK_DB_PORT: ${{ secrets.AMK_DB_PORT }}
+          AMK_DB_NAME: ${{ secrets.AMK_DB_NAME }}
+          AMK_DB_USER: ${{ secrets.AMK_DB_USER }}
+          AMK_DB_PASSWORD: ${{ secrets.AMK_DB_PASSWORD }}
+        run: python adminmonkey/database/migrate_import.py --apply
