@@ -112,20 +112,39 @@ add_action('wp_footer', function(){
 }, 99);
 
 /**
- * Keep AdminMonkey first in the existing Premium grid on /start/.
- * Non-destructive output filter: the original WordPress page remains unchanged.
+ * AdminMonkey: front-page premium listing, with a non-destructive /start/ fallback.
+ * Client-side fallback handles page builders which bypass the_content.
  */
-add_filter('the_content', function($content) {
- if (is_admin() || !is_page('start') || !is_main_query() || !in_the_loop()) return $content;
- if (strpos($content, 'data-product="adminmonkey"') !== false) return $content;
- $premium = strpos($content, 'Kostenpflichtige Agenten und Fachlösungen');
- if ($premium === false) return $content;
- $first = strpos($content, '<article ', $premium);
- if ($first === false || $first - $premium > 1800) return $content;
- $card = '<article data-product="adminmonkey" style="background:#fff;border:1px solid #d4e4d9;border-radius:16px;padding:19px;min-width:0">'
-  .'<p style="font-size:12px;font-weight:900;color:#705116;margin:0 0 5px">PREMIUM · KOSTENPFLICHTIG</p>'
-  .'<h3 style="font-size:20px;color:#163c27;margin:0 0 7px">AdminMonkey</h3>'
-  .'<p style="font-size:15px;margin:0 0 12px">Microsoft 365, Entra ID, Intune, Azure und Windows Server – KI-gestützte Administration und Wissensaufbau.</p>'
-  .'<a href="https://ai.odpc.de/adminmonkey/" style="display:inline-block;border:2px solid #187d3c;color:#137038;border-radius:10px;padding:10px 14px;text-decoration:none;font-weight:850">Leistungen &amp; Bezug anfragen →</a></article>';
- return substr_replace($content, $card, $first, 0);
-}, 30);
+add_action('wp_footer', function () {
+ if (is_admin() || !(is_front_page() || is_home() || is_page('start'))) return;
+ ?>
+ <script id="odpc-adminmonkey-premium">
+ (function(){
+  function insert(){
+   if(document.querySelector('[data-product="adminmonkey"]'))return;
+   var headings=[...document.querySelectorAll('h1,h2,h3,h4')];
+   var heading=headings.find(function(el){return /Kostenpflichtige Agenten und Fachlösungen|Premium.Monkeys|Premium.Agent|Dein Business/i.test(el.textContent||'')});
+   var candidates=[...document.querySelectorAll('a')].filter(function(a){return /PraeLex|Anwalt/i.test(a.textContent||'')});
+   var first=null;
+   if(heading){
+    var scope=heading.closest('section')||heading.parentElement?.parentElement;
+    first=scope?.querySelector('article')||scope?.querySelector('a[href*="praelex"]')?.closest('article,div');
+   }
+   if(!first&&candidates.length){first=candidates[0].closest('article')||candidates[0].closest('.wp-block-column')||candidates[0].parentElement}
+   if(!first||!first.parentElement)return;
+   var card=first.cloneNode(true);
+   card.setAttribute('data-product','adminmonkey');
+   var title=card.querySelector('h2,h3,h4')||card.querySelector('strong');
+   if(title)title.textContent='AdminMonkey';
+   var links=[...card.querySelectorAll('a')];
+   links.forEach(function(a){a.href='https://ai.odpc.de/adminmonkey/';if(/PraeLex|Anwalt/i.test(a.textContent||''))a.textContent='AdminMonkey'});
+   var paragraphs=[...card.querySelectorAll('p')];
+   if(paragraphs.length)paragraphs[paragraphs.length-1].textContent='Microsoft 365 · Exchange · Teams · Entra ID · Intune · Azure · Windows Server – Premium-Administration und dokumentierter Kompetenzaufbau.';
+   card.querySelectorAll('img').forEach(function(img){img.alt='AdminMonkey – Microsoft-Administration'});
+   first.parentElement.insertBefore(card,first);
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',insert);else insert();
+ })();
+ </script>
+ <?php
+}, 101);
