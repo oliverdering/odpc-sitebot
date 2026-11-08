@@ -172,3 +172,52 @@ add_action('wp_footer', function () {
  </script>
  <?php
 }, 101);
+
+/** AdminMonkey Academy: public, evidence-based progress dashboard. */
+add_action('wp_footer', function () {
+ if (is_admin() || !(is_front_page() || is_home() || is_page('start') || is_page('adminmonkey'))) return;
+ ?>
+ <style id="amk-academy-css">
+ .amk-academy{margin:18px auto 28px;padding:20px;max-width:1050px;border:1px solid #c5d9ca;border-radius:18px;background:#fff;color:#203a50;font:inherit;box-shadow:0 6px 18px #183a4b12}
+ .amk-academy h2{margin:0 0 8px;font-size:clamp(22px,4vw,30px)}.amk-academy p{line-height:1.5}
+ .amk-academy-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:16px 0}
+ .amk-academy-stats>div{padding:14px;background:#edf5f1;border-radius:12px}.amk-academy-stats strong{display:block;font-size:24px}
+ .amk-track{margin:13px 0}.amk-track-head{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-weight:650}
+ .amk-meter{height:10px;background:#e4eaf0;border-radius:99px;overflow:hidden;margin-top:6px}
+ .amk-meter>span{display:block;height:100%;width:0;background:#258356;transition:width .4s}
+ .amk-note{font-size:13px;color:#526779}.amk-banana{padding:10px 13px;border-radius:10px;background:#fff5d8;font-weight:650}
+ </style>
+ <script id="amk-academy-dashboard">
+ (function(){
+  'use strict';
+  var card=document.querySelector('[data-product="adminmonkey"]');
+  if(!card||document.getElementById('amk-academy'))return;
+  var section=document.createElement('section');
+  section.id='amk-academy';section.className='amk-academy';
+  section.setAttribute('aria-label','AdminMonkey Academy Lernfortschritt');
+  section.innerHTML='<h2>🍌 AdminMonkey Academy – Lernfortschritt</h2><p>Microsoft 365, Azure, Identität, Geräteverwaltung und Copilot. Nachweise statt geschätzter Prozentwerte.</p><div class="amk-academy-stats"><div><strong id="amk-sources">–</strong>Microsoft-Learn-Quellen erfasst</div><div><strong id="amk-reviewed">–</strong>Quellen freigegeben</div><div><strong id="amk-passes">0</strong>Bestandene Kompetenztests</div></div><div id="amk-tracks"></div><p class="amk-banana">🍌 Bananen-Badges: Noch keine nachgewiesene Kompetenzstufe</p><p class="amk-note" id="amk-updated">Aktuelle Daten werden geladen …</p><p class="amk-note">Interne ODPC-Lernstandsanzeige, keine offizielle Microsoft-Zertifizierung. Ein Balken ohne geprüfte Antworten bleibt unbewertet.</p>';
+  card.insertAdjacentElement('afterend',section);
+  var tracks=[['MS-102','Microsoft 365 Administrator'],['AZ-104','Azure Administrator'],['SC-300','Entra ID / Identity'],['MD-102','Intune / Endpoint'],['Copilot','Microsoft Copilot & Copilot Studio']];
+  var host=document.getElementById('amk-tracks');
+  tracks.forEach(function(t){
+   var row=document.createElement('div');row.className='amk-track';
+   var head=document.createElement('div');head.className='amk-track-head';
+   var name=document.createElement('span');name.textContent=t[1]+' · '+t[0];
+   var value=document.createElement('span');value.textContent='Nicht bewertet';
+   head.append(name,value);
+   var meter=document.createElement('div');meter.className='amk-meter';meter.setAttribute('role','progressbar');
+   meter.setAttribute('aria-label',t[1]+' Kompetenzfortschritt');
+   meter.setAttribute('aria-valuetext','Noch keine verifizierte Bewertung');
+   var fill=document.createElement('span');meter.appendChild(fill);row.append(head,meter);host.appendChild(row);
+  });
+  var base='https://raw.githubusercontent.com/oliverdering/odpc-sitebot/main/adminmonkey/knowledge/';
+  fetch(base+'knowledge_index.json',{cache:'no-store'}).then(function(r){if(!r.ok)throw Error('Unavailable');return r.json()}).then(function(data){
+   var sources=Object.values(data.sources||{});
+   document.getElementById('amk-sources').textContent=String(sources.filter(function(s){return s.status==='ok'}).length);
+   document.getElementById('amk-reviewed').textContent=String(sources.filter(function(s){return s.review_status==='approved'}).length);
+   document.getElementById('amk-updated').textContent='Wissensindex aus GitHub geladen · Prüfungsfortschritt derzeit nicht bewertet.';
+  }).catch(function(){document.getElementById('amk-updated').textContent='Wissensindex momentan nicht erreichbar; keine Fortschrittswerte erfunden.'});
+ })();
+ </script>
+ <?php
+}, 105);
