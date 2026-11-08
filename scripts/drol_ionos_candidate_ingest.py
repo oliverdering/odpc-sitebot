@@ -71,7 +71,7 @@ try {
             fn($topic)=>is_string($topic) && in_array($topic,
                 ['security','api_change','firmware','sensor','navigation'],true)));
         $topics=array_slice(array_unique($topics),0,5);
-        $excerpt=is_string($notes['excerpt']??null)?mb_substr($notes['excerpt'],0,1200):'';
+        $excerpt=is_string($notes['excerpt']??null)?substr($notes['excerpt'],0,1200):'';
         $digest=$notes['sha256']??null;
         if (!is_string($digest)||!preg_match('/^[a-f0-9]{64}$/D',$digest)) $digest=null;
         $value=json_encode(['repository'=>$item['repository'],'tag'=>$item['tag'],
