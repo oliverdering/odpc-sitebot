@@ -9,3 +9,5 @@ Release 1.2.1: use original header image and viewport-aware responsive sizes ins
 Release 1.2.2: prioritize existing above-the-fold header image for mobile LCP (eager/high fetch priority), no visual changes.
 
 Release 1.2.3: priority homepage product originals for PraeLex.ai, PraeTax, PRAEDIUM, initIQ and PraeDoc; trigger verified SFTP deployment.
+
+Release 1.2.4: actual ob-layout homepage: remove duplicate Helper Monkey report, preserve lower Helper Monkey and DROL cards, restore PraeLex PraeTax PRAEDIUM original logos.
