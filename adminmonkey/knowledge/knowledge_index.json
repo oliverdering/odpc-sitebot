@@ -1,0 +1,91 @@
+{
+  "changes": [
+    {
+      "at": "2026-11-08T20:06:48.962833+00:00",
+      "id": "m365-admin",
+      "review_status": "pending_human_review",
+      "sha256": "5a95e90c1f2d76ccf2dc34e2fedf12352416b541c18913650cf7ea98d9de509b"
+    },
+    {
+      "at": "2026-11-08T20:06:48.962833+00:00",
+      "id": "graph",
+      "review_status": "pending_human_review",
+      "sha256": "6572188b6feaa77e9350eaa1cce3de67a33511a1eeb9b88ead34efb01d7c2064"
+    },
+    {
+      "at": "2026-11-08T20:06:48.962833+00:00",
+      "id": "entra",
+      "review_status": "pending_human_review",
+      "sha256": "dc689faecf6599b7f37e6d6ab3a0a0c50a480e86554a8319b9c4c876a7b23094"
+    },
+    {
+      "at": "2026-11-08T20:06:48.962833+00:00",
+      "id": "intune",
+      "review_status": "pending_human_review",
+      "sha256": "5daeb682af4a8140341475b18441677df2e5ce230279fd043b40a0b93c0b12e5"
+    },
+    {
+      "at": "2026-11-08T20:06:48.962833+00:00",
+      "id": "azure",
+      "review_status": "pending_human_review",
+      "sha256": "0b665f7d034f74bde39b315c614d4b7a50e1ee8f9c10c386893fddb5bc3034ca"
+    },
+    {
+      "at": "2026-11-08T20:06:48.962833+00:00",
+      "id": "credentials",
+      "review_status": "pending_human_review",
+      "sha256": "a18806bbbaeb6c9705f8ec0accdb6f99c4bfce59c06a341d1d6e75a9a15a178d"
+    }
+  ],
+  "schema_version": 1,
+  "sources": {
+    "azure": {
+      "bytes_sampled": 65109,
+      "final_url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/overview",
+      "review_status": "pending_human_review",
+      "sha256": "0b665f7d034f74bde39b315c614d4b7a50e1ee8f9c10c386893fddb5bc3034ca",
+      "status": "ok",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/overview"
+    },
+    "credentials": {
+      "bytes_sampled": 36113,
+      "final_url": "https://learn.microsoft.com/en-us/credentials/",
+      "review_status": "pending_human_review",
+      "sha256": "a18806bbbaeb6c9705f8ec0accdb6f99c4bfce59c06a341d1d6e75a9a15a178d",
+      "status": "ok",
+      "url": "https://learn.microsoft.com/en-us/credentials/"
+    },
+    "entra": {
+      "bytes_sampled": 58953,
+      "final_url": "https://learn.microsoft.com/en-us/entra/fundamentals/what-is-entra",
+      "review_status": "pending_human_review",
+      "sha256": "dc689faecf6599b7f37e6d6ab3a0a0c50a480e86554a8319b9c4c876a7b23094",
+      "status": "ok",
+      "url": "https://learn.microsoft.com/en-us/entra/fundamentals/whatis"
+    },
+    "graph": {
+      "bytes_sampled": 64338,
+      "final_url": "https://learn.microsoft.com/en-us/graph/overview",
+      "review_status": "pending_human_review",
+      "sha256": "6572188b6feaa77e9350eaa1cce3de67a33511a1eeb9b88ead34efb01d7c2064",
+      "status": "ok",
+      "url": "https://learn.microsoft.com/en-us/graph/overview"
+    },
+    "intune": {
+      "bytes_sampled": 53750,
+      "final_url": "https://learn.microsoft.com/en-us/intune/fundamentals/what-is-intune",
+      "review_status": "pending_human_review",
+      "sha256": "5daeb682af4a8140341475b18441677df2e5ce230279fd043b40a0b93c0b12e5",
+      "status": "ok",
+      "url": "https://learn.microsoft.com/en-us/intune/intune-service/fundamentals/what-is-intune"
+    },
+    "m365-admin": {
+      "bytes_sampled": 32946,
+      "final_url": "https://learn.microsoft.com/en-us/microsoft-365/admin/?view=o365-worldwide",
+      "review_status": "pending_human_review",
+      "sha256": "5a95e90c1f2d76ccf2dc34e2fedf12352416b541c18913650cf7ea98d9de509b",
+      "status": "ok",
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/"
+    }
+  }
+}
