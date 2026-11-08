@@ -1,0 +1,66 @@
+{
+  "notice": "Original practice scenarios, not Microsoft certification or official exam questions",
+  "tracks": [
+    "MS-102",
+    "AZ-104",
+    "SC-300",
+    "MD-102"
+  ],
+  "scenarios": [
+    {
+      "id": "SC300-1",
+      "track": "SC-300",
+      "prompt": "How do you safely deploy Conditional Access without locking out administrators?",
+      "required": [
+        "report-only",
+        "break-glass",
+        "pilot",
+        "sign-in logs"
+      ],
+      "unsafe": [
+        "enable for all without testing"
+      ]
+    },
+    {
+      "id": "AZ104-1",
+      "track": "AZ-104",
+      "prompt": "Diagnose an unreachable Azure VM after an NSG change without exposing management ports.",
+      "required": [
+        "effective security rules",
+        "NSG",
+        "connection troubleshoot",
+        "least privilege"
+      ],
+      "unsafe": [
+        "allow all inbound traffic"
+      ]
+    },
+    {
+      "id": "MD102-1",
+      "track": "MD-102",
+      "prompt": "Investigate Intune device noncompliance after a policy change.",
+      "required": [
+        "device status",
+        "assignment scope",
+        "compliance policy"
+      ],
+      "unsafe": [
+        "disable all policies"
+      ]
+    },
+    {
+      "id": "MS102-1",
+      "track": "MS-102",
+      "prompt": "Respond to a compromised Microsoft 365 account.",
+      "required": [
+        "sign-in logs",
+        "revoke sessions",
+        "reset credentials",
+        "MFA"
+      ],
+      "unsafe": [
+        "disable audit logging"
+      ]
+    }
+  ]
+}
