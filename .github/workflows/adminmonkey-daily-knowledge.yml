@@ -39,6 +39,8 @@ jobs:
         run: python adminmonkey/knowledge/monitor.py
       - name: Run transparent academy baseline checks
         run: python adminmonkey/knowledge/exam_baseline.py
+      - name: Generate honest Academy progress snapshot
+        run: python adminmonkey/knowledge/build_progress.py
       - name: Commit evidence updates only
         run: |
           git config user.name "adminmonkey-knowledge-bot"
@@ -54,4 +56,5 @@ jobs:
           path: |
             adminmonkey/knowledge/knowledge_index.json
             adminmonkey/knowledge/exam_baseline.json
+            adminmonkey/knowledge/academy_progress.json
           retention-days: 30
