@@ -42,6 +42,17 @@ def summarize_release_notes(raw):
 
 def main():
     out=[]
+    existing_issues=[]
+    if TOKEN and os.environ.get("GITHUB_REPOSITORY"):
+        target=os.environ["GITHUB_REPOSITORY"]
+        # Fetch once per run, rather than querying the same issues for every upstream.
+        # Paginate to avoid duplicate review issues after the first 100.
+        for page in range(1,11):
+            batch=request(f"{API}/repos/{target}/issues?state=all&per_page=100&page={page}")
+            existing_issues.extend(i for i in batch if "pull_request" not in i)
+            if len(batch)<100:break
+    known_markers={marker for issue in existing_issues
+                   for marker in re.findall(r"drol-release:[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+:[^\\s<>]+",issue.get("body") or "")}
     for product,repo in REPOS.items():
         try:
             release=request(f"{API}/repos/{repo}/releases/latest")
@@ -57,8 +68,7 @@ def main():
                 target=os.environ["GITHUB_REPOSITORY"]
                 marker=f"drol-release:{repo}:{tag}"
                 title=f"[D.R.O.L. Review] {product} {tag}"
-                issues=request(f"{API}/repos/{target}/issues?state=all&per_page=100")
-                if not any(marker in (i.get("body") or "") for i in issues if "pull_request" not in i):
+                if marker not in known_markers:
                     topic_label=", ".join(notes["topics"]) or "keine"
                     excerpt=notes["excerpt"][:600]
                     body=(f"Automatisch entdeckter Software-Release-Kandidat.\\n\\n"
@@ -72,6 +82,7 @@ def main():
                           "als Fakten in die D.R.O.L.-Datenbank übernehmen.\\n\\n"
                           f"<!-- {marker} -->")
                     request(f"{API}/repos/{target}/issues","POST",{"title":title,"body":body})
+                    known_markers.add(marker)
                     print("CREATED review issue:",title)
                 else:print("KNOWN candidate:",title)
         except (urllib.error.URLError,ValueError,KeyError,TimeoutError) as exc:
