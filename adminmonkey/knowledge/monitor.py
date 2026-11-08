@@ -16,6 +16,15 @@ SOURCES = {
     "entra": "https://learn.microsoft.com/en-us/entra/fundamentals/whatis",
     "intune": "https://learn.microsoft.com/en-us/intune/intune-service/fundamentals/what-is-intune",
     "azure": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/overview",
+    "copilot-m365": "https://learn.microsoft.com/en-us/copilot/microsoft-365/",
+    "copilot-studio": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/",
+    "graph-powershell": "https://learn.microsoft.com/en-us/powershell/microsoftgraph/overview",
+    "exchange-online": "https://learn.microsoft.com/en-us/exchange/exchange-online",
+    "teams-admin": "https://learn.microsoft.com/en-us/microsoftteams/teams-overview",
+    "sharepoint-admin": "https://learn.microsoft.com/en-us/sharepoint/sharepoint-online",
+    "defender-xdr": "https://learn.microsoft.com/en-us/defender-xdr/microsoft-365-defender",
+    "purview": "https://learn.microsoft.com/en-us/purview/",
+    "azure-powershell": "https://learn.microsoft.com/en-us/powershell/azure/overview",
     "credentials": "https://learn.microsoft.com/en-us/credentials/",
 }
 
