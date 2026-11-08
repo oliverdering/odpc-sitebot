@@ -134,13 +134,37 @@ add_action('wp_footer', function () {
    if(!first||!first.parentElement)return;
    var card=first.cloneNode(true);
    card.setAttribute('data-product','adminmonkey');
+   card.setAttribute('aria-label','AdminMonkey – Microsoft 365 und Copilot Administration');
+   // Keep original premium monkey artwork and layout; replace every cloned PraeLex text.
    var title=card.querySelector('h2,h3,h4')||card.querySelector('strong');
    if(title)title.textContent='AdminMonkey';
+   var replacements=[
+    ['PraeLex.ai','Microsoft 365 & Copilot'],
+    ['PraeLex','AdminMonkey'],
+    ['Anwalt','Microsoft-Administration'],
+    ['Rechtliche Sachverhalte und Entwürfe','Microsoft 365, Copilot und Cloud-Administration']
+   ];
+   var walker=document.createTreeWalker(card,NodeFilter.SHOW_TEXT);
+   var node;
+   while((node=walker.nextNode())){
+    if(!node.parentElement||node.parentElement.closest('script,style'))continue;
+    replacements.forEach(function(pair){node.nodeValue=node.nodeValue.replace(new RegExp(pair[0].replace(/[.*+?^$\x7b\x7d()|[\]\\]/g,'\\$&'),'gi'),pair[1])});
+   }
    var links=[...card.querySelectorAll('a')];
-   links.forEach(function(a){a.href='https://ai.odpc.de/adminmonkey/';if(/PraeLex|Anwalt/i.test(a.textContent||''))a.textContent='AdminMonkey'});
+   links.forEach(function(a){a.href='https://ai.odpc.de/adminmonkey/';if(/PraeLex|Anwalt/i.test(a.textContent||''))a.textContent='AdminMonkey ansehen'});
    var paragraphs=[...card.querySelectorAll('p')];
-   if(paragraphs.length)paragraphs[paragraphs.length-1].textContent='Microsoft 365 · Exchange · Teams · Entra ID · Intune · Azure · Windows Server – Premium-Administration und dokumentierter Kompetenzaufbau.';
-   card.querySelectorAll('img').forEach(function(img){img.alt='AdminMonkey – Microsoft-Administration'});
+   if(paragraphs.length)paragraphs[paragraphs.length-1].textContent='Microsoft 365 · Microsoft 365 Copilot · Copilot Studio · Exchange Online · Teams · SharePoint · Entra ID · Intune · Azure · Windows Server. Administration, Automatisierung und kontinuierlicher Kompetenzaufbau.';
+   var description=document.createElement('p');
+   description.textContent='Microsoft-Lernpfade: MS-900 (Microsoft 365 Fundamentals), MS-102 (Microsoft 365 Administrator), MD-102 (Endpoint Administrator), SC-300 (Identity and Access Administrator), AZ-104 (Azure Administrator) und AB-900 (Copilot & Agent Administration Fundamentals).';
+   description.style.cssText='font-size:.92em;line-height:1.55;margin:12px 0';
+   var badge=document.createElement('p');
+   badge.setAttribute('data-adminmonkey-certification-status','');
+   badge.textContent='🍌 Zertifizierungsstatus: Lernpfade in Bearbeitung · bestandene Prüfungen werden erst nach verifiziertem Nachweis ausgezeichnet.';
+   badge.style.cssText='font-size:.88em;line-height:1.5;margin:12px 0;font-weight:650';
+   var anchor=links.length?links[links.length-1]:null;
+   if(anchor){anchor.parentElement.insertBefore(description,anchor);anchor.parentElement.insertBefore(badge,anchor)}
+   else{card.appendChild(description);card.appendChild(badge)}
+   card.querySelectorAll('img').forEach(function(img){img.alt='AdminMonkey – Microsoft 365 und Copilot Administration'});
    first.parentElement.insertBefore(card,first);
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',insert);else insert();
