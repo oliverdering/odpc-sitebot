@@ -21,3 +21,6 @@ jobs:
           python-version: '3.12'
       - run: pip install -r requirements.txt
       - run: python -m pytest -q
+      - name: Academy competency and safety checks
+        working-directory: .
+        run: python -m unittest discover -s adminmonkey/academy -p 'test_*.py' -v
