@@ -19,6 +19,22 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Restore private crawl state from Actions cache
+        uses: actions/cache/restore@v4
+        with:
+          path: adminmonkey/knowledge/crawl_state.json
+          key: adminmonkey-crawl-${{ github.run_id }}
+          restore-keys: |
+            adminmonkey-crawl-
+      - name: Collect bounded Microsoft Learn articles
+        run: python adminmonkey/knowledge/crawl_learn.py
+      - name: Verify crawler isolation
+        run: python -m unittest discover -s adminmonkey/knowledge -p 'test_*.py' -v
+      - name: Cache crawl progress privately
+        uses: actions/cache/save@v4
+        with:
+          path: adminmonkey/knowledge/crawl_state.json
+          key: adminmonkey-crawl-${{ github.run_id }}
       - name: Collect Microsoft Learn evidence and update persistent index
         run: python adminmonkey/knowledge/monitor.py
       - name: Run transparent academy baseline checks
