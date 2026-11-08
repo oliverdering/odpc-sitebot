@@ -29,3 +29,28 @@ jobs:
           ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
           DROL_DB_PASSWORD: ${{ secrets.DROL_DB_PASSWORD }}
         run: python3 scripts/drol_ionos_db_export.py
+      - name: Verify published model registry and source integrity
+        run: |
+          python3 - <<'PY'
+          import json,datetime,urllib.request
+          url='https://drol.odpc.de/data/models-db.json'
+          req=urllib.request.Request(url,headers={'Cache-Control':'no-cache','User-Agent':'DROL-Registry-QA/1.0'})
+          with urllib.request.urlopen(req,timeout=30) as response:
+              data=json.load(response)
+          models=data['models']
+          assert data['schema_version']=='1.1' and data['model_count']==len(models) and len(models)>=5
+          generated=datetime.datetime.fromisoformat(data['generated_utc'].replace('Z','+00:00'))
+          age=(datetime.datetime.now(datetime.timezone.utc)-generated).total_seconds()
+          assert -300<=age<=1800, 'Public model registry is stale or has an invalid timestamp'
+          seen=set()
+          for model in models:
+              assert set(model)=={'manufacturer','name','category','verification_status','sources'}
+              assert isinstance(model['manufacturer'],str) and model['manufacturer'].strip()
+              assert isinstance(model['name'],str) and model['name'].strip()
+              assert isinstance(model['sources'],list)
+              assert all(isinstance(url,str) and url.startswith('https://') for url in model['sources'])
+              key=(model['manufacturer'].casefold().strip(),model['name'].casefold().strip())
+              assert key not in seen, 'Duplicate model in published registry'
+              seen.add(key)
+          print('PASS public MariaDB model registry:',len(models),'unique models; age seconds:',round(age))
+          PY
