@@ -7,3 +7,5 @@ ODPC homepage real client logos AKJ ATRIUM191 Helper Monkey plus Bahnhof train i
 Release 1.2.1: use original header image and viewport-aware responsive sizes instead of upscaling the 447px logo thumbnail. Layout unchanged.
 
 Release 1.2.2: prioritize existing above-the-fold header image for mobile LCP (eager/high fetch priority), no visual changes.
+
+Release 1.2.3: priority homepage product originals for PraeLex.ai, PraeTax, PRAEDIUM, initIQ and PraeDoc; trigger verified SFTP deployment.
