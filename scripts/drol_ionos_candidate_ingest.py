@@ -63,12 +63,25 @@ try {
         }
         $candidateFind->execute([(int)$snapshotId,$attributeId]);
         if ($candidateFind->fetchColumn()){$known++;continue;}
+        // Preserve upstream provenance and machine-extracted topics as unreviewed metadata.
+        // Never promote release-note keywords into verified model capabilities.
+        $notes=$item['release_notes']??[];
+        if (!is_array($notes)) $notes=[];
+        $topics=array_values(array_filter($notes['topics']??[],
+            fn($topic)=>is_string($topic) && in_array($topic,
+                ['security','api_change','firmware','sensor','navigation'],true)));
+        $topics=array_slice(array_unique($topics),0,5);
+        $excerpt=is_string($notes['excerpt']??null)?mb_substr($notes['excerpt'],0,1200):'';
+        $digest=$notes['sha256']??null;
+        if (!is_string($digest)||!preg_match('/^[a-f0-9]{64}$/D',$digest)) $digest=null;
         $value=json_encode(['repository'=>$item['repository'],'tag'=>$item['tag'],
             'published_at'=>$item['published_at']??null,'evidence'=>'E0',
-            'compatibility'=>'UNKNOWN'],JSON_THROW_ON_ERROR);
+            'compatibility'=>'UNKNOWN','review_status'=>'UNREVIEWED',
+            'topics_unverified'=>$topics,'release_notes_sha256'=>$digest,
+            'release_notes_excerpt'=>$excerpt],JSON_THROW_ON_ERROR);
         $candidateAdd->execute([substr($data['run_id']??'drol-auto',0,80),
             $item['product'],$attributeId,$item['tag'],$value,(int)$snapshotId,
-            substr($item['product'].' release '.$item['tag'],0,500),$url]);
+            substr($excerpt!==''?$excerpt:($item['product'].' release '.$item['tag']),0,500),$url]);
         $created++;
     }
     $pdo->commit();
