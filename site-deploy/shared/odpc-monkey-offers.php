@@ -7,6 +7,7 @@
 if (!defined('ABSPATH')) exit;
 function om_catalog() {
  return [
+  'adminmonkey'=>['Microsoft Enterprise IT','AdminMonkey','Microsoft 365, Office, Exchange, Entra ID, Intune, Azure, Windows Server und Copilot. KI-gestützte Audits und sichere Administration im Aufbau.'],
   'praelex-ai'=>['Anwalt','PraeLex.ai','Akten, Sachverhalte und Entwürfe für die anwaltliche Prüfung. Persönlich an Kanzleiabläufe und Vorlagen angepasst.'],
   'praetax'=>['Buchhaltung & Lohn','PraeTax','Beleg-, Buchhaltungs- und Lohnprozesse analysieren und passende KI-Abläufe planen und einrichten. Fachliche Freigaben bleiben bei den Verantwortlichen.'],
   'praedium'=>['Immobilien & Vermarktung','PRAEDIUM','Objektdaten, Exposés, Interessentenansprache und Vermarktungsabläufe für Makler und Eigentümer verbinden.'],
@@ -34,7 +35,7 @@ function om_premium($selected='') {
  <div class="om-grid">
  <?php foreach($items as $slug=>$item): ?>
   <article class="om-card" data-product="<?php echo esc_attr($slug); ?>"><img class="om-blue-monkey" src="<?php echo esc_url(om_symbol()); ?>" alt="helper monkey Premium – Originalmotiv mit blauen Akzenten" width="80" height="80" loading="lazy"><p class="om-kicker">HELPER · MONKEY PREMIUM</p><h3><?php echo esc_html($item[0]); ?></h3><p class="om-product"><?php echo esc_html($item[1]); ?></p><p><?php echo esc_html($item[2]); ?></p>
-  <?php if($selected!==$slug): ?><a class="om-button" href="<?php echo esc_url('https://odpc.de/'.$slug); ?>"><?php echo esc_html($item[1]); ?> auf odpc.de ansehen →</a><?php else: ?><a class="om-button" href="<?php echo esc_url('https://wa.me/492654882183?text='.rawurlencode('Hallo Oliver, ich interessiere mich für die persönliche Einrichtung von helper · monkey Premium – '.$item[1].'.')); ?>" target="_blank" rel="noopener noreferrer">Persönliche Einrichtung besprechen ↗</a><?php endif; ?></article>
+  <?php if($selected!==$slug): ?><a class="om-button" href="<?php echo esc_url($slug==='adminmonkey'?'https://ai.odpc.de/adminmonkey/':'https://odpc.de/'.$slug); ?>"><?php echo esc_html($item[1]); ?> ansehen →</a><?php else: ?><a class="om-button" href="<?php echo esc_url('https://wa.me/492654882183?text='.rawurlencode('Hallo Oliver, ich interessiere mich für die persönliche Einrichtung von helper · monkey Premium – '.$item[1].'.')); ?>" target="_blank" rel="noopener noreferrer">Persönliche Einrichtung besprechen ↗</a><?php endif; ?></article>
  <?php endforeach; ?>
  </div>
  <p class="om-process"><strong>So läuft es:</strong> Bedarf klären → Einrichtung und Anpassung → gemeinsam mit Beispieldaten prüfen → Einweisung und Übergabe. Funktionen und Integrationen werden je Projekt geprüft. Rechts- und Steuerentscheidungen bleiben bei qualifizierten Fachleuten.</p>
