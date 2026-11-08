@@ -110,3 +110,22 @@ add_action('wp_footer', function(){
  if (is_admin()) return;
  echo '<div id="odpc-universal-credit" style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:28px auto 0;padding:18px max(20px,4vw);border-top:1px solid #c5d9ca;font:inherit"><a href="https://odpc.de/" target="_blank" rel="noopener noreferrer" aria-label="odpc.de – Oliver Dering"><img src="https://odpc.de/wp-content/uploads/2026/08/1786371119667.png.webp" alt="Oliver Dering" width="64" height="64" loading="lazy" style="width:64px;height:64px;object-fit:cover;border-radius:50%;border:2px solid #fff"></a><div><span style="display:block;font-size:.8rem">Webdesign, Technik &amp; KI-Integration</span><a href="https://odpc.de/" target="_blank" rel="noopener noreferrer" style="font-weight:700">Powered by odpc.de · Oliver Dering</a></div></div>';
 }, 99);
+
+/**
+ * Keep AdminMonkey first in the existing Premium grid on /start/.
+ * Non-destructive output filter: the original WordPress page remains unchanged.
+ */
+add_filter('the_content', function($content) {
+ if (is_admin() || !is_page('start') || !is_main_query() || !in_the_loop()) return $content;
+ if (strpos($content, 'data-product="adminmonkey"') !== false) return $content;
+ $premium = strpos($content, 'Kostenpflichtige Agenten und Fachlösungen');
+ if ($premium === false) return $content;
+ $first = strpos($content, '<article ', $premium);
+ if ($first === false || $first - $premium > 1800) return $content;
+ $card = '<article data-product="adminmonkey" style="background:#fff;border:1px solid #d4e4d9;border-radius:16px;padding:19px;min-width:0">'
+  .'<p style="font-size:12px;font-weight:900;color:#705116;margin:0 0 5px">PREMIUM · KOSTENPFLICHTIG</p>'
+  .'<h3 style="font-size:20px;color:#163c27;margin:0 0 7px">AdminMonkey</h3>'
+  .'<p style="font-size:15px;margin:0 0 12px">Microsoft 365, Entra ID, Intune, Azure und Windows Server – KI-gestützte Administration und Wissensaufbau.</p>'
+  .'<a href="https://ai.odpc.de/adminmonkey/" style="display:inline-block;border:2px solid #187d3c;color:#137038;border-radius:10px;padding:10px 14px;text-decoration:none;font-weight:850">Leistungen &amp; Bezug anfragen →</a></article>';
+ return substr_replace($content, $card, $first, 0);
+}, 30);
