@@ -237,3 +237,30 @@ add_action('wp_footer', function () {
   </script>
   <?php
 }, 98);
+
+/* ODPC homepage product branding: original image assets only. */
+add_filter('the_content', function ($content) {
+  if (is_admin() || !is_front_page() || strpos($content, 'oh-products') === false) return $content;
+  $logos = array(
+    'PraeLex.ai' => 'https://odpc.de/wp-content/uploads/2026/01/file_00000000b1ac71f492324d1b811d7c51.png',
+    'initIQ' => 'https://odpc.de/wp-content/uploads/2025/07/logo1.png',
+    'PRAEDIUM' => 'https://odpc.de/wp-content/uploads/2026/02/file_00000000b79c724697fdb5aaef72772e.png',
+    'PraeDoc.ai' => 'https://odpc.de/wp-content/uploads/2026/02/PraeDoc-Logo.png',
+    'PraeTax' => 'https://odpc.de/wp-content/uploads/2026/03/file_0000000067e87246b5f14960de0779eb.png',
+  );
+  $content = preg_replace_callback('~<article\\b[^>]*class=["\\x27][^"\\x27]*\\boh-product\\b[^"\\x27]*["\\x27][^>]*>.*?</article>~is', function ($match) use ($logos) {
+    $card = $match[0];
+    foreach ($logos as $name => $url) {
+      if (strpos($card, '<h3>' . $name . '</h3>') === false) continue;
+      if (strpos($card, $url) !== false) return $card;
+      $img = '<img class="odpc-product-original-logo" src="' . esc_url($url) . '" alt="' . esc_attr($name . ' Original-Logo') . '" width="72" height="72" loading="lazy" decoding="async" style="width:72px;height:72px;object-fit:contain;display:block;margin:0 0 12px">';
+      return str_replace('<h3>' . $name . '</h3>', $img . '<h3>' . $name . '</h3>', $card);
+    }
+    return $card;
+  }, $content);
+  if (strpos($content, '<h3>PraeTax</h3>') === false) {
+    $tax = '<article class="oh-product"><small>Buchhaltung &amp; Lohn</small><img class="odpc-product-original-logo" src="' . esc_url($logos['PraeTax']) . '" alt="PraeTax Original-Logo" width="72" height="72" loading="lazy" decoding="async" style="width:72px;height:72px;object-fit:contain;display:block;margin:0 0 12px"><h3>PraeTax</h3><p>KI-gestützte Beleg-, Buchhaltungs- und Lohnprozesse vorbereiten – mit fachlicher Prüfung.</p><a href="https://odpc.de/praetax">PraeTax ansehen ↗</a></article>';
+    $content = preg_replace('~(<div\\s+class=["\\x27]oh-products["\\x27]\\s*>)(.*?)(</div>)~is', '$1$2' . $tax . '$3', $content, 1);
+  }
+  return $content;
+}, 30);
