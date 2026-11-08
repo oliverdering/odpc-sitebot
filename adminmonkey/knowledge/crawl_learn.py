@@ -23,6 +23,13 @@ SEEDS = [
     "https://learn.microsoft.com/en-us/entra/fundamentals/whatis",
     "https://learn.microsoft.com/en-us/intune/intune-service/fundamentals/what-is-intune",
     "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/overview",
+    "https://learn.microsoft.com/en-us/copilot/microsoft-365/",
+    "https://learn.microsoft.com/en-us/microsoft-copilot-studio/",
+    "https://learn.microsoft.com/en-us/powershell/microsoftgraph/overview",
+    "https://learn.microsoft.com/en-us/exchange/exchange-online",
+    "https://learn.microsoft.com/en-us/microsoftteams/teams-overview",
+    "https://learn.microsoft.com/en-us/defender-xdr/microsoft-365-defender",
+    "https://learn.microsoft.com/en-us/purview/",
 ]
 MAX_PAGES = 12
 MAX_DOCS = 1500
@@ -60,6 +67,10 @@ def crawl(state, fetch):
     docs = dict(state.get("documents", {}))
     queue = deque(state.get("queue") or [{"url": url, "depth": 0} for url in SEEDS])
     seen = set(state.get("seen", []))
+    queued = {item["url"] for item in queue}
+    for seed in reversed(SEEDS):
+        if seed not in seen and seed not in queued:
+            queue.appendleft({"url": seed, "depth": 0})
     attempts = 0
     failures = []
     while queue and attempts < MAX_PAGES and len(docs) < MAX_DOCS:
