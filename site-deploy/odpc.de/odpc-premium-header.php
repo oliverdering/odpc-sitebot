@@ -264,3 +264,25 @@ add_filter('the_content', function ($content) {
   }
   return $content;
 }, 30);
+
+/* Homepage actual layout (ob): remove duplicate Helper Monkey feature, retain product cards. */
+add_filter('the_content', function ($content) {
+  if (is_admin() || !is_front_page() || strpos($content, 'ob-product-grid') === false) return $content;
+  $content = preg_replace(
+    '~<div class="ob-ki-head">.*?</div>\\s*</div>\\s*<p class="ob-intro">.*?</p>\\s*<p class="ob-intro">.*?</p>~is',
+    '<h2 id="ob-ki-heading">KI-Fachlösungen und Anwendungen</h2>',
+    $content, 1
+  );
+  $logos = array(
+    'PraeLex.ai' => 'https://odpc.de/wp-content/uploads/2026/01/file_00000000b1ac71f492324d1b811d7c51.png',
+    'PraeTax' => 'https://odpc.de/wp-content/uploads/2026/03/file_0000000067e87246b5f14960de0779eb.png',
+    'PRAEDIUM' => 'https://odpc.de/wp-content/uploads/2026/02/file_00000000b79c724697fdb5aaef72772e.png',
+  );
+  foreach ($logos as $name => $url) {
+    $heading = '<h3>' . $name . '</h3>';
+    if (strpos($content, $heading) === false || strpos($content, $url) !== false) continue;
+    $img = '<p><img src="' . esc_url($url) . '" alt="' . esc_attr($name . ' Original-Logo') . '" width="72" height="72" loading="lazy" decoding="async" style="width:72px;height:72px;object-fit:contain;display:block;margin:0 0 12px"></p>';
+    $content = str_replace($heading, $img . $heading, $content);
+  }
+  return $content;
+}, 40);
