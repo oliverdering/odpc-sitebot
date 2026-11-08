@@ -21,6 +21,8 @@ jobs:
           python-version: '3.12'
       - name: Collect Microsoft Learn evidence and update persistent index
         run: python adminmonkey/knowledge/monitor.py
+      - name: Run transparent academy baseline checks
+        run: python adminmonkey/knowledge/exam_baseline.py
       - name: Commit evidence updates only
         run: |
           git config user.name "adminmonkey-knowledge-bot"
@@ -33,5 +35,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: adminmonkey-knowledge-index
-          path: adminmonkey/knowledge/knowledge_index.json
+          path: |
+            adminmonkey/knowledge/knowledge_index.json
+            adminmonkey/knowledge/exam_baseline.json
           retention-days: 30
