@@ -1,0 +1,37 @@
+name: AdminMonkey daily knowledge growth
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '23 4 * * *'
+permissions:
+  contents: write
+concurrency:
+  group: adminmonkey-knowledge-growth
+  cancel-in-progress: false
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Collect Microsoft Learn evidence and update persistent index
+        run: python adminmonkey/knowledge/monitor.py
+      - name: Commit evidence updates only
+        run: |
+          git config user.name "adminmonkey-knowledge-bot"
+          git config user.email "adminmonkey-knowledge-bot@users.noreply.github.com"
+          git add adminmonkey/knowledge/knowledge_index.json
+          if ! git diff --cached --quiet; then
+            git commit -m "data(adminmonkey): refresh Microsoft Learn evidence index [skip ci]"
+            git push
+          fi
+      - uses: actions/upload-artifact@v4
+        with:
+          name: adminmonkey-knowledge-index
+          path: adminmonkey/knowledge/knowledge_index.json
+          retention-days: 30
