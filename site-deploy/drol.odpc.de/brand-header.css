@@ -27,3 +27,18 @@
 .header .actions{gap:3px!important}
 .header .icon-button,.header .menu-button,.header .languages summary{min-width:34px!important;padding:3px 5px!important}
 }
+
+/* v2: Firefox/mobile collision fix. Keep brand and controls in separate grid rows. */
+@media(max-width:800px){
+ .header .shell.header-row{grid-template-columns:minmax(0,1fr)!important;grid-template-rows:auto auto!important;min-height:0!important;row-gap:12px!important;padding:14px 0!important}
+ .header .brand{grid-column:1!important;grid-row:1!important;width:100%!important;max-width:100%!important;min-width:0!important;overflow-wrap:anywhere!important}
+ .header .brand>span{min-width:0!important;overflow-wrap:anywhere!important}
+ .header .brand img{width:clamp(72px,18vw,96px)!important;height:clamp(72px,18vw,96px)!important}
+ .header .actions{grid-column:1!important;grid-row:2!important;justify-self:end!important;display:flex!important;flex-wrap:wrap!important;max-width:100%!important}
+ .header .desktop-nav{display:none!important}
+ .header .menu-button{display:flex!important}
+ .drol-unified-header{display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;grid-auto-rows:auto!important;min-width:0!important}
+ .drol-unified-brand{grid-column:1 / -1!important;grid-row:1!important;min-width:0!important;max-width:100%!important;overflow-wrap:anywhere!important}
+ .drol-unified-header>.drol-unified-toggle,.drol-unified-header>.drol-lang,.drol-unified-header>.drol-unified-menu{grid-row:2!important}
+ .drol-unified-header .drol-unified-nav{grid-column:1 / -1!important;grid-row:3!important}
+}
