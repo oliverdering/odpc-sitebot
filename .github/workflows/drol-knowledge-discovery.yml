@@ -11,6 +11,7 @@ on:
       - 'tests/test_drol_release_watch.py'
       - 'scripts/drol_growth_monitor.py'
       - 'scripts/drol_publish_release_feed.py'
+      - 'scripts/drol_ionos_candidate_ingest.py'
 permissions:
   contents: read
   issues: write
@@ -28,6 +29,25 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: python3 scripts/drol_release_watch.py
+      - name: Validate provenance and evidence isolation before publishing
+        run: |
+          python3 - <<'PY'
+          import json,re
+          from pathlib import Path
+          data=json.loads(Path('drol-release-candidates.json').read_text())
+          rows=data['candidates']
+          assert rows and len(rows)<=30
+          for row in rows:
+              assert row['evidence_level']=='E0'
+              assert row['status']=='UNREVIEWED'
+              assert row['model_compatibility']=='UNKNOWN'
+              assert re.fullmatch(r'https://github[.]com/[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+/releases/tag/.+',row['url'])
+              notes=row['release_notes']
+              assert len(notes['excerpt'])<=1200
+              assert notes['sha256'] is None or re.fullmatch(r'[a-f0-9]{64}',notes['sha256'])
+              assert set(notes['topics'])<=set(('security','api_change','firmware','sensor','navigation'))
+          print('PASS provenance and E0 isolation:',len(rows),'candidates')
+          PY
       - name: Install secured SFTP bridge
         run: python3 -m pip install 'paramiko>=3.4,<5'
       - name: Publish public E0 release feed
