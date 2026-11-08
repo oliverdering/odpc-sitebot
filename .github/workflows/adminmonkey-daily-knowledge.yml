@@ -1,5 +1,9 @@
 name: AdminMonkey continuous knowledge cycles
 on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/adminmonkey-daily-knowledge.yml'
   workflow_dispatch:
   schedule:
     - cron: '*/5 * * * *'
