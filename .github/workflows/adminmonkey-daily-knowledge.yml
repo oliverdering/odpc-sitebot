@@ -119,15 +119,8 @@ jobs:
           out.write_text(json.dumps(result, indent=2) + "\n")
           print("MariaDB diagnosis:", result["verdict"])
           PY
-      - name: Import new knowledge into existing MariaDB
-        env:
-          AMK_DB_HOST: ${{ secrets.AMK_DB_HOST }}
-          AMK_DB_PORT: ${{ secrets.AMK_DB_PORT }}
-          AMK_DB_NAME: ${{ secrets.AMK_DB_NAME }}
-          AMK_DB_USER: ${{ secrets.AMK_DB_USER }}
-          AMK_DB_PASSWORD: ${{ secrets.AMK_DB_PASSWORD }}
-        run: python adminmonkey/database/migrate_import.py --apply
-        continue-on-error: true
+      # Safety hold: automatic database writes disabled pending audit of previous runs.
+      # Crawler and read-only MariaDB diagnostics remain enabled.
       - name: Persist verified database progress if import succeeded
         run: |
           if test -f adminmonkey/knowledge/database_progress.json; then
