@@ -74,12 +74,15 @@ def crawl(state, fetch):
             queue.appendleft({"url": seed, "depth": 0})
     attempts = 0
     failures = []
+    attempted_this_batch = set()
+    retry_next_batch = []
     while queue and attempts < MAX_PAGES and len(docs) < MAX_DOCS:
         item = queue.popleft()
         url, depth = item["url"], item["depth"]
-        if url in seen or not allowed(url):
+        if url in seen or not allowed(url) or url in attempted_this_batch:
             continue
         attempts += 1
+        attempted_this_batch.add(url)
         try:
             final_url, raw = fetch(url)
             if not allowed(final_url):
@@ -101,7 +104,8 @@ def crawl(state, fetch):
                         queue.append({"url": link, "depth": depth + 1})
         except (HTTPError, URLError, TimeoutError, OSError, ValueError) as exc:
             failures.append({"url": url, "error": type(exc).__name__})
-            queue.append({"url": url, "depth": depth})
+            retry_next_batch.append({"url": url, "depth": depth})
+    queue.extend(retry_next_batch)
     return {"schema_version": 1, "documents": docs, "queue": list(queue),
             "seen": sorted(seen), "last_batch": {"attempted": attempts,
             "documents_total": len(docs), "queued": len(queue), "failures": failures}}
