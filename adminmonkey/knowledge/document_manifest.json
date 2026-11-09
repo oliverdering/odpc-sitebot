@@ -7854,6 +7854,298 @@
       "depth": 2,
       "review_status": "manufacturer_verified",
       "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-reuse-connectors",
+      "sha256": "2287d5c35307c66266ae8b7b5b6ef13033f2b4d789e89e8ba8fdc0d4d009a115",
+      "captured_at": "2026-11-09T20:24:04.545102+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-type-mcp-servers",
+      "sha256": "314fadd5e9418d2082c8f99ba07688a1895973832a56d728a5d28b849e41bcd0",
+      "captured_at": "2026-11-09T20:24:04.972302+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftsearch/connectors-overview",
+      "sha256": "dbce351fbb6e5f137b5ab90b19272e2107895f46f13b67c7f63c44c57b64073d",
+      "captured_at": "2026-11-09T20:24:05.400448+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftsearch/connectors-gallery",
+      "sha256": "9e4e39f03f161040e5718d7af6b1811e5ee273289065c37af251abaf82f577e9",
+      "captured_at": "2026-11-09T20:24:05.896011+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/connectors-api-overview",
+      "sha256": "84ea2037152bb06ad21da1cc38286b24a42cc2f0b82bddc3bebe2987d5fac653",
+      "captured_at": "2026-11-09T20:24:06.237108+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/list",
+      "sha256": "9b396855c7b7ccc5dfacd1bd30796071c091dda11e406b4359d7d2f8bf959f0c",
+      "captured_at": "2026-11-09T20:24:07.971008+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/listitem",
+      "sha256": "bf0d70dc872aa31f9ca55dc46bf862bcb4ad588060ae87230890ffda40fb1f4e",
+      "captured_at": "2026-11-09T20:24:08.328642+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/site",
+      "sha256": "b7bd925b03b35dcff113632a7919d536aee1d11f7f3f71c64b8fcdb16c32deb3",
+      "captured_at": "2026-11-09T20:24:08.743563+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/externalconnectors-externalitem",
+      "sha256": "7a0ad61605eafdb1ef8b3e80fa2f59612a12bf90843fc51d9dbaaefa991e417e",
+      "captured_at": "2026-11-09T20:24:09.307034+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/search-acronym",
+      "sha256": "2359b6d01ad1354a2130984e969251acc0fb60643dea0b0fc8100f55f90bbb01",
+      "captured_at": "2026-11-09T20:24:09.634025+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/search-bookmark",
+      "sha256": "e245cb00e96688bff7fe1a5fe85e56e27bc7b97f45879ac6124665ca10cef435",
+      "captured_at": "2026-11-09T20:24:10.242326+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/search-qna",
+      "sha256": "a2a03dbc706870d7cc15e2455b77fbfc9541d02cac98795a4e9319e59111ac0a",
+      "captured_at": "2026-11-09T20:24:10.692505+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/search-api-overview",
+      "sha256": "2c46b22844def53a3fc8114569b42de1d154beb82bd79427f77e96690db0cec0",
+      "captured_at": "2026-11-09T20:24:11.033957+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/search-api-answers-overview",
+      "sha256": "37a4868d3202d46aa3516d5a8292d4fdb115db63f01887b63b251036af2dda77",
+      "captured_at": "2026-11-09T20:24:11.598632+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftsearch/",
+      "sha256": "9ae8c1282ec0a20e91d02848e1e0677e8ea694cfdb191904b94e0c04b9866714",
+      "captured_at": "2026-11-09T20:24:11.747782+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/connecting-external-content-manage-connections",
+      "sha256": "888cb389b885c1b0b3485212739aae07929ecb529d8b1554790c5b0475293793",
+      "captured_at": "2026-11-09T20:24:12.030329+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/connecting-external-content-manage-items",
+      "sha256": "fc73a7e22624dbcdcf06120d6c59f2ec089f99fbe40f6dccd3d3057a9244cc9b",
+      "captured_at": "2026-11-09T20:24:12.245399+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/search-concept-messages",
+      "sha256": "cd3fe2c78c3eebb284a876ece5d7797218e75494563f2f635a936845649dcd25",
+      "captured_at": "2026-11-09T20:24:12.632341+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/search-concept-events",
+      "sha256": "626562cf6494e1f78ab003e46b85687e11e8225e44d01b035b59819722f07ea5",
+      "captured_at": "2026-11-09T20:24:12.894399+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/search-concept-files",
+      "sha256": "9e6c62a90985e2358c050f9ddba1ceb92c869031d999fedf5638217fe288bf46",
+      "captured_at": "2026-11-09T20:24:13.339491+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/search-concept-custom-types",
+      "sha256": "0aa646df93d13f5b92220d418820aa95e4c3c088ddd49760435733ed9775c245",
+      "captured_at": "2026-11-09T20:24:13.513131+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/search-concept-searchall",
+      "sha256": "83f92a1df8dc72803ed7cf2c4da707af34a5b818f6a2ad68c1312eb656e69331",
+      "captured_at": "2026-11-09T20:24:13.872098+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/search-concept-answers",
+      "sha256": "49c476d89a29c563c14ed6fe48582a4404c12f5c6dd5f7bef0c5495d11e691ec",
+      "captured_at": "2026-11-09T20:24:14.230391+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/search-concept-display-layout",
+      "sha256": "a8daaf1a1b5a39938dad0e9b34111cab2839e6631c0f448fe6a28022be342a3c",
+      "captured_at": "2026-11-09T20:24:14.761145+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/search-concept-aggregation",
+      "sha256": "1360210efe86751e82a74abeb94ae150393de35169a4fb13e9a67af71f742760",
+      "captured_at": "2026-11-09T20:24:15.278786+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/search-concept-speller",
+      "sha256": "f74c3cd932f4c7eb2e06a64742534a99dac1609563006e60f2fd7f7d2b013f29",
+      "captured_at": "2026-11-09T20:24:15.603271+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/search-concept-sort",
+      "sha256": "c24e4d6ec00028bf42cffec09377bf229e5f5a5d73364eb55db2ddd805eb91eb",
+      "captured_at": "2026-11-09T20:24:15.908254+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/search-concept-query-template",
+      "sha256": "0b17b6a81397081978ab117c26f374a564daa851d1cfdff8167730856ff4a78a",
+      "captured_at": "2026-11-09T20:24:16.686198+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/search-concept-trim-duplicate",
+      "sha256": "e7d0cb7e40bd9f0cbda7ecb2cb1f9f3dea9a44829ab70065a9167cceb1d89280",
+      "captured_at": "2026-11-09T20:24:17.026618+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/answers/products/m365",
+      "sha256": "1574ddcb1209f10c7201b3d4e0089b5ebd18ed2c950298ea47c844b5ace7563f",
+      "captured_at": "2026-11-09T20:24:17.606219+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/viva/microsoft-viva-overview",
+      "sha256": "4309fa677e98fb8808cd30171bf978b44a978e4ed89e0b689fc0936c2fa2377b",
+      "captured_at": "2026-11-09T20:24:17.772713+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/data-connect-quickstart",
+      "sha256": "bf730deac236ce6326e3e7f31b52b2cd130e8184446a0cfd6f20eaaf4eb91277",
+      "captured_at": "2026-11-09T20:24:18.123311+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/data-connect-datasets",
+      "sha256": "c5e51608362e52634bfc3dfcff073e02d9cb4549aba61141c799106026578798",
+      "captured_at": "2026-11-09T20:24:18.451557+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/fabric/get-started/microsoft-fabric-overview",
+      "sha256": "35124d7c58ffc3a17bf2ccef238bc94382d592c5a617523ff178b85d825ff0c0",
+      "captured_at": "2026-11-09T20:24:18.809046+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/data-connect-faq",
+      "sha256": "eea24e01364fb72e2793104c198526622d3a8803e19a6158b6e69b23f1001560",
+      "captured_at": "2026-11-09T20:24:19.148712+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/whats-new-earlier",
+      "sha256": "2aa975ad8dfe09fe89409d4849c695a2ea4e644f51ac12818c41867e8c5ab88e",
+      "captured_at": "2026-11-09T20:24:19.605697+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
     }
   ],
   "seen": [
@@ -7875,6 +8167,7 @@
     "https://learn.microsoft.com/en-us/agents",
     "https://learn.microsoft.com/en-us/ai",
     "https://learn.microsoft.com/en-us/answers",
+    "https://learn.microsoft.com/en-us/answers/products/m365",
     "https://learn.microsoft.com/en-us/answers/questions/5602614/entra-conditional-access-issue",
     "https://learn.microsoft.com/en-us/answers/questions/5707555/excel-copilot-is-generating-download-links-that-ha",
     "https://learn.microsoft.com/en-us/answers/questions/5744593/visual-studio-2026-uses-excessive-memory-(20gb-)-w",
@@ -8002,6 +8295,7 @@
     "https://learn.microsoft.com/en-us/exchange/recipients/dynamic-distribution-groups/dynamic-distribution-groups",
     "https://learn.microsoft.com/en-us/exchange/recipients/mail-enabled-security-groups",
     "https://learn.microsoft.com/en-us/exchange/sharing-exchange-2013-help",
+    "https://learn.microsoft.com/en-us/fabric/get-started/microsoft-fabric-overview",
     "https://learn.microsoft.com/en-us/graph",
     "https://learn.microsoft.com/en-us/graph/aad-advanced-queries",
     "https://learn.microsoft.com/en-us/graph/api/activitiescontainer-post-contentactivities",
@@ -8115,6 +8409,7 @@
     "https://learn.microsoft.com/en-us/graph/api/resources/chat",
     "https://learn.microsoft.com/en-us/graph/api/resources/cloudpc",
     "https://learn.microsoft.com/en-us/graph/api/resources/communications-api-overview",
+    "https://learn.microsoft.com/en-us/graph/api/resources/connectors-api-overview",
     "https://learn.microsoft.com/en-us/graph/api/resources/contact",
     "https://learn.microsoft.com/en-us/graph/api/resources/contactfolder",
     "https://learn.microsoft.com/en-us/graph/api/resources/contentactivity",
@@ -8136,6 +8431,7 @@
     "https://learn.microsoft.com/en-us/graph/api/resources/event",
     "https://learn.microsoft.com/en-us/graph/api/resources/eventmessage",
     "https://learn.microsoft.com/en-us/graph/api/resources/extension",
+    "https://learn.microsoft.com/en-us/graph/api/resources/externalconnectors-externalitem",
     "https://learn.microsoft.com/en-us/graph/api/resources/externalconnectors-urltoitemresolverbase",
     "https://learn.microsoft.com/en-us/graph/api/resources/fileattachment",
     "https://learn.microsoft.com/en-us/graph/api/resources/group",
@@ -8156,6 +8452,8 @@
     "https://learn.microsoft.com/en-us/graph/api/resources/learningprovider",
     "https://learn.microsoft.com/en-us/graph/api/resources/licenseassignmentstate",
     "https://learn.microsoft.com/en-us/graph/api/resources/licensedetails",
+    "https://learn.microsoft.com/en-us/graph/api/resources/list",
+    "https://learn.microsoft.com/en-us/graph/api/resources/listitem",
     "https://learn.microsoft.com/en-us/graph/api/resources/localeinfo",
     "https://learn.microsoft.com/en-us/graph/api/resources/location",
     "https://learn.microsoft.com/en-us/graph/api/resources/mailboxsettings",
@@ -8197,11 +8495,17 @@
     "https://learn.microsoft.com/en-us/graph/api/resources/resourcespecificpermissiongrant",
     "https://learn.microsoft.com/en-us/graph/api/resources/responsestatus",
     "https://learn.microsoft.com/en-us/graph/api/resources/scheduleinformation",
+    "https://learn.microsoft.com/en-us/graph/api/resources/search-acronym",
+    "https://learn.microsoft.com/en-us/graph/api/resources/search-api-answers-overview",
+    "https://learn.microsoft.com/en-us/graph/api/resources/search-api-overview",
+    "https://learn.microsoft.com/en-us/graph/api/resources/search-bookmark",
+    "https://learn.microsoft.com/en-us/graph/api/resources/search-qna",
     "https://learn.microsoft.com/en-us/graph/api/resources/security-api-overview",
     "https://learn.microsoft.com/en-us/graph/api/resources/serviceprovisioningerror",
     "https://learn.microsoft.com/en-us/graph/api/resources/shift",
     "https://learn.microsoft.com/en-us/graph/api/resources/signinactivity",
     "https://learn.microsoft.com/en-us/graph/api/resources/singlevaluelegacyextendedproperty",
+    "https://learn.microsoft.com/en-us/graph/api/resources/site",
     "https://learn.microsoft.com/en-us/graph/api/resources/team",
     "https://learn.microsoft.com/en-us/graph/api/resources/teams-api-overview",
     "https://learn.microsoft.com/en-us/graph/api/resources/teamsapp",
@@ -8315,11 +8619,16 @@
     "https://learn.microsoft.com/en-us/graph/connecting-external-content-connectors-api-overview",
     "https://learn.microsoft.com/en-us/graph/connecting-external-content-connectors-overview",
     "https://learn.microsoft.com/en-us/graph/connecting-external-content-deploy-teams",
+    "https://learn.microsoft.com/en-us/graph/connecting-external-content-manage-connections",
+    "https://learn.microsoft.com/en-us/graph/connecting-external-content-manage-items",
     "https://learn.microsoft.com/en-us/graph/connecting-external-content-manage-schema",
     "https://learn.microsoft.com/en-us/graph/cross-device-concept-overview",
     "https://learn.microsoft.com/en-us/graph/custom-connector-sdk-sample-create",
     "https://learn.microsoft.com/en-us/graph/custom-security-attributes-examples",
     "https://learn.microsoft.com/en-us/graph/data-connect-concept-overview",
+    "https://learn.microsoft.com/en-us/graph/data-connect-datasets",
+    "https://learn.microsoft.com/en-us/graph/data-connect-faq",
+    "https://learn.microsoft.com/en-us/graph/data-connect-quickstart",
     "https://learn.microsoft.com/en-us/graph/delta-query-events",
     "https://learn.microsoft.com/en-us/graph/delta-query-overview",
     "https://learn.microsoft.com/en-us/graph/deployments",
@@ -8363,8 +8672,20 @@
     "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
     "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
     "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
+    "https://learn.microsoft.com/en-us/graph/search-concept-aggregation",
+    "https://learn.microsoft.com/en-us/graph/search-concept-answers",
+    "https://learn.microsoft.com/en-us/graph/search-concept-custom-types",
+    "https://learn.microsoft.com/en-us/graph/search-concept-display-layout",
+    "https://learn.microsoft.com/en-us/graph/search-concept-events",
+    "https://learn.microsoft.com/en-us/graph/search-concept-files",
+    "https://learn.microsoft.com/en-us/graph/search-concept-messages",
     "https://learn.microsoft.com/en-us/graph/search-concept-overview",
     "https://learn.microsoft.com/en-us/graph/search-concept-person",
+    "https://learn.microsoft.com/en-us/graph/search-concept-query-template",
+    "https://learn.microsoft.com/en-us/graph/search-concept-searchall",
+    "https://learn.microsoft.com/en-us/graph/search-concept-sort",
+    "https://learn.microsoft.com/en-us/graph/search-concept-speller",
+    "https://learn.microsoft.com/en-us/graph/search-concept-trim-duplicate",
     "https://learn.microsoft.com/en-us/graph/security-concept-overview",
     "https://learn.microsoft.com/en-us/graph/service-communications-concept-overview",
     "https://learn.microsoft.com/en-us/graph/sharepoint-concept-overview",
@@ -8379,6 +8700,7 @@
     "https://learn.microsoft.com/en-us/graph/tutorials",
     "https://learn.microsoft.com/en-us/graph/universal-print-concept-overview",
     "https://learn.microsoft.com/en-us/graph/use-the-api",
+    "https://learn.microsoft.com/en-us/graph/whats-new-earlier",
     "https://learn.microsoft.com/en-us/graph/whats-new-overview",
     "https://learn.microsoft.com/en-us/graph/windowsupdates-concept-overview",
     "https://learn.microsoft.com/en-us/intune/app-management/protection/overview",
@@ -8528,11 +8850,13 @@
     "https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/connectors-gallery",
     "https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview",
     "https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/overview",
+    "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-reuse-connectors",
     "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-your-first-connector",
     "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview",
     "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-copilot-connector",
     "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-authentication",
     "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-type-connectors",
+    "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-type-mcp-servers",
     "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/prerequisites",
     "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-page",
     "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-search",
@@ -8622,7 +8946,10 @@
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/workflows-experience/flow-designer",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/workflows-experience/flows-overview",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/workflows-experience/microsoft-365-copilot-node-workflow",
+    "https://learn.microsoft.com/en-us/microsoftsearch/",
+    "https://learn.microsoft.com/en-us/microsoftsearch/connectors-gallery",
     "https://learn.microsoft.com/en-us/microsoftsearch/connectors-in-all-vertical",
+    "https://learn.microsoft.com/en-us/microsoftsearch/connectors-overview",
     "https://learn.microsoft.com/en-us/microsoftteams/apps-in-teams",
     "https://learn.microsoft.com/en-us/microsoftteams/communicate-with-users-from-other-organizations",
     "https://learn.microsoft.com/en-us/microsoftteams/deploy-overview",
@@ -8748,227 +9075,12 @@
     "https://learn.microsoft.com/en-us/troubleshoot/viva/glint/viva-glint-welcome",
     "https://learn.microsoft.com/en-us/troubleshoot/viva/insights/viva-insights-welcome",
     "https://learn.microsoft.com/en-us/troubleshoot/viva/pulse/viva-pulse-welcome",
+    "https://learn.microsoft.com/en-us/viva/microsoft-viva-overview",
     "https://learn.microsoft.com/en-us/windows/deployment/update/check-release-health",
     "https://learn.microsoft.com/en-us/windows/project-rome/",
     "https://learn.microsoft.com/en-us/windows/win32/wer/windows-error-reporting"
   ],
   "queue": [
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-type-connectors",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-reuse-connectors",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/prerequisites",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-type-mcp-servers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-your-first-connector",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/connecting-external-content-connectors-api-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-copilot-connector",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/search-query",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoftsearch/connectors-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/search-query",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoftsearch/connectors-gallery",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/connectors-api-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/message",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/driveitem",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/list",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/listitem",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/site",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/drive",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/person",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/externalconnectors-externalitem",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/search-acronym",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/search-bookmark",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/search-qna",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/search-api-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/search-api-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/connectors-api-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/search-api-answers-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/search-api-answers-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoftsearch/",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/connecting-external-content-manage-connections",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/connecting-external-content-manage-items",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/search-concept-messages",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/search-concept-events",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/search-concept-files",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/search-concept-custom-types",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/search-concept-searchall",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/search-concept-person",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/search-concept-answers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/search-concept-display-layout",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/search-concept-aggregation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/search-concept-speller",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/search-concept-sort",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/search-concept-query-template",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/search-concept-trim-duplicate",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/answers/products/m365",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/viva/microsoft-viva-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/data-connect-quickstart",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/data-connect-datasets",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/purview/purview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/fabric/get-started/microsoft-fabric-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/data-connect-quickstart",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/data-connect-faq",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/data-connect-datasets",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/whats-new-earlier",
-      "depth": 2
-    },
     {
       "url": "https://learn.microsoft.com/en-us/graph/api/resources/browsequeryresponseitem",
       "depth": 2
@@ -18752,11 +18864,227 @@
     {
       "url": "https://learn.microsoft.com/en-us/fabric/admin/admin-share-power-bi-metadata-microsoft-365-services",
       "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftsearch/connectors-gallery",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/custom-connector-sdk-sample-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/connectors/connector-reference/connector-reference-mcpserver-connectors",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/choose-plugin-development-tools",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/deployment-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/personal-sync-connectors-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/connector-agent",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/peopleconnectors",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-search",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/connectors-gallery-microsoft",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/connectors-gallery-partners",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365-copilot/microsoft-365-copilot-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/site",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/list-get",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/list-create",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/listitem-list",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/site-get",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/externalconnectors-externalconnection",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/externalconnectors-externalconnection-put-items",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/externalconnectors-externalitem-get",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/search-searchanswer",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/search-searchanswer",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/search-searchanswer",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/searchrequest",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/search-concept-answers",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftsearch/overview-microsoft-search",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/search-concept-answers",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftsearch/overview-microsoft-search",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftsearch/setup-microsoft-search",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/externalconnectors-external-post-connections",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/externalconnectors-external-post-connections",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/SharePoint/technical-reference/default-crawled-file-name-extensions-and-parsed-file-types",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/searchhitscontainer",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/searchRequest",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/externalconnectors-schema",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/searchRequest",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftsearch/manage-acronyms",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftsearch/manage-bookmarks",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/adaptive-cards/templating/",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/searchRequest",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/searchrequest",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/searchrequest",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/sharepoint/technical-reference/query-variables",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/searchrequest",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/answers/tags/831/m365-office",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/viva/setup-microsoft-viva",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/office/developer-program/microsoft-365-developer-program-faq",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/fabric/fundamentals/microsoft-fabric-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/fabric/fundamentals/microsoft-fabric-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/data-connect-troubleshooting",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/authenticationbehaviors",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/workhoursandlocationssetting",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/workplanoccurrence",
+      "depth": 3
     }
   ],
   "last_batch": {
     "attempted": 36,
-    "documents_total": 894,
+    "documents_total": 930,
     "queued": 2500,
     "failures": []
   }
