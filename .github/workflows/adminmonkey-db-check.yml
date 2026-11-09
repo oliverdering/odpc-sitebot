@@ -1,0 +1,53 @@
+name: AdminMonkey MariaDB Connectivity Check
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/adminmonkey-db-check.yml'
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Install database driver
+        run: python -m pip install 'PyMySQL>=1.1,<2'
+      - name: Verify database connection and existing tables without changes
+        env:
+          AMK_DB_HOST: ${{ secrets.AMK_DB_HOST }}
+          AMK_DB_NAME: ${{ secrets.AMK_DB_NAME }}
+          AMK_DB_USER: ${{ secrets.AMK_DB_USER }}
+          AMK_DB_PASSWORD: ${{ secrets.AMK_DB_PASSWORD }}
+          AMK_DB_PORT: ${{ secrets.AMK_DB_PORT }}
+        run: |
+          python - <<'PY'
+          import os, json, sys
+          import pymysql
+          names = ('AMK_DB_HOST','AMK_DB_NAME','AMK_DB_USER','AMK_DB_PASSWORD','AMK_DB_PORT')
+          missing = [n for n in names if not os.getenv(n)]
+          if missing:
+              print('FAIL: Missing GitHub Secrets: '+', '.join(missing))
+              sys.exit(1)
+          try:
+              conn = pymysql.connect(host=os.environ['AMK_DB_HOST'], port=int(os.environ['AMK_DB_PORT']), user=os.environ['AMK_DB_USER'], password=os.environ['AMK_DB_PASSWORD'], database=os.environ['AMK_DB_NAME'], connect_timeout=10, read_timeout=15, charset='utf8mb4')
+              with conn.cursor() as cur:
+                  cur.execute('SELECT 1')
+                  cur.fetchone()
+                  cur.execute("SELECT table_name FROM information_schema.tables WHERE table_schema = DATABASE() AND table_name IN ('amk_sources','amk_documents','amk_evaluations')")
+                  tables = sorted(row[0] for row in cur.fetchall())
+                  counts = {}
+                  for name in tables:
+                      cur.execute('SELECT COUNT(*) FROM '+name)
+                      counts[name] = cur.fetchone()[0]
+              conn.close()
+              print('PASS: MariaDB authenticated and SELECT 1 succeeded')
+              print('Existing AdminMonkey tables: '+json.dumps(tables))
+              print('Existing row counts: '+json.dumps(counts))
+              if len(tables)<3:
+                  print('NEXT: Knowledge schema not fully installed; connection is valid but learning database is not ready')
+          except Exception as exc:
+              print('FAIL: Database connectivity check: '+type(exc).__name__)
+              sys.exit(1)
+          PY
