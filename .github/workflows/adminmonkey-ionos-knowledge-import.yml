@@ -8,11 +8,11 @@ on:
       - 'adminmonkey/knowledge/crawl_learn.py'
   workflow_dispatch:
   schedule:
-    - cron: '7,22,37,52 * * * *'
+    - cron: '*/5 * * * *'
 permissions:
   contents: write
 concurrency:
-  group: adminmonkey-ionos-knowledge-import
+  group: adminmonkey-knowledge-growth
   cancel-in-progress: false
 jobs:
   import:
