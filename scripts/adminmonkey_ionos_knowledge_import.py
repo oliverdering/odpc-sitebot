@@ -117,20 +117,38 @@ def main():
         base={k:os.environ[v] for k,v in {'host':'AMK_DB_HOST','name':'AMK_DB_NAME',
             'user':'AMK_DB_USER','password':'AMK_DB_PASSWORD'}.items()}
         base['port']=os.environ.get('AMK_DB_PORT') or '3306'
-        inserted=0;result=None
-        for start in range(0,len(docs),10):
-            payload=dict(base,documents=docs[start:start+10])
+        inserted=0;result=None;rejected=[]
+        def send(batch):
+            payload=dict(base,documents=batch)
             req=Request(url,data=json.dumps(payload).encode(),method='POST',
                 headers={'Content-Type':'application/json','X-AMK-Import':token})
-            try:
-                with urlopen(req,timeout=60) as response:result=json.load(response)
-            except HTTPError as exc:raise RuntimeError('Database import HTTP '+str(exc.code)+' at batch '+str(start//10+1)) from None
-            if result.get('status')!='ok' or result.get('batch_count')!=len(payload['documents']):
+            with urlopen(req,timeout=60) as response:
+                answer=json.load(response)
+            if answer.get('status')!='ok' or answer.get('batch_count')!=len(batch):
                 raise RuntimeError('Import not confirmed')
-            inserted+=result['inserted']
+            return answer
+        for start in range(0,len(docs),10):
+            batch=docs[start:start+10]
+            try:
+                result=send(batch)
+                inserted+=result['inserted']
+            except HTTPError as exc:
+                if exc.code!=503:raise
+                # A single rejected record must not conceal successfully imported records.
+                print('WARN: batch',start//10+1,'rejected; isolating documents')
+                for item in batch:
+                    try:
+                        result=send([item])
+                        inserted+=result['inserted']
+                    except HTTPError as one:
+                        if one.code!=503:raise
+                        rejected.append(item['url'])
+                        print('WARN: rejected Microsoft Learn URL:',item['url'])
+        if result is None:raise RuntimeError('No successful import responses')
         report={'database_connected':True,'new_document_versions':inserted,
             'document_versions_total':result['document_versions_total'],
-            'sources_total':result['sources_total'],'imported_from_verified_origin':len(docs),
+            'sources_total':result['sources_total'],'imported_from_verified_origin':len(docs)-len(rejected),
+            'rejected_document_count':len(rejected),'rejected_document_urls':rejected,
             'official_microsoft_certification':False}
         Path('adminmonkey/knowledge/database_progress.json').write_text(json.dumps(report,indent=2)+'\n')
         print('PASS: AdminMonkey knowledge imported:',json.dumps(report))
