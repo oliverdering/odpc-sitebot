@@ -1,0 +1,29 @@
+name: AdminMonkey IONOS-local MariaDB preflight
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: adminmonkey-ionos-db-preflight
+  cancel-in-progress: false
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    environment: adminmonkey-production
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned SFTP transport
+        run: python -m pip install 'paramiko==3.5.1'
+      - name: Verify MariaDB from IONOS webhosting without writing
+        env:
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+          AMK_DB_HOST: ${{ secrets.AMK_DB_HOST }}
+          AMK_DB_PORT: ${{ secrets.AMK_DB_PORT }}
+          AMK_DB_NAME: ${{ secrets.AMK_DB_NAME }}
+          AMK_DB_USER: ${{ secrets.AMK_DB_USER }}
+          AMK_DB_PASSWORD: ${{ secrets.AMK_DB_PASSWORD }}
+        run: python scripts/adminmonkey_ionos_db_preflight.py
