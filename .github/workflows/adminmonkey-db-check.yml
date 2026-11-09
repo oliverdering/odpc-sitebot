@@ -12,6 +12,30 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
+      - name: Diagnose DNS and TCP before authentication (read-only)
+        env:
+          AMK_DB_HOST: ${{ secrets.AMK_DB_HOST }}
+          AMK_DB_PORT: ${{ secrets.AMK_DB_PORT }}
+        run: |
+          python - <<'PY'
+          import os,socket,sys
+          host=os.environ.get('AMK_DB_HOST','')
+          port=int(os.environ.get('AMK_DB_PORT') or '3306')
+          if not host:
+              print('BLOCKED: AdminMonkey host secret missing');sys.exit(1)
+          try:
+              addrs=socket.getaddrinfo(host,port,type=socket.SOCK_STREAM)
+              print('PASS: DNS resolution succeeded; address count:',len(addrs))
+          except socket.gaierror as e:
+              print('BLOCKED: GitHub runner cannot resolve AdminMonkey MariaDB hostname; use IONOS-local connectivity path')
+              sys.exit(2)
+          try:
+              with socket.create_connection((host,port),timeout=7):pass
+              print('PASS: TCP port reachable from GitHub runner')
+          except OSError:
+              print('BLOCKED: TCP connection unavailable from GitHub runner; IONOS-local access may still work')
+              sys.exit(3)
+          PY
       - name: Install database driver
         run: python -m pip install 'PyMySQL>=1.1,<2'
       - name: Verify database connection and existing tables without changes
