@@ -1,20 +1,25 @@
 {
-  "generated_at": "2026-11-09T10:44:48.782499+00:00",
+  "generated_at": "2026-11-09T11:17:13.523643+00:00",
   "product": "AdminMonkey Academy",
   "certification_issuer": "ODPC",
   "official_microsoft_certification": false,
   "knowledge": {
-    "documents_collected": 144,
+    "documents_collected": 155,
     "review": {
-      "unreviewed": 144,
+      "unreviewed": 155,
       "approved": 0,
       "rejected": 0
     },
     "last_batch": {
       "attempted": 12,
-      "documents_total": 144,
-      "queued": 2500,
-      "failures": []
+      "documents_total": 155,
+      "queued": 2501,
+      "failures": [
+        {
+          "url": "https://learn.microsoft.com/en-us/admin/add-users/about-admin-roles",
+          "error": "ValueError"
+        }
+      ]
     }
   },
   "tracks": [
