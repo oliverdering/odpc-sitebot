@@ -756,24 +756,119 @@
       "captured_at": "2026-11-09T10:29:31.093934+00:00",
       "depth": 1,
       "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/azure-subscription-service-limits",
+      "sha256": "ae4294e6283fe82a789e7a0cacd190a772b040fb3046493a1fe1a1b46c30fc77",
+      "captured_at": "2026-11-09T10:33:28.862929+00:00",
+      "depth": 1,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-to-subscription",
+      "sha256": "719da47c2d6134975b58f6782258c68c69f0f62d1a18820a20b27ef0084fa4e1",
+      "captured_at": "2026-11-09T10:33:29.006074+00:00",
+      "depth": 1,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-to-management-group",
+      "sha256": "ec81104b8cd6414104d836bcc1401d7cbc84444ba58d9f1ff08bf350f8208f30",
+      "captured_at": "2026-11-09T10:33:29.176809+00:00",
+      "depth": 1,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-to-tenant",
+      "sha256": "5d15337b4a7f6fe525ceff4ae0fb3eaac5fa24b4d6db5e6b0c5f452d7c403da8",
+      "captured_at": "2026-11-09T10:33:29.461305+00:00",
+      "depth": 1,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal",
+      "sha256": "2b8fcf8afd520c646b8366d738cfc98ff7cd5630b9f0667db262ec4a52882410",
+      "captured_at": "2026-11-09T10:33:29.539276+00:00",
+      "depth": 1,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-powershell",
+      "sha256": "964eaca7a2d4cb9ca41bfbe9bc2698ca6d02cf074e3ab5ead69e99161d2f6a5b",
+      "captured_at": "2026-11-09T10:33:29.631560+00:00",
+      "depth": 1,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-cli",
+      "sha256": "1150d3b20cba432606d4be23289eb7638e520c1eef7de761b8fab3808d0ba934",
+      "captured_at": "2026-11-09T10:33:29.795144+00:00",
+      "depth": 1,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/control-plane-and-data-plane",
+      "sha256": "f340e26663fb23a6718e94a3ce90351cddc5dc0976da8c46519c150522c5262c",
+      "captured_at": "2026-11-09T10:33:29.923634+00:00",
+      "depth": 1,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/governance/resource-graph/reference/supported-tables-resources",
+      "sha256": "200b6cb88e700794d6de385e6fb87965e7c2b6ded8d56b7bfe4136e063f2f2d8",
+      "captured_at": "2026-11-09T10:33:30.056717+00:00",
+      "depth": 1,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/reliability/regions-paired",
+      "sha256": "254b855c90421796b2003e4a03f2d87e9161c2c4afc995977231fb25037a0b8b",
+      "captured_at": "2026-11-09T10:33:30.212928+00:00",
+      "depth": 1,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/architecture/checklist/resiliency-per-service",
+      "sha256": "02978e331bd93066c669b363c2555651c967449c837800db85fc44d0f33d1e56",
+      "captured_at": "2026-11-09T10:33:30.527980+00:00",
+      "depth": 1,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/lifecycle/products/",
+      "sha256": "848b8b36c990103dba20e64c9a922c9831544d64b1b44a3bd86c72c36857dd3d",
+      "captured_at": "2026-11-09T10:33:30.609861+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
     }
   ],
   "seen": [
     "https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-whatis",
+    "https://learn.microsoft.com/en-us/azure/architecture/checklist/resiliency-per-service",
     "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview",
+    "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/azure-subscription-service-limits",
+    "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/control-plane-and-data-plane",
     "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/delete-resource-group",
     "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/extension-resource-types",
     "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/lock-resources",
+    "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-cli",
+    "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal",
+    "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-powershell",
     "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/move-resource-group-and-subscription",
     "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/overview",
     "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types",
     "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/resources-without-resource-group-limit",
     "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources",
     "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tls-support",
+    "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-to-management-group",
+    "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-to-subscription",
+    "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-to-tenant",
     "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/overview",
     "https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/considerations/fundamental-concepts",
     "https://learn.microsoft.com/en-us/azure/governance/management-groups/overview",
     "https://learn.microsoft.com/en-us/azure/governance/policy/overview",
+    "https://learn.microsoft.com/en-us/azure/governance/resource-graph/reference/supported-tables-resources",
+    "https://learn.microsoft.com/en-us/azure/reliability/regions-paired",
     "https://learn.microsoft.com/en-us/azure/role-based-access-control/role-assignments-portal",
     "https://learn.microsoft.com/en-us/contribute",
     "https://learn.microsoft.com/en-us/copilot/microsoft-365/",
@@ -845,6 +940,7 @@
     "https://learn.microsoft.com/en-us/legal/microsoft-apis/terms-of-use",
     "https://learn.microsoft.com/en-us/legal/termsofuse",
     "https://learn.microsoft.com/en-us/lifecycle/faq/internet-explorer-microsoft-edge",
+    "https://learn.microsoft.com/en-us/lifecycle/products/",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/activity-reports",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/add-users",
@@ -869,90 +965,6 @@
     "https://learn.microsoft.com/en-us/security/zero-trust/zero-trust-overview"
   ],
   "queue": [
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/azure-subscription-service-limits",
-      "depth": 1
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-to-subscription",
-      "depth": 1
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-to-management-group",
-      "depth": 1
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-to-tenant",
-      "depth": 1
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal",
-      "depth": 1
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-powershell",
-      "depth": 1
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-cli",
-      "depth": 1
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-to-subscription",
-      "depth": 1
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/control-plane-and-data-plane",
-      "depth": 1
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/governance/resource-graph/reference/supported-tables-resources",
-      "depth": 1
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/reliability/regions-paired",
-      "depth": 1
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/architecture/checklist/resiliency-per-service",
-      "depth": 1
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/azure-subscription-service-limits",
-      "depth": 1
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/move-resource-group-and-subscription",
-      "depth": 1
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources",
-      "depth": 1
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/lock-resources",
-      "depth": 1
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/principles-for-ai-generated-content",
-      "depth": 1
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/previous-versions/",
-      "depth": 1
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/contribute",
-      "depth": 1
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/legal/termsofuse",
-      "depth": 1
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/lifecycle/products/",
-      "depth": 2
-    },
     {
       "url": "https://learn.microsoft.com/en-us/lifecycle/policies/modern",
       "depth": 2
@@ -10868,12 +10880,64 @@
     {
       "url": "https://learn.microsoft.com/en-us/azure/networking/check-usage-against-limits",
       "depth": 2
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/cost-management-billing/cost-management-billing-overview",
+      "depth": 2
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview",
+      "depth": 2
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview",
+      "depth": 2
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview",
+      "depth": 2
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/quickstart-create-templates-use-the-portal",
+      "depth": 2
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/powershell/azure/install-azure-powershell",
+      "depth": 2
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/cli/azure/install-azure-cli",
+      "depth": 2
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/rest/api/azure/",
+      "depth": 2
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/rest/api/mysql/databases/create-or-update",
+      "depth": 2
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/governance/resource-graph/samples/samples-by-table",
+      "depth": 2
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy",
+      "depth": 2
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/reliability/overview-reliability-guidance",
+      "depth": 2
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/lifecycle/products/export",
+      "depth": 3
     }
   ],
   "last_batch": {
     "attempted": 12,
-    "documents_total": 108,
-    "queued": 2500,
+    "documents_total": 120,
+    "queued": 2492,
     "failures": []
   }
 }
