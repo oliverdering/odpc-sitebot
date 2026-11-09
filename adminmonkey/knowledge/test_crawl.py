@@ -11,8 +11,9 @@ class CrawlTests(unittest.TestCase):
         html = b'<main><h1>Microsoft Graph</h1><p>' + b'Useful reference text. '*20 + b'</p><a href="https://evil.example/en-us/bad">bad</a></main>'
         result = crawl({"queue":[{"url":"https://learn.microsoft.com/en-us/graph/overview","depth":0}]},
                        lambda url:(url, html))
-        self.assertEqual(len(result["documents"]), 1)
-        self.assertEqual(result["last_batch"]["queued"], 0)
+        self.assertIn("https://learn.microsoft.com/en-us/graph/overview", result["documents"])
+        self.assertNotIn("https://evil.example/en-us/bad", result["documents"])
+        self.assertTrue(all(item["url"].startswith("https://learn.microsoft.com/en-us/") for item in result["queue"]))
         self.assertEqual(next(iter(result["documents"].values()))["review_status"], "unreviewed")
 if __name__ == "__main__":
     unittest.main()
