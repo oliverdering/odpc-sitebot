@@ -1330,6 +1330,90 @@
       "captured_at": "2026-11-09T14:44:03.126476+00:00",
       "depth": 2,
       "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/delete-a-user",
+      "sha256": "76367ffb3d18005d8eb7a2f31548bc910ad2ca11d6f747829a98a5588ad75169",
+      "captured_at": "2026-11-09T14:50:55.758665+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/reset-passwords",
+      "sha256": "00e0de3d6bb87c0d26c009289e6f72b26a431f07ae3a49a4a7d2ce3a079ec418",
+      "captured_at": "2026-11-09T14:50:56.174688+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/create-groups/create-groups",
+      "sha256": "bffc658fa9582bdbb0d75feea155dc0e30fec4f3006651503d1ea34dc64a9795",
+      "captured_at": "2026-11-09T14:50:56.881188+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/create-groups/manage-groups",
+      "sha256": "2615e22d6918deaaed3c19d2151c957e792c049edec0969a339cbdff2161f0f9",
+      "captured_at": "2026-11-09T14:50:57.172270+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/sharepoint/create-site-collection",
+      "sha256": "63a1de8b0dfde4f9fc7b6718ab494622f7890cca30d418e277467e2c4f7b8438",
+      "captured_at": "2026-11-09T14:50:57.969432+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/business-video/get-help-support",
+      "sha256": "23c6e290db48ed5870437e7526e5abd5456ad40959394cd0965a6b6e91649295",
+      "captured_at": "2026-11-09T14:50:58.482959+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/enterprise/view-service-health",
+      "sha256": "562e0f4b5758aab107e99995692eea1d26754c67693e57041688487225ad050c",
+      "captured_at": "2026-11-09T14:50:58.701434+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/exchange/exchange-admin-center",
+      "sha256": "7c965be66671a7287cba5d13cbe9b7afe44b08ad91d83860208c5060c7ec4745",
+      "captured_at": "2026-11-09T14:50:58.949854+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/sharepoint/sharepoint-online",
+      "sha256": "f7c8fe615882302c6c2badb3c93b5882b9bdd6bf4e3eb86a1de16eb8be7b5335",
+      "captured_at": "2026-11-09T14:50:59.430634+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/commerce/try-or-buy-microsoft-365",
+      "sha256": "dba5d8f50ef9833f374584a8d3d21f6cdbed050eb842ea9658552311dfaa0442",
+      "captured_at": "2026-11-09T14:50:59.914673+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/manage-teams-in-modern-portal",
+      "sha256": "59acc143372f668c9b934ae722dfadb7a1bf1d3d32050796cd63c9afa47a9f5c",
+      "captured_at": "2026-11-09T14:51:00.141869+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/assign-admin-roles",
+      "sha256": "feb80876a2643d9bac99c46f2fb248cf88b17b386d1cbaab9756aae422fda0e5",
+      "captured_at": "2026-11-09T14:51:00.862584+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
     }
   ],
   "seen": [
@@ -1410,6 +1494,7 @@
     "https://learn.microsoft.com/en-us/entra/verified-id/decentralized-identifier-overview",
     "https://learn.microsoft.com/en-us/entra/verified-id/verifiable-credentials-standards",
     "https://learn.microsoft.com/en-us/entra/workload-id/workload-identities-overview",
+    "https://learn.microsoft.com/en-us/exchange/exchange-admin-center",
     "https://learn.microsoft.com/en-us/exchange/exchange-online",
     "https://learn.microsoft.com/en-us/graph/api/group-list-members",
     "https://learn.microsoft.com/en-us/graph/api/overview",
@@ -1462,9 +1547,14 @@
     "https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/ews-usage",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/about-admin-roles",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/add-users",
+    "https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/assign-admin-roles",
+    "https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/delete-a-user",
+    "https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/reset-passwords",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/admin-overview/admin-center-overview",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/admin-overview/admin-mobile-app",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/admin-overview/sign-up-for-office-365",
+    "https://learn.microsoft.com/en-us/microsoft-365/admin/create-groups/create-groups",
+    "https://learn.microsoft.com/en-us/microsoft-365/admin/create-groups/manage-groups",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/email/office-365-user-email-settings",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/get-help-support",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/configure-release-options",
@@ -1485,15 +1575,18 @@
     "https://learn.microsoft.com/en-us/microsoft-365/admin/setup/upgrade-users-to-latest-office-client",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/whats-new-in-preview",
     "https://learn.microsoft.com/en-us/microsoft-365/business-premium/m365-business-premium-setup",
+    "https://learn.microsoft.com/en-us/microsoft-365/business-video/get-help-support",
     "https://learn.microsoft.com/en-us/microsoft-365/commerce/",
     "https://learn.microsoft.com/en-us/microsoft-365/commerce/billing-and-payments/manage-multi-tenant-billing",
     "https://learn.microsoft.com/en-us/microsoft-365/commerce/subscriptions/renew-your-subscription",
+    "https://learn.microsoft.com/en-us/microsoft-365/commerce/try-or-buy-microsoft-365",
     "https://learn.microsoft.com/en-us/microsoft-365/compliance/whats-new",
     "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-page",
     "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-search",
     "https://learn.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-admin-engagements",
     "https://learn.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-admin-overview-enhanced-engagements",
     "https://learn.microsoft.com/en-us/microsoft-365/enterprise/office-365-network-mac-perf-onboarding-tool",
+    "https://learn.microsoft.com/en-us/microsoft-365/enterprise/view-service-health",
     "https://learn.microsoft.com/en-us/microsoft-365/migration/",
     "https://learn.microsoft.com/en-us/microsoft-365/migration/cross-tenant-identity-mapping",
     "https://learn.microsoft.com/en-us/microsoft-365/migration/cross-tenant-mailbox-migration",
@@ -1508,6 +1601,7 @@
     "https://learn.microsoft.com/en-us/microsoft-365/migration/migration-orchestrator-8-faq",
     "https://learn.microsoft.com/en-us/microsoft-365/security/mtp/whats-new",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/",
+    "https://learn.microsoft.com/en-us/microsoftteams/manage-teams-in-modern-portal",
     "https://learn.microsoft.com/en-us/microsoftteams/slack-to-teams-migration-tool",
     "https://learn.microsoft.com/en-us/microsoftteams/teams-overview",
     "https://learn.microsoft.com/en-us/office/troubleshoot/",
@@ -1517,6 +1611,8 @@
     "https://learn.microsoft.com/en-us/principles-for-ai-generated-content",
     "https://learn.microsoft.com/en-us/purview/",
     "https://learn.microsoft.com/en-us/security/zero-trust/zero-trust-overview",
+    "https://learn.microsoft.com/en-us/sharepoint/create-site-collection",
+    "https://learn.microsoft.com/en-us/sharepoint/sharepoint-online",
     "https://learn.microsoft.com/en-us/sharepoint/what-s-new-in-admin-center",
     "https://learn.microsoft.com/en-us/sharepointmigration/mm-faqs-dropbox",
     "https://learn.microsoft.com/en-us/sharepointmigration/mm-get-started",
@@ -1525,114 +1621,6 @@
     "https://learn.microsoft.com/en-us/windows/win32/wer/windows-error-reporting"
   ],
   "queue": [
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoftteams/slack-to-teams-migration-tool",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/principles-for-ai-generated-content",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/previous-versions/",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/contribute",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/legal/termsofuse",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/add-users",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/delete-a-user",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/reset-passwords",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/commerce/",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/activity-reports",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/create-groups/create-groups",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/create-groups/manage-groups",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/create-groups/create-groups",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/create-groups/manage-groups",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/sharepoint/create-site-collection",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/commerce/",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/business-video/get-help-support",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/activity-reports",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/enterprise/view-service-health",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/windows/deployment/update/check-release-health",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/message-center",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/exchange/exchange-admin-center",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/sharepoint/sharepoint-online",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/commerce/try-or-buy-microsoft-365",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/about-admin-roles",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoftteams/manage-teams-in-modern-portal",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/assign-admin-roles",
-      "depth": 2
-    },
     {
       "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/setup/customize-your-organization-theme",
       "depth": 2
@@ -11524,11 +11512,119 @@
     {
       "url": "https://learn.microsoft.com/en-us/sharepointmigration/mm-specialty-environments-support",
       "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/restore-user",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/get-access-to-and-back-up-a-former-user-s-data",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/remove-former-employee-step-5",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/compliance/inactive-mailboxes-in-office-365",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/onedrive/restore-deleted-onedrive",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/onedrive/set-retention",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/powershell/module/exchangepowershell/remove-mailboxfolderpermission",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/let-users-reset-passwords",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/viva/engage/manage-viva-engage-groups/viva-engage-and-office-365-groups",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/create-groups/manage-groups",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/microsoft-365/solutions/choose-domain-to-create-groups",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/microsoft-365/solutions/choose-domain-to-create-groups",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/sharepoint/sharepoint-admin-role",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/enterprise/create-sharepoint-sites-and-add-users-with-powershell",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/sharepoint/sites/create-a-site-collection",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/enterprise/view-service-health",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/microsoft-365-operated-by-21vianet",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-exchange-monitoring",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/service-health-and-continuity",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/exchange/permissions-exo/permissions-exo",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/exchange/architecture/client-access/exchange-admin-center",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/exchange/standalone-eop/exchange-admin-center-eop",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/sharepoint/introduction",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/commerce/manage-billing-accounts",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/using-admin-roles",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/powershell/teams/",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference",
+      "depth": 3
     }
   ],
   "last_batch": {
     "attempted": 12,
-    "documents_total": 190,
+    "documents_total": 202,
     "queued": 2500,
     "failures": []
   }
