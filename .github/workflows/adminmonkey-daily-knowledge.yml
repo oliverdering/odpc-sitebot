@@ -65,19 +65,28 @@ jobs:
               print("WARNING: zero documents; publishing diagnostic snapshot rather than suppressing progress")
           print("Verified document count:", len(manifest["documents"]))
           PY
-      - name: Commit evidence updates even when crawl collected zero documents
+      - name: Publish evidence snapshots without rebase conflicts
+        shell: bash
         run: |
+          set -euo pipefail
           git config user.name "adminmonkey-knowledge-bot"
           git config user.email "adminmonkey-knowledge-bot@users.noreply.github.com"
-          git add adminmonkey/knowledge/knowledge_index.json adminmonkey/knowledge/academy_progress.json adminmonkey/knowledge/document_manifest.json
-          if ! git diff --cached --quiet; then
+          files=(adminmonkey/knowledge/knowledge_index.json adminmonkey/knowledge/academy_progress.json adminmonkey/knowledge/document_manifest.json)
+          mkdir -p "$RUNNER_TEMP/adminmonkey-evidence"
+          for file in "${files[@]}"; do cp "$file" "$RUNNER_TEMP/adminmonkey-evidence/$(basename "$file")"; done
+          for i in 1 2 3 4 5; do
+            git fetch origin main
+            git reset --hard origin/main
+            for file in "${files[@]}"; do cp "$RUNNER_TEMP/adminmonkey-evidence/$(basename "$file")" "$file"; done
+            git add "${files[@]}"
+            if git diff --cached --quiet; then exit 0; fi
             git commit -m "data(adminmonkey): refresh Microsoft Learn evidence index [skip ci]"
-            for i in 1 2 3 4 5; do
-              if git pull --rebase --autostash origin main && git push origin HEAD:main; then exit 0; fi
-              sleep $((i * 3))
-            done
-            exit 1
-          fi
+            if git push origin HEAD:main; then exit 0; fi
+            sleep $((i * 3))
+          done
+          echo "::error::Evidence snapshot publication failed after retries"
+          exit 1
+
       - name: Install MariaDB driver
         run: python -m pip install 'PyMySQL==1.1.1'
       - name: Diagnose MariaDB connectivity without exposing secrets
@@ -144,20 +153,34 @@ jobs:
 
       - name: Publish database diagnostics and totals to main
         if: always()
+        shell: bash
         run: |
+          set -euo pipefail
           git config user.name "adminmonkey-knowledge-bot"
           git config user.email "adminmonkey-knowledge-bot@users.noreply.github.com"
-          for file in database_diagnostics.json database_progress.json; do
-            if test -f "adminmonkey/knowledge/$file"; then git add "adminmonkey/knowledge/$file"; fi
+          files=()
+          mkdir -p "$RUNNER_TEMP/adminmonkey-diagnostics"
+          for name in database_diagnostics.json database_progress.json; do
+            file="adminmonkey/knowledge/$name"
+            if test -f "$file"; then
+              cp "$file" "$RUNNER_TEMP/adminmonkey-diagnostics/$name"
+              files+=("$file")
+            fi
           done
-          if ! git diff --cached --quiet; then
+          if (( ${#files[@]} == 0 )); then exit 0; fi
+          for i in 1 2 3 4 5; do
+            git fetch origin main
+            git reset --hard origin/main
+            for file in "${files[@]}"; do cp "$RUNNER_TEMP/adminmonkey-diagnostics/$(basename "$file")" "$file"; done
+            git add "${files[@]}"
+            if git diff --cached --quiet; then exit 0; fi
             git commit -m "data(adminmonkey): publish database diagnostics [skip ci]"
-            for i in 1 2 3; do
-              if git pull --rebase --autostash origin main && git push origin HEAD:main; then exit 0; fi
-              sleep $((i * 3))
-            done
-            exit 1
-          fi
+            if git push origin HEAD:main; then exit 0; fi
+            sleep $((i * 3))
+          done
+          echo "::error::Database diagnostic publication failed after retries"
+          exit 1
+
       - name: Verify crawler isolation and record failing test
         if: always()
         run: |
