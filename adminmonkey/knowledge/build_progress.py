@@ -75,7 +75,8 @@ def build():
             "official_microsoft_certification": False,
             "knowledge": {"documents_collected": len(docs), "manufacturer_verified": counts["approved"], "review": counts,
                           "last_batch": state.get("last_batch", {})},
-            "retrieval_staging": retrieval,\n            "tracks": tracks,
+            "retrieval_staging": retrieval,
+            "tracks": tracks,
             "assessment_status": "manufacturer_sources_mapped_competence_not_yet_verified",
             "notice": "Collection is not learning; practice question count is not a competence score. No Banana Badge until independent agent responses are assessed."}
 
