@@ -17,6 +17,10 @@ REPOS={
  "OpenCV":"opencv/opencv",
  "COLMAP":"colmap/colmap",
  "MAVLink protocol":"mavlink/mavlink",
+ "Betaflight":"betaflight/betaflight",
+ "INAV":"iNavFlight/inav",
+ "ExpressLRS":"ExpressLRS/ExpressLRS",
+ "Paparazzi UAV":"paparazzi/paparazzi",
 }
 API="https://api.github.com"
 TOKEN=os.environ.get("GH_TOKEN","")
