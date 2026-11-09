@@ -78,7 +78,6 @@ def crawl(state, fetch):
         url, depth = item["url"], item["depth"]
         if url in seen or not allowed(url):
             continue
-        seen.add(url)
         attempts += 1
         try:
             final_url, raw = fetch(url)
@@ -90,6 +89,7 @@ def crawl(state, fetch):
             if len(content) < 100:
                 raise ValueError("insufficient article text")
             digest = hashlib.sha256(content.encode("utf-8")).hexdigest()
+            seen.add(url)
             docs[url] = {"url": url, "sha256": digest, "text": content,
                          "depth": depth, "captured_at": datetime.now(timezone.utc).isoformat(),
                          "review_status": "unreviewed"}
@@ -100,6 +100,7 @@ def crawl(state, fetch):
                         queue.append({"url": link, "depth": depth + 1})
         except (HTTPError, URLError, TimeoutError, OSError, ValueError) as exc:
             failures.append({"url": url, "error": type(exc).__name__})
+            queue.append({"url": url, "depth": depth})
     return {"schema_version": 1, "documents": docs, "queue": list(queue),
             "seen": sorted(seen), "last_batch": {"attempted": attempts,
             "documents_total": len(docs), "queued": len(queue), "failures": failures}}
