@@ -49,7 +49,7 @@ jobs:
         run: |
           git config user.name "adminmonkey-knowledge-bot"
           git config user.email "adminmonkey-knowledge-bot@users.noreply.github.com"
-          git add adminmonkey/knowledge/knowledge_index.json adminmonkey/knowledge/academy_progress.json
+          git add adminmonkey/knowledge/knowledge_index.json adminmonkey/knowledge/academy_progress.json adminmonkey/knowledge/document_manifest.json
           if ! git diff --cached --quiet; then
             git commit -m "data(adminmonkey): refresh Microsoft Learn evidence index [skip ci]"
             git push
@@ -61,4 +61,5 @@ jobs:
             adminmonkey/knowledge/knowledge_index.json
             adminmonkey/knowledge/exam_baseline.json
             adminmonkey/knowledge/academy_progress.json
+            adminmonkey/knowledge/document_manifest.json
           retention-days: 30
