@@ -5,6 +5,7 @@ on:
     paths:
       - '.github/workflows/adminmonkey-ionos-knowledge-import.yml'
       - 'scripts/adminmonkey_ionos_knowledge_import.py'
+      - 'adminmonkey/knowledge/crawl_learn.py'
   workflow_dispatch:
   schedule:
     - cron: '7,22,37,52 * * * *'
@@ -31,6 +32,24 @@ jobs:
           key: adminmonkey-crawl-${{ github.run_id }}
           restore-keys: |
             adminmonkey-crawl-
+      - name: Crawl fresh Microsoft Learn documents before database import
+        run: |
+          python adminmonkey/knowledge/crawl_learn.py
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path("adminmonkey/knowledge/crawl_state.json")
+          state=json.loads(p.read_text())
+          docs=state.get("documents",{})
+          assert docs, "Crawler produced no documents"
+          print("Crawl batch:",state.get("last_batch",{}))
+          print("Hash-verifiable candidate documents:",len(docs))
+          PY
+      - name: Persist crawl state for subsequent knowledge cycles
+        uses: actions/cache/save@v4
+        with:
+          path: adminmonkey/knowledge/crawl_state.json
+          key: adminmonkey-crawl-${{ github.run_id }}
       - name: Install pinned SFTP client
         run: python -m pip install 'paramiko==3.5.1'
       - name: Import verified Microsoft Learn documents into MariaDB
