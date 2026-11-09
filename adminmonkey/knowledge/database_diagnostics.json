@@ -1,10 +1,7 @@
 {
   "database_connected": false,
-  "missing_secret_names": [
-    "HOST",
-    "NAME",
-    "USER",
-    "PASSWORD"
-  ],
-  "verdict": "MISSING_SECRETS"
+  "missing_secret_names": [],
+  "error_type": "gaierror",
+  "mysql_errno": -2,
+  "verdict": "DNS_FAILED"
 }
