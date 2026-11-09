@@ -1,5 +1,5 @@
 name: AdminMonkey continuous knowledge cycles
-# Operator-requested Academy verification: 2026-11-09 second pass; no runtime behavior change.
+# Operator-requested immediate Academy run: 2026-11-09 21:22 CET; trigger only, no runtime behavior change.
 on:
   push:
     branches: [main]
