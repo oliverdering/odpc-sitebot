@@ -32,7 +32,7 @@ SEEDS = [
     "https://learn.microsoft.com/en-us/defender-xdr/microsoft-365-defender",
     "https://learn.microsoft.com/en-us/purview/",
 ]
-MAX_PAGES = 12
+MAX_PAGES = 36
 MAX_DOCS = 1500
 MAX_DEPTH = 3
 
