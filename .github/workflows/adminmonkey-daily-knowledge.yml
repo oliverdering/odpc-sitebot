@@ -62,6 +62,15 @@ jobs:
           assert len(manifest["documents"]) > 0, "No Microsoft Learn documents collected: failing instead of publishing empty learning progress"
           print("Verified document count:", len(manifest["documents"]))
           PY
+      - name: Commit evidence updates only
+        run: |
+          git config user.name "adminmonkey-knowledge-bot"
+          git config user.email "adminmonkey-knowledge-bot@users.noreply.github.com"
+          git add adminmonkey/knowledge/knowledge_index.json adminmonkey/knowledge/academy_progress.json adminmonkey/knowledge/document_manifest.json
+          if ! git diff --cached --quiet; then
+            git commit -m "data(adminmonkey): refresh Microsoft Learn evidence index [skip ci]"
+            git push
+          fi
       - name: Install MariaDB driver
         run: python -m pip install 'PyMySQL==1.1.1'
       - name: Import new knowledge into existing MariaDB
@@ -72,15 +81,17 @@ jobs:
           AMK_DB_USER: ${{ secrets.AMK_DB_USER }}
           AMK_DB_PASSWORD: ${{ secrets.AMK_DB_PASSWORD }}
         run: python adminmonkey/database/migrate_import.py --apply
-      - name: Commit evidence updates only
+        continue-on-error: true
+      - name: Persist verified database progress if import succeeded
         run: |
-          git config user.name "adminmonkey-knowledge-bot"
-          git config user.email "adminmonkey-knowledge-bot@users.noreply.github.com"
-          git add adminmonkey/knowledge/knowledge_index.json adminmonkey/knowledge/academy_progress.json adminmonkey/knowledge/document_manifest.json adminmonkey/knowledge/database_progress.json
-          if ! git diff --cached --quiet; then
-            git commit -m "data(adminmonkey): refresh Microsoft Learn evidence index [skip ci]"
-            git push
+          if test -f adminmonkey/knowledge/database_progress.json; then
+            git add adminmonkey/knowledge/database_progress.json
+            if ! git diff --cached --quiet; then
+              git commit -m "data(adminmonkey): publish verified MariaDB totals [skip ci]"
+              git push
+            fi
           fi
+
       - uses: actions/upload-artifact@v4
         with:
           name: adminmonkey-knowledge-index
