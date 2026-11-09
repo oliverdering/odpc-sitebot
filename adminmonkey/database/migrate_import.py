@@ -15,6 +15,7 @@ import pymysql
 BASE = Path(__file__).resolve().parents[1]
 SCHEMA = Path(__file__).with_name("001_knowledge_schema.sql")
 STATE = BASE / "knowledge" / "crawl_state.json"
+DB_PROGRESS = BASE / "knowledge" / "database_progress.json"
 
 def connect():
     keys = ("AMK_DB_HOST", "AMK_DB_NAME", "AMK_DB_USER", "AMK_DB_PASSWORD")
@@ -86,8 +87,17 @@ def main():
         with conn.cursor() as cur:
             cur.execute("SELECT COUNT(*) FROM amk_documents")
             total = cur.fetchone()[0]
-        print(json.dumps({"migration": "complete", "new_document_versions": imported,
-                          "document_versions_total": total}))
+        with conn.cursor() as cur:
+            cur.execute("SELECT COUNT(*) FROM amk_sources")
+            sources_total = cur.fetchone()[0]
+            cur.execute("SELECT COUNT(*) FROM amk_documents WHERE review_status = %s", ("approved",))
+            approved_total = cur.fetchone()[0]
+        snapshot = {"database_connected": True, "new_document_versions": imported,
+                    "document_versions_total": total, "sources_total": sources_total,
+                    "approved_document_versions": approved_total,
+                    "official_microsoft_certification": False}
+        DB_PROGRESS.write_text(json.dumps(snapshot, indent=2) + "\n", encoding="utf-8")
+        print(json.dumps(snapshot))
 
 if __name__ == "__main__":
     main()
