@@ -588,10 +588,97 @@
       "captured_at": "2026-11-09T09:13:40.183354+00:00",
       "depth": 1,
       "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/intune/device-enrollment/guide",
+      "sha256": "3e3ec8c9fd3356732affd4a903edf06b4244d4e4e2901904bfe848580d3bf557",
+      "captured_at": "2026-11-09T09:19:58.010884+00:00",
+      "depth": 1,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/intune/app-management/protection/overview",
+      "sha256": "b708830b7c88eae4d3b1371aec683394bfe496621736504757414c4d7127cc5e",
+      "captured_at": "2026-11-09T09:19:58.172239+00:00",
+      "depth": 1,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/intune/fundamentals/licensing",
+      "sha256": "6c8cb23ef7559aea92142195dd79128038518244ee157d2ad50bdd503900d57d",
+      "captured_at": "2026-11-09T09:19:58.361762+00:00",
+      "depth": 1,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/intune/device-security/conditional-access-integration/overview",
+      "sha256": "cd8a5629b8c73428a2d4aec0c142a7ef07080073deac54869a1aaaaa19bfc32b",
+      "captured_at": "2026-11-09T09:19:58.524777+00:00",
+      "depth": 1,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/intune/fundamentals/advanced-capabilities",
+      "sha256": "0a04b2b92629ff9d7ccc150fffd25a96cf900187ef361da201221006525ce225",
+      "captured_at": "2026-11-09T09:19:58.736398+00:00",
+      "depth": 1,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/intune/copilot/",
+      "sha256": "edadc8fc8dbc8bee283897939e61995bf70a8b6bcceafc0a3a4923c35968219f",
+      "captured_at": "2026-11-09T09:19:58.913669+00:00",
+      "depth": 1,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/intune/fundamentals/free-trial-sign-up",
+      "sha256": "760116be281d0ecc843d9ce597ee99ab665e9ec514f451ec6617834a06ba588e",
+      "captured_at": "2026-11-09T09:19:59.120876+00:00",
+      "depth": 1,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/intune/fundamentals/account-sign-up",
+      "sha256": "a6b726ae9d4646c6853865a84e586f740f4b6f22aefa9e6bcd496af119665f2e",
+      "captured_at": "2026-11-09T09:19:59.353625+00:00",
+      "depth": 1,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/intune/fundamentals/architecture",
+      "sha256": "7835258235e88511e5dbb5d27a3cfb7a08bb003326a2dce29a19e6bebde20966",
+      "captured_at": "2026-11-09T09:19:59.669061+00:00",
+      "depth": 1,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tls-support",
+      "sha256": "40b0ea8c42fc803e4531349cf3cdc1f0a57de96051d86b0ccc04251dc7fc72d0",
+      "captured_at": "2026-11-09T09:19:59.847827+00:00",
+      "depth": 1,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types",
+      "sha256": "1bdb0abacae915f2c7754676e20bf1c3636c38493b10d3af1a55ccf9c4edf58f",
+      "captured_at": "2026-11-09T09:20:00.007055+00:00",
+      "depth": 1,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/overview",
+      "sha256": "b48beb75efa8c95197c5a1cfadbb2e33867b96b446b7b1ab338d035e8617c422",
+      "captured_at": "2026-11-09T09:20:00.178935+00:00",
+      "depth": 1,
+      "review_status": "unreviewed"
     }
   ],
   "seen": [
     "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/overview",
+    "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types",
+    "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tls-support",
+    "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/overview",
     "https://learn.microsoft.com/en-us/contribute",
     "https://learn.microsoft.com/en-us/copilot/microsoft-365/",
     "https://learn.microsoft.com/en-us/defender-xdr/microsoft-365-defender",
@@ -645,7 +732,16 @@
     "https://learn.microsoft.com/en-us/graph/teams-concept-overview",
     "https://learn.microsoft.com/en-us/graph/use-the-api",
     "https://learn.microsoft.com/en-us/graph/whats-new-overview",
+    "https://learn.microsoft.com/en-us/intune/app-management/protection/overview",
+    "https://learn.microsoft.com/en-us/intune/copilot/",
+    "https://learn.microsoft.com/en-us/intune/device-enrollment/guide",
+    "https://learn.microsoft.com/en-us/intune/device-security/conditional-access-integration/overview",
+    "https://learn.microsoft.com/en-us/intune/fundamentals/account-sign-up",
+    "https://learn.microsoft.com/en-us/intune/fundamentals/advanced-capabilities",
+    "https://learn.microsoft.com/en-us/intune/fundamentals/architecture",
     "https://learn.microsoft.com/en-us/intune/fundamentals/core-concepts",
+    "https://learn.microsoft.com/en-us/intune/fundamentals/free-trial-sign-up",
+    "https://learn.microsoft.com/en-us/intune/fundamentals/licensing",
     "https://learn.microsoft.com/en-us/intune/fundamentals/tutorial-admin-center-walkthrough",
     "https://learn.microsoft.com/en-us/intune/fundamentals/what-is-intune",
     "https://learn.microsoft.com/en-us/intune/fundamentals/zero-trust",
@@ -677,98 +773,6 @@
     "https://learn.microsoft.com/en-us/security/zero-trust/zero-trust-overview"
   ],
   "queue": [
-    {
-      "url": "https://learn.microsoft.com/en-us/intune/device-enrollment/guide",
-      "depth": 1
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/intune/app-management/protection/overview",
-      "depth": 1
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/intune/fundamentals/licensing",
-      "depth": 1
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/intune/fundamentals/licensing",
-      "depth": 1
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/intune/fundamentals/core-concepts",
-      "depth": 1
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/intune/device-security/conditional-access-integration/overview",
-      "depth": 1
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/intune/fundamentals/advanced-capabilities",
-      "depth": 1
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/intune/copilot/",
-      "depth": 1
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/intune/fundamentals/free-trial-sign-up",
-      "depth": 1
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/intune/fundamentals/licensing",
-      "depth": 1
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/intune/fundamentals/account-sign-up",
-      "depth": 1
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/intune/fundamentals/core-concepts",
-      "depth": 1
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/intune/fundamentals/architecture",
-      "depth": 1
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/intune/fundamentals/advanced-capabilities",
-      "depth": 1
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/intune/fundamentals/what-is-intune",
-      "depth": 1
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/principles-for-ai-generated-content",
-      "depth": 1
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/previous-versions/",
-      "depth": 1
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/contribute",
-      "depth": 1
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/legal/termsofuse",
-      "depth": 1
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/lifecycle/faq/internet-explorer-microsoft-edge",
-      "depth": 1
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tls-support",
-      "depth": 1
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types",
-      "depth": 1
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/overview",
-      "depth": 1
-    },
     {
       "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview",
       "depth": 1
@@ -10676,11 +10680,103 @@
     {
       "url": "https://learn.microsoft.com/en-us/intune/fundamentals/free-trial-sign-up",
       "depth": 2
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/intune/fundamentals/ref-supported-platforms",
+      "depth": 2
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/intune/app-management/ref-protected-apps",
+      "depth": 2
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/microsoft-365-education",
+      "depth": 2
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview",
+      "depth": 2
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview",
+      "depth": 2
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/office365/enterprise/office-365-client-support-conditional-access",
+      "depth": 2
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/intune/device-updates/android/manage-fota",
+      "depth": 2
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/copilot/security/microsoft-security-copilot",
+      "depth": 2
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/intune/fundamentals/try-overview",
+      "depth": 2
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference",
+      "depth": 2
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference",
+      "depth": 2
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/intune/app-management/configuration/configure-company-portal",
+      "depth": 2
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/intune/fundamentals/ref-supported-platforms",
+      "depth": 2
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/security/engineering/solving-tls1-problem",
+      "depth": 2
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/security/engineering/solving-tls1-problem",
+      "depth": 2
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/mem/configmgr/core/plan-design/security/enable-tls-1-2-client",
+      "depth": 2
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/storage/common/transport-layer-security-configure-client-version",
+      "depth": 2
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/troubleshoot/azure/active-directory/enable-support-tls-environment",
+      "depth": 2
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/dotnet/framework/network-programming/tls",
+      "depth": 2
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/rest/api/keyvault/",
+      "depth": 2
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/azure-services-resource-providers",
+      "depth": 2
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/azure-services-resource-providers",
+      "depth": 2
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview",
+      "depth": 2
     }
   ],
   "last_batch": {
     "attempted": 12,
-    "documents_total": 84,
+    "documents_total": 96,
     "queued": 2500,
     "failures": []
   }
