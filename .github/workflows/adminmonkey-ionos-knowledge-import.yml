@@ -4,6 +4,7 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/adminmonkey-ionos-knowledge-import.yml'
+      - 'scripts/adminmonkey_ionos_knowledge_import.py'
   workflow_dispatch:
   schedule:
     - cron: '7,22,37,52 * * * *'
