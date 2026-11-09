@@ -25,11 +25,14 @@ def build():
         status = doc.get("review_status", "unreviewed")
         counts[status if status in counts else "unreviewed"] += 1
     scenarios = bank.get("scenarios", [])
+    assessment = read_json(ROOT / "assessment_results.json")
     tracks = []
     for track in TRACKS:
         questions = sum(s.get("track") == track for s in scenarios)
+        screened = assessment if track == "MS-102" else {}
         tracks.append({"track": track, "practice_scenarios_available": questions,
-                       "agent_answers_evaluated": 0, "verified_passes": 0,
+                       "agent_answers_evaluated": screened.get("agent_answers_evaluated", 0), "verified_passes": 0,
+                       "screening_passes": screened.get("screening_passes", 0),
                        "badge_status": "not_earned", "competency_percent": None})
     public_docs = [{"url": d.get("url"), "sha256": d.get("sha256"), "captured_at": d.get("captured_at"), "depth": d.get("depth"), "review_status": d.get("review_status", "unreviewed")} for d in docs.values() if d.get("url", "").startswith("https://learn.microsoft.com/en-us/")]
     (ROOT / "document_manifest.json").write_text(json.dumps({"schema_version": 2, "documents": public_docs, "seen": state.get("seen", []), "queue": state.get("queue", []), "last_batch": state.get("last_batch", {})}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
@@ -39,6 +42,7 @@ def build():
             "knowledge": {"documents_collected": len(docs), "review": counts,
                           "last_batch": state.get("last_batch", {})},
             "tracks": tracks,
+            "assessment_status": "screening_only_no_independent_competence_verification",
             "notice": "Collection is not learning; practice question count is not a competence score. No Banana Badge until independent agent responses are assessed."}
 
 if __name__ == "__main__":
