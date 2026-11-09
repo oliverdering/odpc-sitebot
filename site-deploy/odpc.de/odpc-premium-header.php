@@ -303,3 +303,44 @@ add_filter('the_content', function ($content) {
   }
   return $content;
 }, 40);
+
+
+/* ODPC Prompt Engineering: replace legacy FireScale sample prompts with Microsoft AdminMonkey.
+ * The editorial foundations and all other sections remain untouched.
+ * Scoped to the published Prompt Engineering page only.
+ */
+add_action('wp_footer', function () {
+  if (is_admin() || !is_page(1210)) return;
+  ?>
+  <script id="odpc-adminmonkey-prompt-examples">
+  (function(){
+    function updateExamples(){
+      var root=document.querySelector('.entry-content');if(!root)return;
+      var headings=Array.from(root.querySelectorAll('h2,h3,h4'));
+      var start=headings.find(function(h){return /Beispiele:\s*unpräzise\s*vs\.\s*professionell/i.test(h.textContent||'')});
+      var end=headings.find(function(h){return /Was die .Studie. in der Praxis wirklich bedeutet/i.test(h.textContent||'')});
+      if(!start||!end||start.dataset.adminmonkeyUpdated==='1')return;
+      var relation=start.compareDocumentPosition(end);
+      if(!(relation&Node.DOCUMENT_POSITION_FOLLOWING))return;
+      var range=document.createRange();range.setStartAfter(start);range.setEndBefore(end);
+      var fragment=document.createElement('div');fragment.className='odpc-adminmonkey-reference';
+      fragment.innerHTML=
+        '<p><strong>Unpräzise Arbeitsanweisung:</strong> „Überprüfe bitte unsere Microsoft-365-Umgebung und mach alles sicher.“ Diese Anweisung enthält weder Prüfbereich noch Berechtigungsgrenzen oder Abnahmekriterien.</p>'+
+        '<p><strong>Professionelle Arbeitsanweisung:</strong> „Du agierst als Microsoft-365-Administrationsassistent im Projekt AdminMonkey. Erstelle für eine definierte Testumgebung eine nachvollziehbare Bestandsaufnahme zu Entra-ID-Benutzern, Rollen, MFA-Status und Lizenzzuordnung. Arbeite ausschließlich lesend, dokumentiere Datenquellen und offene Fragen, kennzeichne Risiken nach Priorität und lege jede Änderung vor Ausführung zur menschlichen Freigabe vor. Liefere eine Prüfliste mit Befund, Evidenz, Risiko und nächstem Schritt.“</p>'+
+        '<h3>Praxisreferenz: Microsoft AdminMonkey</h3>'+
+        '<p><strong>Vom Prompt zum kontrollierten Administrationsworkflow.</strong> AdminMonkey ist das ODPC-Entwicklungsprojekt für KI-unterstützte Microsoft-Administration. Der Ansatz verbindet präzise Rollen- und Aufgabenbeschreibungen mit Microsoft Learn, dokumentiertem Fachwissen, Tests, Berechtigungsgrenzen und nachvollziehbaren Ergebnissen. Eine produktive Automatisierung wird erst dann als verfügbar bezeichnet, wenn Zugriff, Ausführung und Prüfung nachgewiesen sind.</p>'+
+        '<h4>Prompt-Vorlage 1 · Microsoft-365-Bestandsaufnahme</h4>'+
+        '<p><strong>Rolle:</strong> Microsoft-365-Systemadministrator mit Audit-Fokus. <strong>Ziel:</strong> Benutzer, Gruppen, Rollen, Lizenzverteilung und relevante Konfigurationen strukturiert erfassen. <strong>Kontext:</strong> Definierter Tenant, freigegebene lesende Schnittstellen, Microsoft-365- und Entra-ID-Dokumentation. <strong>Anforderungen:</strong> Keine Änderungen, keine erfundenen Daten, Quellen und Zeitstempel dokumentieren. <strong>Ausgabe:</strong> Bestandsbericht mit Evidenz, Abweichungen und priorisierten Empfehlungen.</p>'+
+        '<h4>Prompt-Vorlage 2 · Sicherheits- und Berechtigungsprüfung</h4>'+
+        '<p><strong>Rolle:</strong> Security-Analyst für Microsoft 365 und Entra ID. <strong>Ziel:</strong> Privilegierte Rollen, MFA-/Conditional-Access-Konfigurationen und auffällige Berechtigungen bewerten. <strong>Kontext:</strong> Autorisierte Test- oder Kundenumgebung mit klar definiertem Prüfauftrag. <strong>Anforderungen:</strong> Least Privilege, keine ungeprüften Eingriffe, Risiken von gesicherten Befunden unterscheiden. <strong>Ausgabe:</strong> Risikomatrix, Prüfpfade und Freigabeempfehlungen.</p>'+
+        '<h4>Prompt-Vorlage 3 · Administrationsautomatisierung</h4>'+
+        '<p><strong>Rolle:</strong> Automatisierungsarchitekt für Microsoft Graph und PowerShell. <strong>Ziel:</strong> Einen wiederkehrenden Administrationsprozess als überprüfbaren Workflow konzipieren. <strong>Kontext:</strong> Dokumentierte Schnittstellen, Berechtigungsmodell, Testtenant und bestehende Betriebsprozesse. <strong>Anforderungen:</strong> Simulation oder Dry Run vor produktiver Ausführung, Protokollierung, Fehlerbehandlung, Rollback-Plan und menschliche Freigabe. <strong>Ausgabe:</strong> Technisches Konzept, Testfälle, Freigabepunkte und Betriebsdokumentation.</p>'+
+        '<p><a href="https://ai.odpc.de/" rel="noopener">Helper Monkey und AdminMonkey kennenlernen →</a> · <a href="https://odpc.de/unser-team/">Unser KI-Team →</a></p>';
+      range.deleteContents();start.parentNode.insertBefore(fragment,start.nextSibling);
+      start.dataset.adminmonkeyUpdated='1';
+    }
+    if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',updateExamples);else updateExamples();
+  })();
+  </script>
+  <?php
+}, 110);
