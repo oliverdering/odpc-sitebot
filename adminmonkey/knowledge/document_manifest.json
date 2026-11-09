@@ -840,10 +840,184 @@
       "captured_at": "2026-11-09T10:33:30.609861+00:00",
       "depth": 2,
       "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/lifecycle/policies/modern",
+      "sha256": "1e531b701081f67005d0d3fac53db901c08202ed6496a4954faf2bfd77630d2a",
+      "captured_at": "2026-11-09T10:44:27.868012+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/DeployEdge/microsoft-edge-support-lifecycle",
+      "sha256": "f93116c6535275a6fc94dde82af01e90ec0a6424c1ade18cb8a8abce5aad1b13",
+      "captured_at": "2026-11-09T10:44:27.987540+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/deployedge/microsoft-edge-channels",
+      "sha256": "f7f0bde4ffebdd520346dceb9b4e20720a0235f92dc69d7a8be2f18614e9be35",
+      "captured_at": "2026-11-09T10:44:28.141832+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/deployedge/microsoft-edge-supported-operating-systems",
+      "sha256": "911ff90580a95c1f027d332a6a5ae5bd72a42c4fef91d0a9225ffe5709cdf92b",
+      "captured_at": "2026-11-09T10:44:28.272983+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/lifecycle/definitions",
+      "sha256": "12893699cf7dd402933e7d9ceb04603013d2f07163b5ad54d8b79d4a09752b86",
+      "captured_at": "2026-11-09T10:44:28.384478+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/lifecycle/faq/extended-security-updates",
+      "sha256": "3b9e1a8fdebc73cb3f9b4952f0b17064efbf5a7f2777d3b36793ef91154f25f4",
+      "captured_at": "2026-11-09T10:44:28.562311+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/DeployEdge/edge-ie-mode",
+      "sha256": "da9ac2113a876577403a5f0324db4b62adba9f591c8b29b864ef692a66fed066",
+      "captured_at": "2026-11-09T10:44:28.679000+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/release-options-in-office-365",
+      "sha256": "68047220387737cfd2d39704d623202f39fa0825547a3d163a599c188b1dfa47",
+      "captured_at": "2026-11-09T10:44:28.891451+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/get-help-support",
+      "sha256": "23c6e290db48ed5870437e7526e5abd5456ad40959394cd0965a6b6e91649295",
+      "captured_at": "2026-11-09T10:44:29.094234+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/whats-new",
+      "sha256": "7e369d7940c7e8246d3a7b30f13602ad773132276ddc616765a091025ef90e61",
+      "captured_at": "2026-11-09T10:44:29.216153+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/Exchange/whats-new",
+      "sha256": "7b51c8c6a7080bd78be6b993f1b24ac380c1acdeaef4f9070ee5d7f2391f95e7",
+      "captured_at": "2026-11-09T10:44:29.400682+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/intune/whats-new/",
+      "sha256": "e6cbd902a849cc4daef81ae6ae5f01a297e9070b55b92f23b3d5fb238d99b83e",
+      "captured_at": "2026-11-09T10:44:29.481788+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/compliance/whats-new",
+      "sha256": "610e279f3db5653fa20d9d3f0a4a48d1301a1bcedd7eb316823f138644f244d3",
+      "captured_at": "2026-11-09T10:44:44.084463+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/security/mtp/whats-new",
+      "sha256": "061853a5d7afbcb651f9140dd31247070d0a96fa3355ff7c3373268331a2e9c1",
+      "captured_at": "2026-11-09T10:44:44.446813+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/sharepoint/what-s-new-in-admin-center",
+      "sha256": "000f3e6b27e4417fdf3fcb5f0cdcf3c9298f285597896e13a3a5aca06737ed25",
+      "captured_at": "2026-11-09T10:44:44.578493+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/OfficeUpdates/teams-admin",
+      "sha256": "b40245bc1735d95ec6c839736639c0284032adc9abe76e760f0b377fd0243b1b",
+      "captured_at": "2026-11-09T10:44:44.846712+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/OfficeUpdates/",
+      "sha256": "982f1d9e44e11dda4ba44f15679a51f80b72f6b46b8488d8166e944357beea0b",
+      "captured_at": "2026-11-09T10:44:44.962213+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows/deployment/update/check-release-health",
+      "sha256": "96b31f4bc236ad4fa62437a5d29c1ddfe9ee1d9593bcde74c6d3abe172076e79",
+      "captured_at": "2026-11-09T10:44:45.195714+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/about-admin-roles",
+      "sha256": "fe660168bce1d5f1feed50c5139be27e8b30ff05f30db33b162666c97625656e",
+      "captured_at": "2026-11-09T10:44:45.369385+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-admin-engagements",
+      "sha256": "1c52b641f5038f88107266e6dcec03020cab03069978218f7e06c3d71be2efe7",
+      "captured_at": "2026-11-09T10:44:45.601063+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-admin-overview-enhanced-engagements",
+      "sha256": "8b32ebb0c6336f85cd568bbacc3eaafb7cd6510e65fce753480797e1c53fcc2f",
+      "captured_at": "2026-11-09T10:44:45.819778+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-search",
+      "sha256": "c884ce4b629034e71c54f854f87aee419bc00ade05cca9b9a656f5338d97bee8",
+      "captured_at": "2026-11-09T10:44:46.266716+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/enterprise/office-365-network-mac-perf-onboarding-tool",
+      "sha256": "357ccf72336093a0425b6df48cc6c5d55ed996301724bce0864bb67348912b57",
+      "captured_at": "2026-11-09T10:44:46.512989+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/ews-usage",
+      "sha256": "d7c958df5615fa6a04f9410e26f67b0aab7b4dd0ee8b559a10ebbdddc362f755",
+      "captured_at": "2026-11-09T10:44:46.736376+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
     }
   ],
   "seen": [
+    "https://learn.microsoft.com/en-us/DeployEdge/edge-ie-mode",
+    "https://learn.microsoft.com/en-us/DeployEdge/microsoft-edge-support-lifecycle",
+    "https://learn.microsoft.com/en-us/Exchange/whats-new",
+    "https://learn.microsoft.com/en-us/OfficeUpdates/",
+    "https://learn.microsoft.com/en-us/OfficeUpdates/teams-admin",
     "https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-whatis",
+    "https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/whats-new",
     "https://learn.microsoft.com/en-us/azure/architecture/checklist/resiliency-per-service",
     "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview",
     "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/azure-subscription-service-limits",
@@ -873,6 +1047,8 @@
     "https://learn.microsoft.com/en-us/contribute",
     "https://learn.microsoft.com/en-us/copilot/microsoft-365/",
     "https://learn.microsoft.com/en-us/defender-xdr/microsoft-365-defender",
+    "https://learn.microsoft.com/en-us/deployedge/microsoft-edge-channels",
+    "https://learn.microsoft.com/en-us/deployedge/microsoft-edge-supported-operating-systems",
     "https://learn.microsoft.com/en-us/entra/agent-id/what-is-microsoft-entra-agent-id",
     "https://learn.microsoft.com/en-us/entra/architecture/architecture",
     "https://learn.microsoft.com/en-us/entra/architecture/deployment-plans",
@@ -937,16 +1113,24 @@
     "https://learn.microsoft.com/en-us/intune/fundamentals/what-is-intune",
     "https://learn.microsoft.com/en-us/intune/fundamentals/zero-trust",
     "https://learn.microsoft.com/en-us/intune/intune-service/fundamentals/what-is-intune",
+    "https://learn.microsoft.com/en-us/intune/whats-new/",
     "https://learn.microsoft.com/en-us/legal/microsoft-apis/terms-of-use",
     "https://learn.microsoft.com/en-us/legal/termsofuse",
+    "https://learn.microsoft.com/en-us/lifecycle/definitions",
+    "https://learn.microsoft.com/en-us/lifecycle/faq/extended-security-updates",
     "https://learn.microsoft.com/en-us/lifecycle/faq/internet-explorer-microsoft-edge",
+    "https://learn.microsoft.com/en-us/lifecycle/policies/modern",
     "https://learn.microsoft.com/en-us/lifecycle/products/",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/activity-reports",
+    "https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/ews-usage",
+    "https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/about-admin-roles",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/add-users",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/admin-overview/admin-center-overview",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/admin-overview/sign-up-for-office-365",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/email/office-365-user-email-settings",
+    "https://learn.microsoft.com/en-us/microsoft-365/admin/get-help-support",
+    "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/release-options-in-office-365",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/share-calendars-with-external-users",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/stay-on-top-of-updates",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/security-and-compliance/set-up-multi-factor-authentication",
@@ -954,7 +1138,13 @@
     "https://learn.microsoft.com/en-us/microsoft-365/admin/setup/install-applications",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/whats-new-in-preview",
     "https://learn.microsoft.com/en-us/microsoft-365/commerce/",
+    "https://learn.microsoft.com/en-us/microsoft-365/compliance/whats-new",
+    "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-search",
+    "https://learn.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-admin-engagements",
+    "https://learn.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-admin-overview-enhanced-engagements",
+    "https://learn.microsoft.com/en-us/microsoft-365/enterprise/office-365-network-mac-perf-onboarding-tool",
     "https://learn.microsoft.com/en-us/microsoft-365/migration/",
+    "https://learn.microsoft.com/en-us/microsoft-365/security/mtp/whats-new",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/",
     "https://learn.microsoft.com/en-us/microsoftteams/teams-overview",
     "https://learn.microsoft.com/en-us/office/troubleshoot/",
@@ -962,141 +1152,11 @@
     "https://learn.microsoft.com/en-us/previous-versions/",
     "https://learn.microsoft.com/en-us/principles-for-ai-generated-content",
     "https://learn.microsoft.com/en-us/purview/",
-    "https://learn.microsoft.com/en-us/security/zero-trust/zero-trust-overview"
+    "https://learn.microsoft.com/en-us/security/zero-trust/zero-trust-overview",
+    "https://learn.microsoft.com/en-us/sharepoint/what-s-new-in-admin-center",
+    "https://learn.microsoft.com/en-us/windows/deployment/update/check-release-health"
   ],
   "queue": [
-    {
-      "url": "https://learn.microsoft.com/en-us/lifecycle/policies/modern",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/DeployEdge/microsoft-edge-support-lifecycle",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/deployedge/microsoft-edge-channels",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/deployedge/microsoft-edge-supported-operating-systems",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/lifecycle/definitions",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/lifecycle/products/",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/lifecycle/faq/extended-security-updates",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/DeployEdge/edge-ie-mode",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/lifecycle/products/",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/principles-for-ai-generated-content",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/previous-versions/",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/contribute",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/legal/termsofuse",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/admin-overview/admin-center-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/release-options-in-office-365",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/release-options-in-office-365",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/get-help-support",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/whats-new",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/Exchange/whats-new",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/intune/whats-new/",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/compliance/whats-new",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/security/mtp/whats-new",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/sharepoint/what-s-new-in-admin-center",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/OfficeUpdates/teams-admin",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/OfficeUpdates/",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/windows/deployment/update/check-release-health",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/about-admin-roles",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-admin-engagements",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-admin-engagements",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-admin-overview-enhanced-engagements",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-search",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/enterprise/office-365-network-mac-perf-onboarding-tool",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/ews-usage",
-      "depth": 2
-    },
     {
       "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-page",
       "depth": 2
@@ -10932,12 +10992,176 @@
     {
       "url": "https://learn.microsoft.com/en-us/lifecycle/products/export",
       "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/lifecycle/policies/azure-3-year-subset",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/lifecycle/products",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/lifecycle/faq/modern-policy",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows/whats-new/extended-security-updates",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/DeployEdge/",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/DeployEdge/microsoft-edge-supported-operating-systems",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/deployedge/microsoft-edge-support-lifecycle",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/DeployEdge/configure-microsoft-edge",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/DeployEdge/edge-learnmore-rollback",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/mem/intune/configuration/administrative-templates-configure-edge",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/mem/configmgr/apps/deploy-use/deploy-edge",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows/whats-new/extended-security-updates",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/lifecycle/faq/fixed-policy",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows-server/get-started/extended-security-updates-deploy",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows/whats-new/extended-security-updates",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/deployedge/edge-ie-mode-faq",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/targeted-release-retirement",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/configure-release-options",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/configure-release-options",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/deployoffice/overview-update-channels",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/about-admin-roles",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/about-admin-roles",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/targeted-release-retirement",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/about-admin-roles",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/enterprise/view-service-health",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/fundamentals/whats-new",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/intune/whats-new/archive",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/purview/whats-new",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/defender-xdr/whats-new",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/office365/admin/manage/release-options-in-office-365",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/best-practice-dashboard",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/OfficeUpdates/release-notes-microsoft365-apps",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/users/licensing-service-plan-reference",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/active-directory/roles/permissions-reference",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-admin-diagnostics",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/copilot/manage/copilot-search-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/copilot/manage/copilot-search-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/copilot/manage/copilot-search-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/enterprise/urls-and-ip-address-ranges",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-platform/admin/apps-to-allow",
+      "depth": 3
     }
   ],
   "last_batch": {
     "attempted": 12,
-    "documents_total": 120,
-    "queued": 2492,
+    "documents_total": 144,
+    "queued": 2500,
     "failures": []
   }
 }
