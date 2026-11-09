@@ -51,11 +51,12 @@ jobs:
       - name: Verify retrieval staging and source integrity before publishing
         run: |
           python -m unittest discover -s adminmonkey/knowledge -p 'test_chunk_documents.py' -v
-          python -m unittest discover -s adminmonkey/knowledge -p 'test_knowledge_integrity.py' -v
       - name: Build private source-attributed retrieval chunks
         run: python adminmonkey/knowledge/chunk_documents.py
       - name: Generate honest Academy progress snapshot
         run: python adminmonkey/knowledge/build_progress.py
+      - name: Gate publication on generated snapshot integrity
+        run: python -m unittest discover -s adminmonkey/knowledge -p 'test_knowledge_integrity.py' -v
       - name: Validate generated JSON and learning evidence
         run: |
           python -m json.tool adminmonkey/knowledge/academy_progress.json > /dev/null
