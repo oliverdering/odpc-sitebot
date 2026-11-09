@@ -54,13 +54,13 @@ def build():
     tracks = []
     for track in TRACKS:
         questions = sum(s.get("track") == track for s in scenarios)
-        screened = assessment if track == "MS-102" else {}
+        screened_results = [x for x in assessment.get("results", []) if x.get("track") == track]
         verified_sources = [d for d in docs.values() if manufacturer_verified(d) and track in mapped_tracks(d)]
         tracks.append({"track": track, "manufacturer_verified_sources": len(verified_sources),
                        "knowledge_coverage": "source_count_only_not_learning_objective_coverage",
                        "practice_scenarios_available": questions,
-                       "agent_answers_evaluated": screened.get("agent_answers_evaluated", 0), "verified_passes": 0,
-                       "screening_passes": screened.get("screening_passes", 0),
+                       "agent_answers_evaluated": len(screened_results), "verified_passes": 0,
+                       "screening_passes": sum(x.get("screening_pass") is True for x in screened_results),
                        "badge_status": "not_earned", "competency_percent": None})
     public_docs = [{"url": d.get("url"), "sha256": d.get("sha256"), "captured_at": d.get("captured_at"), "depth": d.get("depth"), "review_status": "manufacturer_verified" if manufacturer_verified(d) else d.get("review_status", "unreviewed"), "mapped_tracks": mapped_tracks(d) if manufacturer_verified(d) else []} for d in docs.values() if d.get("url", "").startswith("https://learn.microsoft.com/en-us/")]
     (ROOT / "document_manifest.json").write_text(json.dumps({"schema_version": 2, "documents": public_docs, "seen": state.get("seen", []), "queue": state.get("queue", []), "last_batch": state.get("last_batch", {})}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
