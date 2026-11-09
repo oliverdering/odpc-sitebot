@@ -5183,6 +5183,294 @@
       "depth": 2,
       "review_status": "manufacturer_verified",
       "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/location",
+      "sha256": "3e3220e4ebbccd1c043386949abafd6e21d565da699d9ea3c9ad2846c53c50c3",
+      "captured_at": "2026-11-09T19:34:20.670327+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/recipient",
+      "sha256": "9091a98d00b5351d01cea1a76b521b6fd51b5aa11d899913684a66b79eaae02a",
+      "captured_at": "2026-11-09T19:34:21.187808+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/patternedrecurrence",
+      "sha256": "f15f380d2860bcc665329c66ea3b84572e83b5746d26ad5d27979fb43a3a6c1d",
+      "captured_at": "2026-11-09T19:34:21.398045+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/responsestatus",
+      "sha256": "f0ab444c2171f1d239ee0e3373e00bb2bce6db5a484d37bb8cec2b9a47846784",
+      "captured_at": "2026-11-09T19:34:21.619177+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/calendar-post-events",
+      "sha256": "a476a61aee265f6bcf7d4b21c8920428bd38a07fad32041db590ad6214d93551",
+      "captured_at": "2026-11-09T19:34:21.790529+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/fileattachment",
+      "sha256": "588afea27fa6f350cc26fd3d1ae8ddb084233a0f7adddf5c686b32d7c21ad734",
+      "captured_at": "2026-11-09T19:34:21.925265+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/itemattachment",
+      "sha256": "cf83f7ad8aff8e28ac51c965f46b019e5fe29c0cfcac8a480d79f27c3ba18ef0",
+      "captured_at": "2026-11-09T19:34:22.055240+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/referenceattachment",
+      "sha256": "19aa08194d3bc585d5335a969537a55d860106e473cc021f8e53741ef2e1b032",
+      "captured_at": "2026-11-09T19:34:22.224726+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/extension",
+      "sha256": "bcfae6ba4ebd66d73f8457bb9f0720f0b51084e9d818829f94e218e14ef74b33",
+      "captured_at": "2026-11-09T19:34:22.390514+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/multivaluelegacyextendedproperty",
+      "sha256": "dced127b6d11c6edb25474975515c73a5298c134e2070beaf5c43066db0b645e",
+      "captured_at": "2026-11-09T19:34:22.953867+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/singlevaluelegacyextendedproperty",
+      "sha256": "f0ba39e2ee2105af36a926121e4f3bfc521ecc9c01ee2b3c924a2de4a8eb224c",
+      "captured_at": "2026-11-09T19:34:23.160274+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/delta-query-events",
+      "sha256": "00b1506e05c7a30b5e25291301b8b599cb563fabed3c208c24f9178ccf59e386",
+      "captured_at": "2026-11-09T19:34:23.283643+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/extensibility-open-users",
+      "sha256": "5fea03efc7f872bba21c40dfaeb9e36b5b5ab681b963867ac6db3b5625edd725",
+      "captured_at": "2026-11-09T19:34:23.441841+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/extensibility-schema-groups",
+      "sha256": "341ab495c3b9f00b602f9d05f32cbcbe306838317f51feac9548e5900e07c0b3",
+      "captured_at": "2026-11-09T19:34:23.550625+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/directoryobject",
+      "sha256": "c46d2d587c08635b8cd6149ca250cc97a9d5760c2951e5129d6f4ac37f3a5b60",
+      "captured_at": "2026-11-09T19:34:23.787787+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/users",
+      "sha256": "1a73303db1b02c2b4107261c1d50708a87b48bb3d07d17dd92c8d4b0ea76ee6b",
+      "captured_at": "2026-11-09T19:34:23.973164+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/user-delta",
+      "sha256": "52e7b89b201ca3ae8409779cf60b607b0859d6547d2e8a73c21c69f07e153482",
+      "captured_at": "2026-11-09T19:34:24.264086+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/user-list",
+      "sha256": "39b5bb65cd7c5aeb1350c490764010bececa49877b94b8a8d0fdccfff2a7ed51",
+      "captured_at": "2026-11-09T19:34:24.457231+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/user-post-users",
+      "sha256": "48132b0ddd2656924917fa17e31e99b2b7462f5b48c0227d83afbbf31dcad6b0",
+      "captured_at": "2026-11-09T19:34:24.643023+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/user-update",
+      "sha256": "5d8429c2c4bf7eb0ba131d59db8fd0746cb0e80e996274d87d2710e68005d532",
+      "captured_at": "2026-11-09T19:34:24.847149+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/user-delete",
+      "sha256": "1ce8ce033e642adb2439399d955b253360e2b8389e814734cd77e46b8ab3434f",
+      "captured_at": "2026-11-09T19:34:25.100832+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/user-changepassword",
+      "sha256": "cf147d05322b4df6360c50e4b56f08bce94f9ce4e0b604772ee7025837f6c997",
+      "captured_at": "2026-11-09T19:34:25.316384+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/user-retryserviceprovisioning",
+      "sha256": "16a0603bd39063884e7fc34489ed106da15911775817387d9a33f81a0f745db7",
+      "captured_at": "2026-11-09T19:34:25.728379+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/user-revokesigninsessions",
+      "sha256": "75590d48cb5fb864baa0e27d2f1ac8d90f54a65705da4b963c278b0fb9e99df9",
+      "captured_at": "2026-11-09T19:34:25.847766+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/user-exportpersonaldata",
+      "sha256": "5092c4a3bd0b20210b5247f24b893b9f32c7ce11ba5fbfe3ee18af22dd606208",
+      "captured_at": "2026-11-09T19:34:26.230516+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/user-list-approleassignments",
+      "sha256": "5440ab5cfd2025a05b2914109fd94e378bcf7ebd5184827994c6388776375bc8",
+      "captured_at": "2026-11-09T19:34:26.414057+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/approleassignment",
+      "sha256": "ffdcb8f3f106626800cb153a1f6f2d4f0cc42192ad20fd9881010ec50f525b43",
+      "captured_at": "2026-11-09T19:34:26.607233+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/user-post-approleassignments",
+      "sha256": "c55ef3bc1a151455c885d7d196a739e01fc8a35cf2c06c57c8110493d22e50d8",
+      "captured_at": "2026-11-09T19:34:26.819502+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/user-delete-approleassignments",
+      "sha256": "f16626399609f10376ee30f75bc80f0b10e59ad8a8d7495f91b7015b48a6632b",
+      "captured_at": "2026-11-09T19:34:27.001945+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/user-list-calendars",
+      "sha256": "0a92e693a1a017913fb528896cb74324b39f39f5816b8880e5a6d07ae51e4584",
+      "captured_at": "2026-11-09T19:34:27.193292+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/user-post-calendars",
+      "sha256": "5133baca5d2aeeed9e6fdfdee95f71a6c4aa2b65e55c8dd80c7e5dbb6a20a161",
+      "captured_at": "2026-11-09T19:34:27.373472+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/user-list-calendargroups",
+      "sha256": "0e73db1eb6212cf251acf960b09edd9615b97f9b31fc989e53a2562509c3b9de",
+      "captured_at": "2026-11-09T19:34:27.577247+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/user-post-calendargroups",
+      "sha256": "cd23d5a704dc6d952626606cdf87a83dc7ddbc72c59de362a6797679569c9276",
+      "captured_at": "2026-11-09T19:34:27.795239+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/user-findmeetingtimes",
+      "sha256": "c2db2caab8f2211240ff84ca57cd6c7dea00505cb5a3f563a3831f472c9bb039",
+      "captured_at": "2026-11-09T19:34:28.004859+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/meetingtimesuggestionsresult",
+      "sha256": "9e07c569c5355e7288258c5fe23154d6f26db066ef0cefe6d83b1a353b5e6fbd",
+      "captured_at": "2026-11-09T19:34:28.207401+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/calendar-getschedule",
+      "sha256": "64f37f3d315e32bedb49dc61fc315c6d5c8f2361a32773dab627c5061fe659c9",
+      "captured_at": "2026-11-09T19:34:28.313630+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
     }
   ],
   "seen": [
@@ -5313,6 +5601,8 @@
     "https://learn.microsoft.com/en-us/exchange/recipients-in-exchange-online/manage-user-mailboxes/manage-user-mailboxes",
     "https://learn.microsoft.com/en-us/exchange/sharing-exchange-2013-help",
     "https://learn.microsoft.com/en-us/graph/aad-advanced-queries",
+    "https://learn.microsoft.com/en-us/graph/api/calendar-getschedule",
+    "https://learn.microsoft.com/en-us/graph/api/calendar-post-events",
     "https://learn.microsoft.com/en-us/graph/api/event-accept",
     "https://learn.microsoft.com/en-us/graph/api/event-cancel",
     "https://learn.microsoft.com/en-us/graph/api/event-decline",
@@ -5335,34 +5625,65 @@
     "https://learn.microsoft.com/en-us/graph/api/opentypeextension-post-opentypeextension",
     "https://learn.microsoft.com/en-us/graph/api/overview",
     "https://learn.microsoft.com/en-us/graph/api/resources/adminreportsettings",
+    "https://learn.microsoft.com/en-us/graph/api/resources/approleassignment",
     "https://learn.microsoft.com/en-us/graph/api/resources/attachment",
     "https://learn.microsoft.com/en-us/graph/api/resources/attendee",
     "https://learn.microsoft.com/en-us/graph/api/resources/calendar",
     "https://learn.microsoft.com/en-us/graph/api/resources/calendargroup",
     "https://learn.microsoft.com/en-us/graph/api/resources/datetimetimezone",
+    "https://learn.microsoft.com/en-us/graph/api/resources/directoryobject",
     "https://learn.microsoft.com/en-us/graph/api/resources/engagement-api-overview",
     "https://learn.microsoft.com/en-us/graph/api/resources/event",
     "https://learn.microsoft.com/en-us/graph/api/resources/eventmessage",
+    "https://learn.microsoft.com/en-us/graph/api/resources/extension",
+    "https://learn.microsoft.com/en-us/graph/api/resources/fileattachment",
     "https://learn.microsoft.com/en-us/graph/api/resources/group",
     "https://learn.microsoft.com/en-us/graph/api/resources/groups-overview",
     "https://learn.microsoft.com/en-us/graph/api/resources/identity-network-access-overview",
     "https://learn.microsoft.com/en-us/graph/api/resources/insights-trending",
+    "https://learn.microsoft.com/en-us/graph/api/resources/itemattachment",
     "https://learn.microsoft.com/en-us/graph/api/resources/itembody",
+    "https://learn.microsoft.com/en-us/graph/api/resources/location",
+    "https://learn.microsoft.com/en-us/graph/api/resources/meetingtimesuggestionsresult",
+    "https://learn.microsoft.com/en-us/graph/api/resources/multivaluelegacyextendedproperty",
     "https://learn.microsoft.com/en-us/graph/api/resources/onlinemeetinginfo",
     "https://learn.microsoft.com/en-us/graph/api/resources/opentypeextension",
     "https://learn.microsoft.com/en-us/graph/api/resources/outlookcategory",
+    "https://learn.microsoft.com/en-us/graph/api/resources/patternedrecurrence",
+    "https://learn.microsoft.com/en-us/graph/api/resources/recipient",
+    "https://learn.microsoft.com/en-us/graph/api/resources/referenceattachment",
     "https://learn.microsoft.com/en-us/graph/api/resources/reminder",
     "https://learn.microsoft.com/en-us/graph/api/resources/report",
+    "https://learn.microsoft.com/en-us/graph/api/resources/responsestatus",
     "https://learn.microsoft.com/en-us/graph/api/resources/security-api-overview",
+    "https://learn.microsoft.com/en-us/graph/api/resources/singlevaluelegacyextendedproperty",
     "https://learn.microsoft.com/en-us/graph/api/resources/user",
+    "https://learn.microsoft.com/en-us/graph/api/resources/users",
     "https://learn.microsoft.com/en-us/graph/api/singlevaluelegacyextendedproperty-get",
     "https://learn.microsoft.com/en-us/graph/api/singlevaluelegacyextendedproperty-post-singlevalueextendedproperties",
+    "https://learn.microsoft.com/en-us/graph/api/user-changepassword",
+    "https://learn.microsoft.com/en-us/graph/api/user-delete",
+    "https://learn.microsoft.com/en-us/graph/api/user-delete-approleassignments",
+    "https://learn.microsoft.com/en-us/graph/api/user-delta",
+    "https://learn.microsoft.com/en-us/graph/api/user-exportpersonaldata",
+    "https://learn.microsoft.com/en-us/graph/api/user-findmeetingtimes",
     "https://learn.microsoft.com/en-us/graph/api/user-get",
+    "https://learn.microsoft.com/en-us/graph/api/user-list",
+    "https://learn.microsoft.com/en-us/graph/api/user-list-approleassignments",
+    "https://learn.microsoft.com/en-us/graph/api/user-list-calendargroups",
+    "https://learn.microsoft.com/en-us/graph/api/user-list-calendars",
     "https://learn.microsoft.com/en-us/graph/api/user-list-events",
     "https://learn.microsoft.com/en-us/graph/api/user-list-manager",
     "https://learn.microsoft.com/en-us/graph/api/user-list-memberof",
     "https://learn.microsoft.com/en-us/graph/api/user-list-people",
+    "https://learn.microsoft.com/en-us/graph/api/user-post-approleassignments",
+    "https://learn.microsoft.com/en-us/graph/api/user-post-calendargroups",
+    "https://learn.microsoft.com/en-us/graph/api/user-post-calendars",
     "https://learn.microsoft.com/en-us/graph/api/user-post-events",
+    "https://learn.microsoft.com/en-us/graph/api/user-post-users",
+    "https://learn.microsoft.com/en-us/graph/api/user-retryserviceprovisioning",
+    "https://learn.microsoft.com/en-us/graph/api/user-revokesigninsessions",
+    "https://learn.microsoft.com/en-us/graph/api/user-update",
     "https://learn.microsoft.com/en-us/graph/auth/auth-concepts",
     "https://learn.microsoft.com/en-us/graph/azuread-users-concept-overview",
     "https://learn.microsoft.com/en-us/graph/backup-storage-concept-overview",
@@ -5373,11 +5694,14 @@
     "https://learn.microsoft.com/en-us/graph/connecting-external-content-connectors-overview",
     "https://learn.microsoft.com/en-us/graph/cross-device-concept-overview",
     "https://learn.microsoft.com/en-us/graph/data-connect-concept-overview",
+    "https://learn.microsoft.com/en-us/graph/delta-query-events",
     "https://learn.microsoft.com/en-us/graph/delta-query-overview",
     "https://learn.microsoft.com/en-us/graph/dynamics-business-central-concept-overview",
     "https://learn.microsoft.com/en-us/graph/education-concept-overview",
     "https://learn.microsoft.com/en-us/graph/excel-concept-overview",
+    "https://learn.microsoft.com/en-us/graph/extensibility-open-users",
     "https://learn.microsoft.com/en-us/graph/extensibility-overview",
+    "https://learn.microsoft.com/en-us/graph/extensibility-schema-groups",
     "https://learn.microsoft.com/en-us/graph/graph-explorer/graph-explorer-overview",
     "https://learn.microsoft.com/en-us/graph/identity-network-access-overview",
     "https://learn.microsoft.com/en-us/graph/industrydata-concept-overview",
@@ -5758,230 +6082,6 @@
     "https://learn.microsoft.com/en-us/windows/win32/wer/windows-error-reporting"
   ],
   "queue": [
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/location",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/location",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/onlinemeetinginfo",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/recipient",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/patternedrecurrence",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/responsestatus",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/datetimetimezone",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/calendar-post-events",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/attachment",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/fileattachment",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/itemattachment",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/referenceattachment",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/calendar",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/event-get",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/extension",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/multivaluelegacyextendedproperty",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/singlevaluelegacyextendedproperty",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/delta-query-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/delta-query-events",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/extensibility-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/extensibility-open-users",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/extensibility-schema-groups",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/directoryobject",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/users",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/extensibility-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/change-notifications-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/delta-query-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/user-delta",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/user-list",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/user-post-users",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/user-get",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/user-update",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/user-delete",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/user-delta",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/user-changepassword",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/user-retryserviceprovisioning",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/user-revokesigninsessions",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/user-exportpersonaldata",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/user-list-approleassignments",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/approleassignment",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/user-post-approleassignments",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/approleassignment",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/user-delete-approleassignments",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/user-list-calendars",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/calendar",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/user-post-calendars",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/calendar",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/user-list-calendargroups",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/calendargroup",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/user-post-calendargroups",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/calendargroup",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/user-list-events",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/user-post-events",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/user-findmeetingtimes",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/meetingtimesuggestionsresult",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/calendar-getschedule",
-      "depth": 2
-    },
     {
       "url": "https://learn.microsoft.com/en-us/graph/api/resources/scheduleinformation",
       "depth": 2
@@ -15757,11 +15857,235 @@
     {
       "url": "https://learn.microsoft.com/en-us/graph/api/user-list-calendars",
       "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/physicaladdress",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/emailaddress",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/accessreviewschedulesettings",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/accessreviewhistoryschedulesettings",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/accesspackageassignment",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/deployments",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/permissions-reference",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/message",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/post",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/message",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/attachment-get",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/extended-properties-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/message",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/mailfolder",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/note",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/extended-properties-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/calendar-list-calendarview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/schemaextension",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/application",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/user-list",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/deployments",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/permissions-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/permissions-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/permissions-reference",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/deployments",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/invitation-post",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/agentuser",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/users-default-permissions",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/directory",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/deployments",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/permissions-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/deployments",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/deployments",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/compliance/regulatory/gdpr-data-subject-requests",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/approleassignment",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/approle",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/approle",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/deployments",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/permissions-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/deployments",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/deployments",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/permissions-reference",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/deployments",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/permissions-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/deployments",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/permissions-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/deployments",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/permissions-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/permissions-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/permissions-reference",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/locationconstraint",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/deployments",
+      "depth": 3
     }
   ],
   "last_batch": {
     "attempted": 36,
-    "documents_total": 570,
+    "documents_total": 606,
     "queued": 2500,
     "failures": []
   }
