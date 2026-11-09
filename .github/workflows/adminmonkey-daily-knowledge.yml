@@ -45,6 +45,8 @@ jobs:
         run: python adminmonkey/knowledge/monitor.py
       - name: Run transparent academy baseline checks
         run: python adminmonkey/knowledge/exam_baseline.py
+      - name: Verify MS-102 assessment implementation
+        run: python -m unittest discover -s adminmonkey/knowledge -p "test_assess_ms102.py" -v
       - name: Generate honest Academy progress snapshot
         run: python adminmonkey/knowledge/build_progress.py
       - name: Validate generated JSON and learning evidence
