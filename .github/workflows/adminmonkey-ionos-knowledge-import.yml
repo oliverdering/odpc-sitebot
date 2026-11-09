@@ -43,15 +43,28 @@ jobs:
           AMK_DB_PASSWORD: ${{ secrets.AMK_DB_PASSWORD }}
         run: python scripts/adminmonkey_ionos_knowledge_import.py
       - name: Publish confirmed database totals
+        shell: bash
         run: |
+          set -euo pipefail
           git config user.name "adminmonkey-knowledge-bot"
           git config user.email "adminmonkey-knowledge-bot@users.noreply.github.com"
-          git add adminmonkey/knowledge/database_progress.json
-          if ! git diff --cached --quiet; then
+          progress_file="adminmonkey/knowledge/database_progress.json"
+          cp "$progress_file" "$RUNNER_TEMP/database_progress.json"
+          for i in 1 2 3 4 5; do
+            git fetch origin main
+            git reset --hard origin/main
+            cp "$RUNNER_TEMP/database_progress.json" "$progress_file"
+            git add "$progress_file"
+            if git diff --cached --quiet; then
+              echo "Database progress already published"
+              exit 0
+            fi
             git commit -m "data(adminmonkey): verified MariaDB import totals [skip ci]"
-            for i in 1 2 3; do
-              if git pull --rebase --autostash origin main && git push origin HEAD:main; then exit 0; fi
-              sleep $((i * 3))
-            done
-            exit 1
-          fi
+            if git push origin HEAD:main; then
+              echo "Database progress published to main"
+              exit 0
+            fi
+            sleep $((i * 2))
+          done
+          echo "::error::Failed to publish database totals after 5 attempts"
+          exit 1
