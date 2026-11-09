@@ -1,6 +1,7 @@
 name: AdminMonkey IONOS-local knowledge import
 # Operator-requested full-cycle verification: 2026-11-09 second pass; no runtime behavior change.
 # Operator-requested immediate MariaDB catch-up after Academy reached 930 documents; trigger only.
+# 2026-11-09 evening verification: run a fresh bounded import without changing workflow behavior.
 on:
   push:
     branches: [main]
