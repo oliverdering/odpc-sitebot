@@ -1,34 +1,28 @@
 {
-  "generated_at": "2026-11-09T16:26:07.705303+00:00",
+  "generated_at": "2026-11-09T19:32:29.266967+00:00",
   "product": "AdminMonkey Academy",
   "certification_issuer": "ODPC",
   "official_microsoft_certification": false,
   "knowledge": {
-    "documents_collected": 462,
+    "documents_collected": 570,
+    "manufacturer_verified": 570,
     "review": {
-      "unreviewed": 462,
-      "approved": 0,
+      "unreviewed": 0,
+      "approved": 570,
       "rejected": 0
     },
     "last_batch": {
       "attempted": 36,
-      "documents_total": 462,
-      "queued": 2502,
-      "failures": [
-        {
-          "url": "https://learn.microsoft.com/en-us/graph/powershell/installation",
-          "error": "HTTPError"
-        },
-        {
-          "url": "https://learn.microsoft.com/en-us/graph/powershell/get-started",
-          "error": "HTTPError"
-        }
-      ]
+      "documents_total": 570,
+      "queued": 2500,
+      "failures": []
     }
   },
   "tracks": [
     {
       "track": "MS-102",
+      "manufacturer_verified_sources": 221,
+      "knowledge_coverage": "source_count_only_not_learning_objective_coverage",
       "practice_scenarios_available": 1,
       "agent_answers_evaluated": 0,
       "verified_passes": 0,
@@ -38,6 +32,8 @@
     },
     {
       "track": "AZ-104",
+      "manufacturer_verified_sources": 36,
+      "knowledge_coverage": "source_count_only_not_learning_objective_coverage",
       "practice_scenarios_available": 1,
       "agent_answers_evaluated": 0,
       "verified_passes": 0,
@@ -47,6 +43,8 @@
     },
     {
       "track": "SC-300",
+      "manufacturer_verified_sources": 40,
+      "knowledge_coverage": "source_count_only_not_learning_objective_coverage",
       "practice_scenarios_available": 1,
       "agent_answers_evaluated": 0,
       "verified_passes": 0,
@@ -56,6 +54,8 @@
     },
     {
       "track": "MD-102",
+      "manufacturer_verified_sources": 15,
+      "knowledge_coverage": "source_count_only_not_learning_objective_coverage",
       "practice_scenarios_available": 1,
       "agent_answers_evaluated": 0,
       "verified_passes": 0,
@@ -64,6 +64,6 @@
       "competency_percent": null
     }
   ],
-  "assessment_status": "screening_only_no_independent_competence_verification",
+  "assessment_status": "manufacturer_sources_mapped_competence_not_yet_verified",
   "notice": "Collection is not learning; practice question count is not a competence score. No Banana Badge until independent agent responses are assessed."
 }
