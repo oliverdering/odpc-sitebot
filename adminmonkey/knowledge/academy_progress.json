@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-11-09T14:51:10.669226+00:00",
+  "generated_at": "2026-11-09T14:52:32.354577+00:00",
   "product": "AdminMonkey Academy",
   "certification_issuer": "ODPC",
   "official_microsoft_certification": false,
   "knowledge": {
-    "documents_collected": 202,
+    "documents_collected": 214,
     "review": {
-      "unreviewed": 202,
+      "unreviewed": 214,
       "approved": 0,
       "rejected": 0
     },
     "last_batch": {
       "attempted": 12,
-      "documents_total": 202,
+      "documents_total": 214,
       "queued": 2500,
       "failures": []
     }
@@ -23,6 +23,7 @@
       "practice_scenarios_available": 1,
       "agent_answers_evaluated": 0,
       "verified_passes": 0,
+      "screening_passes": 0,
       "badge_status": "not_earned",
       "competency_percent": null
     },
@@ -31,6 +32,7 @@
       "practice_scenarios_available": 1,
       "agent_answers_evaluated": 0,
       "verified_passes": 0,
+      "screening_passes": 0,
       "badge_status": "not_earned",
       "competency_percent": null
     },
@@ -39,6 +41,7 @@
       "practice_scenarios_available": 1,
       "agent_answers_evaluated": 0,
       "verified_passes": 0,
+      "screening_passes": 0,
       "badge_status": "not_earned",
       "competency_percent": null
     },
@@ -47,9 +50,11 @@
       "practice_scenarios_available": 1,
       "agent_answers_evaluated": 0,
       "verified_passes": 0,
+      "screening_passes": 0,
       "badge_status": "not_earned",
       "competency_percent": null
     }
   ],
+  "assessment_status": "screening_only_no_independent_competence_verification",
   "notice": "Collection is not learning; practice question count is not a competence score. No Banana Badge until independent agent responses are assessed."
 }

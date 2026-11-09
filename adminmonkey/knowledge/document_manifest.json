@@ -1414,11 +1414,96 @@
       "captured_at": "2026-11-09T14:51:00.862584+00:00",
       "depth": 2,
       "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/setup/customize-your-organization-theme",
+      "sha256": "a653c09837797bb4bdb2064915556c74e6c444338a26ab8d63ac6638acb61d3a",
+      "captured_at": "2026-11-09T14:52:25.052211+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/commerce/licenses/buy-licenses",
+      "sha256": "d865bd2ddb119c7cc4f53080d1c5cc1568cb839d3b7e2ad3a8c80f9ff22894a3",
+      "captured_at": "2026-11-09T14:52:25.306741+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/enterprise/create-user-accounts-with-microsoft-365-powershell",
+      "sha256": "c8700c1c949de786c955a9c633330bd71ca107bebf35c07e5e72e88e39e1cee6",
+      "captured_at": "2026-11-09T14:52:25.611057+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/enterprise/set-up-directory-synchronization",
+      "sha256": "7ebaaeddd1b9348c4a5a866a1c393b466f105a605c2c705ce0552f8612ede28a",
+      "captured_at": "2026-11-09T14:52:25.939171+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/assign-licenses-to-users",
+      "sha256": "c7ce6a95e9ba1038765ddc237594c8ad3c97edebf2e2eac3581a41a988ec298b",
+      "captured_at": "2026-11-09T14:52:26.213232+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/Exchange/mailbox-migration/mailbox-migration",
+      "sha256": "55fe6c04466b21816b2e8af94c29b4152275552f812c4fbd0ffba6515b45162a",
+      "captured_at": "2026-11-09T14:52:26.401600+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/enterprise/add-several-users-at-the-same-time",
+      "sha256": "c508445454d87bc544f7f6c03c3ad82088325500a5cd74ec2f96ea4826e24753",
+      "captured_at": "2026-11-09T14:52:26.762790+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/restore-user",
+      "sha256": "715fe61a50fbbbe2211b934a5d9624ca3af661a9fb9bd21e5636b14228f7343a",
+      "captured_at": "2026-11-09T14:52:27.094429+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/setup/setup-outlook",
+      "sha256": "746f8f95a1ac33d2ca76d2706d7ae41500f24a4698865a47b49e88ae91c2a0ef",
+      "captured_at": "2026-11-09T14:52:27.450893+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/give-mailbox-permissions-to-another-user",
+      "sha256": "ce495355bf6d670f9a53a156c89c66d100d512d27a190b9a062533b953e78e45",
+      "captured_at": "2026-11-09T14:52:27.684996+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/email/configure-email-forwarding",
+      "sha256": "82d15f5e4c0770fe934b3e7925addf28e232aa0dc528e6943f9a3913f84b9d56",
+      "captured_at": "2026-11-09T14:52:27.961766+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/email/convert-user-mailbox-to-shared-mailbox",
+      "sha256": "445b3b9d0580420c26aad278912391989249265bb3b862abd796bd8e4a66998c",
+      "captured_at": "2026-11-09T14:52:28.218578+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
     }
   ],
   "seen": [
     "https://learn.microsoft.com/en-us/DeployEdge/edge-ie-mode",
     "https://learn.microsoft.com/en-us/DeployEdge/microsoft-edge-support-lifecycle",
+    "https://learn.microsoft.com/en-us/Exchange/mailbox-migration/mailbox-migration",
     "https://learn.microsoft.com/en-us/Exchange/mailbox-migration/office-365-migration-best-practices",
     "https://learn.microsoft.com/en-us/Exchange/whats-new",
     "https://learn.microsoft.com/en-us/OfficeUpdates/",
@@ -1549,14 +1634,19 @@
     "https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/add-users",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/assign-admin-roles",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/delete-a-user",
+    "https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/give-mailbox-permissions-to-another-user",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/reset-passwords",
+    "https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/restore-user",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/admin-overview/admin-center-overview",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/admin-overview/admin-mobile-app",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/admin-overview/sign-up-for-office-365",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/create-groups/create-groups",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/create-groups/manage-groups",
+    "https://learn.microsoft.com/en-us/microsoft-365/admin/email/configure-email-forwarding",
+    "https://learn.microsoft.com/en-us/microsoft-365/admin/email/convert-user-mailbox-to-shared-mailbox",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/email/office-365-user-email-settings",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/get-help-support",
+    "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/assign-licenses-to-users",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/configure-release-options",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/get-started-frontier",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/message-center",
@@ -1568,24 +1658,30 @@
     "https://learn.microsoft.com/en-us/microsoft-365/admin/security-and-compliance/multi-factor-authentication-microsoft-365",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/security-and-compliance/set-up-multi-factor-authentication",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/setup/add-domain",
+    "https://learn.microsoft.com/en-us/microsoft-365/admin/setup/customize-your-organization-theme",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/setup/install-applications",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/setup/setup-apps-for-business",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/setup/setup-business-basic",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/setup/setup-business-standard",
+    "https://learn.microsoft.com/en-us/microsoft-365/admin/setup/setup-outlook",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/setup/upgrade-users-to-latest-office-client",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/whats-new-in-preview",
     "https://learn.microsoft.com/en-us/microsoft-365/business-premium/m365-business-premium-setup",
     "https://learn.microsoft.com/en-us/microsoft-365/business-video/get-help-support",
     "https://learn.microsoft.com/en-us/microsoft-365/commerce/",
     "https://learn.microsoft.com/en-us/microsoft-365/commerce/billing-and-payments/manage-multi-tenant-billing",
+    "https://learn.microsoft.com/en-us/microsoft-365/commerce/licenses/buy-licenses",
     "https://learn.microsoft.com/en-us/microsoft-365/commerce/subscriptions/renew-your-subscription",
     "https://learn.microsoft.com/en-us/microsoft-365/commerce/try-or-buy-microsoft-365",
     "https://learn.microsoft.com/en-us/microsoft-365/compliance/whats-new",
     "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-page",
     "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-search",
+    "https://learn.microsoft.com/en-us/microsoft-365/enterprise/add-several-users-at-the-same-time",
+    "https://learn.microsoft.com/en-us/microsoft-365/enterprise/create-user-accounts-with-microsoft-365-powershell",
     "https://learn.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-admin-engagements",
     "https://learn.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-admin-overview-enhanced-engagements",
     "https://learn.microsoft.com/en-us/microsoft-365/enterprise/office-365-network-mac-perf-onboarding-tool",
+    "https://learn.microsoft.com/en-us/microsoft-365/enterprise/set-up-directory-synchronization",
     "https://learn.microsoft.com/en-us/microsoft-365/enterprise/view-service-health",
     "https://learn.microsoft.com/en-us/microsoft-365/migration/",
     "https://learn.microsoft.com/en-us/microsoft-365/migration/cross-tenant-identity-mapping",
@@ -1621,118 +1717,6 @@
     "https://learn.microsoft.com/en-us/windows/win32/wer/windows-error-reporting"
   ],
   "queue": [
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/setup/customize-your-organization-theme",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/principles-for-ai-generated-content",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/previous-versions/",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/contribute",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/legal/termsofuse",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/get-help-support",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/commerce/licenses/buy-licenses",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/about-admin-roles",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/about-admin-roles",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/enterprise/create-user-accounts-with-microsoft-365-powershell",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/enterprise/set-up-directory-synchronization",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/assign-licenses-to-users",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/Exchange/mailbox-migration/mailbox-migration",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/assign-admin-roles",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/get-help-support",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/enterprise/add-several-users-at-the-same-time",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/restore-user",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/assign-licenses-to-users",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/delete-a-user",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/principles-for-ai-generated-content",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/previous-versions/",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/contribute",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/legal/termsofuse",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/setup/add-domain",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/setup/setup-outlook",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/give-mailbox-permissions-to-another-user",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/email/configure-email-forwarding",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/email/convert-user-mailbox-to-shared-mailbox",
-      "depth": 2
-    },
     {
       "url": "https://learn.microsoft.com/en-us/exchange/recipients-in-exchange-online/manage-user-mailboxes/manage-user-mailboxes",
       "depth": 2
@@ -11620,11 +11604,123 @@
     {
       "url": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference",
       "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-upload-process-images",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/commerce/manage-billing-accounts",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/assign-licenses-to-users",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/commerce/manage-billing-accounts",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/commerce/enter-your-product-key",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/commerce/subscriptions/understand-eos-products",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/assign-licenses-to-users",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/active-directory/enterprise-users/licensing-service-plan-reference",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/admin",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/powershell/microsoftgraph/get-started",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/enterprise/plan-for-directory-synchronization",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/commerce/subscriptions/manage-self-service-purchases-admins",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/office365/servicedescriptions/exchange-online-service-description/exchange-online-limits",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/office365/admin/add-users/add-users",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/troubleshoot/active-directory/restore-deleted-user-accounts",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/email/create-a-shared-mailbox",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/change-a-user-name-and-email-address",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/outbound-spam-policies-external-email-forwarding",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/exchange/mail-flow-best-practices/remote-domains/manage-remote-domains",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/email/convert-user-mailbox-to-shared-mailbox",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/setup/create-distribution-lists",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/email/add-user-or-contact-to-distribution-list",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/email/create-a-shared-mailbox",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/email/configure-a-shared-mailbox",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/change-a-user-name-and-email-address",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/remove-former-employee",
+      "depth": 3
     }
   ],
   "last_batch": {
     "attempted": 12,
-    "documents_total": 202,
+    "documents_total": 214,
     "queued": 2500,
     "failures": []
   }
