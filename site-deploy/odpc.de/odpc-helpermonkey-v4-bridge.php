@@ -2,7 +2,7 @@
 /**
  * Plugin Name: ODPC Helper Monkey V4 Bridge
  * Description: Links ODPC services to the multilingual Helper Monkey start guide and preserves the existing WhatsApp Business button.
- * Version: 4.0.2
+ * Version: 4.0.3
  */
 if(!defined('ABSPATH'))exit;
 add_action('wp_head',function(){
@@ -22,7 +22,9 @@ add_action('wp_head',function(){
  .odpc-hm-v4-help.is-open{display:block}.odpc-hm-v4-help h2{font-size:20px;margin:0 0 8px;color:#243647}.odpc-hm-v4-help a{display:block;color:#504239!important;text-decoration:none;border:1px solid #e1d5cd;border-radius:9px;background:#f9f8f6;margin:7px 0;padding:9px;font-weight:760}
  .odpc-hm-v4-help button{border:0;border-radius:8px;min-height:40px;padding:8px 14px;background:#26313f;color:white;font:inherit;cursor:pointer}
  .odpc-hm-v4-top a:focus-visible,.odpc-hm-v4-wa:focus-visible,.odpc-hm-v4-helpbtn:focus-visible{outline:3px solid #d4ac81;outline-offset:3px}
- @media(max-width:580px){.odpc-hm-v4-wa{right:9px;bottom:9px;font-size:13px}.odpc-hm-v4-helpbtn{right:9px;bottom:65px}.odpc-hm-v4-help{right:9px;bottom:117px}}
+ @media(max-width:580px){.odpc-hm-v4-wa{right:10px;bottom:10px;font-size:12px;padding:8px 11px;min-height:38px}.odpc-hm-v4-helpbtn{right:10px;bottom:58px;font-size:12px;padding:7px 11px;min-height:36px}.odpc-hm-v4-help{right:10px;bottom:105px}}
+ /* The homepage has its own contact journey: do not cover its hero, profile or headings. */
+ body.home .odpc-hm-v4-wa,body.home .odpc-hm-v4-helpbtn,body.front-page .odpc-hm-v4-wa,body.front-page .odpc-hm-v4-helpbtn{display:none!important}
  </style>';
 },97);
 add_action('wp_footer',function(){
