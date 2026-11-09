@@ -76,6 +76,14 @@ add_action('wp_head', function () {
   #odpc-navigation .odpc-menu-list a:hover,
   #odpc-navigation .odpc-menu-list a:focus-visible,
   #odpc-navigation .odpc-menu-list .current-menu-item>a{background:#2d3540;color:#fff!important;border-color:#625447}
+  #odpc-navigation .odpc-nav-group{position:relative}
+  #odpc-navigation .odpc-nav-group summary{display:block;padding:11px 12px;color:#e5e4e2;font-size:14px;font-weight:650;line-height:1.5;border:1px solid transparent;border-radius:8px;cursor:pointer;list-style:none}
+  #odpc-navigation .odpc-nav-group summary::-webkit-details-marker{display:none}
+  #odpc-navigation .odpc-nav-group summary:after{content:" ▾";color:#d8b392}
+  #odpc-navigation .odpc-nav-group[open] summary,#odpc-navigation .odpc-nav-group summary:hover{background:#2d3540;border-color:#625447}
+  #odpc-navigation .odpc-nav-sub{padding:4px 0 7px 12px;border-left:2px solid #bc967b}
+  #odpc-navigation .odpc-nav-sub a{font-size:13px;padding:9px 10px}
+  #odpc-navigation .odpc-nav-highlight>a{background:#bc967b!important;color:#151b24!important;font-weight:800!important;border-color:#d7b296!important}
   #odpc-navigation .odpc-search{margin-top:13px;padding:12px 0 2px;border-top:1px solid rgba(233,230,225,.15)}
   #odpc-navigation .odpc-search form{display:flex;gap:10px;flex-wrap:wrap}
   #odpc-navigation .odpc-search input[type=search]{flex:1 1 180px;min-width:0;border:1px solid #64707b;border-radius:8px;background:#fff;color:#151b24;padding:10px 12px}
@@ -211,7 +219,16 @@ add_action('wp_footer', function () {
       </button>
     </div>
     <nav id="odpc-nav-panel" hidden aria-label="ODPC Hauptnavigation">
-      <?php wp_nav_menu(array('menu'=>7,'container'=>false,'menu_class'=>'odpc-menu-list','fallback_cb'=>false,'depth'=>3)); ?>
+      <ul class="odpc-menu-list">
+        <li><a href="<?php echo esc_url(home_url('/')); ?>">Startseite</a></li>
+        <li><details class="odpc-nav-group"><summary>Über ODPC</summary><div class="odpc-nav-sub"><a href="<?php echo esc_url(home_url('/about-me/')); ?>">Über mich</a><a href="<?php echo esc_url(home_url('/unser-team/')); ?>">Unser Team</a></div></details></li>
+        <li><details class="odpc-nav-group"><summary>Unsere KI-Methode</summary><div class="odpc-nav-sub"><a href="<?php echo esc_url(home_url('/prompt-engineering-digitale-mitarbeiter-ki-sinnvoll-nutzen/')); ?>">Prompt Engineering &amp; digitale Mitarbeiter</a></div></details></li>
+        <li><details class="odpc-nav-group"><summary>Leistungen &amp; Projekte</summary><div class="odpc-nav-sub"><a href="<?php echo esc_url(home_url('/ki-gestuetzte-dienstleistungen-automatisierung/')); ?>">KI-Automatisierung</a><a href="<?php echo esc_url(home_url('/struktur-portfolio/')); ?>">Struktur &amp; Portfolio</a><a href="<?php echo esc_url(home_url('/einsatz-von-ki-je-nach-branche/')); ?>">KI nach Branche</a></div></details></li>
+        <li><a href="<?php echo esc_url(home_url('/kunden-referenzen/')); ?>">Kunden &amp; Referenzen</a></li>
+        <li><a href="<?php echo esc_url(home_url('/aktuelles/')); ?>">Aktuelles</a></li>
+        <li><a href="<?php echo esc_url(home_url('/contact-me/')); ?>">Kontakt</a></li>
+        <li class="odpc-nav-highlight"><a href="https://ai.odpc.de/" target="_blank" rel="noopener noreferrer">Helper Monkey ↗</a></li>
+      </ul>
       <div class="odpc-search"><form role="search" method="get" class="search-form" action="<?php echo esc_url(home_url('/')); ?>"><label style="flex:1;min-width:0"><span class="screen-reader-text">Website durchsuchen</span><input type="search" name="s" class="search-field" placeholder="Website durchsuchen …" aria-label="Suchbegriff" required></label><button type="submit" class="search-submit">Suchen</button></form></div>
     </nav>
   </div>
