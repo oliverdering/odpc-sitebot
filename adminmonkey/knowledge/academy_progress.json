@@ -1,0 +1,55 @@
+{
+  "generated_at": "2026-11-09T08:10:06.602777+00:00",
+  "product": "AdminMonkey Academy",
+  "certification_issuer": "ODPC",
+  "official_microsoft_certification": false,
+  "knowledge": {
+    "documents_collected": 36,
+    "review": {
+      "unreviewed": 36,
+      "approved": 0,
+      "rejected": 0
+    },
+    "last_batch": {
+      "attempted": 12,
+      "documents_total": 36,
+      "queued": 1233,
+      "failures": []
+    }
+  },
+  "tracks": [
+    {
+      "track": "MS-102",
+      "practice_scenarios_available": 1,
+      "agent_answers_evaluated": 0,
+      "verified_passes": 0,
+      "badge_status": "not_earned",
+      "competency_percent": null
+    },
+    {
+      "track": "AZ-104",
+      "practice_scenarios_available": 1,
+      "agent_answers_evaluated": 0,
+      "verified_passes": 0,
+      "badge_status": "not_earned",
+      "competency_percent": null
+    },
+    {
+      "track": "SC-300",
+      "practice_scenarios_available": 1,
+      "agent_answers_evaluated": 0,
+      "verified_passes": 0,
+      "badge_status": "not_earned",
+      "competency_percent": null
+    },
+    {
+      "track": "MD-102",
+      "practice_scenarios_available": 1,
+      "agent_answers_evaluated": 0,
+      "verified_passes": 0,
+      "badge_status": "not_earned",
+      "competency_percent": null
+    }
+  ],
+  "notice": "Collection is not learning; practice question count is not a competence score. No Banana Badge until independent agent responses are assessed."
+}
