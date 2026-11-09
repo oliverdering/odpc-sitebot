@@ -14,7 +14,7 @@ nav{display:flex;flex-wrap:wrap;gap:18px}h1{font-size:clamp(2rem,5vw,3.3rem);lin
 .status{display:inline-block;padding:3px 10px;border:1px solid var(--line);border-radius:30px;color:var(--accent);font-size:.8rem}
 button{background:var(--accent);color:#05231e;border:0;border-radius:10px;padding:10px 17px;font-weight:700;cursor:pointer}
 footer{border-top:1px solid var(--line);color:var(--muted)}@media(prefers-reduced-motion:no-preference){.pulse{animation:pulse 2.5s infinite}@keyframes pulse{50%{opacity:.5}}}
-</style></head><body>
+.progress-track{height:18px;background:#253a42;border-radius:20px;overflow:hidden}.progress-fill{height:100%;width:0;background:#8ce6cf;transition:width .7s ease}</style></head><body>
 <header><strong>D.R.O.L. / LIVE LAB</strong><nav aria-label="Navigation"><a href="/">Start</a><a href="/katalog.html">Katalog</a><a href="/engineering-atlas.html">Engineering Atlas</a><a href="/drol-wissen.html">Wissen</a></nav></header>
 <main><p class="status"><span class="pulse">●</span> Automatische Forschung · öffentlich nachvollziehbar</p>
 <h1>Sieh zu, wie D.R.O.L. wächst.</h1>
@@ -25,7 +25,7 @@ footer{border-top:1px solid var(--line);color:var(--muted)}@media(prefers-reduce
 <div class="card"><div class="number" id="updated">–</div><div>Letzter Datenabruf</div></div>
 </div>
 <div style="display:flex;align-items:center;gap:15px;flex-wrap:wrap"><button id="refresh" type="button">Jetzt aktualisieren</button><span class="muted" id="state" role="status" aria-live="polite">Lade Forschungsdaten …</span></div>
-<h2>Neu im Forschungslabor</h2><div id="feed" class="feed" aria-live="polite"><p>Recherchedaten werden geladen.</p></div>
+<section class="card" style="margin:24px 0"><h2 style="margin-top:0">D.R.O.L. · Katalogwachstum</h2><p class="muted">Meilenstein: 100 Modelle. Kein Prozentsatz des gesamten Drohnenwissens.</p><div id="growth-count">Katalog wird geladen …</div><div class="progress-track" role="progressbar" aria-label="Fortschritt zum 100-Modelle-Meilenstein" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="growth-bar"><div class="progress-fill" id="growth-fill"></div></div><p id="growth-status" class="muted"></p></section><h2>Neu im Forschungslabor</h2><div id="feed" class="feed" aria-live="polite"><p>Recherchedaten werden geladen.</p></div>
 <section class="card" id="datenquellen" style="margin:26px 0;border-left:4px solid var(--accent)"><h2 style="margin-top:0">Öffentliche Datenquellen & Prüfstatus</h2><p>Der Forschungsfeed basiert auf öffentlich abrufbaren GitHub-Prüfaufträgen. Er ist kein direkter Zugriff auf die private MariaDB. Die folgenden URLs können unabhängig von dieser Seite geprüft werden:</p><p><a href="https://api.github.com/repos/oliverdering/odpc-sitebot/issues?state=all&amp;per_page=100" target="_blank" rel="noopener noreferrer">Forschungsaufträge als GitHub-JSON öffnen</a> · <a href="https://drol.odpc.de/data/models-db.json" target="_blank" rel="noopener noreferrer">Exportierter Modellkatalog (JSON) prüfen</a> · <a href="https://drol.odpc.de/data/releases.json" target="_blank" rel="noopener noreferrer">Software-Releases (JSON) prüfen</a></p><p class="muted">Hinweis: Die beiden Exportdateien können fehlen oder vorübergehend nicht erreichbar sein. Ihre Verlinkung ist kein Nachweis für einen erfolgreichen Datenbankexport. Erst Inhalt, Zeitstempel und Evidenzfelder belegen den tatsächlichen Datenstand.</p><noscript><p>JavaScript ist deaktiviert. Die Datenquellen sind über die Links oben weiterhin erreichbar; die dynamische Liste wird nicht geladen.</p></noscript></section>
 <h2>Wie Wissen entsteht</h2><div class="metrics"><section class="card"><h3>1 · Entdecken</h3><p>Automatische Prüfung offizieller Open-Source-Releases.</p></section><section class="card"><h3>2 · Dokumentieren</h3><p>Neue Kandidaten erhalten eine Quellenadresse und einen nachvollziehbaren Prüfauftrag.</p></section><section class="card"><h3>3 · Verifizieren</h3><p>Technische Aussagen bleiben E0, bis die Primärquellen und konkrete Kompatibilität geprüft wurden.</p></section></div>
 <p class="muted">Transparenzhinweis: Die Live-Liste zeigt GitHub-Prüfaufträge. Sie ist kein Live-Zugriff auf die private MariaDB und enthält keine ungeprüften Aussagen als bestätigte Fakten.</p>
@@ -35,6 +35,20 @@ footer{border-top:1px solid var(--line);color:var(--muted)}@media(prefers-reduce
 const api='https://api.github.com/repos/oliverdering/odpc-sitebot/issues?state=all&per_page=100';
 const feed=document.getElementById('feed'),state=document.getElementById('state');
 let busy=false;
+async function refreshGrowth(){
+const status=document.getElementById('growth-status');
+try{
+const response=await fetch('/data/models-db.json?t='+Date.now(),{cache:'no-store'});
+if(!response.ok)throw new Error('HTTP '+response.status);
+const data=await response.json();
+if(data.source!=='D.R.O.L. production MariaDB'||!Array.isArray(data.models)||!Number.isInteger(data.model_count)||data.model_count!==data.models.length)throw new Error('Ungültiger Export');
+const count=data.model_count, percent=Math.min(100,count);
+document.getElementById('growth-count').textContent=count+' Modelle · '+percent+' % des 100-Modelle-Meilensteins';
+document.getElementById('growth-fill').style.width=percent+'%';
+document.getElementById('growth-bar').setAttribute('aria-valuenow',String(percent));
+status.textContent='Export: '+(data.generated_utc?new Date(data.generated_utc).toLocaleString('de-DE'):'Zeit unbekannt')+' · Modellanzahl, keine verifizierten Fakten.';
+}catch(error){document.getElementById('growth-count').textContent='Katalogdaten nicht verfügbar';document.getElementById('growth-fill').style.width='0%';status.textContent='Kein verifizierbarer Datenbankexport.';}
+}
 function node(tag,text,cls){const el=document.createElement(tag);if(text!==undefined)el.textContent=text;if(cls)el.className=cls;return el}
 async function refresh(){
 if(busy)return;busy=true;state.textContent='Prüfe GitHub-Daten …';
@@ -57,7 +71,7 @@ state.textContent='Live-Daten geladen · Aktualisierung alle 60 Sekunden';
 }catch(e){state.textContent='Live-Abruf derzeit nicht verfügbar. Bitte später erneut versuchen.';if(!feed.children.length)feed.append(node('p','GitHub-Daten konnten nicht geladen werden.'))}
 finally{busy=false}
 }
-document.getElementById('refresh').addEventListener('click',refresh);
-refresh();setInterval(function(){if(!document.hidden)refresh()},60000);
+document.getElementById('refresh').addEventListener('click',function(){refresh();refreshGrowth()});
+refresh();refreshGrowth();setInterval(function(){if(!document.hidden){refresh();refreshGrowth()}},60000);
 })();
 </script></body></html>
