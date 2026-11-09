@@ -22,6 +22,7 @@ footer{border-top:1px solid var(--line);color:var(--muted)}@media(prefers-reduce
 <div class="metrics" aria-label="Live-Kennzahlen">
 <div class="card"><div class="number" id="total">–</div><div>Erkannte Forschungsaufträge</div></div>
 <div class="card"><div class="number" id="open">–</div><div>Offene Prüfaufträge</div></div>
+<div class="card"><div class="number" id="release-count">–</div><div>Entdeckte Software-Releases (E0)</div><small id="release-status">Lade öffentlichen Forschungsfeed …</small></div>
 <div class="card"><div class="number" id="updated">–</div><div>Letzter Datenabruf</div></div>
 </div>
 <div style="display:flex;align-items:center;gap:15px;flex-wrap:wrap"><button id="refresh" type="button">Jetzt aktualisieren</button><span class="muted" id="state" role="status" aria-live="polite">Lade Forschungsdaten …</span></div>
@@ -35,6 +36,17 @@ footer{border-top:1px solid var(--line);color:var(--muted)}@media(prefers-reduce
 const api='https://api.github.com/repos/oliverdering/odpc-sitebot/issues?state=all&per_page=100';
 const feed=document.getElementById('feed'),state=document.getElementById('state');
 let busy=false;
+async function refreshReleases(){
+const count=document.getElementById('release-count'), status=document.getElementById('release-status');
+try{
+const response=await fetch('/data/releases.json?t='+Date.now(),{cache:'no-store'});
+if(!response.ok)throw new Error('HTTP '+response.status);
+const data=await response.json();
+if(!Array.isArray(data.releases)||!Number.isInteger(data.count)||data.count!==data.releases.length||!data.releases.every(x=>x.evidence_level==='E0'&&x.compatibility==='UNKNOWN'))throw new Error('Ungültiger Forschungsfeed');
+count.textContent=String(data.count);
+status.textContent='Öffentlicher Feed · E0, ungeprüft · kein Live-MariaDB-Zähler';
+}catch(error){count.textContent='–';status.textContent='Forschungsfeed nicht verfügbar';}
+}
 async function refreshGrowth(){
 const status=document.getElementById('growth-status');
 try{
@@ -71,7 +83,7 @@ state.textContent='Live-Daten geladen · Aktualisierung alle 60 Sekunden';
 }catch(e){state.textContent='Live-Abruf derzeit nicht verfügbar. Bitte später erneut versuchen.';if(!feed.children.length)feed.append(node('p','GitHub-Daten konnten nicht geladen werden.'))}
 finally{busy=false}
 }
-document.getElementById('refresh').addEventListener('click',function(){refresh();refreshGrowth()});
-refresh();refreshGrowth();setInterval(function(){if(!document.hidden){refresh();refreshGrowth()}},60000);
+document.getElementById('refresh').addEventListener('click',function(){refresh();refreshGrowth();refreshReleases()});
+refresh();refreshGrowth();refreshReleases();setInterval(function(){if(!document.hidden){refresh();refreshGrowth();refreshReleases()}},60000);
 })();
 </script></body></html>
