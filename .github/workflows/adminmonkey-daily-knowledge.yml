@@ -10,7 +10,7 @@ on:
       - 'adminmonkey/academy/competency_bank.json'
   workflow_dispatch:
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '2 * * * *'
 permissions:
   contents: write
 concurrency:
