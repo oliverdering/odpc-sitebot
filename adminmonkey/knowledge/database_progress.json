@@ -1,8 +1,13 @@
 {
   "database_connected": true,
-  "new_document_versions": 59,
-  "document_versions_total": 214,
-  "sources_total": 214,
-  "imported_from_verified_origin": 214,
+  "new_document_versions": 44,
+  "document_versions_total": 354,
+  "sources_total": 354,
+  "imported_from_verified_origin": 354,
+  "rejected_document_count": 2,
+  "rejected_document_urls": [
+    "https://learn.microsoft.com/en-us/",
+    "https://learn.microsoft.com/en-us/answers/questions/5744593/visual-studio-2026-uses-excessive-memory-(20gb-)-w"
+  ],
   "official_microsoft_certification": false
 }
