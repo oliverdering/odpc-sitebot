@@ -1,0 +1,98 @@
+name: AdminMonkey Learning Monitor Deploy
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'site-deploy/ai.odpc.de/adminmonkey/monitor/index.html'
+      - '.github/workflows/adminmonkey-monitor-deploy.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: adminmonkey-monitor-live
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate monitor content
+        run: |
+          test -s site-deploy/ai.odpc.de/adminmonkey/monitor/index.html
+          grep -q 'AdminMonkey Learning Monitor' site-deploy/ai.odpc.de/adminmonkey/monitor/index.html
+      - name: Install pinned SFTP client
+        run: python3 -m pip install 'paramiko>=3.4,<5'
+      - name: Publish monitor with host key pinning and smoke test
+        env:
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+          AI_ODPC_THEME_PATH: ${{ secrets.AI_ODPC_THEME_PATH }}
+        run: |
+          python3 - <<'PY'
+          import os, posixpath, stat, time
+          from pathlib import Path
+          from urllib.request import Request, urlopen
+          import paramiko
+          from scripts.deploy_helpermonkey_v4 import HOST, USER, PIN, find_theme
+          import hashlib, base64, hmac
+          src=Path("site-deploy/ai.odpc.de/adminmonkey/monitor/index.html")
+          if not src.is_file() or src.stat().st_size>150000: raise RuntimeError("Monitor file missing or too large")
+          password=os.environ.get("ODPC_SFTP_PASSWORD")
+          if not password: raise RuntimeError("Missing SFTP secret")
+          transport=paramiko.Transport((HOST,22))
+          transport.start_client(timeout=25)
+          try:
+              actual="SHA256:"+base64.b64encode(hashlib.sha256(transport.get_remote_server_key().asbytes()).digest()).decode().rstrip("=")
+              if not hmac.compare_digest(actual,PIN): raise RuntimeError("Host key mismatch")
+              transport.auth_password(USER,password)
+              if not transport.is_authenticated(): raise RuntimeError("SFTP authentication failed")
+              sftp=paramiko.SFTPClient.from_transport(transport)
+              try:
+                  theme=find_theme(sftp)
+                  root=theme.split("/wp-content/themes/")[0]
+                  for p in (root+"/wp-config.php",root+"/wp-content"):
+                      sftp.stat(p)
+                  directory=root
+                  for segment in ("adminmonkey","monitor"):
+                      directory=posixpath.join(directory,segment)
+                      try:
+                          if not stat.S_ISDIR(sftp.stat(directory).st_mode): raise RuntimeError("Unsafe target directory")
+                      except FileNotFoundError:
+                          sftp.mkdir(directory)
+                  dest=directory+"/index.html"
+                  tmp=dest+".uploading"
+                  backup=dest+".previous"
+                  previous=False
+                  try:
+                      st=sftp.lstat(dest)
+                      if not stat.S_ISREG(st.st_mode) or st.st_size>150000: raise RuntimeError("Unsafe existing target")
+                      sftp.rename(dest,backup)
+                      previous=True
+                  except FileNotFoundError: pass
+                  try:
+                      sftp.put(str(src),tmp,confirm=True)
+                      sftp.posix_rename(tmp,dest)
+                      ok=False
+                      for _ in range(4):
+                          time.sleep(3)
+                          try:
+                              req=Request("https://ai.odpc.de/adminmonkey/monitor/?verify="+str(int(time.time())),headers={"Cache-Control":"no-cache","User-Agent":"AdminMonkey-Monitor-Deploy/1"})
+                              with urlopen(req,timeout=20) as response:
+                                  body=response.read(200000).decode("utf-8","replace")
+                              if "AdminMonkey Learning Monitor" in body and "knowledge_index.json" in body:
+                                  ok=True;break
+                          except Exception as exc: print("Smoke check retry:",type(exc).__name__)
+                      if not ok: raise RuntimeError("Public monitor page smoke test failed")
+                      if previous: sftp.remove(backup)
+                      print("PASS: AdminMonkey Learning Monitor publicly accessible")
+                  except Exception:
+                      try:sftp.remove(dest)
+                      except OSError:pass
+                      if previous:sftp.rename(backup,dest)
+                      raise
+                  finally:
+                      try:sftp.remove(tmp)
+                      except OSError:pass
+              finally:sftp.close()
+          finally:transport.close()
+          PY
