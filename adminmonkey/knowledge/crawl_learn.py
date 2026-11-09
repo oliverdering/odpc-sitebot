@@ -17,6 +17,7 @@ from urllib.error import HTTPError, URLError
 
 ROOT = Path(__file__).resolve().parent
 STATE = ROOT / "crawl_state.json"
+MANIFEST = ROOT / "document_manifest.json"
 SEEDS = [
     "https://learn.microsoft.com/en-us/microsoft-365/admin/",
     "https://learn.microsoft.com/en-us/graph/overview",
@@ -111,6 +112,13 @@ def fetch(url):
 
 if __name__ == "__main__":
     old = json.loads(STATE.read_text(encoding="utf-8")) if STATE.exists() else {}
+    if MANIFEST.exists():
+        persisted = json.loads(MANIFEST.read_text(encoding="utf-8"))
+        prior_docs = {d["url"]: d for d in persisted.get("documents", []) if d.get("url") and d.get("sha256")}
+        old.setdefault("documents", {}).update({url: doc for url, doc in prior_docs.items() if url not in old.get("documents", {})})
+        old["seen"] = sorted(set(old.get("seen", [])) | set(persisted.get("seen", [])))
+        if not old.get("queue") and persisted.get("queue"):
+            old["queue"] = persisted["queue"]
     state = crawl(old, fetch)
     STATE.write_text(json.dumps(state, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(state["last_batch"]))
