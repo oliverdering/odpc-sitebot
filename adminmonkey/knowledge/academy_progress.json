@@ -1,20 +1,25 @@
 {
-  "generated_at": "2026-11-09T15:12:39.301346+00:00",
+  "generated_at": "2026-11-09T15:21:28.154681+00:00",
   "product": "AdminMonkey Academy",
   "certification_issuer": "ODPC",
   "official_microsoft_certification": false,
   "knowledge": {
-    "documents_collected": 250,
+    "documents_collected": 321,
     "review": {
-      "unreviewed": 250,
+      "unreviewed": 321,
       "approved": 0,
       "rejected": 0
     },
     "last_batch": {
       "attempted": 36,
-      "documents_total": 250,
-      "queued": 2495,
-      "failures": []
+      "documents_total": 321,
+      "queued": 2501,
+      "failures": [
+        {
+          "url": "https://learn.microsoft.com/en-us/office365/smallbusiness/build-your-small-business/build-your-small-business",
+          "error": "ValueError"
+        }
+      ]
     }
   },
   "tracks": [
