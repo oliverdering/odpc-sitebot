@@ -32,7 +32,7 @@ def build():
                        "agent_answers_evaluated": 0, "verified_passes": 0,
                        "badge_status": "not_earned", "competency_percent": None})
     public_docs = [{"url": d.get("url"), "sha256": d.get("sha256"), "captured_at": d.get("captured_at"), "depth": d.get("depth"), "review_status": d.get("review_status", "unreviewed")} for d in docs.values() if d.get("url", "").startswith("https://learn.microsoft.com/en-us/")]
-    (ROOT / "document_manifest.json").write_text(json.dumps({"schema_version": 1, "documents": public_docs}, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8")
+    (ROOT / "document_manifest.json").write_text(json.dumps({"schema_version": 1, "documents": public_docs}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return {"generated_at": datetime.now(timezone.utc).isoformat(),
             "product": "AdminMonkey Academy", "certification_issuer": "ODPC",
             "official_microsoft_certification": False,
