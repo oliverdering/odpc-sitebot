@@ -1246,11 +1246,96 @@
       "captured_at": "2026-11-09T14:24:51.787894+00:00",
       "depth": 2,
       "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/Exchange/mailbox-migration/office-365-migration-best-practices",
+      "sha256": "c7dcf303afce5b7caaaa6d5ab4f07892d4bd6ce211d5bd9673913a7737615d82",
+      "captured_at": "2026-11-09T14:43:58.978491+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/slack-to-teams-migration-tool",
+      "sha256": "540596d59bced8c14fa5e1d69dff8fe8050b14b5f807711d98e070ed15f78732",
+      "captured_at": "2026-11-09T14:43:59.183551+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/migration/cross-tenant-mailbox-migration",
+      "sha256": "6778511e074cacc5302338c0d3a1b8152730b4dbf0c4890a57c7c57c15ffbfe3",
+      "captured_at": "2026-11-09T14:43:59.691268+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/migration/cross-tenant-onedrive-migration",
+      "sha256": "28ae2397aaec268815b885e0005c95ad959a36ce750a1239398fcbbd3f59ea26",
+      "captured_at": "2026-11-09T14:44:00.061693+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/migration/cross-tenant-sharepoint-migration",
+      "sha256": "58b6d34e912417d4353bbcda4d2e6854db4daffeabeb46b88d3c68853199dcf2",
+      "captured_at": "2026-11-09T14:44:00.464431+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/migration/cross-tenant-sharepoint-bulk-site-migration",
+      "sha256": "8ece03af6dcf8989e60d978c35e2a75ca428cf018c1de55d4a59730658f28b2e",
+      "captured_at": "2026-11-09T14:44:01.006264+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/migration/cross-tenant-identity-mapping",
+      "sha256": "b7db485c5bf97e7d6e731e9f8675434d7273ed0132f9034e2842ba014193e732",
+      "captured_at": "2026-11-09T14:44:01.542668+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/migration/cross-tenant-sharepoint-migration-faqs",
+      "sha256": "a6c248d215ac1225acd2d9fd0f52692d294c793f50349bee013161180c417edb",
+      "captured_at": "2026-11-09T14:44:01.823612+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/migration/migration-orchestrator-2-planning-prerequisites",
+      "sha256": "3855b2b884e649043ddf5d6a1440baa56f2dc7572a775d02220d442b2b1529ce",
+      "captured_at": "2026-11-09T14:44:02.191184+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/migration/migration-orchestrator-8-faq",
+      "sha256": "aa0d849c5215b53f9a1ff61a878790e63508d4e4e4b5407b601393a69893fe74",
+      "captured_at": "2026-11-09T14:44:02.606864+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/sharepointmigration/mm-google-overview",
+      "sha256": "8280b86028948ca8cbed9d93e9e75c113eb456a3685a26443a0db1b3903ccc5f",
+      "captured_at": "2026-11-09T14:44:02.827345+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/sharepointmigration/mm-faqs-dropbox",
+      "sha256": "7ad95a4ee2d513cf297319fd7927f0c7b82d7323e55def8dc1fa9ccb64b54423",
+      "captured_at": "2026-11-09T14:44:03.126476+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
     }
   ],
   "seen": [
     "https://learn.microsoft.com/en-us/DeployEdge/edge-ie-mode",
     "https://learn.microsoft.com/en-us/DeployEdge/microsoft-edge-support-lifecycle",
+    "https://learn.microsoft.com/en-us/Exchange/mailbox-migration/office-365-migration-best-practices",
     "https://learn.microsoft.com/en-us/Exchange/whats-new",
     "https://learn.microsoft.com/en-us/OfficeUpdates/",
     "https://learn.microsoft.com/en-us/OfficeUpdates/teams-admin",
@@ -1410,11 +1495,20 @@
     "https://learn.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-admin-overview-enhanced-engagements",
     "https://learn.microsoft.com/en-us/microsoft-365/enterprise/office-365-network-mac-perf-onboarding-tool",
     "https://learn.microsoft.com/en-us/microsoft-365/migration/",
+    "https://learn.microsoft.com/en-us/microsoft-365/migration/cross-tenant-identity-mapping",
+    "https://learn.microsoft.com/en-us/microsoft-365/migration/cross-tenant-mailbox-migration",
+    "https://learn.microsoft.com/en-us/microsoft-365/migration/cross-tenant-onedrive-migration",
+    "https://learn.microsoft.com/en-us/microsoft-365/migration/cross-tenant-sharepoint-bulk-site-migration",
+    "https://learn.microsoft.com/en-us/microsoft-365/migration/cross-tenant-sharepoint-migration",
+    "https://learn.microsoft.com/en-us/microsoft-365/migration/cross-tenant-sharepoint-migration-faqs",
     "https://learn.microsoft.com/en-us/microsoft-365/migration/microsoft-365-migration-overview",
     "https://learn.microsoft.com/en-us/microsoft-365/migration/microsoft-365-tenant-to-tenant-migrations",
     "https://learn.microsoft.com/en-us/microsoft-365/migration/migration-orchestrator-1-overview",
+    "https://learn.microsoft.com/en-us/microsoft-365/migration/migration-orchestrator-2-planning-prerequisites",
+    "https://learn.microsoft.com/en-us/microsoft-365/migration/migration-orchestrator-8-faq",
     "https://learn.microsoft.com/en-us/microsoft-365/security/mtp/whats-new",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/",
+    "https://learn.microsoft.com/en-us/microsoftteams/slack-to-teams-migration-tool",
     "https://learn.microsoft.com/en-us/microsoftteams/teams-overview",
     "https://learn.microsoft.com/en-us/office/troubleshoot/",
     "https://learn.microsoft.com/en-us/powershell/microsoftgraph/overview",
@@ -1424,79 +1518,13 @@
     "https://learn.microsoft.com/en-us/purview/",
     "https://learn.microsoft.com/en-us/security/zero-trust/zero-trust-overview",
     "https://learn.microsoft.com/en-us/sharepoint/what-s-new-in-admin-center",
+    "https://learn.microsoft.com/en-us/sharepointmigration/mm-faqs-dropbox",
     "https://learn.microsoft.com/en-us/sharepointmigration/mm-get-started",
+    "https://learn.microsoft.com/en-us/sharepointmigration/mm-google-overview",
     "https://learn.microsoft.com/en-us/windows/deployment/update/check-release-health",
     "https://learn.microsoft.com/en-us/windows/win32/wer/windows-error-reporting"
   ],
   "queue": [
-    {
-      "url": "https://learn.microsoft.com/en-us/Exchange/mailbox-migration/office-365-migration-best-practices",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoftteams/slack-to-teams-migration-tool",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/migration/microsoft-365-migration-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/migration/migration-orchestrator-1-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/sharepointmigration/mm-get-started",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/migration/cross-tenant-mailbox-migration",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/migration/cross-tenant-onedrive-migration",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/migration/cross-tenant-sharepoint-migration",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/migration/cross-tenant-sharepoint-bulk-site-migration",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/migration/cross-tenant-identity-mapping",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/migration/cross-tenant-sharepoint-migration-faqs",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/migration/migration-orchestrator-1-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/migration/migration-orchestrator-2-planning-prerequisites",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/migration/migration-orchestrator-8-faq",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/sharepointmigration/mm-get-started",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/sharepointmigration/mm-google-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/sharepointmigration/mm-faqs-dropbox",
-      "depth": 2
-    },
     {
       "url": "https://learn.microsoft.com/en-us/microsoftteams/slack-to-teams-migration-tool",
       "depth": 2
@@ -11432,17 +11460,76 @@
     {
       "url": "https://learn.microsoft.com/en-us/microsoft-365/business-video/",
       "depth": 2
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/permissions-reference",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/migration/cross-tenant-onedrive-migration",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/powershell/exchange/connect-to-exchange-online-powershell",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-endpoints",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/powershell/exchange/connect-to-exchange-online-powershell",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/purview/customer-key-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/enterprise/cross-tenant-sharepoint-migration",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/migration/cross-tenant-sharepoint-migration-step5",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/migration/migration-orchestrator-3-tenant-config",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/migration/migration-orchestrator-3-tenant-config",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/migration/migration-orchestrator-3-tenant-config",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/migration/migration-orchestrator-3-tenant-config",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/troubleshoot/microsoft-365/admin/orchestrated-migration/resolve-orchestrated-migration-errors",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/sharepointmigration/mm-google-step1-connect",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/sharepointmigration/mm-google-step2-scan-assess",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/sharepointmigration/mm-specialty-environments-support",
+      "depth": 3
     }
   ],
   "last_batch": {
     "attempted": 12,
-    "documents_total": 178,
-    "queued": 2501,
-    "failures": [
-      {
-        "url": "https://learn.microsoft.com/en-us/microsoft-365/business-video/",
-        "error": "ValueError"
-      }
-    ]
+    "documents_total": 190,
+    "queued": 2500,
+    "failures": []
   }
 }

@@ -1,25 +1,20 @@
 {
-  "generated_at": "2026-11-09T14:24:58.035399+00:00",
+  "generated_at": "2026-11-09T14:44:08.899930+00:00",
   "product": "AdminMonkey Academy",
   "certification_issuer": "ODPC",
   "official_microsoft_certification": false,
   "knowledge": {
-    "documents_collected": 178,
+    "documents_collected": 190,
     "review": {
-      "unreviewed": 178,
+      "unreviewed": 190,
       "approved": 0,
       "rejected": 0
     },
     "last_batch": {
       "attempted": 12,
-      "documents_total": 178,
-      "queued": 2501,
-      "failures": [
-        {
-          "url": "https://learn.microsoft.com/en-us/microsoft-365/business-video/",
-          "error": "ValueError"
-        }
-      ]
+      "documents_total": 190,
+      "queued": 2500,
+      "failures": []
     }
   },
   "tracks": [
