@@ -51,6 +51,12 @@ def build():
             counts[status if status in counts else "unreviewed"] += 1
     scenarios = bank.get("scenarios", [])
     assessment = read_json(ROOT / "assessment_results.json")
+    staging = read_json(ROOT / "retrieval_chunks.private.json")
+    retrieval = {"chunked_documents": staging.get("chunked_documents", 0),
+                 "chunks_prepared": len(staging.get("chunks", [])),
+                 "retrieval_quality_verified": False,
+                 "agent_answers_verified": 0,
+                 "note": "Ephemeral, provenance-checked chunk preparation; no searchable production index yet."}
     tracks = []
     for track in TRACKS:
         questions = sum(s.get("track") == track for s in scenarios)
@@ -69,7 +75,7 @@ def build():
             "official_microsoft_certification": False,
             "knowledge": {"documents_collected": len(docs), "manufacturer_verified": counts["approved"], "review": counts,
                           "last_batch": state.get("last_batch", {})},
-            "tracks": tracks,
+            "retrieval_staging": retrieval,\n            "tracks": tracks,
             "assessment_status": "manufacturer_sources_mapped_competence_not_yet_verified",
             "notice": "Collection is not learning; practice question count is not a competence score. No Banana Badge until independent agent responses are assessed."}
 
