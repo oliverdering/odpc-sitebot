@@ -4,6 +4,8 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/adminmonkey-daily-knowledge.yml'
+      - 'adminmonkey/knowledge/*.py'
+      - 'adminmonkey/academy/competency_bank.json'
   workflow_dispatch:
   schedule:
     - cron: '*/5 * * * *'
@@ -57,6 +59,7 @@ jobs:
           progress = json.loads((root / "academy_progress.json").read_text())
           manifest = json.loads((root / "document_manifest.json").read_text())
           assert progress["knowledge"]["documents_collected"] == len(manifest["documents"]), "document counts disagree"
+          assert len(manifest["documents"]) > 0, "No Microsoft Learn documents collected: failing instead of publishing empty learning progress"
           print("Verified document count:", len(manifest["documents"]))
           PY
       - name: Commit evidence updates only
