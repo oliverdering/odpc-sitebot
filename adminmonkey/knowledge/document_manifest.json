@@ -672,13 +672,109 @@
       "captured_at": "2026-11-09T09:20:00.178935+00:00",
       "depth": 1,
       "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview",
+      "sha256": "080a319a1b285cf9caf1acc0bc98041757dba22b07c87b1f2d7cef95c79a5c5a",
+      "captured_at": "2026-11-09T10:29:29.105407+00:00",
+      "depth": 1,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/extension-resource-types",
+      "sha256": "0a3dcd3eb3c1ee1d9d505c0d5f7f0444e51a0dbbe9af52f442f1ab402d1699bf",
+      "captured_at": "2026-11-09T10:29:29.201750+00:00",
+      "depth": 1,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/considerations/fundamental-concepts",
+      "sha256": "78481a31e2ce54a8c8d2ae5eceb79bdf3a0c97f357e38633f64797efa02f04ea",
+      "captured_at": "2026-11-09T10:29:29.558833+00:00",
+      "depth": 1,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/governance/management-groups/overview",
+      "sha256": "f7d6450ea53ca5ecb115d922589a682d711310ebfe569e9928e315e2ddd9a313",
+      "captured_at": "2026-11-09T10:29:29.767052+00:00",
+      "depth": 1,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/governance/policy/overview",
+      "sha256": "b895e6ddee6bf3c50ba88c001ace9e1211546e77e1c663a35cba073f8eb2acb0",
+      "captured_at": "2026-11-09T10:29:29.896311+00:00",
+      "depth": 1,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-whatis",
+      "sha256": "fcced23174e6d70103f628be97bde3b1fd33430d392fcfc9a2822b4f9dd77b63",
+      "captured_at": "2026-11-09T10:29:30.293150+00:00",
+      "depth": 1,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/move-resource-group-and-subscription",
+      "sha256": "7497c7b095ea38c7977184484d0e11d1216cb53d3c5723bdeda089e3a6aedeb6",
+      "captured_at": "2026-11-09T10:29:30.351551+00:00",
+      "depth": 1,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/role-assignments-portal",
+      "sha256": "7be3d8fa6b75ddf1b2398ec2a974c46730f770f85acf7b15e9888de180dee945",
+      "captured_at": "2026-11-09T10:29:30.507127+00:00",
+      "depth": 1,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/lock-resources",
+      "sha256": "7118c5410d250ac5ef21453b302ab4eeaa696d3e43e86f51d589b6fd4d00d2b8",
+      "captured_at": "2026-11-09T10:29:30.610711+00:00",
+      "depth": 1,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources",
+      "sha256": "3383c43839006acd1f2be539431e87a065293418c3fb87edeb0866cea5e29b8b",
+      "captured_at": "2026-11-09T10:29:30.732570+00:00",
+      "depth": 1,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/delete-resource-group",
+      "sha256": "1179e810be32e304f00ffad94b6940265f7b0c4a0c4e737bf1705182ac84c5b9",
+      "captured_at": "2026-11-09T10:29:30.868695+00:00",
+      "depth": 1,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/resources-without-resource-group-limit",
+      "sha256": "36d85530d61f5d74966e0d344ae2e7782efb6af426bf638fbc515905b268d7ee",
+      "captured_at": "2026-11-09T10:29:31.093934+00:00",
+      "depth": 1,
+      "review_status": "unreviewed"
     }
   ],
   "seen": [
+    "https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-whatis",
+    "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview",
+    "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/delete-resource-group",
+    "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/extension-resource-types",
+    "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/lock-resources",
+    "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/move-resource-group-and-subscription",
     "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/overview",
     "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types",
+    "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/resources-without-resource-group-limit",
+    "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources",
     "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tls-support",
     "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/overview",
+    "https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/considerations/fundamental-concepts",
+    "https://learn.microsoft.com/en-us/azure/governance/management-groups/overview",
+    "https://learn.microsoft.com/en-us/azure/governance/policy/overview",
+    "https://learn.microsoft.com/en-us/azure/role-based-access-control/role-assignments-portal",
     "https://learn.microsoft.com/en-us/contribute",
     "https://learn.microsoft.com/en-us/copilot/microsoft-365/",
     "https://learn.microsoft.com/en-us/defender-xdr/microsoft-365-defender",
@@ -773,58 +869,6 @@
     "https://learn.microsoft.com/en-us/security/zero-trust/zero-trust-overview"
   ],
   "queue": [
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview",
-      "depth": 1
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/extension-resource-types",
-      "depth": 1
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/considerations/fundamental-concepts",
-      "depth": 1
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/governance/management-groups/overview",
-      "depth": 1
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/governance/policy/overview",
-      "depth": 1
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-whatis",
-      "depth": 1
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/move-resource-group-and-subscription",
-      "depth": 1
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/governance/policy/overview",
-      "depth": 1
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/role-assignments-portal",
-      "depth": 1
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/lock-resources",
-      "depth": 1
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources",
-      "depth": 1
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/delete-resource-group",
-      "depth": 1
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/resources-without-resource-group-limit",
-      "depth": 1
-    },
     {
       "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/azure-subscription-service-limits",
       "depth": 1
@@ -10772,11 +10816,63 @@
     {
       "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview",
       "depth": 2
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/devops/deliver/what-is-infrastructure-as-code",
+      "depth": 2
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/template-functions-resource",
+      "depth": 2
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-setup-guide/identity",
+      "depth": 2
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview",
+      "depth": 2
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/governance/policy/how-to/remediate-resources",
+      "depth": 2
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-portal/quickstart-portal-dashboard-azure-cli",
+      "depth": 2
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-portal/supportability/how-to-create-azure-support-request",
+      "depth": 2
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview",
+      "depth": 2
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/active-directory/roles/manage-roles-portal",
+      "depth": 2
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/cost-management-billing/manage/cancel-azure-subscription",
+      "depth": 2
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/decision-guides/resource-tagging/",
+      "depth": 2
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/resource-provider-operations",
+      "depth": 2
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/networking/check-usage-against-limits",
+      "depth": 2
     }
   ],
   "last_batch": {
     "attempted": 12,
-    "documents_total": 96,
+    "documents_total": 108,
     "queued": 2500,
     "failures": []
   }
