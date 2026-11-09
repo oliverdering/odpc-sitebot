@@ -42,7 +42,7 @@ def main():
    if not path:continue
    target=(ROOT/path.lstrip("/")) if path.startswith("/") else (ROOT/name).parent/path
    if target.is_dir():target=target/"index.html"
-   if not target.exists() and path not in ("/data/models.json","/data/models-db.json"):
+   if not target.exists() and path.lstrip("/") not in ("data/models.json","data/models-db.json"):
     problems.append(f"{name}: broken local link {href}")
    elif u.fragment and target.suffix==".html":
     dest=pages.get(target.name)
