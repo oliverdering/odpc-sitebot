@@ -23,7 +23,7 @@ jobs:
           php -l site-deploy/odpc.de/odpc-premium-header.php
           python -m py_compile scripts/deploy_odpc_premium_header.py
           grep -q 'odpc-nav-panel' site-deploy/odpc.de/odpc-premium-header.php
-          grep -q 'wp_nav_menu' site-deploy/odpc.de/odpc-premium-header.php
+          grep -q 'odpc-nav-group' site-deploy/odpc.de/odpc-premium-header.php
       - name: Install SFTP client
         run: python -m pip install 'paramiko>=3.4,<5'
       - name: Deploy only ODPC navigation module and test live page
