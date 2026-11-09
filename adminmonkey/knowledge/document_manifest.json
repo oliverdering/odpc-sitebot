@@ -1085,6 +1085,90 @@
       "captured_at": "2026-11-09T11:17:09.588463+00:00",
       "depth": 2,
       "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/authentication/howto-mfa-userstates",
+      "sha256": "ee638c533f4213320af1df610468d4063003ce25d31a6e1937809111e02640b4",
+      "captured_at": "2026-11-09T14:22:21.836348+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/entra/identity/authentication/howto-mfaserver-nps-vpn",
+      "sha256": "1e4d04dc1cf00576c9029a7b8d8473e2811a11e8f0334ef9d4c15a53290804f9",
+      "captured_at": "2026-11-09T14:22:21.967946+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/plan-conditional-access",
+      "sha256": "2ba4df03c706c9e7c36a71178a9bb1ea5f517d3f7cb74b65ad3b5c374b2d163b",
+      "captured_at": "2026-11-09T14:22:22.011003+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/howto-conditional-access-policy-all-users-mfa",
+      "sha256": "00182546b878dd6ab4e96ccfe5ae08d25d3aa97575377cb6832428cc323f3033",
+      "captured_at": "2026-11-09T14:22:22.186028+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/policy-old-require-mfa-admin",
+      "sha256": "c494af8e6b28ff7ab502eef836a00be267afd7213834def2b921428e9b3fe710",
+      "captured_at": "2026-11-09T14:22:22.370871+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/policy-admin-phish-resistant-mfa",
+      "sha256": "4b7ae812107845528fe11b0ff7868c872f914117db5f561673bff5383eac22dc",
+      "captured_at": "2026-11-09T14:22:22.556036+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/howto-conditional-access-policy-block-legacy",
+      "sha256": "2aa96f9b91204d9c80542bac75ccb6294a0523a3b521883bf1d02b6c5c98a5fc",
+      "captured_at": "2026-11-09T14:22:22.710447+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/howto-conditional-access-policy-azure-management",
+      "sha256": "43ca29c439dc4e1cb08fb09621e3d2f904672541adba496fbd08021ba1869a11",
+      "captured_at": "2026-11-09T14:22:22.906850+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/security-emergency-access",
+      "sha256": "310018423488b9b5cc01dfc4b0661bd892ee59743802f4bb569571514c18968f",
+      "captured_at": "2026-11-09T14:22:22.997343+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/policy-all-users-mfa-strength",
+      "sha256": "00182546b878dd6ab4e96ccfe5ae08d25d3aa97575377cb6832428cc323f3033",
+      "captured_at": "2026-11-09T14:22:23.090222+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/policy-old-require-mfa-azure-mgmt",
+      "sha256": "43ca29c439dc4e1cb08fb09621e3d2f904672541adba496fbd08021ba1869a11",
+      "captured_at": "2026-11-09T14:22:23.144978+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/security-and-compliance/m365b-account-security-admins",
+      "sha256": "dd69af95b2f774c49123ad1e580b031fbb04cae8399dd7fb15bca98276573202",
+      "captured_at": "2026-11-09T14:22:23.365603+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
     }
   ],
   "seen": [
@@ -1147,8 +1231,18 @@
     "https://learn.microsoft.com/en-us/entra/identity-platform/",
     "https://learn.microsoft.com/en-us/entra/identity-platform/developer-glossary",
     "https://learn.microsoft.com/en-us/entra/identity-platform/v2-overview",
+    "https://learn.microsoft.com/en-us/entra/identity/authentication/howto-mfa-userstates",
+    "https://learn.microsoft.com/en-us/entra/identity/conditional-access/howto-conditional-access-policy-all-users-mfa",
+    "https://learn.microsoft.com/en-us/entra/identity/conditional-access/howto-conditional-access-policy-azure-management",
+    "https://learn.microsoft.com/en-us/entra/identity/conditional-access/howto-conditional-access-policy-block-legacy",
+    "https://learn.microsoft.com/en-us/entra/identity/conditional-access/plan-conditional-access",
+    "https://learn.microsoft.com/en-us/entra/identity/conditional-access/policy-admin-phish-resistant-mfa",
+    "https://learn.microsoft.com/en-us/entra/identity/conditional-access/policy-all-users-mfa-strength",
+    "https://learn.microsoft.com/en-us/entra/identity/conditional-access/policy-old-require-mfa-admin",
+    "https://learn.microsoft.com/en-us/entra/identity/conditional-access/policy-old-require-mfa-azure-mgmt",
     "https://learn.microsoft.com/en-us/entra/identity/domain-services/overview",
     "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/manage-roles-portal",
+    "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/security-emergency-access",
     "https://learn.microsoft.com/en-us/entra/security-copilot/security-copilot-in-entra",
     "https://learn.microsoft.com/en-us/entra/verified-id/decentralized-identifier-overview",
     "https://learn.microsoft.com/en-us/entra/verified-id/verifiable-credentials-standards",
@@ -1217,6 +1311,7 @@
     "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/share-calendars-with-external-users",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/stay-on-top-of-updates",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/misc/experience-insights-dashboard",
+    "https://learn.microsoft.com/en-us/microsoft-365/admin/security-and-compliance/m365b-account-security-admins",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/security-and-compliance/multi-factor-authentication-microsoft-365",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/security-and-compliance/set-up-multi-factor-authentication",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/setup/add-domain",
@@ -1237,6 +1332,7 @@
     "https://learn.microsoft.com/en-us/office/troubleshoot/",
     "https://learn.microsoft.com/en-us/powershell/microsoftgraph/overview",
     "https://learn.microsoft.com/en-us/previous-versions/",
+    "https://learn.microsoft.com/en-us/previous-versions/entra/identity/authentication/howto-mfaserver-nps-vpn",
     "https://learn.microsoft.com/en-us/principles-for-ai-generated-content",
     "https://learn.microsoft.com/en-us/purview/",
     "https://learn.microsoft.com/en-us/security/zero-trust/zero-trust-overview",
@@ -1245,82 +1341,6 @@
     "https://learn.microsoft.com/en-us/windows/win32/wer/windows-error-reporting"
   ],
   "queue": [
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/authentication/howto-mfa-userstates",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/previous-versions/entra/identity/authentication/howto-mfaserver-nps-vpn",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/plan-conditional-access",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/howto-conditional-access-policy-all-users-mfa",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/policy-old-require-mfa-admin",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/policy-admin-phish-resistant-mfa",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/howto-conditional-access-policy-block-legacy",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/howto-conditional-access-policy-azure-management",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/security-emergency-access",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/security-emergency-access",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/policy-all-users-mfa-strength",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/policy-old-require-mfa-admin",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/policy-admin-phish-resistant-mfa",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/policy-old-require-mfa-azure-mgmt",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/howto-conditional-access-policy-block-legacy",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/plan-conditional-access",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/plan-conditional-access",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/authentication/howto-mfa-userstates",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/security-and-compliance/m365b-account-security-admins",
-      "depth": 2
-    },
     {
       "url": "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-account-recovery-for-users",
       "depth": 2
@@ -11248,17 +11268,84 @@
     {
       "url": "https://learn.microsoft.com/en-us/admin/add-users/about-admin-roles",
       "depth": 2
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/entra/identity/authentication/howto-mfaserver-deploy",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/policy-all-users-mfa-strength",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/policy-admin-phish-resistant-mfa",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/authentication/howto-authentication-temporary-access-pass",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/policy-block-legacy-authentication",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/policy-old-require-mfa-azure-mgmt",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-create-delete-users",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-strengths",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-strength-advanced-options",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-cloud-apps",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-policy-common",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/assign-admin-roles",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/secure-least-privileged-access",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/authentication/howto-authentication-passwordless-phone",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-passwordless",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-passwordless",
+      "depth": 3
     }
   ],
   "last_batch": {
     "attempted": 12,
-    "documents_total": 155,
-    "queued": 2501,
-    "failures": [
-      {
-        "url": "https://learn.microsoft.com/en-us/admin/add-users/about-admin-roles",
-        "error": "ValueError"
-      }
-    ]
+    "documents_total": 167,
+    "queued": 2500,
+    "failures": []
   }
 }
