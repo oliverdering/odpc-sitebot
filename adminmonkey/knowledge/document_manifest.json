@@ -7237,6 +7237,623 @@
       "mapped_tracks": [
         "MS-102"
       ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/cards/cards",
+      "sha256": "3a364219b41cfa6155e8bad8a299a6fe85a8d59d15a128ba5f5a3d523b01447c",
+      "captured_at": "2026-11-09T20:09:12.470685+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/messaging-extensions",
+      "sha256": "a48dede4d4a796f963b77f2b59bdfc21183ddfe79230380b206db7a3506b3f1a",
+      "captured_at": "2026-11-09T20:09:12.773640+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/teams-send-activityfeednotifications",
+      "sha256": "09904b8b184926fbc5c7afed1a575e241afd70aacdb6c377fed57cf926b451ef",
+      "captured_at": "2026-11-09T20:09:13.545795+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/communications-api-overview",
+      "sha256": "d22e5898f9d51a84972b2b80b6195a21339dab2fc1191602d08e7ed9ee7a4f90",
+      "captured_at": "2026-11-09T20:09:13.805300+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/channel-post",
+      "sha256": "cf9bcf7e0b1496af431dfad4a771e99c4849db93b7cc6633735eb93c006cc396",
+      "captured_at": "2026-11-09T20:09:14.286155+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/teams-configuring-builtin-tabs",
+      "sha256": "9351d8b5673289e258b51e3db7fcff36e08b69d10a19db94be98f44a9ab4f92e",
+      "captured_at": "2026-11-09T20:09:14.363100+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/team-post-installedapps",
+      "sha256": "020e2a1622dd7d22fd464528ce917c62d645a6c36f8c2583cadab3275f31a756",
+      "captured_at": "2026-11-09T20:09:14.824583+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/team-archive",
+      "sha256": "31bdb54926b5e446dd42ed85f10c3122f3075c965e1540e903b708eaccd4d34e",
+      "captured_at": "2026-11-09T20:09:15.177737+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/channel",
+      "sha256": "b6cf30749eb707926a7cbb28e89eadb212fb51261eb28fcffcf0a4511107628b",
+      "captured_at": "2026-11-09T20:09:15.371259+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/teamstab",
+      "sha256": "c1fceaaff5eb0d7673e06fd06b96754ff96ea92dd263db046d626350047f5e59",
+      "captured_at": "2026-11-09T20:09:15.702619+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/teamsapp",
+      "sha256": "1a4cdf0b2b3f4f2f5080052e85f5a7274c721c62512f4e309367828f2d1ae810",
+      "captured_at": "2026-11-09T20:09:15.883882+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/teams-list-all-teams",
+      "sha256": "5a2e312a10cf11bc5ac0743558e5eb8c3286f8917a0b9a0bd379dc7f9cfaef35",
+      "captured_at": "2026-11-09T20:09:15.957035+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/enable-features-office-365",
+      "sha256": "158a900452d48bb3a050e6bdbf1d9c19ec5ec0029e334eca763741e066c942fc",
+      "captured_at": "2026-11-09T20:09:16.294646+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/teams-powershell-overview",
+      "sha256": "4518e8704a30ceeb1224654b20d9fe4241d98211a55efab885df4cbf2955c4c2",
+      "captured_at": "2026-11-09T20:09:16.466623+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/teamsappinstallation",
+      "sha256": "4a32d955a7e4121ad5d650e3e8cd76089a02f493fc89c6968c6602851e2f26bc",
+      "captured_at": "2026-11-09T20:09:16.691908+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/chatmessage-post",
+      "sha256": "dd9373245b08a47661fadb01ce4ccc54b113ae2c56ce136270908b55a44447a1",
+      "captured_at": "2026-11-09T20:09:16.949624+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/application-post-calls",
+      "sha256": "ebf9544cde08a5c766b033231ce971d880516054aa9f6a9ee3222d74553a5972",
+      "captured_at": "2026-11-09T20:09:17.244014+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/call-redirect",
+      "sha256": "bb291d90220fa14f1f1754294d7f8be2dde97dae1705605b3922908d5dfcad9f",
+      "captured_at": "2026-11-09T20:09:17.574060+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/call-answer",
+      "sha256": "76216efbd36dca4a60101b4c76de92672b6a7518efcbb375dd34bead80565abf",
+      "captured_at": "2026-11-09T20:09:17.718266+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/call-reject",
+      "sha256": "9647f9ef252a5c67c9ef87f349d14ae5e56d28c1dbb135abc137d720f13bbb11",
+      "captured_at": "2026-11-09T20:09:17.953427+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/call-playprompt",
+      "sha256": "938e6a3e47ceabda745bed346774d41524a8e9874fab53a8914c9d253cd18d79",
+      "captured_at": "2026-11-09T20:09:18.194155+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/call-record",
+      "sha256": "4550300691a0b87fdb1dd1e4c846dad28472e0d9ae27a57d8b67c2777c9b0fb0",
+      "captured_at": "2026-11-09T20:09:18.398688+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/call-subscribetotone",
+      "sha256": "0be9d5382c297432dabf2416641a3479c257c06fa938a555f438242447faef1c",
+      "captured_at": "2026-11-09T20:09:18.884730+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/call-transfer",
+      "sha256": "c8a488f34c554d59b20cbaa568bbb082ae92765eb9de6404dccad1bf06538af1",
+      "captured_at": "2026-11-09T20:09:19.194363+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/participant-invite",
+      "sha256": "8a0d77c9a06ee59002ee43d39ec220167f06c8a808d047e00d0597b270fffce9",
+      "captured_at": "2026-11-09T20:09:19.411374+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/call-list-participants",
+      "sha256": "bb48830bae62353df721d5b5d5b36088ba600e8d8d0e2dc183a8cc00d56a9b46",
+      "captured_at": "2026-11-09T20:09:21.159884+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/participant-mute",
+      "sha256": "205bd83659367c0fe05dd81565ecb7bc119237c467da842b6b5154687cdbc9d0",
+      "captured_at": "2026-11-09T20:09:21.383929+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/call-delete",
+      "sha256": "bb28841b970a1a668f73da09c0eedbdd9b00c3763890b09e6c148d919d724af3",
+      "captured_at": "2026-11-09T20:09:21.621386+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/application-post-onlinemeetings",
+      "sha256": "ca8db3c2dcf189a75e9d46e9343f31c1906f74afba4be23018733eb0152c8a9e",
+      "captured_at": "2026-11-09T20:09:21.875405+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/onlinemeeting-get",
+      "sha256": "5894b487cceef0a6279e7d177e4a0d10f195a041b421e561d9140077fcd3ca88",
+      "captured_at": "2026-11-09T20:09:22.458635+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/shift",
+      "sha256": "71b941fa025c80f74037d1b5cf4b6c98e254c0d6ade5a8db2d00363995536d7e",
+      "captured_at": "2026-11-09T20:09:22.648197+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/learningprovider",
+      "sha256": "81b7183d039dcdefd6a08058c9645ad1343a87dbd18f364ca418b283c0bfb8dd",
+      "captured_at": "2026-11-09T20:09:22.811013+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/learningcontent",
+      "sha256": "f6e512b9bedb8ea2b5c689728995a57ea342e7dc34521d4aa11aee19195c3da3",
+      "captured_at": "2026-11-09T20:09:23.157683+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/teams-api-overview",
+      "sha256": "c0218418e661ca925d9398e325091dce033785dab9b80ddfda2fc8a2058c9368",
+      "captured_at": "2026-11-09T20:09:23.441810+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/viva-learning-api-overview",
+      "sha256": "4a095d9d2ed9ccd2b83da26f6adf3c41e33db1edb509ececef4d94ce8b248ae5",
+      "captured_at": "2026-11-09T20:09:23.733042+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/active-directory/develop/v1-permissions-and-consent",
+      "sha256": "bc6b2ae44fb409f3cab54883804910361e9110a3971966ff35b25481c2864bed",
+      "captured_at": "2026-11-09T20:09:24.013681+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/concepts-overview",
+      "sha256": "4c935e38d6052363286d73f15d1c6130eddb2d7fc2669ea23dc3a7a17fea4cb8",
+      "captured_at": "2026-11-09T20:12:55.270460+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/patterns/analyze-storage-data",
+      "sha256": "6cb98ff1b6fcc542b5d6f2bf132f011abe498484cb6c49d8a045165a267ae140",
+      "captured_at": "2026-11-09T20:12:55.512850+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/patterns/interactive-applications",
+      "sha256": "a6f15ce48fbb9e4328087a6c4980282e6f8a51c818fd21b2ec6895a054a612e5",
+      "captured_at": "2026-11-09T20:12:55.730493+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/patterns/interactive-app-with-change-notifications-via-webhooks",
+      "sha256": "b1ecdb81f89988a95941a82fded13f3bb95105729e4f0214193c68f5ce25399b",
+      "captured_at": "2026-11-09T20:12:55.930143+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/patterns/notifications-in-push-mode",
+      "sha256": "28234e155680e7ca35d78590cfb092d433ac66f35fb4bf6db84eb1825912dec5",
+      "captured_at": "2026-11-09T20:12:56.191365+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/patterns/notifications-in-pull-mode",
+      "sha256": "af863fc4c333f6c8ccb22650324d594cad5f54ae19929cfd6e250deb20498fed",
+      "captured_at": "2026-11-09T20:12:56.393768+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/patterns/augment-search-experience-with-custom-data",
+      "sha256": "a5a4d9585f9cb7978f082ea066724575e59c78071d107289dadbdc050442fae6",
+      "captured_at": "2026-11-09T20:12:56.908004+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/architecture/solutions/microsoft-365-scenarios",
+      "sha256": "82fbe748a4cee9eae7013d8ed42068f07b85dfd44c583a7297fbbe6d303fbcc9",
+      "captured_at": "2026-11-09T20:12:57.605433+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102",
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/",
+      "sha256": "824d91bcfe432711013bddfdd7ad38ed37b2cf4758a54b5386f7f86859b80e64",
+      "captured_at": "2026-11-09T20:12:57.707010+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/sample-v2-code",
+      "sha256": "66ea76b1b1b350c4bff60a256c80d95849dad32d04ca25e044d189761b9086ff",
+      "captured_at": "2026-11-09T20:12:58.174632+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/tutorials",
+      "sha256": "4ac69842b133662f4d49d022868d61a380fb8234442d0c8c08c45f6d64780501",
+      "captured_at": "2026-11-09T20:12:59.352352+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/msal-client-applications",
+      "sha256": "27bf7bd098747e06e36814b9840ed55a2b360689859943a48e42bf70dd9014e5",
+      "captured_at": "2026-11-09T20:12:59.525768+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/auth-register-app-v2",
+      "sha256": "4e6d71e6f1649a9d478bb33801310067d76f582282893f1a0f090592103998e5",
+      "captured_at": "2026-11-09T20:12:59.833841+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/active-directory/develop/permissions-consent-overview",
+      "sha256": "bc6b2ae44fb409f3cab54883804910361e9110a3971966ff35b25481c2864bed",
+      "captured_at": "2026-11-09T20:13:00.088819+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/access-token-claims-reference",
+      "sha256": "5334f33a1ff500bfe8f1c6437ba5a34d70b326756d2f537dcae619030bef2625",
+      "captured_at": "2026-11-09T20:13:00.171832+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/id-tokens",
+      "sha256": "788fa8b444cbe2a0ebba4696cc51abe2b08a22d1518370de2a5ae13374ab49c9",
+      "captured_at": "2026-11-09T20:13:00.517943+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/auth-v2-user",
+      "sha256": "ab0d1b13b44d894065fb1a50f57b30be9379f8816c173974147f0efbae72e17a",
+      "captured_at": "2026-11-09T20:13:00.646284+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/auth-v2-service",
+      "sha256": "ea224df67aa955dcb70220d6106ec13c65d6b8d2bd7706f363cd04a45ad4bfba",
+      "captured_at": "2026-11-09T20:13:00.765083+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/legal/microsoft-apis/terms-of-use-changelog",
+      "sha256": "594cca60e4ea1c98a0b3fe16cb9a4ee1eea21b78e437064d36d9ec028b204364",
+      "captured_at": "2026-11-09T20:13:00.997521+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph",
+      "sha256": "6834b454948ff991b415f0fe0252e7b26eb1e27a6ef215b56c6c1cbe560274e2",
+      "captured_at": "2026-11-09T20:13:01.248874+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows/project-rome/",
+      "sha256": "9592d8c80d1f844a281b7122f38b6fe9ae1b42838d9f7c9d5af7b6528be7a309",
+      "captured_at": "2026-11-09T20:13:01.445148+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-copilot-connector",
+      "sha256": "fe0135d77fac25f5997a4ae625c0400c2a705d7539bf9ccf36ee8377a53631cb",
+      "captured_at": "2026-11-09T20:13:01.587074+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-type-connectors",
+      "sha256": "439245f131d2d8158218b3d57e0f7643643807dca7633db22542e8d2ec902232",
+      "captured_at": "2026-11-09T20:13:01.803583+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-authentication",
+      "sha256": "cffe768842bc9c1b624d41389dd546062c174e2809f7674209ee5ad6af5c4103",
+      "captured_at": "2026-11-09T20:13:01.919528+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview",
+      "sha256": "d6efd0c9e0f8051166b8ca219baa321f3a5a148b05f6e8c6b8523c3e6957949d",
+      "captured_at": "2026-11-09T20:13:02.136863+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/connecting-external-content-manage-schema",
+      "sha256": "dcb7fbaf595a6c9034624fdd9bdcbb9561227ab326e7246c27db3e3cbce644bc",
+      "captured_at": "2026-11-09T20:13:02.328750+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/connectors-gallery",
+      "sha256": "9e4e39f03f161040e5718d7af6b1811e5ee273289065c37af251abaf82f577e9",
+      "captured_at": "2026-11-09T20:13:02.567727+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/prerequisites",
+      "sha256": "5cda048df875917259b69909a1448e92976d551ac41c2aa45a07181441022896",
+      "captured_at": "2026-11-09T20:13:02.855916+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/toolkit/get-started/add-aad-app-registration",
+      "sha256": "24f1c7e533ca17f26a965bcba67ca24b56e608744cea5c7cee04f32983ad6c91",
+      "captured_at": "2026-11-09T20:13:03.088904+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/connecting-external-content-deploy-teams",
+      "sha256": "fe0135d77fac25f5997a4ae625c0400c2a705d7539bf9ccf36ee8377a53631cb",
+      "captured_at": "2026-11-09T20:13:03.932519+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-your-first-connector",
+      "sha256": "797227a5ea932cde97b7c252e3cb15787778ba8aabc509bd0645385415efb11c",
+      "captured_at": "2026-11-09T20:13:04.113577+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/custom-connector-sdk-sample-create",
+      "sha256": "86e3824ab84d0bacca09bc2c63d0f66a19b31e293bb37e484ce26858b8eb0168",
+      "captured_at": "2026-11-09T20:13:04.321821+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/connecting-external-content-connectors-api-overview",
+      "sha256": "cd412df27da2bdfe479a595d63dbe6e9a4e7f65bcb593e8f50cd05e089d68bc4",
+      "captured_at": "2026-11-09T20:13:04.532549+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/externalconnectors-urltoitemresolverbase",
+      "sha256": "326b4bbbfc765717594f0a769f1a7ca4163a75b38f4e5aa6c972dc5af2320972",
+      "captured_at": "2026-11-09T20:13:05.039712+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/externalconnectors-externalitem-addactivities",
+      "sha256": "8f2a8780f8a69f3d07633a973696f4f9b4e771054e6d8da3086f157b17b90be7",
+      "captured_at": "2026-11-09T20:13:05.429322+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftsearch/connectors-in-all-vertical",
+      "sha256": "f05a403495020658f9f8b2d5882cca91b8e8d60ed6a41f15539b48e25fb33129",
+      "captured_at": "2026-11-09T20:13:05.736386+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
     }
   ],
   "seen": [
@@ -7264,6 +7881,8 @@
     "https://learn.microsoft.com/en-us/archive/microsoft-edge/legacy/",
     "https://learn.microsoft.com/en-us/azure",
     "https://learn.microsoft.com/en-us/azure/active-directory/authentication/concept-sspr-policy",
+    "https://learn.microsoft.com/en-us/azure/active-directory/develop/permissions-consent-overview",
+    "https://learn.microsoft.com/en-us/azure/active-directory/develop/v1-permissions-and-consent",
     "https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-whatis",
     "https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/users-default-permissions",
     "https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/whats-new",
@@ -7271,6 +7890,8 @@
     "https://learn.microsoft.com/en-us/azure/active-directory/roles/permissions-reference",
     "https://learn.microsoft.com/en-us/azure/ai-foundry/what-is-azure-ai-foundry",
     "https://learn.microsoft.com/en-us/azure/architecture/checklist/resiliency-per-service",
+    "https://learn.microsoft.com/en-us/azure/architecture/patterns/",
+    "https://learn.microsoft.com/en-us/azure/architecture/solutions/microsoft-365-scenarios",
     "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview",
     "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/azure-subscription-service-limits",
     "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/control-plane-and-data-plane",
@@ -7348,7 +7969,11 @@
     "https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-policies",
     "https://learn.microsoft.com/en-us/entra/id-protection/overview-identity-protection",
     "https://learn.microsoft.com/en-us/entra/identity-platform/",
+    "https://learn.microsoft.com/en-us/entra/identity-platform/access-token-claims-reference",
     "https://learn.microsoft.com/en-us/entra/identity-platform/developer-glossary",
+    "https://learn.microsoft.com/en-us/entra/identity-platform/id-tokens",
+    "https://learn.microsoft.com/en-us/entra/identity-platform/msal-client-applications",
+    "https://learn.microsoft.com/en-us/entra/identity-platform/sample-v2-code",
     "https://learn.microsoft.com/en-us/entra/identity-platform/v2-overview",
     "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-account-recovery-for-users",
     "https://learn.microsoft.com/en-us/entra/identity/authentication/howto-mfa-userstates",
@@ -7377,12 +8002,26 @@
     "https://learn.microsoft.com/en-us/exchange/recipients/dynamic-distribution-groups/dynamic-distribution-groups",
     "https://learn.microsoft.com/en-us/exchange/recipients/mail-enabled-security-groups",
     "https://learn.microsoft.com/en-us/exchange/sharing-exchange-2013-help",
+    "https://learn.microsoft.com/en-us/graph",
     "https://learn.microsoft.com/en-us/graph/aad-advanced-queries",
     "https://learn.microsoft.com/en-us/graph/api/activitiescontainer-post-contentactivities",
     "https://learn.microsoft.com/en-us/graph/api/application-delta",
+    "https://learn.microsoft.com/en-us/graph/api/application-post-calls",
+    "https://learn.microsoft.com/en-us/graph/api/application-post-onlinemeetings",
     "https://learn.microsoft.com/en-us/graph/api/associatedteaminfo-list",
     "https://learn.microsoft.com/en-us/graph/api/calendar-getschedule",
     "https://learn.microsoft.com/en-us/graph/api/calendar-post-events",
+    "https://learn.microsoft.com/en-us/graph/api/call-answer",
+    "https://learn.microsoft.com/en-us/graph/api/call-delete",
+    "https://learn.microsoft.com/en-us/graph/api/call-list-participants",
+    "https://learn.microsoft.com/en-us/graph/api/call-playprompt",
+    "https://learn.microsoft.com/en-us/graph/api/call-record",
+    "https://learn.microsoft.com/en-us/graph/api/call-redirect",
+    "https://learn.microsoft.com/en-us/graph/api/call-reject",
+    "https://learn.microsoft.com/en-us/graph/api/call-subscribetotone",
+    "https://learn.microsoft.com/en-us/graph/api/call-transfer",
+    "https://learn.microsoft.com/en-us/graph/api/channel-post",
+    "https://learn.microsoft.com/en-us/graph/api/chatmessage-post",
     "https://learn.microsoft.com/en-us/graph/api/directory-deleteditems-delete",
     "https://learn.microsoft.com/en-us/graph/api/directory-deleteditems-get",
     "https://learn.microsoft.com/en-us/graph/api/directory-deleteditems-getuserownedobjects",
@@ -7418,6 +8057,7 @@
     "https://learn.microsoft.com/en-us/graph/api/event-snoozereminder",
     "https://learn.microsoft.com/en-us/graph/api/event-tentativelyaccept",
     "https://learn.microsoft.com/en-us/graph/api/event-update",
+    "https://learn.microsoft.com/en-us/graph/api/externalconnectors-externalitem-addactivities",
     "https://learn.microsoft.com/en-us/graph/api/group-delete",
     "https://learn.microsoft.com/en-us/graph/api/group-delete-members",
     "https://learn.microsoft.com/en-us/graph/api/group-delta",
@@ -7441,6 +8081,7 @@
     "https://learn.microsoft.com/en-us/graph/api/multivaluelegacyextendedproperty-post-multivalueextendedproperties",
     "https://learn.microsoft.com/en-us/graph/api/onenote-list-notebooks",
     "https://learn.microsoft.com/en-us/graph/api/onenote-post-notebooks",
+    "https://learn.microsoft.com/en-us/graph/api/onlinemeeting-get",
     "https://learn.microsoft.com/en-us/graph/api/opentypeextension-get",
     "https://learn.microsoft.com/en-us/graph/api/opentypeextension-post-opentypeextension",
     "https://learn.microsoft.com/en-us/graph/api/outlookuser-list-mastercategories",
@@ -7450,6 +8091,8 @@
     "https://learn.microsoft.com/en-us/graph/api/overview",
     "https://learn.microsoft.com/en-us/graph/api/ownerlessgrouppolicy-get",
     "https://learn.microsoft.com/en-us/graph/api/ownerlessgrouppolicy-upsert",
+    "https://learn.microsoft.com/en-us/graph/api/participant-invite",
+    "https://learn.microsoft.com/en-us/graph/api/participant-mute",
     "https://learn.microsoft.com/en-us/graph/api/planneruser-list-tasks",
     "https://learn.microsoft.com/en-us/graph/api/profilephoto-delete",
     "https://learn.microsoft.com/en-us/graph/api/profilephoto-get",
@@ -7468,8 +8111,10 @@
     "https://learn.microsoft.com/en-us/graph/api/resources/authentication",
     "https://learn.microsoft.com/en-us/graph/api/resources/calendar",
     "https://learn.microsoft.com/en-us/graph/api/resources/calendargroup",
+    "https://learn.microsoft.com/en-us/graph/api/resources/channel",
     "https://learn.microsoft.com/en-us/graph/api/resources/chat",
     "https://learn.microsoft.com/en-us/graph/api/resources/cloudpc",
+    "https://learn.microsoft.com/en-us/graph/api/resources/communications-api-overview",
     "https://learn.microsoft.com/en-us/graph/api/resources/contact",
     "https://learn.microsoft.com/en-us/graph/api/resources/contactfolder",
     "https://learn.microsoft.com/en-us/graph/api/resources/contentactivity",
@@ -7491,6 +8136,7 @@
     "https://learn.microsoft.com/en-us/graph/api/resources/event",
     "https://learn.microsoft.com/en-us/graph/api/resources/eventmessage",
     "https://learn.microsoft.com/en-us/graph/api/resources/extension",
+    "https://learn.microsoft.com/en-us/graph/api/resources/externalconnectors-urltoitemresolverbase",
     "https://learn.microsoft.com/en-us/graph/api/resources/fileattachment",
     "https://learn.microsoft.com/en-us/graph/api/resources/group",
     "https://learn.microsoft.com/en-us/graph/api/resources/grouplifecyclepolicy",
@@ -7506,6 +8152,8 @@
     "https://learn.microsoft.com/en-us/graph/api/resources/itemattachment",
     "https://learn.microsoft.com/en-us/graph/api/resources/itembody",
     "https://learn.microsoft.com/en-us/graph/api/resources/iteminsights",
+    "https://learn.microsoft.com/en-us/graph/api/resources/learningcontent",
+    "https://learn.microsoft.com/en-us/graph/api/resources/learningprovider",
     "https://learn.microsoft.com/en-us/graph/api/resources/licenseassignmentstate",
     "https://learn.microsoft.com/en-us/graph/api/resources/licensedetails",
     "https://learn.microsoft.com/en-us/graph/api/resources/localeinfo",
@@ -7551,9 +8199,14 @@
     "https://learn.microsoft.com/en-us/graph/api/resources/scheduleinformation",
     "https://learn.microsoft.com/en-us/graph/api/resources/security-api-overview",
     "https://learn.microsoft.com/en-us/graph/api/resources/serviceprovisioningerror",
+    "https://learn.microsoft.com/en-us/graph/api/resources/shift",
     "https://learn.microsoft.com/en-us/graph/api/resources/signinactivity",
     "https://learn.microsoft.com/en-us/graph/api/resources/singlevaluelegacyextendedproperty",
     "https://learn.microsoft.com/en-us/graph/api/resources/team",
+    "https://learn.microsoft.com/en-us/graph/api/resources/teams-api-overview",
+    "https://learn.microsoft.com/en-us/graph/api/resources/teamsapp",
+    "https://learn.microsoft.com/en-us/graph/api/resources/teamsappinstallation",
+    "https://learn.microsoft.com/en-us/graph/api/resources/teamstab",
     "https://learn.microsoft.com/en-us/graph/api/resources/timezoneinformation",
     "https://learn.microsoft.com/en-us/graph/api/resources/todo",
     "https://learn.microsoft.com/en-us/graph/api/resources/todotask",
@@ -7565,10 +8218,13 @@
     "https://learn.microsoft.com/en-us/graph/api/resources/usersettings",
     "https://learn.microsoft.com/en-us/graph/api/resources/usersolutionroot",
     "https://learn.microsoft.com/en-us/graph/api/resources/userteamwork",
+    "https://learn.microsoft.com/en-us/graph/api/resources/viva-learning-api-overview",
     "https://learn.microsoft.com/en-us/graph/api/search-query",
     "https://learn.microsoft.com/en-us/graph/api/serviceprincipal-delta",
     "https://learn.microsoft.com/en-us/graph/api/singlevaluelegacyextendedproperty-get",
     "https://learn.microsoft.com/en-us/graph/api/singlevaluelegacyextendedproperty-post-singlevalueextendedproperties",
+    "https://learn.microsoft.com/en-us/graph/api/team-archive",
+    "https://learn.microsoft.com/en-us/graph/api/team-post-installedapps",
     "https://learn.microsoft.com/en-us/graph/api/team-put-teams",
     "https://learn.microsoft.com/en-us/graph/api/todo-list-lists",
     "https://learn.microsoft.com/en-us/graph/api/todo-post-lists",
@@ -7646,6 +8302,9 @@
     "https://learn.microsoft.com/en-us/graph/api/userteamwork-list-installedapps",
     "https://learn.microsoft.com/en-us/graph/api/userteamwork-post-installedapps",
     "https://learn.microsoft.com/en-us/graph/api/userteamwork-teamsappinstallation-upgrade",
+    "https://learn.microsoft.com/en-us/graph/auth-register-app-v2",
+    "https://learn.microsoft.com/en-us/graph/auth-v2-service",
+    "https://learn.microsoft.com/en-us/graph/auth-v2-user",
     "https://learn.microsoft.com/en-us/graph/auth/auth-concepts",
     "https://learn.microsoft.com/en-us/graph/azuread-users-concept-overview",
     "https://learn.microsoft.com/en-us/graph/backup-storage-concept-overview",
@@ -7653,8 +8312,12 @@
     "https://learn.microsoft.com/en-us/graph/browser-edge-concept-overview",
     "https://learn.microsoft.com/en-us/graph/change-notifications-overview",
     "https://learn.microsoft.com/en-us/graph/cloudpc-concept-overview",
+    "https://learn.microsoft.com/en-us/graph/connecting-external-content-connectors-api-overview",
     "https://learn.microsoft.com/en-us/graph/connecting-external-content-connectors-overview",
+    "https://learn.microsoft.com/en-us/graph/connecting-external-content-deploy-teams",
+    "https://learn.microsoft.com/en-us/graph/connecting-external-content-manage-schema",
     "https://learn.microsoft.com/en-us/graph/cross-device-concept-overview",
+    "https://learn.microsoft.com/en-us/graph/custom-connector-sdk-sample-create",
     "https://learn.microsoft.com/en-us/graph/custom-security-attributes-examples",
     "https://learn.microsoft.com/en-us/graph/data-connect-concept-overview",
     "https://learn.microsoft.com/en-us/graph/delta-query-events",
@@ -7685,6 +8348,12 @@
     "https://learn.microsoft.com/en-us/graph/outlook-mail-concept-overview",
     "https://learn.microsoft.com/en-us/graph/overview",
     "https://learn.microsoft.com/en-us/graph/overview-major-services",
+    "https://learn.microsoft.com/en-us/graph/patterns/analyze-storage-data",
+    "https://learn.microsoft.com/en-us/graph/patterns/augment-search-experience-with-custom-data",
+    "https://learn.microsoft.com/en-us/graph/patterns/interactive-app-with-change-notifications-via-webhooks",
+    "https://learn.microsoft.com/en-us/graph/patterns/interactive-applications",
+    "https://learn.microsoft.com/en-us/graph/patterns/notifications-in-pull-mode",
+    "https://learn.microsoft.com/en-us/graph/patterns/notifications-in-push-mode",
     "https://learn.microsoft.com/en-us/graph/people-insights-overview",
     "https://learn.microsoft.com/en-us/graph/permissions-overview",
     "https://learn.microsoft.com/en-us/graph/permissions-reference",
@@ -7701,8 +8370,13 @@
     "https://learn.microsoft.com/en-us/graph/sharepoint-concept-overview",
     "https://learn.microsoft.com/en-us/graph/social-intel-concept-overview",
     "https://learn.microsoft.com/en-us/graph/teams-concept-overview",
+    "https://learn.microsoft.com/en-us/graph/teams-configuring-builtin-tabs",
+    "https://learn.microsoft.com/en-us/graph/teams-list-all-teams",
+    "https://learn.microsoft.com/en-us/graph/teams-send-activityfeednotifications",
     "https://learn.microsoft.com/en-us/graph/todo-concept-overview",
+    "https://learn.microsoft.com/en-us/graph/toolkit/get-started/add-aad-app-registration",
     "https://learn.microsoft.com/en-us/graph/tutorial-lifecycle-workflows-set-employeeleavedatetime",
+    "https://learn.microsoft.com/en-us/graph/tutorials",
     "https://learn.microsoft.com/en-us/graph/universal-print-concept-overview",
     "https://learn.microsoft.com/en-us/graph/use-the-api",
     "https://learn.microsoft.com/en-us/graph/whats-new-overview",
@@ -7723,6 +8397,7 @@
     "https://learn.microsoft.com/en-us/intune/intune-service/fundamentals/what-is-intune",
     "https://learn.microsoft.com/en-us/intune/whats-new/",
     "https://learn.microsoft.com/en-us/legal/microsoft-apis/terms-of-use",
+    "https://learn.microsoft.com/en-us/legal/microsoft-apis/terms-of-use-changelog",
     "https://learn.microsoft.com/en-us/legal/termsofuse",
     "https://learn.microsoft.com/en-us/lifecycle/definitions",
     "https://learn.microsoft.com/en-us/lifecycle/faq/extended-security-updates",
@@ -7850,8 +8525,15 @@
     "https://learn.microsoft.com/en-us/microsoft-365/commerce/try-or-buy-microsoft-365",
     "https://learn.microsoft.com/en-us/microsoft-365/compliance/dlp-learn-about-dlp",
     "https://learn.microsoft.com/en-us/microsoft-365/compliance/whats-new",
+    "https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/connectors-gallery",
+    "https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview",
     "https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/overview",
+    "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-your-first-connector",
     "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview",
+    "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-copilot-connector",
+    "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-authentication",
+    "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-type-connectors",
+    "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/prerequisites",
     "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-page",
     "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-search",
     "https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes",
@@ -7940,9 +8622,11 @@
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/workflows-experience/flow-designer",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/workflows-experience/flows-overview",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/workflows-experience/microsoft-365-copilot-node-workflow",
+    "https://learn.microsoft.com/en-us/microsoftsearch/connectors-in-all-vertical",
     "https://learn.microsoft.com/en-us/microsoftteams/apps-in-teams",
     "https://learn.microsoft.com/en-us/microsoftteams/communicate-with-users-from-other-organizations",
     "https://learn.microsoft.com/en-us/microsoftteams/deploy-overview",
+    "https://learn.microsoft.com/en-us/microsoftteams/enable-features-office-365",
     "https://learn.microsoft.com/en-us/microsoftteams/exchange-teams-interact",
     "https://learn.microsoft.com/en-us/microsoftteams/manage-teams-in-modern-portal",
     "https://learn.microsoft.com/en-us/microsoftteams/manage-teams-overview",
@@ -7950,13 +8634,17 @@
     "https://learn.microsoft.com/en-us/microsoftteams/platform",
     "https://learn.microsoft.com/en-us/microsoftteams/platform/",
     "https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/bots/bots-overview",
+    "https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/cards/cards",
+    "https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/concepts-overview",
     "https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/connectors/connectors",
+    "https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/messaging-extensions",
     "https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/tabs/tabs-overview",
     "https://learn.microsoft.com/en-us/microsoftteams/settings-policies-reference",
     "https://learn.microsoft.com/en-us/microsoftteams/slack-to-teams-migration-tool",
     "https://learn.microsoft.com/en-us/microsoftteams/teams-add-on-licensing/microsoft-teams-add-on-licensing",
     "https://learn.microsoft.com/en-us/microsoftteams/teams-analytics-and-reports/teams-reporting-reference",
     "https://learn.microsoft.com/en-us/microsoftteams/teams-overview",
+    "https://learn.microsoft.com/en-us/microsoftteams/teams-powershell-overview",
     "https://learn.microsoft.com/en-us/microsoftteams/training-microsoft-teams-landing-page",
     "https://learn.microsoft.com/en-us/microsoftteams/using-admin-roles",
     "https://learn.microsoft.com/en-us/office/",
@@ -8061,489 +8749,10 @@
     "https://learn.microsoft.com/en-us/troubleshoot/viva/insights/viva-insights-welcome",
     "https://learn.microsoft.com/en-us/troubleshoot/viva/pulse/viva-pulse-welcome",
     "https://learn.microsoft.com/en-us/windows/deployment/update/check-release-health",
+    "https://learn.microsoft.com/en-us/windows/project-rome/",
     "https://learn.microsoft.com/en-us/windows/win32/wer/windows-error-reporting"
   ],
   "queue": [
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/cards/cards",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/messaging-extensions",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/teams-send-activityfeednotifications",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/communications-api-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/team-put-teams",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/group-post-members",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/channel-post",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/teams-configuring-builtin-tabs",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/team-post-installedapps",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/group-post-events",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/team-archive",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/group-delete",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/team",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/channel",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/teamstab",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/teamsapp",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/teams-list-all-teams",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/team-archive",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoftteams/enable-features-office-365",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoftteams/teams-powershell-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/permissions-reference",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/team",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/channel",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/teamstab",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/team",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/channel",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/teamsappinstallation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/teamstab",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/chatmessage-post",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/teams-list-all-teams",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/teamsappinstallation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/teamstab",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/application-post-calls",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/call-redirect",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/call-answer",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/call-reject",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/call-playprompt",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/call-record",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/call-subscribetotone",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/call-transfer",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/legal/microsoft-apis/terms-of-use",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/application-post-calls",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/participant-invite",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/application-post-calls",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/call-list-participants",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/participant-mute",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/application-post-calls",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/call-playprompt",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/call-delete",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/application-post-onlinemeetings",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/onlinemeeting-get",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/application-post-calls",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/shift",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/learningprovider",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/learningcontent",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/teams-api-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/teams-api-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/shift",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/shift",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/viva-learning-api-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/viva-learning-api-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/permissions-reference",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/active-directory/develop/v1-permissions-and-consent",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/team",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/channel",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/group",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/teams-api-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/permissions-reference",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/concepts-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/patterns/analyze-storage-data",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/patterns/interactive-applications",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/patterns/interactive-app-with-change-notifications-via-webhooks",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/patterns/notifications-in-push-mode",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/patterns/notifications-in-pull-mode",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/patterns/augment-search-experience-with-custom-data",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/architecture/solutions/microsoft-365-scenarios",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/v2-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/sample-v2-code",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/tutorials",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/msal-client-applications",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/auth-register-app-v2",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/permissions-reference",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/active-directory/develop/permissions-consent-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/permissions-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/access-token-claims-reference",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/id-tokens",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/auth-v2-user",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/auth-v2-service",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/permissions-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/tutorials",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/legal/microsoft-apis/terms-of-use-changelog",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/windows/project-rome/",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-copilot-connector",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-copilot-connector",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-copilot-connector",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-copilot-connector",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-type-connectors",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-authentication",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/connecting-external-content-manage-schema",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/connectors-gallery",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/prerequisites",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/toolkit/get-started/add-aad-app-registration",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/connecting-external-content-deploy-teams",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-your-first-connector",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/custom-connector-sdk-sample-create",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/connecting-external-content-connectors-api-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/connecting-external-content-manage-schema",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/externalconnectors-urltoitemresolverbase",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/externalconnectors-externalitem-addactivities",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoftsearch/connectors-in-all-vertical",
-      "depth": 2
-    },
     {
       "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-type-connectors",
       "depth": 2
@@ -18063,11 +18272,491 @@
     {
       "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/what-are-webhooks-and-connectors",
       "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/task-modules-and-cards/what-are-cards",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/messaging-extensions/what-are-messaging-extensions",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/call",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/channel",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/channel-get-filesfolder",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/channel-get-filesfolder",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/channel-post-tabs",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/teamsapp",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/team-unarchive",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/graph-api/rsc/resource-specific-consent",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/channel-list",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/team-list-incomingchannels",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/team-list-allchannels",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/tabs/what-are-tabs",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/teams-api-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/team-get",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/policy-assignment-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/monitor-call-quality-qos",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/teams-powershell-supported-versions",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/team-list-installedapps",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/team-get-installedapps",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/team-teamsappinstallation-upgrade",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/team-delete-installedapps",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/chat-list-installedapps",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/chat-get-installedapps",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/chat-post-installedapps",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/chatmessage",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/teams-import-messages",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/graph-api/import-messages/import-external-messages-to-teams",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/call",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/calls-and-meetings/registering-calling-bot",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/graph-api/rsc/resource-specific-consent",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/MicrosoftTeams/cloud-video-interop",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/call-answer",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/call",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/call-delete",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/commsoperation",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/commsoperation",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/call",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/invitationparticipantinfo",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/commsoperation",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/invitationparticipantinfo",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/inviteparticipantsoperation",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/participant",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/muteparticipantoperation",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/muteparticipantoperation",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/cloud-communication-online-meeting-application-access-policy",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/cloud-communication-online-meeting-application-access-policy",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/joinmeetingidsettings",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/create-custom-meeting-template",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/teams-live-events/what-are-teams-live-events",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/schedule",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/changetrackedentity",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/entity",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/entity",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/channel-post-tabs",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/learningcourseactivity",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/employeeexperience-post-learningproviders",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/learningprovider-get",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/employeeexperience-list-learningproviders",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/permissions-consent-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/permissions-consent-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/permissions-consent-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/agents-in-teams/overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/get-started/get-started-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/data-connect-quickstart",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/architecture/best-practices/index-best-practices",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/architecture/best-practices/index-best-practices",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/architecture/solution-ideas/articles/presence-microsoft-365-power-platform",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/architecture/solution-ideas/articles/presence-microsoft-365-power-platform",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/data-connect-quickstart",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/ambassador",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/v2-app-types",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/javascript/api/@azure/msal-react",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/tutorials/",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/external-id/customers/concept-native-authentication",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/v2-app-types",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/permissions-consent-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/permissions-consent-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/permissions-consent-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/permissions-consent-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/delegated-access-primer",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-client-creds-grant-flow",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-client-creds-grant-flow",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/access-tokens",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-auth-code-flow",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-protocols",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-client-creds-grant-flow",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/mcp-server/overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/connecting-external-content-build-quickstart",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/data-connect-quickstart",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/toolkit/overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/project-rome-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-type-connectors",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-authentication",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/connectors-gallery-microsoft",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/connectors-gallery-partners",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/choose-plugin-development-tools",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/choose-plugin-components",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugins-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/partner-center/membership/isv-success",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/externalconnectors-schema",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/connecting-external-content-connectors-api-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/choose-plugin-development-tools",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/active-directory/develop/single-and-multi-tenant-apps",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-your-first-connector",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/m365-apps/prerequisites",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftsearch/graph-connector-agent",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftsearch/licensing",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/externalconnectors-externalitem",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/externalconnectors-itemidresolver",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/externalconnectors-externalactivity",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/fabric/admin/admin-share-power-bi-metadata-microsoft-365-services",
+      "depth": 3
     }
   ],
   "last_batch": {
     "attempted": 36,
-    "documents_total": 822,
+    "documents_total": 894,
     "queued": 2500,
     "failures": []
   }
