@@ -5,6 +5,7 @@ on:
     paths:
       - '.github/workflows/adminmonkey-daily-knowledge.yml'
       - 'adminmonkey/knowledge/*.py'
+      - 'adminmonkey/knowledge/test_*.py'
       - 'adminmonkey/database/*.py'
       - 'adminmonkey/academy/competency_bank.json'
   workflow_dispatch:
