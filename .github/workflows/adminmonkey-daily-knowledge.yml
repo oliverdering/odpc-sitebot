@@ -48,6 +48,12 @@ jobs:
         run: python adminmonkey/knowledge/exam_baseline.py
       - name: Verify MS-102 assessment implementation
         run: python -m unittest discover -s adminmonkey/knowledge -p "test_assess_ms102.py" -v
+      - name: Verify retrieval staging and source integrity before publishing
+        run: |
+          python -m unittest discover -s adminmonkey/knowledge -p 'test_chunk_documents.py' -v
+          python -m unittest discover -s adminmonkey/knowledge -p 'test_knowledge_integrity.py' -v
+      - name: Build private source-attributed retrieval chunks
+        run: python adminmonkey/knowledge/chunk_documents.py
       - name: Generate honest Academy progress snapshot
         run: python adminmonkey/knowledge/build_progress.py
       - name: Validate generated JSON and learning evidence
