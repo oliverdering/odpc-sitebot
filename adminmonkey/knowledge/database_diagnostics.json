@@ -1,0 +1,10 @@
+{
+  "database_connected": false,
+  "missing_secret_names": [
+    "HOST",
+    "NAME",
+    "USER",
+    "PASSWORD"
+  ],
+  "verdict": "MISSING_SECRETS"
+}
