@@ -9,8 +9,11 @@
 <p id="errors" class="warn" role="status"></p><p class="muted small">Datenquelle: GitHub-Repository oliverdering/odpc-sitebot, Branch main. Keine privaten Zugangsdaten oder Crawler-Caches. Automatische Aktualisierung alle 60 Sekunden und auf Knopfdruck; kein Backend-Code wird freigegeben.</p>
 <script>
 const root='https://raw.githubusercontent.com/oliverdering/odpc-sitebot/main/adminmonkey/knowledge/';
+const apiRoot='https://api.github.com/repos/oliverdering/odpc-sitebot/contents/adminmonkey/knowledge/';
+async function fetchJson(name){const url=root+name+'?ts='+Date.now();let res=await fetch(url,{cache:'no-store'});if(!res.ok)throw Error(name+' HTTP '+res.status);return res.json();}
+function showSnapshotError(name,e){$('errors').textContent+=name+': '+e.message+' · ';}
 const autoRefreshMs=60000;
-const sourceRevision='20261109-sync-v2';
+const sourceRevision='20261109-independent-snapshots-v3';
 
 const badgeLevels=[["Bronze Banana",25],["Silver Banana",50],["Gold Banana",75],["Banana Master",90]];
 function renderAcademy(p){
@@ -45,5 +48,60 @@ function renderAcademy(p){
 }
 
 const $=id=>document.getElementById(id);
-async function refresh(){ $('errors').textContent='';try{const diagResponse=await fetch(root+'database_diagnostics.json?ts='+Date.now(),{cache:'no-store'});if(diagResponse.ok){const diag=await diagResponse.json();const labels={OK:'Direkt verbunden',MISSING_SECRETS:'Zugangsdaten fehlen',DNS_FAILED:'GitHub-Runner: DNS-Fehler',TCP_UNREACHABLE:'Server nicht erreichbar',AUTH_OR_DB_ERROR:'Anmeldung / Datenbankfehler'};$('dbstatus').textContent=labels[diag.verdict]||diag.verdict||'Unbekannt';$('dbstatus').className='value small '+(diag.database_connected?'good':'warn');$('dbdetail').textContent=diag.database_connected?'Datenbankzugriff bestätigt':'Direktverbindung vom GitHub-Runner nicht bestätigt; IONOS-Import separat prüfen';}else{$('dbstatus').textContent='Noch kein Diagnosebericht';}const dbResponse=await fetch(root+'database_progress.json?ts='+Date.now(),{cache:'no-store'});if(dbResponse.ok){const db=await dbResponse.json();if(db.database_connected===true && Number(db.document_versions_total)>0){$('dbstatus').textContent='Verbunden · '+db.document_versions_total+' Dokumente';$('dbstatus').className='value small good';$('dbdetail').textContent='IONOS-MariaDB: Import bestätigt (separater Hosting-Zugriff) · '+(db.sources_total??'–')+' Quellen';} $('documents').textContent=db.document_versions_total??'–';window.amkDbProgress=db;const confirmed= db.database_connected===true?Number(db.document_versions_total):NaN;if(Number.isFinite(confirmed)){const pct=Math.min(100,Math.round(confirmed/1500*1000)/10);$('collectionPercent').textContent=pct.toLocaleString('de-DE')+' %';$('collectionBar').style.width=pct+'%';$('collectionDetail').textContent=confirmed+' / 1.500 bestätigte MariaDB-Dokumentversionen · Crawler-Daten werden separat geladen';}$('approved').textContent=db.approved_document_versions??'–';$('baseline').textContent='MariaDB: '+(db.document_versions_total??'–')+' Dokumentversionen · '+(db.sources_total??'–')+' Quellen · Neue Versionen im letzten Import: '+(db.new_document_versions??'–')+' · Keine offiziellen Microsoft-Zertifizierungen';}const progressResponse=await fetch(root+'academy_progress.json?ts='+Date.now(),{cache:'no-store'});if(progressResponse.ok){const progress=await progressResponse.json();renderAcademy(progress);const collected=Number(progress.knowledge?.documents_collected)||0;const imported=window.amkDbProgress?.database_connected===true?Number(window.amkDbProgress.document_versions_total)||0:0;const importPct=collected&&window.amkDbProgress?.database_connected===true&&imported<=collected?Math.round(imported/collected*1000)/10:null;$('importPercent').textContent=importPct===null?'Nicht berechenbar':importPct.toLocaleString('de-DE')+' %';$('importBar').style.width=(importPct??0)+'%';$('importDetail').textContent=imported+' bestätigte MariaDB-Dokumentversionen / '+collected+' erfasste Crawler-Artikel · letzter Import: '+(window.amkDbProgress?.new_document_versions??'–')+' neue Versionen. Bei abweichenden Snapshots oder Zähleinheiten nur als Näherung interpretieren; bei widersprüchlichen Werten wird keine Quote ausgewiesen.';if(!dbResponse.ok)$('documents').textContent=progress.knowledge?.documents_collected??'–';$('unreviewed').textContent=progress.knowledge?.review?.unreviewed??'–';$('queued').textContent=progress.knowledge?.last_batch?.queued??'–';const batch=progress.knowledge?.last_batch||{};if(!dbResponse.ok)$('baseline').textContent='Gesammelte Artikel: '+(progress.knowledge?.documents_collected??'unbekannt')+' · Letzter Batch: '+(batch.attempted??'–')+' Versuche, '+(batch.failures?.length??'–')+' Fehler · Verifizierte Kompetenztests: 0';}else{$('errors').textContent='Crawler-Fortschrittsdatei noch nicht veröffentlicht (HTTP '+progressResponse.status+'). ';}const r=await fetch(root+'knowledge_index.json?ts='+Date.now(),{cache:'no-store'});if(!r.ok)throw Error('GitHub HTTP '+r.status);const d=await r.json();const entries=Object.entries(d.sources||d.documents||{});const changes=Array.isArray(d.changes)?d.changes:[];const unique=entries.length?entries: [...new Set(changes.map(x=>x.id))].map(id=>[id,changes.filter(x=>x.id===id).at(-1)]);$('sources').textContent=unique.length;if(!dbResponse.ok)$('approved').textContent=unique.filter(([,v])=>['approved','human_approved'].includes(v.review_status)).length;const dates=changes.map(x=>x.at).filter(Boolean).sort();$('updated').textContent=dates.length?new Date(dates.at(-1)).toLocaleString('de-DE'):'Nicht verfügbar';$('items').replaceChildren(...unique.map(([id,v])=>{const li=document.createElement('li');li.textContent=id+' — '+(v.review_status||'nicht geprüft');return li;}));if(!unique.length)$('items').textContent='Keine dokumentierten Quellen gefunden.';}catch(e){$('errors').textContent+='Daten konnten nicht geladen werden: '+e.message+' (kein Nullstand ableitbar).';}}$('refresh').addEventListener('click',refresh);refresh();setInterval(refresh,autoRefreshMs);
+async function refresh(){
+ $('errors').textContent='';
+ let db=null,progress=null;
+ try{
+  db=await fetchJson('database_progress.json');
+  window.amkDbProgress=db;
+  const confirmed=db.database_connected===true?Number(db.document_versions_total):NaN;
+  $('dbstatus').textContent=db.database_connected===true?'Verbunden · '+db.document_versions_total+' Dokumente':'Nicht bestätigt';
+  $('dbstatus').className='value small '+(db.database_connected===true?'good':'warn');
+  $('dbdetail').textContent='IONOS-MariaDB: '+(db.sources_total??'–')+' Quellen · letzter Import: '+(db.new_document_versions??'–')+' neue Versionen';
+  if(Number.isFinite(confirmed)){
+   const pct=Math.min(100,Math.round(confirmed/1500*1000)/10);
+   $('collectionPercent').textContent=pct.toLocaleString('de-DE')+' %';
+   $('collectionBar').style.width=pct+'%';
+   $('collectionDetail').textContent=confirmed+' / 1.500 bestätigte MariaDB-Dokumentversionen';
+   $('documents').textContent=confirmed;
+  }
+  $('baseline').textContent='MariaDB: '+(db.document_versions_total??'–')+' Dokumentversionen · '+(db.sources_total??'–')+' Quellen · Keine offiziellen Microsoft-Zertifizierungen';
+ }catch(e){showSnapshotError('MariaDB',e);}
+ try{
+  progress=await fetchJson('academy_progress.json');
+  renderAcademy(progress);
+  const k=progress.knowledge||{},review=k.review||{};
+  $('queued').textContent=k.last_batch?.queued??'–';
+  $('unreviewed').textContent=review.unreviewed??'–';
+  $('approved').textContent=review.approved??'–';
+  $('sources').textContent=k.manufacturer_verified??k.documents_collected??'–';
+  $('updated').textContent=progress.generated_at?new Date(progress.generated_at).toLocaleString('de-DE'):'Nicht verfügbar';
+  if(!db)$('documents').textContent=k.documents_collected??'–';
+  const collected=Number(k.documents_collected),imported=Number(db?.document_versions_total);
+  const valid=db?.database_connected===true&&collected>0&&Number.isFinite(imported);
+  const ratio=valid&&imported<=collected?Math.round(imported/collected*1000)/10:null;
+  $('importPercent').textContent=ratio===null?'Nicht vergleichbar':ratio.toLocaleString('de-DE')+' %';
+  $('importBar').style.width=(ratio??0)+'%';
+  $('importDetail').textContent=valid
+   ?imported+' MariaDB-Dokumentversionen · '+collected+' Artikel im Academy-Snapshot'+(imported>collected?' · Datenbank ist aktueller; keine seriöse Importquote möglich':' · Näherungswert wegen unterschiedlicher Snapshots')
+   :'Für die Importquote fehlen vergleichbare Daten';
+  const items=$('items');items.replaceChildren();
+  const li=document.createElement('li');
+  li.textContent='Academy-Snapshot: '+(k.documents_collected??'–')+' Microsoft-Learn-Artikel · '+(review.approved??'–')+' automatisch freigegeben · '+(review.unreviewed??'–')+' offen. Quellenzählung ist kein Kompetenznachweis.';
+  items.append(li);
+  const li2=document.createElement('li');
+  li2.textContent='Retrieval: '+(progress.retrieval_staging?.chunked_documents??'–')+' Dokumente in '+(progress.retrieval_staging?.chunks_prepared??'–')+' Abschnitte vorbereitet; Qualität noch nicht unabhängig geprüft.';
+  items.append(li2);
+ }catch(e){
+  showSnapshotError('Academy',e);
+  $('tracks').textContent='Academy-Bericht derzeit nicht abrufbar – kein Nullstand.';
+  $('bananaBadges').textContent='Kompetenznachweise derzeit nicht abrufbar.';
+  $('items').textContent='Quellenstatus derzeit nicht abrufbar.';
+ }
+ try{
+  const diag=await fetchJson('database_diagnostics.json');
+  if(!db)$('dbdetail').textContent='GitHub-Runner: '+(diag.verdict??'unbekannt')+'; IONOS-Import separat prüfen';
+ }catch(e){showSnapshotError('Diagnose',e);}
+}
+$('refresh').addEventListener('click',refresh);refresh();setInterval(refresh,autoRefreshMs);
 </script></body></html>
