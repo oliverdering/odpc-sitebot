@@ -6633,6 +6633,304 @@
       "depth": 2,
       "review_status": "manufacturer_verified",
       "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/known-issues",
+      "sha256": "3ba9c408f02ca790eb766ca8fd74b0094d1fd520cdeb6d5cac4a927089930241",
+      "captured_at": "2026-11-09T19:57:28.965200+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/signinactivity",
+      "sha256": "acc6f20c45656a4b977bf303a34589cd93784e357b93fc710d0f8d721aa9814e",
+      "captured_at": "2026-11-09T19:57:29.140516+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/organization",
+      "sha256": "556cbbbf885472d72fa5e1299576eb0458deba68e8e0c5a33ca702d11f2b68e0",
+      "captured_at": "2026-11-09T19:57:29.315275+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/users-default-permissions",
+      "sha256": "bfbc4f095e2db4bdd2acb3f4b83c6c15f5ec4748d083faafadb022c910298982",
+      "captured_at": "2026-11-09T19:57:29.469601+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/projectrome-activity",
+      "sha256": "2876e80b0b1c2806e0ea33739ef07f176370b3728913240da085115fbcdd04c4",
+      "captured_at": "2026-11-09T19:57:29.710596+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/adhoccall",
+      "sha256": "95d5bd0b21a0445e79060305867a72874a0d59fc0682b3756dc41ddf15533089",
+      "captured_at": "2026-11-09T19:57:29.875381+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/authentication",
+      "sha256": "2cf481c9d39fe553c299b463408ce56c5494446c635476f3279065f1890a8aec",
+      "captured_at": "2026-11-09T19:57:30.073482+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/userdatasecurityandgovernance",
+      "sha256": "b167bc7a0e993b7ba568e9adaeab21c8ac31ab98b24bd03e4c88120df6e0026f",
+      "captured_at": "2026-11-09T19:57:30.432565+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/inferenceclassification",
+      "sha256": "492d93933bb7c0cd5e516755804246223d837a39057a9b6be67b83e60b240268",
+      "captured_at": "2026-11-09T19:57:30.609569+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/iteminsights",
+      "sha256": "dca16ea12347b4c601aca7c5800ae5bfae56ff455c6ad42e609a90d7baa50578",
+      "captured_at": "2026-11-09T19:57:30.870107+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/onenote",
+      "sha256": "3d35895a6e853da0f8235fc928d6fbdfbac17a0e3d9a9ef50bf2606f7f0cc5f3",
+      "captured_at": "2026-11-09T19:57:31.123816+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/onlinemeeting",
+      "sha256": "34caba29ee47fdf3e5be7c839405f135ee93453328c2b13c5823718c4e8825dd",
+      "captured_at": "2026-11-09T19:57:31.231547+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/outlookuser",
+      "sha256": "8b3d8f7e39af5f365e6a07b586973b3a60368de94f2f5025c975acac89ecfe68",
+      "captured_at": "2026-11-09T19:57:31.517203+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/planneruser",
+      "sha256": "f372225ffd6a8d4514aa5dc0abff7693df861736e05481dd88a34d8730f44446",
+      "captured_at": "2026-11-09T19:57:31.736496+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/usersolutionroot",
+      "sha256": "7e870d6a72fca64bfe8f89c93ce8eea0960750ef4165806b26e5e6aea94866d4",
+      "captured_at": "2026-11-09T19:57:31.924645+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/userteamwork",
+      "sha256": "fd63fbeeb32115378f4a0492f08ea6b69591233a8440ea3e1609377f5ee76d21",
+      "captured_at": "2026-11-09T19:57:32.110180+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/todo",
+      "sha256": "bc2df15031e44fbbeb89c17cab611f9ec715fb1041092cb66be71068e66786a6",
+      "captured_at": "2026-11-09T19:57:32.284306+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/deployments",
+      "sha256": "293c6ccfba262e31d9b001828e847a21b3e19c47ba62ff8a2783b0928ce76496",
+      "captured_at": "2026-11-09T19:57:32.433350+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/permissions-overview",
+      "sha256": "37df523f8e506f4460b6808af684fc6ce683d08a3e636698f6ee8532a8dca677",
+      "captured_at": "2026-11-09T19:57:32.700978+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/permissions-reference",
+      "sha256": "062b88f22242f4d7f52d77ff6fad8c9fe69879ca86090a8855f4b0e9ebd13f18",
+      "captured_at": "2026-11-09T19:57:32.959248+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/query-parameters",
+      "sha256": "11c864b400fe606fd7026451b78d02bdb8cc6c054e68ee7e7df91829cc208b75",
+      "captured_at": "2026-11-09T19:57:33.064689+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
+      "sha256": "e9d70746045200edd72449cc3e198a3e48c59d2255608c3b56dafeb1d776939d",
+      "captured_at": "2026-11-09T19:57:33.169291+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
+      "sha256": "37f808bf45a5c15bc679219d8c0b73ab4cf12866ea9ba9094eebf30f4e281096",
+      "captured_at": "2026-11-09T19:57:33.286732+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
+      "sha256": "196b45ee015a6c0845963c00516888bdffc730db84033ecc4241b94c43f3694f",
+      "captured_at": "2026-11-09T19:57:33.469669+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/custom-security-attributes-examples",
+      "sha256": "ad69fbf9ad32b03390d9ee32648abedfd4656cea98901515a8bfcae31b3127b2",
+      "captured_at": "2026-11-09T19:57:33.637794+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/insights-resourcereference",
+      "sha256": "006de09d472d33adb08c6e28f4f1851d1ecded4aba3d6d37c4be982f67761be5",
+      "captured_at": "2026-11-09T19:57:33.914366+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/insights-resourcevisualization",
+      "sha256": "11718fa63a6a43667163a244205ab04cc3c70c565ab0a2605280583ab6f1cc60",
+      "captured_at": "2026-11-09T19:57:34.147393+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/people-insights-overview",
+      "sha256": "9e0222ff7d324645346eb9c212e0b8aab4177b96498a6c0cfe7383524fe7af69",
+      "captured_at": "2026-11-09T19:57:34.291326+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/search-query",
+      "sha256": "c24b8ae5381fcf6d775c6ee5705220ae922e7b6f6b21e6a86f011d1f74c4eea3",
+      "captured_at": "2026-11-09T19:57:34.462483+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/search-concept-person",
+      "sha256": "31cb0da8059ef207758e56986a7e04c86461ad59968870a6319c860045630fa8",
+      "captured_at": "2026-11-09T19:57:34.641851+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/directoryrole",
+      "sha256": "6de1f955a9bcbeb63466476a69c50f558eb98de194886c0a830bb3afb4a31dad",
+      "captured_at": "2026-11-09T19:57:34.830586+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/administrativeunit",
+      "sha256": "6368f05f8065e0615b009c21b820b8154719b96d504ad09d28d0c7b3972cc944",
+      "captured_at": "2026-11-09T19:57:35.007272+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/fundamentals/users-default-permissions",
+      "sha256": "bfbc4f095e2db4bdd2acb3f4b83c6c15f5ec4748d083faafadb022c910298982",
+      "captured_at": "2026-11-09T19:57:35.092621+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/create-groups/office-365-groups",
+      "sha256": "a777cd7d35f4b32b755795ececcb1fe22cd679118b6a3ea2e4a58879652dc9bb",
+      "captured_at": "2026-11-09T19:57:35.234832+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/exchange/recipients/dynamic-distribution-groups/dynamic-distribution-groups",
+      "sha256": "1260276bab2e01e0c945bc6172d7506beedc9a48a25d2fee5240127704e7fa2f",
+      "captured_at": "2026-11-09T19:57:35.422385+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/create-groups/compare-groups",
+      "sha256": "47b70954794b4ec3e33a5ad8b590f66e46365abab343f183c95e0f63aab69b1e",
+      "captured_at": "2026-11-09T19:57:35.607585+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
     }
   ],
   "seen": [
@@ -6661,6 +6959,7 @@
     "https://learn.microsoft.com/en-us/azure",
     "https://learn.microsoft.com/en-us/azure/active-directory/authentication/concept-sspr-policy",
     "https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-whatis",
+    "https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/users-default-permissions",
     "https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/whats-new",
     "https://learn.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection",
     "https://learn.microsoft.com/en-us/azure/active-directory/roles/permissions-reference",
@@ -6733,6 +7032,7 @@
     "https://learn.microsoft.com/en-us/entra/fundamentals/entra-admin-center",
     "https://learn.microsoft.com/en-us/entra/fundamentals/identity-fundamental-concepts",
     "https://learn.microsoft.com/en-us/entra/fundamentals/licensing",
+    "https://learn.microsoft.com/en-us/entra/fundamentals/users-default-permissions",
     "https://learn.microsoft.com/en-us/entra/fundamentals/what-is-entra",
     "https://learn.microsoft.com/en-us/entra/fundamentals/whatis",
     "https://learn.microsoft.com/en-us/entra/global-secure-access/overview-what-is-global-secure-access",
@@ -6764,6 +7064,7 @@
     "https://learn.microsoft.com/en-us/exchange/exchange-online",
     "https://learn.microsoft.com/en-us/exchange/recipients-in-exchange-online/manage-user-mailboxes/add-or-remove-email-addresses",
     "https://learn.microsoft.com/en-us/exchange/recipients-in-exchange-online/manage-user-mailboxes/manage-user-mailboxes",
+    "https://learn.microsoft.com/en-us/exchange/recipients/dynamic-distribution-groups/dynamic-distribution-groups",
     "https://learn.microsoft.com/en-us/exchange/sharing-exchange-2013-help",
     "https://learn.microsoft.com/en-us/graph/aad-advanced-queries",
     "https://learn.microsoft.com/en-us/graph/api/activitiescontainer-post-contentactivities",
@@ -6825,6 +7126,8 @@
     "https://learn.microsoft.com/en-us/graph/api/profilephoto-delete",
     "https://learn.microsoft.com/en-us/graph/api/profilephoto-get",
     "https://learn.microsoft.com/en-us/graph/api/profilephoto-update",
+    "https://learn.microsoft.com/en-us/graph/api/resources/adhoccall",
+    "https://learn.microsoft.com/en-us/graph/api/resources/administrativeunit",
     "https://learn.microsoft.com/en-us/graph/api/resources/adminreportsettings",
     "https://learn.microsoft.com/en-us/graph/api/resources/agreementacceptance",
     "https://learn.microsoft.com/en-us/graph/api/resources/approleassignment",
@@ -6833,6 +7136,7 @@
     "https://learn.microsoft.com/en-us/graph/api/resources/associatedteaminfo",
     "https://learn.microsoft.com/en-us/graph/api/resources/attachment",
     "https://learn.microsoft.com/en-us/graph/api/resources/attendee",
+    "https://learn.microsoft.com/en-us/graph/api/resources/authentication",
     "https://learn.microsoft.com/en-us/graph/api/resources/calendar",
     "https://learn.microsoft.com/en-us/graph/api/resources/calendargroup",
     "https://learn.microsoft.com/en-us/graph/api/resources/chat",
@@ -6844,6 +7148,7 @@
     "https://learn.microsoft.com/en-us/graph/api/resources/customsecurityattributevalue",
     "https://learn.microsoft.com/en-us/graph/api/resources/datetimetimezone",
     "https://learn.microsoft.com/en-us/graph/api/resources/directoryobject",
+    "https://learn.microsoft.com/en-us/graph/api/resources/directoryrole",
     "https://learn.microsoft.com/en-us/graph/api/resources/distributionlist",
     "https://learn.microsoft.com/en-us/graph/api/resources/drive",
     "https://learn.microsoft.com/en-us/graph/api/resources/driveitem",
@@ -6857,12 +7162,16 @@
     "https://learn.microsoft.com/en-us/graph/api/resources/group",
     "https://learn.microsoft.com/en-us/graph/api/resources/groups-overview",
     "https://learn.microsoft.com/en-us/graph/api/resources/identity-network-access-overview",
+    "https://learn.microsoft.com/en-us/graph/api/resources/inferenceclassification",
     "https://learn.microsoft.com/en-us/graph/api/resources/inferenceclassificationoverride",
+    "https://learn.microsoft.com/en-us/graph/api/resources/insights-resourcereference",
+    "https://learn.microsoft.com/en-us/graph/api/resources/insights-resourcevisualization",
     "https://learn.microsoft.com/en-us/graph/api/resources/insights-shared",
     "https://learn.microsoft.com/en-us/graph/api/resources/insights-trending",
     "https://learn.microsoft.com/en-us/graph/api/resources/insights-used",
     "https://learn.microsoft.com/en-us/graph/api/resources/itemattachment",
     "https://learn.microsoft.com/en-us/graph/api/resources/itembody",
+    "https://learn.microsoft.com/en-us/graph/api/resources/iteminsights",
     "https://learn.microsoft.com/en-us/graph/api/resources/licenseassignmentstate",
     "https://learn.microsoft.com/en-us/graph/api/resources/licensedetails",
     "https://learn.microsoft.com/en-us/graph/api/resources/localeinfo",
@@ -6878,18 +7187,24 @@
     "https://learn.microsoft.com/en-us/graph/api/resources/notebook",
     "https://learn.microsoft.com/en-us/graph/api/resources/oauth2permissiongrant",
     "https://learn.microsoft.com/en-us/graph/api/resources/objectidentity",
+    "https://learn.microsoft.com/en-us/graph/api/resources/onenote",
+    "https://learn.microsoft.com/en-us/graph/api/resources/onlinemeeting",
     "https://learn.microsoft.com/en-us/graph/api/resources/onlinemeetinginfo",
     "https://learn.microsoft.com/en-us/graph/api/resources/onpremisesextensionattributes",
     "https://learn.microsoft.com/en-us/graph/api/resources/onpremisesprovisioningerror",
     "https://learn.microsoft.com/en-us/graph/api/resources/opentypeextension",
+    "https://learn.microsoft.com/en-us/graph/api/resources/organization",
     "https://learn.microsoft.com/en-us/graph/api/resources/outlookcategory",
+    "https://learn.microsoft.com/en-us/graph/api/resources/outlookuser",
     "https://learn.microsoft.com/en-us/graph/api/resources/passwordprofile",
     "https://learn.microsoft.com/en-us/graph/api/resources/patternedrecurrence",
     "https://learn.microsoft.com/en-us/graph/api/resources/person",
     "https://learn.microsoft.com/en-us/graph/api/resources/plannertask",
+    "https://learn.microsoft.com/en-us/graph/api/resources/planneruser",
     "https://learn.microsoft.com/en-us/graph/api/resources/policyuserscope",
     "https://learn.microsoft.com/en-us/graph/api/resources/processcontentresponse",
     "https://learn.microsoft.com/en-us/graph/api/resources/profilephoto",
+    "https://learn.microsoft.com/en-us/graph/api/resources/projectrome-activity",
     "https://learn.microsoft.com/en-us/graph/api/resources/provisionedplan",
     "https://learn.microsoft.com/en-us/graph/api/resources/recipient",
     "https://learn.microsoft.com/en-us/graph/api/resources/referenceattachment",
@@ -6900,15 +7215,21 @@
     "https://learn.microsoft.com/en-us/graph/api/resources/scheduleinformation",
     "https://learn.microsoft.com/en-us/graph/api/resources/security-api-overview",
     "https://learn.microsoft.com/en-us/graph/api/resources/serviceprovisioningerror",
+    "https://learn.microsoft.com/en-us/graph/api/resources/signinactivity",
     "https://learn.microsoft.com/en-us/graph/api/resources/singlevaluelegacyextendedproperty",
     "https://learn.microsoft.com/en-us/graph/api/resources/team",
     "https://learn.microsoft.com/en-us/graph/api/resources/timezoneinformation",
+    "https://learn.microsoft.com/en-us/graph/api/resources/todo",
     "https://learn.microsoft.com/en-us/graph/api/resources/todotask",
     "https://learn.microsoft.com/en-us/graph/api/resources/todotasklist",
     "https://learn.microsoft.com/en-us/graph/api/resources/user",
+    "https://learn.microsoft.com/en-us/graph/api/resources/userdatasecurityandgovernance",
     "https://learn.microsoft.com/en-us/graph/api/resources/users",
     "https://learn.microsoft.com/en-us/graph/api/resources/userscopeteamsappinstallation",
     "https://learn.microsoft.com/en-us/graph/api/resources/usersettings",
+    "https://learn.microsoft.com/en-us/graph/api/resources/usersolutionroot",
+    "https://learn.microsoft.com/en-us/graph/api/resources/userteamwork",
+    "https://learn.microsoft.com/en-us/graph/api/search-query",
     "https://learn.microsoft.com/en-us/graph/api/serviceprincipal-delta",
     "https://learn.microsoft.com/en-us/graph/api/singlevaluelegacyextendedproperty-get",
     "https://learn.microsoft.com/en-us/graph/api/singlevaluelegacyextendedproperty-post-singlevalueextendedproperties",
@@ -6997,9 +7318,11 @@
     "https://learn.microsoft.com/en-us/graph/cloudpc-concept-overview",
     "https://learn.microsoft.com/en-us/graph/connecting-external-content-connectors-overview",
     "https://learn.microsoft.com/en-us/graph/cross-device-concept-overview",
+    "https://learn.microsoft.com/en-us/graph/custom-security-attributes-examples",
     "https://learn.microsoft.com/en-us/graph/data-connect-concept-overview",
     "https://learn.microsoft.com/en-us/graph/delta-query-events",
     "https://learn.microsoft.com/en-us/graph/delta-query-overview",
+    "https://learn.microsoft.com/en-us/graph/deployments",
     "https://learn.microsoft.com/en-us/graph/dynamics-business-central-concept-overview",
     "https://learn.microsoft.com/en-us/graph/education-concept-overview",
     "https://learn.microsoft.com/en-us/graph/excel-concept-overview",
@@ -7012,6 +7335,7 @@
     "https://learn.microsoft.com/en-us/graph/integrate-with-onenote",
     "https://learn.microsoft.com/en-us/graph/integration-patterns-overview",
     "https://learn.microsoft.com/en-us/graph/intune-concept-overview",
+    "https://learn.microsoft.com/en-us/graph/known-issues",
     "https://learn.microsoft.com/en-us/graph/managedtenants-concept-overview",
     "https://learn.microsoft.com/en-us/graph/metered-api-overview",
     "https://learn.microsoft.com/en-us/graph/microsoft365-groups-concept-overview",
@@ -7023,9 +7347,17 @@
     "https://learn.microsoft.com/en-us/graph/outlook-mail-concept-overview",
     "https://learn.microsoft.com/en-us/graph/overview",
     "https://learn.microsoft.com/en-us/graph/overview-major-services",
+    "https://learn.microsoft.com/en-us/graph/people-insights-overview",
+    "https://learn.microsoft.com/en-us/graph/permissions-overview",
+    "https://learn.microsoft.com/en-us/graph/permissions-reference",
     "https://learn.microsoft.com/en-us/graph/planner-concept-overview",
+    "https://learn.microsoft.com/en-us/graph/query-parameters",
     "https://learn.microsoft.com/en-us/graph/reportroot-concept-overview",
+    "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
+    "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
+    "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
     "https://learn.microsoft.com/en-us/graph/search-concept-overview",
+    "https://learn.microsoft.com/en-us/graph/search-concept-person",
     "https://learn.microsoft.com/en-us/graph/security-concept-overview",
     "https://learn.microsoft.com/en-us/graph/service-communications-concept-overview",
     "https://learn.microsoft.com/en-us/graph/sharepoint-concept-overview",
@@ -7109,8 +7441,10 @@
     "https://learn.microsoft.com/en-us/microsoft-365/admin/admin-overview/admin-center-overview",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/admin-overview/admin-mobile-app",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/admin-overview/sign-up-for-office-365",
+    "https://learn.microsoft.com/en-us/microsoft-365/admin/create-groups/compare-groups",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/create-groups/create-groups",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/create-groups/manage-groups",
+    "https://learn.microsoft.com/en-us/microsoft-365/admin/create-groups/office-365-groups",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/email/configure-email-forwarding",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/email/convert-user-mailbox-to-shared-mailbox",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/email/office-365-user-email-settings",
@@ -7388,1770 +7722,6 @@
     "https://learn.microsoft.com/en-us/windows/win32/wer/windows-error-reporting"
   ],
   "queue": [
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/known-issues",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/signinactivity",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/user-revokesigninsessions",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/organization",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/active-directory/authentication/concept-sspr-policy",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/users",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/users-default-permissions",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/user-get",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/user-update",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/projectrome-activity",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/adhoccall",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/agreementacceptance",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/approleassignment",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/authentication",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/calendar",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/calendargroup",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/calendar",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/cloudpc",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/contactfolder",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/contact",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/directoryobject",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/userdatasecurityandgovernance",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/directoryobject",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/distributionlist",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/drive",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/drive",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/extension",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/inferenceclassification",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/iteminsights",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/licensedetails",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/mailfolder",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/directoryobject",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/directoryobject",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/message",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/note",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/onenote",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/onlinemeeting",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/outlookuser",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/directoryobject",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/directoryobject",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/person",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/resourcespecificpermissiongrant",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/profilephoto",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/profilephoto",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/planneruser",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/directoryobject",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/usersolutionroot",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/directoryobject",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/directoryobject",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/userteamwork",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/todo",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/directoryobject",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/extensibility-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/extensibility-open-users",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/extensibility-schema-groups",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/extensibility-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/deployments",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/permissions-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/permissions-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/permissions-reference",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/query-parameters",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/opentypeextension-get",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/auth/auth-concepts",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/custom-security-attributes-examples",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/deployments",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/permissions-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/permissions-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/permissions-reference",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/permissions-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/query-parameters",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/aad-advanced-queries",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/auth/auth-concepts",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/insights-list-trending",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/insights-resourcereference",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/insights-resourcevisualization",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/person",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/people-insights-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/search-query",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/search-concept-person",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/deployments",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/permissions-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/permissions-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/permissions-reference",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/query-parameters",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/people-insights-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/query-parameters",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/auth/auth-concepts",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/person",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/people-insights-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/group",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/directoryrole",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/administrativeunit",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/user-list-transitivememberof",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/deployments",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/permissions-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/permissions-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/permissions-reference",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/permissions-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/query-parameters",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/aad-advanced-queries",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/auth/auth-concepts",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/directoryobject",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/group",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/known-issues",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/deployments",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/permissions-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/permissions-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/permissions-reference",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/permissions-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/fundamentals/users-default-permissions",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/query-parameters",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/aad-advanced-queries",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/auth/auth-concepts",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/directoryobject",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/groups-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/groups-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/groups-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/groups-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/group",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/create-groups/office-365-groups",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/exchange/recipients/dynamic-distribution-groups/dynamic-distribution-groups",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/groups-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/groups-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/groups-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/create-groups/compare-groups",
-      "depth": 2
-    },
     {
       "url": "https://learn.microsoft.com/en-us/exchange/recipients/mail-enabled-security-groups",
       "depth": 2
@@ -17387,12 +15957,720 @@
     {
       "url": "https://learn.microsoft.com/en-us/graph/api/resources/orgcontact",
       "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/attachment-createuploadsession",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/active-directory/reports-monitoring/howto-manage-inactive-user-accounts",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/organization-list",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/organization-get",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/fundamentals/users-default-permissions",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/fundamentals/users-default-permissions",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/fundamentals/users-default-permissions",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/projectrome-historyitem",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/projectrome-put-activity",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/projectrome-delete-activity",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/adhoccall-getallrecordings",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/entity",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/emailauthenticationmethod",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/externalauthenticationmethod",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/datasecurityandgovernance",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/datasecurityandgovernance",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/activitiescontainer",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/manage-focused-inbox",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/officegraphinsights",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/insightssettings",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/insights-customize-item-insights-privacy",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/officegraphinsights",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/officegraphinsights",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/officegraphinsights",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/permissions-reference",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/onenote-post-pages",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/page",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/onenote-list-pages",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/page",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/onenote-list-sectiongroups",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/sectiongroup",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/onenote-list-sections",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/onenotesection",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/onenoteoperation",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/page",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/resource",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/application-post-onlinemeetings",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/planneruser-list-plans",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/plannerplan",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/plannerplan",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/plannerplan",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/workingtimeschedule",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/userteamwork-get",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/userteamwork-getalltargetedmessages",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/targetedchatmessage",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/targetedchatmessage",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/userteamwork-getallretainedtargetedmessages",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/targetedchatmessage",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/targetedchatmessage",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/userteamwork-deletetargetedmessage",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/entity",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/active-directory/develop/authentication-scenarios",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/office-365-us-government/office-365-us-government",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/office-365-operated-by-21vianet",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/china/",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/sdks/national-clouds",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/active-directory/roles/custom-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/permissions-reference",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/auth-limit-mailbox-access",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/auth-limit-mailbox-access",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/group-post-members",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/nuget/quickstart/install-and-use-a-package-using-the-dotnet-cli",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/nuget/quickstart/install-and-use-a-package-in-visual-studio",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/nuget/quickstart/install-and-use-a-package-in-visual-studio",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/active-directory/develop/v2-app-types",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/sdks/generate-with-kiota",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/custom-security-attributes-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/custom-security-attributes-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/serviceprincipal-update",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/custom-security-attributes-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/officegraphinsights",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/officegraphinsights",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/officegraphinsights",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/insights-customize-people-insights-privacy",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/searchrequest",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/search-api-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/searchresponse",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/search-concept-messages",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/search-concept-events",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/search-concept-files",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/search-concept-custom-types",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/search-concept-query-template",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/search-concept-sort",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/search-concept-aggregation",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/search-api-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/unifiedroledefinition",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/active-directory/users-groups-roles/directory-assign-admin-roles",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/directoryroletemplate",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/directoryroletemplate-list",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/directoryrole-delta",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/directoryrole-get",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/directoryrole-list",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/directoryrole-post-members",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/directoryrole-list-members",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/directoryrole-delete-member",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/directoryrole-post-directoryroles",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/directoryrole-list-scopedmembers",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/scopedrolemembership",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/administrativeunit",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/directoryrole-delta",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/directoryroletemplate",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/scopedrolemembership",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/administrativeunit",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/administrative-units",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/directory-post-administrativeunits",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/directory-list-administrativeunits",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/administrativeunit-get",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/administrativeunit-update",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/administrativeunit-delete",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/administrativeunit-post-members",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/administrativeunit-list-members",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/administrativeunit-get-members",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/administrativeunit-delete-members",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/administrativeunit-list-scopedrolemembers",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/scopedrolemembership",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/administrativeunit-post-scopedrolemembers",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/scopedrolemembership",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/administrativeunit-get-scopedrolemembers",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/scopedrolemembership",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/administrativeunit-delete-scopedrolemembers",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/scopedrolemembership",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/admin-units-restricted-management",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/scopedrolemembership",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/fundamentals/how-subscriptions-associated-directory",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/external-id/what-is-b2b",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/external-id/external-collaboration-settings-configure",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/users/linkedin-user-consent",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/users/groups-settings-cmdlets",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/users/groups-settings-cmdlets",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-cloud-apps",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/authorizationpolicy-update",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/defaultuserrolepermissions",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/users/users-restrict-guest-permissions",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/MicrosoftTeams/guest-access",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/external-id/external-collaboration-settings-configure",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-manage-groups",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/groups-concept",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/users/groups-create-rule",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/users/users-restrict-guest-permissions",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/fundamentals/how-subscriptions-associated-directory",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/rbac-and-directory-admin-roles",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-create-delete-users",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/microsoft-365/solutions/manage-creation-of-groups",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/create-groups/manage-guest-access-in-groups",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/microsoft-365/solutions/manage-creation-of-groups",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/microsoft-365/solutions/groups-naming-policy",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/microsoft-365/solutions/choose-domain-to-create-groups",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/create-groups/manage-guest-access-in-groups",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/create-groups/restore-deleted-group",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/microsoft-365/solutions/microsoft-365-groups-expiration-policy",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/enterprise/manage-microsoft-365-groups-with-powershell",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/microsoft-365/solutions/collaboration-governance-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/active-directory/enterprise-users/directory-service-limits-restrictions",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/office-365-groups",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/compliance/sensitivity-labels-teams-groups-sites",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/office-365-plan-options",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/enterprise/manage-microsoft-365-groups-with-powershell",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/office365/servicedescriptions/sharepoint-online-service-description/sharepoint-online-limits",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/microsoft-365/solutions/collaboration-governance-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/exchange/architecture/client-access/exchange-admin-center",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/powershell/exchange/open-the-exchange-management-shell",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/exchange/permissions/feature-permissions/recipient-permissions",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/exchange/about-documentation/exchange-admin-center-keyboard-shortcuts",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/answers/tags/342/office-exchange-office-exchange-server-management",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/powershell/module/exchangepowershell/new-dynamicdistributiongroup",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/powershell/module/exchangepowershell/get-dynamicdistributiongroup",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/powershell/module/exchangepowershell/set-dynamicdistributiongroup",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/create-groups/manage-guest-access-in-groups",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/active-directory/users-groups-roles/groups-change-type",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/microsoft-365/solutions/allow-members-to-send-as-or-send-on-behalf-of-group",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/active-directory/enterprise-users/groups-dynamic-rule-member-of",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/exchange/recipients-in-exchange-online/manage-distribution-groups/manage-distribution-groups",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/exchange/recipients-in-exchange-online/manage-dynamic-distribution-groups/manage-dynamic-distribution-groups",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/email/create-edit-or-delete-a-security-group",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/active-directory/users-groups-roles/groups-change-type",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/email/create-a-shared-mailbox",
+      "depth": 3
     }
   ],
   "last_batch": {
     "attempted": 36,
-    "documents_total": 750,
-    "queued": 2500,
+    "documents_total": 786,
+    "queued": 2236,
     "failures": []
   }
 }

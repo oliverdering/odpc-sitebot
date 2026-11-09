@@ -1,27 +1,27 @@
 {
-  "generated_at": "2026-11-09T19:42:31.747808+00:00",
+  "generated_at": "2026-11-09T19:57:38.313916+00:00",
   "product": "AdminMonkey Academy",
   "certification_issuer": "ODPC",
   "official_microsoft_certification": false,
   "knowledge": {
-    "documents_collected": 750,
-    "manufacturer_verified": 750,
+    "documents_collected": 786,
+    "manufacturer_verified": 786,
     "review": {
       "unreviewed": 0,
-      "approved": 750,
+      "approved": 786,
       "rejected": 0
     },
     "last_batch": {
       "attempted": 36,
-      "documents_total": 750,
-      "queued": 2500,
+      "documents_total": 786,
+      "queued": 2236,
       "failures": []
     }
   },
   "tracks": [
     {
       "track": "MS-102",
-      "manufacturer_verified_sources": 224,
+      "manufacturer_verified_sources": 227,
       "knowledge_coverage": "source_count_only_not_learning_objective_coverage",
       "practice_scenarios_available": 1,
       "agent_answers_evaluated": 0,
@@ -32,7 +32,7 @@
     },
     {
       "track": "AZ-104",
-      "manufacturer_verified_sources": 37,
+      "manufacturer_verified_sources": 38,
       "knowledge_coverage": "source_count_only_not_learning_objective_coverage",
       "practice_scenarios_available": 1,
       "agent_answers_evaluated": 0,
@@ -43,7 +43,7 @@
     },
     {
       "track": "SC-300",
-      "manufacturer_verified_sources": 41,
+      "manufacturer_verified_sources": 42,
       "knowledge_coverage": "source_count_only_not_learning_objective_coverage",
       "practice_scenarios_available": 1,
       "agent_answers_evaluated": 0,
