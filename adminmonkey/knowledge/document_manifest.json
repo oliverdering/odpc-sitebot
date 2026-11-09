@@ -1169,6 +1169,83 @@
       "captured_at": "2026-11-09T14:22:23.365603+00:00",
       "depth": 2,
       "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-account-recovery-for-users",
+      "sha256": "41b2b74ba94f0dd50a5ac9a5e380b692235463ed34efb518495a408fd4c5fe8f",
+      "captured_at": "2026-11-09T14:24:47.418071+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/commerce/subscriptions/renew-your-subscription",
+      "sha256": "a3da9c99c7364febca2c0e14703c624c8c81ed88be28e1029ce698b860e335cf",
+      "captured_at": "2026-11-09T14:24:48.306086+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/setup/setup-business-basic",
+      "sha256": "c4157937f65884eb733ff2857e6eab0f9fb9bc07ad950cddd6aeadaa6405aa23",
+      "captured_at": "2026-11-09T14:24:48.713556+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/setup/setup-business-standard",
+      "sha256": "c659f34be3776ddb89684aa1dbc17c229d09da8be14f4ea80bed480b055fc30a",
+      "captured_at": "2026-11-09T14:24:49.173416+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/business-premium/m365-business-premium-setup",
+      "sha256": "0ecbe5ac5e43a0a0201b2637883585f085020252ba2cd1ef30ad5a9a2e4d7665",
+      "captured_at": "2026-11-09T14:24:49.483207+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/setup/setup-apps-for-business",
+      "sha256": "756631c15e98834a2bd11497611495e8c8bdeb82dc0fc96f3751a9a9a0358a5b",
+      "captured_at": "2026-11-09T14:24:50.205191+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/setup/upgrade-users-to-latest-office-client",
+      "sha256": "0f50169463ca8bf437aa19300736d5130584c0f2987f82eb6c3269837a161cd8",
+      "captured_at": "2026-11-09T14:24:50.482262+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/migration/microsoft-365-migration-overview",
+      "sha256": "5b470f685f45bca1b82483a054ea806c496afae4a96100f03119ebde8079abb1",
+      "captured_at": "2026-11-09T14:24:50.816618+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/migration/microsoft-365-tenant-to-tenant-migrations",
+      "sha256": "4809773a160f4c962097fae6fd1eac2a7949558e18350ea68ecd7f350147af91",
+      "captured_at": "2026-11-09T14:24:51.152911+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/migration/migration-orchestrator-1-overview",
+      "sha256": "982a0bb57f7a260787c0a36126ea4278e0868f672207e4baec099b4ef4abba93",
+      "captured_at": "2026-11-09T14:24:51.601696+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/sharepointmigration/mm-get-started",
+      "sha256": "37c40d4a5e33cf8b2da5a1d6288e00bee1821b8104f381b54f5c0d9666b8c4a4",
+      "captured_at": "2026-11-09T14:24:51.787894+00:00",
+      "depth": 2,
+      "review_status": "unreviewed"
     }
   ],
   "seen": [
@@ -1231,6 +1308,7 @@
     "https://learn.microsoft.com/en-us/entra/identity-platform/",
     "https://learn.microsoft.com/en-us/entra/identity-platform/developer-glossary",
     "https://learn.microsoft.com/en-us/entra/identity-platform/v2-overview",
+    "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-account-recovery-for-users",
     "https://learn.microsoft.com/en-us/entra/identity/authentication/howto-mfa-userstates",
     "https://learn.microsoft.com/en-us/entra/identity/conditional-access/howto-conditional-access-policy-all-users-mfa",
     "https://learn.microsoft.com/en-us/entra/identity/conditional-access/howto-conditional-access-policy-azure-management",
@@ -1316,9 +1394,15 @@
     "https://learn.microsoft.com/en-us/microsoft-365/admin/security-and-compliance/set-up-multi-factor-authentication",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/setup/add-domain",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/setup/install-applications",
+    "https://learn.microsoft.com/en-us/microsoft-365/admin/setup/setup-apps-for-business",
+    "https://learn.microsoft.com/en-us/microsoft-365/admin/setup/setup-business-basic",
+    "https://learn.microsoft.com/en-us/microsoft-365/admin/setup/setup-business-standard",
+    "https://learn.microsoft.com/en-us/microsoft-365/admin/setup/upgrade-users-to-latest-office-client",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/whats-new-in-preview",
+    "https://learn.microsoft.com/en-us/microsoft-365/business-premium/m365-business-premium-setup",
     "https://learn.microsoft.com/en-us/microsoft-365/commerce/",
     "https://learn.microsoft.com/en-us/microsoft-365/commerce/billing-and-payments/manage-multi-tenant-billing",
+    "https://learn.microsoft.com/en-us/microsoft-365/commerce/subscriptions/renew-your-subscription",
     "https://learn.microsoft.com/en-us/microsoft-365/compliance/whats-new",
     "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-page",
     "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-search",
@@ -1326,6 +1410,9 @@
     "https://learn.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-admin-overview-enhanced-engagements",
     "https://learn.microsoft.com/en-us/microsoft-365/enterprise/office-365-network-mac-perf-onboarding-tool",
     "https://learn.microsoft.com/en-us/microsoft-365/migration/",
+    "https://learn.microsoft.com/en-us/microsoft-365/migration/microsoft-365-migration-overview",
+    "https://learn.microsoft.com/en-us/microsoft-365/migration/microsoft-365-tenant-to-tenant-migrations",
+    "https://learn.microsoft.com/en-us/microsoft-365/migration/migration-orchestrator-1-overview",
     "https://learn.microsoft.com/en-us/microsoft-365/security/mtp/whats-new",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/",
     "https://learn.microsoft.com/en-us/microsoftteams/teams-overview",
@@ -1337,114 +1424,11 @@
     "https://learn.microsoft.com/en-us/purview/",
     "https://learn.microsoft.com/en-us/security/zero-trust/zero-trust-overview",
     "https://learn.microsoft.com/en-us/sharepoint/what-s-new-in-admin-center",
+    "https://learn.microsoft.com/en-us/sharepointmigration/mm-get-started",
     "https://learn.microsoft.com/en-us/windows/deployment/update/check-release-health",
     "https://learn.microsoft.com/en-us/windows/win32/wer/windows-error-reporting"
   ],
   "queue": [
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-account-recovery-for-users",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/security-and-compliance/multi-factor-authentication-microsoft-365",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/principles-for-ai-generated-content",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/previous-versions/",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/contribute",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/legal/termsofuse",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/business-video/",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/commerce/subscriptions/renew-your-subscription",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/setup/setup-business-basic",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/setup/setup-business-standard",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/business-premium/m365-business-premium-setup",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/setup/setup-apps-for-business",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/business-video/",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/principles-for-ai-generated-content",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/previous-versions/",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/contribute",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/legal/termsofuse",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/setup/upgrade-users-to-latest-office-client",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/principles-for-ai-generated-content",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/previous-versions/",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/contribute",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/legal/termsofuse",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/migration/microsoft-365-migration-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/migration/microsoft-365-tenant-to-tenant-migrations",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/migration/migration-orchestrator-1-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/sharepointmigration/mm-get-started",
-      "depth": 2
-    },
     {
       "url": "https://learn.microsoft.com/en-us/Exchange/mailbox-migration/office-365-migration-best-practices",
       "depth": 2
@@ -11340,12 +11324,125 @@
     {
       "url": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-passwordless",
       "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-register-passkey",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/commerce/enter-your-product-key",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/commerce/manage-billing-accounts",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/commerce/manage-billing-accounts",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/commerce/billing-and-payments/manage-billing-profiles",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/commerce/subscriptions/cancel-your-subscription",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/commerce/subscriptions/reactivate-your-subscription",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/commerce/subscriptions/reactivate-your-subscription",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/get-help-with-domains/create-dns-records-at-any-dns-hosting-provider",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/simplified-signup/signup-business-standard",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/cost-management-billing/manage/microsoft-entra-id-free",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/admin-overview/get-started-with-office-365",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/admin-overview/what-subscription-do-i-have",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/commerce/subscriptions/switch-to-a-different-plan",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/assign-licenses-to-users",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/DeployOffice/manage-software-download-settings-office-365",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/DeployOffice/overview-office-deployment-tool",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/migration/migration-orchestrator-1-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/migration/cross-tenant-mailbox-migration",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/migration/cross-tenant-sharepoint-migration",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/migration/cross-tenant-onedrive-migration",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/sharepointmigration/migrate-to-sharepoint-online",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/exchange/mailbox-migration/decide-on-a-migration-path",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/migration/migration-orchestrator-1-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/migration/cross-tenant-onedrive-migration",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/sharepointmigration/migrate-to-sharepoint-online",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/business-video/",
+      "depth": 2
     }
   ],
   "last_batch": {
     "attempted": 12,
-    "documents_total": 167,
-    "queued": 2500,
-    "failures": []
+    "documents_total": 178,
+    "queued": 2501,
+    "failures": [
+      {
+        "url": "https://learn.microsoft.com/en-us/microsoft-365/business-video/",
+        "error": "ValueError"
+      }
+    ]
   }
 }
