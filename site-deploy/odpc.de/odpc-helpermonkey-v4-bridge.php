@@ -42,36 +42,42 @@ add_action('wp_footer',function(){
 add_action('wp_footer',function(){
  if(is_admin())return; ?>
  <style id="odpc-reader-css">
- #odpc-reader{position:fixed;left:12px;bottom:132px;z-index:9995;background:#182c39;color:#fff;border:1px solid #8ba6b4;border-radius:12px;padding:8px;box-shadow:0 4px 18px #0005;max-width:min(370px,calc(100vw - 24px));font:13px/1.4 system-ui,sans-serif}
- #odpc-reader select{display:none!important}#odpc-reader label{display:none!important}#odpc-reader select{max-width:150px;min-height:32px;margin:2px;padding:4px;background:#fff;color:#142f29;border-radius:6px}#odpc-reader label{display:inline-flex;align-items:center;gap:3px;font-size:12px}#odpc-reader button{background:#edf6f3;color:#142f29;border:0;border-radius:7px;padding:7px 9px;margin:2px;cursor:pointer;font:600 12px system-ui,sans-serif}
+ #odpc-reader{position:fixed;left:10px;bottom:86px;z-index:9995;display:flex;align-items:center;flex-wrap:wrap;gap:4px;background:#182c39;color:#fff;border:1px solid #8ba6b4;border-radius:999px;padding:5px;box-shadow:0 4px 18px #0005;max-width:calc(100vw - 20px);font:12px/1.3 system-ui,sans-serif}
+ #odpc-reader>label,#odpc-reader select{display:none!important}
+ #odpc-reader button{background:#edf6f3;color:#142f29;border:0;border-radius:999px;padding:7px 9px;min-height:35px;cursor:pointer;font:600 12px system-ui,sans-serif}
  #odpc-reader button:focus-visible{outline:2px solid #f0b854}
- #odpc-reader-status{font-size:11px;display:block;margin:3px}
- @media(max-width:600px){#odpc-reader{left:9px;bottom:125px;padding:5px}}
+ #odpc-reader #odpc-reader-pause,#odpc-reader #odpc-reader-stop{display:none}
+ #odpc-reader.is-playing #odpc-reader-pause,#odpc-reader.is-playing #odpc-reader-stop{display:inline-block}
+ #odpc-reader details{position:relative}#odpc-reader summary{list-style:none;cursor:pointer;padding:6px 9px;min-height:23px}#odpc-reader summary::-webkit-details-marker{display:none}
+ #odpc-reader .odpc-reader-tools{position:absolute;bottom:40px;left:-100px;display:flex;gap:4px;padding:6px;background:#182c39;border-radius:10px;box-shadow:0 4px 14px #0005}
+ #odpc-reader-status{display:none;flex-basis:100%;font-size:11px;max-width:280px;overflow-wrap:anywhere;padding:3px 6px}
+ #odpc-reader.has-status #odpc-reader-status{display:block}
+ @media(max-width:600px){#odpc-reader{left:8px;bottom:74px}}
  </style>
- <div id="odpc-reader" role="group" aria-label="Artikel vorlesen"><label>Sprache <select id="odpc-reader-language" aria-label="Vorlesesprache"><option value="de-DE">Deutsch</option><option value="en-US">English</option><option value="fr-FR">Français</option><option value="nl-NL">Nederlands</option><option value="es-ES">Español</option><option value="tr-TR">Türkçe</option><option value="ru-RU">Русский</option></select></label><label>Stimme <select id="odpc-reader-voice" aria-label="Systemstimme"><option value="">Automatisch</option></select></label><button type="button" id="odpc-reader-play">▶ Vorlesen</button><button type="button" id="odpc-reader-test">🔊 Audiotest</button><button type="button" id="odpc-reader-mic">🎤 Spracheingabe</button><button type="button" id="odpc-reader-diagnostic">🩺 Diagnose</button><button type="button" id="odpc-reader-pause">⏸ Pause</button><button type="button" id="odpc-reader-stop">■ Stopp</button><span id="odpc-reader-status" role="status" aria-live="polite"></span></div>
+ <div id="odpc-reader" role="group" aria-label="Artikel vorlesen"><label>Sprache <select id="odpc-reader-language" aria-label="Vorlesesprache"><option value="de-DE">Deutsch</option><option value="en-US">English</option><option value="fr-FR">Français</option><option value="nl-NL">Nederlands</option><option value="es-ES">Español</option><option value="tr-TR">Türkçe</option><option value="ru-RU">Русский</option></select></label><label>Stimme <select id="odpc-reader-voice" aria-label="Systemstimme"><option value="">Automatisch</option></select></label><button type="button" id="odpc-reader-play" aria-label="Seite vorlesen">▶ Vorlesen</button><button type="button" id="odpc-reader-mic" aria-label="Spracheingabe starten">🎤 Sprechen</button><button type="button" id="odpc-reader-pause">⏸</button><button type="button" id="odpc-reader-stop">■</button><details id="odpc-reader-more"><summary aria-label="Sprachwerkzeuge">⋯</summary><div class="odpc-reader-tools"><button type="button" id="odpc-reader-test">🔊 Test</button><button type="button" id="odpc-reader-diagnostic">🩺 Diagnose</button></div></details><span id="odpc-reader-status" role="status" aria-live="polite"></span></div>
  <script id="odpc-reader-js">
  (function(){
  'use strict';
  var synth=window.speechSynthesis,play=document.getElementById('odpc-reader-play'),pause=document.getElementById('odpc-reader-pause'),stop=document.getElementById('odpc-reader-stop'),status=document.getElementById('odpc-reader-status'),queue=[],index=0,token=0,paused=false,languageSelect=document.getElementById('odpc-reader-language'),voiceSelect=document.getElementById('odpc-reader-voice'),voiceList=[],activeUtterance=null;
  function lang(){if(window.ODPCLanguage)return window.ODPCLanguage.get();var site=document.getElementById('odpc-ai-language');if(site)return site.value;try{var c=decodeURIComponent(document.cookie.match(/(?:^|; )googtrans=([^;]+)/)?.[1]||'');return c.split('/').pop()||'de'}catch(e){return 'de'}}
- function locale(){return languageSelect.value||'de-DE'}
+ function locale(){var current=window.ODPCLanguage&&window.ODPCLanguage.get?window.ODPCLanguage.get():lang();return ({de:'de-DE',en:'en-US',fr:'fr-FR',nl:'nl-NL',es:'es-ES',tr:'tr-TR',ru:'ru-RU'})[current]||languageSelect.value||'de-DE'}
  function refreshVoices(){if(!synth||typeof synth.getVoices!=='function')return;voiceList=synth.getVoices()||[];var selected=voiceSelect.value;voiceSelect.replaceChildren(new Option('Automatisch',''));voiceList.forEach(function(v,i){if(v.lang.toLowerCase().split(/[-_]/)[0]===locale().split('-')[0])voiceSelect.add(new Option(v.name+' ('+v.lang+')',String(i)))});if(Array.from(voiceSelect.options).some(function(o){return o.value===selected}))voiceSelect.value=selected;status.textContent=voiceList.length?'Systemstimmen: '+voiceList.length+' erkannt':'Warte auf Systemstimmen …'}
  languageSelect.value=({de:'de-DE',en:'en-US',fr:'fr-FR',nl:'nl-NL',es:'es-ES',tr:'tr-TR',ru:'ru-RU'})[lang()]||'de-DE';languageSelect.addEventListener('change',function(){cancel();voiceSelect.value='';refreshVoices();if(window.ODPCLanguage)window.ODPCLanguage.set(locale().slice(0,2))});voiceSelect.addEventListener('change',cancel);if(synth){refreshVoices();if(typeof synth.addEventListener==='function')synth.addEventListener('voiceschanged',refreshVoices);else synth.onvoiceschanged=refreshVoices;setTimeout(refreshVoices,700);setTimeout(refreshVoices,2200)}
  function text(){var root=document.querySelector('article .entry-content,main .entry-content,main article,article,main,#content');if(!root)return '';var clone=root.cloneNode(true);clone.querySelectorAll('script,style,nav,form,button,footer,aside,.screen-reader-text,#odpc-reader,.gtranslate_wrapper').forEach(function(e){e.remove()});return (clone.textContent||'').replace(/\s+/g,' ').trim().slice(0,85000)}
  function split(s){var parts=s.match(/[^.!?。！？]+[.!?。！？]?/g)||[s],out=[],chunk='';parts.forEach(function(p){if((chunk+p).length>175){if(chunk)out.push(chunk);chunk='';while(p.length>175){out.push(p.slice(0,175));p=p.slice(175)}}chunk+=p}else chunk+=p});if(chunk)out.push(chunk);return out.filter(Boolean)}
- function cancel(){token++;queue=[];index=0;paused=false;if(synth&&(synth.speaking||synth.pending||synth.paused))synth.cancel();activeUtterance=null;status.textContent='Gestoppt'}
+ function cancel(){document.getElementById('odpc-reader').classList.remove('is-playing');token++;queue=[];index=0;paused=false;if(synth&&(synth.speaking||synth.pending||synth.paused))synth.cancel();activeUtterance=null;status.textContent='Gestoppt'}
  function next(t){
  if(t!==token)return;
- if(index>=queue.length){status.textContent='Wiedergabe beendet';return}
+ if(index>=queue.length){document.getElementById('odpc-reader').classList.remove('is-playing');status.textContent='Wiedergabe beendet';return}
  var part=queue[index++],u=new SpeechSynthesisUtterance(part);
  u.lang=locale();u.rate=0.95;u.volume=1;
  var available=typeof synth.getVoices==='function'?(synth.getVoices()||[]):[];
  var matches=available.filter(function(x){return (x.lang||'').toLowerCase().split(/[-_]/)[0]===u.lang.split('-')[0]});
- if(voiceSelect.value!==''&&voiceList[Number(voiceSelect.value)])u.voice=voiceList[Number(voiceSelect.value)];else if(matches.length&&voiceSelect.value!=='')u.voice=matches.find(function(x){return x.localService})||matches[0];
+ if(voiceSelect.value!==''&&voiceList[Number(voiceSelect.value)])u.voice=voiceList[Number(voiceSelect.value)];else if(matches.length)u.voice=matches.find(function(x){return x.localService})||matches[0];
  var started=false;activeUtterance=u;
- u.onstart=function(){if(t===token){started=true;status.textContent='🔊 Spricht Abschnitt '+index+' von '+queue.length+' ('+u.lang+')'}};
+ u.onstart=function(){if(t===token){started=true;document.getElementById('odpc-reader').classList.add('is-playing');status.textContent='🔊 Spricht Abschnitt '+index+' von '+queue.length+' ('+u.lang+')'}};
  u.onend=function(){if(t===token)next(t)};
- u.onerror=function(e){if(t!==token)return;var err=e.error||'unbekannt';if(!started&&err!=='canceled'&&err!=='interrupted'&&!u._retried){u._retried=true;status.textContent='Stimme fehlgeschlagen ('+err+'), versuche Standardstimme …';setTimeout(function(){if(t!==token)return;var retry=new SpeechSynthesisUtterance(part);retry.lang=u.lang;retry.rate=1;retry.onstart=u.onstart;retry.onend=u.onend;retry.onerror=function(ev){if(t===token)status.textContent='Audiofehler: '+(ev.error||'unbekannt')+' – Systemstimme prüfen'};try{activeUtterance=retry;synth.speak(retry)}catch(ex){status.textContent='Audio nicht verfügbar: '+ex.message}},150);return}status.textContent='Audiofehler: '+err+' – Systemstimme prüfen'};
+ u.onerror=function(e){if(t!==token)return;var err=e.error||'unbekannt';if(!started&&err!=='canceled'&&err!=='interrupted'&&!u._retried){u._retried=true;status.textContent='Stimme fehlgeschlagen ('+err+'), versuche Standardstimme …';setTimeout(function(){if(t!==token)return;var retry=new SpeechSynthesisUtterance(part);retry.lang=u.lang;retry.rate=1;retry.onstart=u.onstart;retry.onend=u.onend;retry.onerror=function(ev){if(t===token)status.textContent='Audiofehler: '+(ev.error||'unbekannt')+' – Systemstimme prüfen'};try{activeUtterance=retry;synth.speak(retry)}catch(ex){status.textContent='Audio nicht verfügbar: '+ex.message}},150);return}document.getElementById('odpc-reader').classList.remove('is-playing');status.textContent='Audiofehler: '+err+' – Systemstimme prüfen'};
  try{status.textContent='Sprachausgabe wird gestartet ('+u.lang+') …';synth.speak(u);if(synth.paused)synth.resume()}
  catch(e){status.textContent='Sprachausgabe konnte nicht starten: '+e.message}
  setTimeout(function(){if(t===token&&!started){status.textContent='Audiotest ohne Startsignal: speaking='+synth.speaking+', pending='+synth.pending+', Stimmen='+voiceList.length+'. Bitte Gerätestimme prüfen.'}},5000);
@@ -86,15 +92,16 @@ add_action('wp_footer',function(){
  micButton.addEventListener('click',function(){
   var SR=window.SpeechRecognition||window.webkitSpeechRecognition;
   if(!SR){status.textContent='Spracheingabe in diesem Browser nicht verfügbar. Bitte Chrome oder einen unterstützten Browser verwenden.';return}
-  if(recognition){try{recognition.stop()}catch(e){}recognition=null;micButton.textContent='🎤 Spracheingabe';return}
+  if(recognition){try{recognition.stop()}catch(e){}recognition=null;micButton.textContent='🎤 Sprechen';return}
   try{
    recognition=new SR();recognition.lang=locale();recognition.interimResults=false;recognition.maxAlternatives=1;
    recognition.onresult=function(e){var phrase=e.results[0][0].transcript;status.textContent='Erkannt: '+phrase;var q=phrase.toLowerCase();if(/^(vorlesen|lies vor|read aloud|start reading)/.test(q)){play.click()}else if(/^(stopp|stop|halt)/.test(q)){stop.click()}else if(/^(pause|pausieren)/.test(q)){pause.click()}else if(/^(audiotest|audio test|test)/.test(q)){document.getElementById('odpc-reader-test').click()}else{status.textContent='Erkannt: '+phrase+' – Befehle: Vorlesen, Audiotest, Pause, Stopp.'}};
    recognition.onerror=function(e){status.textContent='Mikrofonfehler: '+e.error+'. Bei not-allowed die Mikrofonberechtigung in den Browser-Einstellungen prüfen.'};
    recognition.onend=function(){recognition=null;micButton.textContent='🎤 Spracheingabe'};
-   recognition.start();micButton.textContent='■ Mikrofon stoppen';status.textContent='Mikrofon gestartet – Browserberechtigung bei Nachfrage erlauben.';
+   recognition.start();micButton.textContent='■ Mikrofon stoppen';status.textContent='Mikrofon gestartet – Berechtigung bei Nachfrage erlauben.';
   }catch(e){recognition=null;micButton.textContent='🎤 Spracheingabe';status.textContent='Mikrofonstart fehlgeschlagen: '+e.message}
  });
+ var reader=document.getElementById('odpc-reader');new MutationObserver(function(){reader.classList.toggle('has-status',!!status.textContent&&status.textContent!=='Gestoppt')}).observe(status,{childList:true,characterData:true,subtree:true});
  stop.addEventListener('click',cancel);document.addEventListener('odpc:languagechange',function(){cancel();languageSelect.value=({de:'de-DE',en:'en-US',fr:'fr-FR',nl:'nl-NL',es:'es-ES',tr:'tr-TR',ru:'ru-RU'})[lang()]||'de-DE';refreshVoices()});window.addEventListener('pagehide',cancel);
  })();
  </script>
