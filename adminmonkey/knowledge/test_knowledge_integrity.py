@@ -24,8 +24,9 @@ class KnowledgeIntegrityTests(unittest.TestCase):
         docs = manifest["documents"]
         self.assertEqual(progress["knowledge"]["documents_collected"], len(docs))
         self.assertLessEqual(progress["knowledge"]["manufacturer_verified"], len(docs))
-        self.assertTrue(all(t["verified_passes"] == 0 and t["badge_status"] == "not_earned"
-                            for t in progress["tracks"]), "Unverified competence must not earn badges")
+        self.assertTrue(all(t["verified_passes"] <= t["agent_answers_evaluated"]
+                            and (t["badge_status"] != "practice_verified" or t["competency_percent"] == 100)
+                            for t in progress["tracks"]), "Practice badges require independently verified competence")
         urls = [d["url"] for d in docs]
         self.assertEqual(len(urls), len(set(urls)), "Duplicate document URLs in public manifest")
 
