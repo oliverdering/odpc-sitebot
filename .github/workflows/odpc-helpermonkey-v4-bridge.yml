@@ -21,6 +21,8 @@ jobs:
         run: |
           php -l site-deploy/odpc.de/odpc-helpermonkey-v4-bridge.php
           grep -q 'id="odpc-reader-test"' site-deploy/odpc.de/odpc-helpermonkey-v4-bridge.php
+          grep -q 'id="odpc-unified-dock-js"' site-deploy/odpc.de/odpc-helpermonkey-v4-bridge.php
+          grep -q 'id="odpc-reader-mic"' site-deploy/odpc.de/odpc-helpermonkey-v4-bridge.php
           ! grep -q 'odpc-voice/v1' site-deploy/odpc.de/odpc-helpermonkey-v4-bridge.php
           python3 -m py_compile scripts/deploy_odpc_helpermonkey_v4_bridge.py
           python3 - <<'PY'
@@ -52,7 +54,7 @@ jobs:
               try:
                   with urlopen(Request(url,headers={'User-Agent':'ODPC Voice Release Verification','Cache-Control':'no-cache'}),timeout=25) as response:
                       html=response.read(800000).decode('utf-8','replace')
-                  missing=[marker for marker in ('id="odpc-reader-play"','id="odpc-reader-mic"','id="odpc-reader-test"') if marker not in html]
+                  missing=[marker for marker in ('id="odpc-reader-play"','id="odpc-reader-mic"','id="odpc-reader-test"','id="odpc-unified-dock-js"') if marker not in html]
                   print(label,'HTML bytes:',len(html),'missing:',missing,flush=True)
                   if missing and label=='uncached':raise SystemExit('FAIL: current deployment missing on uncached site')
                   if missing:print('WARNING: canonical homepage serves stale cached HTML; requires page cache purge',flush=True)
