@@ -62,16 +62,16 @@ add_action('wp_footer',function(){
  if(index>=queue.length){status.textContent='Wiedergabe beendet';return}
  var part=queue[index++],u=new SpeechSynthesisUtterance(part);
  u.lang=locale();u.rate=0.95;u.volume=1;
- var available=synth.getVoices()||[];
+ var available=typeof synth.getVoices==='function'?(synth.getVoices()||[]):[];
  var matches=available.filter(function(x){return (x.lang||'').toLowerCase().split(/[-_]/)[0]===u.lang.split('-')[0]});
- if(matches.length)u.voice=matches[0];
+ if(matches.length)u.voice=matches.find(function(x){return x.localService})||matches[0];
  var started=false;
  u.onstart=function(){if(t===token){started=true;status.textContent='🔊 Spricht Abschnitt '+index+' von '+queue.length+' ('+u.lang+')'}};
  u.onend=function(){if(t===token)next(t)};
- u.onerror=function(e){if(t===token){status.textContent='Audiofehler: '+(e.error||'unbekannt')+' – bitte Android Text-zu-Sprache prüfen'}};
+ u.onerror=function(e){if(t!==token)return;var err=e.error||'unbekannt';if(!started&&err!=='canceled'&&err!=='interrupted'&&!u._retried){u._retried=true;status.textContent='Stimme fehlgeschlagen ('+err+'), versuche Standardstimme …';setTimeout(function(){if(t!==token)return;var retry=new SpeechSynthesisUtterance(part);retry.lang=u.lang;retry.rate=1;retry.onstart=u.onstart;retry.onend=u.onend;retry.onerror=function(ev){if(t===token)status.textContent='Audiofehler: '+(ev.error||'unbekannt')+' – Systemstimme prüfen'};try{synth.cancel();synth.speak(retry)}catch(ex){status.textContent='Audio nicht verfügbar: '+ex.message}},150);return}status.textContent='Audiofehler: '+err+' – Systemstimme prüfen'};
  try{synth.speak(u);status.textContent='Sprachausgabe wird gestartet ('+u.lang+') …';if(synth.paused)synth.resume()}
  catch(e){status.textContent='Sprachausgabe konnte nicht starten: '+e.message}
- setTimeout(function(){if(t===token&&!started&&!synth.speaking){status.textContent='Keine Systemstimme gestartet. Bitte Browser-Sprachausgabe und Geräte-Lautstärke prüfen.'}},2500);
+ setTimeout(function(){if(t===token&&!started&&!synth.speaking){status.textContent='Keine Systemstimme gestartet. Prüfe Geräte-TTS und Browser.'}},5000);
 }
  play.addEventListener('click',function(){if(!synth){status.textContent='Vorlesen in diesem Browser nicht unterstützt';return}if(paused){synth.resume();paused=false;status.textContent='Fortgesetzt';return}cancel();var s=text();if(!s){status.textContent='Kein Artikeltext gefunden';return}if(!window.SpeechSynthesisUtterance){status.textContent='Sprachausgabe auf diesem Gerät nicht verfügbar';return}queue=split(s);index=0;var t=token;next(t)});
  pause.addEventListener('click',function(){if(!synth)return;if(synth.paused){synth.resume();paused=false;status.textContent='Fortgesetzt'}else if(synth.speaking){synth.pause();paused=true;status.textContent='Pausiert'}});
