@@ -30,30 +30,39 @@ jobs:
         env:
           ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
         run: python3 scripts/deploy_odpc_helpermonkey_v4_bridge.py
-      - name: Verify anonymous normal URL and release identity
+      - name: Diagnose public cache and verify exact release on normal and uncached URLs
         shell: bash
         run: |
           set -euo pipefail
           python3 - <<'PY'
-          from urllib.request import Request, urlopen
+          from urllib.request import Request,urlopen
+          from urllib.parse import urlencode
           import time
-          url='https://odpc.de/'
           required=['name="odpc-voice-build" content="2026-11-10-audit-1"','id="odpc-reader-test"','id="odpc-reader-language"','id="odpc-reader-voice"']
-          for attempt in range(8):
-              req=Request(url,headers={'User-Agent':'Mozilla/5.0 (ODPC anonymous release verification)','Cache-Control':'no-cache'})
-              try:
-                  with urlopen(req,timeout=25) as response:
-                      body=response.read(500000).decode('utf-8','replace')
-                  missing=[x for x in required if x not in body]
-                  if not missing:
-                      print('PASS: anonymous normal homepage contains exact voice release marker and controls')
-                      break
-                  print('Attempt',attempt+1,'missing',missing)
-              except Exception as exc:
-                  print('Attempt',attempt+1,'request failed:',type(exc).__name__,str(exc))
-              time.sleep(7)
+          base='https://odpc.de/'
+          for attempt in range(6):
+              results={}
+              for mode,url in [('normal',base),('cache_bypass',base+'?'+urlencode({'odpc_voice_probe':str(int(time.time()))}))]:
+                  try:
+                      req=Request(url,headers={'User-Agent':'Mozilla/5.0 ODPC-Voice-Release-Audit','Cache-Control':'no-cache','Pragma':'no-cache'})
+                      with urlopen(req,timeout=25) as response:
+                          body=response.read(700000).decode('utf-8','replace')
+                          headers={k:v for k,v in response.headers.items() if k.lower() in ('age','cache-control','x-cache','x-litespeed-cache','cf-cache-status','server','vary')}
+                          code=response.status
+                      missing=[x for x in required if x not in body]
+                      results[mode]=not missing
+                      print(f'Attempt {attempt+1} {mode}: HTTP {code}; bytes={len(body)}; missing={missing}; headers={headers}',flush=True)
+                  except Exception as exc:
+                      results[mode]=False
+                      print(f'Attempt {attempt+1} {mode}: {type(exc).__name__}: {exc}',flush=True)
+              if all(results.values()):
+                  print('PASS: exact release visible on both anonymous normal and cache-bypass URLs')
+                  break
+              if results.get('cache_bypass') and not results.get('normal'):
+                  print('DIAGNOSIS: normal homepage is stale while cache-bypass is current; purge WordPress/IONOS/CDN page cache',flush=True)
+              time.sleep(10)
           else:
-              raise SystemExit('FAIL: anonymous live release is missing or cached')
+              raise SystemExit('FAIL: release not visible on both normal and cache-bypass homepage URLs')
           PY
       - name: Save rollback backup
         if: always()
