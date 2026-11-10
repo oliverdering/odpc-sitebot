@@ -2,7 +2,7 @@
 /**
  * Plugin Name: ODPC About Me 2026
  * Description: Chronological profile with live HTML CV and original certificate links; voice dock untouched.
- * Version: 1.2.0
+ * Version: 1.3.0
  */
 if (!defined('ABSPATH')) { exit; }
 function odpc_about_2026_target() {
@@ -83,3 +83,15 @@ add_action('wp_footer', function () {
     </script>
     <?php
 }, 99);
+
+/**
+ * Preserve the original hardware-to-AI article and enhance its missing team imagery.
+ * Only post 2970; no changes to global voice dock or the homepage.
+ */
+add_filter('the_content', function ($content) {
+    if (is_admin() || !is_singular('post') || (int)get_queried_object_id() !== 2970) return $content;
+    if (strpos($content, 'odpc-team-member') === false || strpos($content, 'odpc-team-photo-2026') !== false) return $content;
+    $photo = '<figure id="odpc-team-photo-2026" class="odpc-team-photo" style="margin:0 0 26px;border-radius:16px;overflow:hidden;border:1px solid #54708a;background:#182b3e"><img src="https://odpc.de/wp-content/uploads/2026/11/odpc_team_hero.webp" alt="Oliver Dering und sein digitales KI-Team" loading="lazy" decoding="async" style="display:block;width:100%;height:auto;max-height:480px;object-fit:contain"><figcaption style="padding:12px 17px;color:#eef5fc;font-size:14px">ODPC · Oliver Dering und sein digitales KI-Team</figcaption></figure>';
+    $content = preg_replace('/(<div\\s+class="odpc-team"\\s*>)/', $photo . '$1', $content, 1);
+    return $content;
+}, 80);
