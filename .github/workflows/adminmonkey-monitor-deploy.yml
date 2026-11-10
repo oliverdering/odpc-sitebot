@@ -26,7 +26,8 @@ jobs:
           grep -q 'AdminMonkey Learning Monitor' site-deploy/ai.odpc.de/adminmonkey/monitor/index.html
           grep -q 'importPercent' site-deploy/ai.odpc.de/adminmonkey/monitor/index.html
           grep -q 'const target=1500' site-deploy/ai.odpc.de/adminmonkey/monitor/index.html
-          grep -q 'bananaBadges' site-deploy/ai.odpc.de/adminmonkey/monitor/index.html
+          grep -q 'Zertifizierungs-Ausbau 2026' site-deploy/ai.odpc.de/adminmonkey/monitor/index.html
+          ! grep -q 'bananaBadges' site-deploy/ai.odpc.de/adminmonkey/monitor/index.html
       - name: Install pinned SFTP client
         run: python3 -m pip install 'paramiko>=3.4,<5'
       - name: Publish monitor with host key pinning and smoke test
@@ -85,7 +86,7 @@ jobs:
                               req=Request("https://ai.odpc.de/adminmonkey/monitor/?verify="+str(int(time.time())),headers={"Cache-Control":"no-cache","User-Agent":"AdminMonkey-Monitor-Deploy/1"})
                               with urlopen(req,timeout=20) as response:
                                   body=response.read(200000).decode("utf-8","replace")
-                              if all(marker in body for marker in ("AdminMonkey Learning Monitor", "importPercent", "bananaBadges", "const target=1500", "Bestätigter Sammelfortschritt (MariaDB)", "Import-Synchronisation")):
+                              if all(marker in body for marker in ("AdminMonkey Learning Monitor", "importPercent", "Zertifizierungs-Ausbau 2026", "const target=1500", "Bestätigter Sammelfortschritt (MariaDB)", "Import-Synchronisation")):
                                   ok=True;break
                           except Exception as exc: print("Smoke check retry:",type(exc).__name__)
                       if not ok: raise RuntimeError("Public monitor page smoke test failed")
