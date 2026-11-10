@@ -51,14 +51,14 @@ add_action('wp_footer',function(){
  <script id="odpc-reader-js">
  (function(){
  'use strict';
- var synth=window.speechSynthesis,play=document.getElementById('odpc-reader-play'),pause=document.getElementById('odpc-reader-pause'),stop=document.getElementById('odpc-reader-stop'),status=document.getElementById('odpc-reader-status'),queue=[],index=0,token=0,paused=false,languageSelect=document.getElementById('odpc-reader-language'),voiceSelect=document.getElementById('odpc-reader-voice'),voiceList=[];
+ var synth=window.speechSynthesis,play=document.getElementById('odpc-reader-play'),pause=document.getElementById('odpc-reader-pause'),stop=document.getElementById('odpc-reader-stop'),status=document.getElementById('odpc-reader-status'),queue=[],index=0,token=0,paused=false,languageSelect=document.getElementById('odpc-reader-language'),voiceSelect=document.getElementById('odpc-reader-voice'),voiceList=[],activeUtterance=null;
  function lang(){if(window.ODPCLanguage)return window.ODPCLanguage.get();var site=document.getElementById('odpc-ai-language');if(site)return site.value;try{var c=decodeURIComponent(document.cookie.match(/(?:^|; )googtrans=([^;]+)/)?.[1]||'');return c.split('/').pop()||'de'}catch(e){return 'de'}}
  function locale(){return languageSelect.value||'de-DE'}
  function refreshVoices(){if(!synth||typeof synth.getVoices!=='function')return;voiceList=synth.getVoices()||[];var selected=voiceSelect.value;voiceSelect.replaceChildren(new Option('Automatisch',''));voiceList.forEach(function(v,i){if(v.lang.toLowerCase().split(/[-_]/)[0]===locale().split('-')[0])voiceSelect.add(new Option(v.name+' ('+v.lang+')',String(i)))});if(Array.from(voiceSelect.options).some(function(o){return o.value===selected}))voiceSelect.value=selected;status.textContent=voiceList.length?'Systemstimmen: '+voiceList.length+' erkannt':'Warte auf Systemstimmen …'}
  languageSelect.value=({de:'de-DE',en:'en-US',fr:'fr-FR',nl:'nl-NL',es:'es-ES',tr:'tr-TR',ru:'ru-RU'})[lang()]||'de-DE';languageSelect.addEventListener('change',function(){cancel();voiceSelect.value='';refreshVoices();if(window.ODPCLanguage)window.ODPCLanguage.set(locale().slice(0,2))});voiceSelect.addEventListener('change',cancel);if(synth){refreshVoices();if(typeof synth.addEventListener==='function')synth.addEventListener('voiceschanged',refreshVoices);else synth.onvoiceschanged=refreshVoices;setTimeout(refreshVoices,700);setTimeout(refreshVoices,2200)}
  function text(){var root=document.querySelector('article .entry-content,main .entry-content,main article,article,main,#content');if(!root)return '';var clone=root.cloneNode(true);clone.querySelectorAll('script,style,nav,form,button,footer,aside,.screen-reader-text,#odpc-reader,.gtranslate_wrapper').forEach(function(e){e.remove()});return (clone.textContent||'').replace(/\s+/g,' ').trim().slice(0,85000)}
  function split(s){var parts=s.match(/[^.!?。！？]+[.!?。！？]?/g)||[s],out=[],chunk='';parts.forEach(function(p){if((chunk+p).length>175){if(chunk)out.push(chunk);chunk='';while(p.length>175){out.push(p.slice(0,175));p=p.slice(175)}}chunk+=p}else chunk+=p});if(chunk)out.push(chunk);return out.filter(Boolean)}
- function cancel(){token++;queue=[];index=0;paused=false;if(synth)synth.cancel();status.textContent='Gestoppt'}
+ function cancel(){token++;queue=[];index=0;paused=false;if(synth&&(synth.speaking||synth.pending||synth.paused))synth.cancel();activeUtterance=null;status.textContent='Gestoppt'}
  function next(t){
  if(t!==token)return;
  if(index>=queue.length){status.textContent='Wiedergabe beendet';return}
@@ -66,14 +66,14 @@ add_action('wp_footer',function(){
  u.lang=locale();u.rate=0.95;u.volume=1;
  var available=typeof synth.getVoices==='function'?(synth.getVoices()||[]):[];
  var matches=available.filter(function(x){return (x.lang||'').toLowerCase().split(/[-_]/)[0]===u.lang.split('-')[0]});
- if(voiceSelect.value!==''&&voiceList[Number(voiceSelect.value)])u.voice=voiceList[Number(voiceSelect.value)];else if(matches.length)u.voice=matches.find(function(x){return x.localService})||matches[0];
- var started=false;
+ if(voiceSelect.value!==''&&voiceList[Number(voiceSelect.value)])u.voice=voiceList[Number(voiceSelect.value)];else if(matches.length&&voiceSelect.value!=='')u.voice=matches.find(function(x){return x.localService})||matches[0];
+ var started=false;activeUtterance=u;
  u.onstart=function(){if(t===token){started=true;status.textContent='🔊 Spricht Abschnitt '+index+' von '+queue.length+' ('+u.lang+')'}};
  u.onend=function(){if(t===token)next(t)};
- u.onerror=function(e){if(t!==token)return;var err=e.error||'unbekannt';if(!started&&err!=='canceled'&&err!=='interrupted'&&!u._retried){u._retried=true;status.textContent='Stimme fehlgeschlagen ('+err+'), versuche Standardstimme …';setTimeout(function(){if(t!==token)return;var retry=new SpeechSynthesisUtterance(part);retry.lang=u.lang;retry.rate=1;retry.onstart=u.onstart;retry.onend=u.onend;retry.onerror=function(ev){if(t===token)status.textContent='Audiofehler: '+(ev.error||'unbekannt')+' – Systemstimme prüfen'};try{synth.cancel();synth.speak(retry)}catch(ex){status.textContent='Audio nicht verfügbar: '+ex.message}},150);return}status.textContent='Audiofehler: '+err+' – Systemstimme prüfen'};
- try{synth.speak(u);status.textContent='Sprachausgabe wird gestartet ('+u.lang+') …';if(synth.paused)synth.resume()}
+ u.onerror=function(e){if(t!==token)return;var err=e.error||'unbekannt';if(!started&&err!=='canceled'&&err!=='interrupted'&&!u._retried){u._retried=true;status.textContent='Stimme fehlgeschlagen ('+err+'), versuche Standardstimme …';setTimeout(function(){if(t!==token)return;var retry=new SpeechSynthesisUtterance(part);retry.lang=u.lang;retry.rate=1;retry.onstart=u.onstart;retry.onend=u.onend;retry.onerror=function(ev){if(t===token)status.textContent='Audiofehler: '+(ev.error||'unbekannt')+' – Systemstimme prüfen'};try{activeUtterance=retry;synth.speak(retry)}catch(ex){status.textContent='Audio nicht verfügbar: '+ex.message}},150);return}status.textContent='Audiofehler: '+err+' – Systemstimme prüfen'};
+ try{status.textContent='Sprachausgabe wird gestartet ('+u.lang+') …';synth.speak(u);if(synth.paused)synth.resume()}
  catch(e){status.textContent='Sprachausgabe konnte nicht starten: '+e.message}
- setTimeout(function(){if(t===token&&!started&&!synth.speaking){status.textContent='Keine Systemstimme gestartet. Prüfe Geräte-TTS und Browser.'}},5000);
+ setTimeout(function(){if(t===token&&!started){status.textContent='Audiotest ohne Startsignal: speaking='+synth.speaking+', pending='+synth.pending+', Stimmen='+voiceList.length+'. Bitte Gerätestimme prüfen.'}},5000);
 }
  play.addEventListener('click',function(){if(!synth){status.textContent='Vorlesen in diesem Browser nicht unterstützt';return}if(paused){synth.resume();paused=false;status.textContent='Fortgesetzt';return}cancel();var s=text();if(!s){status.textContent='Kein Artikeltext gefunden';return}if(!window.SpeechSynthesisUtterance){status.textContent='Sprachausgabe auf diesem Gerät nicht verfügbar';return}queue=split(s);index=0;var t=token;next(t)});
  pause.addEventListener('click',function(){if(!synth)return;if(synth.paused){synth.resume();paused=false;status.textContent='Fortgesetzt'}else if(synth.speaking){synth.pause();paused=true;status.textContent='Pausiert'}});
