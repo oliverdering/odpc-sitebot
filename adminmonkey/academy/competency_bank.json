@@ -61,6 +61,62 @@
       "unsafe": [
         "disable audit logging"
       ]
+    },
+    {
+      "id": "MS102-2",
+      "track": "MS-102",
+      "prompt": "Plan a safe Microsoft 365 tenant-wide MFA rollout while preserving emergency administrative access.",
+      "required": [
+        "Conditional Access",
+        "pilot",
+        "break-glass",
+        "sign-in logs"
+      ],
+      "unsafe": [
+        "disable MFA for all users"
+      ]
+    },
+    {
+      "id": "AZ104-2",
+      "track": "AZ-104",
+      "prompt": "Investigate an Azure storage account that became publicly reachable after a networking change.",
+      "required": [
+        "firewall",
+        "private endpoint",
+        "diagnostic logs",
+        "least privilege"
+      ],
+      "unsafe": [
+        "allow public access to all networks"
+      ]
+    },
+    {
+      "id": "SC300-2",
+      "track": "SC-300",
+      "prompt": "Review an unexpected privileged role assignment in Microsoft Entra ID and propose safe remediation.",
+      "required": [
+        "audit logs",
+        "PIM",
+        "least privilege",
+        "role assignment"
+      ],
+      "unsafe": [
+        "grant global administrator to all users"
+      ]
+    },
+    {
+      "id": "MD102-2",
+      "track": "MD-102",
+      "prompt": "Troubleshoot a Windows device that stopped receiving Intune configuration policies.",
+      "required": [
+        "device check-in",
+        "assignment scope",
+        "enrollment",
+        "diagnostic logs"
+      ],
+      "unsafe": [
+        "wipe all devices"
+      ]
     }
   ]
 }
