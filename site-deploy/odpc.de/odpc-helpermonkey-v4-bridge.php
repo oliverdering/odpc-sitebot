@@ -131,6 +131,13 @@ add_action('wp_footer',function(){if(is_admin())return; ?>
 #odpc-utility-dock>#odpc-hm-v4-wa::after{content:'WhatsApp'!important;display:block!important;font:700 13px/1 system-ui,sans-serif!important;color:#fff!important}
 body.odpc-dock-active{padding-bottom:70px!important}
 @media(max-width:360px){#odpc-utility-dock{gap:5px!important;width:calc(100vw - 16px)!important;padding:5px 7px!important}#odpc-utility-dock>.odpc-dock-language{flex-basis:80px!important;width:80px!important;min-width:80px!important;max-width:80px!important}#odpc-utility-dock .odpc-dock-language>.gt_float_switcher,#odpc-utility-dock .odpc-dock-language>.gt_switcher_wrapper,#odpc-utility-dock .odpc-dock-language>.gtranslate_wrapper,#odpc-utility-dock .odpc-dock-language .gt-selected{width:80px!important;max-width:80px!important}}
+
+/* Fix actual nested GTranslate float positioning; keep dropdown functional. */
+#odpc-utility-dock .odpc-dock-language .gt_float_switcher,#odpc-utility-dock .odpc-dock-language .gt_switcher_wrapper,#odpc-utility-dock .odpc-dock-language .gtranslate_wrapper,#odpc-utility-dock .odpc-dock-language #gt_float_wrapper{position:static!important;inset:auto!important;top:auto!important;left:auto!important;right:auto!important;bottom:auto!important;transform:none!important;margin:0!important;float:none!important;max-width:88px!important;width:88px!important;box-shadow:none!important}
+#odpc-utility-dock #odpc-reader{flex-basis:88px!important;min-width:88px!important;max-width:88px!important;width:88px!important;gap:4px!important}
+#odpc-utility-dock #odpc-reader #odpc-reader-stop{display:flex!important;position:static!important;align-items:center!important;justify-content:center!important;flex:0 0 40px!important;width:40px!important;min-width:40px!important;max-width:40px!important;height:40px!important;min-height:40px!important;padding:0!important;margin:0!important;background:#edf6f3!important;color:#142f29!important;border-radius:50%!important;font-size:20px!important}
+#odpc-utility-dock{width:min(352px,calc(100vw - 20px))!important;max-width:352px!important;gap:5px!important;padding:6px 7px!important}
+#odpc-utility-dock>.odpc-hm-v4-wa,#odpc-utility-dock>.odpc-wa-sticky,#odpc-utility-dock>#odpc-hm-v4-wa{flex-basis:95px!important;width:95px!important;min-width:95px!important;max-width:95px!important}
 </style>
 <script id="odpc-unified-dock-js">
 (function(){
@@ -144,7 +151,7 @@ function mount(){
  var lang=document.querySelector('.gt_float_switcher,.gt_switcher_wrapper,.gtranslate_wrapper');
  if(lang&&lang!==reader&&lang!==help){var holder=document.createElement('div');holder.className='odpc-dock-language';dock.appendChild(holder);holder.appendChild(lang)}
  dock.appendChild(reader);
- var tools=reader.querySelector('.odpc-reader-tools');if(tools){['odpc-reader-pause','odpc-reader-stop'].forEach(function(id){var b=document.getElementById(id);if(b)tools.insertBefore(b,tools.firstChild)})}
+ var stop=document.getElementById('odpc-reader-stop');if(stop){reader.insertBefore(stop,document.getElementById('odpc-reader-more'));stop.setAttribute('aria-label','Vorlesen stoppen');stop.setAttribute('title','Vorlesen stoppen')}
  dock.appendChild(help);help.setAttribute('aria-label','Fragen und Hilfe');help.setAttribute('title','Fragen und Hilfe');
  var panel=document.getElementById('odpc-hm-v4-help');if(panel)dock.appendChild(panel);
  var wa=document.querySelector('.odpc-wa-sticky')||document.getElementById('odpc-hm-v4-wa');
@@ -152,7 +159,17 @@ function mount(){
  document.body.classList.add('odpc-dock-active');
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount);else mount();
-window.addEventListener('load',function(){if(!document.querySelector('#odpc-utility-dock .odpc-dock-language')){var lang=document.querySelector('.gt_float_switcher,.gt_switcher_wrapper,.gtranslate_wrapper');var dock=document.getElementById('odpc-utility-dock');if(lang&&dock){var holder=document.createElement('div');holder.className='odpc-dock-language';dock.insertBefore(holder,dock.firstChild);holder.appendChild(lang)}}});
+function syncLanguage(){
+ var dock=document.getElementById('odpc-utility-dock');if(!dock)return;
+ var holder=dock.querySelector('.odpc-dock-language');
+ if(!holder){holder=document.createElement('div');holder.className='odpc-dock-language';dock.insertBefore(holder,dock.firstChild)}
+ var existing=holder.querySelector('.gt_float_switcher,.gt_switcher_wrapper,.gtranslate_wrapper');
+ if(existing)return;
+ var widget=document.querySelector('.gt_float_switcher,.gt_switcher_wrapper,.gtranslate_wrapper');
+ if(widget&&!holder.contains(widget)){var outer=widget.closest('.gtranslate_wrapper,.gt_switcher_wrapper')||widget;holder.appendChild(outer)}
+}
+window.addEventListener('load',syncLanguage);
+var syncPending=false;new MutationObserver(function(){if(syncPending)return;syncPending=true;Promise.resolve().then(function(){syncPending=false;syncLanguage()})}).observe(document.body,{childList:true,subtree:true});
 })();
 </script>
 <?php },99);
