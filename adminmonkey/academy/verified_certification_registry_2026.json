@@ -14,7 +14,26 @@
       "retirement_date": "2026-11-30",
       "official_url": "https://learn.microsoft.com/en-us/credentials/certifications/m365-administrator-expert/",
       "retirement_source": "https://learn.microsoft.com/en-us/credentials/support/credential-retirement",
-      "competency_verified": false
+      "competency_verified": false,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ms-102/",
+      "exam_domains": [
+        {
+          "name": "Deploy and manage a Microsoft 365 tenant",
+          "weight": "10–15%"
+        },
+        {
+          "name": "Implement and manage Microsoft Entra identity and access",
+          "weight": "25–30%"
+        },
+        {
+          "name": "Manage security and threats by using Microsoft Defender XDR",
+          "weight": "35–40%"
+        },
+        {
+          "name": "Manage compliance by using Microsoft Purview",
+          "weight": "15–20%"
+        }
+      ]
     },
     {
       "id": "m365-ai-administrator-associate",
@@ -24,8 +43,24 @@
       ],
       "status": "listed_in_official_catalog",
       "retirement_date": null,
-      "official_url": "https://learn.microsoft.com/en-us/credentials/certifications/m365-ai-administrator-associate/",
-      "competency_verified": false
+      "official_url": "https://learn.microsoft.com/en-us/credentials/certifications/ai-services-administrator-associate/",
+      "competency_verified": false,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ab-650/",
+      "exam_domains": [
+        {
+          "name": "Configure and manage Microsoft 365 tenants and workloads",
+          "weight": "20–25%"
+        },
+        {
+          "name": "Govern and secure Microsoft 365 tenants and workloads",
+          "weight": "40–45%"
+        },
+        {
+          "name": "Manage and secure AI services in Microsoft 365",
+          "weight": "35–40%"
+        }
+      ],
+      "note": "AB-650 is a newer Associate-level path, not a one-to-one replacement for the retiring MS-102 Expert credential."
     }
   ],
   "notice": "Official certification metadata only. ODPC has not earned or issued Microsoft credentials. Existing MS-102 learning content must remain available for historical benchmark comparison."
