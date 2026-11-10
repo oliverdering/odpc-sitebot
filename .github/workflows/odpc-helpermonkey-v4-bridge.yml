@@ -20,6 +20,8 @@ jobs:
       - name: Verify PHP and deployment script
         run: |
           php -l site-deploy/odpc.de/odpc-helpermonkey-v4-bridge.php
+          grep -q 'id="odpc-reader-test"' site-deploy/odpc.de/odpc-helpermonkey-v4-bridge.php
+          ! grep -q 'odpc-voice/v1' site-deploy/odpc.de/odpc-helpermonkey-v4-bridge.php
           python3 -m py_compile scripts/deploy_odpc_helpermonkey_v4_bridge.py
       - name: Install SFTP dependency
         run: python3 -m pip install 'paramiko>=3.4,<5'
