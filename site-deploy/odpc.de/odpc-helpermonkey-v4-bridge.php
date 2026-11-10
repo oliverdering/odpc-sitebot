@@ -6,7 +6,8 @@
  * Version: 4.0.3
  */
 if(!defined('ABSPATH'))exit;
-add_action('wp_head',function(){
+add_action('wp_head',function(){if(!is_admin())echo '<meta name="odpc-voice-build" content="2026-11-10-audit-1">' . "\n";
+
  if(is_admin())return;
  echo '<style id="odpc-hm-v4-style">
  /* ODPC uses navy/sand branding; the Helper Monkey product site alone uses green. */
