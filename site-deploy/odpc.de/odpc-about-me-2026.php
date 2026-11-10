@@ -2,7 +2,7 @@
 /**
  * Plugin Name: ODPC About Me 2026
  * Description: Chronological profile with live HTML CV and original certificate links; voice dock untouched.
- * Version: 1.5.0
+ * Version: 1.6.0
  */
 if (!defined('ABSPATH')) { exit; }
 function odpc_about_2026_target() {
@@ -107,59 +107,53 @@ add_filter('the_content', function ($content) {
     return $content;
 }, 80);
 
-/**
- * ODPC Easter Egg: hold the discreet gender-switch button to reveal the
- * alternative Village People team photo. Original logo is never overwritten.
- */
+
+/** Homepage-only press-and-hold image Easter Egg. Fixed visible button; voice dock untouched. */
 add_action('wp_footer', function () {
     if (is_admin() || !is_front_page()) return;
     ?>
-    <style id="odpc-team-easter-egg-css">
-    #odpc-team-easter-egg{position:absolute;right:12px;bottom:12px;z-index:40;width:34px;height:34px;display:flex;align-items:center;justify-content:center;border:1px solid #ffffff99;border-radius:50%;background:#13273bd9;color:#fff;font:700 19px/1 system-ui,sans-serif;box-shadow:0 3px 12px #0006;cursor:pointer;touch-action:none;user-select:none;-webkit-user-select:none;opacity:.7}
-    #odpc-team-easter-egg:hover,#odpc-team-easter-egg:focus-visible,#odpc-team-easter-egg[data-pressed="1"]{opacity:1;outline-offset:2px}
+    <style id="odpc-easter-egg-css">
+    #odpc-easter-egg-button{position:fixed!important;right:12px;top:125px;z-index:2147483000!important;width:40px;height:40px;border-radius:50%;border:2px solid #fff;background:#173a60;color:#fff;font:700 21px/1 sans-serif;box-shadow:0 3px 15px #0009;display:grid;place-items:center;cursor:pointer;touch-action:none;user-select:none;-webkit-user-select:none}
+    #odpc-easter-egg-button:focus-visible{outline:3px solid #ffcc55;outline-offset:3px}
     </style>
-    <script id="odpc-team-easter-egg-js">
+    <script id="odpc-easter-egg-js">
     (function(){
-      var alternative='https://odpc.de/wp-content/uploads/2026/11/9d77deaa94684412b00e1ea0dd61c2d52050c4eea38c10ac6c6023c942477844.png';
+      var alternate='https://odpc.de/wp-content/uploads/2026/11/9d77deaa94684412b00e1ea0dd61c2d52050c4eea38c10ac6c6023c942477844.png';
       function init(){
-        if(document.getElementById('odpc-team-easter-egg'))return;
-        var img=document.querySelector('#masthead img.custom-logo, .site-header img.custom-logo');
-        if(!img)return;
-        var wrap=img.closest('.custom-logo-link')||img.parentElement;
-        if(!wrap)return;
-        var host=wrap.parentElement||wrap;
-        var style=window.getComputedStyle(host);
-        if(style.position==='static')host.style.position='relative';
-        var original={src:img.getAttribute('src'),srcset:img.getAttribute('srcset'),sizes:img.getAttribute('sizes')};
-        var preloader=new Image();preloader.src=alternative;
-        var button=document.createElement('button');
-        button.id='odpc-team-easter-egg';
-        button.type='button';
-        button.textContent='⚥';
-        button.setAttribute('aria-label','Easter Egg: Gedrückt halten für das alternative KI-Team');
-        button.setAttribute('title','Team wechseln – gedrückt halten');
-        function restore(){
-          if(original.src===null)img.removeAttribute('src');else img.setAttribute('src',original.src);
-          if(original.srcset===null)img.removeAttribute('srcset');else img.setAttribute('srcset',original.srcset);
-          if(original.sizes===null)img.removeAttribute('sizes');else img.setAttribute('sizes',original.sizes);
-          button.removeAttribute('data-pressed');
+        if(document.getElementById('odpc-easter-egg-button'))return;
+        var btn=document.createElement('button');btn.type='button';btn.id='odpc-easter-egg-button';btn.textContent='⚥';
+        btn.title='Easter Egg – gedrückt halten';btn.setAttribute('aria-label','Easter Egg: alternatives Team anzeigen, gedrückt halten');
+        document.body.appendChild(btn);
+        var target=null,original=null;
+        function findImage(){
+          var candidates=document.querySelectorAll('#masthead img, header.site-header img, .site-header img');
+          for(var i=0;i<candidates.length;i++){
+            var im=candidates[i];
+            if(im.classList.contains('custom-logo')||/odpc_team_hero|odpc.team/i.test(im.currentSrc||im.src)||im.naturalWidth>600)return im;
+          }
+          return document.querySelector('img.custom-logo');
         }
         function show(){
-          img.removeAttribute('srcset');img.removeAttribute('sizes');
-          img.setAttribute('src',alternative);
-          button.setAttribute('data-pressed','1');
+          var img=findImage();if(!img)return;
+          if(target&&target!==img)restore();
+          target=img;
+          if(!original)original={src:img.getAttribute('src'),srcset:img.getAttribute('srcset'),sizes:img.getAttribute('sizes')};
+          img.removeAttribute('srcset');img.removeAttribute('sizes');img.src=alternate;
+          btn.setAttribute('aria-pressed','true');
         }
-        button.addEventListener('pointerdown',function(e){if(e.button!==0&&e.pointerType==='mouse')return;e.preventDefault();button.setPointerCapture(e.pointerId);show();});
-        button.addEventListener('pointerup',restore);
-        button.addEventListener('pointercancel',restore);
-        button.addEventListener('lostpointercapture',restore);
-        button.addEventListener('keydown',function(e){if((e.key===' '||e.key==='Enter')&&!e.repeat){e.preventDefault();show();}});
-        button.addEventListener('keyup',function(e){if(e.key===' '||e.key==='Enter'){e.preventDefault();restore();}});
-        button.addEventListener('blur',restore);
+        function restore(){
+          if(target&&original){
+            for(var key in original){if(original[key]===null)target.removeAttribute(key);else target.setAttribute(key,original[key]);}
+          }
+          target=null;original=null;btn.setAttribute('aria-pressed','false');
+        }
+        btn.addEventListener('pointerdown',function(e){if(e.pointerType==='mouse'&&e.button!==0)return;e.preventDefault();try{btn.setPointerCapture(e.pointerId)}catch(_e){}show()});
+        ['pointerup','pointercancel','lostpointercapture','blur'].forEach(function(ev){btn.addEventListener(ev,restore)});
+        btn.addEventListener('keydown',function(e){if(e.key===' '||e.key==='Enter'){e.preventDefault();if(!e.repeat)show()}});
+        btn.addEventListener('keyup',function(e){if(e.key===' '||e.key==='Enter'){e.preventDefault();restore()}});
+        btn.addEventListener('click',function(e){e.preventDefault()});
         window.addEventListener('blur',restore);
-        document.addEventListener('visibilitychange',function(){if(document.hidden)restore();});
-        button.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();});
-        host.appendChild(button);
+        document.addEventListener('visibilitychange',function(){if(document.hidden)restore()});
       }
       if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
     })();
