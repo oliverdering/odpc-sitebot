@@ -104,6 +104,22 @@ def main():
                             print("CACHE PATH DIAGNOSTIC",candidate,type(diag).__name__,str(diag),flush=True)
                 except Exception as cache_exc:
                     print("WARNING: WP Fastest Cache HTML rotation failed:",str(cache_exc),flush=True)
+                # WP-Optimize is the confirmed source of stale canonical HTML.
+                # Its page cache lives in wp-content/cache/wpo-cache (not WP Fastest Cache).
+                # Rotate only the verified WP-Optimize cache directory; keep old bytes
+                # in a sibling backup rather than recursively deleting content.
+                wpo=cache_base+"/wpo-cache"
+                try:
+                    st=sftp.lstat(wpo)
+                    if not stat.S_ISDIR(st.st_mode):
+                        raise RuntimeError("WP-Optimize cache path is not a directory")
+                    backup=cache_base+"/wpo-cache-odpc-backup-"+str(int(time.time()))
+                    sftp.rename(wpo,backup)
+                    print("PASS: rotated WP-Optimize page cache to",backup,flush=True)
+                except FileNotFoundError:
+                    print("WARNING: WP-Optimize cache directory absent; canonical HTML may remain stale",flush=True)
+                except Exception as cache_exc:
+                    print("WARNING: WP-Optimize cache rotation failed:",str(cache_exc),flush=True)
                 if good:
                     print("PASS: ODPC bridge publicly visible",flush=True)
                 else:
