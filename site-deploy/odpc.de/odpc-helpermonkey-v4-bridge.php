@@ -1,4 +1,5 @@
 <?php
+/* ODPC language rollout verification: 2026-11-10; deploy via existing SFTP workflow. */
 /**
  * Plugin Name: ODPC Helper Monkey V4 Bridge
  * Description: Links ODPC services to the multilingual Helper Monkey start guide and preserves the existing WhatsApp Business button.
