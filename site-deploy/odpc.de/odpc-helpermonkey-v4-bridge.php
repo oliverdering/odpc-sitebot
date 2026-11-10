@@ -42,18 +42,20 @@ add_action('wp_footer',function(){
  if(is_admin())return; ?>
  <style id="odpc-reader-css">
  #odpc-reader{position:fixed;left:12px;bottom:132px;z-index:9995;background:#182c39;color:#fff;border:1px solid #8ba6b4;border-radius:12px;padding:8px;box-shadow:0 4px 18px #0005;max-width:min(370px,calc(100vw - 24px));font:13px/1.4 system-ui,sans-serif}
- #odpc-reader button{background:#edf6f3;color:#142f29;border:0;border-radius:7px;padding:7px 9px;margin:2px;cursor:pointer;font:600 12px system-ui,sans-serif}
+ #odpc-reader select{max-width:150px;min-height:32px;margin:2px;padding:4px;background:#fff;color:#142f29;border-radius:6px}#odpc-reader label{display:inline-flex;align-items:center;gap:3px;font-size:12px}#odpc-reader button{background:#edf6f3;color:#142f29;border:0;border-radius:7px;padding:7px 9px;margin:2px;cursor:pointer;font:600 12px system-ui,sans-serif}
  #odpc-reader button:focus-visible{outline:2px solid #f0b854}
  #odpc-reader-status{font-size:11px;display:block;margin:3px}
  @media(max-width:600px){#odpc-reader{left:9px;bottom:125px;padding:5px}}
  </style>
- <div id="odpc-reader" role="group" aria-label="Artikel vorlesen"><button type="button" id="odpc-reader-play">▶ Vorlesen</button><button type="button" id="odpc-reader-test">🔊 Audiotest</button><button type="button" id="odpc-reader-pause">⏸ Pause</button><button type="button" id="odpc-reader-stop">■ Stopp</button><span id="odpc-reader-status" role="status" aria-live="polite"></span></div>
+ <div id="odpc-reader" role="group" aria-label="Artikel vorlesen"><label>Sprache <select id="odpc-reader-language" aria-label="Vorlesesprache"><option value="de-DE">Deutsch</option><option value="en-US">English</option><option value="fr-FR">Français</option><option value="nl-NL">Nederlands</option><option value="es-ES">Español</option><option value="tr-TR">Türkçe</option><option value="ru-RU">Русский</option></select></label><label>Stimme <select id="odpc-reader-voice" aria-label="Systemstimme"><option value="">Automatisch</option></select></label><button type="button" id="odpc-reader-play">▶ Vorlesen</button><button type="button" id="odpc-reader-test">🔊 Audiotest</button><button type="button" id="odpc-reader-pause">⏸ Pause</button><button type="button" id="odpc-reader-stop">■ Stopp</button><span id="odpc-reader-status" role="status" aria-live="polite"></span></div>
  <script id="odpc-reader-js">
  (function(){
  'use strict';
- var synth=window.speechSynthesis,play=document.getElementById('odpc-reader-play'),pause=document.getElementById('odpc-reader-pause'),stop=document.getElementById('odpc-reader-stop'),status=document.getElementById('odpc-reader-status'),queue=[],index=0,token=0,paused=false;
+ var synth=window.speechSynthesis,play=document.getElementById('odpc-reader-play'),pause=document.getElementById('odpc-reader-pause'),stop=document.getElementById('odpc-reader-stop'),status=document.getElementById('odpc-reader-status'),queue=[],index=0,token=0,paused=false,languageSelect=document.getElementById('odpc-reader-language'),voiceSelect=document.getElementById('odpc-reader-voice'),voiceList=[];
  function lang(){if(window.ODPCLanguage)return window.ODPCLanguage.get();var site=document.getElementById('odpc-ai-language');if(site)return site.value;try{var c=decodeURIComponent(document.cookie.match(/(?:^|; )googtrans=([^;]+)/)?.[1]||'');return c.split('/').pop()||'de'}catch(e){return 'de'}}
- function locale(){return ({de:'de-DE',en:'en-US',nl:'nl-NL',es:'es-ES',fr:'fr-FR',ru:'ru-RU',tr:'tr-TR'})[lang()]||'de-DE'}
+ function locale(){return languageSelect.value||'de-DE'}
+ function refreshVoices(){if(!synth||typeof synth.getVoices!=='function')return;voiceList=synth.getVoices()||[];var selected=voiceSelect.value;voiceSelect.replaceChildren(new Option('Automatisch',''));voiceList.forEach(function(v,i){if(v.lang.toLowerCase().split(/[-_]/)[0]===locale().split('-')[0])voiceSelect.add(new Option(v.name+' ('+v.lang+')',String(i)))});if(Array.from(voiceSelect.options).some(function(o){return o.value===selected}))voiceSelect.value=selected;status.textContent=voiceList.length?'Systemstimmen: '+voiceList.length+' erkannt':'Warte auf Systemstimmen …'}
+ languageSelect.value=({de:'de-DE',en:'en-US',fr:'fr-FR',nl:'nl-NL',es:'es-ES',tr:'tr-TR',ru:'ru-RU'})[lang()]||'de-DE';languageSelect.addEventListener('change',function(){cancel();voiceSelect.value='';refreshVoices();if(window.ODPCLanguage)window.ODPCLanguage.set(locale().slice(0,2))});voiceSelect.addEventListener('change',cancel);if(synth){refreshVoices();if(typeof synth.addEventListener==='function')synth.addEventListener('voiceschanged',refreshVoices);else synth.onvoiceschanged=refreshVoices;setTimeout(refreshVoices,700);setTimeout(refreshVoices,2200)}
  function text(){var root=document.querySelector('article .entry-content,main .entry-content,main article,article,main,#content');if(!root)return '';var clone=root.cloneNode(true);clone.querySelectorAll('script,style,nav,form,button,footer,aside,.screen-reader-text,#odpc-reader,.gtranslate_wrapper').forEach(function(e){e.remove()});return (clone.textContent||'').replace(/\s+/g,' ').trim().slice(0,85000)}
  function split(s){var parts=s.match(/[^.!?。！？]+[.!?。！？]?/g)||[s],out=[],chunk='';parts.forEach(function(p){if((chunk+p).length>175){if(chunk)out.push(chunk);chunk='';while(p.length>175){out.push(p.slice(0,175));p=p.slice(175)}}chunk+=p}else chunk+=p});if(chunk)out.push(chunk);return out.filter(Boolean)}
  function cancel(){token++;queue=[];index=0;paused=false;if(synth)synth.cancel();status.textContent='Gestoppt'}
@@ -64,7 +66,7 @@ add_action('wp_footer',function(){
  u.lang=locale();u.rate=0.95;u.volume=1;
  var available=typeof synth.getVoices==='function'?(synth.getVoices()||[]):[];
  var matches=available.filter(function(x){return (x.lang||'').toLowerCase().split(/[-_]/)[0]===u.lang.split('-')[0]});
- if(matches.length)u.voice=matches.find(function(x){return x.localService})||matches[0];
+ if(voiceSelect.value!==''&&voiceList[Number(voiceSelect.value)])u.voice=voiceList[Number(voiceSelect.value)];else if(matches.length)u.voice=matches.find(function(x){return x.localService})||matches[0];
  var started=false;
  u.onstart=function(){if(t===token){started=true;status.textContent='🔊 Spricht Abschnitt '+index+' von '+queue.length+' ('+u.lang+')'}};
  u.onend=function(){if(t===token)next(t)};
@@ -76,7 +78,7 @@ add_action('wp_footer',function(){
  play.addEventListener('click',function(){if(!synth){status.textContent='Vorlesen in diesem Browser nicht unterstützt';return}if(paused){synth.resume();paused=false;status.textContent='Fortgesetzt';return}cancel();var s=text();if(!s){status.textContent='Kein Artikeltext gefunden';return}if(!window.SpeechSynthesisUtterance){status.textContent='Sprachausgabe auf diesem Gerät nicht verfügbar';return}queue=split(s);index=0;var t=token;next(t)});
  pause.addEventListener('click',function(){if(!synth)return;if(synth.paused){synth.resume();paused=false;status.textContent='Fortgesetzt'}else if(synth.speaking){synth.pause();paused=true;status.textContent='Pausiert'}});
  document.getElementById('odpc-reader-test').addEventListener('click',function(){if(!synth||!window.SpeechSynthesisUtterance){status.textContent='Text-zu-Sprache nicht unterstützt';return}cancel();queue=['Dies ist ein Audiotest von ODPC. Wenn du mich hörst, funktioniert die Sprachausgabe.'];index=0;next(token)});
- stop.addEventListener('click',cancel);document.addEventListener('odpc:languagechange',cancel);window.addEventListener('pagehide',cancel);
+ stop.addEventListener('click',cancel);document.addEventListener('odpc:languagechange',function(){cancel();languageSelect.value=({de:'de-DE',en:'en-US',fr:'fr-FR',nl:'nl-NL',es:'es-ES',tr:'tr-TR',ru:'ru-RU'})[lang()]||'de-DE';refreshVoices()});window.addEventListener('pagehide',cancel);
  })();
  </script>
  <?php
