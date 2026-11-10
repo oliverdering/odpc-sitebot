@@ -2,7 +2,7 @@
 /**
  * Plugin Name: ODPC About Me 2026
  * Description: Chronological profile with live HTML CV and original certificate links; voice dock untouched.
- * Version: 1.1.0
+ * Version: 1.2.0
  */
 if (!defined('ABSPATH')) { exit; }
 function odpc_about_2026_target() {
@@ -50,3 +50,36 @@ add_filter('the_content', function($original) {
  $html.='</div><section class="oa-career"><h2>Berufliche Erfahrung auf einen Blick</h2><div class="oa-grid"><details><summary><span><small>Aktuell · 2024–2026</small>ODPC, Applied AI & digitale Lösungen</span></summary><div class="oa-body"><p>Eigenständige Entwicklung von Websites, Hosting- und KI-Integrationslösungen, digitalen Plattformen und Automatisierungen. IT-Verantwortung und KI-Einführung im Kanzlei- und Unternehmensumfeld.</p></div></details><details><summary><span><small>2021–2023</small>Enterprise-IT · Deutsche Telekom / VMware</span></summary><div class="oa-body"><p>Second- und Third-Level-Support für produktive VMware-, Server- und VDI-Infrastrukturen im Finanz- und Leasingumfeld.</p></div></details><details><summary><span><small>Frühere IT-Laufbahn</small>IT-Beratung, Systembetrieb & internationaler Support</span></summary><div class="oa-body"><p>Mehr als 25 Jahre Erfahrung mit IT-Infrastruktur, Kundenprojekten, Systemadministration, Support und technischer Beratung. Die vollständigen Arbeitgeber, Zeiträume und Tätigkeiten stehen im detaillierten Lebenslauf.</p></div></details></div></section><section id="odpc-cv" class="oa-footer"><h2>Vollständiger Lebenslauf & Nachweise</h2><p>Alle Stationen, Tätigkeiten, Zeugnisse, Zertifikate und Dokumente bleiben vollständig erhalten. Bei Bedarf kannst du die ausführliche Fassung öffnen.</p><details class="oa-full-cv"><summary>Detaillierten Lebenslauf mit allen Stationen öffnen</summary><div class="oa-body"><p><a href="https://odpc.de/lebenslauf-oliver-dering/">Original-Lebenslauf und Downloads separat öffnen →</a></p><div class="oa-cv">'.$cv_html.'</div></div></details></section></section>';
  return $html;
 }, 50);
+
+/**
+ * Global presentation copy: one concise service statement in the branded header.
+ * Leaves navigation, homepage hero content, and floating voice/language dock unchanged.
+ */
+add_action('wp_footer', function () {
+    if (is_admin()) return;
+    ?>
+    <script id="odpc-header-message-2026">
+    (function(){
+      function apply(){
+        var root=document.querySelector('#masthead, .site-header, header.site-header');
+        if(!root)return;
+        var elements=root.querySelectorAll('h1,h2,h3,p,.site-title,.site-description,.ast-site-title-wrap span');
+        var headline='Von Hardware und Software über Webdesign bis zur KI-Integration – alles aus einer Hand.';
+        elements.forEach(function(el){
+          if(el.children.length>0)return;
+          var t=(el.textContent||'').replace(/\\s+/g,' ').trim();
+          if(/Oliver Dering\\s*[–-]\\s*IT.Consulting.*(?:KI|Projekte)/i.test(t)){
+            el.textContent=headline;
+            el.style.fontSize='clamp(20px,3.5vw,31px)';
+            el.style.lineHeight='1.3';
+            el.style.overflowWrap='anywhere';
+          } else if(/^(?:IT.Consulting\\s*[·|\\-]\\s*)?KI.Integration\\s*[·|\\-]\\s*Digitale Projekte\\.?$/i.test(t) || /^IT.Consulting\\s*[·|\\-]\\s*KI.Integration\\s*[·|\\-]\\s*Digitale Projekte\\.?$/i.test(t)){
+            el.style.display='none';
+          }
+        });
+      }
+      if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',apply,{once:true});else apply();
+    })();
+    </script>
+    <?php
+}, 99);
