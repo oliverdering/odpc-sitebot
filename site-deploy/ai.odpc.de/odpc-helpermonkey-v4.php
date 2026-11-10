@@ -24,16 +24,16 @@ add_action('wp_footer', function(){
  <script id="odpc-ai-translate-js">
  (function(){
  'use strict';
- var key='odpc_ai_site_language',supported=['de','en','nl','es','fr','ru','tr'],sel=document.getElementById('odpc-ai-language');
+ var key='odpc_global_language_v1',supported=['de','en','nl','es','fr','ru','tr'],sel=document.getElementById('odpc-ai-language');
  if(!sel)return;
- function read(){try{return localStorage.getItem(key)||'de'}catch(e){return 'de'}}
- function store(v){try{localStorage.setItem(key,v)}catch(e){}}
- function cookie(v){var value='/de/'+v;document.cookie='googtrans='+value+';path=/;SameSite=Lax';document.cookie='googtrans='+value+';path=/;domain=.ai.odpc.de;SameSite=Lax';if(v==='de'){document.cookie='googtrans=;Max-Age=0;path=/';document.cookie='googtrans=;Max-Age=0;path=/;domain=.ai.odpc.de'}}
+ function read(){var m=document.cookie.match(/(?:^|;\s*)odpc_language=([^;]+)/);var v=m?decodeURIComponent(m[1]):null;try{return v||localStorage.getItem(key)||localStorage.getItem('odpc_ai_site_language')||'de'}catch(e){return v||'de'}}
+ function store(v){try{localStorage.setItem(key,v)}catch(e){}document.cookie='odpc_language='+encodeURIComponent(v)+';path=/;domain=.odpc.de;max-age=31536000;SameSite=Lax;Secure'}
+ function cookie(v){var value='/de/'+v;document.cookie='googtrans='+value+';path=/;SameSite=Lax';document.cookie='googtrans='+value+';path=/;domain=.odpc.de;SameSite=Lax;Secure';if(v==='de'){document.cookie='googtrans=;Max-Age=0;path=/';document.cookie='googtrans=;Max-Age=0;path=/;domain=.odpc.de';document.cookie='googtrans=;Max-Age=0;path=/;domain=.ai.odpc.de'}}
  function apply(v){if(v==='de')return true;var combo=document.querySelector('.goog-te-combo');if(!combo)return false;combo.value=v;combo.dispatchEvent(new Event('change',{bubbles:true}));return true}
- var chosen=read();if(!supported.includes(chosen))chosen='de';sel.value=chosen;window.odpcAiLocale=function(){return ({de:'de-DE',en:'en-US',nl:'nl-NL',es:'es-ES',fr:'fr-FR',ru:'ru-RU',tr:'tr-TR'})[read()]||'de-DE'};
+ var chosen=read();if(!supported.includes(chosen))chosen='de';sel.value=chosen;store(chosen);window.ODPCLanguage={get:read,set:function(v){if(supported.includes(v)){store(v);location.reload()}},locale:function(){return window.odpcAiLocale()}};window.odpcAiLocale=function(){return ({de:'de-DE',en:'en-US',nl:'nl-NL',es:'es-ES',fr:'fr-FR',ru:'ru-RU',tr:'tr-TR'})[read()]||'de-DE'};
  window.odpcAiTranslateInit=function(){new google.translate.TranslateElement({pageLanguage:'de',includedLanguages:'de,en,nl,es,fr,ru,tr',autoDisplay:false},'odpc-ai-translate-element');var n=0;var timer=setInterval(function(){if(apply(chosen)||++n>35)clearInterval(timer)},200)};
- sel.addEventListener('change',function(){var v=sel.value;if(!supported.includes(v))return;store(v);cookie(v);document.documentElement.lang=v;document.dispatchEvent(new CustomEvent('odpc:languagechange',{detail:{language:v,locale:window.odpcAiLocale()}}));if(v==='de'){location.reload();return}if(!apply(v))location.reload()});
- cookie(chosen);
+ sel.addEventListener('change',function(){var v=sel.value;if(!supported.includes(v))return;store(v);cookie(v);document.documentElement.lang=v;document.dispatchEvent(new CustomEvent('odpc:languagechange',{detail:{language:v,locale:window.odpcAiLocale()}}));location.reload()});
+ if(chosen!=='de')cookie(chosen);
  var script=document.createElement('script');script.src='https://translate.google.com/translate_a/element.js?cb=odpcAiTranslateInit';script.async=true;script.onerror=function(){sel.title='Google Übersetzung derzeit nicht erreichbar'};document.head.appendChild(script);
  })();
  </script>
