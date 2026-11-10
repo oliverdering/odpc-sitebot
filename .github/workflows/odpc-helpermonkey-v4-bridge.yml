@@ -98,6 +98,63 @@ jobs:
               except (URLError,HTTPError,TimeoutError) as exc:
                   print('WARNING:',label,'HTTP unavailable:',type(exc).__name__,str(exc),flush=True)
           PY
+      - name: Install mobile browser for visual acceptance test
+        if: success()
+        run: |
+          python3 -m pip install 'playwright>=1.50,<2'
+          python3 -m playwright install chromium
+      - name: Verify real mobile toolbar geometry and controls
+        if: success()
+        shell: bash
+        run: |
+          mkdir -p odpc-mobile-qa
+          python3 - <<'PY'
+          import json,time
+          from pathlib import Path
+          from playwright.sync_api import sync_playwright
+          results=[]
+          urls=[
+            ('homepage','https://odpc.de/?odpc_mobile_qa='+str(int(time.time()))),
+            ('article','https://odpc.de/prompt-engineering-digitale-mitarbeiter-ki-sinnvoll-nutzen/?odpc_mobile_qa='+str(int(time.time())))
+          ]
+          with sync_playwright() as p:
+              browser=p.chromium.launch(headless=True,args=['--no-sandbox'])
+              for name,url in urls:
+                  page=browser.new_page(viewport={'width':393,'height':852},device_scale_factor=2,is_mobile=True,has_touch=True)
+                  item={'page':name,'url':url}
+                  try:
+                      page.goto(url,wait_until='domcontentloaded',timeout=30000)
+                      page.wait_for_timeout(4500)
+                      item.update(page.evaluate("""() => {
+                        const dock=document.getElementById('odpc-utility-dock');
+                        const flag=document.querySelector('#odpc-utility-dock .odpc-dock-language .gt_float_switcher, #odpc-utility-dock .odpc-dock-language #gt_float_wrapper, #odpc-utility-dock .odpc-dock-language .gtranslate_wrapper');
+                        const play=document.getElementById('odpc-reader-play');
+                        const stop=document.getElementById('odpc-reader-stop');
+                        const wa=dock?.querySelector('a[href*="wa.me"],a[href*="whatsapp"],.odpc-wa-sticky,.odpc-hm-v4-wa,#odpc-hm-v4-wa');
+                        const rect=e=>{if(!e)return null;const r=e.getBoundingClientRect();return {left:r.left,right:r.right,top:r.top,bottom:r.bottom,width:r.width,height:r.height,visible:getComputedStyle(e).display!=='none'&&getComputedStyle(e).visibility!=='hidden'&&r.width>0&&r.height>0}};
+                        return {dock:rect(dock),flag:rect(flag),play:rect(play),stop:rect(stop),whatsapp:rect(wa),whatsapp_href:wa?.getAttribute('href')||null};
+                      }"""))
+                      d=item.get('dock');items=[item.get(k) for k in ('flag','play','stop','whatsapp')]
+                      item['pass']=bool(d and d['visible'] and all(x and x['visible'] and x['left']>=d['left']-4 and x['right']<=d['right']+4 and x['top']>=d['top']-8 and x['bottom']<=d['bottom']+8 for x in items) and item.get('whatsapp_href'))
+                  except Exception as e:
+                      item['pass']=False;item['error']=str(e)
+                  finally:
+                      page.screenshot(path='odpc-mobile-qa/'+name+'.png',full_page=True,timeout=15000)
+                      page.close()
+                  results.append(item)
+              browser.close()
+          Path('odpc-mobile-qa/report.json').write_text(json.dumps(results,indent=2,ensure_ascii=False))
+          print(json.dumps(results,indent=2,ensure_ascii=False),flush=True)
+          if not all(x['pass'] for x in results):raise SystemExit('MOBILE QA FAILED: screenshot and geometry evidence saved')
+          PY
+      - name: Save mobile QA screenshots and report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: odpc-mobile-qa
+          path: odpc-mobile-qa/
+          if-no-files-found: ignore
+          retention-days: 7
       - name: Save prior module
         if: always()
         uses: actions/upload-artifact@v4
