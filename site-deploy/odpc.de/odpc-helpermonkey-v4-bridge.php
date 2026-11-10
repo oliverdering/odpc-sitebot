@@ -56,21 +56,8 @@ add_action('wp_footer',function(){
  function locale(){return ({de:'de-DE',en:'en-US',nl:'nl-NL',es:'es-ES',fr:'fr-FR',ru:'ru-RU',tr:'tr-TR'})[lang()]||'de-DE'}
  function text(){var root=document.querySelector('article .entry-content,main .entry-content,main article,article,main,#content');if(!root)return '';var clone=root.cloneNode(true);clone.querySelectorAll('script,style,nav,form,button,footer,aside,.screen-reader-text,#odpc-reader,.gtranslate_wrapper').forEach(function(e){e.remove()});return (clone.textContent||'').replace(/\s+/g,' ').trim().slice(0,85000)}
  function split(s){var parts=s.match(/[^.!?。！？]+[.!?。！？]?/g)||[s],out=[],chunk='';parts.forEach(function(p){if((chunk+p).length>175){if(chunk)out.push(chunk);chunk='';while(p.length>175){out.push(p.slice(0,175));p=p.slice(175)}}chunk+=p}else chunk+=p});if(chunk)out.push(chunk);return out.filter(Boolean)}
- function cancel(){token++;queue=[];index=0;paused=false;if(synth)synth.cancel();if(audio){audio.pause();audio=null}status.textContent='Gestoppt'}
- var audio=null;
-async function serverSpeak(part,language,t){
- try{
-  var res=await fetch('/wp-json/odpc-voice/v1/speak',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text:part,locale:language})});
-  if(t!==token)return;
-  if(!res.ok){status.textContent=res.status===503?'Server-Audio noch nicht konfiguriert':'Server-Audio nicht verfügbar ('+res.status+')';return}
-  var data=await res.json();if(!data.audioContent)throw Error('no audio');
-  audio=new Audio('data:audio/mpeg;base64,'+data.audioContent);
-  audio.onended=function(){if(t===token)next(t)};
-  audio.onerror=function(){if(t===token)status.textContent='Audiowiedergabe fehlgeschlagen'};
-  await audio.play();status.textContent='🔊 Server-Audio läuft ('+language+')';
- }catch(e){if(t===token)status.textContent='Audiowiedergabe nicht möglich: '+e.message}
-}
-function next(t){
+ function cancel(){token++;queue=[];index=0;paused=false;if(synth)synth.cancel();status.textContent='Gestoppt'}
+ function next(t){
  if(t!==token)return;
  if(index>=queue.length){status.textContent='Wiedergabe beendet';return}
  var part=queue[index++],u=new SpeechSynthesisUtterance(part);
@@ -84,10 +71,10 @@ function next(t){
  u.onerror=function(e){if(t===token){status.textContent='Audiofehler: '+(e.error||'unbekannt')+' – bitte Android Text-zu-Sprache prüfen'}};
  try{synth.speak(u);status.textContent='Sprachausgabe wird gestartet ('+u.lang+') …';if(synth.paused)synth.resume()}
  catch(e){status.textContent='Sprachausgabe konnte nicht starten: '+e.message}
- setTimeout(function(){if(t===token&&!started&&!synth.speaking){status.textContent='Browserstimme nicht verfügbar – versuche Server-Audio …';serverSpeak(part,u.lang,t)}},2500);
+ setTimeout(function(){if(t===token&&!started&&!synth.speaking){status.textContent='Keine Systemstimme gestartet. Bitte Browser-Sprachausgabe und Geräte-Lautstärke prüfen.'}},2500);
 }
  play.addEventListener('click',function(){if(!synth){status.textContent='Vorlesen in diesem Browser nicht unterstützt';return}if(paused){synth.resume();paused=false;status.textContent='Fortgesetzt';return}cancel();var s=text();if(!s){status.textContent='Kein Artikeltext gefunden';return}if(!window.SpeechSynthesisUtterance){status.textContent='Sprachausgabe auf diesem Gerät nicht verfügbar';return}queue=split(s);index=0;var t=token;next(t)});
- pause.addEventListener('click',function(){if(!synth)return;if(audio){if(audio.paused){audio.play();status.textContent='Fortgesetzt'}else{audio.pause();status.textContent='Pausiert'}}else if(synth.paused){synth.resume();paused=false;status.textContent='Fortgesetzt'}else if(synth.speaking){synth.pause();paused=true;status.textContent='Pausiert'}});
+ pause.addEventListener('click',function(){if(!synth)return;if(synth.paused){synth.resume();paused=false;status.textContent='Fortgesetzt'}else if(synth.speaking){synth.pause();paused=true;status.textContent='Pausiert'}});
  document.getElementById('odpc-reader-test').addEventListener('click',function(){if(!synth||!window.SpeechSynthesisUtterance){status.textContent='Text-zu-Sprache nicht unterstützt';return}cancel();queue=['Dies ist ein Audiotest von ODPC. Wenn du mich hörst, funktioniert die Sprachausgabe.'];index=0;next(token)});
  stop.addEventListener('click',cancel);document.addEventListener('odpc:languagechange',cancel);window.addEventListener('pagehide',cancel);
  })();
@@ -112,30 +99,3 @@ if(!document.cookie.includes('odpc_language='))set(get());
 })();
 </script>
 <?php },79);
-
-
-/** Google Cloud Text-to-Speech fallback. Key is server-side only; never expose it to JS. */
-add_action('rest_api_init',function(){
- register_rest_route('odpc-voice/v1','/speak',array('methods'=>'POST','permission_callback'=>'__return_true','callback'=>function($request){
-  $origin=$request->get_header('origin');
-  if($origin && parse_url($origin,PHP_URL_HOST)!==parse_url(home_url(),PHP_URL_HOST))return new WP_Error('origin','Origin not allowed',array('status'=>403));
-  $ip=isset($_SERVER['REMOTE_ADDR'])?$_SERVER['REMOTE_ADDR']:'unknown';
-  $rate='odpc_voice_'.md5($ip);
-  $hits=(int)get_transient($rate);
-  if($hits>=20)return new WP_Error('rate_limited','Audio limit reached',array('status'=>429));
-  set_transient($rate,$hits+1,MINUTE_IN_SECONDS);
-  $key=defined('ODPC_GOOGLE_TTS_API_KEY')?ODPC_GOOGLE_TTS_API_KEY:getenv('ODPC_GOOGLE_TTS_API_KEY');
-  if(!$key)return new WP_Error('not_configured','Server audio is not configured',array('status'=>503));
-  $text=trim(wp_strip_all_tags((string)$request->get_param('text')));
-  $locale=sanitize_text_field((string)$request->get_param('locale'));
-  $allowed=array('de'=>'de-DE','en'=>'en-US','fr'=>'fr-FR','nl'=>'nl-NL','es'=>'es-ES','tr'=>'tr-TR','ru'=>'ru-RU');
-  $language=substr($locale,0,2);
-  if(!isset($allowed[$language])||strlen($text)<1||mb_strlen($text)>900)return new WP_Error('invalid_input','Unsupported language or text length',array('status'=>400));
-  $payload=array('input'=>array('text'=>$text),'voice'=>array('languageCode'=>$allowed[$language]),'audioConfig'=>array('audioEncoding'=>'MP3'));
-  $res=wp_remote_post('https://texttospeech.googleapis.com/v1/text:synthesize',array('timeout'=>15,'headers'=>array('Content-Type'=>'application/json','X-goog-api-key'=>$key),'body'=>wp_json_encode($payload)));
-  if(is_wp_error($res))return new WP_Error('tts_unavailable','Audio service unavailable',array('status'=>502));
-  $body=json_decode(wp_remote_retrieve_body($res),true);
-  if(wp_remote_retrieve_response_code($res)!==200||empty($body['audioContent']))return new WP_Error('tts_failed','Audio generation failed',array('status'=>502));
-  return array('audioContent'=>$body['audioContent'],'mime'=>'audio/mpeg');
- }));
-});
