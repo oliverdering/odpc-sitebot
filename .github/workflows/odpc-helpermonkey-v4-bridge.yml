@@ -85,7 +85,7 @@ jobs:
                   with urlopen(req,timeout=12) as response:
                       html=response.read(1000000).decode('utf-8','replace')
                   markers={name:marker in html for name,marker in {
-                    'dock':'id="odpc-utility-dock"',
+                    'dock_initializer':"dock.id='odpc-utility-dock'",
                     'dock_script':'id="odpc-unified-dock-js"',
                     'language':'gt_float_switcher',
                     'reader':'id="odpc-reader-play"',
@@ -94,6 +94,7 @@ jobs:
                   }.items()}
                   print(label,'HTTP OK',markers,flush=True)
                   if not markers['dock_script']:print('WARNING:',label,'has no shared ODPC dock script',flush=True)
+                  if markers['dock_script'] and not markers['dock_initializer']:print('WARNING:',label,'dock initializer not found',flush=True)
               except (URLError,HTTPError,TimeoutError) as exc:
                   print('WARNING:',label,'HTTP unavailable:',type(exc).__name__,str(exc),flush=True)
           PY
