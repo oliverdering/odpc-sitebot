@@ -47,7 +47,7 @@ add_action('wp_footer',function(){
  #odpc-reader-status{font-size:11px;display:block;margin:3px}
  @media(max-width:600px){#odpc-reader{left:9px;bottom:125px;padding:5px}}
  </style>
- <div id="odpc-reader" role="group" aria-label="Artikel vorlesen"><button type="button" id="odpc-reader-play">▶ Vorlesen</button><button type="button" id="odpc-reader-pause">⏸ Pause</button><button type="button" id="odpc-reader-stop">■ Stopp</button><span id="odpc-reader-status" role="status" aria-live="polite"></span></div>
+ <div id="odpc-reader" role="group" aria-label="Artikel vorlesen"><button type="button" id="odpc-reader-play">▶ Vorlesen</button><button type="button" id="odpc-reader-test">🔊 Audiotest</button><button type="button" id="odpc-reader-pause">⏸ Pause</button><button type="button" id="odpc-reader-stop">■ Stopp</button><span id="odpc-reader-status" role="status" aria-live="polite"></span></div>
  <script id="odpc-reader-js">
  (function(){
  'use strict';
@@ -57,9 +57,25 @@ add_action('wp_footer',function(){
  function text(){var root=document.querySelector('article .entry-content,main .entry-content,main article,article,main,#content');if(!root)return '';var clone=root.cloneNode(true);clone.querySelectorAll('script,style,nav,form,button,footer,aside,.screen-reader-text,#odpc-reader,.gtranslate_wrapper').forEach(function(e){e.remove()});return (clone.textContent||'').replace(/\s+/g,' ').trim().slice(0,85000)}
  function split(s){var parts=s.match(/[^.!?。！？]+[.!?。！？]?/g)||[s],out=[],chunk='';parts.forEach(function(p){if((chunk+p).length>175){if(chunk)out.push(chunk);chunk='';while(p.length>175){out.push(p.slice(0,175));p=p.slice(175)}}chunk+=p}else chunk+=p});if(chunk)out.push(chunk);return out.filter(Boolean)}
  function cancel(){token++;queue=[];index=0;paused=false;if(synth)synth.cancel();status.textContent='Gestoppt'}
- function next(t){if(t!==token||index>=queue.length){if(t===token)status.textContent='Wiedergabe beendet';return}var u=new SpeechSynthesisUtterance(queue[index++]);u.lang=locale();u.rate=1;var v=synth.getVoices().filter(function(x){return x.lang.toLowerCase().split(/[-_]/)[0]===u.lang.split('-')[0]});if(v.length)u.voice=v[0];u.onend=function(){next(t)};u.onerror=function(e){if(t===token){status.textContent='Wiedergabefehler: '+(e.error||'Stimme nicht verfügbar');}};try{synth.speak(u)}catch(e){status.textContent='Sprachausgabe konnte nicht gestartet werden'};status.textContent='Lese Abschnitt '+index+' von '+queue.length+' ('+u.lang+')'}
+ function next(t){
+ if(t!==token)return;
+ if(index>=queue.length){status.textContent='Wiedergabe beendet';return}
+ var part=queue[index++],u=new SpeechSynthesisUtterance(part);
+ u.lang=locale();u.rate=0.95;u.volume=1;
+ var available=synth.getVoices()||[];
+ var matches=available.filter(function(x){return (x.lang||'').toLowerCase().split(/[-_]/)[0]===u.lang.split('-')[0]});
+ if(matches.length)u.voice=matches[0];
+ var started=false;
+ u.onstart=function(){if(t===token){started=true;status.textContent='🔊 Spricht Abschnitt '+index+' von '+queue.length+' ('+u.lang+')'}};
+ u.onend=function(){if(t===token)next(t)};
+ u.onerror=function(e){if(t===token){status.textContent='Audiofehler: '+(e.error||'unbekannt')+' – bitte Android Text-zu-Sprache prüfen'}};
+ try{synth.speak(u);status.textContent='Sprachausgabe wird gestartet ('+u.lang+') …';if(synth.paused)synth.resume()}
+ catch(e){status.textContent='Sprachausgabe konnte nicht starten: '+e.message}
+ setTimeout(function(){if(t===token&&!started&&!synth.speaking){status.textContent='Keine Audioausgabe erkannt. Prüfe Medienlautstärke und Android Text-zu-Sprache.'}},2500);
+}
  play.addEventListener('click',function(){if(!synth){status.textContent='Vorlesen in diesem Browser nicht unterstützt';return}if(paused){synth.resume();paused=false;status.textContent='Fortgesetzt';return}cancel();var s=text();if(!s){status.textContent='Kein Artikeltext gefunden';return}if(!window.SpeechSynthesisUtterance){status.textContent='Sprachausgabe auf diesem Gerät nicht verfügbar';return}queue=split(s);index=0;var t=token;next(t)});
  pause.addEventListener('click',function(){if(!synth)return;if(synth.paused){synth.resume();paused=false;status.textContent='Fortgesetzt'}else if(synth.speaking){synth.pause();paused=true;status.textContent='Pausiert'}});
+ document.getElementById('odpc-reader-test').addEventListener('click',function(){if(!synth||!window.SpeechSynthesisUtterance){status.textContent='Text-zu-Sprache nicht unterstützt';return}cancel();queue=['Dies ist ein Audiotest von ODPC. Wenn du mich hörst, funktioniert die Sprachausgabe.'];index=0;next(token)});
  stop.addEventListener('click',cancel);document.addEventListener('odpc:languagechange',cancel);window.addEventListener('pagehide',cancel);
  })();
  </script>
