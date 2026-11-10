@@ -139,6 +139,8 @@ add_action('wp_footer',function(){if(is_admin())return; ?>
 body.odpc-dock-active #gt_float_wrapper,
 body.odpc-dock-active .gt_float_switcher:not(#odpc-utility-dock .gt_float_switcher),
 body.odpc-dock-active .gt_switcher_wrapper:not(#odpc-utility-dock .gt_switcher_wrapper){visibility:hidden!important;opacity:0!important;pointer-events:none!important}
+#odpc-utility-dock>#odpc-dock-home{order:0!important;display:flex!important;align-items:center!important;justify-content:center!important;flex:0 0 28px!important;width:28px!important;height:36px!important;min-width:28px!important;color:#eef8f5!important;background:rgba(16,37,46,.42)!important;border-radius:50%!important;text-decoration:none!important;box-shadow:none!important}
+#odpc-utility-dock>#odpc-dock-home svg{display:block!important;width:19px!important;height:19px!important}
 #odpc-utility-dock>.odpc-dock-language{order:0!important;position:relative!important;flex:0 0 88px!important;display:flex!important;align-items:center!important;justify-content:center!important;width:88px!important;min-width:88px!important;max-width:88px!important;height:42px!important;margin:0!important;overflow:visible!important}
 #odpc-utility-dock .odpc-dock-language>.gt_float_switcher,#odpc-utility-dock .odpc-dock-language>.gt_switcher_wrapper,#odpc-utility-dock .odpc-dock-language>.gtranslate_wrapper{position:relative!important;top:auto!important;bottom:auto!important;left:auto!important;right:auto!important;transform:none!important;display:block!important;box-sizing:border-box!important;width:88px!important;min-width:0!important;max-width:88px!important;margin:0!important;box-shadow:none!important}
 #odpc-utility-dock .odpc-dock-language .gt-selected,#odpc-utility-dock .odpc-dock-language .gt-current-lang{box-sizing:border-box!important;width:88px!important;max-width:88px!important;min-height:38px!important;height:38px!important;padding:5px!important;margin:0!important;overflow:hidden!important;white-space:nowrap!important;border-radius:12px!important}
@@ -197,6 +199,8 @@ function fallbackLanguage(dock){
  holder.appendChild(select);
 }
 function mount(){
+ // Domain-local home link; no changes to language, voice or WhatsApp handlers.
+ var home=document.getElementById('odpc-dock-home');
  var reader=document.getElementById('odpc-reader'),help=document.getElementById('odpc-hm-v4-helpbtn');
  if(!reader||!help)return;
  var dock=document.getElementById('odpc-utility-dock');
@@ -208,6 +212,13 @@ function mount(){
  var wa=document.querySelector('.odpc-wa-sticky')||document.getElementById('odpc-hm-v4-wa');
  if(wa){dock.appendChild(wa);wa.setAttribute('aria-label','WhatsApp Business');wa.setAttribute('title','WhatsApp Business')}
  document.body.classList.add('odpc-dock-active');
+ }
+ if(!home){
+  home=document.createElement('a');home.id='odpc-dock-home';
+  home.href=window.location.origin+'/';home.setAttribute('aria-label','Zur Startseite');
+  home.setAttribute('title','Zur Startseite');
+  home.innerHTML='<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg>';
+  dock.insertBefore(home,reader);
  }
  moveLanguage(dock);
 }
