@@ -33,7 +33,7 @@ def chunk_document(doc, max_words=MAX_WORDS, overlap_words=OVERLAP_WORDS):
     raw = doc.get("text")
     if not isinstance(raw, str) or not raw.strip():
         return []
-    normalized = re.sub(r"\\s+", " ", raw).strip()
+    normalized = re.sub(r"\s+", " ", raw).strip()
     if hashlib.sha256(normalized.encode("utf-8")).hexdigest().lower() != doc["sha256"].lower():
         return []
     words = normalized.split(" ")
