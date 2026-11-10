@@ -1,0 +1,65 @@
+name: ODPC Global Voice - release and public verification
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/odpc-global-voice-release.yml'
+permissions:
+  contents: read
+concurrency:
+  group: odpc-helpermonkey-v4-bridge
+  cancel-in-progress: false
+jobs:
+  release-odpc:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check source, voice events and PHP
+        shell: bash
+        run: |
+          set -euo pipefail
+          php -l site-deploy/odpc.de/odpc-helpermonkey-v4-bridge.php
+          python3 -m py_compile scripts/deploy_odpc_helpermonkey_v4_bridge.py
+          grep -q 'id="odpc-reader-test"' site-deploy/odpc.de/odpc-helpermonkey-v4-bridge.php
+          grep -q 'name="odpc-voice-build"' site-deploy/odpc.de/odpc-helpermonkey-v4-bridge.php
+          grep -q 'SpeechSynthesisUtterance' site-deploy/odpc.de/odpc-helpermonkey-v4-bridge.php
+      - name: Install deployment dependencies
+        run: python3 -m pip install 'paramiko>=3.4,<5'
+      - name: Publish ODPC WordPress MU plugin with rollback
+        env:
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+        run: python3 scripts/deploy_odpc_helpermonkey_v4_bridge.py
+      - name: Verify anonymous normal URL and release identity
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from urllib.request import Request, urlopen
+          import time
+          url='https://odpc.de/'
+          required=['name="odpc-voice-build" content="2026-11-10-audit-1"','id="odpc-reader-test"','id="odpc-reader-language"','id="odpc-reader-voice"']
+          for attempt in range(8):
+              req=Request(url,headers={'User-Agent':'Mozilla/5.0 (ODPC anonymous release verification)','Cache-Control':'no-cache'})
+              try:
+                  with urlopen(req,timeout=25) as response:
+                      body=response.read(500000).decode('utf-8','replace')
+                  missing=[x for x in required if x not in body]
+                  if not missing:
+                      print('PASS: anonymous normal homepage contains exact voice release marker and controls')
+                      break
+                  print('Attempt',attempt+1,'missing',missing)
+              except Exception as exc:
+                  print('Attempt',attempt+1,'request failed:',type(exc).__name__,str(exc))
+              time.sleep(7)
+          else:
+              raise SystemExit('FAIL: anonymous live release is missing or cached')
+          PY
+      - name: Save rollback backup
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: odpc-global-voice-rollback-backup
+          path: backup-odpc-v4-bridge/
+          if-no-files-found: ignore
+          retention-days: 15
