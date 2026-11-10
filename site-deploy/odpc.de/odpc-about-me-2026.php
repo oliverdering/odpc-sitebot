@@ -2,7 +2,7 @@
 /**
  * Plugin Name: ODPC About Me 2026
  * Description: Chronological profile with live HTML CV and original certificate links; voice dock untouched.
- * Version: 1.6.0
+ * Version: 1.7.0
  */
 if (!defined('ABSPATH')) { exit; }
 function odpc_about_2026_target() {
@@ -124,29 +124,50 @@ add_action('wp_footer', function () {
         var btn=document.createElement('button');btn.type='button';btn.id='odpc-easter-egg-button';btn.textContent='⚥';
         btn.title='Easter Egg – gedrückt halten';btn.setAttribute('aria-label','Easter Egg: alternatives Team anzeigen, gedrückt halten');
         document.body.appendChild(btn);
-        var target=null,original=null;
+        var overlay=null,anchor=null;
+        var loaded=false;
+        var preview=new Image();
+        preview.onload=function(){loaded=true;};
+        preview.onerror=function(){loaded=false;btn.title='Alternatives Bild konnte nicht geladen werden';};
+        preview.src=alternate;
         function findImage(){
-          var candidates=document.querySelectorAll('#masthead img, header.site-header img, .site-header img');
-          for(var i=0;i<candidates.length;i++){
-            var im=candidates[i];
-            if(im.classList.contains('custom-logo')||/odpc_team_hero|odpc.team/i.test(im.currentSrc||im.src)||im.naturalWidth>600)return im;
+          var imgs=document.querySelectorAll('#masthead img, .site-header img, header img');
+          var best=null,area=0;
+          for(var i=0;i<imgs.length;i++){
+            var im=imgs[i],rect=im.getBoundingClientRect();
+            var a=rect.width*rect.height;
+            if(rect.width>200&&rect.height>70&&a>area){best=im;area=a;}
           }
-          return document.querySelector('img.custom-logo');
+          return best;
+        }
+        function positionOverlay(){
+          if(!overlay||!anchor)return;
+          var rect=anchor.getBoundingClientRect();
+          overlay.style.left=(rect.left+window.scrollX)+'px';
+          overlay.style.top=(rect.top+window.scrollY)+'px';
+          overlay.style.width=rect.width+'px';
+          overlay.style.height=rect.height+'px';
         }
         function show(){
-          var img=findImage();if(!img)return;
-          if(target&&target!==img)restore();
-          target=img;
-          if(!original)original={src:img.getAttribute('src'),srcset:img.getAttribute('srcset'),sizes:img.getAttribute('sizes')};
-          img.removeAttribute('srcset');img.removeAttribute('sizes');img.src=alternate;
+          anchor=findImage();
+          if(!anchor||!loaded)return;
+          if(!overlay){
+            overlay=document.createElement('img');
+            overlay.alt='ODPC Team – Village People Easter Egg';
+            overlay.src=alternate;
+            overlay.style.cssText='position:absolute;z-index:2147482999;object-fit:fill;pointer-events:none;max-width:none;display:block;';
+            document.body.appendChild(overlay);
+          }
+          positionOverlay();
           btn.setAttribute('aria-pressed','true');
         }
         function restore(){
-          if(target&&original){
-            for(var key in original){if(original[key]===null)target.removeAttribute(key);else target.setAttribute(key,original[key]);}
-          }
-          target=null;original=null;btn.setAttribute('aria-pressed','false');
+          if(overlay){overlay.remove();overlay=null;}
+          anchor=null;
+          btn.setAttribute('aria-pressed','false');
         }
+        window.addEventListener('resize',positionOverlay);
+        window.addEventListener('scroll',positionOverlay,{passive:true});
         btn.addEventListener('pointerdown',function(e){if(e.pointerType==='mouse'&&e.button!==0)return;e.preventDefault();try{btn.setPointerCapture(e.pointerId)}catch(_e){}show()});
         ['pointerup','pointercancel','lostpointercapture','blur'].forEach(function(ev){btn.addEventListener(ev,restore)});
         btn.addEventListener('keydown',function(e){if(e.key===' '||e.key==='Enter'){e.preventDefault();if(!e.repeat)show()}});
