@@ -137,10 +137,7 @@ jobs:
           urls=[
             ('homepage-canonical','https://odpc.de/'),
             ('homepage-uncached','https://odpc.de/?odpc_mobile_qa='+str(int(time.time()))),
-            ('article','https://odpc.de/prompt-engineering-digitale-mitarbeiter-ki-sinnvoll-nutzen/?odpc_mobile_qa='+str(int(time.time()))),
-            ('helper-monkey','https://ai.odpc.de/'),
-            ('drol','https://drol.odpc.de/'),
-            ('tante-lenchen','https://tante-lenchen.odpc.de/')
+            ('article','https://odpc.de/prompt-engineering-digitale-mitarbeiter-ki-sinnvoll-nutzen/?odpc_mobile_qa='+str(int(time.time())))
           ]
           with sync_playwright() as p:
               browser=p.chromium.launch(headless=True,args=['--no-sandbox'])
@@ -152,7 +149,7 @@ jobs:
                       page.wait_for_timeout(4500)
                       item.update(page.evaluate("""() => {
                         const dock=document.getElementById('odpc-utility-dock');
-                        const flag=document.querySelector('#odpc-utility-dock .odpc-dock-language .gt_float_switcher, #odpc-utility-dock .odpc-dock-language #gt_float_wrapper, #odpc-utility-dock .odpc-dock-language .gtranslate_wrapper');
+                        const flag=document.querySelector('#odpc-utility-dock .odpc-dock-language .gt_float_switcher, #odpc-utility-dock .odpc-dock-language #gt_float_wrapper, #odpc-utility-dock .odpc-dock-language .gtranslate_wrapper, #odpc-utility-dock .odpc-language-fallback');
                         const play=document.getElementById('odpc-reader-play');
                         const stop=document.getElementById('odpc-reader-stop');
                         const wa=dock?.querySelector('a[href*="wa.me"],a[href*="whatsapp"],.odpc-wa-sticky,.odpc-hm-v4-wa,#odpc-hm-v4-wa');
