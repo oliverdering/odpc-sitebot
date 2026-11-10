@@ -160,6 +160,7 @@ body.odpc-dock-active{padding-bottom:70px!important}
 /* GTranslate's floating wrapper must be a normal child of the dock, not a second overlay. */
 #odpc-utility-dock .odpc-dock-language #gt_float_wrapper{position:relative!important;inset:auto!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;transform:none!important;float:none!important;display:block!important;width:88px!important;max-width:88px!important;margin:0!important;z-index:1!important}
 #odpc-utility-dock .odpc-dock-language #gt_float_wrapper .gt_float_switcher{position:relative!important;inset:auto!important;transform:none!important;margin:0!important;width:88px!important;max-width:88px!important;box-shadow:none!important}
+#odpc-utility-dock .odpc-language-fallback{display:block!important;box-sizing:border-box!important;width:88px!important;max-width:88px!important;height:40px!important;border:1px solid #65737b!important;border-radius:12px!important;background:#eaf2f2!important;color:#132c2e!important;padding:0 3px!important;font:600 12px system-ui,sans-serif!important;cursor:pointer!important}
 </style>
 <script id="odpc-unified-dock-js">
 (function(){
@@ -171,6 +172,23 @@ function moveLanguage(dock){
  var root=document.querySelector('#gt_float_wrapper');
  if(!root){var widget=document.querySelector('.gt_float_switcher,.gt_switcher_wrapper,.gtranslate_wrapper');if(widget)root=widget.closest('#gt_float_wrapper,.gt_switcher_wrapper,.gtranslate_wrapper')||widget}
  if(root&&root!==holder&&!holder.contains(root))holder.appendChild(root);
+ if(root){var fallback=holder.querySelector('.odpc-language-fallback');if(fallback)fallback.remove();return true}
+ return false;
+}
+function fallbackLanguage(dock){
+ var holder=dock.querySelector('.odpc-dock-language');if(!holder||holder.querySelector('.odpc-language-fallback'))return;
+ var select=document.createElement('select');select.className='odpc-language-fallback';select.setAttribute('aria-label','Sprache auswählen');
+ var choices=[['de','🇩🇪 Deutsch'],['en','🇬🇧 English'],['nl','🇳🇱 Nederlands'],['fr','🇫🇷 Français'],['es','🇪🇸 Español'],['it','🇮🇹 Italiano'],['pt','🇵🇹 Português'],['tr','🇹🇷 Türkçe'],['ru','🇷🇺 Русский']];
+ choices.forEach(function(c){var option=document.createElement('option');option.value=c[0];option.textContent=c[1];select.appendChild(option)});
+ var cookie=document.cookie.match(/(?:^|;\\s*)googtrans=\\/de\\/([^;]+)/);select.value=(cookie&&cookie[1])||(window.ODPCLanguage&&window.ODPCLanguage.get())||'de';
+ select.addEventListener('change',function(){
+  var lang=select.value;
+  if(window.ODPCLanguage&&window.ODPCLanguage.set)window.ODPCLanguage.set(lang);
+  if(typeof window.doGTranslate==='function'){window.doGTranslate('de|'+lang);return}
+  var value='/de/'+lang;document.cookie='googtrans='+value+';path=/;SameSite=Lax';document.cookie='googtrans='+value+';path=/;domain=.odpc.de;SameSite=Lax';
+  window.location.reload();
+ });
+ holder.appendChild(select);
 }
 function mount(){
  var reader=document.getElementById('odpc-reader'),help=document.getElementById('odpc-hm-v4-helpbtn');
@@ -189,7 +207,7 @@ function mount(){
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount);else mount();
 window.addEventListener('load',mount);
-var attempts=0;var retry=setInterval(function(){mount();if(++attempts>=12||document.querySelector('#odpc-utility-dock .odpc-dock-language #gt_float_wrapper,#odpc-utility-dock .odpc-dock-language .gt_float_switcher'))clearInterval(retry)},500);
+var attempts=0;var retry=setInterval(function(){mount();var dock=document.getElementById('odpc-utility-dock');if(moveLanguage(dock||document.body)){clearInterval(retry);return}if(++attempts>=12){clearInterval(retry);if(dock)fallbackLanguage(dock)}},500);
 })();
 </script>
 <?php },99);
