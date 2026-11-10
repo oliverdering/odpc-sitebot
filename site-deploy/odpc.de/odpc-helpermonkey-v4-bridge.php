@@ -51,7 +51,7 @@ add_action('wp_footer',function(){
  (function(){
  'use strict';
  var synth=window.speechSynthesis,play=document.getElementById('odpc-reader-play'),pause=document.getElementById('odpc-reader-pause'),stop=document.getElementById('odpc-reader-stop'),status=document.getElementById('odpc-reader-status'),queue=[],index=0,token=0,paused=false;
- function lang(){var site=document.getElementById('odpc-ai-language');if(site)return site.value;try{var c=decodeURIComponent(document.cookie.match(/(?:^|; )googtrans=([^;]+)/)?.[1]||'');return c.split('/').pop()||'de'}catch(e){return 'de'}}
+ function lang(){if(window.ODPCLanguage)return window.ODPCLanguage.get();var site=document.getElementById('odpc-ai-language');if(site)return site.value;try{var c=decodeURIComponent(document.cookie.match(/(?:^|; )googtrans=([^;]+)/)?.[1]||'');return c.split('/').pop()||'de'}catch(e){return 'de'}}
  function locale(){return ({de:'de-DE',en:'en-US',nl:'nl-NL',es:'es-ES',fr:'fr-FR',ru:'ru-RU',tr:'tr-TR'})[lang()]||'de-DE'}
  function text(){var root=document.querySelector('article .entry-content,main .entry-content,main article,article,main,#content');if(!root)return '';var clone=root.cloneNode(true);clone.querySelectorAll('script,style,nav,form,button,footer,aside,.screen-reader-text,#odpc-reader,.gtranslate_wrapper').forEach(function(e){e.remove()});return (clone.innerText||clone.textContent||'').replace(/\s+/g,' ').trim().slice(0,85000)}
  function split(s){var parts=s.match(/[^.!?。！？]+[.!?。！？]?/g)||[s],out=[],chunk='';parts.forEach(function(p){if((chunk+p).length>175){if(chunk)out.push(chunk);chunk='';while(p.length>175){out.push(p.slice(0,175));p=p.slice(175)}}chunk+=p}else chunk+=p});if(chunk)out.push(chunk);return out.filter(Boolean)}
@@ -64,3 +64,21 @@ add_action('wp_footer',function(){
  </script>
  <?php
 },85);
+
+
+/* ODPC shared first-party language preference; respects existing GTranslate UI. */
+add_action('wp_footer',function(){if(is_admin())return; ?>
+<script id="odpc-global-language-core">
+(function(){
+'use strict';
+var langs=['de','en','nl','es','fr','ru','tr'],key='odpc_global_language_v1';
+function get(){var m=document.cookie.match(/(?:^|;\\s*)odpc_language=([^;]+)/);var v=m?decodeURIComponent(m[1]):null;try{v=v||localStorage.getItem(key)||'de'}catch(e){v=v||'de'}return langs.includes(v)?v:'de'}
+function set(v){if(!langs.includes(v))return;try{localStorage.setItem(key,v)}catch(e){}document.cookie='odpc_language='+encodeURIComponent(v)+';path=/;domain=.odpc.de;max-age=31536000;SameSite=Lax;Secure';document.dispatchEvent(new CustomEvent('odpc:languagechange',{detail:{language:v}}))}
+window.ODPCLanguage={get:get,set:set,locale:function(){return ({de:'de-DE',en:'en-US',nl:'nl-NL',es:'es-ES',fr:'fr-FR',ru:'ru-RU',tr:'tr-TR'})[get()]}};
+var select=document.querySelector('.goog-te-combo');
+document.addEventListener('change',function(e){if(e.target.matches('.goog-te-combo,select[data-odpc-language]')){var v=e.target.value;if(langs.includes(v))set(v)}});
+document.addEventListener('click',function(e){var a=e.target.closest('a[href*="lang="],a[href*="googtrans="]');if(!a)return;try{var u=new URL(a.href),v=u.searchParams.get('lang')||u.searchParams.get('googtrans')?.split('/').pop();if(langs.includes(v))set(v)}catch(err){}});
+if(!document.cookie.includes('odpc_language='))set(get());
+})();
+</script>
+<?php },79);
