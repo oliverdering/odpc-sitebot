@@ -98,6 +98,27 @@ jobs:
               except (URLError,HTTPError,TimeoutError) as exc:
                   print('WARNING:',label,'HTTP unavailable:',type(exc).__name__,str(exc),flush=True)
           PY
+      - name: Diagnose canonical homepage cache and response identity
+        if: success()
+        run: |
+          python3 - <<'PY'
+          from urllib.request import Request,urlopen
+          from urllib.parse import urlencode
+          import time,hashlib,re,json
+          urls={'canonical':'https://odpc.de/','cache-bypass':'https://odpc.de/?'+urlencode({'odpc_diagnostic':str(int(time.time()))})}
+          report={}
+          for name,url in urls.items():
+              for attempt in range(2):
+                  try:
+                      with urlopen(Request(url,headers={'User-Agent':'ODPC-Diagnostic/1.0','Cache-Control':'no-cache','Pragma':'no-cache'}),timeout=30) as resp:
+                          html=resp.read(900000)
+                          headers={k:v for k,v in resp.headers.items() if k.lower() in ('cache-control','age','etag','last-modified','expires','server','via','x-cache','x-cache-status','x-litespeed-cache','cf-cache-status','vary','content-type','x-wpfc-cache','x-wpfc-cache-status')}
+                          report[name]={'status':resp.status,'final_url':resp.url,'bytes':len(html),'sha256':hashlib.sha256(html).hexdigest(),'has_bridge':b'id="odpc-unified-dock-js"' in html,'has_reader':b'id="odpc-reader-play"' in html,'headers':headers,'html_comments':re.findall(r'<!--[^>]{0,250}(?:cache|WP Fastest|optimize)[^>]{0,250}-->',html.decode('utf-8','replace'),re.I)[-8:]}
+                      break
+                  except Exception as e:
+                      report[name]={'error':str(e)}
+          print('CANONICAL CACHE DIAGNOSTIC',json.dumps(report,ensure_ascii=False,indent=2),flush=True)
+          PY
       - name: Install mobile browser for visual acceptance test
         if: success()
         run: |
