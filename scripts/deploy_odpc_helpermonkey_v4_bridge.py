@@ -14,7 +14,10 @@ def smoke():
     request=Request("https://odpc.de/?odpc_v4_bridge_check="+str(int(time.time())),headers={"User-Agent":"ODPC-V4-Release-Check","Cache-Control":"no-cache"})
     with urlopen(request,timeout=25) as resp:
         body=resp.read(350000).decode("utf-8","replace")
-    return 'id="odpc-hm-v4-js"' in body and 'id="odpc-hm-v4-helpbtn"' in body
+    required=('id="odpc-hm-v4-js"','id="odpc-hm-v4-helpbtn"','id="odpc-reader-language"','id="odpc-reader-voice"','id="odpc-reader-test"')
+    missing=[marker for marker in required if marker not in body]
+    if missing: print('LIVE MARKUP MISSING:', ', '.join(missing), flush=True)
+    return not missing
 def main():
     password=os.environ.get("ODPC_SFTP_PASSWORD","")
     if not password:raise RuntimeError("Missing SFTP deployment secret")
@@ -49,8 +52,8 @@ def main():
                 sftp.put(str(SOURCE),temp,confirm=True)
                 sftp.posix_rename(temp,remote)
                 good=False
-                for i in range(4):
-                    time.sleep(3)
+                for i in range(8):
+                    time.sleep(5)
                     try:
                         if smoke():good=True;break
                     except Exception as exc:print("Smoke test pending:",type(exc).__name__)
