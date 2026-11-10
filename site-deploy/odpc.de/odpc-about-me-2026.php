@@ -2,7 +2,7 @@
 /**
  * Plugin Name: ODPC About Me 2026
  * Description: Chronological profile with live HTML CV and original certificate links; voice dock untouched.
- * Version: 1.4.0
+ * Version: 1.5.0
  */
 if (!defined('ABSPATH')) { exit; }
 function odpc_about_2026_target() {
@@ -106,3 +106,63 @@ add_filter('the_content', function ($content) {
     $content = preg_replace('/(<div\\s+class="odpc-team"\\s*>)/', $team . '<style>#odpc-complete-team-2026 ~ .odpc-team{display:none!important}</style>$1', $content, 1);
     return $content;
 }, 80);
+
+/**
+ * ODPC Easter Egg: hold the discreet gender-switch button to reveal the
+ * alternative Village People team photo. Original logo is never overwritten.
+ */
+add_action('wp_footer', function () {
+    if (is_admin() || !is_front_page()) return;
+    ?>
+    <style id="odpc-team-easter-egg-css">
+    #odpc-team-easter-egg{position:absolute;right:12px;bottom:12px;z-index:40;width:34px;height:34px;display:flex;align-items:center;justify-content:center;border:1px solid #ffffff99;border-radius:50%;background:#13273bd9;color:#fff;font:700 19px/1 system-ui,sans-serif;box-shadow:0 3px 12px #0006;cursor:pointer;touch-action:none;user-select:none;-webkit-user-select:none;opacity:.7}
+    #odpc-team-easter-egg:hover,#odpc-team-easter-egg:focus-visible,#odpc-team-easter-egg[data-pressed="1"]{opacity:1;outline-offset:2px}
+    </style>
+    <script id="odpc-team-easter-egg-js">
+    (function(){
+      var alternative='https://odpc.de/wp-content/uploads/2026/11/9d77deaa94684412b00e1ea0dd61c2d52050c4eea38c10ac6c6023c942477844.png';
+      function init(){
+        if(document.getElementById('odpc-team-easter-egg'))return;
+        var img=document.querySelector('#masthead img.custom-logo, .site-header img.custom-logo');
+        if(!img)return;
+        var wrap=img.closest('.custom-logo-link')||img.parentElement;
+        if(!wrap)return;
+        var host=wrap.parentElement||wrap;
+        var style=window.getComputedStyle(host);
+        if(style.position==='static')host.style.position='relative';
+        var original={src:img.getAttribute('src'),srcset:img.getAttribute('srcset'),sizes:img.getAttribute('sizes')};
+        var preloader=new Image();preloader.src=alternative;
+        var button=document.createElement('button');
+        button.id='odpc-team-easter-egg';
+        button.type='button';
+        button.textContent='⚥';
+        button.setAttribute('aria-label','Easter Egg: Gedrückt halten für das alternative KI-Team');
+        button.setAttribute('title','Team wechseln – gedrückt halten');
+        function restore(){
+          if(original.src===null)img.removeAttribute('src');else img.setAttribute('src',original.src);
+          if(original.srcset===null)img.removeAttribute('srcset');else img.setAttribute('srcset',original.srcset);
+          if(original.sizes===null)img.removeAttribute('sizes');else img.setAttribute('sizes',original.sizes);
+          button.removeAttribute('data-pressed');
+        }
+        function show(){
+          img.removeAttribute('srcset');img.removeAttribute('sizes');
+          img.setAttribute('src',alternative);
+          button.setAttribute('data-pressed','1');
+        }
+        button.addEventListener('pointerdown',function(e){if(e.button!==0&&e.pointerType==='mouse')return;e.preventDefault();button.setPointerCapture(e.pointerId);show();});
+        button.addEventListener('pointerup',restore);
+        button.addEventListener('pointercancel',restore);
+        button.addEventListener('lostpointercapture',restore);
+        button.addEventListener('keydown',function(e){if((e.key===' '||e.key==='Enter')&&!e.repeat){e.preventDefault();show();}});
+        button.addEventListener('keyup',function(e){if(e.key===' '||e.key==='Enter'){e.preventDefault();restore();}});
+        button.addEventListener('blur',restore);
+        window.addEventListener('blur',restore);
+        document.addEventListener('visibilitychange',function(){if(document.hidden)restore();});
+        button.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();});
+        host.appendChild(button);
+      }
+      if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
+    })();
+    </script>
+    <?php
+}, 100);
