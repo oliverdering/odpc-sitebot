@@ -34,6 +34,14 @@ class ChunkDocumentsTests(unittest.TestCase):
         self.assertEqual(result["chunked_documents"], 1)
         self.assertEqual(result["rejected"]["untrusted_or_missing_text"], 1)
 
+    def test_normalizes_whitespace_consistently_with_crawler_digest(self):
+        canonical = "Microsoft Learn Entra ID role assignments"
+        doc = document(canonical)
+        doc["text"] = "Microsoft  Learn\\nEntra ID\\trole assignments"
+        chunks = chunk_document(doc, max_words=20, overlap_words=2)
+        self.assertEqual(len(chunks), 1)
+        self.assertEqual(chunks[0]["text"], canonical)
+
     def test_invalid_window(self):
         with self.assertRaises(ValueError):
             chunk_document(document("words"), max_words=5, overlap_words=5)
