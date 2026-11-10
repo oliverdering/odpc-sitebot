@@ -37,7 +37,7 @@ class ChunkDocumentsTests(unittest.TestCase):
     def test_normalizes_whitespace_consistently_with_crawler_digest(self):
         canonical = "Microsoft Learn Entra ID role assignments"
         doc = document(canonical)
-        doc["text"] = "Microsoft  Learn\\nEntra ID\\trole assignments"
+        doc["text"] = "Microsoft  Learn\nEntra ID\trole assignments"
         chunks = chunk_document(doc, max_words=20, overlap_words=2)
         self.assertEqual(len(chunks), 1)
         self.assertEqual(chunks[0]["text"], canonical)
