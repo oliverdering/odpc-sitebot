@@ -67,13 +67,13 @@ add_action('wp_footer', function () {
         var headline='Von Hardware und Software über Webdesign bis zur KI-Integration – alles aus einer Hand.';
         elements.forEach(function(el){
           if(el.children.length>0)return;
-          var t=(el.textContent||'').replace(/\\s+/g,' ').trim();
-          if(/Oliver Dering\\s*[–-]\\s*IT.Consulting.*(?:KI|Projekte)/i.test(t)){
+          var t=(el.textContent||'').replace(/\s+/g,' ').trim();
+          if(/Oliver Dering\s*[–-]\s*IT.Consulting.*(?:KI|Projekte)/i.test(t)){
             el.textContent=headline;
             el.style.fontSize='clamp(20px,3.5vw,31px)';
             el.style.lineHeight='1.3';
             el.style.overflowWrap='anywhere';
-          } else if(/^(?:IT.Consulting\\s*[·|\\-]\\s*)?KI.Integration\\s*[·|\\-]\\s*Digitale Projekte\\.?$/i.test(t) || /^IT.Consulting\\s*[·|\\-]\\s*KI.Integration\\s*[·|\\-]\\s*Digitale Projekte\\.?$/i.test(t)){
+          } else if(/^(?:IT.Consulting\s*[·|\-]\s*)?KI.Integration\s*[·|\-]\s*Digitale Projekte\.?$/i.test(t) || /^IT.Consulting\s*[·|\-]\s*KI.Integration\s*[·|\-]\s*Digitale Projekte\.?$/i.test(t)){
             el.style.display='none';
           }
         });
