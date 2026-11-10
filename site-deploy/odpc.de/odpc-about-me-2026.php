@@ -2,7 +2,7 @@
 /**
  * Plugin Name: ODPC About Me 2026
  * Description: Chronological profile with live HTML CV and original certificate links; voice dock untouched.
- * Version: 1.7.0
+ * Version: 1.8.0
  */
 if (!defined('ABSPATH')) { exit; }
 function odpc_about_2026_target() {
@@ -113,7 +113,9 @@ add_action('wp_footer', function () {
     if (is_admin() || !is_front_page()) return;
     ?>
     <style id="odpc-easter-egg-css">
-    #odpc-easter-egg-button{position:fixed!important;right:12px;top:125px;z-index:2147483000!important;width:40px;height:40px;border-radius:50%;border:2px solid #fff;background:#173a60;color:#fff;font:700 21px/1 sans-serif;box-shadow:0 3px 15px #0009;display:grid;place-items:center;cursor:pointer;touch-action:none;user-select:none;-webkit-user-select:none}
+    #odpc-easter-egg-button{position:absolute!important;left:0;top:0;z-index:2147483000!important;width:16px;height:16px;padding:0;border:1px solid #c6d4e2;border-radius:50%;background:#1c3148;color:#e6eef5;font:700 11px/1 sans-serif;box-shadow:0 1px 3px #0007;display:grid;place-items:center;cursor:pointer;touch-action:none;user-select:none;-webkit-user-select:none;opacity:.94;transform:translate(-50%,-50%)}
+    #odpc-easter-egg-button::before{content:'';position:absolute;inset:-11px;border-radius:50%}
+    
     #odpc-easter-egg-button:focus-visible{outline:3px solid #ffcc55;outline-offset:3px}
     </style>
     <script id="odpc-easter-egg-js">
@@ -125,6 +127,21 @@ add_action('wp_footer', function () {
         btn.title='Easter Egg – gedrückt halten';btn.setAttribute('aria-label','Easter Egg: alternatives Team anzeigen, gedrückt halten');
         document.body.appendChild(btn);
         var overlay=null,anchor=null;
+        function placeBadge(){
+          var img=findImage();if(!img)return;
+          var r=img.getBoundingClientRect();
+          if(!r.width||!r.height)return;
+          // The jacket badge position is relative to the image, not the viewport.
+          // In the source composition Oliver stands second from the left.
+          btn.style.left=(r.left+window.scrollX+r.width*0.335)+'px';
+          btn.style.top=(r.top+window.scrollY+r.height*0.53)+'px';
+        }
+        window.addEventListener('resize',placeBadge);
+        window.addEventListener('scroll',placeBadge,{passive:true});
+        window.addEventListener('load',placeBadge,{once:true});
+        if(window.ResizeObserver){new ResizeObserver(placeBadge).observe(document.querySelector('#masthead')||document.body);}
+        placeBadge();
+
         var loaded=false;
         var preview=new Image();
         preview.onload=function(){loaded=true;};
