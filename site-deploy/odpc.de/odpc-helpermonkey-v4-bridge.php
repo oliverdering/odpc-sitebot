@@ -6,6 +6,24 @@
  * Version: 4.0.3
  */
 if(!defined('ABSPATH'))exit;
+/* Purge stale WP Fastest Cache page HTML once per bridge release.
+ * This executes on the cache-bypassed deployment smoke request, before canonical visitors arrive.
+ * Never deactivate plugins, alter content, or repeatedly purge on every page view.
+ */
+add_action('init',function(){
+ $release='odpc-v4-bridge-20261110-cache-refresh-1';
+ if(get_option('odpc_bridge_page_cache_release')===$release)return;
+ if(!class_exists('WpFastestCache'))return;
+ try{
+  $cache=new WpFastestCache();
+  if(!method_exists($cache,'deleteCache'))return;
+  $cache->deleteCache(true);
+  update_option('odpc_bridge_page_cache_release',$release,false);
+  error_log('ODPC bridge: WP Fastest Cache purge attempted for '.$release);
+ }catch(Throwable $e){
+  error_log('ODPC bridge: cache purge failed: '.$e->getMessage());
+ }
+},99);
 add_action('wp_head',function(){if(!is_admin())echo '<meta name="odpc-voice-build" content="2026-11-10-audit-1">' . "\n";
 
  if(is_admin())return;
