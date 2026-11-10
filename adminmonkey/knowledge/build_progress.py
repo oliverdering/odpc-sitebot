@@ -62,12 +62,27 @@ def build():
         questions = sum(s.get("track") == track for s in scenarios)
         screened_results = [x for x in assessment.get("results", []) if x.get("track") == track]
         verified_sources = [d for d in docs.values() if manufacturer_verified(d) and track in mapped_tracks(d)]
+        # Never turn a keyword-screening result into a verified agent skill.
+        # Only independently evaluated results with explicit grading evidence count.
+        evaluated = [x for x in screened_results if x.get("evaluation_type") == "independent_agent_assessment"
+                     and x.get("evidence_url") and x.get("scenario_id")
+                     and isinstance(x.get("passed"), bool)]
+        passed = sum(x["passed"] for x in evaluated)
+        verified_objectives = len({x["scenario_id"] for x in evaluated if x["passed"]})
+        total_objectives = len({sc.get("id") for sc in scenarios if sc.get("track") == track and sc.get("id")})
+        competency = round(100 * verified_objectives / total_objectives, 1) if total_objectives and len(evaluated) >= total_objectives else None
         tracks.append({"track": track, "manufacturer_verified_sources": len(verified_sources),
                        "knowledge_coverage": "source_count_only_not_learning_objective_coverage",
                        "practice_scenarios_available": questions,
-                       "agent_answers_evaluated": len(screened_results), "verified_passes": 0,
+                       "agent_answers_evaluated": len(evaluated), "verified_passes": passed,
                        "screening_passes": sum(x.get("screening_pass") is True for x in screened_results),
-                       "badge_status": "not_earned", "competency_percent": None})
+                       "verified_scenario_objectives": verified_objectives,
+                       "total_scenario_objectives": total_objectives,
+                       "source_badge_status": "source_verified" if verified_sources else "not_earned",
+                       "badge_status": "practice_verified" if competency == 100 else "not_earned",
+                       "competency_percent": competency,
+                       "competency_basis": "verified_scenario_objectives_not_official_exam_coverage",
+                       "next_action": "evaluate_agent_responses_with_independent_grader" if not evaluated else "expand_official_learning_objective_mapping"})
     public_docs = [{"url": d.get("url"), "sha256": d.get("sha256"), "captured_at": d.get("captured_at"), "depth": d.get("depth"), "review_status": "manufacturer_verified" if manufacturer_verified(d) else d.get("review_status", "unreviewed"), "mapped_tracks": mapped_tracks(d) if manufacturer_verified(d) else []} for d in docs.values() if d.get("url", "").startswith("https://learn.microsoft.com/en-us/")]
     (ROOT / "document_manifest.json").write_text(json.dumps({"schema_version": 2, "documents": public_docs, "seen": state.get("seen", []), "queue": state.get("queue", []), "last_batch": state.get("last_batch", {})}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return {"generated_at": datetime.now(timezone.utc).isoformat(),
@@ -77,12 +92,12 @@ def build():
                           "last_batch": state.get("last_batch", {})},
             "retrieval_staging": retrieval,
             "tracks": tracks,
-            "assessment_status": "manufacturer_sources_mapped_competence_not_yet_verified",
-            "notice": "Collection is not learning; practice question count is not a competence score. No Banana Badge until independent agent responses are assessed."}
+            "assessment_status": "independent_agent_evidence_required_for_competency",
+            "notice": "Source badges are evidence of provenance only. Practice badges require independently graded agent answers with scenario IDs and evidence links. A practice score is not official Microsoft certification coverage."}
 
 if __name__ == "__main__":
     result = build()
     output = ROOT / "academy_progress.json"
     output.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(json.dumps({"documents_collected": result["knowledge"]["documents_collected"],
-                      "tracks": len(result["tracks"]), "badges_awarded": 0}))
+                      "tracks": len(result["tracks"]), "badges_awarded": sum(t["badge_status"] == "practice_verified" for t in result["tracks"])}))
