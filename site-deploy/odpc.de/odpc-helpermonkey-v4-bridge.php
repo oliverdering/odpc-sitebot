@@ -180,7 +180,7 @@ function fallbackLanguage(dock){
  var select=document.createElement('select');select.className='odpc-language-fallback';select.setAttribute('aria-label','Sprache auswählen');
  var choices=[['de','🇩🇪 Deutsch'],['en','🇬🇧 English'],['nl','🇳🇱 Nederlands'],['fr','🇫🇷 Français'],['es','🇪🇸 Español'],['it','🇮🇹 Italiano'],['pt','🇵🇹 Português'],['tr','🇹🇷 Türkçe'],['ru','🇷🇺 Русский']];
  choices.forEach(function(c){var option=document.createElement('option');option.value=c[0];option.textContent=c[1];select.appendChild(option)});
- var cookie=document.cookie.match(/(?:^|;\\s*)googtrans=\\/de\\/([^;]+)/);select.value=(cookie&&cookie[1])||(window.ODPCLanguage&&window.ODPCLanguage.get())||'de';
+ var cookie=document.cookie.match(new RegExp('(?:^|;)\\s*googtrans=/de/([^;]+)'));select.value=(cookie&&cookie[1])||(window.ODPCLanguage&&window.ODPCLanguage.get())||'de';
  select.addEventListener('change',function(){
   var lang=select.value;
   if(window.ODPCLanguage&&window.ODPCLanguage.set)window.ODPCLanguage.set(lang);
