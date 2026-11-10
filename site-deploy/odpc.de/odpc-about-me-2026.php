@@ -2,7 +2,7 @@
 /**
  * Plugin Name: ODPC About Me 2026
  * Description: Chronological profile with live HTML CV and original certificate links; voice dock untouched.
- * Version: 1.9.0
+ * Version: 2.0.0
  */
 if (!defined('ABSPATH')) { exit; }
 function odpc_about_2026_target() {
@@ -113,8 +113,8 @@ add_action('wp_footer', function () {
     if (is_admin() || !is_front_page()) return;
     ?>
     <style id="odpc-easter-egg-css">
-    #odpc-easter-egg-button{position:absolute!important;left:0;top:0;z-index:2147483000!important;width:12px;height:12px;padding:0;border:1px solid #c6d4e2;border-radius:50%;background:#1c3148;color:#e6eef5;font:700 9px/1 sans-serif;box-shadow:0 1px 3px #0007;display:grid;place-items:center;cursor:pointer;touch-action:none;user-select:none;-webkit-user-select:none;opacity:.94;transform:translate(-50%,-50%)}
-    #odpc-easter-egg-button::before{content:'';position:absolute;inset:-11px;border-radius:50%}
+    #odpc-easter-egg-button{all:unset!important;box-sizing:border-box!important;position:absolute!important;left:0;top:0;z-index:2147483000!important;width:14px!important;height:14px!important;min-width:14px!important;min-height:14px!important;max-width:14px!important;max-height:14px!important;margin:0!important;padding:0!important;border:1px solid #9faebd!important;border-radius:50%!important;background:#1c3148!important;color:#e6eef5!important;font:700 10px/1 sans-serif!important;box-shadow:0 1px 2px #0008!important;display:flex!important;align-items:center!important;justify-content:center!important;cursor:pointer!important;touch-action:none!important;user-select:none!important;-webkit-user-select:none!important;opacity:.95!important;transform:translate(-50%,-50%)!important}
+    #odpc-easter-egg-button::before{content:'';position:absolute;inset:-12px;border-radius:50%}
     
     #odpc-easter-egg-button:focus-visible{outline:3px solid #ffcc55;outline-offset:3px}
     </style>
@@ -133,8 +133,8 @@ add_action('wp_footer', function () {
           if(!r.width||!r.height)return;
           // The jacket badge position is relative to the image, not the viewport.
           // In the source composition Oliver stands second from the left.
-          btn.style.left=(r.left+window.scrollX+r.width*0.245)+'px';
-          btn.style.top=(r.top+window.scrollY+r.height*0.64)+'px';
+          btn.style.left=(r.left+window.scrollX+r.width*0.205)+'px';
+          btn.style.top=(r.top+window.scrollY+r.height*0.505)+'px';
         }
         window.addEventListener('resize',placeBadge);
         window.addEventListener('scroll',placeBadge,{passive:true});
