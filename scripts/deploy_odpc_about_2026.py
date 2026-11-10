@@ -20,7 +20,7 @@ def check():
     if missing:raise RuntimeError("Missing live markers: "+", ".join(missing))
     print("PASS: about page, projects, unchanged shared dock markers")
 def main():
-    if not SOURCE.is_file() or SOURCE.stat().st_size>18000:raise RuntimeError("Source absent or oversized")
+    if not SOURCE.is_file() or SOURCE.stat().st_size>65536:raise RuntimeError("Source absent or oversized")
     pw=os.environ["ODPC_SFTP_PASSWORD"]
     t=paramiko.Transport((HOST,22));t.start_client(timeout=20)
     try:
@@ -35,7 +35,7 @@ def main():
             old=None
             try:
                 info=s.lstat(REMOTE)
-                if not stat.S_ISREG(info.st_mode) or info.st_size>18000:raise RuntimeError("Unexpected remote file")
+                if not stat.S_ISREG(info.st_mode) or info.st_size>65536:raise RuntimeError("Unexpected remote file")
                 with s.open(REMOTE,"rb") as f:old=f.read()
                 (BACKUP/"previous.php").write_bytes(old)
             except FileNotFoundError:pass
