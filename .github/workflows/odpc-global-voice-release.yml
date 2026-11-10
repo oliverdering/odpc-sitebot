@@ -1,9 +1,6 @@
-name: ODPC Global Voice - release and public verification
+name: ODPC Global Voice - legacy verification only
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - '.github/workflows/odpc-global-voice-release.yml'
 permissions:
   contents: read
 concurrency:
@@ -24,12 +21,6 @@ jobs:
           grep -q 'id="odpc-reader-test"' site-deploy/odpc.de/odpc-helpermonkey-v4-bridge.php
           grep -q 'name="odpc-voice-build"' site-deploy/odpc.de/odpc-helpermonkey-v4-bridge.php
           grep -q 'SpeechSynthesisUtterance' site-deploy/odpc.de/odpc-helpermonkey-v4-bridge.php
-      - name: Install deployment dependencies
-        run: python3 -m pip install 'paramiko>=3.4,<5'
-      - name: Publish ODPC WordPress MU plugin with rollback
-        env:
-          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
-        run: python3 scripts/deploy_odpc_helpermonkey_v4_bridge.py
       - name: Diagnose public cache and verify exact release on normal and uncached URLs
         shell: bash
         run: |
