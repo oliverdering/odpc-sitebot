@@ -1,5 +1,10 @@
 name: ODPC About Me 2026 release
 on:
+  pull_request:
+    paths:
+      - 'site-deploy/odpc.de/odpc-about-me-2026.php'
+      - 'scripts/deploy_odpc_about_2026.py'
+      - '.github/workflows/odpc-about-2026.yml'
   push:
     branches: [main]
     paths:
@@ -26,8 +31,10 @@ jobs:
           grep -q "is_page('about-me')" site-deploy/odpc.de/odpc-about-me-2026.php
           ! grep -q 'odpc-utility-dock' site-deploy/odpc.de/odpc-about-me-2026.php
       - name: Install SFTP
+        if: github.event_name != 'pull_request'
         run: python3 -m pip install 'paramiko>=3.4,<5'
       - name: Deploy and verify with rollback
+        if: github.event_name != 'pull_request'
         env:
           ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
         run: python3 scripts/deploy_odpc_about_2026.py
