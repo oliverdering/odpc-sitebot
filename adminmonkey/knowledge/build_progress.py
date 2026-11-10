@@ -41,6 +41,7 @@ def read_json(path):
 def build():
     state = read_json(ROOT / "crawl_state.json")
     bank = read_json(ACADEMY / "competency_bank.json")
+    official_scope = read_json(ACADEMY / "official_certification_scope_2026.json")
     docs = state.get("documents", {})
     counts = {"unreviewed": 0, "approved": 0, "rejected": 0}
     for doc in docs.values():
@@ -86,7 +87,7 @@ def build():
     public_docs = [{"url": d.get("url"), "sha256": d.get("sha256"), "captured_at": d.get("captured_at"), "depth": d.get("depth"), "review_status": "manufacturer_verified" if manufacturer_verified(d) else d.get("review_status", "unreviewed"), "mapped_tracks": mapped_tracks(d) if manufacturer_verified(d) else []} for d in docs.values() if d.get("url", "").startswith("https://learn.microsoft.com/en-us/")]
     (ROOT / "document_manifest.json").write_text(json.dumps({"schema_version": 2, "documents": public_docs, "seen": state.get("seen", []), "queue": state.get("queue", []), "last_batch": state.get("last_batch", {})}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return {"generated_at": datetime.now(timezone.utc).isoformat(),
-            "product": "AdminMonkey Academy", "certification_issuer": "ODPC",
+            "product": "AdminMonkey Academy", "official_certification_benchmark": {"baseline_date": official_scope.get("baseline_date"), "official_catalog": official_scope.get("official_catalog"), "retirement_reference": official_scope.get("official_retirement"), "coverage_status": official_scope.get("coverage_status"), "scope": official_scope.get("scope"), "initial_references": official_scope.get("initial_official_references", [])}, "certification_issuer": "ODPC",
             "official_microsoft_certification": False,
             "knowledge": {"documents_collected": len(docs), "manufacturer_verified": counts["approved"], "review": counts,
                           "last_batch": state.get("last_batch", {})},
