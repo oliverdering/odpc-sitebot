@@ -93,7 +93,15 @@ def main():
                     sftp.rename(cache_all,target)
                     print("PASS: rotated WP Fastest Cache HTML directory atomically; old cache retained for WPFC cleanup",flush=True)
                 except FileNotFoundError:
-                    print("INFO: WP Fastest Cache HTML directory absent; no rotation necessary",flush=True)
+                    print("WARNING: expected WP Fastest Cache path missing; NOT claiming cache was cleared",flush=True)
+                    # Diagnose actual cache layout without deleting or renaming anything.
+                    for candidate in (ROOT+"/wp-content/cache",ROOT+"/wp-content",ROOT+"/wp-content/cache/wpfc-minified",ROOT+"/wp-content/cache/wp-optimize",ROOT+"/wp-content/cache/all"):
+                        try:
+                            entries=sftp.listdir_attr(candidate)
+                            names=[e.filename+("/" if stat.S_ISDIR(e.st_mode) else "") for e in entries]
+                            print("CACHE PATH DIAGNOSTIC",candidate,"entries:",names[:35],flush=True)
+                        except (OSError,IOError) as diag:
+                            print("CACHE PATH DIAGNOSTIC",candidate,type(diag).__name__,str(diag),flush=True)
                 except Exception as cache_exc:
                     print("WARNING: WP Fastest Cache HTML rotation failed:",str(cache_exc),flush=True)
                 if good:
