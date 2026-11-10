@@ -1,4 +1,5 @@
 <?php
+/* ODPC language rollout verification: 2026-11-10; deploy via existing SFTP workflow. */
 /**
  * Plugin Name: ODPC Helper Monkey V4 Global Guide
  * Description: Reusable cross-page self-service, language entry, traffic lights and WhatsApp Business.
