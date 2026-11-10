@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "description": "Microsoft Learn entry points curated for AdminMonkey. Discovery links are not evidence of completed courses or earned credentials.",
+  "tracks": [
+    {
+      "track": "MS-102",
+      "title": "Microsoft 365 Administrator",
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ms-102/",
+      "learning_url": "https://learn.microsoft.com/en-us/training/browse/?terms=MS-102",
+      "status": "catalogued_not_completed"
+    },
+    {
+      "track": "AZ-104",
+      "title": "Azure Administrator",
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/az-104/",
+      "learning_url": "https://learn.microsoft.com/en-us/training/browse/?terms=AZ-104",
+      "status": "catalogued_not_completed"
+    },
+    {
+      "track": "SC-300",
+      "title": "Identity and Access Administrator",
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/sc-300/",
+      "learning_url": "https://learn.microsoft.com/en-us/training/browse/?terms=SC-300",
+      "status": "catalogued_not_completed"
+    },
+    {
+      "track": "MD-102",
+      "title": "Endpoint Administrator",
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/md-102/",
+      "learning_url": "https://learn.microsoft.com/en-us/training/browse/?terms=MD-102",
+      "status": "catalogued_not_completed"
+    }
+  ]
+}
