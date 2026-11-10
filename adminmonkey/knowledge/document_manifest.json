@@ -24456,14 +24456,9 @@
     }
   ],
   "last_batch": {
-    "attempted": 33,
+    "attempted": 0,
     "documents_total": 1500,
     "queued": 2372,
-    "failures": [
-      {
-        "url": "https://learn.microsoft.com/en-us/microsoft-365/business-video/",
-        "error": "ValueError"
-      }
-    ]
+    "failures": []
   }
 }
