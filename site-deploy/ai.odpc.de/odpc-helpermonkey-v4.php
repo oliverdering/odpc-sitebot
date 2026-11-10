@@ -2,7 +2,7 @@
 /**
  * Plugin Name: ODPC Helper Monkey V4 Global Guide
  * Description: Reusable cross-page self-service, language entry, traffic lights and WhatsApp Business.
- * Version: 4.0.7
+ * Version: 4.0.8
  */
 if (!defined('ABSPATH')) exit;
 
@@ -28,12 +28,12 @@ add_action('wp_footer', function(){
  if(!sel)return;
  function read(){try{return localStorage.getItem(key)||'de'}catch(e){return 'de'}}
  function store(v){try{localStorage.setItem(key,v)}catch(e){}}
- function cookie(v){var value=v==='de'?'/de/de':'/de/'+v;document.cookie='googtrans='+value+';path=/;SameSite=Lax';document.cookie='googtrans='+value+';path=/;domain=.ai.odpc.de;SameSite=Lax'}
- function apply(v){var combo=document.querySelector('.goog-te-combo');if(!combo)return false;combo.value=v==='de'?'':v;combo.dispatchEvent(new Event('change',{bubbles:true}));return true}
- var chosen=read();if(!supported.includes(chosen))chosen='de';sel.value=chosen;
+ function cookie(v){var value='/de/'+v;document.cookie='googtrans='+value+';path=/;SameSite=Lax';document.cookie='googtrans='+value+';path=/;domain=.ai.odpc.de;SameSite=Lax';if(v==='de'){document.cookie='googtrans=;Max-Age=0;path=/';document.cookie='googtrans=;Max-Age=0;path=/;domain=.ai.odpc.de'}}
+ function apply(v){if(v==='de')return true;var combo=document.querySelector('.goog-te-combo');if(!combo)return false;combo.value=v;combo.dispatchEvent(new Event('change',{bubbles:true}));return true}
+ var chosen=read();if(!supported.includes(chosen))chosen='de';sel.value=chosen;window.odpcAiLocale=function(){return ({de:'de-DE',en:'en-US',nl:'nl-NL',es:'es-ES',fr:'fr-FR',ru:'ru-RU',tr:'tr-TR'})[read()]||'de-DE'};
  window.odpcAiTranslateInit=function(){new google.translate.TranslateElement({pageLanguage:'de',includedLanguages:'de,en,nl,es,fr,ru,tr',autoDisplay:false},'odpc-ai-translate-element');var n=0;var timer=setInterval(function(){if(apply(chosen)||++n>35)clearInterval(timer)},200)};
- sel.addEventListener('change',function(){var v=sel.value;if(!supported.includes(v))return;store(v);cookie(v);if(!apply(v))location.reload()});
- if(chosen!=='de')cookie(chosen);
+ sel.addEventListener('change',function(){var v=sel.value;if(!supported.includes(v))return;store(v);cookie(v);document.documentElement.lang=v;document.dispatchEvent(new CustomEvent('odpc:languagechange',{detail:{language:v,locale:window.odpcAiLocale()}}));if(v==='de'){location.reload();return}if(!apply(v))location.reload()});
+ cookie(chosen);
  var script=document.createElement('script');script.src='https://translate.google.com/translate_a/element.js?cb=odpcAiTranslateInit';script.async=true;script.onerror=function(){sel.title='Google Übersetzung derzeit nicht erreichbar'};document.head.appendChild(script);
  })();
  </script>
@@ -134,8 +134,8 @@ try{
 }
 document.getElementById("hm-v4-ask").addEventListener("click",run);
 input.addEventListener("keydown",function(e){if(e.key==="Enter"){e.preventDefault();run()}});
-document.getElementById("hm-v4-mic").addEventListener("click",function(){var SR=window.SpeechRecognition||window.webkitSpeechRecognition;if(!SR){response.textContent="Die Spracheingabe ist in diesem Browser nicht verfügbar. Bitte die Frage eintippen.";return}var r=new SR();r.lang="de-DE";r.onresult=function(e){input.value=e.results[0][0].transcript;run()};r.onerror=function(){response.textContent="Die Sprache wurde nicht erkannt. Bitte erneut versuchen oder schreiben."};try{r.start()}catch(e){response.textContent="Mikrofon kann nicht gestartet werden."}});
-document.getElementById("hm-v4-listen").addEventListener("click",function(){if(!("speechSynthesis" in window))return;window.speechSynthesis.cancel();var v=new SpeechSynthesisUtterance(response.textContent.slice(0,900));v.lang="de-DE";v.rate=1.17;var voices=window.speechSynthesis.getVoices().filter(function(x){return /^de(-|_)/i.test(x.lang)});voices.sort(function(a,b){function score(x){return (/Google Deutsch|Google German|Microsoft Katja|Microsoft Hedda|Anna|Petra/i.test(x.name)?100:0)+(/natural|neural|premium/i.test(x.name)?30:0)+(/female|weiblich/i.test(x.name)?10:0)}return score(b)-score(a)});if(voices.length)v.voice=voices[0];window.speechSynthesis.speak(v)});
+document.getElementById("hm-v4-mic").addEventListener("click",function(){var SR=window.SpeechRecognition||window.webkitSpeechRecognition;if(!SR){response.textContent="Die Spracheingabe ist in diesem Browser nicht verfügbar. Bitte die Frage eintippen.";return}var r=new SR();r.lang=(window.odpcAiLocale?window.odpcAiLocale():"de-DE");r.onresult=function(e){input.value=e.results[0][0].transcript;run()};r.onerror=function(){response.textContent="Die Sprache wurde nicht erkannt. Bitte erneut versuchen oder schreiben."};try{r.start()}catch(e){response.textContent="Mikrofon kann nicht gestartet werden."}});
+document.getElementById("hm-v4-listen").addEventListener("click",function(){if(!("speechSynthesis" in window))return;window.speechSynthesis.cancel();var v=new SpeechSynthesisUtterance(response.textContent.slice(0,900));v.lang=(window.odpcAiLocale?window.odpcAiLocale():"de-DE");v.rate=1.05;var language=v.lang.split("-")[0];var voices=window.speechSynthesis.getVoices().filter(function(x){return x.lang.toLowerCase().split(/[-_]/)[0]===language});voices.sort(function(a,b){function score(x){return (/Google Deutsch|Google German|Microsoft Katja|Microsoft Hedda|Anna|Petra/i.test(x.name)?100:0)+(/natural|neural|premium/i.test(x.name)?30:0)+(/female|weiblich/i.test(x.name)?10:0)}return score(b)-score(a)});if(voices.length)v.voice=voices[0];window.speechSynthesis.speak(v)});
 })();
 </script>
 <?php },98);
