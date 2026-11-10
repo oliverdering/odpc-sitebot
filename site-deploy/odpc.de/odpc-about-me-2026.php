@@ -2,7 +2,7 @@
 /**
  * Plugin Name: ODPC About Me 2026
  * Description: Chronological profile with live HTML CV and original certificate links; voice dock untouched.
- * Version: 2.0.0
+ * Version: 2.0.1
  */
 if (!defined('ABSPATH')) { exit; }
 function odpc_about_2026_target() {
@@ -113,7 +113,7 @@ add_action('wp_footer', function () {
     if (is_admin() || !is_front_page()) return;
     ?>
     <style id="odpc-easter-egg-css">
-    #odpc-easter-egg-button{all:unset!important;box-sizing:border-box!important;position:absolute!important;left:0;top:0;z-index:2147483000!important;width:14px!important;height:14px!important;min-width:14px!important;min-height:14px!important;max-width:14px!important;max-height:14px!important;margin:0!important;padding:0!important;border:1px solid #9faebd!important;border-radius:50%!important;background:#1c3148!important;color:#e6eef5!important;font:700 10px/1 sans-serif!important;box-shadow:0 1px 2px #0008!important;display:flex!important;align-items:center!important;justify-content:center!important;cursor:pointer!important;touch-action:none!important;user-select:none!important;-webkit-user-select:none!important;opacity:.95!important;transform:translate(-50%,-50%)!important}
+    #odpc-easter-egg-button{appearance:none!important;-webkit-appearance:none!important;box-sizing:border-box!important;position:absolute!important;left:0;top:0;z-index:2147483000!important;width:14px!important;height:14px!important;min-width:14px!important;min-height:14px!important;max-width:14px!important;max-height:14px!important;margin:0!important;padding:0!important;border:1px solid #9faebd!important;border-radius:50%!important;background:#1c3148!important;color:#e6eef5!important;font:700 10px/1 sans-serif!important;box-shadow:0 1px 2px #0008!important;display:flex!important;align-items:center!important;justify-content:center!important;cursor:pointer!important;touch-action:none!important;user-select:none!important;-webkit-user-select:none!important;opacity:.95!important;transform:translate(-50%,-50%)!important}
     #odpc-easter-egg-button::before{content:'';position:absolute;inset:-12px;border-radius:50%}
     
     #odpc-easter-egg-button:focus-visible{outline:3px solid #ffcc55;outline-offset:3px}
