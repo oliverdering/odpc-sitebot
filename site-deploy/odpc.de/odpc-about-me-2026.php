@@ -1,8 +1,8 @@
 <?php
 /**
  * Plugin Name: ODPC About Me 2026
- * Description: Additive profile modernization; preserves original biography, CV links, navigation and voice dock.
- * Version: 0.1.0
+ * Description: Chronological profile with live HTML CV and original certificate links; voice dock untouched.
+ * Version: 0.2.0
  */
 if (!defined('ABSPATH')) { exit; }
 function odpc_about_2026_target() {
@@ -24,23 +24,29 @@ add_action('wp_head', function () {
     .odpc-about26 .oa-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}.odpc-about26 .oa-links a{display:inline-block;padding:11px 16px;background:#b99b80;color:#19212b;border-radius:9px;text-decoration:none;box-shadow:0 4px 0 #81634c}
     .odpc-about26 .oa-note{font-size:13px;color:#58636e}.odpc-about26 .oa-footer{padding:23px;border:1px solid #d4d0ca;border-radius:14px;background:#f5f2ed}
     @media(prefers-reduced-motion:no-preference){.odpc-about26 details{transition:box-shadow .2s,transform .2s}.odpc-about26 details:hover{transform:translateY(-2px);box-shadow:0 12px 27px #19212b22}}
-    </style>';
+    .odpc-about26 .oa-cv{margin-top:20px;overflow-wrap:anywhere}.odpc-about26 .oa-cv-entry{margin:12px 0}.odpc-about26 .oa-cv-entry .oa-body{padding:10px 20px}.odpc-about26 .oa-cv-entry .cv-list{padding-left:24px}.odpc-about26 .oa-cv img{max-width:100%;height:auto}\n    </style>';
 }, 30);
-add_filter('the_content', function ($content) {
-    if (!odpc_about_2026_target() || !in_the_loop() || !is_main_query()) return $content;
-    $projects = [
-      ['Helper Monkey – KI-Agentenplattform','Digitale Assistenten für Bewerbungen, Postfachorganisation und weitere Aufgaben; kostenlose Einstiege und betreute Integrationen.','https://ai.odpc.de/'],
-      ['AdminMonkey – Wissensautomatisierung','Laufende Entwicklung eines Systems für Wissensaufbau, Qualitätsprüfungen, Monitoring und automatisierte Workflows. Entwicklungsfunktionen sind nicht pauschal als produktiv zu verstehen.','https://ai.odpc.de/adminmonkey/monitor/'],
-      ['D.R.O.L. – Drone Recon Operation Lab','Offene Forschungs- und Wissensplattform zu Drohnen, Sensorik, Firmware, SDKs, Datenauswertung und Engineering.','https://drol.odpc.de/'],
-      ['SONDE – GroundScan & AirScan','Privates Entwicklungsprojekt zur Verknüpfung von Bodenmessungen, Metalldetektion, Kartierung und Luftaufnahmen.','https://odpc.de/sonde/'],
-      ['PraeLex.ai, PraeDoc & PraeTax','Fachbezogene Konzepte für juristische Assistenz, Dokumentenverarbeitung und steuernahe Arbeitsabläufe; unterschiedliche Entwicklungsstände.','https://odpc.de/struktur-portfolio/'],
-      ['initIQ, one.eye, one.home & PRAEDIUM','KI-Einführung für Unternehmen sowie Entwicklungsansätze für Sicherheit, Smart Home und Immobilienprozesse.','https://odpc.de/struktur-portfolio/'],
-      ['Webdesign, Kundenprojekte & SmartCard','Websites, Hosting, technische Betreuung, digitale Kontaktwege sowie NFC-/QR-Visitenkarten im Webdesign-Angebot.','https://odpc.de/webdesign/'],
-    ];
-    $html = '<section class="odpc-about26" aria-labelledby="odpc-about26-heading"><div class="oa-intro"><p class="oa-kicker">ODPC · Profil & Entwicklung 2026</p><h2 id="odpc-about26-heading">Enterprise-IT trifft praktische KI-Entwicklung.</h2><p>Über 25 Jahre technische Erfahrung bilden die Grundlage meiner heutigen Arbeit: belastbare IT-Infrastruktur, digitale Geschäftsprozesse, KI-Integration und die Entwicklung eigener Plattformen. Ich verbinde Beratung mit konkreter Umsetzung, Tests und nachvollziehbarer Weiterentwicklung.</p><div class="oa-links"><a href="https://odpc.de/lebenslauf-oliver-dering/">Vollständigen Lebenslauf ansehen</a><a href="https://odpc.de/contact-me/">Kontakt aufnehmen</a></div></div><h2 style="margin-top:35px">Aktuelle Projekte & Entwicklungsfelder</h2><p>Die folgenden Bereiche lassen sich einzeln aufklappen. Bestehende berufliche Stationen, Referenzen und der ursprüngliche Seiteninhalt bleiben unverändert darüber erhalten.</p><div class="oa-grid">';
-    foreach ($projects as $project) {
-       $html .= '<details><summary>'.esc_html($project[0]).'</summary><div class="oa-body"><p>'.esc_html($project[1]).'</p><a href="'.esc_url($project[2]).'">Projekt ansehen →</a></div></details>';
-    }
-    $html .= '</div><div class="oa-footer"><h2>Erfahrung, die sich weiterentwickelt</h2><p>Von internationalem IT-Support und Systemadministration über Virtualisierung und Enterprise-Infrastruktur bis zur angewandten KI: Der ausführliche Lebenslauf mit den bisherigen Stationen und Nachweisen bleibt als eigenständige Seite erhalten.</p><p class="oa-note">Projektstatus und verfügbare Funktionen sind den jeweiligen Projektseiten zu entnehmen. Konzepte, Prototypen und produktive Angebote werden bewusst unterschieden.</p></div></section>';
-    return $content . $html;
-}, 30);
+add_filter('the_content', function($original) {
+ if (!odpc_about_2026_target() || !in_the_loop() || !is_main_query()) return $original;
+ $cv=get_post(1172);
+ $cv_html=($cv && $cv->post_status==='publish') ? $cv->post_content : '<p>Lebenslauf: <a href="https://odpc.de/lebenslauf-oliver-dering/">Originalseite öffnen</a></p>';
+ // Wrap the original career entries without deleting their content, certificate URLs or download links.
+ $cv_html=preg_replace_callback('~<div class="cv-block">(.*?)</div>~si', function($m) {
+   $label='Berufliche Station';
+   if(preg_match('~<p class="cv-date">(.*?)</p>~si',$m[1],$date)) $label=wp_strip_all_tags($date[1]);
+   if(preg_match('~<p class="cv-role">(.*?)</p>~si',$m[1],$role)) $label.=' · '.wp_strip_all_tags($role[1]);
+   return '<details class="oa-cv-entry"><summary>'.esc_html($label).'</summary><div class="oa-body">'.$m[1].'</div></details>';
+ },$cv_html);
+ $groups=[
+ ['2026 · ODPC & KI','Helper Monkey, AdminMonkey, initIQ, PraeLex.ai','Digitale KI-Assistenten, Wissensmanagement, Automatisierung und unternehmerische KI-Integration.','https://ai.odpc.de/'],
+ ['2026 · Engineering','D.R.O.L., SONDE, one.eye, one.home','Drohnen-Engineering, Sensorik, Datenauswertung und vernetzte Sicherheitskonzepte.','https://drol.odpc.de/'],
+ ['2024–2025','KI und digitale Kanzleiprozesse','Eine berufliche Station mit Fokus auf Dokumentenprozesse und KI; nicht die Haupttätigkeit der gesamten Laufbahn.','https://odpc.de/praelex-ai/'],
+ ['2006–2014','Oliver Dering IT Consulting','Selbstständigkeit, Third-Level-Support, Unternehmensinfrastruktur und Kundenprojekte.','https://odpc.de/lebenslauf-oliver-dering/'],
+ ['2001–2006','Internationaler IT-Support und Administration','Compaq/HP, Schott/Zeiss und Toll Collect; Support, Server, Netzwerke und GPS/GSM-Systeme.','https://odpc.de/lebenslauf-oliver-dering/'],
+ ['Frühere Stationen','Ausbildung und technische Grundlagen','Kfz-Ausbildung, Luftwaffe und technischer Berufseinstieg. Zeugnisse und Gesellenbrief im vollständigen Lebenslauf.','https://odpc.de/lebenslauf-oliver-dering/']
+ ];
+ $html='<section class="odpc-about26" aria-label="Oliver Dering – Beruf und Projekte"><div class="oa-intro"><p class="oa-kicker">ODPC · Oliver Dering</p><h2>25+ Jahre IT. Von Enterprise-Infrastruktur zur KI-Entwicklung.</h2><p>Ich verbinde Systembetrieb, technische Beratung und internationale IT-Erfahrung mit moderner Automatisierung und eigenen Entwicklungsplattformen. Mein Maßstab ist die praktische Umsetzung.</p><div class="oa-links"><a href="#odpc-stationen">Stationen ansehen</a><a href="#odpc-cv">Lebenslauf & Downloads</a></div></div><h2 id="odpc-stationen" style="margin-top:34px">Mein beruflicher Weg und aktuelle Projekte</h2><div class="oa-grid">';
+ foreach($groups as $g) $html.='<details><summary><span><small style="display:block;color:#866b56">'.esc_html($g[0]).'</small>'.esc_html($g[1]).'</span></summary><div class="oa-body"><p>'.esc_html($g[2]).'</p><a href="'.esc_url($g[3]).'">Details ansehen →</a></div></details>';
+ $html.='</div><section id="odpc-cv" class="oa-footer"><h2>Detaillierter Lebenslauf</h2><p>Die vollständige Originalfassung mit allen Stationen, Zeugnissen, Gesellenbrief und vorhandenen deutsch- und englischsprachigen Downloads ist hier integriert. Alle Dokument-Links bleiben unverändert.</p><p><a href="https://odpc.de/lebenslauf-oliver-dering/">Original-Lebenslauf separat öffnen →</a></p><div class="oa-cv">'.$cv_html.'</div></section></section>';
+ return $html;
+}, 50);
