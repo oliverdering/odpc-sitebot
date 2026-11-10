@@ -1,35 +1,31 @@
 {
-  "generated_at": "2026-11-10T21:26:21.140108+00:00",
+  "generated_at": "2026-11-10T22:52:01.883557+00:00",
   "product": "AdminMonkey Academy",
   "certification_issuer": "ODPC",
   "official_microsoft_certification": false,
   "knowledge": {
-    "documents_collected": 1468,
-    "manufacturer_verified": 1468,
+    "documents_collected": 1500,
+    "manufacturer_verified": 1500,
     "review": {
       "unreviewed": 0,
-      "approved": 1468,
+      "approved": 1500,
       "rejected": 0
     },
     "last_batch": {
-      "attempted": 36,
-      "documents_total": 1468,
-      "queued": 2428,
+      "attempted": 33,
+      "documents_total": 1500,
+      "queued": 2372,
       "failures": [
         {
           "url": "https://learn.microsoft.com/en-us/microsoft-365/business-video/",
-          "error": "ValueError"
-        },
-        {
-          "url": "https://learn.microsoft.com/en-us/admin/add-users/about-admin-roles",
           "error": "ValueError"
         }
       ]
     }
   },
   "retrieval_staging": {
-    "chunked_documents": 1463,
-    "chunks_prepared": 7547,
+    "chunked_documents": 1495,
+    "chunks_prepared": 7709,
     "retrieval_quality_verified": false,
     "agent_answers_verified": 0,
     "note": "Ephemeral, provenance-checked chunk preparation; no searchable production index yet."
@@ -37,36 +33,51 @@
   "tracks": [
     {
       "track": "MS-102",
-      "manufacturer_verified_sources": 263,
+      "manufacturer_verified_sources": 285,
       "knowledge_coverage": "source_count_only_not_learning_objective_coverage",
       "practice_scenarios_available": 2,
       "agent_answers_evaluated": 0,
       "verified_passes": 0,
       "screening_passes": 0,
+      "verified_scenario_objectives": 0,
+      "total_scenario_objectives": 2,
+      "source_badge_status": "source_verified",
       "badge_status": "not_earned",
-      "competency_percent": null
+      "competency_percent": null,
+      "competency_basis": "verified_scenario_objectives_not_official_exam_coverage",
+      "next_action": "evaluate_agent_responses_with_independent_grader"
     },
     {
       "track": "AZ-104",
-      "manufacturer_verified_sources": 80,
+      "manufacturer_verified_sources": 81,
       "knowledge_coverage": "source_count_only_not_learning_objective_coverage",
       "practice_scenarios_available": 2,
       "agent_answers_evaluated": 0,
       "verified_passes": 0,
       "screening_passes": 0,
+      "verified_scenario_objectives": 0,
+      "total_scenario_objectives": 2,
+      "source_badge_status": "source_verified",
       "badge_status": "not_earned",
-      "competency_percent": null
+      "competency_percent": null,
+      "competency_basis": "verified_scenario_objectives_not_official_exam_coverage",
+      "next_action": "evaluate_agent_responses_with_independent_grader"
     },
     {
       "track": "SC-300",
-      "manufacturer_verified_sources": 334,
+      "manufacturer_verified_sources": 340,
       "knowledge_coverage": "source_count_only_not_learning_objective_coverage",
       "practice_scenarios_available": 2,
       "agent_answers_evaluated": 0,
       "verified_passes": 0,
       "screening_passes": 0,
+      "verified_scenario_objectives": 0,
+      "total_scenario_objectives": 2,
+      "source_badge_status": "source_verified",
       "badge_status": "not_earned",
-      "competency_percent": null
+      "competency_percent": null,
+      "competency_basis": "verified_scenario_objectives_not_official_exam_coverage",
+      "next_action": "evaluate_agent_responses_with_independent_grader"
     },
     {
       "track": "MD-102",
@@ -76,10 +87,15 @@
       "agent_answers_evaluated": 0,
       "verified_passes": 0,
       "screening_passes": 0,
+      "verified_scenario_objectives": 0,
+      "total_scenario_objectives": 2,
+      "source_badge_status": "source_verified",
       "badge_status": "not_earned",
-      "competency_percent": null
+      "competency_percent": null,
+      "competency_basis": "verified_scenario_objectives_not_official_exam_coverage",
+      "next_action": "evaluate_agent_responses_with_independent_grader"
     }
   ],
-  "assessment_status": "manufacturer_sources_mapped_competence_not_yet_verified",
-  "notice": "Collection is not learning; practice question count is not a competence score. No Banana Badge until independent agent responses are assessed."
+  "assessment_status": "independent_agent_evidence_required_for_competency",
+  "notice": "Source badges are evidence of provenance only. Practice badges require independently graded agent answers with scenario IDs and evidence links. A practice score is not official Microsoft certification coverage."
 }
