@@ -2,9 +2,43 @@
 /**
  * Plugin Name: ODPC Helper Monkey V4 Global Guide
  * Description: Reusable cross-page self-service, language entry, traffic lights and WhatsApp Business.
- * Version: 4.0.6
+ * Version: 4.0.7
  */
 if (!defined('ABSPATH')) exit;
+
+/* ODPC site-wide translation selector; separate from the interview language setting. */
+add_action('wp_footer', function(){
+ if(is_admin())return;
+ ?>
+ <style id="odpc-ai-translate-style">
+ #odpc-ai-translate{position:fixed;left:12px;bottom:72px;z-index:9997;background:#123b30;color:#f4fff8;border:1px solid #4c9a77;border-radius:12px;box-shadow:0 5px 18px #09261d66;padding:6px 8px;font:600 12px/1.4 system-ui,sans-serif}
+ #odpc-ai-translate label{display:inline-flex;align-items:center;gap:5px;color:inherit}
+ #odpc-ai-translate select{max-width:105px;min-height:32px;background:#123b30;color:#f4fff8;border:0;border-radius:7px;padding:4px;font:inherit;cursor:pointer}
+ #odpc-ai-translate select:focus-visible{outline:2px solid #a9e7c5}
+ #odpc-ai-translate-element{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+ body{top:0!important} .goog-te-banner-frame,.skiptranslate iframe{display:none!important}
+ @media(max-width:600px){#odpc-ai-translate{left:9px;bottom:70px;padding:4px 6px}#odpc-ai-translate select{max-width:90px}}
+ </style>
+ <div id="odpc-ai-translate" role="group" aria-label="Webseite übersetzen"><label for="odpc-ai-language">🌐 <select id="odpc-ai-language" aria-label="Sprache der gesamten Webseite wählen"><option value="de">🇩🇪 DE</option><option value="en">🇬🇧 EN</option><option value="nl">🇳🇱 NL</option><option value="es">🇪🇸 ES</option><option value="fr">🇫🇷 FR</option><option value="ru">🇷🇺 RU</option><option value="tr">🇹🇷 TR</option></select></label></div>
+ <div id="odpc-ai-translate-element" aria-hidden="true"></div>
+ <script id="odpc-ai-translate-js">
+ (function(){
+ 'use strict';
+ var key='odpc_ai_site_language',supported=['de','en','nl','es','fr','ru','tr'],sel=document.getElementById('odpc-ai-language');
+ if(!sel)return;
+ function read(){try{return localStorage.getItem(key)||'de'}catch(e){return 'de'}}
+ function store(v){try{localStorage.setItem(key,v)}catch(e){}}
+ function cookie(v){var value=v==='de'?'/de/de':'/de/'+v;document.cookie='googtrans='+value+';path=/;SameSite=Lax';document.cookie='googtrans='+value+';path=/;domain=.ai.odpc.de;SameSite=Lax'}
+ function apply(v){var combo=document.querySelector('.goog-te-combo');if(!combo)return false;combo.value=v==='de'?'':v;combo.dispatchEvent(new Event('change',{bubbles:true}));return true}
+ var chosen=read();if(!supported.includes(chosen))chosen='de';sel.value=chosen;
+ window.odpcAiTranslateInit=function(){new google.translate.TranslateElement({pageLanguage:'de',includedLanguages:'de,en,nl,es,fr,ru,tr',autoDisplay:false},'odpc-ai-translate-element');var n=0;var timer=setInterval(function(){if(apply(chosen)||++n>35)clearInterval(timer)},200)};
+ sel.addEventListener('change',function(){var v=sel.value;if(!supported.includes(v))return;store(v);cookie(v);if(!apply(v))location.reload()});
+ if(chosen!=='de')cookie(chosen);
+ var script=document.createElement('script');script.src='https://translate.google.com/translate_a/element.js?cb=odpcAiTranslateInit';script.async=true;script.onerror=function(){sel.title='Google Übersetzung derzeit nicht erreichbar'};document.head.appendChild(script);
+ })();
+ </script>
+ <?php
+}, 80);
 function hm_v4_url(){return 'https://ai.odpc.de/helper-monkey-einfach-starten-sprachassistent/';}
 function hm_v4_wa(){return 'https://wa.me/492654882183?text='.rawurlencode('Hallo Oliver, ich brauche Hilfe bei Helper Monkey.');}
 add_action('wp_head', function(){
