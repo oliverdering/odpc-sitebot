@@ -62,6 +62,41 @@ jobs:
                   print(label,'verification error:',str(exc),flush=True)
                   print('WARNING: public HTTP verification unavailable; SFTP SHA256 verification remains authoritative for upload integrity',flush=True)
           PY
+      - name: Audit ODPC pages and subdomains without modifying them
+        if: always()
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from urllib.request import Request,urlopen
+          from urllib.error import URLError,HTTPError
+          from urllib.parse import urlencode
+          import time
+          sites={
+            'odpc.de home':'https://odpc.de/',
+            'odpc.de article':'https://odpc.de/prompt-engineering-digitale-mitarbeiter-ki-sinnvoll-nutzen/',
+            'Helper Monkey':'https://ai.odpc.de/',
+            'DROL':'https://drol.odpc.de/',
+            'Tante Lenchen':'https://tante-lenchen.odpc.de/'
+          }
+          print('ODPC CROSS-SITE AUDIT (read-only; absence is NOT deployment success)',flush=True)
+          for label,url in sites.items():
+              try:
+                  req=Request(url+('?' if '?' not in url else '&')+urlencode({'odpc_audit':str(int(time.time()))}),headers={'User-Agent':'ODPC-Cross-Site-Audit/1.0','Cache-Control':'no-cache'})
+                  with urlopen(req,timeout=12) as response:
+                      html=response.read(1000000).decode('utf-8','replace')
+                  markers={name:marker in html for name,marker in {
+                    'dock':'id="odpc-utility-dock"',
+                    'dock_script':'id="odpc-unified-dock-js"',
+                    'language':'gt_float_switcher',
+                    'reader':'id="odpc-reader-play"',
+                    'stop':'id="odpc-reader-stop"',
+                    'whatsapp':'WhatsApp'
+                  }.items()}
+                  print(label,'HTTP OK',markers,flush=True)
+                  if not markers['dock_script']:print('WARNING:',label,'has no shared ODPC dock script',flush=True)
+              except (URLError,HTTPError,TimeoutError) as exc:
+                  print('WARNING:',label,'HTTP unavailable:',type(exc).__name__,str(exc),flush=True)
+          PY
       - name: Save prior module
         if: always()
         uses: actions/upload-artifact@v4
