@@ -1,0 +1,48 @@
+name: ODPC About Me 2026 release
+on:
+  pull_request:
+    paths:
+      - 'site-deploy/odpc.de/odpc-about-me-2026.php'
+      - 'scripts/deploy_odpc_about_2026.py'
+      - '.github/workflows/odpc-about-2026.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'site-deploy/odpc.de/odpc-about-me-2026.php'
+      - 'scripts/deploy_odpc_about_2026.py'
+      - '.github/workflows/odpc-about-2026.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: odpc-about-2026
+  cancel-in-progress: false
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+      - name: Preflight
+        run: |
+          php -l site-deploy/odpc.de/odpc-about-me-2026.php
+          python3 -m py_compile scripts/deploy_odpc_about_2026.py
+          grep -q "return \$content . \$html" site-deploy/odpc.de/odpc-about-me-2026.php
+          grep -q "is_page('about-me')" site-deploy/odpc.de/odpc-about-me-2026.php
+          ! grep -q 'odpc-utility-dock' site-deploy/odpc.de/odpc-about-me-2026.php
+      - name: Install SFTP
+        if: github.event_name != 'pull_request'
+        run: python3 -m pip install 'paramiko>=3.4,<5'
+      - name: Deploy and verify with rollback
+        if: github.event_name != 'pull_request'
+        env:
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+        run: python3 scripts/deploy_odpc_about_2026.py
+      - name: Retain rollback backup
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: odpc-about-2026-backup
+          path: odpc-about-backup/
+          if-no-files-found: ignore
+          retention-days: 15
