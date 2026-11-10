@@ -138,18 +138,27 @@ body.odpc-dock-active{padding-bottom:70px!important}
 #odpc-utility-dock #odpc-reader #odpc-reader-stop{display:flex!important;position:static!important;align-items:center!important;justify-content:center!important;flex:0 0 40px!important;width:40px!important;min-width:40px!important;max-width:40px!important;height:40px!important;min-height:40px!important;padding:0!important;margin:0!important;background:#edf6f3!important;color:#142f29!important;border-radius:50%!important;font-size:20px!important}
 #odpc-utility-dock{width:min(352px,calc(100vw - 20px))!important;max-width:352px!important;gap:5px!important;padding:6px 7px!important}
 #odpc-utility-dock>.odpc-hm-v4-wa,#odpc-utility-dock>.odpc-wa-sticky,#odpc-utility-dock>#odpc-hm-v4-wa{flex-basis:95px!important;width:95px!important;min-width:95px!important;max-width:95px!important}
+
+/* GTranslate's floating wrapper must be a normal child of the dock, not a second overlay. */
+#odpc-utility-dock .odpc-dock-language #gt_float_wrapper{position:relative!important;inset:auto!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;transform:none!important;float:none!important;display:block!important;width:88px!important;max-width:88px!important;margin:0!important;z-index:1!important}
+#odpc-utility-dock .odpc-dock-language #gt_float_wrapper .gt_float_switcher{position:relative!important;inset:auto!important;transform:none!important;margin:0!important;width:88px!important;max-width:88px!important;box-shadow:none!important}
 </style>
 <script id="odpc-unified-dock-js">
 (function(){
 'use strict';
+var selector='#gt_float_wrapper,.gt_float_switcher,.gt_switcher_wrapper,.gtranslate_wrapper';
+function moveLanguage(dock){
+ var holder=dock.querySelector('.odpc-dock-language');
+ if(!holder){holder=document.createElement('div');holder.className='odpc-dock-language';dock.insertBefore(holder,dock.firstChild)}
+ var root=document.querySelector('#gt_float_wrapper');
+ if(!root){var widget=document.querySelector('.gt_float_switcher,.gt_switcher_wrapper,.gtranslate_wrapper');if(widget)root=widget.closest('#gt_float_wrapper,.gt_switcher_wrapper,.gtranslate_wrapper')||widget}
+ if(root&&root!==holder&&!holder.contains(root))holder.appendChild(root);
+}
 function mount(){
- if(document.getElementById('odpc-utility-dock'))return;
  var reader=document.getElementById('odpc-reader'),help=document.getElementById('odpc-hm-v4-helpbtn');
  if(!reader||!help)return;
- var dock=document.createElement('nav');dock.id='odpc-utility-dock';dock.setAttribute('aria-label','ODPC Schnellfunktionen');
- document.body.appendChild(dock);
- var lang=document.querySelector('.gt_float_switcher,.gt_switcher_wrapper,.gtranslate_wrapper');
- if(lang&&lang!==reader&&lang!==help){var holder=document.createElement('div');holder.className='odpc-dock-language';dock.appendChild(holder);holder.appendChild(lang)}
+ var dock=document.getElementById('odpc-utility-dock');
+ if(!dock){dock=document.createElement('nav');dock.id='odpc-utility-dock';dock.setAttribute('aria-label','ODPC Schnellfunktionen');document.body.appendChild(dock);
  dock.appendChild(reader);
  var stop=document.getElementById('odpc-reader-stop');if(stop){reader.insertBefore(stop,document.getElementById('odpc-reader-more'));stop.setAttribute('aria-label','Vorlesen stoppen');stop.setAttribute('title','Vorlesen stoppen')}
  dock.appendChild(help);help.setAttribute('aria-label','Fragen und Hilfe');help.setAttribute('title','Fragen und Hilfe');
@@ -157,19 +166,12 @@ function mount(){
  var wa=document.querySelector('.odpc-wa-sticky')||document.getElementById('odpc-hm-v4-wa');
  if(wa){dock.appendChild(wa);wa.setAttribute('aria-label','WhatsApp Business');wa.setAttribute('title','WhatsApp Business')}
  document.body.classList.add('odpc-dock-active');
+ }
+ moveLanguage(dock);
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount);else mount();
-function syncLanguage(){
- var dock=document.getElementById('odpc-utility-dock');if(!dock)return;
- var holder=dock.querySelector('.odpc-dock-language');
- if(!holder){holder=document.createElement('div');holder.className='odpc-dock-language';dock.insertBefore(holder,dock.firstChild)}
- var existing=holder.querySelector('.gt_float_switcher,.gt_switcher_wrapper,.gtranslate_wrapper');
- if(existing)return;
- var widget=document.querySelector('.gt_float_switcher,.gt_switcher_wrapper,.gtranslate_wrapper');
- if(widget&&!holder.contains(widget)){var outer=widget.closest('.gtranslate_wrapper,.gt_switcher_wrapper')||widget;holder.appendChild(outer)}
-}
-window.addEventListener('load',syncLanguage);
-var syncPending=false;new MutationObserver(function(){if(syncPending)return;syncPending=true;Promise.resolve().then(function(){syncPending=false;syncLanguage()})}).observe(document.body,{childList:true,subtree:true});
+window.addEventListener('load',mount);
+var attempts=0;var retry=setInterval(function(){mount();if(++attempts>=12||document.querySelector('#odpc-utility-dock .odpc-dock-language #gt_float_wrapper,#odpc-utility-dock .odpc-dock-language .gt_float_switcher'))clearInterval(retry)},500);
 })();
 </script>
 <?php },99);
