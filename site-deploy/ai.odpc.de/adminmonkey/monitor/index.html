@@ -5,6 +5,7 @@
 <p class="muted">Nachweisbasierter Wissensfortschritt. Gesammelte Quellen sind keine bestandenen Kompetenztests und keine offiziellen Microsoft-Zertifizierungen.</p>
 <div class="grid"><section class="card"><div>Bestätigte MariaDB-Dokumentversionen</div><div class="value" id="documents">–</div><div class="muted">Importierte Versionen, keine eindeutigen Artikel oder Kompetenznachweise</div></section><section class="card"><div>URLs in Warteschlange</div><div class="value" id="queued">–</div><div class="muted">Noch nicht abgearbeitete Crawl-Ziele</div></section><section class="card"><div>MariaDB-Verbindung</div><div class="value small" id="dbstatus">Noch nicht geprüft</div><div class="muted" id="dbdetail">Letzte Workflow-Diagnose</div></section><section class="card"><div>Offene Artikelprüfungen</div><div class="value" id="unreviewed">–</div><div class="muted">Noch nicht fachlich freigegeben</div></section><section class="card"><div>Erfasste Quellen</div><div class="value" id="sources">–</div><div class="muted">Eindeutige Quellen im Wissensindex</div></section><section class="card"><div>Automatisch als Quelle freigegeben</div><div class="value" id="approved">–</div><div class="muted">Automatischer Quellenstatus, keine menschliche Fachprüfung</div></section><section class="card"><div>Letzte Inhaltsänderung</div><div class="value small" id="updated">–</div><div class="muted">Kein Beleg für jeden geplanten Cron-Lauf</div></section><section class="card"><div>Offizielle Microsoft-Zertifikate</div><div class="value" id="certs">Nicht nachgewiesen</div><div class="muted">Microsoft-Learn-Quellen sind keine Zertifizierung</div></section></div>
 <section class="card" style="margin-bottom:14px"><h2>📈 Lernwachstum</h2><p class="muted">Der Hauptbalken zeigt bestätigte MariaDB-Dokumentversionen gegenüber dem Sammelziel 1.500. Der zweite Balken zeigt die Import-Synchronisation gegenüber dem Crawler-Bestand (unterschiedliche Zähleinheiten möglich). Kein Kompetenznachweis.</p><div class="metric"><strong>Bestätigter Sammelfortschritt (MariaDB)</strong><strong id="collectionPercent">–</strong></div><div class="progress-track"><div class="progress-fill" id="collectionBar"></div></div><p class="muted small" id="collectionDetail">Lade Daten …</p><div class="metric"><strong>Import-Synchronisation (Crawler → MariaDB)</strong><strong id="importPercent">–</strong></div><div class="progress-track"><div class="progress-fill" id="importBar"></div></div><p class="muted small" id="importDetail">Noch kein bestätigter Import</p><h3>Microsoft-Lernpfade & Prüfungen</h3><div id="tracks">Lade Daten …</div></section><section class="card" style="margin-bottom:14px"><h2>🍌 ODPC Banana Academy</h2><p class="muted">Eigene ODPC-Auszeichnungen, keine offiziellen Microsoft- oder Chiquita-Zertifikate. Badges bleiben gesperrt, bis unabhängige Kompetenzprüfungen bestanden wurden.</p><div id="bananaBadges" class="banana-grid">Lade Daten …</div></section><section class="card"><h2>Quellen & Reviewstatus</h2><ul id="items"><li>Lade GitHub-Daten …</li></ul></section>
+<section class="card" style="margin-bottom:14px"><h2>📚 Microsoft Learn · Kurskatalog</h2><p class="muted">Offizielle Microsoft-Lern- und Prüfungsübersichten. Verlinkt bedeutet nicht absolviert. Lernstand wird erst nach überprüfbarer Bearbeitung ausgewiesen.</p><div id="courseCatalog">Lade Kurskatalog …</div></section>
 <section class="card" style="margin-top:14px"><h2>Workflows & Kompetenznachweise</h2><p>Die GitHub-Actions-Historie zeigt erfolgreiche oder fehlgeschlagene Ausführungen. Ein grüner Lauf beweist weder Wissenszuwachs noch Kompetenz.</p><p><a href="https://github.com/oliverdering/odpc-sitebot/actions/workflows/adminmonkey-daily-knowledge.yml">Lernzyklen prüfen</a> · <a href="https://github.com/oliverdering/odpc-sitebot/actions">Alle Tests und Deployments</a> · <a href="https://github.com/oliverdering/odpc-sitebot/pull/66">Experimenteller PR #66</a></p><p id="baseline" class="warn">Verifizierte bestandene Kompetenztests: nicht nachgewiesen.</p></section>
 <p id="errors" class="warn" role="status"></p><p class="muted small">Datenquelle: GitHub-Repository oliverdering/odpc-sitebot, Branch main. Keine privaten Zugangsdaten oder Crawler-Caches. Automatische Aktualisierung alle 60 Sekunden und auf Knopfdruck; kein Backend-Code wird freigegeben.</p>
 <script>
@@ -47,6 +48,27 @@ function renderAcademy(p){
  }));
 }
 
+async function loadCourseCatalog(){
+ const el=document.getElementById('courseCatalog');
+ try{
+  const res=await fetch('https://raw.githubusercontent.com/oliverdering/odpc-sitebot/main/adminmonkey/academy/microsoft_learning_paths.json?ts='+Date.now(),{cache:'no-store'});
+  if(!res.ok)throw Error('HTTP '+res.status);
+  const catalog=await res.json();
+  if(!Array.isArray(catalog.tracks))throw Error('Ungültiges Kursformat');
+  el.replaceChildren(...catalog.tracks.map(course=>{
+   const row=document.createElement('div');row.className='track';
+   const heading=document.createElement('strong');heading.textContent=course.track+' · '+course.title;
+   const status=document.createElement('div');status.className='muted small';status.textContent='Kurskatalog erfasst · Bearbeitung nicht nachgewiesen';
+   const links=document.createElement('div');
+   for(const [label,url] of [['Prüfungsübersicht',course.exam_url],['Microsoft Learn Kurse',course.learning_url]]){
+    if(typeof url!=='string'||!url.startsWith('https://learn.microsoft.com/'))continue;
+    const a=document.createElement('a');a.href=url;a.target='_blank';a.rel='noopener noreferrer';a.textContent=label;links.append(a,document.createTextNode(' · '));
+   }
+   row.append(heading,status,links);return row;
+  }));
+ }catch(e){el.textContent='Kurskatalog nicht verfügbar: '+e.message;}
+}
+loadCourseCatalog();
 const $=id=>document.getElementById(id);
 async function refresh(){
  $('errors').textContent='';
