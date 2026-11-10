@@ -11,6 +11,7 @@ on:
       - 'adminmonkey/knowledge/*.py'
       - 'adminmonkey/academy/competency_bank.json'
       - 'adminmonkey/academy/official_certification_scope_2026.json'
+      - 'adminmonkey/academy/certification_candidates_2026.json'
       - 'adminmonkey/knowledge/build_progress.py'
   workflow_dispatch:
   schedule:
@@ -68,6 +69,12 @@ jobs:
           manifest=json.loads((root/'document_manifest.json').read_text())
           assert progress['knowledge']['documents_collected']==len(manifest['documents'])
           assert progress['official_microsoft_certification'] is False
+          candidates=json.loads((root.parent/'academy/certification_candidates_2026.json').read_text())
+          codes=[item['exam_code'] for item in candidates['exam_candidates']]
+          assert len(codes)==len(set(codes)), 'Duplicate exam candidate codes'
+          assert progress['certification_expansion']['candidate_exam_codes']==len(codes)
+          assert progress['certification_expansion']['verified_certifications_from_candidates']==0
+          assert len(progress['tracks'])==4, 'Existing Academy tracks must remain intact'
           print('Validated Academy snapshot:',len(manifest['documents']))
           PY
       - name: Persist crawl state for subsequent knowledge cycles
