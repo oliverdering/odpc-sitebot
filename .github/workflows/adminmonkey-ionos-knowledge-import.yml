@@ -10,6 +10,8 @@ on:
       - 'scripts/adminmonkey_ionos_knowledge_import.py'
       - 'adminmonkey/knowledge/*.py'
       - 'adminmonkey/academy/competency_bank.json'
+      - 'adminmonkey/academy/official_certification_scope_2026.json'
+      - 'adminmonkey/knowledge/build_progress.py'
   workflow_dispatch:
   schedule:
     - cron: '*/5 * * * *'
