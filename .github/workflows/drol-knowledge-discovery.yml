@@ -1,4 +1,5 @@
 name: D.R.O.L. / Autonomous knowledge discovery
+# Operator-requested immediate live knowledge discovery verification, 2026-11-10.
 on:
   schedule:
     - cron: '11 */3 * * *'
