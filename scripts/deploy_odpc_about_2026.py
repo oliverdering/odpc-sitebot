@@ -11,14 +11,29 @@ ROOT="/clickandbuilds/Dering"
 SOURCE=Path("site-deploy/odpc.de/odpc-about-me-2026.php")
 REMOTE=ROOT+"/wp-content/mu-plugins/odpc-about-me-2026.php"
 BACKUP=Path("odpc-about-backup")
+def fetch_html(url):
+    with urlopen(Request(url, headers={
+        "User-Agent": "ODPC Deploy QA",
+        "Cache-Control": "no-cache",
+        "Pragma": "no-cache",
+    }), timeout=35) as response:
+        if response.status != 200:
+            raise RuntimeError(f"HTTP {response.status} for {url}")
+        return response.read(2000000).decode("utf-8", "replace")
+
 def check():
-    url="https://odpc.de/about-me/?odpc_about_qa="+str(time.time_ns())
-    with urlopen(Request(url,headers={"User-Agent":"ODPC About 2026 QA","Cache-Control":"no-cache"}),timeout=35) as r:
-        html=r.read(1000000).decode("utf-8","replace")
-    required=["odpc-cv","Webdesign, Websites","odpc-reader-mic","odpc-unified-dock-js"]
-    missing=[x for x in required if x not in html]
-    if missing:raise RuntimeError("Missing live markers: "+", ".join(missing))
-    print("PASS: about page, projects, unchanged shared dock markers")
+    token = str(time.time_ns())
+    about = fetch_html("https://odpc.de/about-me/?odpc_about_qa=" + token)
+    about_required = ["odpc-about26", "odpc-cv"]
+    missing = [x for x in about_required if x not in about]
+    if missing:
+        raise RuntimeError("About page missing plugin markers: " + ", ".join(missing))
+    article = fetch_html("https://odpc.de/von-der-hardware-bis-zur-ki-it-und-digitale-assistenz-aus-einer-hand/?odpc_team_qa=" + token)
+    article_required = ["odpc-complete-team-2026", "Oxana", "Claire", "Claude", "Microsoft Copilot"]
+    missing = [x for x in article_required if x not in article]
+    if missing:
+        raise RuntimeError("Team article missing new roster markers: " + ", ".join(missing))
+    print("PASS: about page and complete team article served by live WordPress")
 def main():
     if not SOURCE.is_file() or SOURCE.stat().st_size>65536:raise RuntimeError("Source absent or oversized")
     pw=os.environ["ODPC_SFTP_PASSWORD"]
