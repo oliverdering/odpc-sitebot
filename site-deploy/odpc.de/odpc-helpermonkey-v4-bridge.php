@@ -110,6 +110,49 @@ add_action('wp_footer',function(){
 },85);
 
 
+
+/* Unified mobile utility dock: preserve original click handlers by moving nodes. */
+add_action('wp_footer',function(){if(is_admin())return; ?>
+<style id="odpc-unified-dock-css">
+#odpc-utility-dock{position:fixed!important;z-index:99990!important;bottom:max(8px,env(safe-area-inset-bottom))!important;left:50%!important;transform:translateX(-50%)!important;display:flex!important;align-items:center!important;justify-content:center!important;gap:4px!important;width:max-content!important;max-width:calc(100vw - 12px)!important;min-height:43px!important;padding:4px 6px!important;border:1px solid #9baab2!important;border-radius:999px!important;background:#182c39f5!important;box-shadow:0 3px 14px #0005!important;overflow:visible!important}
+#odpc-utility-dock #odpc-reader{position:static!important;display:flex!important;flex-direction:row!important;transform:none!important;width:auto!important;max-width:none!important;padding:0!important;margin:0!important;border:0!important;box-shadow:none!important;background:transparent!important;gap:3px!important}
+#odpc-utility-dock #odpc-reader button{width:34px!important;height:34px!important;min-height:34px!important;font-size:17px!important}
+#odpc-utility-dock #odpc-reader details{position:relative!important}
+#odpc-utility-dock #odpc-reader .odpc-reader-tools{right:0!important;left:auto!important;bottom:40px!important}
+#odpc-utility-dock #odpc-reader-status{right:0!important;bottom:46px!important}
+#odpc-utility-dock .odpc-hm-v4-helpbtn,#odpc-utility-dock .odpc-hm-v4-wa,#odpc-utility-dock .odpc-wa-sticky{position:static!important;display:flex!important;align-items:center!important;justify-content:center!important;transform:none!important;margin:0!important;min-width:34px!important;width:34px!important;max-width:34px!important;height:34px!important;min-height:34px!important;padding:0!important;border:0!important;border-radius:50%!important;box-shadow:none!important;font-size:0!important;line-height:1!important;overflow:hidden!important}
+#odpc-utility-dock .odpc-hm-v4-helpbtn::after{content:'❔';font-size:18px}
+#odpc-utility-dock .odpc-hm-v4-wa::after,#odpc-utility-dock .odpc-wa-sticky::after{content:'☎';font-size:18px}
+#odpc-utility-dock .odpc-hm-v4-help{position:fixed!important;bottom:56px!important;right:0!important;left:auto!important;max-width:calc(100vw - 20px)!important}
+#odpc-utility-dock .odpc-dock-language{display:flex!important;align-items:center!important;justify-content:center!important;min-width:47px!important;max-width:75px!important;position:relative!important}
+#odpc-utility-dock .odpc-dock-language .gt_float_switcher,#odpc-utility-dock .odpc-dock-language .gt_switcher_wrapper,#odpc-utility-dock .odpc-dock-language .gtranslate_wrapper{position:static!important;transform:none!important;margin:0!important}
+#odpc-utility-dock .odpc-dock-language .gt-selected,#odpc-utility-dock .odpc-dock-language .gt-current-lang{min-height:34px!important;padding:4px!important}
+@media(max-width:430px){#odpc-utility-dock{gap:2px!important;padding:3px 4px!important}#odpc-utility-dock #odpc-reader button{width:31px!important;height:31px!important;min-height:31px!important}}
+</style>
+<script id="odpc-unified-dock-js">
+(function(){
+'use strict';
+function mount(){
+ if(document.getElementById('odpc-utility-dock'))return;
+ var reader=document.getElementById('odpc-reader'),help=document.getElementById('odpc-hm-v4-helpbtn');
+ if(!reader||!help)return;
+ var dock=document.createElement('nav');dock.id='odpc-utility-dock';dock.setAttribute('aria-label','ODPC Schnellfunktionen');
+ document.body.appendChild(dock);
+ var lang=document.querySelector('.gt_float_switcher,.gt_switcher_wrapper,.gtranslate_wrapper');
+ if(lang&&lang!==reader&&lang!==help){var holder=document.createElement('div');holder.className='odpc-dock-language';dock.appendChild(holder);holder.appendChild(lang)}
+ dock.appendChild(reader);
+ dock.appendChild(help);help.setAttribute('aria-label','Fragen und Hilfe');help.setAttribute('title','Fragen und Hilfe');
+ var panel=document.getElementById('odpc-hm-v4-help');if(panel)dock.appendChild(panel);
+ var wa=document.querySelector('.odpc-wa-sticky')||document.getElementById('odpc-hm-v4-wa');
+ if(wa){dock.appendChild(wa);wa.setAttribute('aria-label','WhatsApp Business');wa.setAttribute('title','WhatsApp Business')}
+ document.body.classList.add('odpc-dock-active');
+}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount);else mount();
+window.addEventListener('load',function(){if(!document.querySelector('#odpc-utility-dock .odpc-dock-language')){var lang=document.querySelector('.gt_float_switcher,.gt_switcher_wrapper,.gtranslate_wrapper');var dock=document.getElementById('odpc-utility-dock');if(lang&&dock){var holder=document.createElement('div');holder.className='odpc-dock-language';dock.insertBefore(holder,dock.firstChild);holder.appendChild(lang)}}});
+})();
+</script>
+<?php },99);
+
 /* ODPC shared first-party language preference; respects existing GTranslate UI. */
 add_action('wp_footer',function(){if(is_admin())return; ?>
 <script id="odpc-global-language-core">
