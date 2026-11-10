@@ -23,12 +23,43 @@ jobs:
           grep -q 'id="odpc-reader-test"' site-deploy/odpc.de/odpc-helpermonkey-v4-bridge.php
           ! grep -q 'odpc-voice/v1' site-deploy/odpc.de/odpc-helpermonkey-v4-bridge.php
           python3 -m py_compile scripts/deploy_odpc_helpermonkey_v4_bridge.py
+          python3 - <<'PY'
+          from pathlib import Path
+          import re,subprocess,tempfile
+          src=Path('site-deploy/odpc.de/odpc-helpermonkey-v4-bridge.php').read_text()
+          blocks=re.findall(r'<script[^>]*>(.*?)</script>',src,re.S|re.I)
+          assert blocks,'No inline JavaScript found'
+          for i,block in enumerate(blocks):
+              with tempfile.NamedTemporaryFile(mode='w',suffix='.js') as tmp:
+                  tmp.write(block);tmp.flush()
+                  subprocess.run(['node','--check',tmp.name],check=True)
+          print('PASS:',len(blocks),'inline JavaScript blocks syntax checked')
+          PY
       - name: Install SFTP dependency
         run: python3 -m pip install 'paramiko>=3.4,<5'
       - name: Deploy with atomic backup and live smoke test
         env:
           ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
         run: python3 scripts/deploy_odpc_helpermonkey_v4_bridge.py
+      - name: Verify public HTML on normal and uncached URLs
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from urllib.request import Request,urlopen
+          from urllib.parse import urlencode
+          import time
+          for label,url in [('normal','https://odpc.de/'),('uncached','https://odpc.de/?'+urlencode({'odpc_voice_check':str(int(time.time()))}))]:
+              try:
+                  with urlopen(Request(url,headers={'User-Agent':'ODPC Voice Release Verification','Cache-Control':'no-cache'}),timeout=25) as response:
+                      html=response.read(800000).decode('utf-8','replace')
+                  missing=[marker for marker in ('id="odpc-reader-play"','id="odpc-reader-mic"','id="odpc-reader-test"') if marker not in html]
+                  print(label,'HTML bytes:',len(html),'missing:',missing,flush=True)
+                  if missing and label=='uncached':raise SystemExit('FAIL: current deployment missing on uncached site')
+                  if missing:print('WARNING: canonical homepage serves stale cached HTML; requires page cache purge',flush=True)
+              except Exception as exc:
+                  print(label,'verification error:',str(exc),flush=True)
+                  if label=='uncached':raise
+          PY
       - name: Save prior module
         if: always()
         uses: actions/upload-artifact@v4
