@@ -1,26 +1,35 @@
 {
-  "generated_at": "2026-11-10T21:13:25.367411+00:00",
+  "generated_at": "2026-11-10T21:26:21.140108+00:00",
   "product": "AdminMonkey Academy",
   "certification_issuer": "ODPC",
   "official_microsoft_certification": false,
   "knowledge": {
-    "documents_collected": 1434,
-    "manufacturer_verified": 1434,
+    "documents_collected": 1468,
+    "manufacturer_verified": 1468,
     "review": {
       "unreviewed": 0,
-      "approved": 1434,
+      "approved": 1468,
       "rejected": 0
     },
     "last_batch": {
       "attempted": 36,
-      "documents_total": 1434,
-      "queued": 2490,
-      "failures": []
+      "documents_total": 1468,
+      "queued": 2428,
+      "failures": [
+        {
+          "url": "https://learn.microsoft.com/en-us/microsoft-365/business-video/",
+          "error": "ValueError"
+        },
+        {
+          "url": "https://learn.microsoft.com/en-us/admin/add-users/about-admin-roles",
+          "error": "ValueError"
+        }
+      ]
     }
   },
   "retrieval_staging": {
-    "chunked_documents": 1429,
-    "chunks_prepared": 7328,
+    "chunked_documents": 1463,
+    "chunks_prepared": 7547,
     "retrieval_quality_verified": false,
     "agent_answers_verified": 0,
     "note": "Ephemeral, provenance-checked chunk preparation; no searchable production index yet."
@@ -28,7 +37,7 @@
   "tracks": [
     {
       "track": "MS-102",
-      "manufacturer_verified_sources": 254,
+      "manufacturer_verified_sources": 263,
       "knowledge_coverage": "source_count_only_not_learning_objective_coverage",
       "practice_scenarios_available": 2,
       "agent_answers_evaluated": 0,
@@ -50,7 +59,7 @@
     },
     {
       "track": "SC-300",
-      "manufacturer_verified_sources": 324,
+      "manufacturer_verified_sources": 334,
       "knowledge_coverage": "source_count_only_not_learning_objective_coverage",
       "practice_scenarios_available": 2,
       "agent_answers_evaluated": 0,
@@ -61,7 +70,7 @@
     },
     {
       "track": "MD-102",
-      "manufacturer_verified_sources": 24,
+      "manufacturer_verified_sources": 27,
       "knowledge_coverage": "source_count_only_not_learning_objective_coverage",
       "practice_scenarios_available": 2,
       "agent_answers_evaluated": 0,
