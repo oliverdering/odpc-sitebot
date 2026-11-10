@@ -149,15 +149,15 @@ jobs:
                       page.wait_for_timeout(4500)
                       item.update(page.evaluate("""() => {
                         const dock=document.getElementById('odpc-utility-dock');
-                        const flag=document.querySelector('#odpc-utility-dock .odpc-dock-language .gt_float_switcher, #odpc-utility-dock .odpc-dock-language #gt_float_wrapper, #odpc-utility-dock .odpc-dock-language .gtranslate_wrapper, #odpc-utility-dock .odpc-language-fallback');
+                        const flag=document.querySelector('#odpc-utility-dock select.odpc-language-fallback');
                         const play=document.getElementById('odpc-reader-play');
                         const stop=document.getElementById('odpc-reader-stop');
                         const wa=dock?.querySelector('a[href*="wa.me"],a[href*="whatsapp"],.odpc-wa-sticky,.odpc-hm-v4-wa,#odpc-hm-v4-wa');
                         const rect=e=>{if(!e)return null;const r=e.getBoundingClientRect();return {left:r.left,right:r.right,top:r.top,bottom:r.bottom,width:r.width,height:r.height,visible:getComputedStyle(e).display!=='none'&&getComputedStyle(e).visibility!=='hidden'&&r.width>0&&r.height>0}};
-                        return {dock:rect(dock),flag:rect(flag),play:rect(play),stop:rect(stop),whatsapp:rect(wa),whatsapp_href:wa?.getAttribute('href')||null};
+                        return {dock:rect(dock),flag:rect(flag),flag_options:flag?Array.from(flag.options).map(x=>x.value):[],play:rect(play),stop:rect(stop),whatsapp:rect(wa),whatsapp_href:wa?.getAttribute('href')||null};
                       }"""))
                       d=item.get('dock');items=[item.get(k) for k in ('flag','play','stop','whatsapp')]
-                      item['pass']=bool(d and d['visible'] and all(x and x['visible'] and x['left']>=d['left']-4 and x['right']<=d['right']+4 and x['top']>=d['top']-8 and x['bottom']<=d['bottom']+8 for x in items) and item.get('whatsapp_href'))
+                      item['pass']=bool(d and d['visible'] and all(x and x['visible'] and x['left']>=d['left']-4 and x['right']<=d['right']+4 and x['top']>=d['top']-8 and x['bottom']<=d['bottom']+8 for x in items) and all(x in item.get('flag_options',[]) for x in ('de','en','tr')) and item.get('whatsapp_href'))
                       item['reason']='all required controls inside dock' if item['pass'] else 'missing dock/control, wrong position, or WhatsApp link'
                   except Exception as e:
                       item['pass']=False;item['error']=str(e)
