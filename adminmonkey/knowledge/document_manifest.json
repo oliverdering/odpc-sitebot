@@ -11865,6 +11865,640 @@
       "mapped_tracks": [
         "SC-300"
       ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/concept-identity-secure-score",
+      "sha256": "ef3d9739eec671c5d029aa33f11ceda14bdf3c9606369342e28ab356ccdb2f6d",
+      "captured_at": "2026-11-10T21:06:53.821836+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/authentication/overview-authentication",
+      "sha256": "d91389defd6a3dea0ef83d4859b9df52def730f565f89e7baadda1cd1a3b6d6e",
+      "captured_at": "2026-11-10T21:06:53.927146+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/fundamentals/custom-security-attributes-overview",
+      "sha256": "11ed584fcca8d8f4e9dedc734c664b3ac7a6211c12d03fb7a8a63dd03dfa70d6",
+      "captured_at": "2026-11-10T21:06:54.082808+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/id-protection/id-protection-dashboard",
+      "sha256": "c74a1127fc05416c53f8d2da25256ace44fc2ac281ded3624d5e5814bbae77d6",
+      "captured_at": "2026-11-10T21:06:54.150122+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/verified-id/verifiable-credentials-configure-tenant-quick",
+      "sha256": "2aab1fd13c7e8b593f198acf4011eb4185230bcff9c7c2c08e30a0d758072e1f",
+      "captured_at": "2026-11-10T21:06:54.284322+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/concept-traffic-dashboard",
+      "sha256": "124ec82e2a326942ac8f209f85d7929ab46755af0fff0451de0fff01842f807e",
+      "captured_at": "2026-11-10T21:06:54.373764+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/concept-clients",
+      "sha256": "c652641667f0966a0ffeab74dee8927e686ac0c6c29c7870a7e640b95dfadf1d",
+      "captured_at": "2026-11-10T21:06:54.439367+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/concept-traffic-forwarding",
+      "sha256": "32fec2276e04a0179144f8e131a13042c633b99c77e17d1a453cb1f162976ca9",
+      "captured_at": "2026-11-10T21:06:54.500189+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/concept-global-secure-access-logs-monitoring",
+      "sha256": "5c6c5d521081097d035943b2a3b64bbcf4096d42ba7a7c3712faf33469a43ec2",
+      "captured_at": "2026-11-10T21:06:54.562860+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-create-delete-users",
+      "sha256": "a80901f29ea77819fffca6f2166e18b19c093c93f3353682b39a319db6e0eae0",
+      "captured_at": "2026-11-10T21:06:54.650173+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-manage-groups",
+      "sha256": "2ed120e41e05c54dc39dd8835dab9ca03e9e30e3107bdee80e67d6033932ecb3",
+      "captured_at": "2026-11-10T21:06:54.728762+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-find-tenant",
+      "sha256": "e9a3a6067f48983c760e9e668ce813d1981db316d92cd9bfc719e1e5ef1b3df9",
+      "captured_at": "2026-11-10T21:06:54.793048+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/fundamentals/create-new-tenant",
+      "sha256": "fba9e32f19321fdda20d5faf6b84015ee8bdd6b29b0b9a1bb9d333669c4bcea1",
+      "captured_at": "2026-11-10T21:06:54.875142+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/identityset",
+      "sha256": "bd404af0249a43b31cee890a18c16def6d958f4068104e91eaa2aabbbee8cfb9",
+      "captured_at": "2026-11-10T21:06:55.174033+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/calendar-get",
+      "sha256": "1e30a3a64369777a814684592245d190f4c82c5bb3cb0482449f82236cbcb218",
+      "captured_at": "2026-11-10T21:06:55.359172+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/subscription-post-subscriptions",
+      "sha256": "9aa57672c007217b830fc09238709dc89698cd45afe950902a8dc657c31927ee",
+      "captured_at": "2026-11-10T21:06:55.653240+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/workbookchart",
+      "sha256": "b13a982b293ddb1f96f978de79040242191de6b234614fa3aa00d3c065357398",
+      "captured_at": "2026-11-10T21:06:55.977462+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/reportroot-getoffice365groupsactivitycounts",
+      "sha256": "b1a53a27ad40615e55c9a2a9431577e84e9df18da16977ca1e2b6e967dac5afd",
+      "captured_at": "2026-11-10T21:06:56.142361+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/plannergroup-list-plans",
+      "sha256": "47efa2127096f4e06104f20307d0c101d8fa0dfb0e7fb10bd11bbd17d992d4b1",
+      "captured_at": "2026-11-10T21:06:56.294150+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/plannerassignments",
+      "sha256": "6de4798e27fc9b61d20f24b13b02388ae602bfb0d1834e927c462c4df714a5c2",
+      "captured_at": "2026-11-10T21:06:56.445544+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/notebook-get",
+      "sha256": "17a465813d1959f2cebe7109d532f8e0a8f7613e46b4cb8f61b832bf6077e956",
+      "captured_at": "2026-11-10T21:06:56.570781+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/section-post-pages",
+      "sha256": "b232e40c76d132b5b109d0ac01dfc3b27dea85d4c849b4a7847595d8ea672790",
+      "captured_at": "2026-11-10T21:06:56.800084+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/applications-api-overview",
+      "sha256": "f10496c0753905c6926b54173c5c21bdf174025a3de3f02735554ab20a9fad76",
+      "captured_at": "2026-11-10T21:06:57.003164+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/agentid-platform-overview",
+      "sha256": "e75225dcc6352e6f9498a02c69579acb3da5d5de92ee406df4f4c442183e676c",
+      "captured_at": "2026-11-10T21:06:57.291477+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/bitlockerrecoverykey",
+      "sha256": "6edf11e655d243a0f8841fc8690ded65f16e7a4f9146dcaaa7d56ce5522e05c2",
+      "captured_at": "2026-11-10T21:06:57.530424+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/custom-security-attributes-overview",
+      "sha256": "f3b6c3cbd9ebd2f736318010b2061a8bd5c0fa84221c8a2cf6760927f3285199",
+      "captured_at": "2026-11-10T21:06:57.734728+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/entrarecoveryservices-backup-recovery-overview",
+      "sha256": "143ecb8fc6bae5b55a35de629569ef37f2dae563751714697b1198124747fde8",
+      "captured_at": "2026-11-10T21:06:57.940440+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/device",
+      "sha256": "5512aaf221137de28cb222426b873e76c4af3d841370539ff56b748850888035",
+      "captured_at": "2026-11-10T21:06:58.064668+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/devicetemplate",
+      "sha256": "ac745fefe264997668c6f22cafa4579c133fa162a81df36fd581f146a685c246",
+      "captured_at": "2026-11-10T21:06:58.660119+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/devicelocalcredentialinfo",
+      "sha256": "a2d257d0c833e32df28aa51b433f86a5c87ef69f526e548b905dedd48072439d",
+      "captured_at": "2026-11-10T21:06:58.853034+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/directoryroletemplate",
+      "sha256": "a5dc19e3ea8eac1a61319268ef4603f1e92711eb69b7c5f2ab2d13a60c39fc1e",
+      "captured_at": "2026-11-10T21:06:58.999992+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/rolemanagement",
+      "sha256": "9eaa1f9fe782f18aa94b03178e7bf13c81e7b16a6b0205b64c19b9ae14d0afb4",
+      "captured_at": "2026-11-10T21:06:59.158623+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/privilegedidentitymanagementv3-overview",
+      "sha256": "524018b8cd8f7ec778f2e1d4c146537bf71b4173fec5adcaa12021547e160379",
+      "captured_at": "2026-11-10T21:06:59.547070+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/privilegedidentitymanagement-for-groups-api-overview",
+      "sha256": "46c19a86743162ec88f6de8ba9afb2bb0e76c4fd89c3605201881cf00f0a8070",
+      "captured_at": "2026-11-10T21:06:59.679592+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/directorysetting",
+      "sha256": "560e18f84f06581cfe8c37a679581ab1159e43d83f5bc71f007703ef8f5ce53d",
+      "captured_at": "2026-11-10T21:07:00.012556+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/directorysettingtemplate",
+      "sha256": "2cd37d90b6c1cab0735b04ef4540278f6b02574869d8b48d11c9d9dccee51252",
+      "captured_at": "2026-11-10T21:07:00.199757+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/groupsetting",
+      "sha256": "e4a669695ecb945b5d6688b06bc57b04b8cd42c8453c3794c461de5ba2b6135d",
+      "captured_at": "2026-11-10T21:10:55.193633+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/groupsettingtemplate",
+      "sha256": "730f6ddea2efd51099bfef0e371e2c2dd896c1041bfa35926746713975d40777",
+      "captured_at": "2026-11-10T21:10:55.449136+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/domain",
+      "sha256": "6b8319cdc49a8b8189ee7cf802c24b4c3bf23cb8f9854e44eca7e574f6afe986",
+      "captured_at": "2026-11-10T21:10:55.604617+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/externaluserprofile",
+      "sha256": "07daab8e2f5058aeab68144ac0d6ccae630c4a8e40b35f98bb44d341551a7f61",
+      "captured_at": "2026-11-10T21:10:55.818833+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/featurerolloutpolicy",
+      "sha256": "de84993774cc9932b3d41480a062e5b2ba68764750d1fdcff10da75a464169b2",
+      "captured_at": "2026-11-10T21:10:56.052111+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/companysubscription",
+      "sha256": "7fe8939a31e48cda11e5f111a1a6cb90adf67acb397d70fad4fc143a6425595a",
+      "captured_at": "2026-11-10T21:10:56.751498+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/subscribedsku",
+      "sha256": "125823d96eea36998b04e1b1e6a56b959d5a5829e27c851059f8689b52d6b03a",
+      "captured_at": "2026-11-10T21:10:57.109992+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/mobileappmanagementpolicy",
+      "sha256": "72d5603fa37e1cbd17ec5a6665e450463aa38c80c062a3f331a716c584b4a87e",
+      "captured_at": "2026-11-10T21:10:57.351208+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/mobiledevicemanagementpolicy",
+      "sha256": "8395f0ef7f797affb954ec0bcf0bea5ac8a6fb37d5a827632c8fbaca021e2f61",
+      "captured_at": "2026-11-10T21:10:57.599440+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/onpremisessyncbehavior",
+      "sha256": "d0db9d509b21e830d10083c23a00f0af6beb17d6572348e750d23c78805a96dd",
+      "captured_at": "2026-11-10T21:10:57.910497+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/organizationsettings",
+      "sha256": "469aba6af548df99ad3dfadf69317bb36adf22d6d00dbab523ad68ff34bca07a",
+      "captured_at": "2026-11-10T21:10:58.160958+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/orgcontact",
+      "sha256": "f9fd01b67cb2a57060e9b45724f1e01568366aa52fec60fa0ac2f42421b93682",
+      "captured_at": "2026-11-10T21:10:58.572495+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/tenantinformation",
+      "sha256": "73eebcbf7d3157d8c1e70d72098ebdf59febacb9b39a7907553bd0774be90140",
+      "captured_at": "2026-11-10T21:10:58.825894+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/authenticationeventlistener",
+      "sha256": "0283e94af31c61d9dcb6cb9cb83594beae64fd0656edd2036e143392068fca8a",
+      "captured_at": "2026-11-10T21:10:59.130333+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/authenticationmethods-overview",
+      "sha256": "f076ca3fa2b8d86cda67b46476072078bb1a841964cf1904773d634d969a6565",
+      "captured_at": "2026-11-10T21:10:59.274652+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/authenticationmethodspolicies-overview",
+      "sha256": "09c43e7a3d84be1badedcdd6235309a9055e52c6b65d46bbac0fafdc023071fa",
+      "captured_at": "2026-11-10T21:10:59.515038+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/authenticationstrengths-overview",
+      "sha256": "0fd7d86e28f558e1e4abefe08433591d40265fd1dbbea5a08bf1ce935b5cc639",
+      "captured_at": "2026-11-10T21:10:59.751330+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/external-id/customers/concept-supported-features-customers",
+      "sha256": "73881b34e8a783ab6c212b569e3a269b17eebb1f6cc643699c9a06c1a54a45bb",
+      "captured_at": "2026-11-10T21:10:59.868760+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/authentication-vs-authorization",
+      "sha256": "50dcaa5828375bf88da512932ad51d524a45f819d28001baa3aa89ea650245e5",
+      "captured_at": "2026-11-10T21:10:59.963317+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/concept-understand-roles",
+      "sha256": "64290ec2de31167df66bb4d868050d40173442f11efb9ca089dc3c3fd4a37104",
+      "captured_at": "2026-11-10T21:11:00.026612+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-sync-whatis",
+      "sha256": "0fe9f939fb842506d26902bd81cbd9eeeb84424c60ab4b5957d58da309cb502e",
+      "captured_at": "2026-11-10T21:11:00.150983+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/access-tokens",
+      "sha256": "d3997ce5ea04b09b972f19d28329976c5015e20b4cb8c4327e0b341a51bb113d",
+      "captured_at": "2026-11-10T21:11:00.254813+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/intune/device-security/security-baselines/configure-baselines",
+      "sha256": "ebbf1f40af1fa15cd9ac1a789748c8ec5232e7f187a1040aaba49678ef01ca6a",
+      "captured_at": "2026-11-10T21:11:00.386205+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MD-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/intune/device-configuration/settings-catalog/",
+      "sha256": "146d59d3c490d56b4a876f2b4b320866dd4fc15f8c3a5746d2f44b95ceae26ce",
+      "captured_at": "2026-11-10T21:11:00.526636+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MD-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/intune/device-security/compliance/overview",
+      "sha256": "59124522e58aa68e6762e579d07c9c157a8767aff4d1ae54d5597f964515b7b9",
+      "captured_at": "2026-11-10T21:11:00.606433+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MD-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/intune-deviceconfig-devicecomplianceactionitem",
+      "sha256": "6028c4d12b17fc0e9974280674186991aa7dd773575f0d5220c266e3931dba23",
+      "captured_at": "2026-11-10T21:11:00.840781+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/intune/fundamentals/ref-supported-platforms",
+      "sha256": "382d4950e07d2510b8a1eca237c0e6c1f5ac1f8b4ff7f6809483f2afdb5e4396",
+      "captured_at": "2026-11-10T21:11:00.891370+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MD-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/intune/app-management/ref-protected-apps",
+      "sha256": "d0654fd23106a3b8ddb207237076de20d2d0e1bab1e92fdfc01b01bc23eb846b",
+      "captured_at": "2026-11-10T21:11:01.023074+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MD-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/microsoft-365-education",
+      "sha256": "deb96643b3b9e798ddf22db2126591ef638e92b765179f161f3963ebc21c85e2",
+      "captured_at": "2026-11-10T21:11:01.130135+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/office365/enterprise/office-365-client-support-conditional-access",
+      "sha256": "331c3e18e60480ab2671ac8e4733e28f53fd0afec15e6d7cf969641847c01799",
+      "captured_at": "2026-11-10T21:11:01.714429+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/intune/device-updates/android/manage-fota",
+      "sha256": "6f78e8a74f8009ae1b8ed995467a4fb77d97c82a25c21c209b72c098808e0988",
+      "captured_at": "2026-11-10T21:11:01.844542+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MD-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/copilot/security/microsoft-security-copilot",
+      "sha256": "5d34cc553e0c9aed8a6c5dd2321a7894cc2b033ca3304247bc85c4f49d2354d7",
+      "captured_at": "2026-11-10T21:11:01.905850+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/intune/fundamentals/try-overview",
+      "sha256": "8f2616e46f902ffe3eaafed7e9816c9fb7dea210802ed3a6d829a9cbb4367773",
+      "captured_at": "2026-11-10T21:11:02.080819+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MD-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/intune/app-management/configuration/configure-company-portal",
+      "sha256": "b81d0b0c7134d3eb510c5858e560f54d12766a3c8ca446cf88eaa92e87e9f0c6",
+      "captured_at": "2026-11-10T21:11:02.145494+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MD-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/security/engineering/solving-tls1-problem",
+      "sha256": "cacdf5a666a37407eddf3a45f5860490cb7ce23300cc138d88686ed7e9801301",
+      "captured_at": "2026-11-10T21:11:02.281296+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/mem/configmgr/core/plan-design/security/enable-tls-1-2-client",
+      "sha256": "40dc81dd7f061397932982df3d4cda72fda8e019405402a8c053e810d7a71897",
+      "captured_at": "2026-11-10T21:11:02.430742+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MD-102"
+      ]
     }
   ],
   "seen": [
@@ -11960,6 +12594,7 @@
     "https://learn.microsoft.com/en-us/copilot/plan/copilot-overview",
     "https://learn.microsoft.com/en-us/copilot/plan/enterprise-data-protection",
     "https://learn.microsoft.com/en-us/copilot/plan/secure-govern-copilot-foundational-deployment-guidance",
+    "https://learn.microsoft.com/en-us/copilot/security/microsoft-security-copilot",
     "https://learn.microsoft.com/en-us/credentials/certifications/mct-certification",
     "https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-manage-app-governance",
     "https://learn.microsoft.com/en-us/defender-cloud-apps/what-is-defender-for-cloud-apps",
@@ -12013,6 +12648,7 @@
     "https://learn.microsoft.com/en-us/entra/external-id/cross-tenant-access-settings-b2b-collaboration",
     "https://learn.microsoft.com/en-us/entra/external-id/customers/concept-branding-customers",
     "https://learn.microsoft.com/en-us/entra/external-id/customers/concept-multifactor-authentication-customers",
+    "https://learn.microsoft.com/en-us/entra/external-id/customers/concept-supported-features-customers",
     "https://learn.microsoft.com/en-us/entra/external-id/customers/overview-customers-ciam",
     "https://learn.microsoft.com/en-us/entra/external-id/customers/reference-user-permissions",
     "https://learn.microsoft.com/en-us/entra/external-id/external-collaboration-settings-configure",
@@ -12027,8 +12663,13 @@
     "https://learn.microsoft.com/en-us/entra/fundamentals/concept-group-based-licensing",
     "https://learn.microsoft.com/en-us/entra/fundamentals/concept-learn-about-groups",
     "https://learn.microsoft.com/en-us/entra/fundamentals/configure-security",
+    "https://learn.microsoft.com/en-us/entra/fundamentals/create-new-tenant",
+    "https://learn.microsoft.com/en-us/entra/fundamentals/custom-security-attributes-overview",
     "https://learn.microsoft.com/en-us/entra/fundamentals/data-residency",
     "https://learn.microsoft.com/en-us/entra/fundamentals/entra-admin-center",
+    "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-create-delete-users",
+    "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-find-tenant",
+    "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-manage-groups",
     "https://learn.microsoft.com/en-us/entra/fundamentals/identity-fundamental-concepts",
     "https://learn.microsoft.com/en-us/entra/fundamentals/licensing",
     "https://learn.microsoft.com/en-us/entra/fundamentals/security-defaults",
@@ -12044,12 +12685,16 @@
     "https://learn.microsoft.com/en-us/entra/fundamentals/zero-trust-protect-networks",
     "https://learn.microsoft.com/en-us/entra/fundamentals/zero-trust-protect-tenants",
     "https://learn.microsoft.com/en-us/entra/fundamentals/zero-trust-response-remediation",
+    "https://learn.microsoft.com/en-us/entra/global-secure-access/concept-clients",
     "https://learn.microsoft.com/en-us/entra/global-secure-access/concept-connectors",
+    "https://learn.microsoft.com/en-us/entra/global-secure-access/concept-global-secure-access-logs-monitoring",
     "https://learn.microsoft.com/en-us/entra/global-secure-access/concept-internet-access",
     "https://learn.microsoft.com/en-us/entra/global-secure-access/concept-private-name-resolution",
     "https://learn.microsoft.com/en-us/entra/global-secure-access/concept-remote-network-connectivity",
     "https://learn.microsoft.com/en-us/entra/global-secure-access/concept-secure-web-ai-gateway-agents",
     "https://learn.microsoft.com/en-us/entra/global-secure-access/concept-shadow-ai-discovery",
+    "https://learn.microsoft.com/en-us/entra/global-secure-access/concept-traffic-dashboard",
+    "https://learn.microsoft.com/en-us/entra/global-secure-access/concept-traffic-forwarding",
     "https://learn.microsoft.com/en-us/entra/global-secure-access/concept-universal-conditional-access",
     "https://learn.microsoft.com/en-us/entra/global-secure-access/concept-universal-continuous-access-evaluation",
     "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-ai-prompt-injection-protection",
@@ -12152,12 +12797,15 @@
     "https://learn.microsoft.com/en-us/entra/id-protection/howto-identity-protection-graph-api",
     "https://learn.microsoft.com/en-us/entra/id-protection/howto-identity-protection-investigate-risk",
     "https://learn.microsoft.com/en-us/entra/id-protection/howto-identity-protection-remediate-unblock",
+    "https://learn.microsoft.com/en-us/entra/id-protection/id-protection-dashboard",
     "https://learn.microsoft.com/en-us/entra/id-protection/overview-identity-protection",
     "https://learn.microsoft.com/en-us/entra/identity-platform/",
     "https://learn.microsoft.com/en-us/entra/identity-platform/access-token-claims-reference",
+    "https://learn.microsoft.com/en-us/entra/identity-platform/access-tokens",
     "https://learn.microsoft.com/en-us/entra/identity-platform/app-objects-and-service-principals",
     "https://learn.microsoft.com/en-us/entra/identity-platform/app-only-access-primer",
     "https://learn.microsoft.com/en-us/entra/identity-platform/application-model",
+    "https://learn.microsoft.com/en-us/entra/identity-platform/authentication-vs-authorization",
     "https://learn.microsoft.com/en-us/entra/identity-platform/delegated-access-primer",
     "https://learn.microsoft.com/en-us/entra/identity-platform/developer-glossary",
     "https://learn.microsoft.com/en-us/entra/identity-platform/howto-convert-app-to-be-multi-tenant",
@@ -12192,6 +12840,7 @@
     "https://learn.microsoft.com/en-us/entra/identity/authentication/howto-authentication-passwordless-phone",
     "https://learn.microsoft.com/en-us/entra/identity/authentication/howto-mfa-getstarted",
     "https://learn.microsoft.com/en-us/entra/identity/authentication/howto-mfa-userstates",
+    "https://learn.microsoft.com/en-us/entra/identity/authentication/overview-authentication",
     "https://learn.microsoft.com/en-us/entra/identity/conditional-access/",
     "https://learn.microsoft.com/en-us/entra/identity/conditional-access/agent-id",
     "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-conditions",
@@ -12230,6 +12879,7 @@
     "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-pta",
     "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-sso-how-it-works",
     "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-sso-quick-start",
+    "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-sync-whatis",
     "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-syncservice-features",
     "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/migrate-from-federation-to-cloud-authentication",
     "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/reference-connect-pta-version-history",
@@ -12240,6 +12890,7 @@
     "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/managed-identities-status",
     "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/overview",
     "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/concept-audit-logs",
+    "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/concept-identity-secure-score",
     "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/concept-sign-ins",
     "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/howto-stream-logs-to-event-hub",
     "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/overview-recommendations",
@@ -12249,6 +12900,7 @@
     "https://learn.microsoft.com/en-us/entra/identity/multi-tenant-organizations/cross-tenant-synchronization-overview",
     "https://learn.microsoft.com/en-us/entra/identity/multi-tenant-organizations/multi-tenant-organization-overview",
     "https://learn.microsoft.com/en-us/entra/identity/multi-tenant-organizations/overview",
+    "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/concept-understand-roles",
     "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/custom-overview",
     "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/delegate-by-task",
     "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/manage-roles-portal",
@@ -12268,6 +12920,7 @@
     "https://learn.microsoft.com/en-us/entra/verified-id/credential-design",
     "https://learn.microsoft.com/en-us/entra/verified-id/decentralized-identifier-overview",
     "https://learn.microsoft.com/en-us/entra/verified-id/verifiable-credentials-configure-tenant",
+    "https://learn.microsoft.com/en-us/entra/verified-id/verifiable-credentials-configure-tenant-quick",
     "https://learn.microsoft.com/en-us/entra/verified-id/verifiable-credentials-faq",
     "https://learn.microsoft.com/en-us/entra/verified-id/verifiable-credentials-standards",
     "https://learn.microsoft.com/en-us/entra/workload-id/workload-identities-faqs",
@@ -12290,6 +12943,7 @@
     "https://learn.microsoft.com/en-us/graph/api/associatedteaminfo-list",
     "https://learn.microsoft.com/en-us/graph/api/backupreport-getstatisticsbypolicy",
     "https://learn.microsoft.com/en-us/graph/api/calendar-delta",
+    "https://learn.microsoft.com/en-us/graph/api/calendar-get",
     "https://learn.microsoft.com/en-us/graph/api/calendar-getschedule",
     "https://learn.microsoft.com/en-us/graph/api/calendar-post-events",
     "https://learn.microsoft.com/en-us/graph/api/call-answer",
@@ -12367,6 +13021,7 @@
     "https://learn.microsoft.com/en-us/graph/api/mailfolder-post-messages",
     "https://learn.microsoft.com/en-us/graph/api/multivaluelegacyextendedproperty-get",
     "https://learn.microsoft.com/en-us/graph/api/multivaluelegacyextendedproperty-post-multivalueextendedproperties",
+    "https://learn.microsoft.com/en-us/graph/api/notebook-get",
     "https://learn.microsoft.com/en-us/graph/api/onenote-list-notebooks",
     "https://learn.microsoft.com/en-us/graph/api/onenote-post-notebooks",
     "https://learn.microsoft.com/en-us/graph/api/onlinemeeting-get",
@@ -12384,10 +13039,12 @@
     "https://learn.microsoft.com/en-us/graph/api/participant-mute",
     "https://learn.microsoft.com/en-us/graph/api/partners-billing-billedaggregatedusage-export",
     "https://learn.microsoft.com/en-us/graph/api/place-update",
+    "https://learn.microsoft.com/en-us/graph/api/plannergroup-list-plans",
     "https://learn.microsoft.com/en-us/graph/api/planneruser-list-tasks",
     "https://learn.microsoft.com/en-us/graph/api/profilephoto-delete",
     "https://learn.microsoft.com/en-us/graph/api/profilephoto-get",
     "https://learn.microsoft.com/en-us/graph/api/profilephoto-update",
+    "https://learn.microsoft.com/en-us/graph/api/reportroot-getoffice365groupsactivitycounts",
     "https://learn.microsoft.com/en-us/graph/api/reportroot-getsharepointapiusage",
     "https://learn.microsoft.com/en-us/graph/api/reportsroot-list-reflectcheckinresponses",
     "https://learn.microsoft.com/en-us/graph/api/resources/accessdriftsummary",
@@ -12395,9 +13052,11 @@
     "https://learn.microsoft.com/en-us/graph/api/resources/adhoccall",
     "https://learn.microsoft.com/en-us/graph/api/resources/administrativeunit",
     "https://learn.microsoft.com/en-us/graph/api/resources/adminreportsettings",
+    "https://learn.microsoft.com/en-us/graph/api/resources/agentid-platform-overview",
     "https://learn.microsoft.com/en-us/graph/api/resources/agentuser",
     "https://learn.microsoft.com/en-us/graph/api/resources/agreementacceptance",
     "https://learn.microsoft.com/en-us/graph/api/resources/application",
+    "https://learn.microsoft.com/en-us/graph/api/resources/applications-api-overview",
     "https://learn.microsoft.com/en-us/graph/api/resources/appliedauthenticationeventlistener",
     "https://learn.microsoft.com/en-us/graph/api/resources/appliedconditionalaccesspolicy",
     "https://learn.microsoft.com/en-us/graph/api/resources/appmanagementaudit",
@@ -12411,7 +13070,12 @@
     "https://learn.microsoft.com/en-us/graph/api/resources/attendancerecord",
     "https://learn.microsoft.com/en-us/graph/api/resources/attendee",
     "https://learn.microsoft.com/en-us/graph/api/resources/authentication",
+    "https://learn.microsoft.com/en-us/graph/api/resources/authenticationeventlistener",
+    "https://learn.microsoft.com/en-us/graph/api/resources/authenticationmethods-overview",
+    "https://learn.microsoft.com/en-us/graph/api/resources/authenticationmethodspolicies-overview",
+    "https://learn.microsoft.com/en-us/graph/api/resources/authenticationstrengths-overview",
     "https://learn.microsoft.com/en-us/graph/api/resources/backupreport",
+    "https://learn.microsoft.com/en-us/graph/api/resources/bitlockerrecoverykey",
     "https://learn.microsoft.com/en-us/graph/api/resources/browsequeryresponseitem",
     "https://learn.microsoft.com/en-us/graph/api/resources/calendar",
     "https://learn.microsoft.com/en-us/graph/api/resources/calendargroup",
@@ -12426,6 +13090,7 @@
     "https://learn.microsoft.com/en-us/graph/api/resources/cloudpcmanagedlicense",
     "https://learn.microsoft.com/en-us/graph/api/resources/cloudpcsourcedeviceimage",
     "https://learn.microsoft.com/en-us/graph/api/resources/communications-api-overview",
+    "https://learn.microsoft.com/en-us/graph/api/resources/companysubscription",
     "https://learn.microsoft.com/en-us/graph/api/resources/conditionalaccesspolicyplan",
     "https://learn.microsoft.com/en-us/graph/api/resources/connectors-api-overview",
     "https://learn.microsoft.com/en-us/graph/api/resources/contact",
@@ -12434,12 +13099,20 @@
     "https://learn.microsoft.com/en-us/graph/api/resources/convertidresult",
     "https://learn.microsoft.com/en-us/graph/api/resources/crosstenant-migration-api-overview",
     "https://learn.microsoft.com/en-us/graph/api/resources/crosstenantaccesspolicy-overview",
+    "https://learn.microsoft.com/en-us/graph/api/resources/custom-security-attributes-overview",
     "https://learn.microsoft.com/en-us/graph/api/resources/customsecurityattributevalue",
     "https://learn.microsoft.com/en-us/graph/api/resources/datetimetimezone",
+    "https://learn.microsoft.com/en-us/graph/api/resources/device",
+    "https://learn.microsoft.com/en-us/graph/api/resources/devicelocalcredentialinfo",
+    "https://learn.microsoft.com/en-us/graph/api/resources/devicetemplate",
     "https://learn.microsoft.com/en-us/graph/api/resources/directory",
     "https://learn.microsoft.com/en-us/graph/api/resources/directoryobject",
     "https://learn.microsoft.com/en-us/graph/api/resources/directoryrole",
+    "https://learn.microsoft.com/en-us/graph/api/resources/directoryroletemplate",
+    "https://learn.microsoft.com/en-us/graph/api/resources/directorysetting",
+    "https://learn.microsoft.com/en-us/graph/api/resources/directorysettingtemplate",
     "https://learn.microsoft.com/en-us/graph/api/resources/distributionlist",
+    "https://learn.microsoft.com/en-us/graph/api/resources/domain",
     "https://learn.microsoft.com/en-us/graph/api/resources/drive",
     "https://learn.microsoft.com/en-us/graph/api/resources/driveitem",
     "https://learn.microsoft.com/en-us/graph/api/resources/education-overview",
@@ -12450,6 +13123,7 @@
     "https://learn.microsoft.com/en-us/graph/api/resources/engagement-api-overview",
     "https://learn.microsoft.com/en-us/graph/api/resources/engagementrole",
     "https://learn.microsoft.com/en-us/graph/api/resources/entradriftidentityinfo",
+    "https://learn.microsoft.com/en-us/graph/api/resources/entrarecoveryservices-backup-recovery-overview",
     "https://learn.microsoft.com/en-us/graph/api/resources/enums",
     "https://learn.microsoft.com/en-us/graph/api/resources/evaluationerrordetail",
     "https://learn.microsoft.com/en-us/graph/api/resources/event",
@@ -12458,14 +13132,19 @@
     "https://learn.microsoft.com/en-us/graph/api/resources/extension",
     "https://learn.microsoft.com/en-us/graph/api/resources/externalconnectors-externalitem",
     "https://learn.microsoft.com/en-us/graph/api/resources/externalconnectors-urltoitemresolverbase",
+    "https://learn.microsoft.com/en-us/graph/api/resources/externaluserprofile",
+    "https://learn.microsoft.com/en-us/graph/api/resources/featurerolloutpolicy",
     "https://learn.microsoft.com/en-us/graph/api/resources/federatedtokenvalidationpolicy",
     "https://learn.microsoft.com/en-us/graph/api/resources/fileattachment",
     "https://learn.microsoft.com/en-us/graph/api/resources/group",
     "https://learn.microsoft.com/en-us/graph/api/resources/grouplifecyclepolicy",
     "https://learn.microsoft.com/en-us/graph/api/resources/groupresource",
     "https://learn.microsoft.com/en-us/graph/api/resources/groups-overview",
+    "https://learn.microsoft.com/en-us/graph/api/resources/groupsetting",
+    "https://learn.microsoft.com/en-us/graph/api/resources/groupsettingtemplate",
     "https://learn.microsoft.com/en-us/graph/api/resources/identity-network-access-overview",
     "https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-lifecyclepolicyrule",
+    "https://learn.microsoft.com/en-us/graph/api/resources/identityset",
     "https://learn.microsoft.com/en-us/graph/api/resources/inferenceclassification",
     "https://learn.microsoft.com/en-us/graph/api/resources/inferenceclassificationoverride",
     "https://learn.microsoft.com/en-us/graph/api/resources/insights-resourcereference",
@@ -12473,6 +13152,7 @@
     "https://learn.microsoft.com/en-us/graph/api/resources/insights-shared",
     "https://learn.microsoft.com/en-us/graph/api/resources/insights-trending",
     "https://learn.microsoft.com/en-us/graph/api/resources/insights-used",
+    "https://learn.microsoft.com/en-us/graph/api/resources/intune-deviceconfig-devicecomplianceactionitem",
     "https://learn.microsoft.com/en-us/graph/api/resources/invitation",
     "https://learn.microsoft.com/en-us/graph/api/resources/itemattachment",
     "https://learn.microsoft.com/en-us/graph/api/resources/itembody",
@@ -12492,6 +13172,8 @@
     "https://learn.microsoft.com/en-us/graph/api/resources/meetingtimesuggestionsresult",
     "https://learn.microsoft.com/en-us/graph/api/resources/message",
     "https://learn.microsoft.com/en-us/graph/api/resources/messagerule",
+    "https://learn.microsoft.com/en-us/graph/api/resources/mobileappmanagementpolicy",
+    "https://learn.microsoft.com/en-us/graph/api/resources/mobiledevicemanagementpolicy",
     "https://learn.microsoft.com/en-us/graph/api/resources/multivaluelegacyextendedproperty",
     "https://learn.microsoft.com/en-us/graph/api/resources/note",
     "https://learn.microsoft.com/en-us/graph/api/resources/notebook",
@@ -12505,9 +13187,12 @@
     "https://learn.microsoft.com/en-us/graph/api/resources/onpremisesdirectorysynchronization",
     "https://learn.microsoft.com/en-us/graph/api/resources/onpremisesextensionattributes",
     "https://learn.microsoft.com/en-us/graph/api/resources/onpremisesprovisioningerror",
+    "https://learn.microsoft.com/en-us/graph/api/resources/onpremisessyncbehavior",
     "https://learn.microsoft.com/en-us/graph/api/resources/opentypeextension",
     "https://learn.microsoft.com/en-us/graph/api/resources/optionalclaims",
     "https://learn.microsoft.com/en-us/graph/api/resources/organization",
+    "https://learn.microsoft.com/en-us/graph/api/resources/organizationsettings",
+    "https://learn.microsoft.com/en-us/graph/api/resources/orgcontact",
     "https://learn.microsoft.com/en-us/graph/api/resources/outlookcategory",
     "https://learn.microsoft.com/en-us/graph/api/resources/outlookuser",
     "https://learn.microsoft.com/en-us/graph/api/resources/ownerlessgrouppolicy",
@@ -12516,10 +13201,13 @@
     "https://learn.microsoft.com/en-us/graph/api/resources/patternedrecurrence",
     "https://learn.microsoft.com/en-us/graph/api/resources/person",
     "https://learn.microsoft.com/en-us/graph/api/resources/place",
+    "https://learn.microsoft.com/en-us/graph/api/resources/plannerassignments",
     "https://learn.microsoft.com/en-us/graph/api/resources/plannertask",
     "https://learn.microsoft.com/en-us/graph/api/resources/planneruser",
     "https://learn.microsoft.com/en-us/graph/api/resources/policyuserscope",
     "https://learn.microsoft.com/en-us/graph/api/resources/privilegedaccessgroup",
+    "https://learn.microsoft.com/en-us/graph/api/resources/privilegedidentitymanagement-for-groups-api-overview",
+    "https://learn.microsoft.com/en-us/graph/api/resources/privilegedidentitymanagementv3-overview",
     "https://learn.microsoft.com/en-us/graph/api/resources/processcontentmetadatabase",
     "https://learn.microsoft.com/en-us/graph/api/resources/processcontentresponse",
     "https://learn.microsoft.com/en-us/graph/api/resources/profilephoto",
@@ -12533,6 +13221,7 @@
     "https://learn.microsoft.com/en-us/graph/api/resources/responsestatus",
     "https://learn.microsoft.com/en-us/graph/api/resources/restoresessionbase",
     "https://learn.microsoft.com/en-us/graph/api/resources/restoretaskactivitylog",
+    "https://learn.microsoft.com/en-us/graph/api/resources/rolemanagement",
     "https://learn.microsoft.com/en-us/graph/api/resources/rolemanagementcustomcalloutextension",
     "https://learn.microsoft.com/en-us/graph/api/resources/scheduleinformation",
     "https://learn.microsoft.com/en-us/graph/api/resources/search-acronym",
@@ -12555,6 +13244,7 @@
     "https://learn.microsoft.com/en-us/graph/api/resources/singlevaluelegacyextendedproperty",
     "https://learn.microsoft.com/en-us/graph/api/resources/site",
     "https://learn.microsoft.com/en-us/graph/api/resources/smsauthenticationmethodconfiguration",
+    "https://learn.microsoft.com/en-us/graph/api/resources/subscribedsku",
     "https://learn.microsoft.com/en-us/graph/api/resources/synchronization-objectconnection",
     "https://learn.microsoft.com/en-us/graph/api/resources/synchronization-synchronizationjob",
     "https://learn.microsoft.com/en-us/graph/api/resources/team",
@@ -12567,6 +13257,7 @@
     "https://learn.microsoft.com/en-us/graph/api/resources/teamworkhostedcontent",
     "https://learn.microsoft.com/en-us/graph/api/resources/teamworksection",
     "https://learn.microsoft.com/en-us/graph/api/resources/teamworksectionitem",
+    "https://learn.microsoft.com/en-us/graph/api/resources/tenantinformation",
     "https://learn.microsoft.com/en-us/graph/api/resources/timezoneinformation",
     "https://learn.microsoft.com/en-us/graph/api/resources/todo",
     "https://learn.microsoft.com/en-us/graph/api/resources/todotask",
@@ -12591,13 +13282,16 @@
     "https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-mdmappsetting",
     "https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-tenantsetting",
     "https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-updatedata",
+    "https://learn.microsoft.com/en-us/graph/api/resources/workbookchart",
     "https://learn.microsoft.com/en-us/graph/api/restorepoint-search",
     "https://learn.microsoft.com/en-us/graph/api/search-query",
+    "https://learn.microsoft.com/en-us/graph/api/section-post-pages",
     "https://learn.microsoft.com/en-us/graph/api/security-casemanagement-activity-update",
     "https://learn.microsoft.com/en-us/graph/api/security-casemanagement-case-post-activities",
     "https://learn.microsoft.com/en-us/graph/api/serviceprincipal-delta",
     "https://learn.microsoft.com/en-us/graph/api/singlevaluelegacyextendedproperty-get",
     "https://learn.microsoft.com/en-us/graph/api/singlevaluelegacyextendedproperty-post-singlevalueextendedproperties",
+    "https://learn.microsoft.com/en-us/graph/api/subscription-post-subscriptions",
     "https://learn.microsoft.com/en-us/graph/api/team-archive",
     "https://learn.microsoft.com/en-us/graph/api/team-post-installedapps",
     "https://learn.microsoft.com/en-us/graph/api/team-put-teams",
@@ -12794,16 +13488,24 @@
     "https://learn.microsoft.com/en-us/graph/whats-new-earlier",
     "https://learn.microsoft.com/en-us/graph/whats-new-overview",
     "https://learn.microsoft.com/en-us/graph/windowsupdates-concept-overview",
+    "https://learn.microsoft.com/en-us/intune/app-management/configuration/configure-company-portal",
     "https://learn.microsoft.com/en-us/intune/app-management/protection/overview",
+    "https://learn.microsoft.com/en-us/intune/app-management/ref-protected-apps",
     "https://learn.microsoft.com/en-us/intune/copilot/",
+    "https://learn.microsoft.com/en-us/intune/device-configuration/settings-catalog/",
     "https://learn.microsoft.com/en-us/intune/device-enrollment/guide",
+    "https://learn.microsoft.com/en-us/intune/device-security/compliance/overview",
     "https://learn.microsoft.com/en-us/intune/device-security/conditional-access-integration/overview",
+    "https://learn.microsoft.com/en-us/intune/device-security/security-baselines/configure-baselines",
+    "https://learn.microsoft.com/en-us/intune/device-updates/android/manage-fota",
     "https://learn.microsoft.com/en-us/intune/fundamentals/account-sign-up",
     "https://learn.microsoft.com/en-us/intune/fundamentals/advanced-capabilities",
     "https://learn.microsoft.com/en-us/intune/fundamentals/architecture",
     "https://learn.microsoft.com/en-us/intune/fundamentals/core-concepts",
     "https://learn.microsoft.com/en-us/intune/fundamentals/free-trial-sign-up",
     "https://learn.microsoft.com/en-us/intune/fundamentals/licensing",
+    "https://learn.microsoft.com/en-us/intune/fundamentals/ref-supported-platforms",
+    "https://learn.microsoft.com/en-us/intune/fundamentals/try-overview",
     "https://learn.microsoft.com/en-us/intune/fundamentals/tutorial-admin-center-walkthrough",
     "https://learn.microsoft.com/en-us/intune/fundamentals/what-is-intune",
     "https://learn.microsoft.com/en-us/intune/fundamentals/zero-trust",
@@ -12817,6 +13519,7 @@
     "https://learn.microsoft.com/en-us/lifecycle/faq/internet-explorer-microsoft-edge",
     "https://learn.microsoft.com/en-us/lifecycle/policies/modern",
     "https://learn.microsoft.com/en-us/lifecycle/products/",
+    "https://learn.microsoft.com/en-us/mem/configmgr/core/plan-design/security/enable-tls-1-2-client",
     "https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/active-users-ww",
@@ -13071,8 +13774,10 @@
     "https://learn.microsoft.com/en-us/microsoftteams/using-admin-roles",
     "https://learn.microsoft.com/en-us/office/",
     "https://learn.microsoft.com/en-us/office/troubleshoot/",
+    "https://learn.microsoft.com/en-us/office365/enterprise/office-365-client-support-conditional-access",
     "https://learn.microsoft.com/en-us/office365/servicedescriptions/exchange-online-service-description/exchange-online-limits",
     "https://learn.microsoft.com/en-us/office365/servicedescriptions/exchange-online-service-description/exchange-online-service-description",
+    "https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/microsoft-365-education",
     "https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-service-descriptions-technet-library",
     "https://learn.microsoft.com/en-us/power-automate",
     "https://learn.microsoft.com/en-us/power-bi",
@@ -13146,6 +13851,7 @@
     "https://learn.microsoft.com/en-us/security-copilot/responsible-ai-overview-security-copilot",
     "https://learn.microsoft.com/en-us/security-exposure-management",
     "https://learn.microsoft.com/en-us/security/benchmark/azure/baselines/defender-for-identity-security-baseline",
+    "https://learn.microsoft.com/en-us/security/engineering/solving-tls1-problem",
     "https://learn.microsoft.com/en-us/security/zero-trust/assessment/overview",
     "https://learn.microsoft.com/en-us/security/zero-trust/implement-overview",
     "https://learn.microsoft.com/en-us/security/zero-trust/security-adoption-business-scenarios-overview",
@@ -13196,574 +13902,6 @@
     "https://learn.microsoft.com/en-us/windows/win32/wer/windows-error-reporting"
   ],
   "queue": [
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-mfa-howitworks",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/concept-identity-secure-score",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/authentication/overview-authentication",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-howitworks",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/fundamentals/custom-security-attributes-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/id-protection/id-protection-dashboard",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/id-protection/howto-identity-protection-investigate-risk",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/id-protection/concept-workload-identity-risk",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/id-governance/governance-dashboard",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/id-governance/access-reviews-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/id-governance/what-are-lifecycle-workflows",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/id-governance/lifecycle-workflow-extensibility",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/verified-id/verifiable-credentials-configure-tenant-quick",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/concept-traffic-dashboard",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/concept-clients",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/concept-traffic-forwarding",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/concept-remote-network-connectivity",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/concept-global-secure-access-logs-monitoring",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-create-delete-users",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-manage-groups",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/custom-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/what-is-application-management",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/concept-identity-secure-score",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-mfa-howitworks",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-howitworks",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-create-delete-users",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-manage-groups",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/custom-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/concept-identity-secure-score",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/identity-network-access-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-find-tenant",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/fundamentals/create-new-tenant",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/group",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/profilephoto",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/user-list-directreports",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/driveitem-list-children",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/identityset",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/driveitem",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/calendar-get",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/user-findmeetingtimes",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/subscription-post-subscriptions",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/event-delta",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/user-update-mailboxsettings",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/workbookchart",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/planneruser-list-tasks",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/reportroot-getoffice365groupsactivitycounts",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/plannergroup-list-plans",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/plannerassignments",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/group-post-conversations",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/group-post-groups",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/notebook-get",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/section-post-pages",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/versioning-and-support",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/users",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/groups-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/applications-api-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/agentid-platform-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/administrativeunit",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/bitlockerrecoverykey",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/custom-security-attributes-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/entrarecoveryservices-backup-recovery-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/directory-deleteditems-get",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/directory-deleteditems-list",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/directory-deleteditems-delete",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/directory-deleteditems-restore",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/directory-deleteditems-getuserownedobjects",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/device",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/devicetemplate",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/devicelocalcredentialinfo",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/directoryobject",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/directoryrole",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/directoryroletemplate",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/rolemanagement",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/privilegedidentitymanagementv3-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/privilegedidentitymanagement-for-groups-api-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/directorysetting",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/directorysettingtemplate",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/groupsetting",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/groupsettingtemplate",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/group-directory-settings",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/domain",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/externaluserprofile",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/externaluserprofile",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/featurerolloutpolicy",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/companysubscription",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/subscribedsku",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/mobileappmanagementpolicy",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/mobiledevicemanagementpolicy",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/onpremisesdirectorysynchronization",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/onpremisessyncbehavior",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/organization",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/organizationsettings",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/orgcontact",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/tenantinformation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/approleassignment",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/authenticationeventlistener",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/authenticationmethods-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/authenticationmethodspolicies-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/authenticationstrengths-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/external-id/customers/concept-supported-features-customers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/authentication-vs-authorization",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/fundamentals/users-default-permissions",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/concept-understand-roles",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-sync-whatis",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/authentication-vs-authorization",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/access-tokens",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/intune/fundamentals/zero-trust",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/intune-concept-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/intune/fundamentals/core-concepts",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/intune/fundamentals/tutorial-admin-center-walkthrough",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/intune/device-enrollment/guide",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/intune/app-management/protection/overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/intune/app-management/protection/overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/intune/device-security/security-baselines/configure-baselines",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/intune/device-configuration/settings-catalog/",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/intune/device-security/compliance/overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/intune/device-security/conditional-access-integration/overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/intune-deviceconfig-devicecomplianceactionitem",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/intune/fundamentals/architecture",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/intune/fundamentals/free-trial-sign-up",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/intune/fundamentals/ref-supported-platforms",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/intune/app-management/ref-protected-apps",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/microsoft-365-education",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/office365/enterprise/office-365-client-support-conditional-access",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/intune/device-updates/android/manage-fota",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/copilot/security/microsoft-security-copilot",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/intune/fundamentals/try-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/intune/app-management/configuration/configure-company-portal",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/intune/fundamentals/ref-supported-platforms",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/security/engineering/solving-tls1-problem",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/security/engineering/solving-tls1-problem",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/mem/configmgr/core/plan-design/security/enable-tls-1-2-client",
-      "depth": 2
-    },
     {
       "url": "https://learn.microsoft.com/en-us/azure/storage/common/transport-layer-security-configure-client-version",
       "depth": 2
@@ -23195,11 +23333,579 @@
     {
       "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview",
       "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/security/defender/microsoft-secure-score",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-mfa-authenticator-lite",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-certificate-based-authentication",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-authentication-external-method-manage",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/conditions-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/saml-claims-customization",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/id-protection/concept-risk-detection-types",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/users/domains-manage",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/users/domains-manage",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-customize-branding",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/verified-id/verifiable-credentials-configure-issuer",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/verified-id/verifiable-credentials-configure-verifier",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-access-audit-logs",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/reference-windows-client-release-history",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-manage-users-groups-assignment",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/concept-microsoft-traffic-profile",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/concept-microsoft-traffic-profile",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-create-traffic-forwarding-profile",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-delete-traffic-forwarding-profile",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-access-audit-logs",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/active-directory/reports-monitoring/howto-access-activity-logs",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/compliance/gdpr-dsr-windows",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/users/",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/powershell/module/az.accounts/get-aztenant",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/cli/azure/install-azure-cli",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/cli/azure/reference-index",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/cli/azure/account",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/cli/azure/account/tenant",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/fundamentals/create-new-tenant",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/fundamentals/how-subscriptions-associated-directory",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/partner-center/find-ids-and-domain-names",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/cost-management-billing/manage/understand-ea-roles",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/cost-management-billing/manage/view-all-accounts",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/cost-management-billing/manage/view-all-accounts",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/cost-management-billing/manage/view-all-accounts",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/id-governance/tenant-governance/governance-relationships",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/cost-management-billing/manage/understand-ea-roles",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/identity",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/identity",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/identity",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/identity",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/identity",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/outlook-get-shared-events-calendars",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/change-notifications-with-resource-data",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/api/ai-services/interaction-export/resources/aiinteraction",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/api/ai-services/interaction-export/resources/aiinteraction",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/chart-list",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/chart-get",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/chart-update",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/reportroot-authorization",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/plannerplan",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/planner-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/plannerassignment",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/page",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/page",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/application-post-applications",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/application-update",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/application-delete",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/application-addpassword",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/application-removepassword",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/federatedidentitycredentials-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/application-addkey",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/agent-id/identity-professional/microsoft-entra-agent-identities-for-ai-agents",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/bitlocker-list-recoverykeys",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/bitlockerrecoverykey-get",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/custom-security-attributes-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/backup/overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/device-list",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/device-post-devices",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/device-get",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/device-update",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/device-delete",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/device-provision",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/template-list-devicetemplates",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/directory-list-devicelocalcredentials",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/unifiedroledefinition",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/directoryroletemplate-get",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/directoryroletemplate-list",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/active-directory/roles/custom-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/rest/api/authorization/privileged-role-eligibility-rest-sample",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/privilegedaccessgroup-post-assignmentschedulerequests",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/directorysettingtemplate",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/groupsettingtemplate",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/groupsettingtemplate",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/groupsettingtemplate-get",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/domain-post-domains",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/domain-list-verificationdnsrecords",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/pendingexternaluserprofile",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/featurerolloutpolicies-list",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/featurerolloutpolicy-get",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/group-assignlicense",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/group-assignlicense",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/mobilitymanagementpolicy",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/mobilitymanagementpolicy",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/orgcontact",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/hybrid/concept-source-of-authority-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/peopleadminsettings",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/entity",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/orgcontact-delta",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/tenantrelationship-findtenantinformationbydomainname",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/ontokenissuancestartlistener",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/oninteractiveauthflowstartlistener",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/emailauthenticationmethodconfiguration",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/conditionalaccessgrantcontrols",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-manage-admin-accounts",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/identity-videos",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/m365-workload-docs",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/rbac-and-directory-admin-roles",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/device-sync",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/reference-app-manifest",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/configurable-token-lifetimes",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/intune/device-security/security-baselines/overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/lifecycle/announcements/windows-10-end-of-support",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows/security/operating-system-security/device-management/windows-security-configuration-framework/security-compliance-toolkit-10",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/intune/fundamentals/role-based-access-control/create-custom-role",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/intune/fundamentals/role-based-access-control/ref-built-in-roles",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/intune/fundamentals/role-based-access-control/overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/intune/device-configuration/settings-insight",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/intune/device-security/security-baselines/monitor-baselines",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/intune/device-configuration/settings-catalog/ref-android-settings",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/intune/app-management/configuration/configure-company-portal",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/intune-deviceconfig-devicecomplianceactionitem-list",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/intune-deviceconfig-devicecomplianceactionitem-get",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows/client-management/mdm/configuration-service-provider-reference",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/intune/fundamentals/aosp-supported-devices",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/intune/solutions/windows-holographic",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/intune/developer/app-sdk/",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/office-365-education",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/enterprise/deploy-identity-solution-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/enterprise/deploy-identity-solution-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/enterprise/deploy-identity-solution-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/intune/device-updates/android/setup-samsung-knox",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/copilot/security/experiences-security-copilot",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/benefits-microsoft-endpoint-manager/",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/intune/configmgr/comanage/company-portal",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/intune/fundamentals/role-based-access-control/ref-built-in-roles",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/intune/device-enrollment/apple/setup-automated-ios",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-edge/web-platform/site-impacting-changes",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/dotnet/framework/network-programming/tls",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/intune/configmgr/core/plan-design/security/enable-tls-1-2-client",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/intune/configmgr/core/plan-design/security/enable-tls-1-2-client",
+      "depth": 3
     }
   ],
   "last_batch": {
     "attempted": 36,
-    "documents_total": 1326,
+    "documents_total": 1398,
     "queued": 2500,
     "failures": []
   }
