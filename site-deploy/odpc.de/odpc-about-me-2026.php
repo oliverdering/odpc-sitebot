@@ -2,7 +2,7 @@
 /**
  * Plugin Name: ODPC About Me 2026
  * Description: Chronological profile with live HTML CV and original certificate links; voice dock untouched.
- * Version: 1.3.0
+ * Version: 1.4.0
  */
 if (!defined('ABSPATH')) { exit; }
 function odpc_about_2026_target() {
@@ -85,13 +85,26 @@ add_action('wp_footer', function () {
 }, 99);
 
 /**
- * Preserve the original hardware-to-AI article and enhance its missing team imagery.
- * Only post 2970; no changes to global voice dock or the homepage.
+ * Complete ODPC digital team presentation on the hardware-to-AI article.
+ * Keeps original service descriptions and global voice controls intact.
  */
 add_filter('the_content', function ($content) {
     if (is_admin() || !is_singular('post') || (int)get_queried_object_id() !== 2970) return $content;
-    if (strpos($content, 'odpc-team-member') === false || strpos($content, 'odpc-team-photo-2026') !== false) return $content;
-    $photo = '<figure id="odpc-team-photo-2026" class="odpc-team-photo" style="margin:0 0 26px;border-radius:16px;overflow:hidden;border:1px solid #54708a;background:#182b3e"><img src="https://odpc.de/wp-content/uploads/2026/11/odpc_team_hero.webp" alt="Oliver Dering und sein digitales KI-Team" loading="lazy" decoding="async" style="display:block;width:100%;height:auto;max-height:480px;object-fit:contain"><figcaption style="padding:12px 17px;color:#eef5fc;font-size:14px">ODPC · Oliver Dering und sein digitales KI-Team</figcaption></figure>';
-    $content = preg_replace('/(<div\\s+class="odpc-team"\\s*>)/', $photo . '$1', $content, 1);
+    if (strpos($content, 'odpc-team-member') === false || strpos($content, 'odpc-complete-team-2026') !== false) return $content;
+    $team = '<section id="odpc-complete-team-2026" aria-label="ODPC digitales Team" style="margin:0 0 26px;padding:0">'
+      . '<figure style="margin:0 0 24px;border-radius:16px;overflow:hidden;background:#182b3e"><img src="https://odpc.de/wp-content/uploads/2026/11/odpc_team_hero.webp" alt="Oliver Dering mit dem erweiterten digitalen ODPC-Team" loading="lazy" style="display:block;width:100%;height:auto;max-height:520px;object-fit:contain"><figcaption style="padding:12px 18px;color:#fff;font-size:14px">Oliver Dering und das digitale ODPC-Team</figcaption></figure>'
+      . '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:14px">'
+      . '<article style="padding:20px;border:1px solid #c9d8e6;border-radius:14px;background:#fff"><h3>Oliver Dering</h3><p>Gründer, IT-Consulting, Strategie und Projektverantwortung.</p></article>'
+      . '<article style="padding:20px;border:1px solid #c9d8e6;border-radius:14px;background:#fff"><h3>Oxana · ChatGPT</h3><p>Projektkoordination, Kommunikation und KI-Integration.</p></article>'
+      . '<article style="padding:20px;border:1px solid #c9d8e6;border-radius:14px;background:#fff"><h3>Claire · Gemini</h3><p>Recherche, Analyse und fachliche Gegenprüfung.</p></article>'
+      . '<article style="padding:20px;border:1px solid #c9d8e6;border-radius:14px;background:#fff"><h3>Lee · DeepSeek</h3><p>Technische Logik, Code und strukturierte Umsetzung.</p></article>'
+      . '<article style="padding:20px;border:1px solid #c9d8e6;border-radius:14px;background:#fff"><h3>Claude</h3><p>Softwarearchitektur, Engineering und Qualitätssicherung.</p></article>'
+      . '<article style="padding:20px;border:1px solid #c9d8e6;border-radius:14px;background:#fff"><h3>Microsoft Copilot</h3><p>Microsoft 365, Enterprise-Workflows und Administration.</p></article>'
+      . '<article style="padding:20px;border:1px solid #c9d8e6;border-radius:14px;background:#fff"><h3>GitHub · DevOps</h3><p>Versionierung, Automatisierung und Deployments; technische Funktion, keine Person.</p></article>'
+      . '</div><p style="margin:16px 0;color:#43546a;font-size:14px">Die dargestellten KI-Rollen sind digitale Werkzeuge und Assistenzfunktionen. Die Verantwortung für Kundenprojekte liegt bei Oliver Dering.</p></section>';
+    $content = preg_replace('/<div\\s+class="odpc-team"\\s*>.*?<\\/div>\\s*<div\\s+class="odpc-transparency">/s', $team . '<div class="odpc-transparency">', $content, 1, $count);
+    if (!$count) {
+        $content = preg_replace('/(<div\\s+class="odpc-team"\\s*>)/', $team . '$1', $content, 1);
+    }
     return $content;
 }, 80);
