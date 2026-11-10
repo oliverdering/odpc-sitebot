@@ -74,6 +74,28 @@ def main():
                         print("Public smoke test temporarily unreachable:",type(exc).__name__,str(exc),flush=True)
                 if reachable and not good:
                     raise RuntimeError("Public site reachable but required markup missing")
+                # WP Fastest Cache can serve cached HTML before WordPress/MU plugins run.
+                # Its own purge routine renames cache/all into cache/tmpWpfc; perform
+                # the same atomic rotation over SFTP, without deleting any files.
+                cache_base=ROOT+"/wp-content/cache"
+                cache_all=cache_base+"/all"
+                cache_tmp=cache_base+"/tmpWpfc"
+                try:
+                    old=sftp.stat(cache_all)
+                    if not stat.S_ISDIR(old.st_mode):
+                        raise RuntimeError("WP Fastest Cache 'all' path is not a directory")
+                    try:
+                        if not stat.S_ISDIR(sftp.stat(cache_tmp).st_mode):
+                            raise RuntimeError("Unexpected WPFC tmp directory type")
+                    except FileNotFoundError:
+                        sftp.mkdir(cache_tmp)
+                    target=cache_tmp+"/"+str(int(time.time()))
+                    sftp.rename(cache_all,target)
+                    print("PASS: rotated WP Fastest Cache HTML directory atomically; old cache retained for WPFC cleanup",flush=True)
+                except FileNotFoundError:
+                    print("INFO: WP Fastest Cache HTML directory absent; no rotation necessary",flush=True)
+                except Exception as cache_exc:
+                    print("WARNING: WP Fastest Cache HTML rotation failed:",str(cache_exc),flush=True)
                 if good:
                     print("PASS: ODPC bridge publicly visible",flush=True)
                 else:
