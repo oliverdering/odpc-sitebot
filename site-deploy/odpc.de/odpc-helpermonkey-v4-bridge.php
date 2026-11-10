@@ -43,12 +43,12 @@ add_action('wp_footer',function(){
  if(is_admin())return; ?>
  <style id="odpc-reader-css">
  #odpc-reader{position:fixed;left:12px;bottom:132px;z-index:9995;background:#182c39;color:#fff;border:1px solid #8ba6b4;border-radius:12px;padding:8px;box-shadow:0 4px 18px #0005;max-width:min(370px,calc(100vw - 24px));font:13px/1.4 system-ui,sans-serif}
- #odpc-reader select{max-width:150px;min-height:32px;margin:2px;padding:4px;background:#fff;color:#142f29;border-radius:6px}#odpc-reader label{display:inline-flex;align-items:center;gap:3px;font-size:12px}#odpc-reader button{background:#edf6f3;color:#142f29;border:0;border-radius:7px;padding:7px 9px;margin:2px;cursor:pointer;font:600 12px system-ui,sans-serif}
+ #odpc-reader select{display:none!important}#odpc-reader label{display:none!important}#odpc-reader select{max-width:150px;min-height:32px;margin:2px;padding:4px;background:#fff;color:#142f29;border-radius:6px}#odpc-reader label{display:inline-flex;align-items:center;gap:3px;font-size:12px}#odpc-reader button{background:#edf6f3;color:#142f29;border:0;border-radius:7px;padding:7px 9px;margin:2px;cursor:pointer;font:600 12px system-ui,sans-serif}
  #odpc-reader button:focus-visible{outline:2px solid #f0b854}
  #odpc-reader-status{font-size:11px;display:block;margin:3px}
  @media(max-width:600px){#odpc-reader{left:9px;bottom:125px;padding:5px}}
  </style>
- <div id="odpc-reader" role="group" aria-label="Artikel vorlesen"><label>Sprache <select id="odpc-reader-language" aria-label="Vorlesesprache"><option value="de-DE">Deutsch</option><option value="en-US">English</option><option value="fr-FR">Français</option><option value="nl-NL">Nederlands</option><option value="es-ES">Español</option><option value="tr-TR">Türkçe</option><option value="ru-RU">Русский</option></select></label><label>Stimme <select id="odpc-reader-voice" aria-label="Systemstimme"><option value="">Automatisch</option></select></label><button type="button" id="odpc-reader-play">▶ Vorlesen</button><button type="button" id="odpc-reader-test">🔊 Audiotest</button><button type="button" id="odpc-reader-pause">⏸ Pause</button><button type="button" id="odpc-reader-stop">■ Stopp</button><span id="odpc-reader-status" role="status" aria-live="polite"></span></div>
+ <div id="odpc-reader" role="group" aria-label="Artikel vorlesen"><label>Sprache <select id="odpc-reader-language" aria-label="Vorlesesprache"><option value="de-DE">Deutsch</option><option value="en-US">English</option><option value="fr-FR">Français</option><option value="nl-NL">Nederlands</option><option value="es-ES">Español</option><option value="tr-TR">Türkçe</option><option value="ru-RU">Русский</option></select></label><label>Stimme <select id="odpc-reader-voice" aria-label="Systemstimme"><option value="">Automatisch</option></select></label><button type="button" id="odpc-reader-play">▶ Vorlesen</button><button type="button" id="odpc-reader-test">🔊 Audiotest</button><button type="button" id="odpc-reader-mic">🎤 Spracheingabe</button><button type="button" id="odpc-reader-diagnostic">🩺 Diagnose</button><button type="button" id="odpc-reader-pause">⏸ Pause</button><button type="button" id="odpc-reader-stop">■ Stopp</button><span id="odpc-reader-status" role="status" aria-live="polite"></span></div>
  <script id="odpc-reader-js">
  (function(){
  'use strict';
@@ -78,7 +78,23 @@ add_action('wp_footer',function(){
 }
  play.addEventListener('click',function(){if(!synth){status.textContent='Vorlesen in diesem Browser nicht unterstützt';return}if(paused){synth.resume();paused=false;status.textContent='Fortgesetzt';return}cancel();var s=text();if(!s){status.textContent='Kein Artikeltext gefunden';return}if(!window.SpeechSynthesisUtterance){status.textContent='Sprachausgabe auf diesem Gerät nicht verfügbar';return}queue=split(s);index=0;var t=token;next(t)});
  pause.addEventListener('click',function(){if(!synth)return;if(synth.paused){synth.resume();paused=false;status.textContent='Fortgesetzt'}else if(synth.speaking){synth.pause();paused=true;status.textContent='Pausiert'}});
- document.getElementById('odpc-reader-test').addEventListener('click',function(){if(!synth||!window.SpeechSynthesisUtterance){status.textContent='Text-zu-Sprache nicht unterstützt';return}cancel();queue=['Dies ist ein Audiotest von ODPC. Wenn du mich hörst, funktioniert die Sprachausgabe.'];index=0;next(token)});
+ document.getElementById('odpc-reader-test').addEventListener('click',function(){if(!synth||!window.SpeechSynthesisUtterance){status.textContent='Text-zu-Sprache nicht unterstützt';return}cancel();queue=[({'de-DE':'Dies ist ein Audiotest von ODPC. Kannst du mich hören?','en-US':'This is an ODPC audio test. Can you hear me?','fr-FR':'Ceci est un test audio ODPC. Vous pouvez me comprendre?','nl-NL':'Dit is een audiotest van ODPC. Kun je mij horen?','es-ES':'Esta es una prueba de audio de ODPC. ¿Puedes oírme?','tr-TR':'Bu bir ODPC ses testidir. Beni duyabiliyor musunuz?','ru-RU':'Это проверка звука ODPC. Вы меня слышите?'})[locale()]||'Dies ist ein Audiotest von ODPC.'];index=0;next(token)});
+ 
+ function diagnose(){var sr=window.SpeechRecognition||window.webkitSpeechRecognition;var v=synth&&synth.getVoices?synth.getVoices():[];status.textContent='Audio: '+(synth?'Browser-TTS vorhanden':'TTS nicht verfügbar')+'; Stimmen: '+v.length+'; Mikrofon-API: '+(sr?'vorhanden':'nicht verfügbar')+'; HTTPS: '+(location.protocol==='https:'?'ja':'nein')+'. Lautstärke, Stummschaltung und tatsächlichen Ton kann die Webseite nicht auslesen. Bitte Medienlautstärke prüfen und Audiotest drücken.'}
+ document.getElementById('odpc-reader-diagnostic').addEventListener('click',diagnose);
+ var micButton=document.getElementById('odpc-reader-mic'),recognition=null;
+ micButton.addEventListener('click',function(){
+  var SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+  if(!SR){status.textContent='Spracheingabe in diesem Browser nicht verfügbar. Bitte Chrome oder einen unterstützten Browser verwenden.';return}
+  if(recognition){try{recognition.stop()}catch(e){}recognition=null;micButton.textContent='🎤 Spracheingabe';return}
+  try{
+   recognition=new SR();recognition.lang=locale();recognition.interimResults=false;recognition.maxAlternatives=1;
+   recognition.onresult=function(e){var phrase=e.results[0][0].transcript;status.textContent='Erkannt: '+phrase;var q=phrase.toLowerCase();if(/^(vorlesen|lies vor|read aloud|start reading)/.test(q)){play.click()}else if(/^(stopp|stop|halt)/.test(q)){stop.click()}else if(/^(pause|pausieren)/.test(q)){pause.click()}else if(/^(audiotest|audio test|test)/.test(q)){document.getElementById('odpc-reader-test').click()}else{status.textContent='Erkannt: '+phrase+' – Befehle: Vorlesen, Audiotest, Pause, Stopp.'}};
+   recognition.onerror=function(e){status.textContent='Mikrofonfehler: '+e.error+'. Bei not-allowed die Mikrofonberechtigung in den Browser-Einstellungen prüfen.'};
+   recognition.onend=function(){recognition=null;micButton.textContent='🎤 Spracheingabe'};
+   recognition.start();micButton.textContent='■ Mikrofon stoppen';status.textContent='Mikrofon gestartet – Browserberechtigung bei Nachfrage erlauben.';
+  }catch(e){recognition=null;micButton.textContent='🎤 Spracheingabe';status.textContent='Mikrofonstart fehlgeschlagen: '+e.message}
+ });
  stop.addEventListener('click',cancel);document.addEventListener('odpc:languagechange',function(){cancel();languageSelect.value=({de:'de-DE',en:'en-US',fr:'fr-FR',nl:'nl-NL',es:'es-ES',tr:'tr-TR',ru:'ru-RU'})[lang()]||'de-DE';refreshVoices()});window.addEventListener('pagehide',cancel);
  })();
  </script>
