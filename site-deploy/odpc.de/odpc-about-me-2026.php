@@ -103,6 +103,6 @@ add_filter('the_content', function ($content) {
       . '<article style="padding:20px;border:1px solid #c9d8e6;border-radius:14px;background:#fff"><h3>GitHub · DevOps</h3><p>Versionierung, Automatisierung und Deployments; technische Funktion, keine Person.</p></article>'
       . '</div><p style="margin:16px 0;color:#43546a;font-size:14px">Die dargestellten KI-Rollen sind digitale Werkzeuge und Assistenzfunktionen. Die Verantwortung für Kundenprojekte liegt bei Oliver Dering.</p></section>';
     // Keep legacy source markup intact, but display only the complete roster.
-    $content = preg_replace('/(<div\\s+class="odpc-team"\\s*>)/', $team . '<style>#odpc-complete-team-2026 + .odpc-team{display:none!important}</style>$1', $content, 1);
+    $content = preg_replace('/(<div\\s+class="odpc-team"\\s*>)/', $team . '<style>#odpc-complete-team-2026 ~ .odpc-team{display:none!important}</style>$1', $content, 1);
     return $content;
 }, 80);
