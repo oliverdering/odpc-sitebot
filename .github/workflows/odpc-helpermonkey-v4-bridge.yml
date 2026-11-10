@@ -114,8 +114,12 @@ jobs:
           from playwright.sync_api import sync_playwright
           results=[]
           urls=[
-            ('homepage','https://odpc.de/?odpc_mobile_qa='+str(int(time.time()))),
-            ('article','https://odpc.de/prompt-engineering-digitale-mitarbeiter-ki-sinnvoll-nutzen/?odpc_mobile_qa='+str(int(time.time())))
+            ('homepage-canonical','https://odpc.de/'),
+            ('homepage-uncached','https://odpc.de/?odpc_mobile_qa='+str(int(time.time()))),
+            ('article','https://odpc.de/prompt-engineering-digitale-mitarbeiter-ki-sinnvoll-nutzen/?odpc_mobile_qa='+str(int(time.time()))),
+            ('helper-monkey','https://ai.odpc.de/'),
+            ('drol','https://drol.odpc.de/'),
+            ('tante-lenchen','https://tante-lenchen.odpc.de/')
           ]
           with sync_playwright() as p:
               browser=p.chromium.launch(headless=True,args=['--no-sandbox'])
@@ -136,6 +140,7 @@ jobs:
                       }"""))
                       d=item.get('dock');items=[item.get(k) for k in ('flag','play','stop','whatsapp')]
                       item['pass']=bool(d and d['visible'] and all(x and x['visible'] and x['left']>=d['left']-4 and x['right']<=d['right']+4 and x['top']>=d['top']-8 and x['bottom']<=d['bottom']+8 for x in items) and item.get('whatsapp_href'))
+                      item['reason']='all required controls inside dock' if item['pass'] else 'missing dock/control, wrong position, or WhatsApp link'
                   except Exception as e:
                       item['pass']=False;item['error']=str(e)
                   finally:
