@@ -27,7 +27,7 @@ jobs:
         run: |
           php -l site-deploy/odpc.de/odpc-about-me-2026.php
           python3 -m py_compile scripts/deploy_odpc_about_2026.py
-          grep -q "return \$content . \$html" site-deploy/odpc.de/odpc-about-me-2026.php
+          grep -Fq 'return $html;' site-deploy/odpc.de/odpc-about-me-2026.php
           grep -q "is_page('about-me')" site-deploy/odpc.de/odpc-about-me-2026.php
           ! grep -q 'odpc-utility-dock' site-deploy/odpc.de/odpc-about-me-2026.php
       - name: Install SFTP
