@@ -1,0 +1,38 @@
+name: AdminMonkey Verified Certification Registry
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'adminmonkey/academy/verified_certification_registry_2026.json'
+      - '.github/workflows/adminmonkey-certification-registry.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify-registry:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate verified registry and preserve historical paths
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          root=Path('adminmonkey/academy')
+          registry=json.loads((root/'verified_certification_registry_2026.json').read_text())
+          candidates=json.loads((root/'certification_candidates_2026.json').read_text())
+          assert registry['schema_version']==1
+          certs=registry['certifications']
+          assert len(certs)>=2
+          assert len({c['id'] for c in certs})==len(certs)
+          assert all(c['official_url'].startswith('https://learn.microsoft.com/en-us/credentials/certifications/') for c in certs)
+          assert all(c['competency_verified'] is False for c in certs)
+          assert all(c['exam_codes'] for c in certs)
+          assert any(c['exam_codes']==['MS-102'] and c['retirement_date']=='2026-11-30' for c in certs)
+          assert any('AB-650' in c['exam_codes'] for c in certs)
+          assert len(candidates['exam_candidates'])==42
+          progress=json.loads(Path('adminmonkey/knowledge/academy_progress.json').read_text())
+          assert {'MS-102','AZ-104','SC-300','MD-102'}.issubset({t['track'] for t in progress['tracks']})
+          print('PASS: verified registry seed; candidate inventory separate; legacy Academy tracks preserved')
+          PY
