@@ -1,26 +1,26 @@
 {
-  "generated_at": "2026-11-10T07:30:22.701787+00:00",
+  "generated_at": "2026-11-10T10:03:44.489615+00:00",
   "product": "AdminMonkey Academy",
   "certification_issuer": "ODPC",
   "official_microsoft_certification": false,
   "knowledge": {
-    "documents_collected": 1182,
-    "manufacturer_verified": 1182,
+    "documents_collected": 1218,
+    "manufacturer_verified": 1218,
     "review": {
       "unreviewed": 0,
-      "approved": 1182,
+      "approved": 1218,
       "rejected": 0
     },
     "last_batch": {
       "attempted": 36,
-      "documents_total": 1182,
+      "documents_total": 1218,
       "queued": 2500,
       "failures": []
     }
   },
   "retrieval_staging": {
-    "chunked_documents": 1176,
-    "chunks_prepared": 5761,
+    "chunked_documents": 1212,
+    "chunks_prepared": 5963,
     "retrieval_quality_verified": false,
     "agent_answers_verified": 0,
     "note": "Ephemeral, provenance-checked chunk preparation; no searchable production index yet."
@@ -30,7 +30,7 @@
       "track": "MS-102",
       "manufacturer_verified_sources": 252,
       "knowledge_coverage": "source_count_only_not_learning_objective_coverage",
-      "practice_scenarios_available": 1,
+      "practice_scenarios_available": 2,
       "agent_answers_evaluated": 0,
       "verified_passes": 0,
       "screening_passes": 0,
@@ -39,9 +39,9 @@
     },
     {
       "track": "AZ-104",
-      "manufacturer_verified_sources": 48,
+      "manufacturer_verified_sources": 50,
       "knowledge_coverage": "source_count_only_not_learning_objective_coverage",
-      "practice_scenarios_available": 1,
+      "practice_scenarios_available": 2,
       "agent_answers_evaluated": 0,
       "verified_passes": 0,
       "screening_passes": 0,
@@ -50,9 +50,9 @@
     },
     {
       "track": "SC-300",
-      "manufacturer_verified_sources": 177,
+      "manufacturer_verified_sources": 211,
       "knowledge_coverage": "source_count_only_not_learning_objective_coverage",
-      "practice_scenarios_available": 1,
+      "practice_scenarios_available": 2,
       "agent_answers_evaluated": 0,
       "verified_passes": 0,
       "screening_passes": 0,
@@ -63,7 +63,7 @@
       "track": "MD-102",
       "manufacturer_verified_sources": 15,
       "knowledge_coverage": "source_count_only_not_learning_objective_coverage",
-      "practice_scenarios_available": 1,
+      "practice_scenarios_available": 2,
       "agent_answers_evaluated": 0,
       "verified_passes": 0,
       "screening_passes": 0,
