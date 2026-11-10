@@ -21,7 +21,7 @@ def smoke():
 def main():
     password=os.environ.get("ODPC_SFTP_PASSWORD","")
     if not password:raise RuntimeError("Missing SFTP deployment secret")
-    if not SOURCE.is_file() or SOURCE.stat().st_size>30000:raise RuntimeError("Source not present or too large")
+    if not SOURCE.is_file() or SOURCE.stat().st_size>100000:raise RuntimeError("Source not present or too large")
     tr=paramiko.Transport((HOST,22))
     tr.start_client(timeout=20)
     try:
@@ -44,7 +44,7 @@ def main():
             existed=False
             try:
                 st=sftp.lstat(remote)
-                if not stat.S_ISREG(st.st_mode) or st.st_size>30000:raise RuntimeError("Unsafe existing target")
+                if not stat.S_ISREG(st.st_mode) or st.st_size>100000:raise RuntimeError("Unsafe existing target")
                 sftp.get(remote,str(previous))
                 existed=True
             except FileNotFoundError:pass
