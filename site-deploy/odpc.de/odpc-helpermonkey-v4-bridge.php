@@ -72,7 +72,7 @@ add_action('wp_footer',function(){if(is_admin())return; ?>
 (function(){
 'use strict';
 var langs=['de','en','nl','es','fr','ru','tr'],key='odpc_global_language_v1';
-function get(){var m=document.cookie.match(/(?:^|;\\s*)odpc_language=([^;]+)/);var v=m?decodeURIComponent(m[1]):null;try{v=v||localStorage.getItem(key)||'de'}catch(e){v=v||'de'}return langs.includes(v)?v:'de'}
+function get(){var m=document.cookie.match(/(?:^|;\s*)odpc_language=([^;]+)/);var v=m?decodeURIComponent(m[1]):null;try{v=v||localStorage.getItem(key)||'de'}catch(e){v=v||'de'}return langs.includes(v)?v:'de'}
 function set(v){if(!langs.includes(v))return;try{localStorage.setItem(key,v)}catch(e){}document.cookie='odpc_language='+encodeURIComponent(v)+';path=/;domain=.odpc.de;max-age=31536000;SameSite=Lax;Secure';document.dispatchEvent(new CustomEvent('odpc:languagechange',{detail:{language:v}}))}
 window.ODPCLanguage={get:get,set:set,locale:function(){return ({de:'de-DE',en:'en-US',nl:'nl-NL',es:'es-ES',fr:'fr-FR',ru:'ru-RU',tr:'tr-TR'})[get()]}};
 var select=document.querySelector('.goog-te-combo');
