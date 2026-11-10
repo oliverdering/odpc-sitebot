@@ -1,6 +1,6 @@
 name: AdminMonkey Master Cycle (5 min)
 # Single scheduled owner: crawl -> evidence/tests -> MariaDB -> synchronized snapshots.
-# Operator-requested immediate master-cycle verification on 2026-11-09; no runtime behavior change.
+# Operator-requested immediate verification after chunk-normalization fix on 2026-11-10; no runtime behavior change.
 # Monitor UI deployment remains an independent change-triggered workflow.
 on:
   push:
