@@ -1,6 +1,41 @@
 {
-  "generated_at": "2026-11-10T22:52:23.609814+00:00",
+  "generated_at": "2026-11-10T23:02:44.729995+00:00",
   "product": "AdminMonkey Academy",
+  "official_certification_benchmark": {
+    "baseline_date": "2026-01-01",
+    "official_catalog": "https://learn.microsoft.com/en-us/credentials/browse/?credential_types=certification",
+    "retirement_reference": "https://learn.microsoft.com/en-us/credentials/support/credential-retirement",
+    "coverage_status": "seed_only_not_full_catalog",
+    "scope": "All official Microsoft and GitHub certifications active at any point since baseline_date, plus subsequently introduced certifications",
+    "initial_references": [
+      {
+        "name": "Microsoft Certified: Azure Administrator Associate",
+        "exam": "AZ-104",
+        "url": "https://learn.microsoft.com/en-us/credentials/certifications/azure-administrator/"
+      },
+      {
+        "name": "Microsoft Certified: Azure Solutions Architect Expert",
+        "exam": "AZ-305",
+        "url": "https://learn.microsoft.com/en-us/credentials/certifications/azure-solutions-architect/"
+      },
+      {
+        "name": "Microsoft 365 Certified: Administrator Expert",
+        "exam": "MS-102",
+        "url": "https://learn.microsoft.com/en-us/credentials/certifications/m365-administrator-expert/",
+        "retirement_date": "2026-11-30"
+      },
+      {
+        "name": "Microsoft 365 Certified: Microsoft 365 and AI Services Administrator Associate",
+        "exam": "AB-650",
+        "url": "https://learn.microsoft.com/en-us/credentials/certifications/m365-ai-administrator-associate/"
+      },
+      {
+        "name": "Microsoft Certified: Agentic AI Business Solutions Architect Expert",
+        "exam": "AB-100",
+        "url": "https://learn.microsoft.com/en-us/credentials/certifications/agentic-ai-business-solutions-architect/"
+      }
+    ]
+  },
   "certification_issuer": "ODPC",
   "official_microsoft_certification": false,
   "knowledge": {
