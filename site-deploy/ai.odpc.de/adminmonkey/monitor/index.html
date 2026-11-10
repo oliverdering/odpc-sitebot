@@ -7,7 +7,7 @@
 <div class="grid"><section class="card"><div>Bestätigte MariaDB-Dokumentversionen</div><div class="value" id="documents">–</div><div class="muted">Importierte Versionen, keine eindeutigen Artikel oder Kompetenznachweise</div></section><section class="card"><div>URLs in Warteschlange</div><div class="value" id="queued">–</div><div class="muted">Noch nicht abgearbeitete Crawl-Ziele</div></section><section class="card"><div>MariaDB-Verbindung</div><div class="value small" id="dbstatus">Noch nicht geprüft</div><div class="muted" id="dbdetail">Letzte Workflow-Diagnose</div></section><section class="card"><div>Offene Artikelprüfungen</div><div class="value" id="unreviewed">–</div><div class="muted">Noch nicht fachlich freigegeben</div></section><section class="card"><div>Erfasste Quellen</div><div class="value" id="sources">–</div><div class="muted">Eindeutige Quellen im Wissensindex</div></section><section class="card"><div>Automatisch als Quelle freigegeben</div><div class="value" id="approved">–</div><div class="muted">Automatischer Quellenstatus, keine menschliche Fachprüfung</div></section><section class="card"><div>Letzte Inhaltsänderung</div><div class="value small" id="updated">–</div><div class="muted">Kein Beleg für jeden geplanten Cron-Lauf</div></section><section class="card"><div>Offizielle Microsoft-Zertifikate</div><div class="value" id="certs">Nicht nachgewiesen</div><div class="muted">Microsoft-Learn-Quellen sind keine Zertifizierung</div></section></div>
 <section class="card" style="margin-bottom:14px"><h2>📈 Lernwachstum</h2><p class="muted">Der Hauptbalken zeigt bestätigte MariaDB-Dokumentversionen gegenüber dem Sammelziel 1.500. Der zweite Balken zeigt die Import-Synchronisation gegenüber dem Crawler-Bestand (unterschiedliche Zähleinheiten möglich). Kein Kompetenznachweis.</p><div class="metric"><strong>Bestätigter Sammelfortschritt (MariaDB)</strong><strong id="collectionPercent">–</strong></div><div class="progress-track"><div class="progress-fill" id="collectionBar"></div></div><p class="muted small" id="collectionDetail">Lade Daten …</p><div class="metric"><strong>Import-Synchronisation (Crawler → MariaDB)</strong><strong id="importPercent">–</strong></div><div class="progress-track"><div class="progress-fill" id="importBar"></div></div><p class="muted small" id="importDetail">Noch kein bestätigter Import</p><h3>Microsoft-Zertifizierungsstandards & Prüfungsziele</h3><p class="muted small">Pro Lernpfad: Quellenbestand, verfügbare Aufgaben und tatsächlich bewertete Agentenantworten. Die 30er-Mindestwerte sind interne Arbeitsziele, keine offizielle Microsoft-Lehrplanabdeckung.</p><div id="tracks">Lade Daten …</div></section><section class="card"><h2>Quellen & Reviewstatus</h2><ul id="items"><li>Lade GitHub-Daten …</li></ul></section>
 <section class="card" style="margin-bottom:14px"><h2>📚 Microsoft Learn · Zertifizierungs- und Kurskatalog</h2><p class="muted">Microsoft-Prüfungsstandards dienen als unabhängiger Kompetenzmaßstab. Die Ergebnisse sind ODPC-interne, evidenzbasierte Bewertungen, keine von Microsoft ausgestellten Zertifikate. Bestehende Nachweise bleiben im Datensatz erhalten.</p><div id="courseCatalog">Lade Kurskatalog …</div></section>
-<section class="card" style="margin-bottom:14px"><h2>Microsoft-Prüfungsdomänen · Evidenzbasierte Abdeckung</h2><p class="muted">Offizielle Microsoft-Lernziele und Prüfungsgewichtungen. Der Lernstand wird erst nach unabhängig bewerteten Aufgaben ausgewiesen. Ohne Prüfnachweise bleibt die Kompetenzabdeckung <strong>nicht bewertet</strong> – keine erfundene Prozentzahl und keine Microsoft-Zertifizierung.</p><div id="officialDomains" aria-live="polite">Lade offizielle Prüfungsdomänen …</div></section>
+<section class="card" style="margin-bottom:14px"><h2>Microsoft-Prüfungsdomänen · Evidenzbasierte Abdeckung</h2><p class="muted">Offizielle Microsoft-Lernziele und Prüfungsgewichtungen. Der Lernstand wird erst nach unabhängig bewerteten Aufgaben ausgewiesen. Ohne Prüfnachweise bleibt die Kompetenzabdeckung <strong>nicht bewertet</strong> – keine erfundene Prozentzahl und keine Microsoft-Zertifizierung.</p><div id="officialDomains" aria-live="polite">Lade Zertifizierungsstände …</div></section>
 <section class="card" style="margin-bottom:14px"><h2>🎓 Zertifizierungs-Ausbau 2026</h2><p class="muted">Erweiterter Prüfungsrahmen aus unabhängigen Expertengutachten. Prüfungscodes sind Kandidaten, keine bestätigten Microsoft-Zertifizierungen und keine bestandenen Prüfungen. Die vier bisherigen Lernpfade bleiben unverändert.</p><div class="metric"><strong>Erfasste Prüfungscode-Kandidaten</strong><strong id="candidateCount">Lade …</strong></div><p class="muted small" id="candidateStatus">Offizielle Einzelprüfung ausstehend.</p><details><summary>Prüfungscode-Kandidaten anzeigen</summary><div id="candidateCodes" class="small" style="line-height:1.9;overflow-wrap:anywhere">Lade …</div></details><p class="small"><a href="https://learn.microsoft.com/en-us/credentials/browse/?credential_types=certification" target="_blank" rel="noopener noreferrer">Offiziellen Microsoft-Zertifizierungskatalog prüfen</a></p></section><section class="card" style="margin-top:14px"><h2>Workflows & Kompetenznachweise</h2><p>Die GitHub-Actions-Historie zeigt erfolgreiche oder fehlgeschlagene Ausführungen. Ein grüner Lauf beweist weder Wissenszuwachs noch Kompetenz.</p><p><a href="https://github.com/oliverdering/odpc-sitebot/actions/workflows/adminmonkey-daily-knowledge.yml">Lernzyklen prüfen</a> · <a href="https://github.com/oliverdering/odpc-sitebot/actions">Alle Tests und Deployments</a> · <a href="https://github.com/oliverdering/odpc-sitebot/pull/66">Experimenteller PR #66</a></p><p id="baseline" class="warn">Verifizierte bestandene Kompetenztests: nicht nachgewiesen.</p></section>
 <p id="errors" class="warn" role="status"></p><p class="muted small">Datenquelle: GitHub-Repository oliverdering/odpc-sitebot, Branch main. Keine privaten Zugangsdaten oder Crawler-Caches. Automatische Aktualisierung alle 60 Sekunden und auf Knopfdruck; kein Backend-Code wird freigegeben.</p>
 <nav id="odpc-utility-dock" class="odpc-dock" aria-label="ODPC Schnellfunktionen"><a class="dock-home" href="https://ai.odpc.de/" title="Zur Helper-Monkey-Startseite" aria-label="Zur Startseite"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg></a><select class="dock-lang" id="odpc-dock-language" aria-label="Sprache auswählen" title="Sprache auswählen"><option value="de">🇩🇪 DE</option><option value="en">🇬🇧 EN</option><option value="nl">🇳🇱 NL</option><option value="fr">🇫🇷 FR</option><option value="es">🇪🇸 ES</option><option value="it">🇮🇹 IT</option><option value="pt">🇵🇹 PT</option><option value="tr">🇹🇷 TR</option><option value="ru">🇷🇺 RU</option></select><button type="button" id="odpc-dock-read" title="Seite vorlesen" aria-label="Seite vorlesen">▶</button><button type="button" id="odpc-dock-stop" title="Vorlesen stoppen" aria-label="Vorlesen stoppen">■</button><a class="dock-wa" href="https://wa.me/492654882183?text=Hallo%20Oliver%2C%20ich%20habe%20eine%20Frage%20zu%20AdminMonkey." target="_blank" rel="noopener noreferrer" aria-label="ODPC WhatsApp Business">WhatsApp</a></nav><div id="odpc-translate-engine" aria-hidden="true"></div>
@@ -62,21 +62,59 @@ function renderAcademy(p){
 async function loadOfficialDomains(){
  const el=document.getElementById('officialDomains');
  try{
-  const url='https://raw.githubusercontent.com/oliverdering/odpc-sitebot/main/adminmonkey/academy/verified_certification_registry_2026.json?ts='+Date.now();
-  const response=await fetch(url,{cache:'no-store'});if(!response.ok)throw Error('HTTP '+response.status);
-  const data=await response.json();if(!Array.isArray(data.certifications))throw Error('Ungültiges Registry-Format');
-  const nodes=data.certifications.map(cert=>{
-   const box=document.createElement('div');box.className='track';
-   const title=document.createElement('strong');title.textContent=cert.exam_codes.join(', ')+' · '+cert.official_name;
-   const meta=document.createElement('p');meta.className='muted small';meta.textContent='Status: '+cert.status+(cert.retirement_date?' · Auslaufdatum: '+cert.retirement_date:'')+' · Kompetenz: nicht unabhängig bewertet';
-   const domains=document.createElement('ul');
-   for(const domain of (cert.exam_domains||[])){
-    const li=document.createElement('li');li.textContent=domain.name+' ('+domain.weight+') · Nachweis: offen';domains.append(li);
+  const base='https://raw.githubusercontent.com/oliverdering/odpc-sitebot/main/';
+  const [registryResponse,progressResponse,candidateResponse]=await Promise.all([
+   fetch(base+'adminmonkey/academy/verified_certification_registry_2026.json?ts='+Date.now(),{cache:'no-store'}),
+   fetch(base+'adminmonkey/knowledge/academy_progress.json?ts='+Date.now(),{cache:'no-store'}),
+   fetch(base+'adminmonkey/academy/certification_candidates_2026.json?ts='+Date.now(),{cache:'no-store'})
+  ]);
+  if(!registryResponse.ok||!progressResponse.ok||!candidateResponse.ok)throw Error('Datenquellen nicht vollständig verfügbar');
+  const registry=await registryResponse.json(),progress=await progressResponse.json(),candidates=await candidateResponse.json();
+  if(!Array.isArray(registry.certifications)||!Array.isArray(progress.tracks)||!Array.isArray(candidates.exam_candidates))throw Error('Ungültiges Datenformat');
+  const verified=new Map(registry.certifications.flatMap(cert=>cert.exam_codes.map(code=>[code,cert])));
+  const tracked=new Map(progress.tracks.map(t=>[t.track,t]));
+  const section=document.createElement('div');
+  const info=document.createElement('p');info.className='muted small';
+  info.textContent=registry.certifications.length+' offiziell zugeordnete Zertifizierungsprofile · '+candidates.exam_candidates.length+' Prüfungscode-Kandidaten · '+progress.tracks.length+' bestehende Academy-Lernpfade. Prozentwerte nur aus unabhängig bewerteten Aufgaben, niemals aus Dokumentenzahlen.';
+  section.append(info);
+  const seen=new Set();
+  for(const item of candidates.exam_candidates){
+   const code=item.exam_code;if(!code||seen.has(code))continue;seen.add(code);
+   const cert=verified.get(code),track=tracked.get(code);
+   const row=document.createElement('details');row.className='track';
+   const heading=document.createElement('summary');heading.style.cursor='pointer';
+   const title=document.createElement('strong');title.textContent=code+' · '+(cert?cert.official_name:'Prüfungscode-Kandidat · offizielle Zertifizierung nicht zugeordnet');
+   const status=document.createElement('span');status.className='muted small';
+   const evaluated=Number(track?.agent_answers_evaluated||0),total=Number(track?.total_scenario_objectives||0);
+   const percent=track?.competency_percent;
+   const validPercent=typeof percent==='number'&&Number.isFinite(percent)&&evaluated>=total&&total>0;
+   status.textContent='  |  '+(validPercent?percent.toFixed(1)+' % intern geprüft':'nicht bewertet')+' · '+evaluated+'/'+total+' Tests bewertet';
+   heading.append(title,status);row.append(heading);
+   const body=document.createElement('div');body.style.padding='8px 0 4px';
+   const note=document.createElement('p');note.className='muted small';note.textContent=cert?'Microsoft-Profil: '+cert.status+(cert.retirement_date?' · Retirement '+cert.retirement_date:''):'Noch kein bestätigter Microsoft-Zertifizierungseintrag. Keine Kompetenzbewertung möglich.';
+   body.append(note);
+   if(cert){
+    const domains=document.createElement('ul');
+    for(const domain of (cert.exam_domains||[])){
+     const li=document.createElement('li');li.textContent=domain.name+' ('+domain.weight+') · Kompetenznachweis offen';domains.append(li);
+    }
+    body.append(domains);
+    if(typeof cert.exam_url==='string'&&cert.exam_url.startsWith('https://learn.microsoft.com/')){
+     const link=document.createElement('a');link.href=cert.exam_url;link.target='_blank';link.rel='noopener noreferrer';link.textContent='Microsoft-Prüfungsleitfaden';body.append(link);
+    }
    }
-   const a=document.createElement('a');a.textContent='Offizieller Microsoft-Prüfungsleitfaden';a.href=cert.exam_url;a.target='_blank';a.rel='noopener noreferrer';
-   box.append(title,meta,domains,a);return box;
-  });el.replaceChildren(...nodes);
- }catch(error){el.textContent='Offizielle Prüfungsdomänen derzeit nicht abrufbar: '+error.message;}
+   if(track){
+    const metrics=document.createElement('p');metrics.className='small';metrics.textContent='Microsoft-Quellen: '+track.manufacturer_verified_sources+' · Übungsszenarien: '+track.practice_scenarios_available+' · unabhängig bestanden: '+track.verified_passes+'. Quellenanzahl ist keine Kompetenz.';
+    body.append(metrics);
+   }
+   row.append(body);section.append(row);
+  }
+  for(const cert of registry.certifications){
+   if(cert.exam_codes.some(code=>seen.has(code)))continue;
+   const p=document.createElement('p');p.textContent=cert.exam_codes.join(', ')+' · '+cert.official_name+' · nicht bewertet';section.append(p);
+  }
+  el.replaceChildren(section);
+ }catch(error){el.textContent='Zertifizierungsstände derzeit nicht verfügbar: '+error.message;}
 }
 loadOfficialDomains();
 async function loadCertificationCandidates(){
