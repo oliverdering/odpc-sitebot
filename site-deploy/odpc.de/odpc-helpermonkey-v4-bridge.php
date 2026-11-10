@@ -151,6 +151,7 @@ body.odpc-dock-active{padding-bottom:70px!important}
 @media(max-width:360px){#odpc-utility-dock{gap:5px!important;width:calc(100vw - 16px)!important;padding:5px 7px!important}#odpc-utility-dock>.odpc-dock-language{flex-basis:80px!important;width:80px!important;min-width:80px!important;max-width:80px!important}#odpc-utility-dock .odpc-dock-language>.gt_float_switcher,#odpc-utility-dock .odpc-dock-language>.gt_switcher_wrapper,#odpc-utility-dock .odpc-dock-language>.gtranslate_wrapper,#odpc-utility-dock .odpc-dock-language .gt-selected{width:80px!important;max-width:80px!important}}
 
 /* Fix actual nested GTranslate float positioning; keep dropdown functional. */
+#odpc-utility-dock .odpc-dock-language{display:flex!important;align-items:center!important;flex:0 0 88px!important;width:88px!important;min-width:88px!important}
 #odpc-utility-dock .odpc-dock-language .gt_float_switcher,#odpc-utility-dock .odpc-dock-language .gt_switcher_wrapper,#odpc-utility-dock .odpc-dock-language .gtranslate_wrapper,#odpc-utility-dock .odpc-dock-language #gt_float_wrapper{position:static!important;inset:auto!important;top:auto!important;left:auto!important;right:auto!important;bottom:auto!important;transform:none!important;margin:0!important;float:none!important;max-width:88px!important;width:88px!important;box-shadow:none!important}
 #odpc-utility-dock #odpc-reader{flex-basis:88px!important;min-width:88px!important;max-width:88px!important;width:88px!important;gap:4px!important}
 #odpc-utility-dock #odpc-reader #odpc-reader-stop{display:flex!important;position:static!important;align-items:center!important;justify-content:center!important;flex:0 0 40px!important;width:40px!important;min-width:40px!important;max-width:40px!important;height:40px!important;min-height:40px!important;padding:0!important;margin:0!important;background:#edf6f3!important;color:#142f29!important;border-radius:50%!important;font-size:20px!important}
@@ -167,13 +168,13 @@ body.odpc-dock-active{padding-bottom:70px!important}
 'use strict';
 var selector='#gt_float_wrapper,.gt_float_switcher,.gt_switcher_wrapper,.gtranslate_wrapper';
 function moveLanguage(dock){
+ if(!dock)return false;
  var holder=dock.querySelector('.odpc-dock-language');
  if(!holder){holder=document.createElement('div');holder.className='odpc-dock-language';dock.insertBefore(holder,dock.firstChild)}
- var root=document.querySelector('#gt_float_wrapper');
- if(!root){var widget=document.querySelector('.gt_float_switcher,.gt_switcher_wrapper,.gtranslate_wrapper');if(widget)root=widget.closest('#gt_float_wrapper,.gt_switcher_wrapper,.gtranslate_wrapper')||widget}
- if(root&&root!==holder&&!holder.contains(root))holder.appendChild(root);
- if(root){var fallback=holder.querySelector('.odpc-language-fallback');if(fallback)fallback.remove();return true}
- return false;
+ // The GTranslate floating wrapper can exist yet render an empty box. Use an explicit,
+ // accessible flag selector in the dock rather than trusting wrapper geometry.
+ fallbackLanguage(dock);
+ return true;
 }
 function fallbackLanguage(dock){
  var holder=dock.querySelector('.odpc-dock-language');if(!holder||holder.querySelector('.odpc-language-fallback'))return;
@@ -207,7 +208,7 @@ function mount(){
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount);else mount();
 window.addEventListener('load',mount);
-var attempts=0;var retry=setInterval(function(){mount();var dock=document.getElementById('odpc-utility-dock');if(moveLanguage(dock||document.body)){clearInterval(retry);return}if(++attempts>=12){clearInterval(retry);if(dock)fallbackLanguage(dock)}},500);
+var attempts=0;var retry=setInterval(function(){mount();var dock=document.getElementById('odpc-utility-dock');if(dock&&moveLanguage(dock)){clearInterval(retry);return}if(++attempts>=12){clearInterval(retry);if(dock)fallbackLanguage(dock)}},500);
 })();
 </script>
 <?php },99);
