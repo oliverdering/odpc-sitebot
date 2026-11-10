@@ -15,7 +15,7 @@ def check():
     url="https://odpc.de/about-me/?odpc_about_qa="+str(time.time_ns())
     with urlopen(Request(url,headers={"User-Agent":"ODPC About 2026 QA","Cache-Control":"no-cache"}),timeout=35) as r:
         html=r.read(1000000).decode("utf-8","replace")
-    required=["odpc-about26-heading","AdminMonkey","D.R.O.L.","odpc-reader-mic","odpc-unified-dock-js"]
+    required=["odpc-cv","Webdesign, Websites","odpc-reader-mic","odpc-unified-dock-js"]
     missing=[x for x in required if x not in html]
     if missing:raise RuntimeError("Missing live markers: "+", ".join(missing))
     print("PASS: about page, projects, unchanged shared dock markers")
