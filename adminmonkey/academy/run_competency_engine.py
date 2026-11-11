@@ -79,6 +79,12 @@ def main():
             parser.error("Set ADMINMONKEY_LLM_ENDPOINT (HTTPS), ADMINMONKEY_LLM_API_KEY and ADMINMONKEY_LLM_MODEL")
         responder = lambda prompt: generate(prompt, endpoint=endpoint, api_key=key, model=model)
     report = run(bank, responder, model=model, limit=args.limit)
+    if args.dry_run:
+        report["answered"] = 0
+        report["passed"] = 0
+        report["answers"] = {}
+        report["results"] = []
+        report["smoke_scenarios_checked"] = len(bank["scenarios"][:args.limit or None])
     Path(args.output).write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(json.dumps({k: report[k] for k in ("model", "answered", "total", "passed", "errors", "competency_percent")}, ensure_ascii=False))
     if report["errors"]:
