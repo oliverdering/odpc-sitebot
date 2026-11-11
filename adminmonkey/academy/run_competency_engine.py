@@ -53,6 +53,8 @@ def run(bank, responder, *, model, limit=0):
         "answers": answers,
         "evaluation_disclaimer": "Lexical screening only; NOT independent agent assessment or Microsoft certification.",
         "competency_percent": None,
+        "execution_mode": "model" if model != "offline-smoke-test-no-model" else "offline_smoke",
+        "model_invoked": model != "offline-smoke-test-no-model",
     })
     return report
 
@@ -77,6 +79,12 @@ def main():
             parser.error("Set ADMINMONKEY_LLM_ENDPOINT (HTTPS), ADMINMONKEY_LLM_API_KEY and ADMINMONKEY_LLM_MODEL")
         responder = lambda prompt: generate(prompt, endpoint=endpoint, api_key=key, model=model)
     report = run(bank, responder, model=model, limit=args.limit)
+    if args.dry_run:
+        report["answered"] = 0
+        report["passed"] = 0
+        report["answers"] = {}
+        report["results"] = []
+        report["smoke_scenarios_checked"] = len(bank["scenarios"][:args.limit or None])
     Path(args.output).write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(json.dumps({k: report[k] for k in ("model", "answered", "total", "passed", "errors", "competency_percent")}, ensure_ascii=False))
     if report["errors"]:
