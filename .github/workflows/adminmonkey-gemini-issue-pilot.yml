@@ -19,6 +19,16 @@ jobs:
       - uses: actions/checkout@v4
       - name: Validate bridge syntax
         run: python -m py_compile adminmonkey/communication/gemini_issue_pilot.py
+      - name: Check API readiness without revealing secrets
+        env:
+          GEMINI_API_KEY: ${{ secrets.ADMINMONKEY_LLM_API_KEY || secrets.GEMINI_API_KEY }}
+        run: |
+          if [ -z "$GEMINI_API_KEY" ]; then
+            echo 'BLOCKED: Neither ADMINMONKEY_LLM_API_KEY nor GEMINI_API_KEY is configured.' >> "$GITHUB_STEP_SUMMARY"
+            echo 'Configure one secret in GitHub Actions settings; do not paste credentials into an issue.' >> "$GITHUB_STEP_SUMMARY"
+            exit 1
+          fi
+          echo 'READY: Gemini API credential is configured; API response still requires verification.' >> "$GITHUB_STEP_SUMMARY"
       - name: Ask Gemini and post auditable answer to Issue 219
         env:
           GH_TOKEN: ${{ github.token }}
