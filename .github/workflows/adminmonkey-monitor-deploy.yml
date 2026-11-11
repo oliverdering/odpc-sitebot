@@ -27,6 +27,9 @@ jobs:
           grep -q 'importPercent' site-deploy/ai.odpc.de/adminmonkey/monitor/index.html
           grep -q 'Kompetenzstatus: noch nicht unabhängig geprüft' site-deploy/ai.odpc.de/adminmonkey/monitor/index.html
           grep -q 'Zertifizierungs-Ausbau 2026' site-deploy/ai.odpc.de/adminmonkey/monitor/index.html
+          grep -q 'id="quality-gates"' site-deploy/ai.odpc.de/adminmonkey/monitor/index.html
+          grep -q 'Retrieval Recall@k' site-deploy/ai.odpc.de/adminmonkey/monitor/index.html
+          grep -q 'Direkte autonome KI-zu-KI-Kommunikation' site-deploy/ai.odpc.de/adminmonkey/monitor/index.html
           ! grep -q 'bananaBadges' site-deploy/ai.odpc.de/adminmonkey/monitor/index.html
       - name: Install pinned SFTP client
         run: python3 -m pip install 'paramiko>=3.4,<5'
