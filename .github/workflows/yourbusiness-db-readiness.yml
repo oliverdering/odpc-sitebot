@@ -1,0 +1,30 @@
+name: YourBusiness / database readiness
+on:
+  push:
+    paths:
+      - .github/workflows/yourbusiness-db-readiness.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: yourbusiness-serialized-operations
+  cancel-in-progress: false
+jobs:
+  readiness:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    env:
+      SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+      DB_PASSWORD: ${{ secrets.YOURBUSINESS_DB_PASSWORD }}
+      DB_PASSWORD_ALT: ${{ secrets.YOUR_BUSINESS_DB_PASSWORD }}
+    steps:
+      - name: Check configuration readiness without revealing secrets
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ -n "$SFTP_PASSWORD" ]]; then echo "SFTP_SECRET_PRESENT=true"; else echo "SFTP_SECRET_PRESENT=false"; fi
+          if [[ -n "$DB_PASSWORD" ]]; then echo "YOURBUSINESS_DB_SECRET_PRESENT=true"; elif [[ -n "$DB_PASSWORD_ALT" ]]; then echo "YOURBUSINESS_DB_SECRET_PRESENT=true (alternate name)"; else echo "YOURBUSINESS_DB_SECRET_PRESENT=false"; fi
+          echo "DB_NAME=dbs16333569"
+          echo "DB_HOST=db5021889395.hosting-data.io"
+          echo "DB_USER=dbu4322131"
+          echo "No database connection attempted; no files or database records changed."
