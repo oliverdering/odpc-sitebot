@@ -30,5 +30,5 @@ jobs:
           set -euo pipefail
           sudo apt-get update -qq
           sudo apt-get install -y -qq default-mysql-client >/dev/null
-          timeout 25 mysql --protocol=TCP --connect-timeout=12 --ssl             -h db5021889395.hosting-data.io -P 3306 -u dbu4322131             -D dbs16333569 --batch --skip-column-names             -e "SELECT 'DATABASE_CONNECTION_OK', DATABASE(), CURRENT_USER(); SHOW TABLES;"             | sed -E 's/^(.{150}).*/\1.../'
+          timeout 25 mysql --protocol=TCP --connect-timeout=12 -h db5021889395.hosting-data.io -P 3306 -u dbu4322131             -D dbs16333569 --batch --skip-column-names             -e "SELECT 'DATABASE_CONNECTION_OK', DATABASE(), CURRENT_USER(); SHOW TABLES;"             | sed -E 's/^(.{150}).*/\1.../'
           echo "Read-only connection test completed"
