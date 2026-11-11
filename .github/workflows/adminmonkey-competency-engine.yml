@@ -35,6 +35,7 @@ jobs:
     timeout-minutes: 25
     env:
       ADMINMONKEY_LLM_ENDPOINT: ${{ vars.ADMINMONKEY_LLM_ENDPOINT || 'https://generativelanguage.googleapis.com/v1beta/openai/chat/completions' }}
+      ADMINMONKEY_LLM_PROVIDER: gemini_native
       ADMINMONKEY_LLM_MODEL: ${{ vars.ADMINMONKEY_LLM_MODEL || 'gemini-2.5-flash-lite' }}
       ADMINMONKEY_LLM_API_KEY: ${{ secrets.ADMINMONKEY_LLM_API_KEY || secrets.GEMINI_API_KEY }}
     steps:
@@ -50,7 +51,7 @@ jobs:
           REQUESTED_DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || false }}
         shell: bash
         run: |
-          if [ -n "$ADMINMONKEY_LLM_ENDPOINT" ] && [ -n "$ADMINMONKEY_LLM_MODEL" ] && [ -n "$ADMINMONKEY_LLM_API_KEY" ]; then
+          if [ -n "$ADMINMONKEY_LLM_MODEL" ] && [ -n "$ADMINMONKEY_LLM_API_KEY" ]; then
             echo 'configured=true' >> "$GITHUB_OUTPUT"
             echo 'Provider configuration: complete (values not printed)'
           else

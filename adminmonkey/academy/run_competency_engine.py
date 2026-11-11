@@ -49,6 +49,40 @@ def generate(prompt, *, endpoint, api_key, model, timeout=45):
     return answer
 
 
+
+def generate_gemini_native(prompt, *, api_key, model, timeout=45):
+    """Call Google's native Gemini generateContent API without SDK dependencies."""
+    if not api_key or not model:
+        raise ValueError("Gemini API key and model are required")
+    if not all(c.isalnum() or c in "-._" for c in model):
+        raise ValueError("Invalid Gemini model identifier")
+    endpoint = "https://generativelanguage.googleapis.com/v1beta/models/" + model + ":generateContent"
+    payload = {
+        "systemInstruction": {"parts": [{"text": "You are AdminMonkey, a cautious Microsoft enterprise administrator. Provide safe diagnostics, verification, rollback and least privilege. Never claim to execute actions."}]},
+        "contents": [{"role": "user", "parts": [{"text": prompt}]}],
+        "generationConfig": {"temperature": 0, "maxOutputTokens": 1024},
+    }
+    request = urllib.request.Request(
+        endpoint, data=json.dumps(payload).encode("utf-8"),
+        headers={"x-goog-api-key": api_key, "Content-Type": "application/json"},
+        method="POST",
+    )
+    try:
+        with urllib.request.urlopen(request, timeout=timeout) as response:
+            data = json.load(response)
+    except urllib.error.HTTPError as exc:
+        # Do not log the response body or URL: both could contain sensitive details.
+        raise ValueError("Gemini native API HTTP " + str(exc.code)) from None
+    candidates = data.get("candidates", [])
+    if not candidates:
+        raise ValueError("Gemini returned no candidates")
+    parts = candidates[0].get("content", {}).get("parts", [])
+    answer = "\n".join(part.get("text", "") for part in parts if isinstance(part.get("text"), str))
+    if not answer.strip():
+        raise ValueError("Gemini returned no text; finish_reason=" + str(candidates[0].get("finishReason", "unknown"))[:40])
+    return answer
+
+
 def run(bank, responder, *, model, limit=0):
     scenarios = bank["scenarios"][:limit or None]
     answers, errors = {}, {}
@@ -89,9 +123,15 @@ def main():
         endpoint = os.environ.get("ADMINMONKEY_LLM_ENDPOINT", "")
         key = os.environ.get("ADMINMONKEY_LLM_API_KEY", "")
         model = os.environ.get("ADMINMONKEY_LLM_MODEL", "")
-        if not endpoint.startswith("https://") or not key or not model:
-            parser.error("Set ADMINMONKEY_LLM_ENDPOINT (HTTPS), ADMINMONKEY_LLM_API_KEY and ADMINMONKEY_LLM_MODEL")
-        responder = lambda prompt: generate(prompt, endpoint=endpoint, api_key=key, model=model)
+        if not key or not model:
+            parser.error("Set ADMINMONKEY_LLM_API_KEY and ADMINMONKEY_LLM_MODEL")
+        provider = os.environ.get("ADMINMONKEY_LLM_PROVIDER", "gemini_native")
+        if provider == "gemini_native":
+            responder = lambda prompt: generate_gemini_native(prompt, api_key=key, model=model)
+        elif provider == "openai_compatible":
+            responder = lambda prompt: generate(prompt, endpoint=endpoint, api_key=key, model=model)
+        else:
+            parser.error("Unknown ADMINMONKEY_LLM_PROVIDER")
     report = run(bank, responder, model=model, limit=args.limit)
     if args.dry_run:
         report["answered"] = 0
