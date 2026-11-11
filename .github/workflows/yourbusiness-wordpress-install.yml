@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - '.github/workflows/yourbusiness-wordpress-install.yml'
+      - 'scripts/install_yourbusiness_wordpress.py'
   workflow_dispatch:
 permissions:
   contents: read
