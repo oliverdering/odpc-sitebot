@@ -27,8 +27,22 @@ def generate(prompt, *, endpoint, api_key, model, timeout=45):
         {"role": "user", "content": prompt}]}
     req = urllib.request.Request(endpoint, data=json.dumps(payload).encode(),
         headers={"Authorization": "Bearer " + api_key, "Content-Type": "application/json"}, method="POST")
-    with urllib.request.urlopen(req, timeout=timeout) as resp:
-        data = json.load(resp)
+    try:
+        with urllib.request.urlopen(req, timeout=timeout) as resp:
+            data = json.load(resp)
+    except urllib.error.HTTPError as exc:
+        # Provider error bodies explain 404 (unknown model vs route). Never echo raw body or credentials.
+        try:
+            detail = json.loads(exc.read(8192).decode('utf-8', 'replace'))
+            error = detail.get('error', {})
+            code = error.get('status', '') if isinstance(error, dict) else ''
+            message = error.get('message', '') if isinstance(error, dict) else ''
+            safe = ''.join(ch for ch in str(message) if ch.isalnum() or ch in ' .,;:()_-')[:160]
+            # Provider text can include user-supplied input; avoid exposing anything beyond known error codes.
+            safe_status = str(code) if str(code) in ('NOT_FOUND', 'INVALID_ARGUMENT', 'PERMISSION_DENIED', 'RESOURCE_EXHAUSTED', 'UNAUTHENTICATED', 'FAILED_PRECONDITION') else 'UNSPECIFIED'
+            raise ValueError(f'Gemini HTTP {exc.code}; provider_status={safe_status}; provider_message={safe}') from None
+        except (UnicodeError, json.JSONDecodeError, AttributeError, TypeError):
+            raise ValueError(f'Gemini HTTP {exc.code}; provider returned non-JSON error') from None
     answer = data["choices"][0]["message"]["content"]
     if not isinstance(answer, str) or not answer.strip():
         raise ValueError("Model returned empty or non-text response")
