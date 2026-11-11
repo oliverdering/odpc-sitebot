@@ -1,0 +1,56 @@
+name: AdminMonkey Competency Engine V1
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Offline smoke test only (no model calls)'
+        type: boolean
+        default: true
+        required: true
+      limit:
+        description: 'Number of scenarios (0 = all 21)'
+        type: number
+        default: 0
+        required: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: adminmonkey-competency-engine
+  cancel-in-progress: false
+
+jobs:
+  assess:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      ADMINMONKEY_LLM_ENDPOINT: ${{ vars.ADMINMONKEY_LLM_ENDPOINT }}
+      ADMINMONKEY_LLM_MODEL: ${{ vars.ADMINMONKEY_LLM_MODEL }}
+      ADMINMONKEY_LLM_API_KEY: ${{ secrets.ADMINMONKEY_LLM_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Regression tests
+        run: python -m unittest discover -s adminmonkey/academy -p 'test_*.py' -v
+      - name: Execute competency scenarios
+        env:
+          DRY_RUN: ${{ inputs.dry_run }}
+          LIMIT: ${{ inputs.limit }}
+        run: |
+          if [ "$DRY_RUN" = "true" ]; then
+            python adminmonkey/academy/run_competency_engine.py --dry-run --limit "$LIMIT" --output competency-report.json
+          else
+            python adminmonkey/academy/run_competency_engine.py --limit "$LIMIT" --output competency-report.json
+          fi
+      - name: Upload report (private Actions artifact)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: adminmonkey-competency-report
+          path: competency-report.json
+          if-no-files-found: warn
+          retention-days: 14
