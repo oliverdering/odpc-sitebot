@@ -5,6 +5,7 @@ on:
     paths:
       - 'adminmonkey/academy/verified_certification_registry_2026.json'
       - '.github/workflows/adminmonkey-certification-registry.yml'
+      - 'adminmonkey/knowledge/certification_competency.py'
   workflow_dispatch:
 permissions:
   contents: read
@@ -35,4 +36,24 @@ jobs:
           progress=json.loads(Path('adminmonkey/knowledge/academy_progress.json').read_text())
           assert {'MS-102','AZ-104','SC-300','MD-102'}.issubset({t['track'] for t in progress['tracks']})
           print('PASS: verified registry seed; candidate inventory separate; legacy Academy tracks preserved')
+          PY
+
+      - name: Verify evidence-gated competency scoring
+        run: |
+          python3 - <<'PY'
+          import importlib.util
+          from pathlib import Path
+          p=Path('adminmonkey/knowledge/certification_competency.py')
+          spec=importlib.util.spec_from_file_location('competency',p)
+          mod=importlib.util.module_from_spec(spec)
+          spec.loader.exec_module(mod)
+          registry={'certifications':[{'id':'x','exam_codes':['X-1'],'official_name':'Example','exam_domains':[{'name':'Security','weight':'100%'}]}]}
+          bank={'scenarios':[{'id':'s1','track':'X-1','exam_domain':'Security'}]}
+          no_evidence=mod.calculate(registry,bank,{'results':[]})['certifications'][0]
+          assert no_evidence['competency_percent'] is None
+          weak=mod.calculate(registry,bank,{'results':[{'scenario_id':'s1','evaluation_type':'independent_agent_assessment','passed':True,'evidence_url':'https://example.com/e'}]})['certifications'][0]
+          assert weak['competency_percent'] is None
+          verified=mod.calculate(registry,bank,{'results':[{'scenario_id':'s1','evaluation_type':'independent_agent_assessment','passed':True,'evidence_url':'https://example.com/e','grader_id':'independent-1'}]})['certifications'][0]
+          assert verified['competency_percent']==100
+          print('PASS: no fabricated score; evidence gates enforced')
           PY
