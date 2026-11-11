@@ -19,6 +19,8 @@ add_action('rest_api_init', function () {
  ]);
 });
 function odpc_podcast_audio(WP_REST_Request $request) {
+ if(!defined('ODPC_PODCAST_PILOT_ENABLED') || ODPC_PODCAST_PILOT_ENABLED !== true)
+  return new WP_Error('disabled','Podcast pilot disabled',['status'=>503]);
  $post_id = absint($request->get_param('post_id'));
  $lang = sanitize_key($request->get_param('lang') ?: 'de');
  $languages = ['de'=>'de-DE','en'=>'en-US','tr'=>'tr-TR','fr'=>'fr-FR','nl'=>'nl-NL','es'=>'es-ES','ru'=>'ru-RU'];
@@ -26,6 +28,8 @@ function odpc_podcast_audio(WP_REST_Request $request) {
  $post = get_post($post_id);
  if (!$post || $post->post_status !== 'publish' || !in_array($post->post_type,['page','post'],true))
   return new WP_Error('page','Published page not found',['status'=>404]);
+ if(trim(parse_url(get_permalink($post_id),PHP_URL_PATH),'/')!=='prompt-engineering-digitale-mitarbeiter-ki-sinnvoll-nutzen')
+  return new WP_Error('pilot_only','Only the approved pilot page is enabled',['status'=>403]);
  if (!defined('ODPC_PODCAST_GEMINI_KEY') || !defined('ODPC_PODCAST_GOOGLE_TTS_KEY'))
   return new WP_Error('not_configured','Podcast service not configured; original reader remains available',['status'=>503]);
  $raw = strip_shortcodes($post->post_content);
