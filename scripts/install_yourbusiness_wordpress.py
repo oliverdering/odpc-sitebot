@@ -22,8 +22,8 @@ def main():
    if names:raise RuntimeError("Safety stop: /YourBusiness is not empty: "+", ".join(names[:12]))
    print("Confirmed empty /YourBusiness. Downloading official WordPress core.")
    req=urllib.request.Request("https://wordpress.org/latest.zip",headers={"User-Agent":"ODPC-YourBusiness-Installer/1.0"})
-   with urllib.request.urlopen(req,timeout=90) as response: blob=response.read(32000000)
-   if len(blob)>31000000:raise RuntimeError("Archive unexpectedly large")
+   with urllib.request.urlopen(req,timeout=90) as response: blob=response.read(85000001)
+   if len(blob)>85000000:raise RuntimeError("Archive unexpectedly large")
    z=zipfile.ZipFile(io.BytesIO(blob))
    files=[x for x in z.infolist() if not x.is_dir() and x.filename.startswith("wordpress/")]
    if not any(x.filename=="wordpress/wp-settings.php" for x in files):raise RuntimeError("Invalid WordPress archive")
