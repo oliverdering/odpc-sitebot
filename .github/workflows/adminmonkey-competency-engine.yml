@@ -7,6 +7,8 @@ on:
       - 'adminmonkey/academy/run_competency_engine.py'
       - 'adminmonkey/academy/competency_bank.json'
       - '.github/workflows/adminmonkey-competency-engine.yml'
+  schedule:
+    - cron: '37 5 * * 1'
   workflow_dispatch:
     inputs:
       dry_run:
@@ -42,15 +44,37 @@ jobs:
           python-version: '3.12'
       - name: Regression tests
         run: python -m unittest discover -s adminmonkey/academy -p 'test_*.py' -v
+      - name: Check real-model readiness without exposing credentials
+        id: readiness
+        env:
+          REQUESTED_DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || false }}
+        shell: bash
+        run: |
+          if [ -n "$ADMINMONKEY_LLM_ENDPOINT" ] && [ -n "$ADMINMONKEY_LLM_MODEL" ] && [ -n "$ADMINMONKEY_LLM_API_KEY" ]; then
+            echo 'configured=true' >> "$GITHUB_OUTPUT"
+            echo 'Provider configuration: complete (values not printed)'
+          else
+            echo 'configured=false' >> "$GITHUB_OUTPUT"
+            echo 'Provider configuration: incomplete; no real model call possible'
+          fi
       - name: Execute competency scenarios
         env:
-          DRY_RUN: ${{ github.event_name == 'push' || inputs.dry_run }}
-          LIMIT: ${{ github.event_name == 'push' && '0' || inputs.limit }}
+          EVENT_NAME: ${{ github.event_name }}
+          REQUESTED_DRY_RUN: ${{ inputs.dry_run }}
+          LIMIT: ${{ inputs.limit }}
+          CONFIGURED: ${{ steps.readiness.outputs.configured }}
+        shell: bash
         run: |
-          if [ "$DRY_RUN" = "true" ]; then
-            python adminmonkey/academy/run_competency_engine.py --dry-run --limit "$LIMIT" --output competency-report.json
+          # Automatic scheduled and push runs use the model only when all three credentials exist.
+          # Explicit dry-run always stays offline; missing credentials never produce fake model evidence.
+          if [ "$REQUESTED_DRY_RUN" = "true" ] || [ "$CONFIGURED" != "true" ]; then
+            python adminmonkey/academy/run_competency_engine.py --dry-run --limit "${LIMIT:-0}" --output competency-report.json
+            if [ "$CONFIGURED" != "true" ]; then
+              echo 'WARNING: Offline transport smoke only. Configure ADMINMONKEY_LLM_ENDPOINT, ADMINMONKEY_LLM_MODEL and ADMINMONKEY_LLM_API_KEY for real answers.' >> "$GITHUB_STEP_SUMMARY"
+            fi
           else
-            python adminmonkey/academy/run_competency_engine.py --limit "$LIMIT" --output competency-report.json
+            python adminmonkey/academy/run_competency_engine.py --limit "${LIMIT:-0}" --output competency-report.json
+            echo 'Real model responses were collected; lexical screening is NOT independent competence evidence.' >> "$GITHUB_STEP_SUMMARY"
           fi
       - name: Upload report (private Actions artifact)
         if: always()
