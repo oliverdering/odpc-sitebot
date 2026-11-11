@@ -12,20 +12,20 @@ var initial=stored();if(supported.indexOf(initial)<0)initial='de';lang.value=ini
 lang.addEventListener('change',function(){translate(lang.value)});
 document.getElementById('tl-home').onclick=function(){location.href='/'};
 var tlReading=false,tlSpeechToken=0,tlActive=null,tlQueue=[];
-function tlStopReading(){tlReading=false;tlSpeechToken++;tlQueue=[];if('speechSynthesis' in window)window.speechSynthesis.cancel();tlActive=null}
+function tlStopReading(){tlReading=false;document.getElementById('tl-read').setAttribute('aria-pressed','false');tlSpeechToken++;tlQueue=[];if('speechSynthesis' in window)window.speechSynthesis.cancel();tlActive=null}
 function tlReadPage(){
 if(!('speechSynthesis' in window)||!('SpeechSynthesisUtterance' in window)){alert('Dein Browser unterstützt die Sprachausgabe nicht.');return}
 tlStopReading();
 var root=document.querySelector('main')||document.querySelector('.site-main')||document.body;
 var nodes=Array.from(root.querySelectorAll('h1,h2,h3,h4,p,li,blockquote,figcaption')).filter(function(el){return !el.closest('nav,header,footer,[aria-hidden="true"]')&&el.getClientRects().length&&el.textContent.trim().length>2});
 if(!nodes.length){alert('Kein vorlesbarer Text gefunden.');return}
-var token=++tlSpeechToken,idx=0;tlReading=true;
+var token=++tlSpeechToken,idx=0;tlReading=true;document.getElementById('tl-read').setAttribute('aria-pressed','true');
 function speakNext(){
 if(!tlReading||token!==tlSpeechToken)return;
-if(!tlQueue.length){if(idx>=nodes.length){tlReading=false;return}tlActive=nodes[idx++];var txt=(tlActive.innerText||tlActive.textContent||'').trim();tlQueue=txt.match(/.{1,180}(?:\\s|$)/g)||[txt];tlActive.scrollIntoView({behavior:'smooth',block:'center',inline:'nearest'})}
+if(!tlQueue.length){if(idx>=nodes.length){tlReading=false;document.getElementById('tl-read').setAttribute('aria-pressed','false');return}tlActive=nodes[idx++];var txt=(tlActive.innerText||tlActive.textContent||'').trim();tlQueue=txt.match(/.{1,180}(?:\\s|$)/g)||[txt];tlActive.scrollIntoView({behavior:'smooth',block:'center',inline:'nearest'})}
 var utter=new SpeechSynthesisUtterance(tlQueue.shift());utter.lang=lang.value;utter.rate=.95;utter.volume=1;
 utter.onend=function(){if(token===tlSpeechToken)speakNext()};
-utter.onerror=function(e){if(token!==tlSpeechToken)return;if(e.error==='canceled'||e.error==='interrupted'){tlReading=false;return}speakNext()};
+utter.onerror=function(e){if(token!==tlSpeechToken)return;if(e.error==='canceled'||e.error==='interrupted'){tlStopReading();return}speakNext()};
 window.speechSynthesis.speak(utter);
 }
 window.speechSynthesis.getVoices();
