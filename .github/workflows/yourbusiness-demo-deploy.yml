@@ -44,5 +44,11 @@ jobs:
             test -f wp-content/plugins/yourbusiness-instant-demo/yourbusiness-instant-demo.php
             uiwpcli_PHP_FLAVOR=php8.3 wp core is-installed --quiet
             uiwpcli_PHP_FLAVOR=php8.3 wp plugin activate yourbusiness-instant-demo
+            existing=$(uiwpcli_PHP_FLAVOR=php8.3 wp post list --post_type=page --name=sofort-demo --field=ID --format=ids)
+            if [ -z "$existing" ]; then
+              uiwpcli_PHP_FLAVOR=php8.3 wp post create --post_type=page --post_status=publish --post_name=sofort-demo --post_title="YourBusiness Sofort-Demo" --post_content="[yourbusiness_demo]"
+            else
+              echo "Demo page already exists: $existing"
+            fi
             echo YOURBUSINESS_DEMO_PLUGIN_ACTIVE
           '
