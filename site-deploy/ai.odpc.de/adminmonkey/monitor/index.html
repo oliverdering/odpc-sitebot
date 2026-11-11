@@ -290,4 +290,41 @@ async function refresh(){
  }catch(e){showSnapshotError('Diagnose',e);}
 }
 $('refresh').addEventListener('click',refresh);refresh();setInterval(refresh,autoRefreshMs);
-</script></body></html>
+</script>
+<style id="odpc-smartguide-monitor-css">
+#odpc-smartguide-monitor{position:fixed;bottom:12px;left:50%;transform:translateX(-50%);z-index:2147483000;display:flex;align-items:center;gap:7px;padding:7px 10px;border:1px solid #ffffff77;border-radius:24px;background:#172b3bc9;backdrop-filter:blur(12px);box-shadow:0 6px 24px #0007;max-width:calc(100vw - 12px);box-sizing:border-box}
+#odpc-smartguide-monitor button,#odpc-smartguide-monitor select,#odpc-smartguide-monitor a{display:flex;align-items:center;justify-content:center;box-sizing:border-box;min-width:37px;height:39px;border-radius:12px;border:1px solid #b7d1df8c;background:#edf6f3;color:#152e33;font:600 15px system-ui,sans-serif;text-decoration:none;cursor:pointer;padding:0 7px}
+#odpc-smartguide-monitor select{width:79px;min-width:79px;font-size:12px}
+#odpc-smartguide-monitor svg{width:22px;height:22px}
+#odpc-smartguide-monitor button:focus-visible,#odpc-smartguide-monitor select:focus-visible,#odpc-smartguide-monitor a:focus-visible{outline:3px solid #8ee8cb;outline-offset:2px}
+.odpc-smartguide-speaking{outline:3px solid #78e2ae!important;outline-offset:5px;background-color:#1e554766!important;transition:background-color .2s}
+body{padding-bottom:95px!important}
+@media(max-width:390px){#odpc-smartguide-monitor{gap:4px;padding:5px}#odpc-smartguide-monitor button,#odpc-smartguide-monitor a{min-width:34px;height:36px}#odpc-smartguide-monitor select{min-width:72px;width:72px}}
+</style>
+<nav id="odpc-smartguide-monitor" aria-label="ODPC SmartGuide">
+<select id="odpc-sg-language" aria-label="Sprache wählen"><option value="de">🇩🇪 DE</option><option value="en">🇬🇧 EN</option><option value="nl">🇳🇱 NL</option><option value="fr">🇫🇷 FR</option><option value="es">🇪🇸 ES</option><option value="it">🇮🇹 IT</option><option value="pt">🇵🇹 PT</option><option value="ru">🇷🇺 RU</option><option value="tr">🇹🇷 TR</option></select>
+<button id="odpc-sg-play" type="button" aria-label="Podcast starten" title="Podcast starten">▶</button>
+<button id="odpc-sg-stop" type="button" aria-label="Podcast stoppen" title="Podcast stoppen">■</button>
+<a id="odpc-sg-wa" href="https://wa.me/492654882183" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Business" title="WhatsApp Business"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.4 7.5L3 20.5l1.6-4.9A8.5 8.5 0 1 1 20.5 11.5Z"/><path d="M8.3 8.4c-.4 1.7 2.9 5.5 5.5 6.5 1.1.4 2.2-.3 2.4-1.1l-2.2-1-1.1 1c-1.1-.5-2.2-1.6-2.8-2.7l.9-1.1-1.1-2.2c-.5-.3-1.3-.2-1.6.6Z"/></svg></a>
+<button id="odpc-sg-top" type="button" aria-label="Zum Seitenanfang" title="Zum Seitenanfang">↑</button>
+</nav>
+<script id="odpc-smartguide-monitor-js">
+(function(){
+'use strict';
+var voices={de:'de-DE',en:'en-GB',nl:'nl-NL',fr:'fr-FR',es:'es-ES',it:'it-IT',pt:'pt-PT',ru:'ru-RU',tr:'tr-TR'};
+var lang=document.getElementById('odpc-sg-language'),play=document.getElementById('odpc-sg-play'),stop=document.getElementById('odpc-sg-stop');
+var active=false,token=0,items=[],index=0,current=null;
+var key='odpc_global_language_v1';
+try{var saved=localStorage.getItem(key);if(voices[saved])lang.value=saved}catch(e){}
+function clear(){if(current)current.classList.remove('odpc-smartguide-speaking');current=null}
+function halt(){active=false;token++;clear();if('speechSynthesis'in window)window.speechSynthesis.cancel();play.setAttribute('aria-pressed','false')}
+function sections(){var root=document.querySelector('main')||document.body;return Array.from(root.querySelectorAll('h1,h2,h3,h4,p,li,.card,.metric')).filter(function(el){if(el.closest('#odpc-smartguide-monitor,nav,script,style,[aria-hidden="true"]'))return false;if(el.matches('.card,.metric')&&el.querySelector('h1,h2,h3,h4,p,li'))return false;var t=(el.innerText||el.textContent||'').trim();return t.length>=12&&t.length<=1800&&el.getClientRects().length>0})}
+function next(id){if(!active||id!==token)return;clear();if(index>=items.length){halt();return}var el=items[index++];current=el;el.classList.add('odpc-smartguide-speaking');el.scrollIntoView({behavior:'smooth',block:'center'});var t=(el.innerText||el.textContent||'').trim();var u=new SpeechSynthesisUtterance(t);u.lang=voices[lang.value]||'de-DE';u.rate=.94;u.onend=function(){next(id)};u.onerror=function(){next(id)};window.speechSynthesis.speak(u)}
+play.addEventListener('click',function(){halt();if(!('speechSynthesis'in window)){alert('Sprachausgabe wird von diesem Browser nicht unterstützt.');return}items=sections();index=0;if(!items.length)return;active=true;var id=token;play.setAttribute('aria-pressed','true');next(id)});
+stop.addEventListener('click',halt);
+document.getElementById('odpc-sg-top').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+lang.addEventListener('change',function(){halt();try{localStorage.setItem(key,lang.value)}catch(e){}document.cookie='odpc_language='+encodeURIComponent(lang.value)+';path=/;domain=.odpc.de;max-age=31536000;SameSite=Lax;Secure';if(window.ODPCLanguage&&typeof window.ODPCLanguage.set==='function')window.ODPCLanguage.set(lang.value)});
+window.addEventListener('pagehide',halt);
+})();
+</script>
+</body></html>
