@@ -1,0 +1,45 @@
+name: YourBusiness / Activate verified universal theme
+on:
+  push:
+    paths:
+      - '.github/workflows/yourbusiness-activate-theme.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: yourbusiness-serialized-operations
+  cancel-in-progress: false
+jobs:
+  activate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Verify SSH identity and activate isolated WordPress theme
+        env:
+          SSHPASS: ${{ secrets.ODPC_SSH_PASSWORD }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -n "$SSHPASS" || { echo "Missing SSH secret"; exit 1; }
+          sudo apt-get update -qq >/dev/null
+          sudo apt-get install -y -qq sshpass >/dev/null
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+          ssh-keyscan -4 -t ed25519 home119567219.1and1-data.host > ~/.ssh/known_hosts 2>/dev/null
+          ssh-keygen -lf ~/.ssh/known_hosts | grep -F 'SHA256:1gx2w8Rtv3wCgi7Jh8myf/KVd72cRQbow03UP8P095Q' >/dev/null
+          sshpass -e ssh -4 -o BatchMode=no -o PreferredAuthentications=password -o PubkeyAuthentication=no -o NumberOfPasswordPrompts=1 -o StrictHostKeyChecking=yes -o ConnectTimeout=20 p37641258@home119567219.1and1-data.host 'set -eu
+            cd "$HOME/YourBusiness"
+            test -f wp-config.php
+            test -f wp-content/themes/odpc-universal/style.css
+            test -f wp-content/themes/odpc-universal/theme.json
+            test -f wp-content/themes/odpc-universal/templates/index.html
+            uiwpcli_PHP_FLAVOR=php8.3 wp core is-installed --quiet
+            previous=$(uiwpcli_PHP_FLAVOR=php8.3 wp option get stylesheet)
+            echo "Previous theme: $previous"
+            if [ "$previous" != "odpc-universal" ]; then
+              uiwpcli_PHP_FLAVOR=php8.3 wp theme activate odpc-universal
+            fi
+            active=$(uiwpcli_PHP_FLAVOR=php8.3 wp option get stylesheet)
+            test "$active" = "odpc-universal"
+            echo "YOURBUSINESS_THEME_ACTIVE"
+          '
