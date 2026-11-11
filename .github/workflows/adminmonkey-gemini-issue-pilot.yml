@@ -1,6 +1,10 @@
 name: AdminMonkey Gemini Issue 219 pilot bridge
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/adminmonkey-gemini-issue-pilot.yml'
 permissions:
   contents: read
   issues: write
