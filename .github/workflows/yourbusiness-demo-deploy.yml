@@ -1,0 +1,48 @@
+name: YourBusiness / Instant demo deployment
+on:
+  push:
+    paths:
+      - 'yourbusiness/plugin/yourbusiness-instant-demo/**'
+      - 'scripts/deploy_yourbusiness_demo.py'
+      - '.github/workflows/yourbusiness-demo-deploy.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: yourbusiness-serialized-operations
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate Python
+        run: python -m py_compile scripts/deploy_yourbusiness_demo.py
+      - name: Install Paramiko
+        run: python -m pip install 'paramiko>=3.4,<5'
+      - name: Upload plugin to isolated WordPress
+        env:
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+        run: python scripts/deploy_yourbusiness_demo.py
+      - name: Validate and activate demo plugin with WP-CLI
+        env:
+          SSHPASS: ${{ secrets.ODPC_SSH_PASSWORD }}
+        run: |
+          set -euo pipefail
+          test -n "$SSHPASS"
+          sudo apt-get install -y -qq sshpass >/dev/null
+          mkdir -p ~/.ssh
+          ssh-keyscan -4 -t ed25519 home119567219.1and1-data.host > ~/.ssh/known_hosts 2>/dev/null
+          ssh-keygen -lf ~/.ssh/known_hosts | grep -F 'SHA256:1gx2w8Rtv3wCgi7Jh8myf/KVd72cRQbow03UP8P095Q' >/dev/null
+          sshpass -e ssh -4 -o BatchMode=no -o PreferredAuthentications=password -o PubkeyAuthentication=no -o NumberOfPasswordPrompts=1 -o StrictHostKeyChecking=yes -o ConnectTimeout=20 p37641258@home119567219.1and1-data.host 'set -eu
+            cd "$HOME/YourBusiness"
+            test -f wp-config.php
+            test -f wp-content/plugins/yourbusiness-instant-demo/yourbusiness-instant-demo.php
+            uiwpcli_PHP_FLAVOR=php8.3 wp core is-installed --quiet
+            uiwpcli_PHP_FLAVOR=php8.3 wp plugin activate yourbusiness-instant-demo
+            echo YOURBUSINESS_DEMO_PLUGIN_ACTIVE
+          '
