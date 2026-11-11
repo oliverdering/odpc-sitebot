@@ -248,8 +248,7 @@ body.odpc-smartguide-pilot .odpc-smartguide-active{outline:2px solid #1caa83!imp
 <script id="odpc-smartguide-pilot-js">
 (function(){
 'use strict';
-var path=location.pathname; if(path.endsWith('/'))path=path.slice(0,-1);
-if(path!=='/prompt-engineering-digitale-mitarbeiter-ki-sinnvoll-nutzen')return;
+// SmartGuide enabled for every ODPC page; accepted pilot behavior preserved.
 document.body.classList.add('odpc-smartguide-pilot');
 var active=false,segments=[],index=0,token=0,current=null;
 function stop(){
