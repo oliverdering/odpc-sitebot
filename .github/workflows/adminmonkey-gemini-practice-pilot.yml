@@ -1,0 +1,35 @@
+name: AdminMonkey Gemini practice pilot (real model baseline)
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/adminmonkey-gemini-practice-pilot.yml'
+permissions:
+  contents: read
+concurrency:
+  group: adminmonkey-gemini-practice-pilot
+  cancel-in-progress: false
+jobs:
+  practice:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate Python and JSON fixtures
+        run: |
+          python -m py_compile adminmonkey/eval/run_gemini_pilot.py
+          python -m json.tool adminmonkey/eval/gemini_pilot_cases.json > /dev/null
+      - name: Ask five real-world questions
+        env:
+          ADMINMONKEY_LLM_API_KEY: ${{ secrets.ADMINMONKEY_LLM_API_KEY || secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: gemini-3.5-flash-lite
+        run: python adminmonkey/eval/run_gemini_pilot.py
+      - name: Upload private review artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gemini-practice-pilot-results
+          path: gemini-pilot-report.json
+          if-no-files-found: warn
+          retention-days: 14
