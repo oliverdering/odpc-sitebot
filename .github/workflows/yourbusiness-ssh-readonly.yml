@@ -1,4 +1,5 @@
 name: YourBusiness SSH read-only access verification
+# Revalidate direct SSH and WP-CLI after confirmed SFTP deployment.
 on:
   push:
     paths:
