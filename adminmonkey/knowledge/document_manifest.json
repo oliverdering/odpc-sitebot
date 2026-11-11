@@ -14119,6 +14119,346 @@
       "depth": 3,
       "review_status": "manufacturer_verified",
       "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/graph-explorer/graph-explorer-features",
+      "sha256": "e766a1009933444ce192036f3739dcb60d61109175f59d87e01fcea528b01366",
+      "captured_at": "2026-11-11T15:38:59.710414+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/usage-analytics/usage-analytics-faq",
+      "sha256": "6ab871aebf50ee5dc11642788c71f25076b14cff00f46ddb30a322681616f63e",
+      "captured_at": "2026-11-11T15:39:00.602457+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-bi/fundamentals/desktop-getting-started",
+      "sha256": "ec96df18ebc97e9f47f44a5b064054f5b9a7e96ae314702a01c61ddea14cb38a",
+      "captured_at": "2026-11-11T15:39:01.158826+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/troubleshoot/o365-admin-welcome",
+      "sha256": "0bbf2f53c52e1dec7710b13a1d0d4d113fa61d6db48a1165574283320e2dde72",
+      "captured_at": "2026-11-11T15:39:01.887068+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/commerce/billing-and-payments/manage-billing-notifications",
+      "sha256": "2928418e81d549f593c00c2a43d787b1924b82b919a502052046b209c804f5e5",
+      "captured_at": "2026-11-11T15:39:02.287469+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/partner-center/new-commerce-license-based",
+      "sha256": "7e2f4c2d80653ff191096cda36305d2e87f99c12cd3cce1503f60aea3717adcb",
+      "captured_at": "2026-11-11T15:39:02.786156+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.groups/set-mggrouplicense",
+      "sha256": "d4c43ae0a35be8194efc22cb97c5cd3d2a62fd12419a413ec82bce7c60ef07b5",
+      "captured_at": "2026-11-11T15:39:03.275979+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/commerce/no-billing-account-found",
+      "sha256": "16bc0912a19e3629f3e0206afca4d021a2326032380da9438f66bb9f38207ef6",
+      "captured_at": "2026-11-11T15:39:03.783989+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/email/remove-license-from-shared-mailbox",
+      "sha256": "28ce637bbe90bfc6a3e2dd8cfe8d36b3ff9fffb61a2503f061a764c1e464dd7c",
+      "captured_at": "2026-11-11T15:39:04.371808+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-bi/enterprise/service-admin-closing-your-account",
+      "sha256": "27bf3b79f9992d6e1930e6e7663615ff95e5d193e3e05ac890f9f8d019dff2ef",
+      "captured_at": "2026-11-11T15:39:04.933492+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-bi/fundamentals/service-self-service-signup-for-power-bi",
+      "sha256": "32dfd865cd200657d75dff4d338e76026b2bb431933655dc874dbbb644ad54ad",
+      "captured_at": "2026-11-11T15:39:05.367148+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/exchange/mail-flow-best-practices/high-volume-mails-m365",
+      "sha256": "52f35b5d609181374b09eaa6a4bffa6b366927b89d44e31e0e2d025d06163508",
+      "captured_at": "2026-11-11T15:39:05.657374+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/documentprocessing/syntex-pay-as-you-go-services",
+      "sha256": "13aae90606cb4850bac078e87d2fa82454e3b43182c8a4760f8d2a9202638965",
+      "captured_at": "2026-11-11T15:39:06.118844+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/backup/backup-billing",
+      "sha256": "51a71d9f9af0e5dea9f53d6851d5690cafe72be41be484e534b6fb08182e929b",
+      "captured_at": "2026-11-11T15:39:06.657663+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/backup/backup-setup",
+      "sha256": "c0bc5d29637f2def11878a602a054d6edcd2217cdc30f21dc5e16db66dde316f",
+      "captured_at": "2026-11-11T15:39:07.403189+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/defender-office-365/safe-links-policies-configure",
+      "sha256": "0c85b2592867e7d58981919b69b6920c90dbdc401749c8bd8f2a4a86563c440e",
+      "captured_at": "2026-11-11T15:39:09.157387+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/commerce/licenses/manage-user-roles-vl",
+      "sha256": "a6cfa2715d0a41fab32defd758f7bff5a18332046b7aab673f87385b5aebeef6",
+      "captured_at": "2026-11-11T15:39:09.443704+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/sql/database-engine/install-windows/install-sql-server",
+      "sha256": "81d6cd159f1e1174108442c52fea0f74aac2e044773503e0d304b81451aab51f",
+      "captured_at": "2026-11-11T15:39:10.067920+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/services-in-china/services-in-china",
+      "sha256": "f893f1e4e91a001bed7bbdba1b341121fa17e81d450e870c38cd9a687f2f2d58",
+      "captured_at": "2026-11-11T15:39:10.613499+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/exchange/federation-exchange-2013-help",
+      "sha256": "b6072666e7323ccbae8b9d2275b612db532de8e3a00c6b69d3bc864cbe154ef3",
+      "captured_at": "2026-11-11T15:39:10.947311+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/exchange/configuring-federated-sharing-between-exchange-organizations-exchange-2013-help",
+      "sha256": "cee9312d65959e0799d73f62579acfc0a0c18818f7eeb5e67c6e2be004427b53",
+      "captured_at": "2026-11-11T15:39:11.731989+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/exchange/organization-relationships-exchange-2013-help",
+      "sha256": "e505dc3c06aa0abed5b487f9f91b097b8cc0c43d2d6bf56a54a7aa007bdd092b",
+      "captured_at": "2026-11-11T15:39:12.042321+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/exchange/sharing-policies-exchange-2013-help",
+      "sha256": "1265afbc8a90e283da12bbdd9a748877957c61fd44bacc3c4973633287be3b5c",
+      "captured_at": "2026-11-11T15:39:12.378713+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/troubleshoot/microsoft-365/admin/access-management/cannot-add-guest-users-in-m365-admin-center",
+      "sha256": "994619436b2cad1dacf75a3930b1620644232dc9292a2711a027039d2c63630c",
+      "captured_at": "2026-11-11T15:39:12.814880+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/troubleshoot/microsoft-365/purview/archive-mailboxes/message-not-moved-to-archive",
+      "sha256": "9eba2983c824940855d60d54845265a35211e5d515def9cd2aa697d3e4450ed0",
+      "captured_at": "2026-11-11T15:39:13.043788+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/troubleshoot/microsoftteams/teams-sign-in/sign-in-loop",
+      "sha256": "f2eba01ec8266bea29b194c259f594cbd50be5310212548b670d3eb0c4c17682",
+      "captured_at": "2026-11-11T15:39:13.383808+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/troubleshoot/microsoft-365-apps/office-client-welcome",
+      "sha256": "f1580a82ae7e20eb0dd0d59e6ca35d30b719cab0c662b601dbe8b1694e6b9645",
+      "captured_at": "2026-11-11T15:39:13.598046+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/sharepointmigration/troubleshooting-common-spmt-issues",
+      "sha256": "447c951146bc24c332fa7950749a2a6b3468c025594d8a6cb1746f4020826a3d",
+      "captured_at": "2026-11-11T15:39:13.910558+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/troubleshoot/sharepoint/administration/access-denied-or-need-permission-error-sharepoint-online-or-onedrive-for-business",
+      "sha256": "68f7c957a635e33c6415285ed5d45485020ba24eb1aa2d9799ee872e35889b08",
+      "captured_at": "2026-11-11T15:39:14.088762+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/troubleshoot/sharepoint/infopath/soapserverexception-when-customizing-list-form-using-infopath-designer",
+      "sha256": "d2f1b9d56daf2478fc21f767ca42502afd7c5175cc1996504058b84b7e2d405b",
+      "captured_at": "2026-11-11T15:39:14.322708+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/troubleshoot/exchange/administration/term-new-mailbox-not-recognized-error",
+      "sha256": "66374ab6522af11f3811c966c6fb34e805ea509ad0c26794c239c14d35ebd8de",
+      "captured_at": "2026-11-11T15:39:14.791361+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/troubleshoot/exchange/outlook-issues/outlook-connection-issues",
+      "sha256": "5f3d66b18784cc1ab62cc218fa5fbecd5240b466aadd9e29d67408167c6a211f",
+      "captured_at": "2026-11-11T15:39:15.229568+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/troubleshoot/exchange/administration/endpoint-connection-405-error",
+      "sha256": "3ba0aa469ee147e5abd01f91aabff309f360f8a398fe0ab863fa0011ba7f73f7",
+      "captured_at": "2026-11-11T15:39:15.706007+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365-apps/outlook/calendaring/open-shared-calendar",
+      "sha256": "aa40fc73ef204dfac50a28e4d09c45461ea671457b5cdb2e4c93c4fdf47b3829",
+      "captured_at": "2026-11-11T15:39:15.874255+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/troubleshoot/outlook/calendaring/cannot-globally-disable-birthday-calendar",
+      "sha256": "816f59e5c4a53a01db29cb71670ab95958c340f1c345e5940f9555d6ba637e28",
+      "captured_at": "2026-11-11T15:39:16.875781+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/troubleshoot/content-retirement",
+      "sha256": "326ad046e080e42e6967c98dc51807dc831d967696b735cdc0809556ac1e5f7d",
+      "captured_at": "2026-11-11T15:39:17.444535+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
     }
   ],
   "seen": [
@@ -14258,6 +14598,7 @@
     "https://learn.microsoft.com/en-us/defender-for-identity/install-step2",
     "https://learn.microsoft.com/en-us/defender-for-identity/what-is",
     "https://learn.microsoft.com/en-us/defender-office-365/mdo-about",
+    "https://learn.microsoft.com/en-us/defender-office-365/safe-links-policies-configure",
     "https://learn.microsoft.com/en-us/defender-vulnerability-management/defender-vulnerability-management",
     "https://learn.microsoft.com/en-us/defender-xdr/automatic-attack-disruption",
     "https://learn.microsoft.com/en-us/defender-xdr/m365d-enable",
@@ -14603,10 +14944,14 @@
     "https://learn.microsoft.com/en-us/entra/workload-id/workload-identities-overview",
     "https://learn.microsoft.com/en-us/entra/workload-id/workload-identity-federation",
     "https://learn.microsoft.com/en-us/exchange/architecture/client-access/exchange-admin-center",
+    "https://learn.microsoft.com/en-us/exchange/configuring-federated-sharing-between-exchange-organizations-exchange-2013-help",
     "https://learn.microsoft.com/en-us/exchange/exchange-admin-center",
     "https://learn.microsoft.com/en-us/exchange/exchange-online",
+    "https://learn.microsoft.com/en-us/exchange/federation-exchange-2013-help",
+    "https://learn.microsoft.com/en-us/exchange/mail-flow-best-practices/high-volume-mails-m365",
     "https://learn.microsoft.com/en-us/exchange/mail-flow-best-practices/remote-domains/manage-remote-domains",
     "https://learn.microsoft.com/en-us/exchange/mailbox-migration/decide-on-a-migration-path",
+    "https://learn.microsoft.com/en-us/exchange/organization-relationships-exchange-2013-help",
     "https://learn.microsoft.com/en-us/exchange/permissions-exo/feature-permissions",
     "https://learn.microsoft.com/en-us/exchange/permissions-exo/permissions-exo",
     "https://learn.microsoft.com/en-us/exchange/recipients-in-exchange-online/manage-user-mailboxes/add-or-remove-email-addresses",
@@ -14615,6 +14960,7 @@
     "https://learn.microsoft.com/en-us/exchange/recipients/mail-enabled-security-groups",
     "https://learn.microsoft.com/en-us/exchange/security-and-compliance/recoverable-items-folder/recoverable-items-folder",
     "https://learn.microsoft.com/en-us/exchange/sharing-exchange-2013-help",
+    "https://learn.microsoft.com/en-us/exchange/sharing-policies-exchange-2013-help",
     "https://learn.microsoft.com/en-us/exchange/standalone-eop/exchange-admin-center-eop",
     "https://learn.microsoft.com/en-us/fabric/get-started/microsoft-fabric-overview",
     "https://learn.microsoft.com/en-us/graph",
@@ -15101,6 +15447,7 @@
     "https://learn.microsoft.com/en-us/graph/extensibility-open-users",
     "https://learn.microsoft.com/en-us/graph/extensibility-overview",
     "https://learn.microsoft.com/en-us/graph/extensibility-schema-groups",
+    "https://learn.microsoft.com/en-us/graph/graph-explorer/graph-explorer-features",
     "https://learn.microsoft.com/en-us/graph/graph-explorer/graph-explorer-overview",
     "https://learn.microsoft.com/en-us/graph/group-directory-settings",
     "https://learn.microsoft.com/en-us/graph/identity-network-access-overview",
@@ -15215,6 +15562,7 @@
     "https://learn.microsoft.com/en-us/mem/configmgr/apps/deploy-use/deploy-edge",
     "https://learn.microsoft.com/en-us/mem/configmgr/core/plan-design/security/enable-tls-1-2-client",
     "https://learn.microsoft.com/en-us/mem/intune/configuration/administrative-templates-configure-edge",
+    "https://learn.microsoft.com/en-us/microsoft-365-apps/outlook/calendaring/open-shared-calendar",
     "https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/active-users-ww",
@@ -15287,6 +15635,7 @@
     "https://learn.microsoft.com/en-us/microsoft-365/admin/email/convert-user-mailbox-to-shared-mailbox",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/email/create-a-shared-mailbox",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/email/office-365-user-email-settings",
+    "https://learn.microsoft.com/en-us/microsoft-365/admin/email/remove-license-from-shared-mailbox",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/get-help-support",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/get-help-with-domains/buy-a-domain-name",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/get-help-with-domains/change-nameservers-at-any-domain-registrar",
@@ -15309,6 +15658,7 @@
     "https://learn.microsoft.com/en-us/microsoft-365/admin/security-and-compliance/m365b-account-security-admins",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/security-and-compliance/multi-factor-authentication-microsoft-365",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/security-and-compliance/set-up-multi-factor-authentication",
+    "https://learn.microsoft.com/en-us/microsoft-365/admin/services-in-china/services-in-china",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/setup/add-domain",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/setup/add-or-replace-your-onmicrosoftcom-domain",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/setup/create-distribution-lists",
@@ -15324,11 +15674,15 @@
     "https://learn.microsoft.com/en-us/microsoft-365/admin/simplified-signup/signup-business-standard",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/usage-analytics/customize-reports",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/usage-analytics/usage-analytics",
+    "https://learn.microsoft.com/en-us/microsoft-365/admin/usage-analytics/usage-analytics-faq",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/whats-new-in-preview",
     "https://learn.microsoft.com/en-us/microsoft-365/agents-sdk",
+    "https://learn.microsoft.com/en-us/microsoft-365/backup/backup-billing",
+    "https://learn.microsoft.com/en-us/microsoft-365/backup/backup-setup",
     "https://learn.microsoft.com/en-us/microsoft-365/business-premium/m365-business-premium-setup",
     "https://learn.microsoft.com/en-us/microsoft-365/business-video/get-help-support",
     "https://learn.microsoft.com/en-us/microsoft-365/commerce/",
+    "https://learn.microsoft.com/en-us/microsoft-365/commerce/billing-and-payments/manage-billing-notifications",
     "https://learn.microsoft.com/en-us/microsoft-365/commerce/billing-and-payments/manage-billing-profiles",
     "https://learn.microsoft.com/en-us/microsoft-365/commerce/billing-and-payments/manage-multi-tenant-billing",
     "https://learn.microsoft.com/en-us/microsoft-365/commerce/billing-and-payments/manage-payment-methods",
@@ -15344,11 +15698,13 @@
     "https://learn.microsoft.com/en-us/microsoft-365/commerce/licenses/contact-vl-support",
     "https://learn.microsoft.com/en-us/microsoft-365/commerce/licenses/download-vl-products",
     "https://learn.microsoft.com/en-us/microsoft-365/commerce/licenses/manage-license-reservations-vl",
+    "https://learn.microsoft.com/en-us/microsoft-365/commerce/licenses/manage-user-roles-vl",
     "https://learn.microsoft.com/en-us/microsoft-365/commerce/licenses/mseds-customer-contracts-self-serve-functionality",
     "https://learn.microsoft.com/en-us/microsoft-365/commerce/licenses/product-keys-for-vl",
     "https://learn.microsoft.com/en-us/microsoft-365/commerce/licenses/subscriptions-and-licenses",
     "https://learn.microsoft.com/en-us/microsoft-365/commerce/licenses/vl-sign-in",
     "https://learn.microsoft.com/en-us/microsoft-365/commerce/manage-billing-accounts",
+    "https://learn.microsoft.com/en-us/microsoft-365/commerce/no-billing-account-found",
     "https://learn.microsoft.com/en-us/microsoft-365/commerce/services/pay-as-you-go-budget",
     "https://learn.microsoft.com/en-us/microsoft-365/commerce/services/pay-as-you-go-overview",
     "https://learn.microsoft.com/en-us/microsoft-365/commerce/services/pay-as-you-go-services",
@@ -15386,6 +15742,7 @@
     "https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes",
     "https://learn.microsoft.com/en-us/microsoft-365/copilot/track-copilot-adoption",
     "https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-overview-copilot-credits",
+    "https://learn.microsoft.com/en-us/microsoft-365/documentprocessing/syntex-pay-as-you-go-services",
     "https://learn.microsoft.com/en-us/microsoft-365/education/deploy/pooled-storage-management",
     "https://learn.microsoft.com/en-us/microsoft-365/enterprise/add-several-users-at-the-same-time",
     "https://learn.microsoft.com/en-us/microsoft-365/enterprise/create-sharepoint-sites-and-add-users-with-powershell",
@@ -15421,6 +15778,7 @@
     "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/outbound-spam-policies-external-email-forwarding",
     "https://learn.microsoft.com/en-us/microsoft-365/solutions/setup-secure-collaboration-with-teams",
     "https://learn.microsoft.com/en-us/microsoft-365/troubleshoot/active-directory/restore-deleted-user-accounts",
+    "https://learn.microsoft.com/en-us/microsoft-365/troubleshoot/o365-admin-welcome",
     "https://learn.microsoft.com/en-us/microsoft-agent-365/admin/manage-copilot-agents-integrated-apps",
     "https://learn.microsoft.com/en-us/microsoft-agent-365/overview",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio",
@@ -15534,8 +15892,12 @@
     "https://learn.microsoft.com/en-us/office365/servicedescriptions/sharepoint-online-service-description/sharepoint-online-limits",
     "https://learn.microsoft.com/en-us/onedrive/restore-deleted-onedrive",
     "https://learn.microsoft.com/en-us/onedrive/set-retention",
+    "https://learn.microsoft.com/en-us/partner-center/new-commerce-license-based",
     "https://learn.microsoft.com/en-us/power-automate",
     "https://learn.microsoft.com/en-us/power-bi",
+    "https://learn.microsoft.com/en-us/power-bi/enterprise/service-admin-closing-your-account",
+    "https://learn.microsoft.com/en-us/power-bi/fundamentals/desktop-getting-started",
+    "https://learn.microsoft.com/en-us/power-bi/fundamentals/service-self-service-signup-for-power-bi",
     "https://learn.microsoft.com/en-us/power-pages",
     "https://learn.microsoft.com/en-us/power-platform",
     "https://learn.microsoft.com/en-us/power-platform/admin/apps-to-allow",
@@ -15547,6 +15909,7 @@
     "https://learn.microsoft.com/en-us/powershell/microsoftgraph/migration-steps",
     "https://learn.microsoft.com/en-us/powershell/microsoftgraph/overview",
     "https://learn.microsoft.com/en-us/powershell/module/exchangepowershell/remove-mailboxfolderpermission",
+    "https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.groups/set-mggrouplicense",
     "https://learn.microsoft.com/en-us/powershell/teams/",
     "https://learn.microsoft.com/en-us/previous-versions/",
     "https://learn.microsoft.com/en-us/previous-versions/SkypeForBusiness/skype-for-business-online-reporting/activity-report",
@@ -15578,6 +15941,7 @@
     "https://learn.microsoft.com/en-us/previous-versions/sql/",
     "https://learn.microsoft.com/en-us/previous-versions/system-center/",
     "https://learn.microsoft.com/en-us/previous-versions/technet-magazine/",
+    "https://learn.microsoft.com/en-us/previous-versions/troubleshoot/content-retirement",
     "https://learn.microsoft.com/en-us/previous-versions/visualstudio/",
     "https://learn.microsoft.com/en-us/previous-versions/windows/",
     "https://learn.microsoft.com/en-us/previous-versions/xamarin/",
@@ -15648,6 +16012,8 @@
     "https://learn.microsoft.com/en-us/sharepointmigration/mm-google-step1-connect",
     "https://learn.microsoft.com/en-us/sharepointmigration/mm-google-step2-scan-assess",
     "https://learn.microsoft.com/en-us/sharepointmigration/mm-specialty-environments-support",
+    "https://learn.microsoft.com/en-us/sharepointmigration/troubleshooting-common-spmt-issues",
+    "https://learn.microsoft.com/en-us/sql/database-engine/install-windows/install-sql-server",
     "https://learn.microsoft.com/en-us/training/browse/",
     "https://learn.microsoft.com/en-us/training/educator-center/",
     "https://learn.microsoft.com/en-us/training/learn-community",
@@ -15655,20 +16021,30 @@
     "https://learn.microsoft.com/en-us/training/student-hub/",
     "https://learn.microsoft.com/en-us/training/support/plans",
     "https://learn.microsoft.com/en-us/troubleshoot/azure/active-directory/enable-support-tls-environment",
+    "https://learn.microsoft.com/en-us/troubleshoot/exchange/administration/endpoint-connection-405-error",
+    "https://learn.microsoft.com/en-us/troubleshoot/exchange/administration/term-new-mailbox-not-recognized-error",
     "https://learn.microsoft.com/en-us/troubleshoot/exchange/exchange-hybrid-welcome",
     "https://learn.microsoft.com/en-us/troubleshoot/exchange/exchange-online-welcome",
     "https://learn.microsoft.com/en-us/troubleshoot/exchange/exchange-server-welcome",
+    "https://learn.microsoft.com/en-us/troubleshoot/exchange/outlook-issues/outlook-connection-issues",
     "https://learn.microsoft.com/en-us/troubleshoot/microsoft-365-apps/",
+    "https://learn.microsoft.com/en-us/troubleshoot/microsoft-365-apps/office-client-welcome",
+    "https://learn.microsoft.com/en-us/troubleshoot/microsoft-365/admin/access-management/cannot-add-guest-users-in-m365-admin-center",
     "https://learn.microsoft.com/en-us/troubleshoot/microsoft-365/admin/o365-admin-welcome",
     "https://learn.microsoft.com/en-us/troubleshoot/microsoft-365/admin/orchestrated-migration/resolve-orchestrated-migration-errors",
+    "https://learn.microsoft.com/en-us/troubleshoot/microsoft-365/purview/archive-mailboxes/message-not-moved-to-archive",
     "https://learn.microsoft.com/en-us/troubleshoot/microsoft-365/purview/microsoft-purview-welcome",
+    "https://learn.microsoft.com/en-us/troubleshoot/microsoftteams/teams-sign-in/sign-in-loop",
     "https://learn.microsoft.com/en-us/troubleshoot/microsoftteams/teams-welcome",
     "https://learn.microsoft.com/en-us/troubleshoot/office/office-client-welcome",
+    "https://learn.microsoft.com/en-us/troubleshoot/outlook/calendaring/cannot-globally-disable-birthday-calendar",
     "https://learn.microsoft.com/en-us/troubleshoot/outlook/classic-outlook-windows-welcome",
     "https://learn.microsoft.com/en-us/troubleshoot/outlook/legacy-outlook-mac-welcome",
     "https://learn.microsoft.com/en-us/troubleshoot/outlook/new-outlook-windows-welcome",
     "https://learn.microsoft.com/en-us/troubleshoot/outlook/overview-new-outlook-mac",
     "https://learn.microsoft.com/en-us/troubleshoot/power-platform/copilot-studio/welcome-copilot-studio",
+    "https://learn.microsoft.com/en-us/troubleshoot/sharepoint/administration/access-denied-or-need-permission-error-sharepoint-online-or-onedrive-for-business",
+    "https://learn.microsoft.com/en-us/troubleshoot/sharepoint/infopath/soapserverexception-when-customizing-list-form-using-infopath-designer",
     "https://learn.microsoft.com/en-us/troubleshoot/sharepoint/onedrive-welcome",
     "https://learn.microsoft.com/en-us/troubleshoot/sharepoint/sharepoint-hybrid-welcome",
     "https://learn.microsoft.com/en-us/troubleshoot/sharepoint/sharepoint-online-welcome",
@@ -15694,258 +16070,6 @@
     "https://learn.microsoft.com/en-us/windows/win32/wer/windows-error-reporting"
   ],
   "queue": [
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/graph-explorer/graph-explorer-features",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/usage-analytics/usage-analytics-faq",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/power-bi/fundamentals/desktop-getting-started",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/commerce/manage-billing-accounts",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/commerce/billing-and-payments/understand-your-invoice",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/commerce/billing-and-payments/understand-your-invoice2",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/troubleshoot/o365-admin-welcome",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/commerce/billing-and-payments/manage-billing-notifications",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/commerce/billing-and-payments/pay-for-your-subscription",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/commerce/billing-and-payments/pay-by-wire-transfer",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/commerce/manage-billing-accounts",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/commerce/billing-and-payments/understand-your-invoice2",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/commerce/manage-billing-accounts",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/partner-center/new-commerce-license-based",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/commerce/billing-and-payments/pay-by-wire-transfer",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/commerce/manage-billing-accounts",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.groups/set-mggrouplicense",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/commerce/manage-billing-accounts",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/commerce/no-billing-account-found",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/email/create-a-shared-mailbox",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/email/remove-license-from-shared-mailbox",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/cost-management-billing/manage/cancel-azure-subscription",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/power-bi/enterprise/service-admin-closing-your-account",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/power-bi/fundamentals/service-self-service-signup-for-power-bi",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/commerce/manage-billing-accounts",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/commerce/manage-billing-accounts",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-overview-copilot-credits",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/commerce/services/pay-as-you-go-services",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/exchange/mail-flow-best-practices/high-volume-mails-m365",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/documentprocessing/syntex-pay-as-you-go-services",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/backup/backup-billing",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/backup/backup-setup",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/defender-office-365/safe-links-policies-configure",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/commerce/licenses/manage-user-roles-vl",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/sql/database-engine/install-windows/install-sql-server",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/commerce/licenses/contact-vl-support",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/services-in-china/services-in-china",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/exchange/federation-exchange-2013-help",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/exchange/configuring-federated-sharing-between-exchange-organizations-exchange-2013-help",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/exchange/federation-exchange-2013-help",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/exchange/organization-relationships-exchange-2013-help",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/exchange/sharing-policies-exchange-2013-help",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/troubleshoot/microsoft-365/admin/o365-admin-welcome",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/troubleshoot/microsoft-365/purview/microsoft-purview-welcome",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/troubleshoot/microsoftteams/teams-welcome",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/troubleshoot/office/office-client-welcome",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/troubleshoot/sharepoint/sharepoint-server-welcome",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/troubleshoot/sharepoint/sharepoint-online-welcome",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/troubleshoot/microsoft-365/admin/access-management/cannot-add-guest-users-in-m365-admin-center",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/troubleshoot/microsoft-365/purview/archive-mailboxes/message-not-moved-to-archive",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/troubleshoot/microsoftteams/teams-sign-in/sign-in-loop",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/troubleshoot/microsoft-365-apps/office-client-welcome",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/sharepointmigration/troubleshooting-common-spmt-issues",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/troubleshoot/sharepoint/administration/access-denied-or-need-permission-error-sharepoint-online-or-onedrive-for-business",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/troubleshoot/sharepoint/infopath/soapserverexception-when-customizing-list-form-using-infopath-designer",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/troubleshoot/exchange/administration/term-new-mailbox-not-recognized-error",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/troubleshoot/exchange/outlook-issues/outlook-connection-issues",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/troubleshoot/exchange/administration/endpoint-connection-405-error",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365-apps/outlook/calendaring/open-shared-calendar",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/troubleshoot/outlook/calendaring/cannot-globally-disable-birthday-calendar",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/previous-versions/troubleshoot/content-retirement",
-      "depth": 3
-    },
     {
       "url": "https://learn.microsoft.com/en-us/troubleshoot/sharepoint/sync/enable-co-authoring-for-onedrive-synced-file",
       "depth": 3
@@ -24729,8 +24853,8 @@
   ],
   "last_batch": {
     "attempted": 36,
-    "documents_total": 1570,
-    "queued": 2258,
+    "documents_total": 1606,
+    "queued": 2195,
     "failures": []
   }
 }

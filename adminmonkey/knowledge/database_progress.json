@@ -1,13 +1,14 @@
 {
   "database_connected": true,
-  "new_document_versions": 70,
-  "document_versions_total": 1567,
-  "sources_total": 1566,
-  "imported_from_verified_origin": 1568,
-  "rejected_document_count": 2,
+  "new_document_versions": 35,
+  "document_versions_total": 1602,
+  "sources_total": 1601,
+  "imported_from_verified_origin": 1603,
+  "rejected_document_count": 3,
   "rejected_document_urls": [
     "https://learn.microsoft.com/en-us/",
-    "https://learn.microsoft.com/en-us/answers/questions/5744593/visual-studio-2026-uses-excessive-memory-(20gb-)-w"
+    "https://learn.microsoft.com/en-us/answers/questions/5744593/visual-studio-2026-uses-excessive-memory-(20gb-)-w",
+    "https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.groups/set-mggrouplicense"
   ],
   "official_microsoft_certification": false
 }
