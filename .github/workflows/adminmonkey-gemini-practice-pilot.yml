@@ -5,6 +5,8 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/adminmonkey-gemini-practice-pilot.yml'
+      - 'adminmonkey/eval/run_gemini_pilot.py'
+      - 'adminmonkey/eval/gemini_pilot_cases.json'
 permissions:
   contents: read
 concurrency:
