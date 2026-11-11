@@ -4,6 +4,7 @@ on:
   push:
     branches: [main]
     paths:
+      - 'adminmonkey/academy/competency_bank.json'
       - 'adminmonkey/academy/evaluate_responses.py'
       - 'adminmonkey/academy/test_evaluate_responses.py'
       - 'adminmonkey/academy/test_certification_evidence.py'
@@ -11,6 +12,7 @@ on:
       - '.github/workflows/adminmonkey-academy-tests.yml'
   pull_request:
     paths:
+      - 'adminmonkey/academy/competency_bank.json'
       - 'adminmonkey/academy/evaluate_responses.py'
       - 'adminmonkey/academy/test_evaluate_responses.py'
       - 'adminmonkey/academy/test_certification_evidence.py'
@@ -39,9 +41,14 @@ jobs:
           from pathlib import Path
           bank = json.loads(Path('adminmonkey/academy/competency_bank.json').read_text(encoding='utf-8'))
           assert bank.get('scenarios'), 'No competency scenarios'
+          ids = [scenario['id'] for scenario in bank['scenarios']]
+          assert len(ids) == len(set(ids)), 'Duplicate scenario IDs'
+          assert len(ids) >= 21, 'Scenario bank unexpectedly shrunk'
           for scenario in bank['scenarios']:
               assert scenario.get('id') and scenario.get('track'), 'Scenario lacks ID or track'
               assert isinstance(scenario.get('required'), list) and scenario['required'], 'Missing required rubric'
               assert isinstance(scenario.get('unsafe'), list), 'Missing unsafe rubric'
+              assert all(isinstance(t, str) and t.strip() for t in scenario['required']), 'Empty required keyword'
+              assert all(isinstance(t, str) and t.strip() for t in scenario['unsafe']), 'Empty unsafe keyword'
           print(f"Validated {len(bank['scenarios'])} practice scenarios; not a certification score")
           PY
