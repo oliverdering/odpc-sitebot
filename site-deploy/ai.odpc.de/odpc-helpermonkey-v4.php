@@ -315,3 +315,90 @@ body.odpc-ai-dock-active{padding-bottom:75px!important}
 (function(){'use strict';function mount(){var language=document.getElementById('odpc-ai-translate'),reader=document.getElementById('odpc-reader');if(!language||!reader)return;var dock=document.getElementById('odpc-utility-dock');if(!dock){dock=document.createElement('nav');dock.id='odpc-utility-dock';dock.setAttribute('aria-label','ODPC Schnellfunktionen');document.body.appendChild(dock)}var home=document.getElementById('odpc-dock-home');if(!home){home=document.createElement('a');home.id='odpc-dock-home';home.href=window.location.origin+'/';home.setAttribute('aria-label','Zur Monkey-Startseite');home.setAttribute('title','Zur Startseite');home.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg>';dock.appendChild(home)}dock.appendChild(language);dock.appendChild(reader);var wa=document.getElementById('hm-v4-wa')||document.querySelector('.hm-v4-floating');if(!wa){wa=document.createElement('a');wa.id='hm-v4-wa';wa.className='hm-v4-floating';wa.href='https://wa.me/492654882183';wa.target='_blank';wa.rel='noopener noreferrer';wa.setAttribute('aria-label','WhatsApp Business');}dock.appendChild(wa);wa.textContent='WhatsApp';document.body.classList.add('odpc-ai-dock-active');document.querySelectorAll('#hm-v4-wa,.hm-v4-floating').forEach(function(el){if(el!==wa)el.style.setProperty('display','none','important')});var oldHelp=document.getElementById('hm-v4-helpbtn');if(oldHelp)oldHelp.style.setProperty('display','none','important');dedupe(dock)}function dedupe(dock){var legacy=['#hm-v4-helpbtn','.hm-v4-helpbtn','.odpc-hm-v4-helpbtn','#odpc-hm-v4-helpbtn','.odpc-wa-sticky','.odpc-hm-v4-wa','#odpc-hm-v4-wa','#gt_float_wrapper','.gt_float_switcher','.gt_switcher_wrapper'];legacy.forEach(function(selector){document.querySelectorAll(selector).forEach(function(el){if(!dock.contains(el))el.style.setProperty('display','none','important')})});document.querySelectorAll('a[href*="wa.me"],a[href*="api.whatsapp.com"]').forEach(function(el){if(dock.contains(el))return;var style=window.getComputedStyle(el);if(style.position==='fixed'||style.position==='sticky')el.style.setProperty('display','none','important')});document.querySelectorAll('#odpc-ai-translate,#odpc-reader').forEach(function(el){if(!dock.contains(el))el.style.setProperty('display','none','important')})}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount);else mount();window.addEventListener('load',mount);var debounce=false;new MutationObserver(function(){if(debounce)return;debounce=true;requestAnimationFrame(function(){debounce=false;var dock=document.getElementById('odpc-utility-dock');if(dock)dedupe(dock)})}).observe(document.documentElement,{childList:true,subtree:true})})();
 </script>
 <?php },99);
+
+<?php add_action('wp_footer',function(){if(is_admin())return; ?>
+<style id="odpc-smartguide-global-css">
+/* Pilot only: preserve transparent dock and existing language dropdown. */
+body.odpc-smartguide-global #odpc-utility-dock{justify-content:space-between!important;gap:4px!important}
+body.odpc-smartguide-global #odpc-utility-dock>#odpc-dock-home{order:4!important;flex:0 0 32px!important;width:32px!important;min-width:32px!important}
+body.odpc-smartguide-global #odpc-utility-dock>#odpc-ai-translate{order:0!important;flex:0 0 76px!important;width:76px!important;min-width:76px!important;max-width:76px!important}
+body.odpc-smartguide-global #odpc-utility-dock #odpc-ai-language{width:76px!important;max-width:76px!important}
+body.odpc-smartguide-global #odpc-utility-dock>#odpc-reader{order:1!important;flex:0 0 78px!important;width:78px!important;min-width:78px!important;max-width:78px!important;gap:3px!important}
+body.odpc-smartguide-global #odpc-utility-dock #odpc-reader #odpc-reader-play,
+body.odpc-smartguide-global #odpc-utility-dock #odpc-reader #odpc-reader-stop{flex:0 0 37px!important;width:37px!important;min-width:37px!important;height:37px!important;min-height:37px!important}
+body.odpc-smartguide-global #odpc-utility-dock>.hm-v4-floating,
+body.odpc-smartguide-global #odpc-utility-dock>.odpc-wa-sticky,
+body.odpc-smartguide-global #odpc-utility-dock>#hm-v4-wa{order:3!important;flex:0 0 43px!important;width:43px!important;min-width:43px!important;max-width:43px!important;height:42px!important;padding:0!important;font-size:0!important}
+body.odpc-smartguide-global #odpc-utility-dock>#hm-v4-wa::after{content:none!important}
+body.odpc-smartguide-global #odpc-utility-dock .odpc-smartguide-wa-icon{width:25px;height:25px;display:block;flex:none}
+body.odpc-smartguide-global .odpc-smartguide-active{outline:2px solid #1caa83!important;outline-offset:5px!important;border-radius:5px!important;scroll-margin-top:100px!important;transition:outline-color .2s ease}
+@media(max-width:360px){body.odpc-smartguide-global #odpc-utility-dock{width:calc(100vw - 12px)!important;padding:5px!important;gap:2px!important}}
+</style>
+<script id="odpc-smartguide-global-js">
+(function(){
+'use strict';
+
+document.body.classList.add('odpc-smartguide-global');
+var active=false,segments=[],index=0,token=0,current=null;
+function stop(){
+ active=false;token++;if(window.speechSynthesis)window.speechSynthesis.cancel();
+ if(current)current.classList.remove('odpc-smartguide-active');current=null;
+}
+function language(){
+ var el=document.querySelector('#odpc-ai-language');
+ var l=(el&&el.value)||(window.ODPCLanguage&&window.ODPCLanguage.get())||'de';
+ return ({de:'de-DE',en:'en-US',nl:'nl-NL',fr:'fr-FR',es:'es-ES',it:'it-IT',pt:'pt-PT',tr:'tr-TR',ru:'ru-RU'})[l]||'de-DE';
+}
+function collect(){
+ var root=document.querySelector('article .entry-content,main .entry-content,.entry-content,main article,main,#content,article');
+ if(!root)return [];
+ return Array.from(root.querySelectorAll('h1,h2,h3,p,li')).filter(function(el){
+  return !el.closest('nav,footer,header,#odpc-utility-dock,script,style')&&
+   el.getClientRects().length&&el.innerText.trim().length>24&&el.innerText.trim().length<1800;
+ }).slice(0,90);
+}
+function speakNext(id){
+ if(!active||id!==token)return;
+ if(current)current.classList.remove('odpc-smartguide-active');
+ if(index>=segments.length){stop();return}
+ var el=segments[index++];current=el;el.classList.add('odpc-smartguide-active');
+ if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches)el.scrollIntoView({behavior:'smooth',block:'center'});
+ var u=new SpeechSynthesisUtterance(el.innerText.trim().slice(0,1200));u.lang=language();u.rate=.94;
+ var voices=window.speechSynthesis.getVoices();var exact=voices.find(function(v){return v.lang.toLowerCase()===u.lang.toLowerCase()&&v.localService})||voices.find(function(v){return v.lang.toLowerCase()===u.lang.toLowerCase()})||voices.find(function(v){return v.lang.toLowerCase().split('-')[0]===u.lang.split('-')[0]});
+ if(exact)u.voice=exact;
+ u.onend=function(){speakNext(id)};
+ u.onerror=function(e){if(e.error==='interrupted'||e.error==='canceled')return;stop()};
+ window.speechSynthesis.speak(u);
+}
+function play(){
+ if(!('speechSynthesis'in window)){alert('Die Sprachausgabe wird von diesem Browser nicht unterstützt.');return}
+ stop();segments=collect();index=0;if(!segments.length)return;
+ active=true;var id=token;speakNext(id);
+}
+function mount(){
+ var dock=document.getElementById('odpc-utility-dock'),playButton=document.getElementById('odpc-reader-play'),stopButton=document.getElementById('odpc-reader-stop'),home=document.getElementById('odpc-dock-home');
+ if(!dock||!playButton||!stopButton||!home)return false;
+ playButton.setAttribute('aria-label','SmartGuide starten');playButton.title='SmartGuide starten';
+ stopButton.setAttribute('aria-label','SmartGuide stoppen');stopButton.title='SmartGuide stoppen';
+ home.href='#top';home.setAttribute('aria-label','Zum Seitenanfang');home.title='Zum Seitenanfang';
+ home.onclick=function(e){e.preventDefault();window.scrollTo({top:0,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'})};
+ var wa=dock.querySelector('#hm-v4-wa,.hm-v4-floating');
+ if(wa&&!wa.querySelector('.odpc-smartguide-wa-icon')){
+  wa.setAttribute('aria-label','WhatsApp Business');wa.title='WhatsApp Business';
+  wa.textContent='';
+  wa.insertAdjacentHTML('afterbegin','<svg class="odpc-smartguide-wa-icon" viewBox="0 0 32 32" aria-hidden="true"><path fill="#fff" d="M16 2.6A13.2 13.2 0 0 0 4.6 22.4L2.8 29l6.8-1.8A13.2 13.2 0 1 0 16 2.6zm0 23.9a10.7 10.7 0 0 1-5.4-1.5l-.4-.2-4 1.1 1.1-3.9-.3-.4a10.7 10.7 0 1 1 9 4.9zm5.9-8c-.3-.2-1.9-1-2.2-1.1-.3-.1-.5-.2-.7.2-.2.3-.8 1.1-1 1.3-.2.2-.4.2-.7.1a8.7 8.7 0 0 1-4.3-3.8c-.3-.5.3-.5.8-1.5.1-.2.1-.4 0-.6l-1-2.4c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.4-1.2 1.2-1.2 2.9s1.3 3.3 1.5 3.5a12.1 12.1 0 0 0 4.6 4.2 4.2 0 0 0 4.5-.3c.7-.5 1.1-1.5 1.2-2.1.1-.5.1-.9-.2-1.1z"/></svg>');
+ }
+ return true;
+}
+document.addEventListener('click',function(e){
+ if(!document.body.classList.contains('odpc-smartguide-global'))return;
+ if(e.target.closest('#odpc-reader-play')){e.preventDefault();e.stopImmediatePropagation();play()}
+ else if(e.target.closest('#odpc-reader-stop')){e.preventDefault();e.stopImmediatePropagation();stop()}
+},true);
+document.addEventListener('odpc:languagechange',stop);
+window.addEventListener('pagehide',stop);
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount);else mount();
+window.addEventListener('load',mount);
+})();
+</script>
+<?php },110); ?>
