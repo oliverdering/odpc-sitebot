@@ -14459,6 +14459,300 @@
       "depth": 3,
       "review_status": "manufacturer_verified",
       "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/troubleshoot/sharepoint/sync/enable-co-authoring-for-onedrive-synced-file",
+      "sha256": "c953f95cf8db3ce519efef19c05572b3331e54283899da4f2edc58f7f15bb161",
+      "captured_at": "2026-11-11T22:15:04.563893+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/troubleshoot/sharepoint/lists-and-libraries/cant-open-online-only-file",
+      "sha256": "0763f32b6f60777f3845c079be3713cca20443719b24ffabd663e2494202c3ef",
+      "captured_at": "2026-11-11T22:15:04.701672+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/viva/glint/introduction-viva-glint",
+      "sha256": "3270d0e84c2b9ac3605eba4d27b97106d3a7d33ad7612fd0ca43306362abbeae",
+      "captured_at": "2026-11-11T22:15:04.759924+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/viva/insights/introduction",
+      "sha256": "b51a913933cd6045f332560f0dc5b531057d16263fe78633dd97df59bc880d7e",
+      "captured_at": "2026-11-11T22:15:04.910896+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/viva/pulse/introduction-to-viva-pulse",
+      "sha256": "8a8e740f2d487c4d811b710396a71eec9ea6ad9dfee5d43e0b91ca38714a5004",
+      "captured_at": "2026-11-11T22:15:05.124439+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/education/guide/0-start/a-start",
+      "sha256": "d0fa067898e93dd84ebfe118c065c6e906496428030b29351f367546be40d7db",
+      "captured_at": "2026-11-11T22:15:05.209313+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/education/guide/0-start/all-license",
+      "sha256": "5200f6543d4714333873978c6caa192bdfecef9e099cd54313e5024c3b40a5bc",
+      "captured_at": "2026-11-11T22:15:05.271382+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/office/ltsc/2024/",
+      "sha256": "4914ae7724fe7b2ade229b6cd03a99bc087072811e87a2e8ace7543c8fdd587b",
+      "captured_at": "2026-11-11T22:15:05.612966+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/dotnet/fundamentals/index",
+      "sha256": "fe6cb3d604d075f62996adde02b86fafbdb8bf9fc61b864c53f33f7c6aec811f",
+      "captured_at": "2026-11-11T22:15:05.788190+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/dotnet/netframework-1.1",
+      "sha256": "5247746a5dbab50526b8f85bfe79146a773cacf2178bceb8b6657e63ecf2688d",
+      "captured_at": "2026-11-11T22:15:06.009438+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/dotnet/netframework-2.0",
+      "sha256": "c9ebf261ea0f272f8fe5fc23a7cb905b508de20af1e3512c10db7a15314c1c40",
+      "captured_at": "2026-11-11T22:15:06.464587+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/dotnet/netframework-3.0",
+      "sha256": "8f6645a9f23513144e0f45c3024da25e42ab44ad7dee8d39b471be69c8bdfcc1",
+      "captured_at": "2026-11-11T22:15:07.085837+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/dotnet/netframework-3.5",
+      "sha256": "b037b52aca267b7fc10e6eba43ebdb28fedb560d9bbc737a2ef0e8347cb4b619",
+      "captured_at": "2026-11-11T22:15:07.346659+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0",
+      "sha256": "4590264ee5ba94d8a2d4340fd5b990dfeffc0aa8df31b8e8bb9c6df2e0653349",
+      "captured_at": "2026-11-11T22:15:07.446468+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/dotnet/framework/",
+      "sha256": "cd16b1345ea2c4dd90d7af5cd4c98d14022074d56036395b02225856abeb6fc1",
+      "captured_at": "2026-11-11T22:15:07.524155+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/dotnet/reactive-extensions/hh242985(v=vs.103)",
+      "sha256": "a272aa5c6bb43086f700199dabd8ddc1a801117d2ceeaab632a637141e67167e",
+      "captured_at": "2026-11-11T22:15:07.612771+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/dotnet/xna-compact-framework",
+      "sha256": "216ff1cfa5a4f8e13b5aa97f74cd8c20c48c3666c907f5fbfc6c52f1ca10bf52",
+      "captured_at": "2026-11-11T22:15:07.699452+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/appfabric/hh351318(v=azure.10)",
+      "sha256": "19b4e421ed8a5516cab22a9ffcafaa67679081b6258ee58ab83bfa145febe31f",
+      "captured_at": "2026-11-11T22:15:07.863310+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/aspnet/dd566231(v=vs.140)",
+      "sha256": "2e71317f7d65ecd2b579d0c67d79121f89a5495ce82af4fc37ba605c83daf925",
+      "captured_at": "2026-11-11T22:15:07.934105+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/azure/batch-ai/",
+      "sha256": "d117007f3cf866335991836838b5071b5337fbb3392db287ba5361f633bbfd44",
+      "captured_at": "2026-11-11T22:15:08.086746+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/azure/bot-service/index-bf-sdk",
+      "sha256": "8989e66b46344f15d307fa64342b0190543cd6c3d1a144e4bfe27ed0f154def7",
+      "captured_at": "2026-11-11T22:15:08.409277+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/azure/devops/user-guide/what-is-azure-devops",
+      "sha256": "8b2a54bc4a247ee7e1e80993ef8cbee97c2d5e4a701024766d19de575c8de1e8",
+      "captured_at": "2026-11-11T22:15:08.584116+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/bing/speech/",
+      "sha256": "cdb2350c09e237a73de4816a01e0622c6a9ac619cd1a27d54d783e7650f50872",
+      "captured_at": "2026-11-11T22:15:08.782890+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/cpp/parallel/amp/cpp-amp-cpp-accelerated-massive-parallelism",
+      "sha256": "443de8059577150f5297779540524c3cae8fe78da8fb82f988a2bf8c0712ba8e",
+      "captured_at": "2026-11-11T22:15:09.696369+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/dynamicsax-2012/appuser-itpro/microsoft-dynamics-ax-2012-technical-library",
+      "sha256": "42fc85c0722510edbaac1628f14803962148efb9ba8106ca7a4d8bae9a0b25b4",
+      "captured_at": "2026-11-11T22:15:09.821372+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/industry-solutions-group/bb971664(v=msdn.10)",
+      "sha256": "ebe4dff87390a1c1958ae813fbd73544bb7db35b8fef4d841b5bb6b609927ed4",
+      "captured_at": "2026-11-11T22:15:10.080731+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/iis/6.0-sdk",
+      "sha256": "be84a9f59388a2e61bbaed8f5f1ed471441c068b5cccd8bb222d3d403439d7e0",
+      "captured_at": "2026-11-11T22:15:10.247583+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/archive/microsoft-edge/legacy/developer/dev-guide/index",
+      "sha256": "a9367fe285145b480feada76202e52e64d1ed1af9503ebbf78a72b430591bf26",
+      "captured_at": "2026-11-11T22:15:10.451639+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/microsoft-esp/ff798293(v=msdn.10)",
+      "sha256": "d454e176e01b195d9032f342014362d661aae0ff38c5e48696de24429da85e73",
+      "captured_at": "2026-11-11T22:15:10.544272+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/mim/cc720621(v=ws.10)",
+      "sha256": "72db763f2d3279f861d252568c2650ba55f7233625d0ef573e0b13f7b5b470b5",
+      "captured_at": "2026-11-11T22:15:10.610701+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/microsoft-robotics/cc998476(v=msdn.10)",
+      "sha256": "d0cb64951e16ffcf1eac8876e0c9b96a30726bd76069e01490c81d0bff28c859",
+      "captured_at": "2026-11-11T22:15:11.071584+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/office/office-2013-resource-kit/",
+      "sha256": "9cd16e379fab3616e64b7f38d246cd83d0480fd5afd9f28b1e5e2bc3f0d9b662",
+      "captured_at": "2026-11-11T22:15:11.528314+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/msp-n-p/ff921345(v=pandp.10)",
+      "sha256": "78a8a9fef3cbeb07afc462239b3b8053857389989b3b414db9dc8b93e5e599b7",
+      "captured_at": "2026-11-11T22:15:11.704410+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/powershell/scripting/overview",
+      "sha256": "c903baaf613b391e3a0636023ddfa7e187b65629a2e0fa7db06a86dcd2bc17e5",
+      "captured_at": "2026-11-11T22:15:11.778819+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/sql/2014/index",
+      "sha256": "7b8859e8ceafe5c09b8f900a98d88351aac95d766ee5581f0f38776ce5773b98",
+      "captured_at": "2026-11-11T22:15:12.157938+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
     }
   ],
   "seen": [
@@ -14493,6 +14787,7 @@
     "https://learn.microsoft.com/en-us/answers/questions/5707555/excel-copilot-is-generating-download-links-that-ha",
     "https://learn.microsoft.com/en-us/answers/questions/5744593/visual-studio-2026-uses-excessive-memory-(20gb-)-w",
     "https://learn.microsoft.com/en-us/archive/microsoft-edge/legacy/",
+    "https://learn.microsoft.com/en-us/archive/microsoft-edge/legacy/developer/dev-guide/index",
     "https://learn.microsoft.com/en-us/azure",
     "https://learn.microsoft.com/en-us/azure/active-directory-b2c/",
     "https://learn.microsoft.com/en-us/azure/active-directory-b2c/faq",
@@ -15744,6 +16039,8 @@
     "https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-overview-copilot-credits",
     "https://learn.microsoft.com/en-us/microsoft-365/documentprocessing/syntex-pay-as-you-go-services",
     "https://learn.microsoft.com/en-us/microsoft-365/education/deploy/pooled-storage-management",
+    "https://learn.microsoft.com/en-us/microsoft-365/education/guide/0-start/a-start",
+    "https://learn.microsoft.com/en-us/microsoft-365/education/guide/0-start/all-license",
     "https://learn.microsoft.com/en-us/microsoft-365/enterprise/add-several-users-at-the-same-time",
     "https://learn.microsoft.com/en-us/microsoft-365/enterprise/create-sharepoint-sites-and-add-users-with-powershell",
     "https://learn.microsoft.com/en-us/microsoft-365/enterprise/create-user-accounts-with-microsoft-365-powershell",
@@ -15877,6 +16174,7 @@
     "https://learn.microsoft.com/en-us/microsoftteams/upgrade-start-here",
     "https://learn.microsoft.com/en-us/microsoftteams/using-admin-roles",
     "https://learn.microsoft.com/en-us/office/",
+    "https://learn.microsoft.com/en-us/office/ltsc/2024/",
     "https://learn.microsoft.com/en-us/office/troubleshoot/",
     "https://learn.microsoft.com/en-us/office365/admin/add-users/add-users",
     "https://learn.microsoft.com/en-us/office365/admin/manage/release-options-in-office-365",
@@ -15910,6 +16208,7 @@
     "https://learn.microsoft.com/en-us/powershell/microsoftgraph/overview",
     "https://learn.microsoft.com/en-us/powershell/module/exchangepowershell/remove-mailboxfolderpermission",
     "https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.groups/set-mggrouplicense",
+    "https://learn.microsoft.com/en-us/powershell/scripting/overview",
     "https://learn.microsoft.com/en-us/powershell/teams/",
     "https://learn.microsoft.com/en-us/previous-versions/",
     "https://learn.microsoft.com/en-us/previous-versions/SkypeForBusiness/skype-for-business-online-reporting/activity-report",
@@ -15918,27 +16217,52 @@
     "https://learn.microsoft.com/en-us/previous-versions/SkypeForBusiness/skype-for-business-online-reporting/device-usage-report",
     "https://learn.microsoft.com/en-us/previous-versions/SkypeForBusiness/skype-for-business-online-reporting/peer-to-peer-activity-report",
     "https://learn.microsoft.com/en-us/previous-versions/appfabric/",
+    "https://learn.microsoft.com/en-us/previous-versions/appfabric/hh351318(v=azure.10)",
     "https://learn.microsoft.com/en-us/previous-versions/aspnet/",
+    "https://learn.microsoft.com/en-us/previous-versions/aspnet/dd566231(v=vs.140)",
     "https://learn.microsoft.com/en-us/previous-versions/azure/",
+    "https://learn.microsoft.com/en-us/previous-versions/azure/batch-ai/",
+    "https://learn.microsoft.com/en-us/previous-versions/azure/bot-service/index-bf-sdk",
     "https://learn.microsoft.com/en-us/previous-versions/azure/bot-service/index-bf-sdk/",
     "https://learn.microsoft.com/en-us/previous-versions/azure/devops/",
+    "https://learn.microsoft.com/en-us/previous-versions/azure/devops/user-guide/what-is-azure-devops",
     "https://learn.microsoft.com/en-us/previous-versions/bing/",
+    "https://learn.microsoft.com/en-us/previous-versions/bing/speech/",
     "https://learn.microsoft.com/en-us/previous-versions/commerce-server/",
     "https://learn.microsoft.com/en-us/previous-versions/cpp/",
+    "https://learn.microsoft.com/en-us/previous-versions/cpp/parallel/amp/cpp-amp-cpp-accelerated-massive-parallelism",
     "https://learn.microsoft.com/en-us/previous-versions/dotnet/",
+    "https://learn.microsoft.com/en-us/previous-versions/dotnet/framework/",
+    "https://learn.microsoft.com/en-us/previous-versions/dotnet/fundamentals/index",
+    "https://learn.microsoft.com/en-us/previous-versions/dotnet/netframework-1.1",
+    "https://learn.microsoft.com/en-us/previous-versions/dotnet/netframework-2.0",
+    "https://learn.microsoft.com/en-us/previous-versions/dotnet/netframework-3.0",
+    "https://learn.microsoft.com/en-us/previous-versions/dotnet/netframework-3.5",
+    "https://learn.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0",
+    "https://learn.microsoft.com/en-us/previous-versions/dotnet/reactive-extensions/hh242985(v=vs.103)",
+    "https://learn.microsoft.com/en-us/previous-versions/dotnet/xna-compact-framework",
     "https://learn.microsoft.com/en-us/previous-versions/dynamics/",
+    "https://learn.microsoft.com/en-us/previous-versions/dynamicsax-2012/appuser-itpro/microsoft-dynamics-ax-2012-technical-library",
     "https://learn.microsoft.com/en-us/previous-versions/entra/identity/authentication/howto-mfaserver-deploy",
     "https://learn.microsoft.com/en-us/previous-versions/entra/identity/authentication/howto-mfaserver-nps-vpn",
     "https://learn.microsoft.com/en-us/previous-versions/iis/",
+    "https://learn.microsoft.com/en-us/previous-versions/iis/6.0-sdk",
     "https://learn.microsoft.com/en-us/previous-versions/industry-solutions-group/",
+    "https://learn.microsoft.com/en-us/previous-versions/industry-solutions-group/bb971664(v=msdn.10)",
     "https://learn.microsoft.com/en-us/previous-versions/microsoft-365/solutions/choose-domain-to-create-groups",
     "https://learn.microsoft.com/en-us/previous-versions/microsoft-esp/",
+    "https://learn.microsoft.com/en-us/previous-versions/microsoft-esp/ff798293(v=msdn.10)",
     "https://learn.microsoft.com/en-us/previous-versions/microsoft-robotics/",
+    "https://learn.microsoft.com/en-us/previous-versions/microsoft-robotics/cc998476(v=msdn.10)",
     "https://learn.microsoft.com/en-us/previous-versions/mim/",
+    "https://learn.microsoft.com/en-us/previous-versions/mim/cc720621(v=ws.10)",
     "https://learn.microsoft.com/en-us/previous-versions/msp-n-p/",
+    "https://learn.microsoft.com/en-us/previous-versions/msp-n-p/ff921345(v=pandp.10)",
     "https://learn.microsoft.com/en-us/previous-versions/office/",
+    "https://learn.microsoft.com/en-us/previous-versions/office/office-2013-resource-kit/",
     "https://learn.microsoft.com/en-us/previous-versions/powershell/scripting/overview",
     "https://learn.microsoft.com/en-us/previous-versions/sql/",
+    "https://learn.microsoft.com/en-us/previous-versions/sql/2014/index",
     "https://learn.microsoft.com/en-us/previous-versions/system-center/",
     "https://learn.microsoft.com/en-us/previous-versions/technet-magazine/",
     "https://learn.microsoft.com/en-us/previous-versions/troubleshoot/content-retirement",
@@ -16045,18 +16369,23 @@
     "https://learn.microsoft.com/en-us/troubleshoot/power-platform/copilot-studio/welcome-copilot-studio",
     "https://learn.microsoft.com/en-us/troubleshoot/sharepoint/administration/access-denied-or-need-permission-error-sharepoint-online-or-onedrive-for-business",
     "https://learn.microsoft.com/en-us/troubleshoot/sharepoint/infopath/soapserverexception-when-customizing-list-form-using-infopath-designer",
+    "https://learn.microsoft.com/en-us/troubleshoot/sharepoint/lists-and-libraries/cant-open-online-only-file",
     "https://learn.microsoft.com/en-us/troubleshoot/sharepoint/onedrive-welcome",
     "https://learn.microsoft.com/en-us/troubleshoot/sharepoint/sharepoint-hybrid-welcome",
     "https://learn.microsoft.com/en-us/troubleshoot/sharepoint/sharepoint-online-welcome",
     "https://learn.microsoft.com/en-us/troubleshoot/sharepoint/sharepoint-server-welcome",
+    "https://learn.microsoft.com/en-us/troubleshoot/sharepoint/sync/enable-co-authoring-for-onedrive-synced-file",
     "https://learn.microsoft.com/en-us/troubleshoot/viva/glint/viva-glint-welcome",
     "https://learn.microsoft.com/en-us/troubleshoot/viva/insights/viva-insights-welcome",
     "https://learn.microsoft.com/en-us/troubleshoot/viva/pulse/viva-pulse-welcome",
     "https://learn.microsoft.com/en-us/viva/engage/manage-viva-engage-groups/viva-engage-and-office-365-groups",
+    "https://learn.microsoft.com/en-us/viva/glint/introduction-viva-glint",
+    "https://learn.microsoft.com/en-us/viva/insights/introduction",
     "https://learn.microsoft.com/en-us/viva/insights/org-team-insights/copilot-dashboard",
     "https://learn.microsoft.com/en-us/viva/insights/org-team-insights/copilot-dashboard-advanced-features",
     "https://learn.microsoft.com/en-us/viva/insights/personal/setup/deployment-guide",
     "https://learn.microsoft.com/en-us/viva/microsoft-viva-overview",
+    "https://learn.microsoft.com/en-us/viva/pulse/introduction-to-viva-pulse",
     "https://learn.microsoft.com/en-us/windows-server/get-started/extended-security-updates-deploy",
     "https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/deploy/troubleshooting-domain-controller-deployment",
     "https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/plan/security-best-practices/audit-policy-recommendations",
@@ -16070,154 +16399,6 @@
     "https://learn.microsoft.com/en-us/windows/win32/wer/windows-error-reporting"
   ],
   "queue": [
-    {
-      "url": "https://learn.microsoft.com/en-us/troubleshoot/sharepoint/sync/enable-co-authoring-for-onedrive-synced-file",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/troubleshoot/sharepoint/lists-and-libraries/cant-open-online-only-file",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/viva/glint/introduction-viva-glint",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/viva/insights/introduction",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/viva/pulse/introduction-to-viva-pulse",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/education/guide/0-start/a-start",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/education/guide/0-start/all-license",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/office/ltsc/2024/",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/previous-versions/dotnet/fundamentals/index",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/previous-versions/dotnet/netframework-1.1",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/previous-versions/dotnet/netframework-2.0",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/previous-versions/dotnet/netframework-3.0",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/previous-versions/dotnet/netframework-3.5",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/previous-versions/dotnet/framework/",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/previous-versions/dotnet/reactive-extensions/hh242985(v=vs.103)",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/previous-versions/dotnet/xna-compact-framework",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/previous-versions/appfabric/hh351318(v=azure.10)",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/previous-versions/appfabric/hh351318(v=azure.10)",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/previous-versions/aspnet/dd566231(v=vs.140)",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/previous-versions/azure/batch-ai/",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/previous-versions/azure/bot-service/index-bf-sdk",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/previous-versions/azure/devops/user-guide/what-is-azure-devops",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/previous-versions/bing/speech/",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/office365/smallbusiness/build-your-small-business/build-your-small-business",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/previous-versions/cpp/parallel/amp/cpp-amp-cpp-accelerated-massive-parallelism",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/previous-versions/dynamicsax-2012/appuser-itpro/microsoft-dynamics-ax-2012-technical-library",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/previous-versions/industry-solutions-group/bb971664(v=msdn.10)",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/previous-versions/iis/6.0-sdk",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/archive/microsoft-edge/legacy/developer/dev-guide/index",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/previous-versions/microsoft-esp/ff798293(v=msdn.10)",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/previous-versions/mim/cc720621(v=ws.10)",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/previous-versions/microsoft-robotics/cc998476(v=msdn.10)",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/previous-versions/office/office-2013-resource-kit/",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/previous-versions/msp-n-p/ff921345(v=pandp.10)",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/powershell/scripting/overview",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/previous-versions/sql/2014/index",
-      "depth": 3
-    },
     {
       "url": "https://learn.microsoft.com/en-us/previous-versions/system-center/system-center-2012-r2",
       "depth": 3
@@ -24849,12 +25030,21 @@
     {
       "url": "https://learn.microsoft.com/en-us/admin/setup/add-or-replace-your-onmicrosoftcom-domain",
       "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/office365/smallbusiness/build-your-small-business/build-your-small-business",
+      "depth": 2
     }
   ],
   "last_batch": {
     "attempted": 36,
-    "documents_total": 1606,
-    "queued": 2195,
-    "failures": []
+    "documents_total": 1641,
+    "queued": 2159,
+    "failures": [
+      {
+        "url": "https://learn.microsoft.com/en-us/office365/smallbusiness/build-your-small-business/build-your-small-business",
+        "error": "ValueError"
+      }
+    ]
   }
 }

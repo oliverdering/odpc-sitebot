@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T15:39:26.308783+00:00",
+  "generated_at": "2026-11-11T22:15:16.548645+00:00",
   "product": "AdminMonkey Academy",
   "certification_expansion": {
     "candidate_exam_codes": 42,
@@ -45,23 +45,28 @@
   "certification_issuer": "ODPC",
   "official_microsoft_certification": false,
   "knowledge": {
-    "documents_collected": 1606,
-    "manufacturer_verified": 1606,
+    "documents_collected": 1641,
+    "manufacturer_verified": 1641,
     "review": {
       "unreviewed": 0,
-      "approved": 1606,
+      "approved": 1641,
       "rejected": 0
     },
     "last_batch": {
       "attempted": 36,
-      "documents_total": 1606,
-      "queued": 2195,
-      "failures": []
+      "documents_total": 1641,
+      "queued": 2159,
+      "failures": [
+        {
+          "url": "https://learn.microsoft.com/en-us/office365/smallbusiness/build-your-small-business/build-your-small-business",
+          "error": "ValueError"
+        }
+      ]
     }
   },
   "retrieval_staging": {
-    "chunked_documents": 1601,
-    "chunks_prepared": 8302,
+    "chunked_documents": 1636,
+    "chunks_prepared": 8382,
     "retrieval_quality_verified": false,
     "agent_answers_verified": 0,
     "note": "Ephemeral, provenance-checked chunk preparation; no searchable production index yet."
@@ -69,7 +74,7 @@
   "tracks": [
     {
       "track": "MS-102",
-      "manufacturer_verified_sources": 356,
+      "manufacturer_verified_sources": 360,
       "knowledge_coverage": "source_count_only_not_learning_objective_coverage",
       "practice_scenarios_available": 6,
       "agent_answers_evaluated": 0,
@@ -85,7 +90,7 @@
     },
     {
       "track": "AZ-104",
-      "manufacturer_verified_sources": 85,
+      "manufacturer_verified_sources": 88,
       "knowledge_coverage": "source_count_only_not_learning_objective_coverage",
       "practice_scenarios_available": 4,
       "agent_answers_evaluated": 0,

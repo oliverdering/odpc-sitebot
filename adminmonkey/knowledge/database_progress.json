@@ -1,14 +1,28 @@
 {
   "database_connected": true,
-  "new_document_versions": 35,
-  "document_versions_total": 1602,
-  "sources_total": 1601,
-  "imported_from_verified_origin": 1603,
-  "rejected_document_count": 3,
+  "new_document_versions": 21,
+  "document_versions_total": 1623,
+  "sources_total": 1622,
+  "imported_from_verified_origin": 1624,
+  "rejected_document_count": 17,
   "rejected_document_urls": [
     "https://learn.microsoft.com/en-us/",
     "https://learn.microsoft.com/en-us/answers/questions/5744593/visual-studio-2026-uses-excessive-memory-(20gb-)-w",
-    "https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.groups/set-mggrouplicense"
+    "https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.groups/set-mggrouplicense",
+    "https://learn.microsoft.com/en-us/previous-versions/dotnet/netframework-1.1",
+    "https://learn.microsoft.com/en-us/previous-versions/dotnet/netframework-2.0",
+    "https://learn.microsoft.com/en-us/previous-versions/dotnet/netframework-3.0",
+    "https://learn.microsoft.com/en-us/previous-versions/dotnet/netframework-3.5",
+    "https://learn.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0",
+    "https://learn.microsoft.com/en-us/previous-versions/dotnet/reactive-extensions/hh242985(v=vs.103)",
+    "https://learn.microsoft.com/en-us/previous-versions/appfabric/hh351318(v=azure.10)",
+    "https://learn.microsoft.com/en-us/previous-versions/aspnet/dd566231(v=vs.140)",
+    "https://learn.microsoft.com/en-us/previous-versions/industry-solutions-group/bb971664(v=msdn.10)",
+    "https://learn.microsoft.com/en-us/previous-versions/iis/6.0-sdk",
+    "https://learn.microsoft.com/en-us/previous-versions/microsoft-esp/ff798293(v=msdn.10)",
+    "https://learn.microsoft.com/en-us/previous-versions/mim/cc720621(v=ws.10)",
+    "https://learn.microsoft.com/en-us/previous-versions/microsoft-robotics/cc998476(v=msdn.10)",
+    "https://learn.microsoft.com/en-us/previous-versions/msp-n-p/ff921345(v=pandp.10)"
   ],
   "official_microsoft_certification": false
 }
