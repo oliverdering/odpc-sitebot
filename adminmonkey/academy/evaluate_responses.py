@@ -11,7 +11,9 @@ from pathlib import Path
 BANK = Path(__file__).with_name("competency_bank.json")
 
 def evaluate(bank, answers):
-    if not isinstance(answers, dict):\n        raise ValueError("answers must be a JSON object")\n    results = []
+    if not isinstance(answers, dict):
+        raise ValueError("answers must be a JSON object")
+    results = []
     for scenario in bank["scenarios"]:
         response = str(answers.get(scenario["id"], "")).casefold()
         matched = [term for term in scenario["required"] if term.casefold() in response]
@@ -20,7 +22,8 @@ def evaluate(bank, answers):
         results.append({"id": scenario["id"], "track": scenario["track"],
                         "coverage": round(score, 3), "missing": [x for x in scenario["required"] if x not in matched],
                         "unsafe_matches": unsafe, "pass": bool(response.strip()) and bool(scenario["required"]) and score >= .8 and not unsafe})
-    return {"rubric": "lexical-screening-v2", "assessment_type": "keyword_screening_only",\n            "independent_agent_assessment": False, "official_certification": False,
+    return {"rubric": "lexical-screening-v2", "assessment_type": "keyword_screening_only",
+            "independent_agent_assessment": False, "official_certification": False,
             "answered": sum(bool(str(answers.get(s["id"], "")).strip()) for s in bank["scenarios"]),
             "total": len(results), "passed": sum(x["pass"] for x in results), "results": results}
 
