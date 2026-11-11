@@ -13789,6 +13789,336 @@
       "mapped_tracks": [
         "MS-102"
       ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/email/change-email-address",
+      "sha256": "97565b40dd6fde89f8c4d9cf38cb1891e684fd9170997bdf6ddf804c1b0377a0",
+      "captured_at": "2026-11-11T12:08:19.285573+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/dns/update-dns-records-to-retain-current-hosting-provider",
+      "sha256": "173e146e16542703ada4037393b73440c5c0df9cdf564aa17fa1204011c54d58",
+      "captured_at": "2026-11-11T12:08:19.609666+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/viva/insights/org-team-insights/copilot-dashboard",
+      "sha256": "cae9e3742376658415e037fee94f86023b2899de0a9ba35a7c91ee9423c2fd91",
+      "captured_at": "2026-11-11T12:08:19.761792+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/microsoft-365-copilot",
+      "sha256": "675d2cfa7d10642272ea579e93ce5adcb6bd2098885d772acebdb697059cda11",
+      "captured_at": "2026-11-11T12:08:19.874091+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-setup",
+      "sha256": "5170b56731eeb7c4bcf4d1e9d3561b755f65c5ca7b93976cce18b9b39c71dfb0",
+      "captured_at": "2026-11-11T12:08:20.351621+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/DeployOffice/privacy/required-service-data",
+      "sha256": "2d1b45e7e67ef20c6af8f5792efbb5355958d80fe12aa56771d78dae445e60d4",
+      "captured_at": "2026-11-11T12:08:20.540759+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/track-copilot-adoption",
+      "sha256": "a7dc809a99f6e35bf19a362b7a564bfd809e1bfc99fa47361f6bdcb1a6cba7a0",
+      "captured_at": "2026-11-11T12:08:20.898342+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/viva/insights/org-team-insights/copilot-dashboard-advanced-features",
+      "sha256": "cae9e3742376658415e037fee94f86023b2899de0a9ba35a7c91ee9423c2fd91",
+      "captured_at": "2026-11-11T12:08:21.124810+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/microsoft-365-copilot-agents-new",
+      "sha256": "9d67c3c445903981e53bfebecd5af5276acdc3c790fcee58e6b5dc53ce626994",
+      "captured_at": "2026-11-11T12:08:21.416183+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-agent-365/admin/manage-copilot-agents-integrated-apps",
+      "sha256": "c8a9b31eeb38bd6caba7318981cbdc19c892285ea954eb0f0efca1a2e20f9cbb",
+      "captured_at": "2026-11-11T12:08:21.560314+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/copilot/overview",
+      "sha256": "30cd50704eb826444ea36a956a829578c035e53417895bc6cebc025a45df46a1",
+      "captured_at": "2026-11-11T12:08:21.708271+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/pay-as-you-go/meters",
+      "sha256": "90bc07a9720320450ac5faf02f055e7e6cce558ba76f49333f12b939b46b4f35",
+      "captured_at": "2026-11-11T12:08:22.135818+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-overview-copilot-credits",
+      "sha256": "45a89a8b9f7ad06c49b2c954b6709314c3c64cb48fc92bf7def6367ba1e75c2c",
+      "captured_at": "2026-11-11T12:08:22.303042+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/compliance/autoexpanding-archiving",
+      "sha256": "f0badaaa49822fbf5fcc2f538c8fc0bad4edfa14a3db7e39ca0e253ad66c095d",
+      "captured_at": "2026-11-11T12:08:22.709521+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/exchange/security-and-compliance/recoverable-items-folder/recoverable-items-folder",
+      "sha256": "58142d7dac3f41e518fba06642c4da5ce472cc0f25be83b157775a4d38a66488",
+      "captured_at": "2026-11-11T12:08:23.071180+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/resolve-site-urls",
+      "sha256": "54f682a49c55b8b54b48d841dd5e25163dda254b8ea29e36085ae6e93d3c5713",
+      "captured_at": "2026-11-11T12:08:23.283765+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/sharepoint/data-access-governance-reports",
+      "sha256": "ca8d43702831ae60da63f747762ab17c16eee31482af09a9d3b248f40c983eec",
+      "captured_at": "2026-11-11T12:08:23.416423+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/information-protection/byok-price-restrictions",
+      "sha256": "629223b298948546ca1cb1f645841f294c9334ae37d7326bd376908a60b74e89",
+      "captured_at": "2026-11-11T12:08:23.761261+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/security/fundamentals/customer-lockbox-overview",
+      "sha256": "1ff608e2aee9dce26f5c8efdd0a3974278b766ce4878b7beeeeca0073d510375",
+      "captured_at": "2026-11-11T12:08:24.296503+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/sharepoint/manage-sites-in-new-admin-center",
+      "sha256": "1927b27161d103bf6222aa96f3d993f456cda81b6fb3a62c9fff26c66ad747aa",
+      "captured_at": "2026-11-11T12:08:24.490371+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/education/deploy/pooled-storage-management",
+      "sha256": "450cc41e821b4c67bc4c2c78bc654d82dcdb61be44d254adb38e7c514f6e9ae6",
+      "captured_at": "2026-11-11T12:08:24.812375+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/sharepoint/sharepoint-storage-planning",
+      "sha256": "c16c96378873a491abb6e31c100aa32cffb2ef2ee78d874813e69d710fe28d79",
+      "captured_at": "2026-11-11T12:08:24.926940+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/office365/servicedescriptions/sharepoint-online-service-description/sharepoint-online-limits",
+      "sha256": "3436117be700679fadbe3dc4ee297779e6f2f4301ef7d260681f75450fd74ec8",
+      "captured_at": "2026-11-11T12:08:25.125206+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/SkypeForBusiness/skype-for-business-online-reporting/activity-report",
+      "sha256": "726a7d51f773cd54456ff0044089839d62d09e677abb472dc260c14fb26b781c",
+      "captured_at": "2026-11-11T12:08:25.280314+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/upgrade-assisted",
+      "sha256": "d5b806e85bdaf025fefffac7573e9d2a0a9c9f95c1bae819a8551f91137a6b88",
+      "captured_at": "2026-11-11T12:08:25.515520+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/upgrade-start-here",
+      "sha256": "db0a8bd85c49cccb5b605233251a07bca5b42e79519dfd1792335c8288bd3e38",
+      "captured_at": "2026-11-11T12:08:25.629028+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/SkypeForBusiness/skype-for-business-online-reporting/device-usage-report",
+      "sha256": "e3cb03ee51baa07b32d7f3542a88b192bd4d9dfd21a34f88bbdc5a65d222f6cf",
+      "captured_at": "2026-11-11T12:08:25.785572+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/SkypeForBusiness/skype-for-business-online-reporting/conference-organizer-activity-report",
+      "sha256": "aac1a83facbaf1da940de9d83806a3b3eb5e34b4f126bb6d729c7771c7741665",
+      "captured_at": "2026-11-11T12:08:25.992721+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/SkypeForBusiness/skype-for-business-online-reporting/conference-participant-activity-report",
+      "sha256": "5d19886ea2c2b48057e67696c3996d91b3201d7d418b392c12b6c2affcaef7ab",
+      "captured_at": "2026-11-11T12:08:26.205443+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/SkypeForBusiness/skype-for-business-online-reporting/peer-to-peer-activity-report",
+      "sha256": "dfd0f1afbeb86dd8653d2c76479546ad1e57f85890100643ec98e52ec9067684",
+      "captured_at": "2026-11-11T12:08:26.383226+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/viva/insights/personal/setup/deployment-guide",
+      "sha256": "3267581aef4321636877e833497e21e93b55fe8eb0f421e57cbc4bd4f535721d",
+      "captured_at": "2026-11-11T12:08:26.532735+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/microsoft365-apps-usage",
+      "sha256": "0e4b309e4bf51db2915336a4d69ef49a7ba2509efd9d8f900152480f1b875a48",
+      "captured_at": "2026-11-11T12:08:27.286602+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/deployoffice/privacy/manage-privacy-controls",
+      "sha256": "549d85bc6e55ba8a12ddb5416ad8abf0323f2d362c0bb14853d932abffa9ae5b",
+      "captured_at": "2026-11-11T12:08:27.496764+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/reportroot-getemailactivityuserdetail",
+      "sha256": "070522d1b0d2d2f06be1ad83a8e8b4b796d282a8825e9be82152b4758122f5e7",
+      "captured_at": "2026-11-11T12:08:27.849798+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/adminreportsettings-get",
+      "sha256": "b860c5c586a337286cb53539daf6691d749ff36043cb52c2acbb2ab17eb285cf",
+      "captured_at": "2026-11-11T12:08:28.109416+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/toolkit/overview",
+      "sha256": "accd7b2ce1991ad0a57df6e2f603807ce87aeea0c27413808642b18769b65395",
+      "captured_at": "2026-11-11T12:08:28.311060+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
     }
   ],
   "seen": [
@@ -13801,6 +14131,7 @@
     "https://learn.microsoft.com/en-us/DeployEdge/microsoft-edge-supported-operating-systems",
     "https://learn.microsoft.com/en-us/DeployOffice/manage-software-download-settings-office-365",
     "https://learn.microsoft.com/en-us/DeployOffice/overview-office-deployment-tool",
+    "https://learn.microsoft.com/en-us/DeployOffice/privacy/required-service-data",
     "https://learn.microsoft.com/en-us/Exchange/mailbox-migration/mailbox-migration",
     "https://learn.microsoft.com/en-us/Exchange/mailbox-migration/office-365-migration-best-practices",
     "https://learn.microsoft.com/en-us/Exchange/whats-new",
@@ -13883,6 +14214,7 @@
     "https://learn.microsoft.com/en-us/azure/governance/policy/overview",
     "https://learn.microsoft.com/en-us/azure/governance/resource-graph/reference/supported-tables-resources",
     "https://learn.microsoft.com/en-us/azure/governance/resource-graph/samples/samples-by-table",
+    "https://learn.microsoft.com/en-us/azure/information-protection/byok-price-restrictions",
     "https://learn.microsoft.com/en-us/azure/key-vault/general/logging",
     "https://learn.microsoft.com/en-us/azure/networking/check-usage-against-limits",
     "https://learn.microsoft.com/en-us/azure/notification-hubs",
@@ -13892,6 +14224,7 @@
     "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview",
     "https://learn.microsoft.com/en-us/azure/role-based-access-control/resource-provider-operations",
     "https://learn.microsoft.com/en-us/azure/role-based-access-control/role-assignments-portal",
+    "https://learn.microsoft.com/en-us/azure/security/fundamentals/customer-lockbox-overview",
     "https://learn.microsoft.com/en-us/azure/sentinel/data-connectors-reference",
     "https://learn.microsoft.com/en-us/azure/sentinel/data-connectors/azure-active-directory-identity-protection",
     "https://learn.microsoft.com/en-us/azure/sentinel/overview",
@@ -13911,6 +14244,7 @@
     "https://learn.microsoft.com/en-us/copilot/implement/connect-to-ai-subprocessor",
     "https://learn.microsoft.com/en-us/copilot/manage/copilot-search-overview",
     "https://learn.microsoft.com/en-us/copilot/microsoft-365/",
+    "https://learn.microsoft.com/en-us/copilot/overview",
     "https://learn.microsoft.com/en-us/copilot/plan/copilot-overview",
     "https://learn.microsoft.com/en-us/copilot/plan/enterprise-data-protection",
     "https://learn.microsoft.com/en-us/copilot/plan/secure-govern-copilot-foundational-deployment-guidance",
@@ -13936,6 +14270,7 @@
     "https://learn.microsoft.com/en-us/deployedge/microsoft-edge-support-lifecycle",
     "https://learn.microsoft.com/en-us/deployedge/microsoft-edge-supported-operating-systems",
     "https://learn.microsoft.com/en-us/deployoffice/overview-update-channels",
+    "https://learn.microsoft.com/en-us/deployoffice/privacy/manage-privacy-controls",
     "https://learn.microsoft.com/en-us/devops/deliver/what-is-infrastructure-as-code",
     "https://learn.microsoft.com/en-us/dotnet/framework/network-programming/tls",
     "https://learn.microsoft.com/en-us/dynamics365/",
@@ -14278,12 +14613,14 @@
     "https://learn.microsoft.com/en-us/exchange/recipients-in-exchange-online/manage-user-mailboxes/manage-user-mailboxes",
     "https://learn.microsoft.com/en-us/exchange/recipients/dynamic-distribution-groups/dynamic-distribution-groups",
     "https://learn.microsoft.com/en-us/exchange/recipients/mail-enabled-security-groups",
+    "https://learn.microsoft.com/en-us/exchange/security-and-compliance/recoverable-items-folder/recoverable-items-folder",
     "https://learn.microsoft.com/en-us/exchange/sharing-exchange-2013-help",
     "https://learn.microsoft.com/en-us/exchange/standalone-eop/exchange-admin-center-eop",
     "https://learn.microsoft.com/en-us/fabric/get-started/microsoft-fabric-overview",
     "https://learn.microsoft.com/en-us/graph",
     "https://learn.microsoft.com/en-us/graph/aad-advanced-queries",
     "https://learn.microsoft.com/en-us/graph/api/activitiescontainer-post-contentactivities",
+    "https://learn.microsoft.com/en-us/graph/api/adminreportsettings-get",
     "https://learn.microsoft.com/en-us/graph/api/application-delta",
     "https://learn.microsoft.com/en-us/graph/api/application-post-calls",
     "https://learn.microsoft.com/en-us/graph/api/application-post-onlinemeetings",
@@ -14391,6 +14728,7 @@
     "https://learn.microsoft.com/en-us/graph/api/profilephoto-delete",
     "https://learn.microsoft.com/en-us/graph/api/profilephoto-get",
     "https://learn.microsoft.com/en-us/graph/api/profilephoto-update",
+    "https://learn.microsoft.com/en-us/graph/api/reportroot-getemailactivityuserdetail",
     "https://learn.microsoft.com/en-us/graph/api/reportroot-getoffice365groupsactivitycounts",
     "https://learn.microsoft.com/en-us/graph/api/reportroot-getsharepointapiusage",
     "https://learn.microsoft.com/en-us/graph/api/reportsroot-list-reflectcheckinresponses",
@@ -14826,6 +15164,7 @@
     "https://learn.microsoft.com/en-us/graph/throttling-limits",
     "https://learn.microsoft.com/en-us/graph/todo-concept-overview",
     "https://learn.microsoft.com/en-us/graph/toolkit/get-started/add-aad-app-registration",
+    "https://learn.microsoft.com/en-us/graph/toolkit/overview",
     "https://learn.microsoft.com/en-us/graph/traverse-the-graph",
     "https://learn.microsoft.com/en-us/graph/tutorial-lifecycle-workflows-set-employeeleavedatetime",
     "https://learn.microsoft.com/en-us/graph/tutorials",
@@ -14889,6 +15228,7 @@
     "https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/forms-pro-activity-ww",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/mailbox-usage",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/microsoft-365-copilot-agents",
+    "https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/microsoft-365-copilot-agents-new",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/microsoft-365-copilot-connectors-usage",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/microsoft-365-copilot-credits",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/microsoft-365-copilot-readiness",
@@ -14899,12 +15239,14 @@
     "https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/microsoft-teams-device-usage-preview",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/microsoft-teams-usage-activity",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/microsoft-teams-user-activity-preview",
+    "https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/microsoft365-apps-usage",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/microsoft365-apps-usage-ww",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/office-365-groups-ww",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/onedrive-for-business-activity-ww",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/onedrive-for-business-usage-ww",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/planner-activity",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/project-activity",
+    "https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/resolve-site-urls",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/sharepoint-activity-ww",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/sharepoint-site-usage-ww",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/sharepoint-storage-reports",
@@ -14937,7 +15279,9 @@
     "https://learn.microsoft.com/en-us/microsoft-365/admin/create-groups/create-groups",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/create-groups/manage-groups",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/create-groups/office-365-groups",
+    "https://learn.microsoft.com/en-us/microsoft-365/admin/dns/update-dns-records-to-retain-current-hosting-provider",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/email/add-user-or-contact-to-distribution-list",
+    "https://learn.microsoft.com/en-us/microsoft-365/admin/email/change-email-address",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/email/configure-a-shared-mailbox",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/email/configure-email-forwarding",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/email/convert-user-mailbox-to-shared-mailbox",
@@ -15019,6 +15363,7 @@
     "https://learn.microsoft.com/en-us/microsoft-365/commerce/subscriptions/understand-eos-products",
     "https://learn.microsoft.com/en-us/microsoft-365/commerce/try-or-buy-microsoft-365",
     "https://learn.microsoft.com/en-us/microsoft-365/compliance/auditing-solutions-overview",
+    "https://learn.microsoft.com/en-us/microsoft-365/compliance/autoexpanding-archiving",
     "https://learn.microsoft.com/en-us/microsoft-365/compliance/dlp-learn-about-dlp",
     "https://learn.microsoft.com/en-us/microsoft-365/compliance/inactive-mailboxes-in-office-365",
     "https://learn.microsoft.com/en-us/microsoft-365/compliance/whats-new",
@@ -15036,7 +15381,12 @@
     "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-licensing",
     "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-page",
     "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-search",
+    "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-setup",
+    "https://learn.microsoft.com/en-us/microsoft-365/copilot/pay-as-you-go/meters",
     "https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes",
+    "https://learn.microsoft.com/en-us/microsoft-365/copilot/track-copilot-adoption",
+    "https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-overview-copilot-credits",
+    "https://learn.microsoft.com/en-us/microsoft-365/education/deploy/pooled-storage-management",
     "https://learn.microsoft.com/en-us/microsoft-365/enterprise/add-several-users-at-the-same-time",
     "https://learn.microsoft.com/en-us/microsoft-365/enterprise/create-sharepoint-sites-and-add-users-with-powershell",
     "https://learn.microsoft.com/en-us/microsoft-365/enterprise/create-user-accounts-with-microsoft-365-powershell",
@@ -15071,6 +15421,7 @@
     "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/outbound-spam-policies-external-email-forwarding",
     "https://learn.microsoft.com/en-us/microsoft-365/solutions/setup-secure-collaboration-with-teams",
     "https://learn.microsoft.com/en-us/microsoft-365/troubleshoot/active-directory/restore-deleted-user-accounts",
+    "https://learn.microsoft.com/en-us/microsoft-agent-365/admin/manage-copilot-agents-integrated-apps",
     "https://learn.microsoft.com/en-us/microsoft-agent-365/overview",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/",
@@ -15164,6 +15515,8 @@
     "https://learn.microsoft.com/en-us/microsoftteams/teams-overview",
     "https://learn.microsoft.com/en-us/microsoftteams/teams-powershell-overview",
     "https://learn.microsoft.com/en-us/microsoftteams/training-microsoft-teams-landing-page",
+    "https://learn.microsoft.com/en-us/microsoftteams/upgrade-assisted",
+    "https://learn.microsoft.com/en-us/microsoftteams/upgrade-start-here",
     "https://learn.microsoft.com/en-us/microsoftteams/using-admin-roles",
     "https://learn.microsoft.com/en-us/office/",
     "https://learn.microsoft.com/en-us/office/troubleshoot/",
@@ -15173,10 +15526,12 @@
     "https://learn.microsoft.com/en-us/office365/planner/track-message-center-tasks-planner",
     "https://learn.microsoft.com/en-us/office365/servicedescriptions/exchange-online-service-description/exchange-online-limits",
     "https://learn.microsoft.com/en-us/office365/servicedescriptions/exchange-online-service-description/exchange-online-service-description",
+    "https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/microsoft-365-copilot",
     "https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/microsoft-365-education",
     "https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/microsoft-365-operated-by-21vianet",
     "https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/service-health-and-continuity",
     "https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-service-descriptions-technet-library",
+    "https://learn.microsoft.com/en-us/office365/servicedescriptions/sharepoint-online-service-description/sharepoint-online-limits",
     "https://learn.microsoft.com/en-us/onedrive/restore-deleted-onedrive",
     "https://learn.microsoft.com/en-us/onedrive/set-retention",
     "https://learn.microsoft.com/en-us/power-automate",
@@ -15194,6 +15549,11 @@
     "https://learn.microsoft.com/en-us/powershell/module/exchangepowershell/remove-mailboxfolderpermission",
     "https://learn.microsoft.com/en-us/powershell/teams/",
     "https://learn.microsoft.com/en-us/previous-versions/",
+    "https://learn.microsoft.com/en-us/previous-versions/SkypeForBusiness/skype-for-business-online-reporting/activity-report",
+    "https://learn.microsoft.com/en-us/previous-versions/SkypeForBusiness/skype-for-business-online-reporting/conference-organizer-activity-report",
+    "https://learn.microsoft.com/en-us/previous-versions/SkypeForBusiness/skype-for-business-online-reporting/conference-participant-activity-report",
+    "https://learn.microsoft.com/en-us/previous-versions/SkypeForBusiness/skype-for-business-online-reporting/device-usage-report",
+    "https://learn.microsoft.com/en-us/previous-versions/SkypeForBusiness/skype-for-business-online-reporting/peer-to-peer-activity-report",
     "https://learn.microsoft.com/en-us/previous-versions/appfabric/",
     "https://learn.microsoft.com/en-us/previous-versions/aspnet/",
     "https://learn.microsoft.com/en-us/previous-versions/azure/",
@@ -15271,10 +15631,13 @@
     "https://learn.microsoft.com/en-us/security/zero-trust/zero-trust-overview",
     "https://learn.microsoft.com/en-us/sharepoint/change-your-sharepoint-domain-name",
     "https://learn.microsoft.com/en-us/sharepoint/create-site-collection",
+    "https://learn.microsoft.com/en-us/sharepoint/data-access-governance-reports",
     "https://learn.microsoft.com/en-us/sharepoint/dev/solution-guidance/multigeo-introduction",
     "https://learn.microsoft.com/en-us/sharepoint/introduction",
+    "https://learn.microsoft.com/en-us/sharepoint/manage-sites-in-new-admin-center",
     "https://learn.microsoft.com/en-us/sharepoint/sharepoint-admin-role",
     "https://learn.microsoft.com/en-us/sharepoint/sharepoint-online",
+    "https://learn.microsoft.com/en-us/sharepoint/sharepoint-storage-planning",
     "https://learn.microsoft.com/en-us/sharepoint/sites/create-a-site-collection",
     "https://learn.microsoft.com/en-us/sharepoint/teams-connected-sites",
     "https://learn.microsoft.com/en-us/sharepoint/what-s-new-in-admin-center",
@@ -15314,6 +15677,9 @@
     "https://learn.microsoft.com/en-us/troubleshoot/viva/insights/viva-insights-welcome",
     "https://learn.microsoft.com/en-us/troubleshoot/viva/pulse/viva-pulse-welcome",
     "https://learn.microsoft.com/en-us/viva/engage/manage-viva-engage-groups/viva-engage-and-office-365-groups",
+    "https://learn.microsoft.com/en-us/viva/insights/org-team-insights/copilot-dashboard",
+    "https://learn.microsoft.com/en-us/viva/insights/org-team-insights/copilot-dashboard-advanced-features",
+    "https://learn.microsoft.com/en-us/viva/insights/personal/setup/deployment-guide",
     "https://learn.microsoft.com/en-us/viva/microsoft-viva-overview",
     "https://learn.microsoft.com/en-us/windows-server/get-started/extended-security-updates-deploy",
     "https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/deploy/troubleshooting-domain-controller-deployment",
@@ -15328,234 +15694,6 @@
     "https://learn.microsoft.com/en-us/windows/win32/wer/windows-error-reporting"
   ],
   "queue": [
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/get-help-with-domains/buy-a-domain-name",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/email/change-email-address",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/dns/update-dns-records-to-retain-current-hosting-provider",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/email/change-email-address",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-licensing",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/viva/insights/org-team-insights/copilot-dashboard",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/microsoft-365-copilot",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-setup",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/viva/insights/org-team-insights/copilot-dashboard",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/DeployOffice/privacy/required-service-data",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/track-copilot-adoption",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/viva/insights/org-team-insights/copilot-dashboard",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/viva/insights/org-team-insights/copilot-dashboard-advanced-features",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/microsoft-365-copilot-agents-new",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-agent-365/admin/manage-copilot-agents-integrated-apps",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-agent-365/admin/manage-copilot-agents-integrated-apps",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-agent-365/admin/manage-copilot-agents-integrated-apps",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/copilot/overview",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-copilot-connector",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/pay-as-you-go/meters",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-overview-copilot-credits",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-overview-copilot-credits",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/compliance/autoexpanding-archiving",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/exchange/security-and-compliance/recoverable-items-folder/recoverable-items-folder",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/resolve-site-urls",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/sharepoint/data-access-governance-reports",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/information-protection/byok-price-restrictions",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/security/fundamentals/customer-lockbox-overview",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/resolve-site-urls",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/sharepoint/manage-sites-in-new-admin-center",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/education/deploy/pooled-storage-management",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/sharepoint/sharepoint-storage-planning",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/office365/servicedescriptions/sharepoint-online-service-description/sharepoint-online-limits",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/microsoft-teams-device-usage-preview",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/microsoft-teams-usage-activity",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/previous-versions/SkypeForBusiness/skype-for-business-online-reporting/activity-report",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/previous-versions/SkypeForBusiness/skype-for-business-online-reporting/activity-report",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/previous-versions/SkypeForBusiness/skype-for-business-online-reporting/activity-report",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/previous-versions/SkypeForBusiness/skype-for-business-online-reporting/activity-report",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoftteams/upgrade-assisted",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoftteams/upgrade-start-here",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/previous-versions/SkypeForBusiness/skype-for-business-online-reporting/device-usage-report",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/previous-versions/SkypeForBusiness/skype-for-business-online-reporting/conference-organizer-activity-report",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/previous-versions/SkypeForBusiness/skype-for-business-online-reporting/conference-participant-activity-report",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/previous-versions/SkypeForBusiness/skype-for-business-online-reporting/peer-to-peer-activity-report",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/viva/insights/personal/setup/deployment-guide",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/microsoft-365-copilot-agents-new",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/microsoft365-apps-usage",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/deployoffice/privacy/manage-privacy-controls",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/permissions-reference",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/permissions-reference",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/adminreportsettings",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/adminreportsettings",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/reportroot-getemailactivityuserdetail",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoftteams/using-admin-roles",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/adminreportsettings-get",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/toolkit/overview",
-      "depth": 3
-    },
     {
       "url": "https://learn.microsoft.com/en-us/graph/graph-explorer/graph-explorer-features",
       "depth": 3
@@ -24591,17 +24729,8 @@
   ],
   "last_batch": {
     "attempted": 36,
-    "documents_total": 1534,
-    "queued": 2315,
-    "failures": [
-      {
-        "url": "https://learn.microsoft.com/en-us/admin",
-        "error": "ValueError"
-      },
-      {
-        "url": "https://learn.microsoft.com/en-us/admin/setup/add-or-replace-your-onmicrosoftcom-domain",
-        "error": "ValueError"
-      }
-    ]
+    "documents_total": 1570,
+    "queued": 2258,
+    "failures": []
   }
 }

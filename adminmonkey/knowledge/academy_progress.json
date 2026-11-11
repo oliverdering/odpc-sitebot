@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T12:08:02.181641+00:00",
+  "generated_at": "2026-11-11T12:08:33.460682+00:00",
   "product": "AdminMonkey Academy",
   "certification_expansion": {
     "candidate_exam_codes": 42,
@@ -45,32 +45,23 @@
   "certification_issuer": "ODPC",
   "official_microsoft_certification": false,
   "knowledge": {
-    "documents_collected": 1534,
-    "manufacturer_verified": 1534,
+    "documents_collected": 1570,
+    "manufacturer_verified": 1570,
     "review": {
       "unreviewed": 0,
-      "approved": 1534,
+      "approved": 1570,
       "rejected": 0
     },
     "last_batch": {
       "attempted": 36,
-      "documents_total": 1534,
-      "queued": 2315,
-      "failures": [
-        {
-          "url": "https://learn.microsoft.com/en-us/admin",
-          "error": "ValueError"
-        },
-        {
-          "url": "https://learn.microsoft.com/en-us/admin/setup/add-or-replace-your-onmicrosoftcom-domain",
-          "error": "ValueError"
-        }
-      ]
+      "documents_total": 1570,
+      "queued": 2258,
+      "failures": []
     }
   },
   "retrieval_staging": {
-    "chunked_documents": 1529,
-    "chunks_prepared": 7892,
+    "chunked_documents": 1565,
+    "chunks_prepared": 8124,
     "retrieval_quality_verified": false,
     "agent_answers_verified": 0,
     "note": "Ephemeral, provenance-checked chunk preparation; no searchable production index yet."
@@ -78,7 +69,7 @@
   "tracks": [
     {
       "track": "MS-102",
-      "manufacturer_verified_sources": 311,
+      "manufacturer_verified_sources": 330,
       "knowledge_coverage": "source_count_only_not_learning_objective_coverage",
       "practice_scenarios_available": 6,
       "agent_answers_evaluated": 0,
@@ -94,7 +85,7 @@
     },
     {
       "track": "AZ-104",
-      "manufacturer_verified_sources": 83,
+      "manufacturer_verified_sources": 85,
       "knowledge_coverage": "source_count_only_not_learning_objective_coverage",
       "practice_scenarios_available": 4,
       "agent_answers_evaluated": 0,
