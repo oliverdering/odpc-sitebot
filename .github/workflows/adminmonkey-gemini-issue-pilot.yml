@@ -18,7 +18,7 @@ jobs:
       - name: Ask Gemini and post auditable answer to Issue 219
         env:
           GH_TOKEN: ${{ github.token }}
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GEMINI_MODEL: gemini-2.5-flash
+          GEMINI_API_KEY: ${{ secrets.ADMINMONKEY_LLM_API_KEY || secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: gemini-2.5-flash-lite
           TASK_ISSUE: "219"
         run: python adminmonkey/communication/gemini_issue_pilot.py
