@@ -99,7 +99,7 @@ jobs:
           set -euo pipefail
           git config user.name "adminmonkey-knowledge-bot"
           git config user.email "adminmonkey-knowledge-bot@users.noreply.github.com"
-          files=(adminmonkey/knowledge/database_progress.json adminmonkey/knowledge/academy_progress.json adminmonkey/knowledge/document_manifest.json adminmonkey/knowledge/knowledge_index.json)
+          files=(adminmonkey/knowledge/database_progress.json adminmonkey/knowledge/academy_progress.json adminmonkey/knowledge/certification_competency.json adminmonkey/knowledge/document_manifest.json adminmonkey/knowledge/knowledge_index.json)
           mkdir -p "$RUNNER_TEMP/adminmonkey-sync"
           for file in "${files[@]}"; do cp "$file" "$RUNNER_TEMP/adminmonkey-sync/$(basename "$file")"; done
           for i in 1 2 3 4 5; do
