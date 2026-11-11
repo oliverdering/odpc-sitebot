@@ -316,7 +316,7 @@ body.odpc-ai-dock-active{padding-bottom:75px!important}
 </script>
 <?php },99);
 
-<?php add_action('wp_footer',function(){if(is_admin())return; ?>
+add_action('wp_footer',function(){if(is_admin())return; ?>
 <style id="odpc-smartguide-global-css">
 /* Pilot only: preserve transparent dock and existing language dropdown. */
 body.odpc-smartguide-global #odpc-utility-dock{justify-content:space-between!important;gap:4px!important}
