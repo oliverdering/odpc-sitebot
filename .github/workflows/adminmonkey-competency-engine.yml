@@ -1,6 +1,12 @@
 name: AdminMonkey Competency Engine V1
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'adminmonkey/academy/run_competency_engine.py'
+      - 'adminmonkey/academy/competency_bank.json'
+      - '.github/workflows/adminmonkey-competency-engine.yml'
   workflow_dispatch:
     inputs:
       dry_run:
@@ -38,8 +44,8 @@ jobs:
         run: python -m unittest discover -s adminmonkey/academy -p 'test_*.py' -v
       - name: Execute competency scenarios
         env:
-          DRY_RUN: ${{ inputs.dry_run }}
-          LIMIT: ${{ inputs.limit }}
+          DRY_RUN: ${{ github.event_name == 'push' || inputs.dry_run }}
+          LIMIT: ${{ github.event_name == 'push' && '0' || inputs.limit }}
         run: |
           if [ "$DRY_RUN" = "true" ]; then
             python adminmonkey/academy/run_competency_engine.py --dry-run --limit "$LIMIT" --output competency-report.json
