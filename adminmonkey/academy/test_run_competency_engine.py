@@ -49,6 +49,18 @@ class EngineTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             engine.generate("test", endpoint="https://example.org", api_key="", model="x")
 
+    def test_gemini_native_response(self):
+        class Response:
+            def __enter__(self): return self
+            def __exit__(self, *args): pass
+            def read(self, *args): return b'{"candidates":[{"content":{"parts":[{"text":"least privilege"}]}}]}'
+        with patch.object(engine.urllib.request, "urlopen", return_value=Response()) as mocked:
+            result = engine.generate_gemini_native("test", api_key="secret", model="gemini-2.5-flash-lite")
+            self.assertEqual(result, "least privilege")
+            req = mocked.call_args.args[0]
+            self.assertIn("/models/gemini-2.5-flash-lite:generateContent", req.full_url)
+            self.assertEqual(req.get_header("X-goog-api-key"), "secret")
+
     def test_model_response_parsing(self):
         class Response:
             def __enter__(self): return self
