@@ -6,11 +6,15 @@ on:
     paths:
       - 'adminmonkey/academy/evaluate_responses.py'
       - 'adminmonkey/academy/test_evaluate_responses.py'
+      - 'adminmonkey/academy/test_certification_evidence.py'
+      - 'adminmonkey/knowledge/certification_competency.py'
       - '.github/workflows/adminmonkey-academy-tests.yml'
   pull_request:
     paths:
       - 'adminmonkey/academy/evaluate_responses.py'
       - 'adminmonkey/academy/test_evaluate_responses.py'
+      - 'adminmonkey/academy/test_certification_evidence.py'
+      - 'adminmonkey/knowledge/certification_competency.py'
       - '.github/workflows/adminmonkey-academy-tests.yml'
   workflow_dispatch:
 
@@ -27,7 +31,7 @@ jobs:
         with:
           python-version: '3.12'
       - name: Run competency screening regression tests
-        run: python -m unittest discover -s adminmonkey/academy -p 'test_evaluate_responses.py' -v
+        run: python -m unittest discover -s adminmonkey/academy -p 'test_*.py' -v
       - name: Validate actual competency bank schema
         run: |
           python - <<'PY'
