@@ -4031,127 +4031,217 @@
       "id": "credentials",
       "review_status": "pending_human_review",
       "sha256": "0e53c29e4bc0cfcff401ec620a570819d75b22b55b765684a482752977732c2e"
+    },
+    {
+      "at": "2026-11-11T07:49:34.074902+00:00",
+      "id": "m365-admin",
+      "review_status": "pending_human_review",
+      "sha256": "f36770c6dd3a24b2cee4019cb96bdda2ac5021a643ead14011f45225e5f56320"
+    },
+    {
+      "at": "2026-11-11T07:49:34.074902+00:00",
+      "id": "graph",
+      "review_status": "pending_human_review",
+      "sha256": "586064678789f9a9338ac2f27aead33af6366a762626bc1088428432e2b36780"
+    },
+    {
+      "at": "2026-11-11T07:49:34.074902+00:00",
+      "id": "entra",
+      "review_status": "pending_human_review",
+      "sha256": "1e6e23de6d0b4840586043ff2a004e3591d37623ee805d19a95aa0c19b277feb"
+    },
+    {
+      "at": "2026-11-11T07:49:34.074902+00:00",
+      "id": "intune",
+      "review_status": "pending_human_review",
+      "sha256": "53fedeeb6467db962ac6e43a0201c541575b7f88e59d55a2d58324ff7a0c9971"
+    },
+    {
+      "at": "2026-11-11T07:49:34.074902+00:00",
+      "id": "azure",
+      "review_status": "pending_human_review",
+      "sha256": "95b6d97ad98638956afeac16561f2deee83d19c0043bbb3cff68d771435f811e"
+    },
+    {
+      "at": "2026-11-11T07:49:34.074902+00:00",
+      "id": "copilot-m365",
+      "review_status": "pending_human_review",
+      "sha256": "6e0c2596004b2298a27f52d17febea21b89deb2caaf5505ecb08eeddd9d81b24"
+    },
+    {
+      "at": "2026-11-11T07:49:34.074902+00:00",
+      "id": "copilot-studio",
+      "review_status": "pending_human_review",
+      "sha256": "42fef1f90e8db758968fd87c86edf0d61ea3f52aad23b41da069f4b187f4cc00"
+    },
+    {
+      "at": "2026-11-11T07:49:34.074902+00:00",
+      "id": "graph-powershell",
+      "review_status": "pending_human_review",
+      "sha256": "448dcfc6b0d197f7dbed159c1e15e9d6fa775d2e87e1a7d04de878a6a4c8eedd"
+    },
+    {
+      "at": "2026-11-11T07:49:34.074902+00:00",
+      "id": "exchange-online",
+      "review_status": "pending_human_review",
+      "sha256": "587125a6c852899a6e6f0d6422e93c0eea06ac1a5fd246c77060efca1da964cd"
+    },
+    {
+      "at": "2026-11-11T07:49:34.074902+00:00",
+      "id": "teams-admin",
+      "review_status": "pending_human_review",
+      "sha256": "486038ac48b57c9f98500960137b87b8c35f8df821e038f48822a44bc70919e6"
+    },
+    {
+      "at": "2026-11-11T07:49:34.074902+00:00",
+      "id": "sharepoint-admin",
+      "review_status": "pending_human_review",
+      "sha256": "2f239dd6c0531c381ba459a4eaf0d802ff7336d648756783aae959d755986dde"
+    },
+    {
+      "at": "2026-11-11T07:49:34.074902+00:00",
+      "id": "defender-xdr",
+      "review_status": "pending_human_review",
+      "sha256": "d8540d49803a2fe308d9f4793a582668d2f0450708b24fe0a19acab87a91f867"
+    },
+    {
+      "at": "2026-11-11T07:49:34.074902+00:00",
+      "id": "purview",
+      "review_status": "pending_human_review",
+      "sha256": "beefb21475c77c2748554c233f4ea558d2f18f5e628638b3f263ea76fc52c72c"
+    },
+    {
+      "at": "2026-11-11T07:49:34.074902+00:00",
+      "id": "azure-powershell",
+      "review_status": "pending_human_review",
+      "sha256": "b521a6e9d8c7549cd10eafbf03ab85f01513b4379ccf899ec628d5948079f57d"
+    },
+    {
+      "at": "2026-11-11T07:49:34.074902+00:00",
+      "id": "credentials",
+      "review_status": "pending_human_review",
+      "sha256": "21090937842941849b1ae65a6b6fac121e92ef41758d821fae8825e0a9c1f66c"
     }
   ],
   "schema_version": 1,
   "sources": {
     "azure": {
-      "bytes_sampled": 65108,
+      "bytes_sampled": 65109,
       "final_url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/overview",
       "review_status": "pending_human_review",
-      "sha256": "7e632db191f1d8da0d539e30a7b0af13b06d25c6c815b694b9831572472c8085",
+      "sha256": "95b6d97ad98638956afeac16561f2deee83d19c0043bbb3cff68d771435f811e",
       "status": "ok",
       "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/overview"
     },
     "azure-powershell": {
-      "bytes_sampled": 44778,
+      "bytes_sampled": 44779,
       "final_url": "https://learn.microsoft.com/en-us/powershell/azure/?view=azps-16.5.0",
       "review_status": "pending_human_review",
-      "sha256": "3ff97c6185432e164f85033a8655797682999f88a937d0d4540865d2371a9558",
+      "sha256": "b521a6e9d8c7549cd10eafbf03ab85f01513b4379ccf899ec628d5948079f57d",
       "status": "ok",
       "url": "https://learn.microsoft.com/en-us/powershell/azure/overview"
     },
     "copilot-m365": {
-      "bytes_sampled": 31515,
+      "bytes_sampled": 31516,
       "final_url": "https://learn.microsoft.com/en-us/copilot/",
       "review_status": "pending_human_review",
-      "sha256": "5b9a167347b224f8053cd8381875a68f109815b81bf9b1146a738410f3c464f6",
+      "sha256": "6e0c2596004b2298a27f52d17febea21b89deb2caaf5505ecb08eeddd9d81b24",
       "status": "ok",
       "url": "https://learn.microsoft.com/en-us/copilot/microsoft-365/"
     },
     "copilot-studio": {
-      "bytes_sampled": 71766,
+      "bytes_sampled": 71767,
       "final_url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/",
       "review_status": "pending_human_review",
-      "sha256": "62798d4996f829fa971fb5189f4cca1212876d1e04d506fea150ba9826f53fac",
+      "sha256": "42fef1f90e8db758968fd87c86edf0d61ea3f52aad23b41da069f4b187f4cc00",
       "status": "ok",
       "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/"
     },
     "credentials": {
-      "bytes_sampled": 36112,
+      "bytes_sampled": 36113,
       "final_url": "https://learn.microsoft.com/en-us/credentials/",
       "review_status": "pending_human_review",
-      "sha256": "0e53c29e4bc0cfcff401ec620a570819d75b22b55b765684a482752977732c2e",
+      "sha256": "21090937842941849b1ae65a6b6fac121e92ef41758d821fae8825e0a9c1f66c",
       "status": "ok",
       "url": "https://learn.microsoft.com/en-us/credentials/"
     },
     "defender-xdr": {
-      "bytes_sampled": 56071,
+      "bytes_sampled": 56072,
       "final_url": "https://learn.microsoft.com/en-us/defender-xdr/microsoft-365-defender",
       "review_status": "pending_human_review",
-      "sha256": "f5501184fe19cb816a7373c47fa571d5d710b299362a601e562fdc778e8d7c93",
+      "sha256": "d8540d49803a2fe308d9f4793a582668d2f0450708b24fe0a19acab87a91f867",
       "status": "ok",
       "url": "https://learn.microsoft.com/en-us/defender-xdr/microsoft-365-defender"
     },
     "entra": {
-      "bytes_sampled": 58952,
+      "bytes_sampled": 58953,
       "final_url": "https://learn.microsoft.com/en-us/entra/fundamentals/what-is-entra",
       "review_status": "pending_human_review",
-      "sha256": "972f4f1a84f2ac072c5731056e00023e80c9431a4b39816bb5a391d6176dcbb2",
+      "sha256": "1e6e23de6d0b4840586043ff2a004e3591d37623ee805d19a95aa0c19b277feb",
       "status": "ok",
       "url": "https://learn.microsoft.com/en-us/entra/fundamentals/whatis"
     },
     "exchange-online": {
-      "bytes_sampled": 39700,
+      "bytes_sampled": 39701,
       "final_url": "https://learn.microsoft.com/en-us/exchange/exchange-online",
       "review_status": "pending_human_review",
-      "sha256": "59cda59a6010469c0433de0572fe45237cc0db603f355862457a43a6a2a30eb2",
+      "sha256": "587125a6c852899a6e6f0d6422e93c0eea06ac1a5fd246c77060efca1da964cd",
       "status": "ok",
       "url": "https://learn.microsoft.com/en-us/exchange/exchange-online"
     },
     "graph": {
-      "bytes_sampled": 64337,
+      "bytes_sampled": 64338,
       "final_url": "https://learn.microsoft.com/en-us/graph/overview",
       "review_status": "pending_human_review",
-      "sha256": "94f9c49b8f41363d4c81e499e0d1756be5787ac121752f38022db7b26f1ac985",
+      "sha256": "586064678789f9a9338ac2f27aead33af6366a762626bc1088428432e2b36780",
       "status": "ok",
       "url": "https://learn.microsoft.com/en-us/graph/overview"
     },
     "graph-powershell": {
-      "bytes_sampled": 51004,
+      "bytes_sampled": 51005,
       "final_url": "https://learn.microsoft.com/en-us/powershell/microsoftgraph/overview?view=graph-powershell-1.0",
       "review_status": "pending_human_review",
-      "sha256": "f99ac7f727416d3eb7aa647859221181118061798bd7db3e78af9be188d3a2d3",
+      "sha256": "448dcfc6b0d197f7dbed159c1e15e9d6fa775d2e87e1a7d04de878a6a4c8eedd",
       "status": "ok",
       "url": "https://learn.microsoft.com/en-us/powershell/microsoftgraph/overview"
     },
     "intune": {
-      "bytes_sampled": 53749,
+      "bytes_sampled": 53750,
       "final_url": "https://learn.microsoft.com/en-us/intune/fundamentals/what-is-intune",
       "review_status": "pending_human_review",
-      "sha256": "0cf8d8e6ab05f9907dcc688724e25641a901b0d52e8be7813a9a0c3dccbbf2dd",
+      "sha256": "53fedeeb6467db962ac6e43a0201c541575b7f88e59d55a2d58324ff7a0c9971",
       "status": "ok",
       "url": "https://learn.microsoft.com/en-us/intune/intune-service/fundamentals/what-is-intune"
     },
     "m365-admin": {
-      "bytes_sampled": 32945,
+      "bytes_sampled": 32946,
       "final_url": "https://learn.microsoft.com/en-us/microsoft-365/admin/?view=o365-worldwide",
       "review_status": "pending_human_review",
-      "sha256": "4ddfc642d8635e8aacfa01df4b229b49ef4f22b610717a5479c1198ad3630a00",
+      "sha256": "f36770c6dd3a24b2cee4019cb96bdda2ac5021a643ead14011f45225e5f56320",
       "status": "ok",
       "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/"
     },
     "purview": {
-      "bytes_sampled": 33145,
+      "bytes_sampled": 33146,
       "final_url": "https://learn.microsoft.com/en-us/purview/",
       "review_status": "pending_human_review",
-      "sha256": "285f114ed61e81702baa2a3029a6ca389de34c6c861bcf6b370a3b977c62f954",
+      "sha256": "beefb21475c77c2748554c233f4ea558d2f18f5e628638b3f263ea76fc52c72c",
       "status": "ok",
       "url": "https://learn.microsoft.com/en-us/purview/"
     },
     "sharepoint-admin": {
-      "bytes_sampled": 62220,
+      "bytes_sampled": 62221,
       "final_url": "https://learn.microsoft.com/en-us/sharepoint/introduction",
       "review_status": "pending_human_review",
-      "sha256": "0a3666cf4c3704cadc3180413fcb2c0b9d6f174fb3389f4cd51a1deba10d021f",
+      "sha256": "2f239dd6c0531c381ba459a4eaf0d802ff7336d648756783aae959d755986dde",
       "status": "ok",
       "url": "https://learn.microsoft.com/en-us/sharepoint/sharepoint-online"
     },
     "teams-admin": {
-      "bytes_sampled": 54035,
+      "bytes_sampled": 54036,
       "final_url": "https://learn.microsoft.com/en-us/microsoftteams/teams-overview",
       "review_status": "pending_human_review",
-      "sha256": "41d55bf251293da7897aacddba80e26773100df760415e7a7cd19e5f6be4eab1",
+      "sha256": "486038ac48b57c9f98500960137b87b8c35f8df821e038f48822a44bc70919e6",
       "status": "ok",
       "url": "https://learn.microsoft.com/en-us/microsoftteams/teams-overview"
     }
