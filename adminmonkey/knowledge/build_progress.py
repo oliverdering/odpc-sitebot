@@ -101,5 +101,7 @@ if __name__ == "__main__":
     result = build()
     output = ROOT / "academy_progress.json"
     output.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    from certification_competency import main as build_certification_competency
+    build_certification_competency()
     print(json.dumps({"documents_collected": result["knowledge"]["documents_collected"],
                       "tracks": len(result["tracks"]), "badges_awarded": sum(t["badge_status"] == "practice_verified" for t in result["tracks"])}))
