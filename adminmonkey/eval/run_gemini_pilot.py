@@ -46,3 +46,14 @@ report={"schema_version":1,"created_at":datetime.datetime.now(datetime.timezone.
 path=pathlib.Path(os.environ.get("OUTPUT_PATH","gemini-pilot-report.json"))
 path.write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\\n",encoding="utf-8")
 print("Report written:",path)
+
+# Publish a readable run summary without exposing the full answers publicly.
+summary = os.environ.get("GITHUB_STEP_SUMMARY")
+if summary:
+    with open(summary, "a", encoding="utf-8") as out:
+        out.write("## AdminMonkey: five-case Gemini baseline\\n\\n")
+        out.write("**Model:** \`" + model + "\`  |  **Mode:** real Gemini model, NOT AdminMonkey RAG\\n\\n")
+        out.write("| Case | Track | Keyword coverage | Unsafe phrase mentions |\\n|---|---|---:|---:|\\n")
+        for item in results:
+            out.write("| " + item["id"] + " | " + item["track"] + " | " + str(round(item["keyword_coverage"] * 100)) + "% | " + str(len(item["unsafe_phrase_mentions"])) + " |\\n")
+        out.write("\\n**Important:** Keyword coverage is not a competency score. Phrase mentions can be explicit warnings against unsafe actions. All five cases require independent review. Full answers are in the workflow artifact.\\n")
