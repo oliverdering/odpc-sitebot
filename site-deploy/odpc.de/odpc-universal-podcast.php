@@ -66,6 +66,11 @@ function odpc_podcast_audio(WP_REST_Request $request) {
 }
 add_action('wp_footer',function(){
  if(is_admin()||!is_singular(['page','post']))return;
+ // Pilot is opt-in and restricted to the selected article until explicit rollout approval.
+ if(!defined('ODPC_PODCAST_PILOT_ENABLED') || ODPC_PODCAST_PILOT_ENABLED !== true)return;
+ if(trim(parse_url(get_permalink(),PHP_URL_PATH),'/')!=='prompt-engineering-digitale-mitarbeiter-ki-sinnvoll-nutzen')return;
+ // Never hijack the working reader until both audio backends are configured.
+ if(!defined('ODPC_PODCAST_GEMINI_KEY') || !ODPC_PODCAST_GEMINI_KEY || !defined('ODPC_PODCAST_GOOGLE_TTS_KEY') || !ODPC_PODCAST_GOOGLE_TTS_KEY)return;
  $id=get_queried_object_id();if(!$id)return;
  $endpoint=rest_url('odpc-podcast/v1/audio');
  ?>
@@ -82,7 +87,7 @@ add_action('wp_footer',function(){
   const play=oldPlay.cloneNode(true),stop=oldStop.cloneNode(true);
   oldPlay.replaceWith(play);oldStop.replaceWith(stop);
   reader.dataset.universalPodcast='1';
-  const audio=new Audio();let pending=null;
+  const audio=new Audio();let pending=null,requestId=0;
   const status=document.getElementById('odpc-reader-status');
   const label=(message)=>{if(status)status.textContent=message;};
   const language=()=>{
@@ -94,19 +99,19 @@ add_action('wp_footer',function(){
   const style=document.createElement('style');
   style.textContent='#odpc-utility-dock #odpc-reader #odpc-reader-stop{display:flex!important;position:absolute!important;top:0!important;right:-7px!important;width:16px!important;height:16px!important;min-height:16px!important;font-size:10px!important;background:#f3f5f4!important;color:#162c35!important;z-index:2!important}';
   document.head.appendChild(style);
-  const halt=()=>{pending?.abort();pending=null;audio.pause();audio.removeAttribute('src');audio.load();reader.classList.remove('is-playing');};
+  const halt=()=>{requestId++;pending?.abort();pending=null;audio.pause();audio.removeAttribute('src');audio.load();reader.classList.remove('is-playing');};
   stop.addEventListener('click',e=>{e.preventDefault();e.stopImmediatePropagation();halt();label('Podcast gestoppt');},true);
   play.addEventListener('click',async e=>{
    e.preventDefault();e.stopImmediatePropagation();
    if(!audio.paused){audio.pause();reader.classList.remove('is-playing');label('Podcast pausiert');return;}
    if(audio.src && audio.dataset.language===language()){try{await audio.play();reader.classList.add('is-playing');label('Podcast läuft');}catch(err){label('Audiowiedergabe blockiert');}return;}
-   halt();pending=new AbortController();label('Podcast wird erstellt …');
+   halt();pending=new AbortController();const currentRequest=requestId;label('Podcast wird erstellt …');
    try{
     const res=await fetch(endpoint+'?post_id='+id+'&lang='+encodeURIComponent(language()),{signal:pending.signal,credentials:'same-origin'});
-    const data=await res.json();if(!res.ok)throw Error(data.message||'Podcast momentan nicht verfügbar');
+    const data=await res.json();if(currentRequest!==requestId)return;if(!res.ok)throw Error(data.message||'Podcast momentan nicht verfügbar');
     audio.src=data.audio;audio.dataset.language=data.language;pending=null;
     await audio.play();reader.classList.add('is-playing');label('Podcast läuft');
-   }catch(err){if(err.name!=='AbortError')label(err.message||'Podcast nicht verfügbar');}
+   }catch(err){if(currentRequest===requestId&&err.name!=='AbortError')label(err.message||'Podcast nicht verfügbar');}
   },true);
   audio.addEventListener('ended',()=>{reader.classList.remove('is-playing');label('Podcast beendet');});
   document.addEventListener('odpc:languagechange',halt);
