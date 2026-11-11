@@ -68,13 +68,13 @@ jobs:
         run: |
           # Automatic runs are always offline; real requests require explicit manual opt-in.
           # Explicit dry-run always stays offline; missing credentials never produce fake model evidence.
-          if { [ "$EVENT_NAME" != "workflow_dispatch" ] && [ "$EVENT_NAME" != "push" ]; } || { [ "$EVENT_NAME" = "workflow_dispatch" ] && [ "$REQUESTED_DRY_RUN" != "false" ]; } || [ "$CONFIGURED" != "true" ]; then
+          if [ "$EVENT_NAME" != "workflow_dispatch" ] || [ "$REQUESTED_DRY_RUN" != "false" ] || [ "$CONFIGURED" != "true" ]; then
             python adminmonkey/academy/run_competency_engine.py --dry-run --limit "${LIMIT:-0}" --output competency-report.json
             if [ "$CONFIGURED" != "true" ]; then
               echo 'WARNING: Offline transport smoke only. Configure ADMINMONKEY_LLM_ENDPOINT, ADMINMONKEY_LLM_MODEL and ADMINMONKEY_LLM_API_KEY for real answers.' >> "$GITHUB_STEP_SUMMARY"
             fi
           else
-            python adminmonkey/academy/run_competency_engine.py --limit "1" --output competency-report.json
+            python adminmonkey/academy/run_competency_engine.py --limit "${LIMIT:-1}" --output competency-report.json
             echo 'Real Gemini model request completed; lexical screening is NOT independent competence evidence.' >> "$GITHUB_STEP_SUMMARY"
           fi
       - name: Upload report (private Actions artifact)
