@@ -1,0 +1,52 @@
+name: YourBusiness / Repair demo permalink and verify public page
+on:
+  push:
+    paths:
+      - '.github/workflows/yourbusiness-demo-permalink-repair.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: yourbusiness-serialized-operations
+  cancel-in-progress: false
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Repair isolated WordPress permalink rules
+        env:
+          SSHPASS: ${{ secrets.ODPC_SSH_PASSWORD }}
+        run: |
+          set -euo pipefail
+          test -n "$SSHPASS"
+          sudo apt-get install -y -qq sshpass >/dev/null
+          mkdir -p ~/.ssh
+          ssh-keyscan -4 -t ed25519 home119567219.1and1-data.host > ~/.ssh/known_hosts 2>/dev/null
+          ssh-keygen -lf ~/.ssh/known_hosts | grep -F 'SHA256:1gx2w8Rtv3wCgi7Jh8myf/KVd72cRQbow03UP8P095Q' >/dev/null
+          sshpass -e ssh -4 -o BatchMode=no -o PreferredAuthentications=password -o PubkeyAuthentication=no -o NumberOfPasswordPrompts=1 -o StrictHostKeyChecking=yes -o ConnectTimeout=20 p37641258@home119567219.1and1-data.host 'set -eu
+            cd "$HOME/YourBusiness"
+            test -f wp-config.php
+            uiwpcli_PHP_FLAVOR=php8.3 wp core is-installed --quiet
+            uiwpcli_PHP_FLAVOR=php8.3 wp plugin is-active yourbusiness-instant-demo
+            echo "Site URL: $(uiwpcli_PHP_FLAVOR=php8.3 wp option get siteurl)"
+            echo "Home URL: $(uiwpcli_PHP_FLAVOR=php8.3 wp option get home)"
+            echo "Current permalink structure: $(uiwpcli_PHP_FLAVOR=php8.3 wp option get permalink_structure)"
+            uiwpcli_PHP_FLAVOR=php8.3 wp rewrite structure "/%postname%/" --hard
+            uiwpcli_PHP_FLAVOR=php8.3 wp rewrite flush --hard
+            echo YOURBUSINESS_REWRITE_REFRESHED
+          '
+      - name: Verify public demo and show diagnostics
+        run: |
+          set -euo pipefail
+          for url in "https://yourbusiness.odpc.de/sofort-demo/" "https://yourbusiness.odpc.de/?pagename=sofort-demo"; do
+            echo "Checking $url"
+            code=$(curl --location --silent --show-error --max-time 25 --output /tmp/yb-demo.html --write-out '%{http_code}' "$url")
+            echo "HTTP $code"
+            if [ "$code" = 200 ] && grep -q 'id="yb-demo"' /tmp/yb-demo.html && grep -q 'id="yb-whatsapp"' /tmp/yb-demo.html; then
+              echo "YOURBUSINESS_PUBLIC_DEMO_READY: $url"
+              exit 0
+            fi
+          done
+          echo "Public demo still unavailable; inspect WordPress web routing and host document root."
+          exit 1
