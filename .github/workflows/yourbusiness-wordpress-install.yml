@@ -1,0 +1,31 @@
+name: YourBusiness / WordPress core first install
+on:
+  push:
+    paths:
+      - '.github/workflows/yourbusiness-wordpress-install.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: yourbusiness-wordpress-install
+  cancel-in-progress: false
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate installer
+        run: python -m py_compile scripts/install_yourbusiness_wordpress.py
+      - name: Install SFTP dependency
+        run: python -m pip install 'paramiko>=3.4,<5'
+      - name: Install official WordPress core only in empty YourBusiness directory
+        env:
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+        run: python scripts/install_yourbusiness_wordpress.py
+      - name: Verify WordPress installation page
+        run: |
+          curl --silent --show-error --location --max-time 30 --output /dev/null --write-out 'HTTP %{http_code} at %{url_effective}\n' https://yourbusiness.odpc.de/wp-admin/install.php
