@@ -162,6 +162,7 @@ async function refresh(){
  let db=null,progress=null;
  try{
   db=await fetchJson('database_progress.json');
+  if(typeof db.database_connected!=='boolean'||!Number.isFinite(Number(db.document_versions_total))||Number(db.document_versions_total)<0)throw Error('Ungültiger MariaDB-Snapshot');
   window.amkDbProgress=db;
   const confirmed=db.database_connected===true?Number(db.document_versions_total):NaN;
   $('dbstatus').textContent=db.database_connected===true?'Verbunden · '+db.document_versions_total+' Dokumente':'Nicht bestätigt';
@@ -175,7 +176,15 @@ async function refresh(){
    $('documents').textContent=confirmed;
   }
   $('baseline').textContent='MariaDB: '+(db.document_versions_total??'–')+' Dokumentversionen · '+(db.sources_total??'–')+' Quellen · Keine offiziellen Microsoft-Zertifizierungen';
- }catch(e){showSnapshotError('MariaDB',e);}
+  if(confirmed>=1500)$('collectionDetail').textContent=confirmed+' bestätigte Dokumentversionen · Sammelziel 1.500 erreicht; weiterer Wissensaufbau wird nicht durch diese Zielmarke begrenzt.';
+ }catch(e){
+  window.amkDbProgress=null;
+  $('dbstatus').textContent='Nicht bestätigt';$('dbstatus').className='value small warn';
+  $('dbdetail').textContent='Aktueller MariaDB-Snapshot nicht abrufbar oder ungültig';
+  $('documents').textContent='–';$('collectionPercent').textContent='Nicht berechenbar';
+  $('collectionBar').style.width='0%';$('collectionDetail').textContent='Kein aktueller bestätigter Datenbanksnapshot';
+  showSnapshotError('MariaDB',e);
+ }
  try{
   progress=await fetchJson('academy_progress.json');
   renderAcademy(progress);
@@ -183,9 +192,9 @@ async function refresh(){
   $('queued').textContent=k.last_batch?.queued??'–';
   $('unreviewed').textContent=review.unreviewed??'–';
   $('approved').textContent=review.approved??'–';
-  $('sources').textContent=k.manufacturer_verified??k.documents_collected??'–';
+  $('sources').textContent=db?.database_connected===true?(db.sources_total??'–'):'–';
   $('updated').textContent=progress.generated_at?new Date(progress.generated_at).toLocaleString('de-DE'):'Nicht verfügbar';
-  if(!db)$('documents').textContent=k.documents_collected??'–';
+  // Never substitute crawler article counts for confirmed MariaDB document versions.
   const collected=Number(k.documents_collected),imported=Number(db?.document_versions_total);
   const valid=db?.database_connected===true&&collected>0&&Number.isFinite(imported);
   const ratio=valid&&imported<=collected?Math.round(imported/collected*1000)/10:null;
