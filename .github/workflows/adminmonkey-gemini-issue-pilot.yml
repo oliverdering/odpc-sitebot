@@ -1,0 +1,24 @@
+name: AdminMonkey Gemini Issue 219 pilot bridge
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+  issues: write
+concurrency:
+  group: adminmonkey-gemini-issue-219
+  cancel-in-progress: false
+jobs:
+  gemini-issue-pilot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate bridge syntax
+        run: python -m py_compile adminmonkey/communication/gemini_issue_pilot.py
+      - name: Ask Gemini and post auditable answer to Issue 219
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: gemini-2.5-flash
+          TASK_ISSUE: "219"
+        run: python adminmonkey/communication/gemini_issue_pilot.py
