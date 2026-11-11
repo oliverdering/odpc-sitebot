@@ -12,11 +12,31 @@ if ISSUE != 219:
     raise SystemExit("Pilot is restricted to approved Issue #219")
 TOKEN = os.environ["GH_TOKEN"]
 KEY = os.environ.get("GEMINI_API_KEY", "")
-MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash")
+MODEL = os.environ.get("GEMINI_MODEL", "gemini-3.5-flash-lite")
 if not KEY:
     raise SystemExit("GEMINI_API_KEY secret is missing; no external request sent")
 if not MODEL.replace("-", "").replace(".", "").isalnum():
     raise SystemExit("Invalid model ID")
+# Discover only models available to this API key, instead of assuming legacy IDs work.
+def choose_model():
+    url = "https://generativelanguage.googleapis.com/v1beta/models?pageSize=100"
+    available = []
+    while url:
+        data = request(url, headers={"x-goog-api-key": KEY})
+        available.extend(m["name"].removeprefix("models/") for m in data.get("models", [])
+                         if "generateContent" in m.get("supportedGenerationMethods", []))
+        token = data.get("nextPageToken")
+        if token:
+            from urllib.parse import quote
+            url = "https://generativelanguage.googleapis.com/v1beta/models?pageSize=100&pageToken=" + quote(token, safe="")
+        else:
+            url = None
+    candidates = [MODEL, "gemini-3.5-flash-lite", "gemini-3.1-flash-lite", "gemini-3.6-flash", "gemini-2.5-flash-lite"]
+    for candidate in candidates:
+        if candidate in available:
+            print("Selected supported model:", candidate)
+            return candidate
+    raise SystemExit("No approved text-generation model available to configured Gemini API key")
 API = "https://api.github.com/repos/" + REPO + "/issues/" + str(ISSUE)
 HEADERS = {"Authorization": "Bearer " + TOKEN, "Accept": "application/vnd.github+json", "User-Agent": "ODPC-AdminMonkey-Gemini-Pilot"}
 def request(url, data=None, headers=None, method=None):
@@ -36,7 +56,8 @@ if any("[GEMINI-API-PILOT-ACK:ACAD-R04-GEMINI-REALWORLD-001]" in c.get("body", "
 prompt = """Du bist die API-basierte Forschungsrolle Claire/Gemini im ODPC Helper Monkey Projekt. Dies ist NICHT die bisherige persönliche Gemini-Chat-Sitzung.
 Erstelle zunächst genau 5 praxisnahe Microsoft-Admin-Tickets aus den Bereichen Entra, Intune, M365 und Azure. Schreibe auf Deutsch. Zu jedem Ticket: eindeutige ID, Symptom, benötigte Rückfragen, sichere Diagnose, Microsoft Learn URL, und 0-5 Bewertungsrubrik. URLs nur angeben, wenn du sie verlässlich kennst; sonst 'Quelle zu prüfen'. KEINE Behauptung, dass du Foren live recherchiert hast, sofern kein Recherchetool verfügbar ist. Keine personenbezogenen Daten, keine schädlichen oder destruktiven Schritte. Maximal 5000 Zeichen. TASK-ID: ACAD-R04-GEMINI-REALWORLD-001."""
 payload = {"contents": [{"role": "user", "parts": [{"text": prompt + "\n\nAuftrag-Auszug:\n" + body[:6000]}]}], "generationConfig": {"maxOutputTokens": 1800, "temperature": 0.3}}
-url = "https://generativelanguage.googleapis.com/v1beta/models/" + MODEL + ":generateContent"
+selected_model = choose_model()
+url = "https://generativelanguage.googleapis.com/v1beta/models/" + selected_model + ":generateContent"
 try:
     response = request(url, payload, {"x-goog-api-key": KEY, "Content-Type": "application/json"}, "POST")
 except urllib.error.HTTPError as exc:
