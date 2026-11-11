@@ -6,6 +6,9 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
+concurrency:
+  group: yourbusiness-serialized-operations
+  cancel-in-progress: false
 jobs:
   preflight:
     runs-on: ubuntu-latest
