@@ -71,6 +71,12 @@ async function loadOfficialDomains(){
   if(!registryResponse.ok||!progressResponse.ok||!candidateResponse.ok)throw Error('Datenquellen nicht vollständig verfügbar');
   const registry=await registryResponse.json(),progress=await progressResponse.json(),candidates=await candidateResponse.json();
   if(!Array.isArray(registry.certifications)||!Array.isArray(progress.tracks)||!Array.isArray(candidates.exam_candidates))throw Error('Ungültiges Datenformat');
+  let competency=null;
+  try{
+   const scoreResponse=await fetch(base+'adminmonkey/knowledge/certification_competency.json?ts='+Date.now(),{cache:'no-store'});
+   if(scoreResponse.ok){const payload=await scoreResponse.json();if(Array.isArray(payload.certifications))competency=payload;}
+  }catch(_error){/* Keep monitor usable when the scoring snapshot is not published yet. */}
+  const scores=new Map((competency?.certifications||[]).flatMap(c=>c.exam_codes.map(code=>[code,c])));
   const verified=new Map(registry.certifications.flatMap(cert=>cert.exam_codes.map(code=>[code,cert])));
   const tracked=new Map(progress.tracks.map(t=>[t.track,t]));
   const section=document.createElement('div');
@@ -86,9 +92,10 @@ async function loadOfficialDomains(){
    const title=document.createElement('strong');title.textContent=code+' · '+(cert?cert.official_name:'Prüfungscode-Kandidat · offizielle Zertifizierung nicht zugeordnet');
    const status=document.createElement('span');status.className='muted small';
    const evaluated=Number(track?.agent_answers_evaluated||0),total=Number(track?.total_scenario_objectives||0);
-   const percent=track?.competency_percent;
-   const validPercent=typeof percent==='number'&&Number.isFinite(percent)&&evaluated>=total&&total>0;
-   status.textContent='  |  '+(validPercent?percent.toFixed(1)+' % intern geprüft':'nicht bewertet')+' · '+evaluated+'/'+total+' Tests bewertet';
+   const score=scores.get(code);
+   const percent=score?.competency_percent;
+   const validPercent=score?.status==='assessed'&&typeof percent==='number'&&Number.isFinite(percent);
+   status.textContent='  |  '+(validPercent?percent.toFixed(1)+' % intern geprüft':'nicht bewertet')+' · '+evaluated+'/'+total+' bisherige Academy-Tests bewertet';
    heading.append(title,status);row.append(heading);
    const body=document.createElement('div');body.style.padding='8px 0 4px';
    const note=document.createElement('p');note.className='muted small';note.textContent=cert?'Microsoft-Profil: '+cert.status+(cert.retirement_date?' · Retirement '+cert.retirement_date:''):'Noch kein bestätigter Microsoft-Zertifizierungseintrag. Keine Kompetenzbewertung möglich.';
@@ -96,7 +103,7 @@ async function loadOfficialDomains(){
    if(cert){
     const domains=document.createElement('ul');
     for(const domain of (cert.exam_domains||[])){
-     const li=document.createElement('li');li.textContent=domain.name+' ('+domain.weight+') · Kompetenznachweis offen';domains.append(li);
+     const li=document.createElement('li');const domainScore=score?.domains?.find(d=>d.name===domain.name);li.textContent=domain.name+' ('+domain.weight+') · '+(typeof domainScore?.competency_percent==='number'?domainScore.competency_percent.toFixed(1)+' % intern geprüft':'Kompetenznachweis offen')+' · '+(domainScore?.independently_evaluated||0)+'/'+(domainScore?.scenarios||0)+' Aufgaben bewertet';domains.append(li);
     }
     body.append(domains);
     if(typeof cert.exam_url==='string'&&cert.exam_url.startsWith('https://learn.microsoft.com/')){
