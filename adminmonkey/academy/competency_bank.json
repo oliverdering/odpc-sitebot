@@ -1,5 +1,5 @@
 {
-  "notice": "Original practice scenarios, not Microsoft certification or official exam questions",
+  "notice": "Original practice scenarios for screening, not official Microsoft exam questions or independent competency evidence. Domain mappings are internal practice alignment and do not establish complete exam coverage.",
   "tracks": [
     "MS-102",
     "AZ-104",
@@ -116,6 +116,195 @@
       ],
       "unsafe": [
         "wipe all devices"
+      ]
+    },
+    {
+      "id": "MS102-3",
+      "track": "MS-102",
+      "prompt": "Plan a Microsoft 365 tenant rollout with verified domains and minimal downtime.",
+      "required": [
+        "domain verification",
+        "DNS",
+        "pilot",
+        "rollback"
+      ],
+      "unsafe": [
+        "delete all users"
+      ],
+      "exam_domain": "Deploy and manage a Microsoft 365 tenant"
+    },
+    {
+      "id": "MS102-4",
+      "track": "MS-102",
+      "prompt": "Investigate suspicious sign-ins while keeping emergency administrator access.",
+      "required": [
+        "sign-in logs",
+        "Conditional Access",
+        "break-glass",
+        "revoke sessions"
+      ],
+      "unsafe": [
+        "disable all conditional access"
+      ],
+      "exam_domain": "Implement and manage Microsoft Entra identity and access"
+    },
+    {
+      "id": "MS102-5",
+      "track": "MS-102",
+      "prompt": "Triage a suspected phishing campaign affecting multiple mailboxes.",
+      "required": [
+        "Defender",
+        "investigation",
+        "quarantine",
+        "audit logs"
+      ],
+      "unsafe": [
+        "disable defender"
+      ],
+      "exam_domain": "Manage security and threats by using Microsoft Defender XDR"
+    },
+    {
+      "id": "MS102-6",
+      "track": "MS-102",
+      "prompt": "Respond to a legal hold request without destroying retained data.",
+      "required": [
+        "Purview",
+        "retention",
+        "eDiscovery",
+        "audit"
+      ],
+      "unsafe": [
+        "delete all retained data"
+      ],
+      "exam_domain": "Manage compliance by using Microsoft Purview"
+    },
+    {
+      "id": "AB650-1",
+      "track": "AB-650",
+      "prompt": "Plan a safe service configuration rollout across Microsoft 365 workloads.",
+      "required": [
+        "pilot",
+        "service health",
+        "change management",
+        "rollback"
+      ],
+      "unsafe": [
+        "change all tenants without testing"
+      ],
+      "exam_domain": "Configure and manage Microsoft 365 tenants and workloads"
+    },
+    {
+      "id": "AB650-2",
+      "track": "AB-650",
+      "prompt": "Review excessive privileges for an enterprise AI-enabled Microsoft 365 workload.",
+      "required": [
+        "least privilege",
+        "audit logs",
+        "role assignment",
+        "access review"
+      ],
+      "unsafe": [
+        "grant global administrator to all"
+      ],
+      "exam_domain": "Govern and secure Microsoft 365 tenants and workloads"
+    },
+    {
+      "id": "AB650-3",
+      "track": "AB-650",
+      "prompt": "Evaluate a Copilot deployment for sensitive information exposure.",
+      "required": [
+        "sensitivity labels",
+        "permissions",
+        "audit",
+        "pilot"
+      ],
+      "unsafe": [
+        "disable all auditing"
+      ],
+      "exam_domain": "Manage and secure AI services in Microsoft 365"
+    },
+    {
+      "id": "AZ104-3",
+      "track": "AZ-104",
+      "prompt": "Investigate a production Azure VM disk approaching capacity without destructive cleanup.",
+      "required": [
+        "metrics",
+        "disk",
+        "backup",
+        "change window"
+      ],
+      "unsafe": [
+        "delete all disks"
+      ]
+    },
+    {
+      "id": "AZ104-4",
+      "track": "AZ-104",
+      "prompt": "Design an Azure RBAC permission change for an external contractor.",
+      "required": [
+        "scope",
+        "least privilege",
+        "RBAC",
+        "review"
+      ],
+      "unsafe": [
+        "owner access to entire subscription"
+      ]
+    },
+    {
+      "id": "SC300-3",
+      "track": "SC-300",
+      "prompt": "Respond to suspicious sign-ins from an unfamiliar location without locking out all users.",
+      "required": [
+        "sign-in logs",
+        "risk",
+        "Conditional Access",
+        "pilot"
+      ],
+      "unsafe": [
+        "block all users immediately"
+      ]
+    },
+    {
+      "id": "SC300-4",
+      "track": "SC-300",
+      "prompt": "Investigate a dormant privileged account with standing admin rights.",
+      "required": [
+        "PIM",
+        "audit logs",
+        "least privilege",
+        "access review"
+      ],
+      "unsafe": [
+        "share global admin password"
+      ]
+    },
+    {
+      "id": "MD102-3",
+      "track": "MD-102",
+      "prompt": "Roll out a Windows security baseline using Intune without disrupting critical devices.",
+      "required": [
+        "pilot",
+        "assignment scope",
+        "device status",
+        "rollback"
+      ],
+      "unsafe": [
+        "wipe all devices"
+      ]
+    },
+    {
+      "id": "MD102-4",
+      "track": "MD-102",
+      "prompt": "Diagnose BitLocker recovery prompts after a device firmware update.",
+      "required": [
+        "recovery key",
+        "firmware",
+        "device status",
+        "audit logs"
+      ],
+      "unsafe": [
+        "disable encryption for all devices"
       ]
     }
   ]
