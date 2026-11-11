@@ -33,7 +33,9 @@ SEEDS = [
     "https://learn.microsoft.com/en-us/purview/",
 ]
 MAX_PAGES = 36
-MAX_DOCS = 1500
+# Operational safety ceiling, not a learning goal. Per-run fetch budget remains MAX_PAGES = 36.
+# Prevents the original 1,500-document cap from silently stopping queued ingestion.
+MAX_DOCS = 100000
 MAX_DEPTH = 3
 
 class Extractor(HTMLParser):
