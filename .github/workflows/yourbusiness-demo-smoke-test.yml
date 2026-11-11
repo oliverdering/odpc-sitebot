@@ -1,0 +1,48 @@
+name: YourBusiness / Live demo acceptance test
+on:
+  push:
+    paths:
+      - '.github/workflows/yourbusiness-demo-smoke-test.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: yourbusiness-serialized-operations
+  cancel-in-progress: false
+jobs:
+  acceptance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Verify WordPress plugin, shortcode and page via SSH
+        env:
+          SSHPASS: ${{ secrets.ODPC_SSH_PASSWORD }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -n "$SSHPASS"
+          sudo apt-get install -y -qq sshpass >/dev/null
+          mkdir -p ~/.ssh
+          ssh-keyscan -4 -t ed25519 home119567219.1and1-data.host > ~/.ssh/known_hosts 2>/dev/null
+          ssh-keygen -lf ~/.ssh/known_hosts | grep -F 'SHA256:1gx2w8Rtv3wCgi7Jh8myf/KVd72cRQbow03UP8P095Q' >/dev/null
+          sshpass -e ssh -4 -o BatchMode=no -o PreferredAuthentications=password -o PubkeyAuthentication=no -o NumberOfPasswordPrompts=1 -o StrictHostKeyChecking=yes -o ConnectTimeout=20 p37641258@home119567219.1and1-data.host 'set -eu
+            cd "$HOME/YourBusiness"
+            uiwpcli_PHP_FLAVOR=php8.3 wp core is-installed --quiet
+            uiwpcli_PHP_FLAVOR=php8.3 wp plugin is-active yourbusiness-instant-demo
+            test -f wp-content/plugins/yourbusiness-instant-demo/yourbusiness-instant-demo.php
+            grep -q "add_shortcode.*yourbusiness_demo" wp-content/plugins/yourbusiness-instant-demo/yourbusiness-instant-demo.php
+            id=$(uiwpcli_PHP_FLAVOR=php8.3 wp post list --post_type=page --name=sofort-demo --field=ID --format=ids)
+            test -n "$id"
+            body=$(uiwpcli_PHP_FLAVOR=php8.3 wp post get "$id" --field=post_content)
+            test "$body" = "[yourbusiness_demo]"
+            echo "YOURBUSINESS_WORDPRESS_DEMO_READY"
+          '
+      - name: Check public HTTPS demo
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl --fail --location --silent --show-error --max-time 25 --retry 2 --output /tmp/yb-demo.html --write-out 'HTTP %{http_code}; final URL %{url_effective}\n' https://yourbusiness.odpc.de/sofort-demo/
+          grep -q 'id="yb-demo"' /tmp/yb-demo.html
+          grep -q 'id="yb-build"' /tmp/yb-demo.html
+          grep -q 'id="yb-whatsapp"' /tmp/yb-demo.html
+          echo "YOURBUSINESS_PUBLIC_DEMO_READY"
