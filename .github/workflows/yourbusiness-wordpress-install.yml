@@ -8,7 +8,7 @@ on:
 permissions:
   contents: read
 concurrency:
-  group: yourbusiness-wordpress-install
+  group: yourbusiness-serialized-operations
   cancel-in-progress: false
 jobs:
   install:
