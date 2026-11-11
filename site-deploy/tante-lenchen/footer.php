@@ -6,13 +6,26 @@ var supported=Array.from(lang.options).map(function(o){return o.value});
 function stored(){try{return localStorage.getItem('tl-language')||'de'}catch(e){return 'de'}}
 function cookie(v){['','.tante-lenchen.odpc.de','.odpc.de'].forEach(function(d){document.cookie='googtrans=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/'+(d?';domain='+d:'')+';SameSite=Lax'});if(v!=='de'){document.cookie='googtrans=/de/'+v+';path=/;SameSite=Lax';document.cookie='googtrans=/de/'+v+';path=/;domain=.tante-lenchen.odpc.de;SameSite=Lax'}}
 function load(){if(document.getElementById('tl-google-script'))return;var x=document.createElement('script');x.id='tl-google-script';x.async=true;x.src='https://translate.google.com/translate_a/element.js?cb=tlGoogleTranslateInit';document.head.appendChild(x)}
-function translate(v){if(supported.indexOf(v)<0)return;try{localStorage.setItem('tl-language',v)}catch(e){}cookie(v);speechSynthesis.cancel();if(v==='de'){location.reload();return}var combo=document.querySelector('.goog-te-combo');if(combo){combo.value=v;combo.dispatchEvent(new Event('change',{bubbles:true}))}else load()}
+function translate(v){if(supported.indexOf(v)<0)return;try{localStorage.setItem('tl-language',v)}catch(e){}cookie(v);if('speechSynthesis' in window)tlStopReading();if(v==='de'){location.reload();return}var combo=document.querySelector('.goog-te-combo');if(combo){combo.value=v;combo.dispatchEvent(new Event('change',{bubbles:true}))}else load()}
 window.tlGoogleTranslateInit=function(){if(!(window.google&&google.translate&&google.translate.TranslateElement))return;new google.translate.TranslateElement({pageLanguage:'de',includedLanguages:supported.join(','),autoDisplay:false,multilanguagePage:false},'tl-google-translate');var i=0,t=setInterval(function(){var c=document.querySelector('.goog-te-combo');if(c){clearInterval(t);var v=lang.value;if(v!=='de'){c.value=v;c.dispatchEvent(new Event('change',{bubbles:true}))}}else if(++i>50)clearInterval(t)},200)};
 var initial=stored();if(supported.indexOf(initial)<0)initial='de';lang.value=initial;cookie(initial);if(initial!=='de')load();
 lang.addEventListener('change',function(){translate(lang.value)});
 document.getElementById('tl-home').onclick=function(){location.href='/'};
-document.getElementById('tl-read').onclick=function(){if(!('speechSynthesis' in window)){alert('Sprachausgabe wird von diesem Browser nicht unterstützt.');return}speechSynthesis.cancel();var main=document.querySelector('main');if(!main)return;var utter=new SpeechSynthesisUtterance(main.innerText.slice(0,18000));utter.lang=lang.value==='zh-CN'?'zh-CN':lang.value;utter.rate=0.95;speechSynthesis.speak(utter)};
-document.getElementById('tl-stop').onclick=function(){if('speechSynthesis' in window)speechSynthesis.cancel()};
+var tlReading=false,tlSpeechToken=0,tlActive=null;
+function tlStopReading(){tlReading=false;tlSpeechToken++;if('speechSynthesis' in window)window.speechSynthesis.cancel();if(tlActive){tlActive.style.removeProperty('outline');tlActive=null}}
+function tlReadPage(){if(!('speechSynthesis' in window)){alert('Sprachausgabe wird von diesem Browser nicht unterstützt.');return}tlStopReading();
+var root=document.querySelector('main')||document.querySelector('.site-main')||document.body;
+var nodes=Array.from(root.querySelectorAll('h1,h2,h3,h4,p,li,blockquote,figcaption')).filter(function(el){return !el.closest('.tl-floating,nav,header,footer,script,style,[aria-hidden="true"]')&&el.getClientRects().length&&el.innerText&&el.innerText.trim().length>2});
+if(!nodes.length){nodes=[root]}var idx=0,token=++tlSpeechToken;tlReading=true;
+function next(){if(!tlReading||token!==tlSpeechToken)return;if(tlActive){tlActive.style.removeProperty('outline');tlActive=null}if(idx>=nodes.length){tlReading=false;return}
+var el=nodes[idx++],txt=(el.innerText||'').trim();if(!txt){next();return}tlActive=el;
+el.scrollIntoView({behavior:'smooth',block:'center',inline:'nearest'});
+var utter=new SpeechSynthesisUtterance(txt.slice(0,3000));utter.lang=lang.value;utter.rate=.95;
+utter.onend=function(){if(token===tlSpeechToken)next()};utter.onerror=function(e){if(token===tlSpeechToken){if(e.error==='interrupted'||e.error==='canceled'){tlReading=false;return}next()}};
+window.speechSynthesis.speak(utter)}
+next()}
+document.getElementById('tl-read').onclick=tlReadPage;
+document.getElementById('tl-stop').onclick=tlStopReading;
 document.getElementById('tl-reserve').onclick=function(){var message="Hallo Tante Lenchen! Ich möchte gerne einen Tisch reservieren.\\nDatum: \\nUhrzeit: \\nPersonenzahl: \\nName: \\nBitte bestätigt mir kurz, ob ein Tisch frei ist. Vielen Dank!";window.location.href='https://wa.me/4915167121588?text='+encodeURIComponent(message)};
 })();
 </script><?php wp_footer(); ?></body></html>
