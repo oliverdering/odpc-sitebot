@@ -53,6 +53,8 @@ def run(bank, responder, *, model, limit=0):
         "answers": answers,
         "evaluation_disclaimer": "Lexical screening only; NOT independent agent assessment or Microsoft certification.",
         "competency_percent": None,
+        "execution_mode": "model" if model != "offline-smoke-test-no-model" else "offline_smoke",
+        "model_invoked": model != "offline-smoke-test-no-model",
     })
     return report
 
