@@ -41,7 +41,17 @@ jobs:
                       print('Target exists but is not a directory:',path); continue
                   entries=sftp.listdir(path)
                   print('Target directory accessible:',path,'entry count:',len(entries))
-                  print('WordPress core present:',all(x in entries for x in ['wp-admin','wp-includes','wp-config.php']))
+                  print('Top-level entries:', ', '.join(sorted(entries)[:60]))
+                  print('WordPress core directories present:',all(x in entries for x in ['wp-admin','wp-includes','wp-content']))
+                  print('wp-config.php present:', 'wp-config.php' in entries)
+                  print('wp-config-sample.php present:', 'wp-config-sample.php' in entries)
+                  for sub in ['wp-content/plugins','wp-content/themes','wp-content/uploads']:
+                      try:
+                          names=sftp.listdir(path+'/'+sub)
+                          print(sub, 'entry count:',len(names),'names:', ', '.join(sorted(names)[:25]))
+                      except IOError:
+                          print(sub,'not accessible')
+                  print('Database configuration values and file contents are deliberately not read or printed.')
                   break
               except IOError:
                   print('Target path not accessible:',path)
