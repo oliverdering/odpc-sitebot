@@ -75,8 +75,12 @@ add_action('wp_footer',function(){
  const id=<?php echo (int)$id; ?>,endpoint=<?php echo wp_json_encode($endpoint); ?>;
  const setup=()=>{
   const dock=document.getElementById('odpc-utility-dock'),reader=document.getElementById('odpc-reader');
-  const play=document.getElementById('odpc-reader-play'),stop=document.getElementById('odpc-reader-stop');
-  if(!dock||!reader||!play||!stop||reader.dataset.universalPodcast)return;
+  const oldPlay=document.getElementById('odpc-reader-play'),oldStop=document.getElementById('odpc-reader-stop');
+  if(!dock||!reader||!oldPlay||!oldStop||reader.dataset.universalPodcast)return;
+  // Replace ONLY legacy speech buttons; cloning strips old full-page TTS listeners.
+  // Dock, language selector, Home, Help and WhatsApp nodes remain untouched.
+  const play=oldPlay.cloneNode(true),stop=oldStop.cloneNode(true);
+  oldPlay.replaceWith(play);oldStop.replaceWith(stop);
   reader.dataset.universalPodcast='1';
   const audio=new Audio();let pending=null;
   const status=document.getElementById('odpc-reader-status');
@@ -90,7 +94,7 @@ add_action('wp_footer',function(){
   const style=document.createElement('style');
   style.textContent='#odpc-utility-dock #odpc-reader #odpc-reader-stop{display:flex!important;position:absolute!important;top:0!important;right:-7px!important;width:16px!important;height:16px!important;min-height:16px!important;font-size:10px!important;background:#f3f5f4!important;color:#162c35!important;z-index:2!important}';
   document.head.appendChild(style);
-  const halt=()=>{pending?.abort();pending=null;audio.pause();audio.currentTime=0;reader.classList.remove('is-playing');};
+  const halt=()=>{pending?.abort();pending=null;audio.pause();audio.removeAttribute('src');audio.load();reader.classList.remove('is-playing');};
   stop.addEventListener('click',e=>{e.preventDefault();e.stopImmediatePropagation();halt();label('Podcast gestoppt');},true);
   play.addEventListener('click',async e=>{
    e.preventDefault();e.stopImmediatePropagation();
