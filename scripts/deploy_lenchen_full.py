@@ -30,7 +30,15 @@ def main():
     target=THEME+"/"+p.name;temporary=target+".odpc-new"
     with s.open(temporary,"wb") as f:f.write(p.read_bytes())
     s.rename(temporary,target) if not hasattr(s,"posix_rename") else s.posix_rename(temporary,target)
-   print("PASS: full Tante Lenchen theme deployed, files:",len(files),"target:",THEME)
+   # Keep the scrolling photo banner assets in sync with the source-controlled header.
+   assets=pathlib.Path("lenchen-banner-assets")
+   for name in ("01.webp","03.webp","04.webp","05.webp"):
+    source=assets/name
+    if not source.is_file():raise RuntimeError("Missing banner photo: "+str(source))
+    target=THEME+"/tl-photo-"+name
+    with s.open(target+".odpc-new","wb") as out:out.write(source.read_bytes())
+    s.posix_rename(target+".odpc-new",target)
+   print("PASS: full Tante Lenchen theme deployed, files:",len(files),"plus 4 photo assets; target:",THEME)
    print("Activation required once in WordPress admin; dish editor seeds on activation.")
   finally:s.close()
  finally:tr.close()
