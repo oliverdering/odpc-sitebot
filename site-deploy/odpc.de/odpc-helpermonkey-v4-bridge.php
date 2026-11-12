@@ -335,7 +335,7 @@ if(!document.cookie.includes('odpc_language='))set(get());
 add_filter('wp_nav_menu_items',function($items,$args){
  if(is_admin()||!isset($args->theme_location)||$args->theme_location!=='primary')return $items;
  if(strpos($items,'/remote-fernwartung/')!==false)return $items;
- return $items.'<li class="menu-item menu-item-type-custom odpc-remote-menu"><a href="https://odpc.de/remote-fernwartung/">Fernhilfe</a></li>';
+ return $items.'<li class="menu-item menu-item-type-custom odpc-remote-menu"><a href="https://odpc.de/remote-fernwartung/">Fernwartung / Remote Support</a></li>';
 },20,2);
 add_action('wp_footer',function(){if(is_admin())return; ?>
 <style id="odpc-remote-dock-extension-css">
@@ -360,17 +360,10 @@ body.odpc-smartguide-pilot #odpc-utility-dock{width:min(390px,calc(100vw - 14px)
   var dock=document.getElementById('odpc-utility-dock');
   if(dock&&!document.getElementById('odpc-dock-remote')){
    var a=document.createElement('a');a.id='odpc-dock-remote';a.href=url;
-   a.title='Fernhilfe / Remote Support';a.setAttribute('aria-label','Fernhilfe öffnen');
+   a.title='ODPC Fernwartung – sichere Unterstützung für PC, Notebook und Smartphone';a.setAttribute('aria-label','ODPC Fernwartung öffnen');
    var img=document.createElement('img');img.src=logo;img.alt='';img.width=34;img.height=34;
    a.appendChild(img);dock.appendChild(a);
   }
-  if(document.body.classList.contains('home')&&!document.getElementById('odpc-home-remote')){
-   var main=document.querySelector('#odpc-home,main .entry-content,main');
-   if(main){
-    var aside=document.createElement('aside');aside.id='odpc-home-remote';aside.className='odpc-home-remote';
-    aside.innerHTML='<img src="'+logo+'" alt="" loading="lazy" width="64" height="64"><div><strong>Fernhilfe · Remote Support</strong><p>Persönliche Unterstützung für PC, Notebook und Smartphone.</p><a href="'+url+'">Zur ODPC-Fernhilfe</a></div>';
-    main.insertBefore(aside,main.firstChild);
-   }
   }
  }
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount);else mount();
