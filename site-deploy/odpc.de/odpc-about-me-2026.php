@@ -222,3 +222,20 @@ add_action('wp_footer', function () {
     </script>
     <?php
 }, 100);
+
+/* Team classic appearance: scoped to unser-team only. */
+add_action('wp_head', function () {
+    if (is_admin() || !(is_page('unser-team') || is_single('unser-team'))) return;
+    echo '<style id="odpc-team-classic-palette">
+body .entry-content .odpc-team,body .entry-content .odpc-team *{box-sizing:border-box}
+html[data-odpc-appearance="green"] body .entry-content{--odpc-team-ink:#284634;--odpc-team-paper:#f6f0e3;--odpc-team-card:#faf7ef;--odpc-team-line:#91ac8b}
+html[data-odpc-appearance="green"] body .entry-content :is(.odpc-team,.odpc-team-grid,.odpc-team-section,.odpc-team-member,.odpc-team-card,.team-card,.team-member,.odpc-team-role,.odpc-team-panel,.odpc-team-detail,.odpc-team-details){background:var(--odpc-team-card)!important;border-color:var(--odpc-team-line)!important;color:var(--odpc-team-ink)!important;box-shadow:none!important}
+html[data-odpc-appearance="green"] body .entry-content :is(.odpc-team,.odpc-team-section,.odpc-team-grid){background:var(--odpc-team-paper)!important}
+html[data-odpc-appearance="green"] body .entry-content :is(.odpc-team,.odpc-team-section,.odpc-team-member,.odpc-team-card,.team-card,.team-member,.odpc-team-panel,.odpc-team-detail) :is(h1,h2,h3,h4,p,span,small,strong,li,summary){color:var(--odpc-team-ink)!important}
+html[data-odpc-appearance="green"] body .entry-content :is(.odpc-team,.odpc-team-member,.odpc-team-card,.team-card,.team-member) a{color:#315e40!important}
+html[data-odpc-appearance="green"] body .entry-content :is(.odpc-team,.odpc-team-card,.team-card,.odpc-team-member) :is(button,[role="button"]){border-color:#86a781!important}
+html[data-odpc-appearance="green"] body .entry-content :is(.odpc-team,.odpc-team-grid,.odpc-team-section) :is(article,details){background:var(--odpc-team-card)!important;border-color:var(--odpc-team-line)!important;color:var(--odpc-team-ink)!important;box-shadow:none!important}
+html[data-odpc-appearance="green"] body .entry-content :is(.odpc-team,.odpc-team-grid,.odpc-team-section) :is(article,details) *:not(img):not(svg):not(path){color:var(--odpc-team-ink)!important}
+html[data-odpc-appearance="green"] body .entry-content :is(.odpc-team,.odpc-team-grid,.odpc-team-section) :is(article,details) :is(a,button){color:#315e40!important}
+</style>';
+}, 99);
