@@ -445,3 +445,15 @@ add_action('wp_footer', function () {
  })();</script>
  <?php
 }, 120);
+
+/* Classic contact page: legacy blue panels are page content, not part of the global header. */
+add_action('wp_head',function(){
+ if(is_admin()||!is_page('contact-me'))return;
+ ?>
+<style id="odpc-contact-classic-panel-fix">
+html[data-odpc-appearance=green] .entry-content :is(section,article,aside,div)[style*="background"],
+html[data-odpc-appearance=green] .entry-content :is(section,article,aside,div)[style*="background-color"]{background:#fff9ec!important;background-image:none!important;border-color:#78917b!important;color:#171b18!important;box-shadow:0 3px 14px rgba(30,53,38,.06)!important}
+html[data-odpc-appearance=green] .entry-content :is(section,article,aside,div)[style*="background"] :is(h1,h2,h3,h4,p,li,strong,small),
+html[data-odpc-appearance=green] .entry-content :is(section,article,aside,div)[style*="background-color"] :is(h1,h2,h3,h4,p,li,strong,small){color:#171b18!important}
+</style>
+<?php },1001);
