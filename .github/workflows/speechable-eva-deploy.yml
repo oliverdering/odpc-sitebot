@@ -1,0 +1,221 @@
+name: Speechable Eva guarded deployment
+on:
+  push:
+    paths: ['.github/workflows/speechable-eva-deploy.yml']
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - run: npm install --no-save @mintplex-labs/piper-tts-web@1.0.4 onnxruntime-web@1.18.0 esbuild@0.25.12
+      - name: Patch local test copy only
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('node_modules/@mintplex-labs/piper-tts-web/dist/piper-tts-web.js')
+          s=p.read_text()
+          s=s.replace('new Promise(async (resolve) => {','new Promise(async (resolve, reject) => {')
+          old='resolve(JSON.parse(data).phoneme_ids);'
+          new="""const payload = JSON.parse(data);
+          const mapping = __privateGet(this, _modelConfig).phoneme_id_map;
+          const ids = [...mapping['^'], ...mapping['_']];
+          for (const phoneme of Array.from(payload.phonemes.join('').normalize('NFC'))) {
+            if (!Object.hasOwn(mapping, phoneme)) { reject(new Error('Missing model phoneme: ' + JSON.stringify(phoneme))); return; }
+            ids.push(...mapping[phoneme], ...mapping['_']);
+          }
+          ids.push(...mapping['$']);
+          resolve(ids);"""
+          assert s.count(old)==1
+          p.write_text(s.replace(old,new))
+          PY
+      - run: npx esbuild node_modules/@mintplex-labs/piper-tts-web/dist/piper-tts-web.js --bundle --format=esm --platform=browser --external:fs --external:path --outfile=patched-piper.mjs
+      - run: python3 -m pip install 'playwright>=1.50,<2'
+      - run: python3 -m playwright install --with-deps chromium
+      - name: Generate and decode Eva audio
+        run: |
+          python3 -m http.server 8765 >/tmp/piper-http.log 2>&1 &
+          python3 - <<'PY'
+          from playwright.sync_api import sync_playwright
+          import json,base64,pathlib
+          with sync_playwright() as p:
+              browser=p.chromium.launch(headless=True,args=['--no-sandbox'])
+              site=browser.new_page()
+              site.goto('https://odpc.de/',wait_until='domcontentloaded',timeout=60000)
+              homepage=site.locator('#odpc-home').inner_text()[:700]
+              if len(homepage)<100: raise RuntimeError('Could not read homepage test text')
+              site.close()
+              page=browser.new_page()
+              page.goto('http://localhost:8765/',wait_until='domcontentloaded')
+              report=page.evaluate("""async (homepage) => {
+                const out={};
+                try {
+                  const tts=await import('/patched-piper.mjs');
+                  for(const [label,text] of [['short','Hallo, hier spricht Eva. Willkommen bei ODPC.'],['german','Ich unterstütze Unternehmen bei ihrer gesamten IT: von Arbeitsplätzen, Servern und Netzwerken über Software und Websites bis zur Automatisierung und KI-Integration.'],['homepage',homepage]]) {
+                    try {
+                      const b=await Promise.race([tts.predict({text,voiceId:'de_DE-eva_k-x_low'}),new Promise((_,reject)=>setTimeout(()=>reject(new Error('Synthesis timed out')),90000))]);
+                      const bytes=await b.arrayBuffer(), ctx=new AudioContext(), a=await ctx.decodeAudioData(bytes.slice(0));
+                      let peak=0;for(const x of a.getChannelData(0))peak=Math.max(peak,Math.abs(x));
+                      let binary='';for(const x of new Uint8Array(bytes))binary+=String.fromCharCode(x);
+                      out[label]={ok:a.duration>0&&peak>0,duration:a.duration,peak,wav:btoa(binary)};
+                      await ctx.close();
+                    } catch(e){out[label]={ok:false,error:String(e?.stack||e)}}
+                  }
+                } catch(e){out.setupError=String(e?.stack||e)}
+                return out;
+              }""", homepage)
+              for name,result in report.items():
+                  if isinstance(result,dict) and 'wav' in result:
+                      pathlib.Path('eva-'+name+'.wav').write_bytes(base64.b64decode(result.pop('wav')))
+              print('PIPER MAP REPORT',json.dumps(report,ensure_ascii=False),flush=True)
+              browser.close()
+              if not all(report.get(n,{}).get('ok') for n in ('short','german','homepage')):raise SystemExit('Mapping test failed')
+          PY
+      - name: Test real Speechable worker with Eva
+        run: |
+          mkdir -p vendor
+          cp patched-piper.mjs vendor/odpc-eva-piper-20261113.mjs
+          curl -fsSL https://raw.githubusercontent.com/oliverdering/odpc-sitebot/a4be918585688322fb373a8e2a7712d1badd56bb/scripts/speechable-eva/tts-worker.candidate.js -o tts-worker.js
+          python3 -m http.server 8766 >/tmp/piper-worker-http.log 2>&1 &
+          python3 - <<'PY'
+          from playwright.sync_api import sync_playwright
+          import json
+          with sync_playwright() as p:
+              browser=p.chromium.launch(headless=True,args=['--no-sandbox'])
+              page=browser.new_page()
+              page.goto('http://localhost:8766/')
+              result=page.evaluate("""async () => {
+                 const w=new Worker('/tts-worker.js',{type:'module'});
+                 return await new Promise((resolve)=>{
+                   const timeout=setTimeout(()=>{w.terminate();resolve({error:'worker timeout'})},90000);
+                   w.onerror=e=>{clearTimeout(timeout);w.terminate();resolve({error:e.message})};
+                   w.onmessage=async e=>{
+                     const m=e.data;
+                     if(m.type==='ready')w.postMessage({type:'processChunk',data:{voiceId:'de_DE-eva_k-x_low',text:'Hallo, dies ist ein Test des ODPC Schwebebalkens.',chunkIndex:0}});
+                     if(m.type==='error'){clearTimeout(timeout);w.terminate();resolve({error:m.error})}
+                     if(m.type==='chunkComplete'){
+                       try{let c=new AudioContext();let a=await c.decodeAudioData(m.result.audioBuffer.slice(0));let peak=0;for(const n of a.getChannelData(0))peak=Math.max(peak,Math.abs(n));
+                         clearTimeout(timeout);w.terminate();resolve({duration:a.duration,peak,wordCount:m.result.wordCount});
+                       }catch(e){clearTimeout(timeout);w.terminate();resolve({error:String(e)})}
+                     }
+                   };
+                   w.postMessage({type:'init',data:{voiceId:'de_DE-eva_k-x_low'}});
+                 });
+              }""")
+              print('WORKER TEST',json.dumps(result),flush=True)
+              browser.close()
+              assert result.get('duration',0)>0 and result.get('peak',0)>0 and result.get('wordCount',0)>0
+          PY
+      - name: Test SmartGuide candidate on real pages
+        run: |
+          curl -fsSL https://raw.githubusercontent.com/oliverdering/odpc-sitebot/8af81f9610007ad1e47b88a07195dc51345c7ea2/scripts/speechable-eva/smartguide.candidate.js -o smartguide.js
+          node --check smartguide.js
+          python3 - <<'PY'
+          from playwright.sync_api import sync_playwright
+          from pathlib import Path
+          import re,json
+          script=Path('smartguide.js').read_text()
+          worker=Path('tts-worker.js').read_bytes()
+          bundle=Path('patched-piper.mjs').read_bytes()
+          cases=[('home','https://odpc.de/'),('mobile-webdesign','https://odpc.de/webdesign/')]
+          with sync_playwright() as p:
+              browser=p.chromium.launch(headless=True,args=['--no-sandbox','--autoplay-policy=no-user-gesture-required'])
+              for name,url in cases:
+                  context=browser.new_context(viewport={'width':393,'height':852} if name.startswith('mobile') else {'width':1280,'height':800},is_mobile=name.startswith('mobile'),has_touch=name.startswith('mobile'))
+                  page=context.new_page()
+                  def intercept(route):
+                      request=route.request
+                      if '/wp-content/plugins/speechable/assets/js/tts-worker.js' in request.url:
+                          route.fulfill(status=200,content_type='text/javascript',body=worker);return
+                      if '/vendor/odpc-eva-piper-20261113.mjs' in request.url:
+                          route.fulfill(status=200,content_type='text/javascript',body=bundle);return
+                      if request.resource_type=='document':
+                          response=route.fetch()
+                          html=response.text()
+                          html,n=re.subn(r'(<script id="odpc-smartguide-pilot-js">).*?(</script>)',lambda m:m.group(1)+script+m.group(2),html,count=1,flags=re.S)
+                          if n!=1:raise RuntimeError('SmartGuide script not found: '+request.url)
+                          route.fulfill(response=response,body=html);return
+                      route.continue_()
+                  page.route('https://odpc.de/**',intercept)
+                  page.goto(url,wait_until='domcontentloaded',timeout=60000)
+                  play=page.locator('#odpc-reader-play')
+                  play.wait_for(state='visible')
+                  play.click()
+                  page.wait_for_function("document.querySelector('#odpc-reader-play')?.dataset.voiceState === 'eva-playing'",timeout=100000)
+                  state=play.get_attribute('data-voice-state')
+                  page.locator('#odpc-reader-stop').click()
+                  page.wait_for_function("!document.querySelector('#odpc-reader-play')?.dataset.voiceState",timeout=10000)
+                  print('SMARTGUIDE TEST',json.dumps({'page':name,'state':state,'stop':'ok'}),flush=True)
+                  context.close()
+              browser.close()
+          PY
+      - name: Install SFTP deployment dependency
+        run: python3 -m pip install 'paramiko>=3.4,<5'
+      - name: Deploy tested Eva worker with rollback and public verification
+        env:
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+        run: |
+          python3 - <<'PY'
+          import os,hashlib,base64,hmac,paramiko,pathlib,time
+          from urllib.request import urlopen,Request
+          host='home119567219.1and1-data.host';user='acc1461323326'
+          pin='SHA256:1gx2w8Rtv3wCgi7Jh8myf/KVd72cRQbow03UP8P095Q'
+          root='/clickandbuilds/Dering/wp-content/plugins/speechable/assets/js'
+          expected='9ce6c63730cc00286271159e530451a74d3d876c86504d3a2bcc9ef59a539bb0'
+          worker=pathlib.Path('tts-worker.js').read_bytes()
+          bundle=pathlib.Path('patched-piper.mjs').read_bytes()
+          password=os.environ.get('ODPC_SFTP_PASSWORD')
+          if not password:raise RuntimeError('Missing SFTP secret')
+          tr=paramiko.Transport((host,22))
+          try:
+              tr.start_client(timeout=20)
+              key='SHA256:'+base64.b64encode(hashlib.sha256(tr.get_remote_server_key().asbytes()).digest()).decode().rstrip('=')
+              if not hmac.compare_digest(key,pin):raise RuntimeError('Host fingerprint mismatch')
+              tr.auth_password(user,password)
+              sftp=paramiko.SFTPClient.from_transport(tr)
+              try:
+                  remote=root+'/tts-worker.js';target=root+'/vendor/odpc-eva-piper-20261113.mjs'
+                  with sftp.open(remote,'rb') as file:original=file.read()
+                  if hashlib.sha256(original).hexdigest()!=expected:raise RuntimeError('Live worker changed; refusing overwrite')
+                  pathlib.Path('speechable-worker-before.js').write_bytes(original)
+                  def put_atomic(path,data):
+                      temp=path+'.odpc-upload'
+                      with sftp.open(temp,'wb') as file:file.write(data)
+                      sftp.posix_rename(temp,path)
+                      with sftp.open(path,'rb') as file:received=file.read()
+                      if not hmac.compare_digest(hashlib.sha256(received).digest(),hashlib.sha256(data).digest()):raise RuntimeError('SFTP verification failed')
+                  try:
+                      with sftp.open(target,'rb') as file:oldbundle=file.read()
+                      if hashlib.sha256(oldbundle).digest()!=hashlib.sha256(bundle).digest():raise RuntimeError('Bundle destination already exists with different content')
+                  except FileNotFoundError:
+                      put_atomic(target,bundle)
+                  try:
+                      put_atomic(remote,worker)
+                      for path,data in [('/wp-content/plugins/speechable/assets/js/tts-worker.js',worker),('/wp-content/plugins/speechable/assets/js/vendor/odpc-eva-piper-20261113.mjs',bundle)]:
+                          req=Request('https://odpc.de'+path+'?odpc_eva_verify='+str(int(time.time())),headers={'Cache-Control':'no-cache','User-Agent':'ODPC-Eva-Release-Check'})
+                          with urlopen(req,timeout=35) as response:public=response.read()
+                          if hashlib.sha256(public).digest()!=hashlib.sha256(data).digest():raise RuntimeError('Public bytes differ: '+path)
+                      print('PASS: original saved, SFTP hashes and public hashes verified',flush=True)
+                  except Exception:
+                      put_atomic(remote,original)
+                      print('ROLLBACK: original worker restored',flush=True)
+                      raise
+              finally:sftp.close()
+          finally:tr.close()
+          PY
+      - name: Retain prior Speechable worker
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: speechable-eva-worker-backup
+          path: speechable-worker-before.js
+          if-no-files-found: ignore
+          retention-days: 15
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: piper-eva-test-audio
+          path: eva-*.wav
+          if-no-files-found: ignore
+          retention-days: 2
