@@ -392,3 +392,22 @@ body.odpc-smartguide-pilot #odpc-utility-dock{width:min(390px,calc(100vw - 14px)
 })();
 </script>
 <?php },110);
+
+/* ODPC contact Google Business Profile link: canonical Place ID, no content changes. */
+add_action('wp_footer',function(){
+ if(is_admin()||!is_page('contact-me'))return;
+ ?>
+<script id="odpc-contact-google-profile-fix">
+(function(){
+ 'use strict';
+ var profile='https://www.google.com/maps/search/?api=1&query=Oliver%20Dering%20IT-Consulting&query_place_id=ChIJQ_IXWzFmmk4RVa2AeaAt8Ic';
+ function fix(){
+  document.querySelectorAll('a[href]').forEach(function(a){
+   var label=(a.textContent||'').replace(/\\s+/g,' ').trim();
+   if(label.indexOf('Google-Unternehmensprofil')!==-1){a.href=profile;a.target='_blank';a.rel='noopener noreferrer';}
+  });
+ }
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',fix);else fix();
+})();
+</script>
+<?php },120);
