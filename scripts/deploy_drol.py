@@ -65,6 +65,27 @@ def with_odpc_credit(payload: bytes) -> bytes:
     additions += (b"" if has_credit else ODPC_CREDIT.encode("utf-8"))
     return payload[:pos] + additions + payload[pos:]
 
+DROL_SHARED_APPEARANCE = """<style id="drol-shared-appearance-css">
+html[data-odpc-appearance="green"]{color-scheme:light;--bg:#f5efdf;--surface:#fff9ec;--surface2:#e6ebdf;--ink:#171b18;--muted:#405b48;--line:#78917b;--accent:#28513d;--accent-ink:#fff;--section:#eee8d9;--shadow:0 8px 24px #20352718}
+html[data-odpc-appearance="blue"]{color-scheme:dark;--bg:#081b2b;--surface:#102d43;--surface2:#173b54;--ink:#eef6ff;--muted:#b8cde0;--line:#416681;--accent:#8cc8f0;--accent-ink:#082138;--section:#0d263a}
+#drol-appearance-switch{border:1px solid var(--line);border-radius:9px;background:var(--surface);color:var(--ink);padding:9px 12px;min-height:42px;cursor:pointer;font:600 13px system-ui}
+#drol-appearance-switch:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+</style><script id="drol-shared-appearance-js">(function(){
+function read(){var m=document.cookie.match(/(?:^|;\\s*)odpc_appearance_shared=(green|blue)(?:;|$)/);return m?m[1]:'blue'}
+function apply(v){document.documentElement.setAttribute('data-odpc-appearance',v);document.documentElement.setAttribute('data-theme',v==='green'?'light':'dark')}
+function mount(){if(document.getElementById('drol-appearance-switch'))return;var h=document.querySelector('.header .actions,.drol-unified-header,.header-row,.header');if(!h)return;var b=document.createElement('button');b.id='drol-appearance-switch';b.type='button';function sync(){var green=document.documentElement.getAttribute('data-odpc-appearance')==='green';b.textContent=green?'🌿 Klassisch':'◐ Design';b.setAttribute('aria-label',green?'Blaues Design aktivieren':'Grün-beiges klassisches Design aktivieren')}b.addEventListener('click',function(){var v=document.documentElement.getAttribute('data-odpc-appearance')==='green'?'blue':'green';apply(v);document.cookie='odpc_appearance_shared='+v+';path=/;domain=.odpc.de;max-age=31536000;SameSite=Lax;Secure';try{localStorage.setItem('odpc_appearance',v)}catch(e){}sync()});h.appendChild(b);sync()}
+apply(read());if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount);else mount();
+})();</script>"""
+
+def with_shared_appearance(payload: bytes) -> bytes:
+    if b'id="drol-shared-appearance-js"' in payload:
+        return payload
+    lower = payload.lower()
+    pos = lower.rfind(b"</body>")
+    if pos < 0:
+        raise RuntimeError("Cannot add shared appearance: missing </body>")
+    return payload[:pos] + DROL_SHARED_APPEARANCE.encode("utf-8") + payload[pos:]
+
 def with_asset_version(payload: bytes) -> bytes:
     """Cache-bust the shared header stylesheet using its deployed content hash."""
     import re
@@ -143,7 +164,7 @@ def main():
                     raise RuntimeError("D.R.O.L. data path is not a directory")
                 files.append((events_source,data_dir+"/events.json"))
             for source,target in files:
-                payload=with_odpc_credit(with_drol_seo(with_asset_version(source.read_bytes()),source.name)) if source.suffix==".html" else source.read_bytes()
+                payload=with_shared_appearance(with_odpc_credit(with_drol_seo(with_asset_version(source.read_bytes()),source.name))) if source.suffix==".html" else source.read_bytes()
                 try:
                     with sf.open(target,"rb") as f:old=f.read()
                     if source.suffix==".html" and b"D.R.O.L." not in old:raise RuntimeError("Refusing to overwrite unrelated content: "+target)
