@@ -107,6 +107,49 @@ jobs:
               browser.close()
               assert result.get('duration',0)>0 and result.get('peak',0)>0 and result.get('wordCount',0)>0
           PY
+      - name: Test SmartGuide candidate on real pages
+        run: |
+          curl -fsSL https://raw.githubusercontent.com/oliverdering/odpc-sitebot/8af81f9610007ad1e47b88a07195dc51345c7ea2/scripts/speechable-eva/smartguide.candidate.js -o smartguide.js
+          node --check smartguide.js
+          python3 - <<'PY'
+          from playwright.sync_api import sync_playwright
+          from pathlib import Path
+          import re,json
+          script=Path('smartguide.js').read_text()
+          worker=Path('tts-worker.js').read_bytes()
+          bundle=Path('patched-piper.mjs').read_bytes()
+          cases=[('home','https://odpc.de/'),('mobile-webdesign','https://odpc.de/webdesign/')]
+          with sync_playwright() as p:
+              browser=p.chromium.launch(headless=True,args=['--no-sandbox','--autoplay-policy=no-user-gesture-required'])
+              for name,url in cases:
+                  context=browser.new_context(viewport={'width':393,'height':852} if name.startswith('mobile') else {'width':1280,'height':800},is_mobile=name.startswith('mobile'),has_touch=name.startswith('mobile'))
+                  page=context.new_page()
+                  def intercept(route):
+                      request=route.request
+                      if '/wp-content/plugins/speechable/assets/js/tts-worker.js' in request.url:
+                          route.fulfill(status=200,content_type='text/javascript',body=worker);return
+                      if '/vendor/odpc-eva-piper-20261113.mjs' in request.url:
+                          route.fulfill(status=200,content_type='text/javascript',body=bundle);return
+                      if request.resource_type=='document':
+                          response=route.fetch()
+                          html=response.text()
+                          html,n=re.subn(r'(<script id="odpc-smartguide-pilot-js">).*?(</script>)',lambda m:m.group(1)+script+m.group(2),html,count=1,flags=re.S)
+                          if n!=1:raise RuntimeError('SmartGuide script not found: '+request.url)
+                          route.fulfill(response=response,body=html);return
+                      route.continue_()
+                  page.route('https://odpc.de/**',intercept)
+                  page.goto(url,wait_until='domcontentloaded',timeout=60000)
+                  play=page.locator('#odpc-reader-play')
+                  play.wait_for(state='visible')
+                  play.click()
+                  page.wait_for_function("document.querySelector('#odpc-reader-play')?.dataset.voiceState === 'eva-playing'",timeout=100000)
+                  state=play.get_attribute('data-voice-state')
+                  page.locator('#odpc-reader-stop').click()
+                  page.wait_for_function("!document.querySelector('#odpc-reader-play')?.dataset.voiceState",timeout=10000)
+                  print('SMARTGUIDE TEST',json.dumps({'page':name,'state':state,'stop':'ok'}),flush=True)
+                  context.close()
+              browser.close()
+          PY
       - uses: actions/upload-artifact@v4
         if: always()
         with:
