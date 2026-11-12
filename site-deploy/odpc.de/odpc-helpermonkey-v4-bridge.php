@@ -88,7 +88,16 @@ add_action('wp_footer',function(){
  function next(t){
  if(t!==token)return;
  if(index>=queue.length){document.getElementById('odpc-reader').classList.remove('is-playing');status.textContent='Wiedergabe beendet';return}
- var part=queue[index++],u=new SpeechSynthesisUtterance(part);
+ var part=queue[index++];
+ // Pronunciation dictionary: spell German technical initialisms letter by letter.
+ // Only whole tokens are replaced; words such as 'Kino' remain unchanged.
+ var spokenPart=part;
+ if(/^de(?:-|$)/i.test(locale())){
+  spokenPart=spokenPart.replace(/\b(?:IT|KI|ODPC|API|FAQ|SEO|DSGVO)\b/g,function(word){
+   return ({IT:'I T',KI:'K I',ODPC:'O D P C',API:'A P I',FAQ:'F A Q',SEO:'S E O',DSGVO:'D S G V O'})[word]||word;
+  });
+ }
+ var u=new SpeechSynthesisUtterance(spokenPart);
  u.lang=locale();u.rate=0.95;u.volume=1;
  var available=typeof synth.getVoices==='function'?(synth.getVoices()||[]):[];
  var matches=available.filter(function(x){return (x.lang||'').toLowerCase().split(/[-_]/)[0]===u.lang.split('-')[0]});
