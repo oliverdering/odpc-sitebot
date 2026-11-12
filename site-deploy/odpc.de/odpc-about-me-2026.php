@@ -301,5 +301,6 @@ html[data-odpc-appearance="green"] body.postid-1093 #primary .entry-content .odt
 html[data-odpc-appearance="green"] body.postid-1093 #primary .entry-content .odt .odt-detail{background:#fff9ec!important;color:#294735!important}
 html[data-odpc-appearance="green"] body.postid-1093 #primary .entry-content .odt .odt-cta{background:#28513d!important;border:1px solid #28513d!important;color:#fff!important}
 html[data-odpc-appearance="green"] body.postid-1093 #primary .entry-content .odt .odt-person img{border-color:#78917b!important}
+html[data-odpc-appearance="green"] body.postid-1093 #primary .entry-meta,html[data-odpc-appearance="green"] body.postid-1093 #primary .entry-meta :is(a,span){color:#28513d!important}
 </style>';
 }, 101);
