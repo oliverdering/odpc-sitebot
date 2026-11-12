@@ -15331,6 +15331,326 @@
       "depth": 2,
       "review_status": "manufacturer_verified",
       "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/what-is-foundry",
+      "sha256": "e40e27647e86cad35b6a2b70f45df73efb57eb027a2d32d4c42850af0a858aec",
+      "captured_at": "2026-11-12T18:37:31.101116+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/dynamics365/get-started/",
+      "sha256": "f701cf0910e13af199ce54a9382249997991c1048880acb479d73ec18872f3b0",
+      "captured_at": "2026-11-12T18:37:31.288538+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/",
+      "sha256": "2043d0bcc89e5537056a21de0d679f2f8355c284b002ea45a07d861fcb65c32b",
+      "captured_at": "2026-11-12T18:37:31.486279+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/ai/",
+      "sha256": "3729983fa04958218669f5d3a85e7f7cdaa2a3344464ab55986090022b0f1fe4",
+      "captured_at": "2026-11-12T18:37:31.699546+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/develop-first-agent/",
+      "sha256": "1aeecf75e95ad8719cf1bc3ae5c97e8bee0dd3a229a1a97bd5c5324490e3da77",
+      "captured_at": "2026-11-12T18:37:31.843174+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/active-directory/authentication/concept-authentication-passwordless",
+      "sha256": "c7bc8ebe8469fdb89cb2e3bf006de1584d7175a73a588e333f464986c494a51f",
+      "captured_at": "2026-11-12T18:37:32.353909+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/exchange/antispam-and-antimalware/antispam-and-antimalware",
+      "sha256": "30260c2062badcc710ced3fffa4ac44203fcc543d035bc56107fdfbdf8826308",
+      "captured_at": "2026-11-12T18:37:32.499217+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/exchange/monitoring/monitoring",
+      "sha256": "460d1e8da86eaa5b71be84e9bd32fbf23b7e83a1c8e748f44b06829653926049",
+      "captured_at": "2026-11-12T18:37:32.806147+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/exchange/high-availability/high-availability",
+      "sha256": "09c1d550142956c9673f453ff95331fdf4997bb9e640c0ff1cb6a7d56321b6ab",
+      "captured_at": "2026-11-12T18:37:32.913512+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/exchange/recipients/disconnected-mailboxes/restore-deleted-mailboxes",
+      "sha256": "503dc3ea66c8191b1d72dbc116df81303a6781e2b67f65c2c5fb0fde9b793faf",
+      "captured_at": "2026-11-12T18:37:33.186933+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/Exchange/recipients-in-exchange-online/manage-user-mailboxes/recover-deleted-messages",
+      "sha256": "890098bce67b40d409578f9e554bd07cc5c2d44de6b42532800c95623771d93d",
+      "captured_at": "2026-11-12T18:37:33.428694+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/deploy-small-business",
+      "sha256": "9a052e1c6865d11159cb629e49a2431aab8179c4d9e241f97e221380b94a7c5f",
+      "captured_at": "2026-11-12T18:37:33.851861+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/deploy-enterprise-overview",
+      "sha256": "2e08d8c39022be778a2d6ad2e386be621914f09beaafcee370163147bfa8f5e7",
+      "captured_at": "2026-11-12T18:37:34.091441+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/microsoft-365/solutions/setup-secure-collaboration-with-teams",
+      "sha256": "99c45af8f371001d3fbb8083e29eb241cca926edc4cb6149e8131e949bc12042",
+      "captured_at": "2026-11-12T18:37:34.429421+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/itadmin-readiness",
+      "sha256": "68ffb45a30f3bd623a4fe10666014d05d25a30b5c27b1a7ed4a999e3d5162932",
+      "captured_at": "2026-11-12T18:37:34.583086+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/user-access",
+      "sha256": "b44ae5c99a1e93210205f9aff4af4462e857a7b7973e169705befc70e862bf7c",
+      "captured_at": "2026-11-12T18:37:34.778712+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/teams-architecture-solutions-posters",
+      "sha256": "18b0b5e34335102066590fcfba843e7beda227f3cd9260913ce9568632523e46",
+      "captured_at": "2026-11-12T18:37:34.930447+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/sharepoint/guide-to-sharepoint-modern-experience",
+      "sha256": "18e05457fb626abcc85f033bc9ade551f4e3d089ff675a20daa151edd424657b",
+      "captured_at": "2026-11-12T18:37:35.080819+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/exchange/exchange-hybrid",
+      "sha256": "4a9a0f05730fb2b017c7e437f33034a16a14a465191466f4a58808889affd5ab",
+      "captured_at": "2026-11-12T18:37:35.508084+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/teams-client-desktop-admin",
+      "sha256": "7827ad04290ee83a389c5bce6636c3604503a5f4066d5c094a8b067aa62cde49",
+      "captured_at": "2026-11-12T18:37:35.697607+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/active-directory/external-identities/what-is-b2b",
+      "sha256": "dd5fabf15ab85b725c257c6626b765d7219f3568b4ee4bf3b0eed9461f0d9eac",
+      "captured_at": "2026-11-12T18:37:36.517171+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/aa-cq-manage-resource-accounts",
+      "sha256": "d2e2cdd425df0f5b9ad91f486f1c12b365f3af87996ba97b76a99b6edbc16edd",
+      "captured_at": "2026-11-12T18:37:36.872653+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/policy-assignment-overview",
+      "sha256": "eeec7c0b02d839842eb98a103363c4a94a0d9b7a08d717958aa588bb5e41004c",
+      "captured_at": "2026-11-12T18:37:37.067546+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/MicrosoftTeams/enhanced-teams-experience",
+      "sha256": "a6e8271c65d93f64c5a9cb01e3fcd65a8376c8692d5e7264d2f4d116219c7e02",
+      "captured_at": "2026-11-12T18:37:37.200198+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/troubleshoot/microsoftteams/teams-sign-in/teams-doesnt-automatically-update",
+      "sha256": "2e90dc8c6692e6c0cb7508302ee6fedefd5b24de613c789ec5f70cd5b79a2bde",
+      "captured_at": "2026-11-12T18:37:37.471420+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/defender-xdr/",
+      "sha256": "8674c3824f47be7ddd55f98f26eaf36753640de29d0618b628b3bbe9d653bd6c",
+      "captured_at": "2026-11-12T18:37:37.628479+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/defender-cloud-apps/editions-cloud-app-security-o365",
+      "sha256": "034e577dae0653ff4ca5754f44a3cdd34c3f75722829529c86f786f34776b59e",
+      "captured_at": "2026-11-12T18:37:38.226834+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/defender-vulnerability-management/whats-new-in-microsoft-defender-vulnerability-management",
+      "sha256": "4ec2dd443a546902759c0852806821c7937fb8c343262e09c8669f97a76a1eb3",
+      "captured_at": "2026-11-12T18:37:38.822534+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/cost-calculator",
+      "sha256": "0e7fcb4b265f28a06538ca57696e2cdb9b08050d7d1cc3e4013c0ad183609980",
+      "captured_at": "2026-11-12T18:37:38.994087+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-get-started",
+      "sha256": "d38872f26e792c66ceb4513afea4054eeaa3f0595fa5c4f51cc4125a1c53c496",
+      "captured_at": "2026-11-12T18:37:39.172596+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/security-exposure-management/",
+      "sha256": "35d970b8dc635a052940624748996061a1f43b5775c321cfdbe279b13660021f",
+      "captured_at": "2026-11-12T18:37:39.332917+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/defender-xdr/okta-attack-disruption",
+      "sha256": "60737d607caf783dccae919d393ed2806c7e8863a86490a3d840d8fceeb0730f",
+      "captured_at": "2026-11-12T18:37:39.455381+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/defender-for-iot/enterprise-iot-licenses",
+      "sha256": "c253a7a0242e2f0a8fd4e6c9578e60d43271d482fa4246b56b94d981e9a4d4d9",
+      "captured_at": "2026-11-12T18:37:39.769250+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/active-directory/users-groups-roles/directory-manage-roles-portal",
+      "sha256": "36295c1266a619dcb8954b36322b86aa7b593c2bc31be825a2b0f6ad2956860a",
+      "captured_at": "2026-11-12T18:37:40.555991+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
     }
   ],
   "seen": [
@@ -15346,7 +15666,9 @@
     "https://learn.microsoft.com/en-us/DeployOffice/privacy/required-service-data",
     "https://learn.microsoft.com/en-us/Exchange/mailbox-migration/mailbox-migration",
     "https://learn.microsoft.com/en-us/Exchange/mailbox-migration/office-365-migration-best-practices",
+    "https://learn.microsoft.com/en-us/Exchange/recipients-in-exchange-online/manage-user-mailboxes/recover-deleted-messages",
     "https://learn.microsoft.com/en-us/Exchange/whats-new",
+    "https://learn.microsoft.com/en-us/MicrosoftTeams/enhanced-teams-experience",
     "https://learn.microsoft.com/en-us/MicrosoftTeams/troubleshoot/teams",
     "https://learn.microsoft.com/en-us/OfficeUpdates/",
     "https://learn.microsoft.com/en-us/OfficeUpdates/release-notes-microsoft365-apps",
@@ -15362,6 +15684,7 @@
     "https://learn.microsoft.com/en-us/agents/",
     "https://learn.microsoft.com/en-us/agents/architecture/",
     "https://learn.microsoft.com/en-us/ai",
+    "https://learn.microsoft.com/en-us/ai/",
     "https://learn.microsoft.com/en-us/answers",
     "https://learn.microsoft.com/en-us/answers/",
     "https://learn.microsoft.com/en-us/answers/products/m365",
@@ -15373,20 +15696,24 @@
     "https://learn.microsoft.com/en-us/archive/microsoft-edge/legacy/",
     "https://learn.microsoft.com/en-us/archive/microsoft-edge/legacy/developer/dev-guide/index",
     "https://learn.microsoft.com/en-us/azure",
+    "https://learn.microsoft.com/en-us/azure/",
     "https://learn.microsoft.com/en-us/azure/active-directory-b2c/",
     "https://learn.microsoft.com/en-us/azure/active-directory-b2c/faq",
     "https://learn.microsoft.com/en-us/azure/active-directory-b2c/supported-azure-ad-features",
+    "https://learn.microsoft.com/en-us/azure/active-directory/authentication/concept-authentication-passwordless",
     "https://learn.microsoft.com/en-us/azure/active-directory/authentication/concept-sspr-policy",
     "https://learn.microsoft.com/en-us/azure/active-directory/develop/active-directory-conditional-access-developer",
     "https://learn.microsoft.com/en-us/azure/active-directory/develop/permissions-consent-overview",
     "https://learn.microsoft.com/en-us/azure/active-directory/develop/v1-permissions-and-consent",
     "https://learn.microsoft.com/en-us/azure/active-directory/enterprise-users/licensing-service-plan-reference",
+    "https://learn.microsoft.com/en-us/azure/active-directory/external-identities/what-is-b2b",
     "https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-whatis",
     "https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/users-default-permissions",
     "https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/whats-new",
     "https://learn.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection",
     "https://learn.microsoft.com/en-us/azure/active-directory/roles/manage-roles-portal",
     "https://learn.microsoft.com/en-us/azure/active-directory/roles/permissions-reference",
+    "https://learn.microsoft.com/en-us/azure/active-directory/users-groups-roles/directory-manage-roles-portal",
     "https://learn.microsoft.com/en-us/azure/ai-foundry/agents/overview",
     "https://learn.microsoft.com/en-us/azure/ai-foundry/what-is-azure-ai-foundry",
     "https://learn.microsoft.com/en-us/azure/architecture/checklist/resiliency-per-service",
@@ -15427,8 +15754,10 @@
     "https://learn.microsoft.com/en-us/azure/cost-management-billing/cost-management-billing-overview",
     "https://learn.microsoft.com/en-us/azure/cost-management-billing/manage/cancel-azure-subscription",
     "https://learn.microsoft.com/en-us/azure/cost-management-billing/manage/microsoft-entra-id-free",
+    "https://learn.microsoft.com/en-us/azure/defender-for-cloud/cost-calculator",
     "https://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-cloud-introduction",
     "https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-about",
+    "https://learn.microsoft.com/en-us/azure/foundry/what-is-foundry",
     "https://learn.microsoft.com/en-us/azure/governance/management-groups/overview",
     "https://learn.microsoft.com/en-us/azure/governance/policy/how-to/remediate-resources",
     "https://learn.microsoft.com/en-us/azure/governance/policy/overview",
@@ -15476,20 +15805,26 @@
     "https://learn.microsoft.com/en-us/copilot/security/microsoft-security-copilot",
     "https://learn.microsoft.com/en-us/credentials/certifications/mct-certification",
     "https://learn.microsoft.com/en-us/credentials/certifications/mct-enrollment",
+    "https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-get-started",
     "https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-manage-app-governance",
+    "https://learn.microsoft.com/en-us/defender-cloud-apps/editions-cloud-app-security-o365",
     "https://learn.microsoft.com/en-us/defender-cloud-apps/what-is-defender-for-cloud-apps",
     "https://learn.microsoft.com/en-us/defender-endpoint/microsoft-defender-endpoint",
     "https://learn.microsoft.com/en-us/defender-for-identity/architecture",
     "https://learn.microsoft.com/en-us/defender-for-identity/directory-service-accounts",
     "https://learn.microsoft.com/en-us/defender-for-identity/install-step2",
     "https://learn.microsoft.com/en-us/defender-for-identity/what-is",
+    "https://learn.microsoft.com/en-us/defender-for-iot/enterprise-iot-licenses",
     "https://learn.microsoft.com/en-us/defender-office-365/mdo-about",
     "https://learn.microsoft.com/en-us/defender-office-365/safe-links-policies-configure",
     "https://learn.microsoft.com/en-us/defender-vulnerability-management/defender-vulnerability-management",
+    "https://learn.microsoft.com/en-us/defender-vulnerability-management/whats-new-in-microsoft-defender-vulnerability-management",
+    "https://learn.microsoft.com/en-us/defender-xdr/",
     "https://learn.microsoft.com/en-us/defender-xdr/automatic-attack-disruption",
     "https://learn.microsoft.com/en-us/defender-xdr/m365d-enable",
     "https://learn.microsoft.com/en-us/defender-xdr/microsoft-365-defender",
     "https://learn.microsoft.com/en-us/defender-xdr/microsoft-365-defender-portal",
+    "https://learn.microsoft.com/en-us/defender-xdr/okta-attack-disruption",
     "https://learn.microsoft.com/en-us/defender-xdr/prerequisites",
     "https://learn.microsoft.com/en-us/defender-xdr/whats-new",
     "https://learn.microsoft.com/en-us/deployedge/edge-ie-mode-faq",
@@ -15501,6 +15836,7 @@
     "https://learn.microsoft.com/en-us/devops/deliver/what-is-infrastructure-as-code",
     "https://learn.microsoft.com/en-us/dotnet/framework/network-programming/tls",
     "https://learn.microsoft.com/en-us/dynamics365/",
+    "https://learn.microsoft.com/en-us/dynamics365/get-started/",
     "https://learn.microsoft.com/en-us/dynamics365/release-plans/",
     "https://learn.microsoft.com/en-us/education/",
     "https://learn.microsoft.com/en-us/entra/agent-id/agent-owners-sponsors-managers",
@@ -15830,19 +16166,24 @@
     "https://learn.microsoft.com/en-us/entra/workload-id/workload-identities-faqs",
     "https://learn.microsoft.com/en-us/entra/workload-id/workload-identities-overview",
     "https://learn.microsoft.com/en-us/entra/workload-id/workload-identity-federation",
+    "https://learn.microsoft.com/en-us/exchange/antispam-and-antimalware/antispam-and-antimalware",
     "https://learn.microsoft.com/en-us/exchange/architecture/client-access/exchange-admin-center",
     "https://learn.microsoft.com/en-us/exchange/configuring-federated-sharing-between-exchange-organizations-exchange-2013-help",
     "https://learn.microsoft.com/en-us/exchange/exchange-admin-center",
+    "https://learn.microsoft.com/en-us/exchange/exchange-hybrid",
     "https://learn.microsoft.com/en-us/exchange/exchange-online",
     "https://learn.microsoft.com/en-us/exchange/federation-exchange-2013-help",
+    "https://learn.microsoft.com/en-us/exchange/high-availability/high-availability",
     "https://learn.microsoft.com/en-us/exchange/mail-flow-best-practices/high-volume-mails-m365",
     "https://learn.microsoft.com/en-us/exchange/mail-flow-best-practices/remote-domains/manage-remote-domains",
     "https://learn.microsoft.com/en-us/exchange/mailbox-migration/decide-on-a-migration-path",
+    "https://learn.microsoft.com/en-us/exchange/monitoring/monitoring",
     "https://learn.microsoft.com/en-us/exchange/organization-relationships-exchange-2013-help",
     "https://learn.microsoft.com/en-us/exchange/permissions-exo/feature-permissions",
     "https://learn.microsoft.com/en-us/exchange/permissions-exo/permissions-exo",
     "https://learn.microsoft.com/en-us/exchange/recipients-in-exchange-online/manage-user-mailboxes/add-or-remove-email-addresses",
     "https://learn.microsoft.com/en-us/exchange/recipients-in-exchange-online/manage-user-mailboxes/manage-user-mailboxes",
+    "https://learn.microsoft.com/en-us/exchange/recipients/disconnected-mailboxes/restore-deleted-mailboxes",
     "https://learn.microsoft.com/en-us/exchange/recipients/dynamic-distribution-groups/dynamic-distribution-groups",
     "https://learn.microsoft.com/en-us/exchange/recipients/mail-enabled-security-groups",
     "https://learn.microsoft.com/en-us/exchange/security-and-compliance/recoverable-items-folder/recoverable-items-folder",
@@ -16771,13 +17112,17 @@
     "https://learn.microsoft.com/en-us/microsoftsearch/connectors-gallery",
     "https://learn.microsoft.com/en-us/microsoftsearch/connectors-in-all-vertical",
     "https://learn.microsoft.com/en-us/microsoftsearch/connectors-overview",
+    "https://learn.microsoft.com/en-us/microsoftteams/aa-cq-manage-resource-accounts",
     "https://learn.microsoft.com/en-us/microsoftteams/apps-in-teams",
     "https://learn.microsoft.com/en-us/microsoftteams/best-practice-dashboard",
     "https://learn.microsoft.com/en-us/microsoftteams/communicate-with-users-from-other-organizations",
     "https://learn.microsoft.com/en-us/microsoftteams/deploy-chat-teams-channels-microsoft-teams-landing-page",
+    "https://learn.microsoft.com/en-us/microsoftteams/deploy-enterprise-overview",
     "https://learn.microsoft.com/en-us/microsoftteams/deploy-overview",
+    "https://learn.microsoft.com/en-us/microsoftteams/deploy-small-business",
     "https://learn.microsoft.com/en-us/microsoftteams/enable-features-office-365",
     "https://learn.microsoft.com/en-us/microsoftteams/exchange-teams-interact",
+    "https://learn.microsoft.com/en-us/microsoftteams/itadmin-readiness",
     "https://learn.microsoft.com/en-us/microsoftteams/manage-teams-in-modern-portal",
     "https://learn.microsoft.com/en-us/microsoftteams/manage-teams-overview",
     "https://learn.microsoft.com/en-us/microsoftteams/office-365-groups",
@@ -16789,15 +17134,19 @@
     "https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/connectors/connectors",
     "https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/messaging-extensions",
     "https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/tabs/tabs-overview",
+    "https://learn.microsoft.com/en-us/microsoftteams/policy-assignment-overview",
     "https://learn.microsoft.com/en-us/microsoftteams/settings-policies-reference",
     "https://learn.microsoft.com/en-us/microsoftteams/slack-to-teams-migration-tool",
     "https://learn.microsoft.com/en-us/microsoftteams/teams-add-on-licensing/microsoft-teams-add-on-licensing",
     "https://learn.microsoft.com/en-us/microsoftteams/teams-analytics-and-reports/teams-reporting-reference",
+    "https://learn.microsoft.com/en-us/microsoftteams/teams-architecture-solutions-posters",
+    "https://learn.microsoft.com/en-us/microsoftteams/teams-client-desktop-admin",
     "https://learn.microsoft.com/en-us/microsoftteams/teams-overview",
     "https://learn.microsoft.com/en-us/microsoftteams/teams-powershell-overview",
     "https://learn.microsoft.com/en-us/microsoftteams/training-microsoft-teams-landing-page",
     "https://learn.microsoft.com/en-us/microsoftteams/upgrade-assisted",
     "https://learn.microsoft.com/en-us/microsoftteams/upgrade-start-here",
+    "https://learn.microsoft.com/en-us/microsoftteams/user-access",
     "https://learn.microsoft.com/en-us/microsoftteams/using-admin-roles",
     "https://learn.microsoft.com/en-us/office/",
     "https://learn.microsoft.com/en-us/office/ltsc/2024/",
@@ -16885,6 +17234,7 @@
     "https://learn.microsoft.com/en-us/previous-versions/industry-solutions-group/",
     "https://learn.microsoft.com/en-us/previous-versions/industry-solutions-group/bb971664(v=msdn.10)",
     "https://learn.microsoft.com/en-us/previous-versions/microsoft-365/solutions/choose-domain-to-create-groups",
+    "https://learn.microsoft.com/en-us/previous-versions/microsoft-365/solutions/setup-secure-collaboration-with-teams",
     "https://learn.microsoft.com/en-us/previous-versions/microsoft-esp/",
     "https://learn.microsoft.com/en-us/previous-versions/microsoft-esp/ff798293(v=msdn.10)",
     "https://learn.microsoft.com/en-us/previous-versions/microsoft-robotics/",
@@ -16950,6 +17300,7 @@
     "https://learn.microsoft.com/en-us/security-copilot/prompting-security-copilot",
     "https://learn.microsoft.com/en-us/security-copilot/responsible-ai-overview-security-copilot",
     "https://learn.microsoft.com/en-us/security-exposure-management",
+    "https://learn.microsoft.com/en-us/security-exposure-management/",
     "https://learn.microsoft.com/en-us/security/benchmark/azure/baselines/defender-for-identity-security-baseline",
     "https://learn.microsoft.com/en-us/security/engineering/solving-tls1-problem",
     "https://learn.microsoft.com/en-us/security/zero-trust/assessment/overview",
@@ -16962,6 +17313,7 @@
     "https://learn.microsoft.com/en-us/sharepoint/create-site-collection",
     "https://learn.microsoft.com/en-us/sharepoint/data-access-governance-reports",
     "https://learn.microsoft.com/en-us/sharepoint/dev/solution-guidance/multigeo-introduction",
+    "https://learn.microsoft.com/en-us/sharepoint/guide-to-sharepoint-modern-experience",
     "https://learn.microsoft.com/en-us/sharepoint/introduction",
     "https://learn.microsoft.com/en-us/sharepoint/manage-sites-in-new-admin-center",
     "https://learn.microsoft.com/en-us/sharepoint/sharepoint-admin-role",
@@ -16984,6 +17336,7 @@
     "https://learn.microsoft.com/en-us/training/educator-center/",
     "https://learn.microsoft.com/en-us/training/learn-community",
     "https://learn.microsoft.com/en-us/training/modules/copilot-office-applications",
+    "https://learn.microsoft.com/en-us/training/modules/develop-first-agent/",
     "https://learn.microsoft.com/en-us/training/paths/prepare-your-organization-microsoft-365-copilot",
     "https://learn.microsoft.com/en-us/training/paths/prepare-your-organization-microsoft-365-copilot/",
     "https://learn.microsoft.com/en-us/training/student-hub/",
@@ -17004,6 +17357,7 @@
     "https://learn.microsoft.com/en-us/troubleshoot/microsoft-365/purview/archive-mailboxes/message-not-moved-to-archive",
     "https://learn.microsoft.com/en-us/troubleshoot/microsoft-365/purview/microsoft-purview-welcome",
     "https://learn.microsoft.com/en-us/troubleshoot/microsoftteams/teams-sign-in/sign-in-loop",
+    "https://learn.microsoft.com/en-us/troubleshoot/microsoftteams/teams-sign-in/teams-doesnt-automatically-update",
     "https://learn.microsoft.com/en-us/troubleshoot/microsoftteams/teams-welcome",
     "https://learn.microsoft.com/en-us/troubleshoot/office/office-client-welcome",
     "https://learn.microsoft.com/en-us/troubleshoot/outlook/calendaring/cannot-globally-disable-birthday-calendar",
@@ -17047,186 +17401,6 @@
     "https://learn.microsoft.com/en-us/windows/win32/wer/windows-error-reporting"
   ],
   "queue": [
-    {
-      "url": "https://learn.microsoft.com/en-us/agent-framework/concepts/agents/",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/foundry/what-is-foundry",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/dynamics365/get-started/",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/ai/",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/agents/",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/training/modules/develop-first-agent/",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/active-directory/authentication/concept-authentication-passwordless",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/exchange/antispam-and-antimalware/antispam-and-antimalware",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/exchange/monitoring/monitoring",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/exchange/high-availability/high-availability",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/exchange/recipients/disconnected-mailboxes/restore-deleted-mailboxes",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/Exchange/recipients-in-exchange-online/manage-user-mailboxes/recover-deleted-messages",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoftteams/deploy-small-business",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoftteams/deploy-enterprise-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/previous-versions/microsoft-365/solutions/setup-secure-collaboration-with-teams",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoftteams/itadmin-readiness",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoftteams/user-access",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoftteams/teams-architecture-solutions-posters",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/sharepoint/guide-to-sharepoint-modern-experience",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/exchange/exchange-hybrid",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoftteams/teams-client-desktop-admin",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/active-directory/external-identities/what-is-b2b",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoftteams/aa-cq-manage-resource-accounts",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoftteams/policy-assignment-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/MicrosoftTeams/enhanced-teams-experience",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/troubleshoot/microsoftteams/teams-sign-in/sign-in-loop",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/troubleshoot/microsoftteams/teams-sign-in/teams-doesnt-automatically-update",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/defender-xdr/",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/powershell/installation",
-      "depth": 1
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/powershell/get-started",
-      "depth": 1
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/defender-cloud-apps/editions-cloud-app-security-o365",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/defender-vulnerability-management/whats-new-in-microsoft-defender-vulnerability-management",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/cost-calculator",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-risks",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/purview/dlp-learn-about-dlp",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-get-started",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/purview/insider-risk-management",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/security-exposure-management/",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/defender-xdr/okta-attack-disruption",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/defender-for-iot/enterprise-iot-licenses",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/active-directory/users-groups-roles/directory-manage-roles-portal",
-      "depth": 2
-    },
     {
       "url": "https://learn.microsoft.com/en-us/defender-xdr/microsoft-365-security-center-mde",
       "depth": 2
@@ -27046,12 +27220,209 @@
     {
       "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/copilot-tuning-overview",
       "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/how-to/upgrade-azure-openai",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry-classic/what-is-foundry",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/dynamics365/get-started/intro-crossapp-index",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/developer/",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/develop-first-agent/",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/develop-first-agent/1-introduction",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/modules/develop-first-agent/2-generative-ai-agents",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-authentication-passkeys-fido2",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-plan-prerequisites-phishing-resistant-passwordless-authentication",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/exchange/antispam-and-antimalware/antispam-protection/antispam-protection",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/email-activity",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/exchange/high-availability/ha-changes",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/exchange/recipients/disconnected-mailboxes/disconnected-mailboxes",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/Exchange/recipients-in-exchange-online/manage-user-mailboxes/enable-or-disable-single-item-recovery",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/powershell/module/exchangepowershell/get-recoverableitems",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/teams-exploratory",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/get-started-with-teams-quick-start",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/microsoft-365/solutions/collaboration-governance-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/get-started-with-teams-quick-start",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/active-directory/users-groups-roles/licensing-groups-assign",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/cloud-voice-landing-page",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/sharepoint/planning-hub-sites",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/office365/servicedescriptions/exchange-online-archiving-service-description/exchange-online-archiving-service-description",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/teams-client-system-requirements",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/external-id/one-time-passcode",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/teams-add-on-licensing/virtual-user",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/getting-service-phone-numbers",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/assign-policies-users-and-groups",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/MicrosoftTeams/teams-add-on-licensing/licensing-enhance-teams",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/teams-client-update",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/teams-for-vdi",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/defender-xdr/pilot-deploy-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/defender-cloud-apps/get-started",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/defender-xdr/contact-defender-support",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/defender-endpoint/whats-new-in-microsoft-defender-endpoint",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/defender-endpoint/whats-new-in-microsoft-defender-endpoint",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-portal/estimate-track-costs",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/defender-cloud-apps/protect-office-365",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-trial-user-guide",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/security-exposure-management/microsoft-security-exposure-management",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/security-exposure-management/whats-new",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/security-exposure-management/prerequisites",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/defender-xdr/configure-attack-disruption",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/defender-for-iot/organizations/overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-add-role-to-user",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/powershell/installation",
+      "depth": 1
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/powershell/get-started",
+      "depth": 1
     }
   ],
   "last_batch": {
     "attempted": 36,
-    "documents_total": 1711,
-    "queued": 2500,
-    "failures": []
+    "documents_total": 1745,
+    "queued": 2502,
+    "failures": [
+      {
+        "url": "https://learn.microsoft.com/en-us/graph/powershell/installation",
+        "error": "HTTPError"
+      },
+      {
+        "url": "https://learn.microsoft.com/en-us/graph/powershell/get-started",
+        "error": "HTTPError"
+      }
+    ]
   }
 }
