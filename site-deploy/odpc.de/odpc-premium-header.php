@@ -83,7 +83,7 @@ add_action('wp_head', function () {
   #odpc-navigation .odpc-nav-group[open] summary,#odpc-navigation .odpc-nav-group summary:hover{background:#2d3540;border-color:#625447}
   #odpc-navigation .odpc-nav-sub{padding:4px 0 7px 12px;border-left:2px solid #bc967b}
   #odpc-navigation .odpc-nav-sub a{font-size:13px;padding:9px 10px}
-  #odpc-navigation .odpc-nav-highlight>a{background:#bc967b!important;color:#151b24!important;font-weight:800!important;border-color:#d7b296!important}
+  #odpc-navigation .odpc-nav-highlight>a{background:transparent!important;color:#e5e4e2!important;font-weight:560!important;border-color:transparent!important}
   #odpc-navigation .odpc-search{margin-top:13px;padding:12px 0 2px;border-top:1px solid rgba(233,230,225,.15)}
   #odpc-navigation .odpc-search form{display:flex;gap:10px;flex-wrap:wrap}
   #odpc-navigation .odpc-search input[type=search]{flex:1 1 180px;min-width:0;border:1px solid #64707b;border-radius:8px;background:#fff;color:#151b24;padding:10px 12px}
@@ -227,7 +227,8 @@ add_action('wp_footer', function () {
         <li><a href="<?php echo esc_url(home_url('/kunden-referenzen/')); ?>">Kunden &amp; Referenzen</a></li>
         <li><a href="<?php echo esc_url(home_url('/aktuelles/')); ?>">Aktuelles</a></li>
         <li><a href="<?php echo esc_url(home_url('/contact-me/')); ?>">Kontakt</a></li>
-        <li class="odpc-nav-highlight"><a href="https://ai.odpc.de/" target="_blank" rel="noopener noreferrer">Helper Monkey ↗</a></li>
+        <li><a href="https://ai.odpc.de/" target="_blank" rel="noopener noreferrer">Helper Monkey ↗</a></li>
+        <li><a href="<?php echo esc_url(home_url('/remote-fernwartung/')); ?>">Fernhilfe / Fernwartung</a></li>
       </ul>
       <div class="odpc-search"><form role="search" method="get" class="search-form" action="<?php echo esc_url(home_url('/')); ?>"><label style="flex:1;min-width:0"><span class="screen-reader-text">Website durchsuchen</span><input type="search" name="s" class="search-field" placeholder="Website durchsuchen …" aria-label="Suchbegriff" required></label><button type="submit" class="search-submit">Suchen</button></form></div>
     </nav>
