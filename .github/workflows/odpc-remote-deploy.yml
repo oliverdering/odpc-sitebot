@@ -1,0 +1,29 @@
+name: ODPC Fernhilfe deploy
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'remote-fernwartung/index.html'
+      - 'site-deploy/odpc.de/odpc-remote-landing.php'
+      - 'scripts/deploy_odpc_remote.py'
+      - '.github/workflows/odpc-remote-deploy.yml'
+permissions:
+  contents: read
+concurrency:
+  group: odpc-remote-deploy
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m py_compile scripts/deploy_odpc_remote.py
+      - run: python -m pip install 'paramiko>=3.4,<5'
+      - name: Deploy and verify ODPC Fernhilfe
+        env:
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+        run: python scripts/deploy_odpc_remote.py
