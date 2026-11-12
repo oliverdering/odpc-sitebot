@@ -72,6 +72,41 @@ jobs:
               browser.close()
               if not all(report.get(n,{}).get('ok') for n in ('short','german','homepage')):raise SystemExit('Mapping test failed')
           PY
+      - name: Test real Speechable worker with Eva
+        run: |
+          mkdir -p vendor
+          cp patched-piper.mjs vendor/odpc-eva-piper-20261113.mjs
+          curl -fsSL https://raw.githubusercontent.com/oliverdering/odpc-sitebot/236d4cca8265d650e7f655dad6ef0225e4fffba9/scripts/speechable-eva/tts-worker.candidate.js -o tts-worker.js
+          python3 -m http.server 8766 >/tmp/piper-worker-http.log 2>&1 &
+          python3 - <<'PY'
+          from playwright.sync_api import sync_playwright
+          import json
+          with sync_playwright() as p:
+              browser=p.chromium.launch(headless=True,args=['--no-sandbox'])
+              page=browser.new_page()
+              page.goto('http://localhost:8766/')
+              result=page.evaluate("""async () => {
+                 const w=new Worker('/tts-worker.js',{type:'module'});
+                 return await new Promise((resolve)=>{
+                   const timeout=setTimeout(()=>{w.terminate();resolve({error:'worker timeout'})},90000);
+                   w.onerror=e=>{clearTimeout(timeout);w.terminate();resolve({error:e.message})};
+                   w.onmessage=async e=>{
+                     const m=e.data;
+                     if(m.type==='ready')w.postMessage({type:'processChunk',data:{voiceId:'de_DE-eva_k-x_low',text:'Hallo, dies ist ein Test des ODPC Schwebebalkens.',chunkIndex:0}});
+                     if(m.type==='error'){clearTimeout(timeout);w.terminate();resolve({error:m.error})}
+                     if(m.type==='chunkComplete'){
+                       try{let c=new AudioContext();let a=await c.decodeAudioData(m.result.audioBuffer.slice(0));let peak=0;for(const n of a.getChannelData(0))peak=Math.max(peak,Math.abs(n));
+                         clearTimeout(timeout);w.terminate();resolve({duration:a.duration,peak,wordCount:m.result.wordCount});
+                       }catch(e){clearTimeout(timeout);w.terminate();resolve({error:String(e)})}
+                     }
+                   };
+                   w.postMessage({type:'init',data:{voiceId:'de_DE-eva_k-x_low'}});
+                 });
+              }""")
+              print('WORKER TEST',json.dumps(result),flush=True)
+              browser.close()
+              assert result.get('duration',0)>0 and result.get('peak',0)>0 and result.get('wordCount',0)>0
+          PY
       - uses: actions/upload-artifact@v4
         if: always()
         with:
