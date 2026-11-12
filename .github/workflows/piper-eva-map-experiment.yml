@@ -16,12 +16,13 @@ jobs:
           from pathlib import Path
           p=Path('node_modules/@mintplex-labs/piper-tts-web/dist/piper-tts-web.js')
           s=p.read_text()
+          s=s.replace('new Promise(async (resolve) => {','new Promise(async (resolve, reject) => {')
           old='resolve(JSON.parse(data).phoneme_ids);'
           new="""const payload = JSON.parse(data);
           const mapping = __privateGet(this, _modelConfig).phoneme_id_map;
           const ids = [...mapping['^'], ...mapping['_']];
           for (const phoneme of payload.phonemes) {
-            if (!Object.hasOwn(mapping, phoneme)) throw new Error('Missing model phoneme: ' + JSON.stringify(phoneme));
+            if (!Object.hasOwn(mapping, phoneme)) { reject(new Error('Missing model phoneme: ' + JSON.stringify(phoneme))); return; }
             ids.push(...mapping[phoneme], ...mapping['_']);
           }
           ids.push(...mapping['$']);
@@ -48,7 +49,7 @@ jobs:
                   const tts=await import('/patched-piper.mjs');
                   for(const [label,text] of [['short','Hallo, hier spricht Eva. Willkommen bei ODPC.'],['german','Ich unterstütze Unternehmen bei ihrer gesamten IT: von Arbeitsplätzen, Servern und Netzwerken über Software und Websites bis zur Automatisierung und KI-Integration.']]) {
                     try {
-                      const b=await tts.predict({text,voiceId:'de_DE-eva_k-x_low'});
+                      const b=await Promise.race([tts.predict({text,voiceId:'de_DE-eva_k-x_low'}),new Promise((_,reject)=>setTimeout(()=>reject(new Error('Synthesis timed out')),90000))]);
                       const bytes=await b.arrayBuffer(), ctx=new AudioContext(), a=await ctx.decodeAudioData(bytes.slice(0));
                       let peak=0;for(const x of a.getChannelData(0))peak=Math.max(peak,Math.abs(x));
                       let binary='';for(const x of new Uint8Array(bytes))binary+=String.fromCharCode(x);
