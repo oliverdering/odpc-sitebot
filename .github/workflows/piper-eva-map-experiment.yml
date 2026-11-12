@@ -1,0 +1,75 @@
+name: Piper Eva model-map experiment
+on:
+  push:
+    paths: ['.github/workflows/piper-eva-map-experiment.yml']
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - run: npm install --no-save @mintplex-labs/piper-tts-web@1.0.4 onnxruntime-web@1.18.0 esbuild@0.25.12
+      - name: Patch local test copy only
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('node_modules/@mintplex-labs/piper-tts-web/dist/piper-tts-web.js')
+          s=p.read_text()
+          old='resolve(JSON.parse(data).phoneme_ids);'
+          new="""const payload = JSON.parse(data);
+          const mapping = __privateGet(this, _modelConfig).phoneme_id_map;
+          const ids = [...mapping['^'], ...mapping['_']];
+          for (const phoneme of payload.phonemes) {
+            if (!Object.hasOwn(mapping, phoneme)) throw new Error('Missing model phoneme: ' + JSON.stringify(phoneme));
+            ids.push(...mapping[phoneme], ...mapping['_']);
+          }
+          ids.push(...mapping['$']);
+          resolve(ids);"""
+          assert s.count(old)==1
+          p.write_text(s.replace(old,new))
+          PY
+      - run: npx esbuild node_modules/@mintplex-labs/piper-tts-web/dist/piper-tts-web.js --bundle --format=esm --platform=browser --outfile=patched-piper.mjs
+      - run: python3 -m pip install 'playwright>=1.50,<2'
+      - run: python3 -m playwright install --with-deps chromium
+      - name: Generate and decode Eva audio
+        run: |
+          python3 -m http.server 8765 >/tmp/piper-http.log 2>&1 &
+          python3 - <<'PY'
+          from playwright.sync_api import sync_playwright
+          import json,base64,pathlib
+          with sync_playwright() as p:
+              browser=p.chromium.launch(headless=True,args=['--no-sandbox'])
+              page=browser.new_page()
+              page.goto('http://localhost:8765/',wait_until='domcontentloaded')
+              report=page.evaluate("""async () => {
+                const out={};
+                try {
+                  const tts=await import('/patched-piper.mjs');
+                  for(const [label,text] of [['short','Hallo, hier spricht Eva. Willkommen bei ODPC.'],['german','Ich unterstütze Unternehmen bei ihrer gesamten IT: von Arbeitsplätzen, Servern und Netzwerken über Software und Websites bis zur Automatisierung und KI-Integration.']]) {
+                    try {
+                      const b=await tts.predict({text,voiceId:'de_DE-eva_k-x_low'});
+                      const bytes=await b.arrayBuffer(), ctx=new AudioContext(), a=await ctx.decodeAudioData(bytes.slice(0));
+                      let peak=0;for(const x of a.getChannelData(0))peak=Math.max(peak,Math.abs(x));
+                      let binary='';for(const x of new Uint8Array(bytes))binary+=String.fromCharCode(x);
+                      out[label]={ok:a.duration>0&&peak>0,duration:a.duration,peak,wav:btoa(binary)};
+                      await ctx.close();
+                    } catch(e){out[label]={ok:false,error:String(e?.stack||e)}}
+                  }
+                } catch(e){out.setupError=String(e?.stack||e)}
+                return out;
+              }""")
+              for name,result in report.items():
+                  if isinstance(result,dict) and 'wav' in result:
+                      pathlib.Path('eva-'+name+'.wav').write_bytes(base64.b64decode(result.pop('wav')))
+              print('PIPER MAP REPORT',json.dumps(report,ensure_ascii=False),flush=True)
+              browser.close()
+              if not all(report.get(n,{}).get('ok') for n in ('short','german')):raise SystemExit('Mapping test failed')
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: piper-eva-test-audio
+          path: eva-*.wav
+          if-no-files-found: ignore
+          retention-days: 2
