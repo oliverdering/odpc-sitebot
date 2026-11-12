@@ -241,7 +241,7 @@ body.odpc-smartguide-pilot #odpc-utility-dock>.odpc-hm-v4-wa,
 body.odpc-smartguide-pilot #odpc-utility-dock>.odpc-wa-sticky,
 body.odpc-smartguide-pilot #odpc-utility-dock>#odpc-hm-v4-wa{order:3!important;flex:0 0 43px!important;width:43px!important;min-width:43px!important;max-width:43px!important;height:42px!important;padding:0!important;font-size:0!important}
 body.odpc-smartguide-pilot #odpc-utility-dock>#odpc-hm-v4-wa::after{content:none!important}
-body.odpc-smartguide-pilot #odpc-utility-dock .odpc-smartguide-wa-icon{width:25px;height:25px;display:block;flex:none}
+body.odpc-smartguide-pilot #odpc-utility-dock .odpc-smartguide-wa-icon{width:25px;height:25px;display:block;flex:none;filter:brightness(0) invert(1)}
 body.odpc-smartguide-pilot .odpc-smartguide-active{outline:2px solid #1caa83!important;outline-offset:5px!important;border-radius:5px!important;scroll-margin-top:100px!important;transition:outline-color .2s ease}
 @media(max-width:360px){body.odpc-smartguide-pilot #odpc-utility-dock{width:calc(100vw - 12px)!important;padding:5px!important;gap:2px!important}}
 </style>
@@ -297,7 +297,7 @@ function mount(){
  if(wa&&!wa.querySelector('.odpc-smartguide-wa-icon')){
   wa.setAttribute('aria-label','WhatsApp Business');wa.title='WhatsApp Business';
   wa.textContent='';
-  wa.insertAdjacentHTML('afterbegin','<svg class="odpc-smartguide-wa-icon" viewBox="0 0 32 32" aria-hidden="true"><path fill="#fff" d="M16 2.6A13.2 13.2 0 0 0 4.6 22.4L2.8 29l6.8-1.8A13.2 13.2 0 1 0 16 2.6zm0 23.9a10.7 10.7 0 0 1-5.4-1.5l-.4-.2-4 1.1 1.1-3.9-.3-.4a10.7 10.7 0 1 1 9 4.9zm5.9-8c-.3-.2-1.9-1-2.2-1.1-.3-.1-.5-.2-.7.2-.2.3-.8 1.1-1 1.3-.2.2-.4.2-.7.1a8.7 8.7 0 0 1-4.3-3.8c-.3-.5.3-.5.8-1.5.1-.2.1-.4 0-.6l-1-2.4c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.4-1.2 1.2-1.2 2.9s1.3 3.3 1.5 3.5a12.1 12.1 0 0 0 4.6 4.2 4.2 0 0 0 4.5-.3c.7-.5 1.1-1.5 1.2-2.1.1-.5.1-.9-.2-1.1z"/></svg>');
+  wa.insertAdjacentHTML('afterbegin','<img class="odpc-smartguide-wa-icon" src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/whatsapp.svg" alt="" width="25" height="25">');
  }
  return true;
 }
