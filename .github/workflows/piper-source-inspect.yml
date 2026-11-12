@@ -1,0 +1,20 @@
+name: Piper source and model inspection
+on:
+  push:
+    paths: ['.github/workflows/piper-source-inspect.yml']
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch public package and voice configuration
+        run: |
+          mkdir -p piper-inspect
+          curl -fsSL 'https://registry.npmjs.org/@mintplex-labs/piper-tts-web/-/piper-tts-web-1.0.4.tgz' -o piper-inspect/package.tgz
+          curl -fsSL 'https://huggingface.co/rhasspy/piper-voices/resolve/main/de/de_DE/eva_k/x_low/de_DE-eva_k-x_low.onnx.json' -o piper-inspect/eva.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: piper-source-inspection
+          path: piper-inspect/
+          retention-days: 1
