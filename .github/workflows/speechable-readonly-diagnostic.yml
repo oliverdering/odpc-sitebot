@@ -1,0 +1,47 @@
+name: Speechable read-only diagnostic
+on:
+  push:
+    paths:
+      - '.github/workflows/speechable-readonly-diagnostic.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - run: python3 -m pip install 'paramiko>=3.4,<5'
+      - name: Read installed worker over pinned SFTP
+        env:
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+        run: |
+          python3 - <<'PY'
+          import os,base64,hashlib,hmac,paramiko,pathlib,stat
+          host='home119567219.1and1-data.host'
+          user='acc1461323326'
+          pin='SHA256:1gx2w8Rtv3wCgi7Jh8myf/KVd72cRQbow03UP8P095Q'
+          remote='/clickandbuilds/Dering/wp-content/plugins/speechable/assets/js/tts-worker.js'
+          password=os.environ.get('ODPC_SFTP_PASSWORD')
+          if not password: raise RuntimeError('Missing SFTP secret')
+          tr=paramiko.Transport((host,22))
+          try:
+              tr.start_client(timeout=20)
+              key='SHA256:'+base64.b64encode(hashlib.sha256(tr.get_remote_server_key().asbytes()).digest()).decode().rstrip('=')
+              if not hmac.compare_digest(key,pin): raise RuntimeError('Host key mismatch')
+              tr.auth_password(user,password)
+              sftp=paramiko.SFTPClient.from_transport(tr)
+              try:
+                  info=sftp.lstat(remote)
+                  if not stat.S_ISREG(info.st_mode) or info.st_size>500000: raise RuntimeError('Unexpected worker')
+                  with sftp.open(remote,'rb') as f: data=f.read()
+                  pathlib.Path('speechable-worker-diagnostic.js').write_bytes(data)
+                  print('Worker read successfully, bytes:',len(data),'SHA256:',hashlib.sha256(data).hexdigest())
+              finally: sftp.close()
+          finally: tr.close()
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: speechable-worker-readonly
+          path: speechable-worker-diagnostic.js
+          retention-days: 1
