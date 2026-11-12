@@ -18,6 +18,7 @@ ROOT = '/clickandbuilds/Dering'
 TARGETS = {
     'https://odpc.de/about-me': 'id="odpc-about-2026-classic-fix"',
     'https://odpc.de/unser-team': 'id="odpc-team-classic-palette"',
+    'https://odpc.de/ki-gestuetzte-dienstleistungen-automatisierung': 'KI-INTEGRATION &amp; AUTOMATISIERUNG',
     'https://odpc.de/von-der-hardware-bis-zur-ki-it-und-digitale-assistenz-aus-einer-hand': 'odpc-complete-team-2026',
 }
 
