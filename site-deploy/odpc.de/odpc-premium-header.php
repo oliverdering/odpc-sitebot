@@ -345,3 +345,38 @@ add_action('wp_footer', function () {
   </script>
   <?php
 }, 110);
+
+
+/* ODPC appearance switch: scoped to this WordPress installation. */
+add_action('wp_head', function () {
+ if (is_admin()) return;
+ ?>
+ <script id="odpc-appearance-init">(function(){try{var m=document.cookie.match(/(?:^|;\s*)odpc_appearance=(green|blue)(?:;|$)/);var v=m?m[1]:localStorage.getItem('odpc_appearance');if(v==='green')document.documentElement.setAttribute('data-odpc-appearance','green')}catch(e){}})();</script>
+ <style id="odpc-appearance-style">
+ :root{--odpc-appearance-green:#123f32;--odpc-appearance-deep:#0b2b22;--odpc-appearance-cream:#f4efe4;--odpc-appearance-card:#fffaf0;--odpc-appearance-ink:#173b30;--odpc-appearance-line:#cbbda5}
+ #odpc-appearance-switch{display:inline-flex;align-items:center;gap:6px;padding:7px 10px;min-height:38px;border:1px solid #ad907a;border-radius:9px;background:#262932;color:#fff;font:650 12px/1.2 system-ui,sans-serif;cursor:pointer;white-space:nowrap}
+ #odpc-appearance-switch:focus-visible{outline:3px solid #d9b18d;outline-offset:3px}
+ html[data-odpc-appearance=green] body,html[data-odpc-appearance=green] #content,html[data-odpc-appearance=green] body.home #content{background:var(--odpc-appearance-cream)!important}
+ html[data-odpc-appearance=green] #masthead,html[data-odpc-appearance=green] #masthead .ast-above-header-wrap,html[data-odpc-appearance=green] #odpc-navigation{background:var(--odpc-appearance-deep)!important}
+ html[data-odpc-appearance=green] #masthead .ast-site-title-wrap,html[data-odpc-appearance=green] #odpc-navigation .odpc-menu-bar,html[data-odpc-appearance=green] #odpc-navigation #odpc-nav-panel{background:var(--odpc-appearance-green)!important;border-color:#809989!important}
+ html[data-odpc-appearance=green] #odpc-appearance-switch,html[data-odpc-appearance=green] #odpc-navigation .odpc-nav-toggle{background:#e9dfca!important;color:#12382d!important;border-color:#e9dfca!important}
+ html[data-odpc-appearance=green] #odpc-home .ob-hero{background:linear-gradient(120deg,#103b2e,#245c46)!important;border-color:#7a9b83!important}
+ html[data-odpc-appearance=green] #odpc-home .ob-service,html[data-odpc-appearance=green] #odpc-home .ob-reference,html[data-odpc-appearance=green] #odpc-home .ob-product{background:var(--odpc-appearance-card)!important;border-color:var(--odpc-appearance-line)!important}
+ html[data-odpc-appearance=green] #odpc-home .ob-section:not(.ob-ki) h2{color:var(--odpc-appearance-ink)!important}
+ html[data-odpc-appearance=green] #odpc-home .ob-service a,html[data-odpc-appearance=green] #odpc-home .ob-reference a,html[data-odpc-appearance=green] #odpc-home .ob-product a{color:var(--odpc-appearance-ink)!important}
+ @media(max-width:520px){#odpc-appearance-switch{padding:7px;font-size:11px}#odpc-navigation .odpc-menu-bar{gap:5px}#odpc-navigation .odpc-nav-note{font-size:9px}}
+ </style>
+ <?php
+}, 999);
+add_action('wp_footer', function () {
+ if (is_admin()) return;
+ ?>
+ <script id="odpc-appearance-control">(function(){
+ function mount(){var bar=document.querySelector('#odpc-navigation .odpc-menu-bar');if(!bar||document.getElementById('odpc-appearance-switch'))return;
+ var b=document.createElement('button');b.id='odpc-appearance-switch';b.type='button';bar.insertBefore(b,bar.querySelector('.odpc-nav-toggle'));
+ function sync(){var green=document.documentElement.getAttribute('data-odpc-appearance')==='green';b.textContent=green?'🌿 Klassisch':'◐ Design';b.setAttribute('aria-pressed',String(green));b.setAttribute('aria-label',green?'Tech-Blau aktivieren':'Klassisches Design in Grün und Beige aktivieren');b.title=green?'Zu Tech-Blau wechseln':'Zu Grün und Beige wechseln'}
+ b.addEventListener('click',function(){var green=document.documentElement.getAttribute('data-odpc-appearance')!=='green';if(green)document.documentElement.setAttribute('data-odpc-appearance','green');else document.documentElement.removeAttribute('data-odpc-appearance');var v=green?'green':'blue';try{localStorage.setItem('odpc_appearance',v)}catch(e){}document.cookie='odpc_appearance='+v+';path=/;max-age=31536000;SameSite=Lax;Secure';sync()});sync()}
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount);else mount();window.addEventListener('load',mount)
+ })();</script>
+ <?php
+}, 120);
