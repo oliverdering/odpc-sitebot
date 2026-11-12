@@ -364,6 +364,44 @@ add_action('wp_head', function () {
  html[data-odpc-appearance=green] #odpc-home .ob-service,html[data-odpc-appearance=green] #odpc-home .ob-reference,html[data-odpc-appearance=green] #odpc-home .ob-product{background:var(--odpc-appearance-card)!important;border-color:var(--odpc-appearance-line)!important}
  html[data-odpc-appearance=green] #odpc-home .ob-section:not(.ob-ki) h2{color:var(--odpc-appearance-ink)!important}
  html[data-odpc-appearance=green] #odpc-home .ob-service a,html[data-odpc-appearance=green] #odpc-home .ob-reference a,html[data-odpc-appearance=green] #odpc-home .ob-product a{color:var(--odpc-appearance-ink)!important}
+
+ /* Reading mode: warm, light surfaces and dark readable type. Homepage only. */
+ html[data-odpc-appearance=green] body.home{--odpc-reading-paper:#f5efdf;--odpc-reading-panel:#fff9ec;--odpc-reading-ink:#171b18;--odpc-reading-green:#28513d;--odpc-reading-border:#78917b}
+ html[data-odpc-appearance=green] body.home #masthead,
+ html[data-odpc-appearance=green] body.home #masthead .ast-above-header-wrap,
+ html[data-odpc-appearance=green] body.home #odpc-navigation{background:var(--odpc-reading-paper)!important}
+ html[data-odpc-appearance=green] body.home #odpc-navigation .odpc-menu-bar,
+ html[data-odpc-appearance=green] body.home #odpc-navigation #odpc-nav-panel{background:var(--odpc-reading-panel)!important;border:1px solid var(--odpc-reading-border)!important;box-shadow:0 3px 14px rgba(30,53,38,.08)!important}
+ html[data-odpc-appearance=green] body.home #odpc-navigation .odpc-nav-note,
+ html[data-odpc-appearance=green] body.home #odpc-navigation .odpc-menu-list a,
+ html[data-odpc-appearance=green] body.home #odpc-navigation .odpc-nav-group summary{color:var(--odpc-reading-ink)!important}
+ html[data-odpc-appearance=green] body.home #odpc-navigation .odpc-menu-list a:hover,
+ html[data-odpc-appearance=green] body.home #odpc-navigation .odpc-menu-list a:focus-visible,
+ html[data-odpc-appearance=green] body.home #odpc-navigation .odpc-nav-group[open] summary,
+ html[data-odpc-appearance=green] body.home #odpc-navigation .odpc-nav-group summary:hover{background:#e6ebdf!important;border-color:var(--odpc-reading-border)!important;color:var(--odpc-reading-ink)!important}
+ html[data-odpc-appearance=green] body.home #odpc-navigation .odpc-nav-sub{border-color:var(--odpc-reading-green)!important}
+ html[data-odpc-appearance=green] body.home #odpc-home{color:var(--odpc-reading-ink)!important;line-height:1.7}
+ html[data-odpc-appearance=green] body.home #odpc-home .ob-hero,
+ html[data-odpc-appearance=green] body.home #odpc-home .ob-service,
+ html[data-odpc-appearance=green] body.home #odpc-home .ob-reference,
+ html[data-odpc-appearance=green] body.home #odpc-home .ob-product,
+ html[data-odpc-appearance=green] body.home #odpc-home .ob-ki,
+ html[data-odpc-appearance=green] body.home #odpc-home .ob-contact{background:var(--odpc-reading-panel)!important;color:var(--odpc-reading-ink)!important;border:1px solid var(--odpc-reading-border)!important;box-shadow:0 3px 14px rgba(30,53,38,.06)!important}
+ html[data-odpc-appearance=green] body.home #odpc-home .ob-hero h1,
+ html[data-odpc-appearance=green] body.home #odpc-home .ob-hero p,
+ html[data-odpc-appearance=green] body.home #odpc-home .ob-hero .ob-proof,
+ html[data-odpc-appearance=green] body.home #odpc-home .ob-hero .ob-proof span,
+ html[data-odpc-appearance=green] body.home #odpc-home .ob-reference h3,
+ html[data-odpc-appearance=green] body.home #odpc-home .ob-reference p,
+ html[data-odpc-appearance=green] body.home #odpc-home .ob-product h3,
+ html[data-odpc-appearance=green] body.home #odpc-home .ob-product p,
+ html[data-odpc-appearance=green] body.home #odpc-home .ob-service h3,
+ html[data-odpc-appearance=green] body.home #odpc-home .ob-service p,
+ html[data-odpc-appearance=green] body.home #odpc-home .ob-ki h2{color:var(--odpc-reading-ink)!important}
+ html[data-odpc-appearance=green] body.home #odpc-home .ob-hero .ob-btn{background:var(--odpc-reading-green)!important;border:1px solid var(--odpc-reading-green)!important;color:#fff!important}
+ html[data-odpc-appearance=green] body.home #odpc-home .ob-hero .ob-btn-alt{background:transparent!important;color:var(--odpc-reading-ink)!important}
+ html[data-odpc-appearance=green] body.home #odpc-home .ob-hero .ob-proof span{border-color:var(--odpc-reading-border)!important}
+
  @media(max-width:520px){#odpc-appearance-switch{padding:7px;font-size:11px}#odpc-navigation .odpc-menu-bar{gap:5px}#odpc-navigation .odpc-nav-note{font-size:9px}}
  </style>
  <?php
