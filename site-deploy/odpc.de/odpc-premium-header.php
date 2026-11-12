@@ -402,6 +402,27 @@ add_action('wp_head', function () {
  html[data-odpc-appearance=green] body.home #odpc-home .ob-hero .ob-btn-alt{background:transparent!important;color:var(--odpc-reading-ink)!important}
  html[data-odpc-appearance=green] body.home #odpc-home .ob-hero .ob-proof span{border-color:var(--odpc-reading-border)!important}
 
+
+ /* ODPC subpages: the same calm header and readable paper surfaces as the reference homepage. */
+ html[data-odpc-appearance=green] body:not(.home) #masthead,
+ html[data-odpc-appearance=green] body:not(.home) #masthead .ast-above-header-wrap,
+ html[data-odpc-appearance=green] body:not(.home) #odpc-navigation{background:#f5efdf!important}
+ html[data-odpc-appearance=green] body:not(.home) #masthead .ast-site-title-wrap,
+ html[data-odpc-appearance=green] body:not(.home) #odpc-navigation .odpc-menu-bar,
+ html[data-odpc-appearance=green] body:not(.home) #odpc-navigation #odpc-nav-panel{background:#fff9ec!important;border:1px solid #78917b!important;box-shadow:0 3px 14px rgba(30,53,38,.08)!important}
+ html[data-odpc-appearance=green] body:not(.home) #masthead .site-title,
+ html[data-odpc-appearance=green] body:not(.home) #masthead .site-title a,
+ html[data-odpc-appearance=green] body:not(.home) #masthead .site-description,
+ html[data-odpc-appearance=green] body:not(.home) #odpc-navigation .odpc-nav-note,
+ html[data-odpc-appearance=green] body:not(.home) #odpc-navigation .odpc-menu-list a,
+ html[data-odpc-appearance=green] body:not(.home) #odpc-navigation .odpc-nav-group summary{color:#171b18!important}
+ html[data-odpc-appearance=green] body:not(.home) #odpc-navigation .odpc-menu-list a:hover,
+ html[data-odpc-appearance=green] body:not(.home) #odpc-navigation .odpc-menu-list a:focus-visible,
+ html[data-odpc-appearance=green] body:not(.home) #odpc-navigation .odpc-nav-group[open] summary,
+ html[data-odpc-appearance=green] body:not(.home) #odpc-navigation .odpc-nav-group summary:hover{background:#e6ebdf!important;border-color:#78917b!important;color:#171b18!important}
+ html[data-odpc-appearance=green] body:not(.home) #odpc-navigation .odpc-nav-sub{border-color:#28513d!important}
+ html[data-odpc-appearance=green] body:not(.home) #content article.ast-article-single{background:#fff9ec!important;color:#171b18!important;border:1px solid #78917b!important;border-radius:16px}
+
  @media(max-width:520px){#odpc-appearance-switch{padding:7px;font-size:11px}#odpc-navigation .odpc-menu-bar{gap:5px}#odpc-navigation .odpc-nav-note{font-size:9px}}
  </style>
  <?php
