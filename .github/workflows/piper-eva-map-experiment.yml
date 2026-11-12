@@ -29,7 +29,7 @@ jobs:
           assert s.count(old)==1
           p.write_text(s.replace(old,new))
           PY
-      - run: npx esbuild node_modules/@mintplex-labs/piper-tts-web/dist/piper-tts-web.js --bundle --format=esm --platform=browser --outfile=patched-piper.mjs
+      - run: npx esbuild node_modules/@mintplex-labs/piper-tts-web/dist/piper-tts-web.js --bundle --format=esm --platform=browser --external:fs --external:path --outfile=patched-piper.mjs
       - run: python3 -m pip install 'playwright>=1.50,<2'
       - run: python3 -m playwright install --with-deps chromium
       - name: Generate and decode Eva audio
