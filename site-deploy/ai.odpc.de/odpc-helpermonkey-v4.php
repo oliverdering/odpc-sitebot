@@ -276,7 +276,7 @@ add_action('wp_footer',function(){
  #odpc-reader-status{font-size:11px;display:block;margin:3px}
  @media(max-width:600px){#odpc-reader{left:9px;bottom:125px;padding:5px}}
  </style>
- <div id="odpc-reader" role="group" aria-label="Artikel vorlesen"><button type="button" id="odpc-reader-play">▶ Vorlesen</button><button type="button" id="odpc-reader-pause">⏸ Pause</button><button type="button" id="odpc-reader-stop">■ Stopp</button><span id="odpc-reader-status" role="status" aria-live="polite"></span></div>
+ <div id="odpc-reader" role="group" aria-label="Artikel vorlesen"><button type="button" id="odpc-reader-play" aria-label="Vorlesen" title="Vorlesen">▶</button><button type="button" id="odpc-reader-pause" aria-label="Pause" title="Pause">⏸</button><button type="button" id="odpc-reader-stop" aria-label="Stopp" title="Stopp">■</button><span id="odpc-reader-status" role="status" aria-live="polite"></span></div>
  <script id="odpc-reader-js">
  (function(){
  'use strict';
