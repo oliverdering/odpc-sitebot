@@ -21,7 +21,7 @@ jobs:
           host='home119567219.1and1-data.host'
           user='acc1461323326'
           pin='SHA256:1gx2w8Rtv3wCgi7Jh8myf/KVd72cRQbow03UP8P095Q'
-          remote='/clickandbuilds/Dering/wp-content/plugins/speechable/assets/js/tts-worker.js'
+          remote='/clickandbuilds/Dering/wp-content/plugins/speechable/assets/js/vendor/piper-tts-loader.js'
           password=os.environ.get('ODPC_SFTP_PASSWORD')
           if not password: raise RuntimeError('Missing SFTP secret')
           tr=paramiko.Transport((host,22))
