@@ -76,7 +76,7 @@ jobs:
         run: |
           mkdir -p vendor
           cp patched-piper.mjs vendor/odpc-eva-piper-20261113.mjs
-          curl -fsSL https://raw.githubusercontent.com/oliverdering/odpc-sitebot/236d4cca8265d650e7f655dad6ef0225e4fffba9/scripts/speechable-eva/tts-worker.candidate.js -o tts-worker.js
+          curl -fsSL https://raw.githubusercontent.com/oliverdering/odpc-sitebot/a4be918585688322fb373a8e2a7712d1badd56bb/scripts/speechable-eva/tts-worker.candidate.js -o tts-worker.js
           python3 -m http.server 8766 >/tmp/piper-worker-http.log 2>&1 &
           python3 - <<'PY'
           from playwright.sync_api import sync_playwright
