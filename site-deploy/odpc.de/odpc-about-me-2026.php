@@ -273,3 +273,16 @@ html[data-odpc-appearance="green"] body.postid-2970 .odpc-article :is(h2,h3,p){c
 html[data-odpc-appearance="green"] body.postid-2970 .odpc-article .odpc-card-number{background:#28513d!important;color:#fff!important}
 </style>';
 }, 100);
+
+
+/* Classic styling for the KI services sections and their native accordions. */
+add_action('wp_head', function () {
+    if (is_admin() || !is_page(1687)) return;
+    echo '<style id="odpc-ki-services-classic-20261112">
+html[data-odpc-appearance="green"] body.page-id-1687 #odpc-ki-redesign section{background:#fff9ec!important;border-color:#78917b!important;color:#294735!important}
+html[data-odpc-appearance="green"] body.page-id-1687 #odpc-ki-redesign section :is(h2,h3,p,li,summary,strong){color:#294735!important}
+html[data-odpc-appearance="green"] body.page-id-1687 #odpc-ki-redesign section details,
+html[data-odpc-appearance="green"] body.page-id-1687 #odpc-ki-redesign section div[style*="background:#1a303e"]{background:#eef0e4!important;border-color:#91ac8b!important;color:#294735!important}
+html[data-odpc-appearance="green"] body.page-id-1687 #odpc-ki-redesign section a[style*="background:#345a80"]{background:#28513d!important;border-color:#28513d!important;color:#fff!important}
+</style>';
+}, 100);
