@@ -21,7 +21,7 @@ jobs:
           new="""const payload = JSON.parse(data);
           const mapping = __privateGet(this, _modelConfig).phoneme_id_map;
           const ids = [...mapping['^'], ...mapping['_']];
-          for (const phoneme of payload.phonemes) {
+          for (const phoneme of Array.from(payload.phonemes.join('').normalize('NFC'))) {
             if (!Object.hasOwn(mapping, phoneme)) { reject(new Error('Missing model phoneme: ' + JSON.stringify(phoneme))); return; }
             ids.push(...mapping[phoneme], ...mapping['_']);
           }
