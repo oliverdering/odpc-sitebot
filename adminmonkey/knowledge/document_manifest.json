@@ -15651,6 +15651,320 @@
       "mapped_tracks": [
         "AZ-104"
       ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/defender-xdr/microsoft-365-security-center-mde",
+      "sha256": "9c3cbbb4525b45608c45d7db4219be15ac740029f6c227c83f0d07c629145bb1",
+      "captured_at": "2026-11-12T23:51:10.671300+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/purview/purview-portal",
+      "sha256": "6a85be87af75a8ec462104fcf3bbf1b8ddca003b4e0f6e506d3744a8284f4e57",
+      "captured_at": "2026-11-12T23:51:11.122791+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-purview-service-description",
+      "sha256": "9273551e9a5ec75dc190adcd5cd6a89d5ec394d84f9866a27b5332c14ee0176a",
+      "captured_at": "2026-11-12T23:51:11.308040+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/purview/purview-trial",
+      "sha256": "54686aab435020be21c7d5c6d5fedefc0369fddd670a63aebae466fabe76d3a7",
+      "captured_at": "2026-11-12T23:51:11.566106+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/purview/data-governance-free-version",
+      "sha256": "24df49632bf3e8fa94cea32e364f74c394a29b5711a19cc8b0710b1808458162",
+      "captured_at": "2026-11-12T23:51:11.645449+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/purview/developer/",
+      "sha256": "3ffb64b9a1414459022a4722820c8bcd507d641e074a35558d89b361158bfb8e",
+      "captured_at": "2026-11-12T23:51:12.044804+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/purview/unified-catalog-regions",
+      "sha256": "514decf7a43227a1d9c71e935832c44047ce935ac1200f8e6d56d4b67a4570ce",
+      "captured_at": "2026-11-12T23:51:12.132694+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/purview/data-map-scan-ingestion",
+      "sha256": "b9e0f6470d363cf99fe688f392f83299dd0c52a723b73474584e10e4d1556101",
+      "captured_at": "2026-11-12T23:51:12.316497+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/purview/dlp-network-data-security-learn",
+      "sha256": "88b775be0bf6daa0b11554ffa120e768fe912e08f4e2352db45d906eb4cc9337",
+      "captured_at": "2026-11-12T23:51:12.419718+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/purview/data-security-investigations-personal-data",
+      "sha256": "0e929185f4208225ebd831e22c99a913f226f72d894eaccfd38c6c58352fef25",
+      "captured_at": "2026-11-12T23:51:12.551027+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/purview/ediscovery-set-up-compliance-boundaries",
+      "sha256": "b2e2bf99bd00568af8b100733870d8da84d72acbd7f9289768453d194e7c662b",
+      "captured_at": "2026-11-12T23:51:12.754670+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/troubleshoot/azure/general/dependency-availability-by-country",
+      "sha256": "b291f70d240fff735b604bedb58eebd92d0f721adf3d4515136b388e252d2490",
+      "captured_at": "2026-11-12T23:51:13.007518+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/purview/audit-log-activities",
+      "sha256": "fc391f4695e17b39ca3ac892d0daebbd8c9cbf301014bb496bac96edf2560929",
+      "captured_at": "2026-11-12T23:51:13.349273+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/purview/compliance-manager-regulations-list",
+      "sha256": "0c07cff23dc62a241f8ed65009fa26e825f5a2e618b7f1039628247694217ab0",
+      "captured_at": "2026-11-12T23:51:13.431344+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/purview/edisc-ref-advanced-indexing",
+      "sha256": "37869a03cc182d8dd715dcefd43f6325d07a11e3902380c3609a7511f8f883a6",
+      "captured_at": "2026-11-12T23:51:13.571508+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/onedrive",
+      "sha256": "a2f94660767323f1eb7933a957247cd3bd57d5b85dd1417d0b4d93586ebcdd8f",
+      "captured_at": "2026-11-12T23:51:14.054816+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/purview/ediscovery-export-search-results",
+      "sha256": "5caaa175cf01ad5d83f436d3472734501c9c7c1f9dc550da7cd29e01c79f63c4",
+      "captured_at": "2026-11-12T23:51:14.405393+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/excel",
+      "sha256": "c6a556f4259a0676295926739264696bfb92f8f1f6e299d4da60d5da4034af18",
+      "captured_at": "2026-11-12T23:51:14.807700+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/auth/",
+      "sha256": "d12b6f7d034183416ad418086df13f02871e5a23ad4dffa5a0d8f5ac98cbaa92",
+      "captured_at": "2026-11-12T23:51:15.250867+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/list-create",
+      "sha256": "2a5bfbefb07ebdce85f59caa60614ba258340257e901562c43674b4166e5a756",
+      "captured_at": "2026-11-12T23:51:15.377681+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/columndefinition",
+      "sha256": "5d1ee967c6c0625c47ad9e36dc1b5e39f60ac9a45b0013efad7711bd78290e19",
+      "captured_at": "2026-11-12T23:51:15.684815+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/planner-post-tasks",
+      "sha256": "89756021ca75c710f838c489fed6f84264e3b9361f1cbe49b8ba4153da1e23d2",
+      "captured_at": "2026-11-12T23:51:16.271408+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/profile",
+      "sha256": "674c711faa8eedd320847f33527da67b4a50bb64aa1d370b0c5d3e1f94d38bc6",
+      "captured_at": "2026-11-12T23:51:16.590191+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/deployedge/edge-ie-mode",
+      "sha256": "da9ac2113a876577403a5f0324db4b62adba9f591c8b29b864ef692a66fed066",
+      "captured_at": "2026-11-12T23:51:16.632084+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/deployedge/edge-ie-mode-cloud-site-list-mgmt",
+      "sha256": "458a20990dfad443ab51c1ce4c37e073b110ef2fa1e3977215b070e6aa99573f",
+      "captured_at": "2026-11-12T23:51:17.265091+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/browsersitelist",
+      "sha256": "8b78362eba945f7045b59670b5963344a90421151d2e3f183a6886ca6ab64e05",
+      "captured_at": "2026-11-12T23:51:17.837291+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/internetexplorermode-post-sitelists",
+      "sha256": "8223307aee12d4e5c8ab590837e1f258bd77fa0a7dee1495a22685ec51252708",
+      "captured_at": "2026-11-12T23:51:18.126134+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/browsersitelist-post-sites",
+      "sha256": "75f7062962da75bd11f5f11a4d78dffc968e1ca017197c68df1b613a11631feb",
+      "captured_at": "2026-11-12T23:51:18.372250+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/printershare-post-jobs",
+      "sha256": "c21001b12e771e9ead16a1c330a65b5ea6979e2c12c920d6ab83b4d1cdf5636a",
+      "captured_at": "2026-11-12T23:51:18.646498+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/cloudpconpremisesconnection",
+      "sha256": "dfce6ed15c0fe717ff949934c5ef4e39e7e05cc46c6d717afe7729946952cd9e",
+      "captured_at": "2026-11-12T23:51:19.040706+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/cloudpcprovisioningpolicy",
+      "sha256": "f3a1006227a6d7ba74bcb3d455522c1c3fdd0f7509f8846ab969852d38701a06",
+      "captured_at": "2026-11-12T23:51:19.362101+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows/deployment/windows-autopatch/overview/windows-autopatch-overview",
+      "sha256": "cb604c5db7f09ea37e31bf4a06cd9dcf11f4de998098ec0a5617d80aeb057cf2",
+      "captured_at": "2026-11-12T23:51:19.789764+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/lighthouse/overview",
+      "sha256": "faa1b8731dfb180deadaa1b71eeb0b579a9509403432a227747585d58dee4347",
+      "captured_at": "2026-11-12T23:51:19.887293+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/security-security-runhuntingquery",
+      "sha256": "a3f7b8a4c0e0cce995c67be3010a7dcf11e97051c99b42331b252afbe6d54965",
+      "captured_at": "2026-11-12T23:51:20.085041+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/securityvendorinformation",
+      "sha256": "112f28c67a4f8ed03596ff5bab91cf0e22e620bd7cfe14efd4ca57336fcd0e2e",
+      "captured_at": "2026-11-12T23:51:20.276951+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
     }
   ],
   "seen": [
@@ -15765,6 +16079,7 @@
     "https://learn.microsoft.com/en-us/azure/governance/resource-graph/samples/samples-by-table",
     "https://learn.microsoft.com/en-us/azure/information-protection/byok-price-restrictions",
     "https://learn.microsoft.com/en-us/azure/key-vault/general/logging",
+    "https://learn.microsoft.com/en-us/azure/lighthouse/overview",
     "https://learn.microsoft.com/en-us/azure/networking/check-usage-against-limits",
     "https://learn.microsoft.com/en-us/azure/notification-hubs",
     "https://learn.microsoft.com/en-us/azure/reliability/availability-zones-overview",
@@ -15824,9 +16139,12 @@
     "https://learn.microsoft.com/en-us/defender-xdr/m365d-enable",
     "https://learn.microsoft.com/en-us/defender-xdr/microsoft-365-defender",
     "https://learn.microsoft.com/en-us/defender-xdr/microsoft-365-defender-portal",
+    "https://learn.microsoft.com/en-us/defender-xdr/microsoft-365-security-center-mde",
     "https://learn.microsoft.com/en-us/defender-xdr/okta-attack-disruption",
     "https://learn.microsoft.com/en-us/defender-xdr/prerequisites",
     "https://learn.microsoft.com/en-us/defender-xdr/whats-new",
+    "https://learn.microsoft.com/en-us/deployedge/edge-ie-mode",
+    "https://learn.microsoft.com/en-us/deployedge/edge-ie-mode-cloud-site-list-mgmt",
     "https://learn.microsoft.com/en-us/deployedge/edge-ie-mode-faq",
     "https://learn.microsoft.com/en-us/deployedge/microsoft-edge-channels",
     "https://learn.microsoft.com/en-us/deployedge/microsoft-edge-support-lifecycle",
@@ -16200,6 +16518,7 @@
     "https://learn.microsoft.com/en-us/graph/api/application-post-onlinemeetings",
     "https://learn.microsoft.com/en-us/graph/api/associatedteaminfo-list",
     "https://learn.microsoft.com/en-us/graph/api/backupreport-getstatisticsbypolicy",
+    "https://learn.microsoft.com/en-us/graph/api/browsersitelist-post-sites",
     "https://learn.microsoft.com/en-us/graph/api/calendar-delta",
     "https://learn.microsoft.com/en-us/graph/api/calendar-get",
     "https://learn.microsoft.com/en-us/graph/api/calendar-getschedule",
@@ -16270,7 +16589,9 @@
     "https://learn.microsoft.com/en-us/graph/api/insights-list-shared",
     "https://learn.microsoft.com/en-us/graph/api/insights-list-trending",
     "https://learn.microsoft.com/en-us/graph/api/insights-list-used",
+    "https://learn.microsoft.com/en-us/graph/api/internetexplorermode-post-sitelists",
     "https://learn.microsoft.com/en-us/graph/api/invitation-post",
+    "https://learn.microsoft.com/en-us/graph/api/list-create",
     "https://learn.microsoft.com/en-us/graph/api/mailbox-list-folders",
     "https://learn.microsoft.com/en-us/graph/api/mailboxfolder-list-childfolders",
     "https://learn.microsoft.com/en-us/graph/api/mailfolder-importmime",
@@ -16297,8 +16618,10 @@
     "https://learn.microsoft.com/en-us/graph/api/participant-mute",
     "https://learn.microsoft.com/en-us/graph/api/partners-billing-billedaggregatedusage-export",
     "https://learn.microsoft.com/en-us/graph/api/place-update",
+    "https://learn.microsoft.com/en-us/graph/api/planner-post-tasks",
     "https://learn.microsoft.com/en-us/graph/api/plannergroup-list-plans",
     "https://learn.microsoft.com/en-us/graph/api/planneruser-list-tasks",
+    "https://learn.microsoft.com/en-us/graph/api/printershare-post-jobs",
     "https://learn.microsoft.com/en-us/graph/api/profilephoto-delete",
     "https://learn.microsoft.com/en-us/graph/api/profilephoto-get",
     "https://learn.microsoft.com/en-us/graph/api/profilephoto-update",
@@ -16336,6 +16659,7 @@
     "https://learn.microsoft.com/en-us/graph/api/resources/backupreport",
     "https://learn.microsoft.com/en-us/graph/api/resources/bitlockerrecoverykey",
     "https://learn.microsoft.com/en-us/graph/api/resources/browsequeryresponseitem",
+    "https://learn.microsoft.com/en-us/graph/api/resources/browsersitelist",
     "https://learn.microsoft.com/en-us/graph/api/resources/calendar",
     "https://learn.microsoft.com/en-us/graph/api/resources/calendargroup",
     "https://learn.microsoft.com/en-us/graph/api/resources/callrecords-api-overview",
@@ -16347,7 +16671,10 @@
     "https://learn.microsoft.com/en-us/graph/api/resources/cloudpcdeviceimage",
     "https://learn.microsoft.com/en-us/graph/api/resources/cloudpcgalleryimage",
     "https://learn.microsoft.com/en-us/graph/api/resources/cloudpcmanagedlicense",
+    "https://learn.microsoft.com/en-us/graph/api/resources/cloudpconpremisesconnection",
+    "https://learn.microsoft.com/en-us/graph/api/resources/cloudpcprovisioningpolicy",
     "https://learn.microsoft.com/en-us/graph/api/resources/cloudpcsourcedeviceimage",
+    "https://learn.microsoft.com/en-us/graph/api/resources/columndefinition",
     "https://learn.microsoft.com/en-us/graph/api/resources/communications-api-overview",
     "https://learn.microsoft.com/en-us/graph/api/resources/companysubscription",
     "https://learn.microsoft.com/en-us/graph/api/resources/conditionalaccesspolicyplan",
@@ -16387,6 +16714,7 @@
     "https://learn.microsoft.com/en-us/graph/api/resources/evaluationerrordetail",
     "https://learn.microsoft.com/en-us/graph/api/resources/event",
     "https://learn.microsoft.com/en-us/graph/api/resources/eventmessage",
+    "https://learn.microsoft.com/en-us/graph/api/resources/excel",
     "https://learn.microsoft.com/en-us/graph/api/resources/exchangemessagetrace",
     "https://learn.microsoft.com/en-us/graph/api/resources/extension",
     "https://learn.microsoft.com/en-us/graph/api/resources/externalconnectors-externalitem",
@@ -16438,6 +16766,7 @@
     "https://learn.microsoft.com/en-us/graph/api/resources/notebook",
     "https://learn.microsoft.com/en-us/graph/api/resources/oauth2permissiongrant",
     "https://learn.microsoft.com/en-us/graph/api/resources/objectidentity",
+    "https://learn.microsoft.com/en-us/graph/api/resources/onedrive",
     "https://learn.microsoft.com/en-us/graph/api/resources/onenote",
     "https://learn.microsoft.com/en-us/graph/api/resources/onlinemeeting",
     "https://learn.microsoft.com/en-us/graph/api/resources/onlinemeetinginfo",
@@ -16469,6 +16798,7 @@
     "https://learn.microsoft.com/en-us/graph/api/resources/privilegedidentitymanagementv3-overview",
     "https://learn.microsoft.com/en-us/graph/api/resources/processcontentmetadatabase",
     "https://learn.microsoft.com/en-us/graph/api/resources/processcontentresponse",
+    "https://learn.microsoft.com/en-us/graph/api/resources/profile",
     "https://learn.microsoft.com/en-us/graph/api/resources/profilephoto",
     "https://learn.microsoft.com/en-us/graph/api/resources/projectrome-activity",
     "https://learn.microsoft.com/en-us/graph/api/resources/provisionedplan",
@@ -16496,6 +16826,7 @@
     "https://learn.microsoft.com/en-us/graph/api/resources/security-detectionrule",
     "https://learn.microsoft.com/en-us/graph/api/resources/security-incidentconfiguration",
     "https://learn.microsoft.com/en-us/graph/api/resources/security-workbook",
+    "https://learn.microsoft.com/en-us/graph/api/resources/securityvendorinformation",
     "https://learn.microsoft.com/en-us/graph/api/resources/service-communications-api-overview",
     "https://learn.microsoft.com/en-us/graph/api/resources/serviceprincipal",
     "https://learn.microsoft.com/en-us/graph/api/resources/serviceprovisioningerror",
@@ -16548,6 +16879,7 @@
     "https://learn.microsoft.com/en-us/graph/api/section-post-pages",
     "https://learn.microsoft.com/en-us/graph/api/security-casemanagement-activity-update",
     "https://learn.microsoft.com/en-us/graph/api/security-casemanagement-case-post-activities",
+    "https://learn.microsoft.com/en-us/graph/api/security-security-runhuntingquery",
     "https://learn.microsoft.com/en-us/graph/api/serviceprincipal-delta",
     "https://learn.microsoft.com/en-us/graph/api/singlevaluelegacyextendedproperty-get",
     "https://learn.microsoft.com/en-us/graph/api/singlevaluelegacyextendedproperty-post-singlevalueextendedproperties",
@@ -16645,6 +16977,7 @@
     "https://learn.microsoft.com/en-us/graph/auth-register-app-v2",
     "https://learn.microsoft.com/en-us/graph/auth-v2-service",
     "https://learn.microsoft.com/en-us/graph/auth-v2-user",
+    "https://learn.microsoft.com/en-us/graph/auth/",
     "https://learn.microsoft.com/en-us/graph/auth/auth-concepts",
     "https://learn.microsoft.com/en-us/graph/azuread-users-concept-overview",
     "https://learn.microsoft.com/en-us/graph/backup-storage-concept-overview",
@@ -17157,6 +17490,7 @@
     "https://learn.microsoft.com/en-us/office365/planner/track-message-center-tasks-planner",
     "https://learn.microsoft.com/en-us/office365/servicedescriptions/exchange-online-service-description/exchange-online-limits",
     "https://learn.microsoft.com/en-us/office365/servicedescriptions/exchange-online-service-description/exchange-online-service-description",
+    "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-purview-service-description",
     "https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/microsoft-365-copilot",
     "https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/microsoft-365-education",
     "https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/microsoft-365-operated-by-21vianet",
@@ -17260,21 +17594,31 @@
     "https://learn.microsoft.com/en-us/previous-versions/xamarin/get-started/installation/",
     "https://learn.microsoft.com/en-us/principles-for-ai-generated-content",
     "https://learn.microsoft.com/en-us/purview/",
+    "https://learn.microsoft.com/en-us/purview/audit-log-activities",
     "https://learn.microsoft.com/en-us/purview/audit-solutions-overview",
     "https://learn.microsoft.com/en-us/purview/communication-compliance",
     "https://learn.microsoft.com/en-us/purview/compliance-easy-trials",
     "https://learn.microsoft.com/en-us/purview/compliance-manager",
+    "https://learn.microsoft.com/en-us/purview/compliance-manager-regulations-list",
     "https://learn.microsoft.com/en-us/purview/customer-key-overview",
+    "https://learn.microsoft.com/en-us/purview/data-governance-free-version",
     "https://learn.microsoft.com/en-us/purview/data-governance-overview",
     "https://learn.microsoft.com/en-us/purview/data-governance-plan",
     "https://learn.microsoft.com/en-us/purview/data-governance-roles-permissions",
     "https://learn.microsoft.com/en-us/purview/data-lifecycle-management",
     "https://learn.microsoft.com/en-us/purview/data-map",
+    "https://learn.microsoft.com/en-us/purview/data-map-scan-ingestion",
     "https://learn.microsoft.com/en-us/purview/data-security-investigations",
+    "https://learn.microsoft.com/en-us/purview/data-security-investigations-personal-data",
     "https://learn.microsoft.com/en-us/purview/data-security-posture-management-learn-about",
     "https://learn.microsoft.com/en-us/purview/developer",
+    "https://learn.microsoft.com/en-us/purview/developer/",
     "https://learn.microsoft.com/en-us/purview/dlp-learn-about-dlp",
+    "https://learn.microsoft.com/en-us/purview/dlp-network-data-security-learn",
     "https://learn.microsoft.com/en-us/purview/edisc",
+    "https://learn.microsoft.com/en-us/purview/edisc-ref-advanced-indexing",
+    "https://learn.microsoft.com/en-us/purview/ediscovery-export-search-results",
+    "https://learn.microsoft.com/en-us/purview/ediscovery-set-up-compliance-boundaries",
     "https://learn.microsoft.com/en-us/purview/free-version",
     "https://learn.microsoft.com/en-us/purview/information-barriers",
     "https://learn.microsoft.com/en-us/purview/information-protection",
@@ -17283,9 +17627,12 @@
     "https://learn.microsoft.com/en-us/purview/office-365-encryption-in-the-microsoft-cloud-overview",
     "https://learn.microsoft.com/en-us/purview/purview",
     "https://learn.microsoft.com/en-us/purview/purview-compliance",
+    "https://learn.microsoft.com/en-us/purview/purview-portal",
     "https://learn.microsoft.com/en-us/purview/purview-security",
+    "https://learn.microsoft.com/en-us/purview/purview-trial",
     "https://learn.microsoft.com/en-us/purview/records-management",
     "https://learn.microsoft.com/en-us/purview/unified-catalog",
+    "https://learn.microsoft.com/en-us/purview/unified-catalog-regions",
     "https://learn.microsoft.com/en-us/purview/whats-new",
     "https://learn.microsoft.com/en-us/rest/api/azure/",
     "https://learn.microsoft.com/en-us/rest/api/keyvault/",
@@ -17343,6 +17690,7 @@
     "https://learn.microsoft.com/en-us/training/support/plans",
     "https://learn.microsoft.com/en-us/training/support/plans-create-manage",
     "https://learn.microsoft.com/en-us/troubleshoot/azure/active-directory/enable-support-tls-environment",
+    "https://learn.microsoft.com/en-us/troubleshoot/azure/general/dependency-availability-by-country",
     "https://learn.microsoft.com/en-us/troubleshoot/exchange/administration/endpoint-connection-405-error",
     "https://learn.microsoft.com/en-us/troubleshoot/exchange/administration/term-new-mailbox-not-recognized-error",
     "https://learn.microsoft.com/en-us/troubleshoot/exchange/exchange-hybrid-welcome",
@@ -17395,236 +17743,13 @@
     "https://learn.microsoft.com/en-us/windows-server/identity/ad-fs/deployment/best-practices-securing-ad-fs",
     "https://learn.microsoft.com/en-us/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-logging",
     "https://learn.microsoft.com/en-us/windows/deployment/update/check-release-health",
+    "https://learn.microsoft.com/en-us/windows/deployment/windows-autopatch/overview/windows-autopatch-overview",
     "https://learn.microsoft.com/en-us/windows/project-rome/",
     "https://learn.microsoft.com/en-us/windows/whats-new/extended-security-updates",
     "https://learn.microsoft.com/en-us/windows/win32/appxpkg/windows-desktop-application-program",
     "https://learn.microsoft.com/en-us/windows/win32/wer/windows-error-reporting"
   ],
   "queue": [
-    {
-      "url": "https://learn.microsoft.com/en-us/defender-xdr/microsoft-365-security-center-mde",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/purview/purview-portal",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/purview/data-map",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-purview-service-description",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/purview/purview-trial",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/purview/data-governance-free-version",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/purview/purview-trial",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/purview/unified-catalog",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/purview/developer/",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/purview/unified-catalog-regions",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/purview/data-map-scan-ingestion",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/purview/unified-catalog-regions",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/purview/purview-portal",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/purview/dlp-network-data-security-learn",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/purview/data-security-investigations-personal-data",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-purview-service-description",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/purview/ediscovery-set-up-compliance-boundaries",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-purview-service-description",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/troubleshoot/azure/general/dependency-availability-by-country",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/purview/audit-log-activities",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/troubleshoot/azure/general/dependency-availability-by-country",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/purview/compliance-manager-regulations-list",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-purview-service-description",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/purview/edisc-ref-advanced-indexing",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-purview-service-description",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/auth-v2-user",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/group",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/agentid-platform-overview",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/calendar",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/onedrive",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/outlook-contacts-concept-overview",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/auth-v2-user",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/contact",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/purview/ediscovery-export-search-results",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/excel",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/viva/engage/overview-native-mode",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/auth/",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/list",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/list-create",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/columndefinition",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/planner-post-tasks",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/profile",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/contact",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/deployedge/edge-ie-mode",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/deployedge/edge-ie-mode-cloud-site-list-mgmt",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/browsersitelist",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/internetexplorermode-post-sitelists",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/browsersitelist-post-sites",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/printershare-post-jobs",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/cloudpconpremisesconnection",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/cloudpcprovisioningpolicy",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/windows/deployment/windows-autopatch/overview/windows-autopatch-overview",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/lighthouse/overview",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/service-communications-api-overview",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/security-security-runhuntingquery",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/securityvendorinformation",
-      "depth": 3
-    },
     {
       "url": "https://learn.microsoft.com/en-us/graph/api/resources/project-rome-overview",
       "depth": 3
@@ -27408,19 +27533,107 @@
     {
       "url": "https://learn.microsoft.com/en-us/graph/powershell/get-started",
       "depth": 1
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/purview/ai-microsoft-purview-considerations",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/purview/audit-premium",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/purview/purview-permissions",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/purview/data-gov-live-view",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/purview/developer/microsoft-purview-sdk-documentation-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/purview/developer/data-security-concepts",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/purview/developer/purview-data-security-genai",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/purview/data-governance-free-version-upgrade-to-enterprise",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/purview/data-map-data-sources",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/purview/collection-policies-solution-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/purview/collection-policies-solution-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/purview/purview-billing-models",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/purview/data-security-investigations-scope",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/purview/ediscovery-content-search-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/purview/ediscovery-standard-get-started",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/purview/audit-log-enable-disable",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/purview/audit-log-detailed-properties",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/Briefing/be-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/purview/compliance-manager-assessments",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/purview/compliance-manager-assessments",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/purview/edisc-ref-partially-indexed-items",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/purview/edisc-settings-search-analytics",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/viva/engage/overview-native-mode",
+      "depth": 3
     }
   ],
   "last_batch": {
     "attempted": 36,
-    "documents_total": 1745,
-    "queued": 2502,
+    "documents_total": 1780,
+    "queued": 2469,
     "failures": [
       {
-        "url": "https://learn.microsoft.com/en-us/graph/powershell/installation",
-        "error": "HTTPError"
-      },
-      {
-        "url": "https://learn.microsoft.com/en-us/graph/powershell/get-started",
+        "url": "https://learn.microsoft.com/en-us/viva/engage/overview-native-mode",
         "error": "HTTPError"
       }
     ]

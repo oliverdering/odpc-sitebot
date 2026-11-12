@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T18:37:47.020473+00:00",
+  "generated_at": "2026-11-12T23:51:26.951348+00:00",
   "product": "AdminMonkey Academy",
   "certification_expansion": {
     "candidate_exam_codes": 42,
@@ -45,32 +45,28 @@
   "certification_issuer": "ODPC",
   "official_microsoft_certification": false,
   "knowledge": {
-    "documents_collected": 1745,
-    "manufacturer_verified": 1745,
+    "documents_collected": 1780,
+    "manufacturer_verified": 1780,
     "review": {
       "unreviewed": 0,
-      "approved": 1745,
+      "approved": 1780,
       "rejected": 0
     },
     "last_batch": {
       "attempted": 36,
-      "documents_total": 1745,
-      "queued": 2502,
+      "documents_total": 1780,
+      "queued": 2469,
       "failures": [
         {
-          "url": "https://learn.microsoft.com/en-us/graph/powershell/installation",
-          "error": "HTTPError"
-        },
-        {
-          "url": "https://learn.microsoft.com/en-us/graph/powershell/get-started",
+          "url": "https://learn.microsoft.com/en-us/viva/engage/overview-native-mode",
           "error": "HTTPError"
         }
       ]
     }
   },
   "retrieval_staging": {
-    "chunked_documents": 1740,
-    "chunks_prepared": 8864,
+    "chunked_documents": 1775,
+    "chunks_prepared": 9088,
     "retrieval_quality_verified": false,
     "agent_answers_verified": 0,
     "note": "Ephemeral, provenance-checked chunk preparation; no searchable production index yet."
@@ -78,7 +74,7 @@
   "tracks": [
     {
       "track": "MS-102",
-      "manufacturer_verified_sources": 386,
+      "manufacturer_verified_sources": 401,
       "knowledge_coverage": "source_count_only_not_learning_objective_coverage",
       "practice_scenarios_available": 6,
       "agent_answers_evaluated": 0,
@@ -94,7 +90,7 @@
     },
     {
       "track": "AZ-104",
-      "manufacturer_verified_sources": 95,
+      "manufacturer_verified_sources": 97,
       "knowledge_coverage": "source_count_only_not_learning_objective_coverage",
       "practice_scenarios_available": 4,
       "agent_answers_evaluated": 0,
