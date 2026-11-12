@@ -405,6 +405,7 @@ window.addEventListener('load',mount);
 </script>
 <?php },110); ?>
 
+<?php
 /* ODPC reference dock alignment (2026-11-12): additive, preserves existing voice/translation handlers. */
 add_action('wp_footer',function(){if(is_admin())return; ?>
 <style id="odpc-ai-reference-dock-css">
