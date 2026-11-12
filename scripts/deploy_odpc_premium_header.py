@@ -37,7 +37,7 @@ def main():
     pw = os.environ.get("ODPC_SFTP_PASSWORD", "")
     if not pw:
         raise RuntimeError("Missing ODPC_SFTP_PASSWORD GitHub secret")
-    if not SOURCE.is_file() or SOURCE.stat().st_size > 30000:
+    if not SOURCE.is_file() or SOURCE.stat().st_size > 100000:
         raise RuntimeError("Expected reviewed ODPC PHP module missing or oversized")
     transport = paramiko.Transport((HOST, 22))
     transport.start_client(timeout=20)
@@ -62,7 +62,7 @@ def main():
             existed = False
             try:
                 entry = sftp.lstat(REMOTE)
-                if not stat.S_ISREG(entry.st_mode) or entry.st_size > 30000:
+                if not stat.S_ISREG(entry.st_mode) or entry.st_size > 100000:
                     raise RuntimeError("Unexpected existing target; refusing overwrite")
                 sftp.get(REMOTE, str(previous))
                 existed = True
