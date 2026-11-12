@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Expire only stale HTML for the approved ODPC home and webdesign updates."""
+"""Expire only stale HTML for the verified stale ODPC About Me and team HTML."""
 import base64
 import gzip
 import hashlib
@@ -15,16 +15,15 @@ import paramiko
 from deploy_helpermonkey_v4 import HOST, USER, PIN
 
 ROOT = '/clickandbuilds/Dering'
-EXPECTED = 'object-position:50% 0%!important'
 TARGETS = {
-    'https://odpc.de': EXPECTED,
-    'https://odpc.de/webdesign-live-projekte-48h-sichtbarkeit': EXPECTED,
+    'https://odpc.de/about-me': 'id="odpc-about-2026-classic-fix"',
+    'https://odpc.de/unser-team': 'id="odpc-team-classic-palette"',
 }
 
 def fetch(url):
     with urlopen(Request(url, headers={'Cache-Control':'no-cache'}), timeout=30) as response:
         if response.status != 200:
-            raise RuntimeError('Homepage unavailable')
+            raise RuntimeError('Public page unavailable')
         return response.read(1000000).decode('utf-8')
 
 def main():
@@ -103,14 +102,14 @@ def main():
                     backup.write_bytes(raw)
                     sftp.remove(path)
                     removed += 1
-                    print('EXPIRED: verified stale SEO cache',posixpath.relpath(path,cache_root))
-            print('Homepage cache variants expired:',removed)
+                    print('EXPIRED: verified stale design cache',posixpath.relpath(path,cache_root))
+            print('Design cache variants expired:',removed)
     finally:
         transport.close()
     for url, expected in TARGETS.items():
         if expected not in fetch(url+'/'):
-            raise RuntimeError('Public page still has stale SEO metadata: '+url)
-        print('PASS: normal public URL serves updated SEO metadata:',url)
+            raise RuntimeError('Public page still has stale design markup: '+url)
+        print('PASS: normal public URL serves updated design markup:',url)
 
 if __name__ == '__main__':
     main()
