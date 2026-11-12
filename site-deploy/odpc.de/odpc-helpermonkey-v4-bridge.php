@@ -330,3 +330,51 @@ if(!document.cookie.includes('odpc_language='))set(get());
 })();
 </script>
 <?php },79);
+
+/* ODPC Remote: additive enhancement to the backed-up homepage reference dock. */
+add_filter('wp_nav_menu_items',function($items,$args){
+ if(is_admin()||!isset($args->theme_location)||$args->theme_location!=='primary')return $items;
+ if(strpos($items,'/remote-fernwartung/')!==false)return $items;
+ return $items.'<li class="menu-item menu-item-type-custom odpc-remote-menu"><a href="https://odpc.de/remote-fernwartung/">Fernhilfe</a></li>';
+},20,2);
+add_action('wp_footer',function(){if(is_admin())return; ?>
+<style id="odpc-remote-dock-extension-css">
+/* Only add one control; keep original transparent backdrop and handlers. */
+body.odpc-smartguide-pilot #odpc-utility-dock{width:min(390px,calc(100vw - 14px))!important;max-width:390px!important}
+#odpc-utility-dock #odpc-dock-remote{order:2!important;display:flex!important;align-items:center!important;justify-content:center!important;flex:0 0 38px!important;width:38px!important;min-width:38px!important;height:38px!important;padding:0!important;border-radius:50%!important;background:rgba(10,38,65,.48)!important;border:1px solid rgba(106,213,255,.45)!important;overflow:hidden!important;text-decoration:none!important}
+#odpc-utility-dock #odpc-dock-remote img{display:block;width:34px;height:34px;object-fit:contain;border-radius:50%}
+#odpc-utility-dock #odpc-dock-remote:focus-visible{outline:2px solid #77dcff!important;outline-offset:2px!important}
+.odpc-home-remote{display:flex;align-items:center;gap:13px;max-width:560px;margin:20px auto;padding:10px 16px;border:1px solid rgba(53,129,178,.25);border-radius:16px;background:rgba(12,49,78,.06);font:inherit}
+.odpc-home-remote img{width:64px;height:64px;flex:none;object-fit:contain}
+.odpc-home-remote strong{display:block;font-size:15px;line-height:1.4}
+.odpc-home-remote p{margin:3px 0 5px;font-size:13px;line-height:1.45}
+.odpc-home-remote a{color:#1168a4;font-weight:700;font-size:13px}
+@media(max-width:360px){body.odpc-smartguide-pilot #odpc-utility-dock{gap:2px!important;padding:5px!important}#odpc-utility-dock #odpc-dock-remote{flex-basis:32px!important;width:32px!important;min-width:32px!important;height:32px!important}#odpc-utility-dock #odpc-dock-remote img{width:30px;height:30px}}
+</style>
+<script id="odpc-remote-dock-extension-js">
+(function(){
+ 'use strict';
+ var url='https://odpc.de/remote-fernwartung/';
+ var logo='https://odpc.de/wp-content/uploads/2026/11/file_00000000feb8820a8c57f156ec0926e2.png';
+ function mount(){
+  var dock=document.getElementById('odpc-utility-dock');
+  if(dock&&!document.getElementById('odpc-dock-remote')){
+   var a=document.createElement('a');a.id='odpc-dock-remote';a.href=url;
+   a.title='Fernhilfe / Remote Support';a.setAttribute('aria-label','Fernhilfe öffnen');
+   var img=document.createElement('img');img.src=logo;img.alt='';img.width=34;img.height=34;
+   a.appendChild(img);dock.appendChild(a);
+  }
+  if(document.body.classList.contains('home')&&!document.getElementById('odpc-home-remote')){
+   var main=document.querySelector('#odpc-home,main .entry-content,main');
+   if(main){
+    var aside=document.createElement('aside');aside.id='odpc-home-remote';aside.className='odpc-home-remote';
+    aside.innerHTML='<img src="'+logo+'" alt="" loading="lazy" width="64" height="64"><div><strong>Fernhilfe · Remote Support</strong><p>Persönliche Unterstützung für PC, Notebook und Smartphone.</p><a href="'+url+'">Zur ODPC-Fernhilfe</a></div>';
+    main.insertBefore(aside,main.firstChild);
+   }
+  }
+ }
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount);else mount();
+ window.addEventListener('load',mount);
+})();
+</script>
+<?php },110);
