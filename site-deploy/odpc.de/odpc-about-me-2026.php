@@ -227,6 +227,14 @@ add_action('wp_footer', function () {
 add_action('wp_head', function () {
     if (is_admin() || !(is_page('unser-team') || is_single('unser-team'))) return;
     echo '<style id="odpc-team-classic-palette">
+/* Cover WordPress block backgrounds and inline blue cards, not only custom team classes. */
+html[data-odpc-appearance="green"] body.page .entry-content{background:#f4eedf!important;color:#294735!important}
+html[data-odpc-appearance="green"] body.page .entry-content :is(.wp-block-group,.wp-block-columns,.wp-block-column,.wp-block-cover,.wp-block-media-text,.wp-block-details,.wp-block-quote,.wp-block-table,.wp-block-button,.elementor-widget-container,.elementor-container,.elementor-column-wrap,.elementor-section,.e-con,.e-con-inner,article,section,details,figure,fieldset){background-color:#faf7ed!important;background-image:none!important;border-color:#91ac8b!important;box-shadow:none!important;color:#294735!important}
+html[data-odpc-appearance="green"] body.page .entry-content :is(.wp-block-group,.wp-block-columns,.wp-block-column,.wp-block-cover,.wp-block-media-text,.wp-block-details,.elementor-widget-container,.e-con,article,section,details) :is(div,header,footer){background-color:transparent!important;background-image:none!important;border-color:#91ac8b!important;box-shadow:none!important}
+html[data-odpc-appearance="green"] body.page .entry-content :is(.wp-block-group,.wp-block-column,.wp-block-cover,.wp-block-media-text,.wp-block-details,.elementor-widget-container,.e-con,article,section,details) :is(h1,h2,h3,h4,h5,h6,p,span,small,strong,em,li,summary){color:#294735!important}
+html[data-odpc-appearance="green"] body.page .entry-content :is(.wp-block-group,.wp-block-column,.wp-block-cover,.wp-block-media-text,.wp-block-details,.elementor-widget-container,.e-con,article,section,details) a{color:#315f40!important}
+html[data-odpc-appearance="green"] body.page .entry-content :is(.wp-block-group,.wp-block-column,.wp-block-cover,.wp-block-media-text,.wp-block-details,.elementor-widget-container,.e-con,article,section,details) :is(img,video,svg){background:transparent!important}
+
 body .entry-content .odpc-team,body .entry-content .odpc-team *{box-sizing:border-box}
 html[data-odpc-appearance="green"] body .entry-content{--odpc-team-ink:#284634;--odpc-team-paper:#f6f0e3;--odpc-team-card:#faf7ef;--odpc-team-line:#91ac8b}
 html[data-odpc-appearance="green"] body .entry-content :is(.odpc-team,.odpc-team-grid,.odpc-team-section,.odpc-team-member,.odpc-team-card,.team-card,.team-member,.odpc-team-role,.odpc-team-panel,.odpc-team-detail,.odpc-team-details){background:var(--odpc-team-card)!important;border-color:var(--odpc-team-line)!important;color:var(--odpc-team-ink)!important;box-shadow:none!important}
