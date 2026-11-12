@@ -225,8 +225,13 @@ add_action('wp_footer', function () {
 
 /* Team classic appearance: scoped to unser-team only. */
 add_action('wp_head', function () {
-    if (is_admin() || !(is_page('unser-team') || is_single('unser-team'))) return;
+    if (is_admin() || !is_singular() || get_post_field('post_name', get_queried_object_id()) !== 'unser-team') return;
     echo '<style id="odpc-team-classic-palette">
+/* Team-specific catch-all for custom and inline blue panels, scoped to content only. */
+html[data-odpc-appearance="green"] body :is(main,#primary,#main,.site-main) :is(.entry-content,.post-content,.page-content,.wp-block-post-content) :is(div,section,article,aside,figure,blockquote,details,fieldset){background-color:#faf7ed!important;background-image:none!important;border-color:#91ac8b!important;box-shadow:none!important;color:#294735!important}
+html[data-odpc-appearance="green"] body :is(main,#primary,#main,.site-main) :is(.entry-content,.post-content,.page-content,.wp-block-post-content) :is(h1,h2,h3,h4,h5,h6,p,li,span,strong,small,summary){color:#294735!important}
+html[data-odpc-appearance="green"] body :is(main,#primary,#main,.site-main) :is(.entry-content,.post-content,.page-content,.wp-block-post-content) a{color:#315e40!important}
+html[data-odpc-appearance="green"] body :is(main,#primary,#main,.site-main) :is(.entry-content,.post-content,.page-content,.wp-block-post-content) :is(img,video,svg){background:transparent!important}
 /* Cover WordPress block backgrounds and inline blue cards, not only custom team classes. */
 html[data-odpc-appearance="green"] body.page .entry-content{background:#f4eedf!important;color:#294735!important}
 html[data-odpc-appearance="green"] body.page .entry-content :is(.wp-block-group,.wp-block-columns,.wp-block-column,.wp-block-cover,.wp-block-media-text,.wp-block-details,.wp-block-quote,.wp-block-table,.wp-block-button,.elementor-widget-container,.elementor-container,.elementor-column-wrap,.elementor-section,.e-con,.e-con-inner,article,section,details,figure,fieldset){background-color:#faf7ed!important;background-image:none!important;border-color:#91ac8b!important;box-shadow:none!important;color:#294735!important}
