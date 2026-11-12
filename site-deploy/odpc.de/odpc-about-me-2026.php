@@ -286,3 +286,20 @@ html[data-odpc-appearance="green"] body.page-id-1687 #odpc-ki-redesign section d
 html[data-odpc-appearance="green"] body.page-id-1687 #odpc-ki-redesign section a[style*="background:#345a80"]{background:#28513d!important;border-color:#28513d!important;color:#fff!important}
 </style>';
 }, 100);
+
+
+/* Team page classic palette: scoped to its actual components. */
+add_action('wp_head', function () {
+    if (is_admin() || !is_single(1093)) return;
+    echo '<style id="odpc-team-classic-components-20261112">
+html[data-odpc-appearance="green"] body.postid-1093 #primary .entry-content .odt,
+html[data-odpc-appearance="green"] body.postid-1093 #primary .entry-content .odt .odt-wrap,
+html[data-odpc-appearance="green"] body.postid-1093 #primary .entry-content .odt .odt-grid{background:#f5efdf!important;color:#294735!important;box-shadow:none!important}
+html[data-odpc-appearance="green"] body.postid-1093 #primary .entry-content .odt nav[aria-label="ODPC Querverweise"]{background:#fff9ec!important;border-bottom:1px solid #91ac8b!important}
+html[data-odpc-appearance="green"] body.postid-1093 #primary .entry-content .odt nav[aria-label="ODPC Querverweise"] a{color:#28513d!important;text-decoration:underline!important}
+html[data-odpc-appearance="green"] body.postid-1093 #primary .entry-content .odt :is(.odt-feature,.odt-person){background:#fff9ec!important;border:1px solid #91ac8b!important;box-shadow:none!important}
+html[data-odpc-appearance="green"] body.postid-1093 #primary .entry-content .odt .odt-detail{background:#fff9ec!important;color:#294735!important}
+html[data-odpc-appearance="green"] body.postid-1093 #primary .entry-content .odt .odt-cta{background:#28513d!important;border:1px solid #28513d!important;color:#fff!important}
+html[data-odpc-appearance="green"] body.postid-1093 #primary .entry-content .odt .odt-person img{border-color:#78917b!important}
+</style>';
+}, 101);
