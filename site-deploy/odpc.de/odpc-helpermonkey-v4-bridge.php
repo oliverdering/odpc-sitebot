@@ -364,7 +364,6 @@ body.odpc-smartguide-pilot #odpc-utility-dock{width:min(390px,calc(100vw - 14px)
    var img=document.createElement('img');img.src=logo;img.alt='';img.width=34;img.height=34;
    a.appendChild(img);dock.appendChild(a);
   }
-  }
  }
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount);else mount();
  window.addEventListener('load',mount);
