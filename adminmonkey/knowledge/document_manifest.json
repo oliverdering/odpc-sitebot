@@ -15037,6 +15037,300 @@
       "depth": 2,
       "review_status": "manufacturer_verified",
       "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-instructions",
+      "sha256": "7fd1e88df508695f1cf6d44b86c4bf93fb0f096d15944e8270f484fbef1198c0",
+      "captured_at": "2026-11-12T10:47:04.851916+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/knowledge-sources-overview",
+      "sha256": "59010e8e135887d12f4df71bd6c08e5db03a734f6d1cc8352f00af206a1e0e45",
+      "captured_at": "2026-11-12T10:47:05.013042+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/created-files-overview",
+      "sha256": "6390e87312fa183cb541be3960d9c0c11b9f4dbe924d3ba0b526c66b43d6db96",
+      "captured_at": "2026-11-12T10:47:05.205842+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/skills-create",
+      "sha256": "752ae63f1633520568873109529d4f086f7aede8c33579b5e44ca8818e942ede",
+      "captured_at": "2026-11-12T10:47:05.441435+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/ai-foundry/agents/overview",
+      "sha256": "252a6b2c111627544884906f11dc8876c35251831355107cc243eace846fef11",
+      "captured_at": "2026-11-12T10:47:05.733028+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/publication-channels-overview",
+      "sha256": "7a3e07ee6e609be0fb4a3213197dc95ca1dc5e792a3adfda4411c759b12f00ea",
+      "captured_at": "2026-11-12T10:47:05.941660+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/admin-share-bots",
+      "sha256": "95e2836f56c9b9f0509e9ad343f6cc24219576eff333459f79f328f9b769aeae",
+      "captured_at": "2026-11-12T10:47:06.101581+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/nlu-authoring",
+      "sha256": "a64895abcd135f5234fe82e446dafcc22e7c68145b1c9297b55df5e569e022de",
+      "captured_at": "2026-11-12T10:47:06.283095+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/requirements-quotas",
+      "sha256": "9d0cc8751a414a8551649cc1cf746e44c08eb7dfac8a7d9669eaa6e923392b7e",
+      "captured_at": "2026-11-12T10:47:06.403538+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-review-activity",
+      "sha256": "d7bf761378e5c1a2bcbd35125ca8babb66da9597b4deeeb3ccdf2308d6914a57",
+      "captured_at": "2026-11-12T10:47:06.527761+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/voice-basic-overview",
+      "sha256": "52fbf2d40ba9b60774cf568af288fa55cfb1d98caea77de6cc4bfe60aa40165f",
+      "captured_at": "2026-11-12T10:47:06.670122+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/nlu-boost-node",
+      "sha256": "c368faa29b1c303308521140846a35d658eb939ebecfd8eefde0c50fca6295bc",
+      "captured_at": "2026-11-12T10:47:06.877299+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-generative-actions",
+      "sha256": "430ba45504f03a40fffb3e19bd03941c47e2989f08174aa5ec4b34d57da9526f",
+      "captured_at": "2026-11-12T10:47:07.036601+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/add-agent-child-agent",
+      "sha256": "50cdbc44b1598ffc23d05b07ae070b3eb0631b8424ad6fcceaec631b4bf331e8",
+      "captured_at": "2026-11-12T10:47:07.206694+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-automate/flows-designer",
+      "sha256": "a63f64e4edfe85cba10fbf3c52edd7b01e061793f15cd275e528ec501ae0c2cc",
+      "captured_at": "2026-11-12T10:47:07.360656+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-flow",
+      "sha256": "7851dabb664b8b3633cb6adfb6c029c31e1dba137007216d97ab13a84b26fef9",
+      "captured_at": "2026-11-12T10:47:07.555530+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/analytics-agent-evaluation-multi-turn",
+      "sha256": "1f357a5cdaf40fa65dd27a125f5769b3f03d93b81141a8aac6c81fa965d44f9e",
+      "captured_at": "2026-11-12T10:47:07.697457+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/analytics-agent-evaluation-edit",
+      "sha256": "a098797e93219ca58fc683f7611ce49bcaa819d0212a0e07aaba5aa071b02b38",
+      "captured_at": "2026-11-12T10:47:07.933091+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/analytics-agent-evaluation-rest-api",
+      "sha256": "dc958bdcff021f14d3b04677765adf9a59e8dd06a11f3e9b06a15c7e66b8d4b0",
+      "captured_at": "2026-11-12T10:47:08.113170+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/customize-default-canvas",
+      "sha256": "7d81c6e6198409bfc8cb30f3f9c0b8179500577e0bd5bcbafe603c5b137d9716",
+      "captured_at": "2026-11-12T10:47:08.266556+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/analytics-overview",
+      "sha256": "f12a8bfcb6468110ee3e5b9958ffe3fbdbae7e2d1af5a4bf7a3bc5c61de693bb",
+      "captured_at": "2026-11-12T10:47:08.421805+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/admin-dlp-troubleshooting",
+      "sha256": "210879377ff5715e4d6cff484bca60926a0ff84bc5f81765ebb49e4696257d66",
+      "captured_at": "2026-11-12T10:47:08.593019+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/configuration-authentication-azure-ad",
+      "sha256": "4b94b3b98745b3131c5f42a4211c0d40398061cefb9c294d9551fe1c4c31c162",
+      "captured_at": "2026-11-12T10:47:08.816632+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-platform/admin/default-environment-routing",
+      "sha256": "2d9d5d403c1098e3d13a480bf1e2182cc15bf668968f16b4c7cb9f5b420b03e6",
+      "captured_at": "2026-11-12T10:47:09.046292+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/requirements-licensing-subscriptions",
+      "sha256": "ad0afd3c5d544d253a1f0b0d143f863f673a6a7ca4465e240ab0e791d0d4b74c",
+      "captured_at": "2026-11-12T10:47:09.241387+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-platform/",
+      "sha256": "7c3251a30275038ccb74b2b27fe6463ec1589fc7dc62adeb0368984eb7f0a62a",
+      "captured_at": "2026-11-12T10:47:09.518171+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/dynamics365/release-plans/",
+      "sha256": "3aaaeb717ed623076c8f9c3b2420c46b25f400534b231153bfd3a7a7eba30126",
+      "captured_at": "2026-11-12T10:47:09.736316+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-apps/",
+      "sha256": "4e250853b1d24234d3e76c99a28289d154152a888962fb62570048f260d68cae",
+      "captured_at": "2026-11-12T10:47:09.923618+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-automate/",
+      "sha256": "4d0a45ff8049a81456c30800219ef0bc9f51dedeb58aef677beb979de8c00955",
+      "captured_at": "2026-11-12T10:47:10.227117+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-bi/",
+      "sha256": "155c619b50a2ba5b877f40b37d51a3cc6561f9acaf561336e951a9a6085cf252",
+      "captured_at": "2026-11-12T10:47:10.331909+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-pages/",
+      "sha256": "e45bf493c55e7528d5c3d2f80c92c8479fe0c6c837d008b8bb90059babb152d2",
+      "captured_at": "2026-11-12T10:47:10.536249+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/agents/architecture/",
+      "sha256": "a1e9d8d38dd02c7bd0e237bfe8f5014c9ed83ec41ce0eb9f7e525782fceda585",
+      "captured_at": "2026-11-12T10:47:10.688954+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/agents/",
+      "sha256": "cd46d41deab906053299667e838dd4cbad35ae24d9c19e291178819357470074",
+      "captured_at": "2026-11-12T10:47:10.954726+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/",
+      "sha256": "506f21829147c3edff0303e64704349d49b20140368cfd52c228f82a1de04466",
+      "captured_at": "2026-11-12T10:47:11.125446+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/agents-sdk/",
+      "sha256": "415db8248230ce1a625f5012d6337c73589dc7ac4091e26f1a44c59d701c6f83",
+      "captured_at": "2026-11-12T10:47:11.291662+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-agent-365/admin/agent-registry-overview",
+      "sha256": "9a6261766e8c810a35d1342e867fc9335054909dee9f7698c6387a54b6c4cd17",
+      "captured_at": "2026-11-12T10:47:11.480834+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
     }
   ],
   "seen": [
@@ -15065,6 +15359,8 @@
     "https://learn.microsoft.com/en-us/agent-framework/overview/",
     "https://learn.microsoft.com/en-us/agent-framework/overview/agent-framework-overview",
     "https://learn.microsoft.com/en-us/agents",
+    "https://learn.microsoft.com/en-us/agents/",
+    "https://learn.microsoft.com/en-us/agents/architecture/",
     "https://learn.microsoft.com/en-us/ai",
     "https://learn.microsoft.com/en-us/answers",
     "https://learn.microsoft.com/en-us/answers/",
@@ -15091,6 +15387,7 @@
     "https://learn.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection",
     "https://learn.microsoft.com/en-us/azure/active-directory/roles/manage-roles-portal",
     "https://learn.microsoft.com/en-us/azure/active-directory/roles/permissions-reference",
+    "https://learn.microsoft.com/en-us/azure/ai-foundry/agents/overview",
     "https://learn.microsoft.com/en-us/azure/ai-foundry/what-is-azure-ai-foundry",
     "https://learn.microsoft.com/en-us/azure/architecture/checklist/resiliency-per-service",
     "https://learn.microsoft.com/en-us/azure/architecture/identity/identity-start-here",
@@ -15204,6 +15501,7 @@
     "https://learn.microsoft.com/en-us/devops/deliver/what-is-infrastructure-as-code",
     "https://learn.microsoft.com/en-us/dotnet/framework/network-programming/tls",
     "https://learn.microsoft.com/en-us/dynamics365/",
+    "https://learn.microsoft.com/en-us/dynamics365/release-plans/",
     "https://learn.microsoft.com/en-us/education/",
     "https://learn.microsoft.com/en-us/entra/agent-id/agent-owners-sponsors-managers",
     "https://learn.microsoft.com/en-us/entra/agent-id/configure-third-party-agents",
@@ -16267,6 +16565,7 @@
     "https://learn.microsoft.com/en-us/microsoft-365/admin/usage-analytics/usage-analytics-faq",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/whats-new-in-preview",
     "https://learn.microsoft.com/en-us/microsoft-365/agents-sdk",
+    "https://learn.microsoft.com/en-us/microsoft-365/agents-sdk/",
     "https://learn.microsoft.com/en-us/microsoft-365/backup/backup-billing",
     "https://learn.microsoft.com/en-us/microsoft-365/backup/backup-setup",
     "https://learn.microsoft.com/en-us/microsoft-365/business-premium/m365-business-premium-setup",
@@ -16316,6 +16615,7 @@
     "https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/connectors-gallery",
     "https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview",
     "https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/overview",
+    "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/",
     "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-reuse-connectors",
     "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-your-first-connector",
     "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview",
@@ -16372,12 +16672,18 @@
     "https://learn.microsoft.com/en-us/microsoft-365/solutions/setup-secure-collaboration-with-teams",
     "https://learn.microsoft.com/en-us/microsoft-365/troubleshoot/active-directory/restore-deleted-user-accounts",
     "https://learn.microsoft.com/en-us/microsoft-365/troubleshoot/o365-admin-welcome",
+    "https://learn.microsoft.com/en-us/microsoft-agent-365/admin/agent-registry-overview",
     "https://learn.microsoft.com/en-us/microsoft-agent-365/admin/manage-copilot-agents-integrated-apps",
     "https://learn.microsoft.com/en-us/microsoft-agent-365/overview",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/",
+    "https://learn.microsoft.com/en-us/microsoft-copilot-studio/add-agent-child-agent",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/add-tools-custom-agent",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/admin-data-loss-prevention",
+    "https://learn.microsoft.com/en-us/microsoft-copilot-studio/admin-dlp-troubleshooting",
+    "https://learn.microsoft.com/en-us/microsoft-copilot-studio/admin-share-bots",
+    "https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-flow",
+    "https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-generative-actions",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agent-extend-action-mcp",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agent-usage-estimator",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/analytics-agent-evaluation-create",
@@ -16395,20 +16701,28 @@
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/billing-credit-understand-display",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/billing-manage-buy-credits",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/build-new-agent",
+    "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/created-files-overview",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/knowledge-copilot-studio",
+    "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/knowledge-sources-overview",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/overview",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/preview-history",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/preview-overview",
+    "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/publication-channels-overview",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/publication-fundamentals-publish-channels",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/publication-publish-agent",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/settings-overview",
+    "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/skills-create",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/skills-overview",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/tools-overview",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-overview",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/analytics-agent-evaluation-create",
+    "https://learn.microsoft.com/en-us/microsoft-copilot-studio/analytics-agent-evaluation-edit",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/analytics-agent-evaluation-intro",
+    "https://learn.microsoft.com/en-us/microsoft-copilot-studio/analytics-agent-evaluation-multi-turn",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/analytics-agent-evaluation-overview",
+    "https://learn.microsoft.com/en-us/microsoft-copilot-studio/analytics-agent-evaluation-rest-api",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/analytics-agent-evaluation-results",
+    "https://learn.microsoft.com/en-us/microsoft-copilot-studio/analytics-overview",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/analytics-summary",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/apps-experience/apps-overview",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/apps-experience/create-app",
@@ -16416,10 +16730,14 @@
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/apps-experience/publish-share-app",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-add-other-agents",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-create-edit-topics",
+    "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-instructions",
+    "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-review-activity",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-test-bot",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/billing-licensing",
+    "https://learn.microsoft.com/en-us/microsoft-copilot-studio/configuration-authentication-azure-ad",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/configuration-end-user-authentication",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/create-automation-natural-language",
+    "https://learn.microsoft.com/en-us/microsoft-copilot-studio/customize-default-canvas",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/flow-agent",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/flow-designer",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/flows-overview",
@@ -16430,13 +16748,18 @@
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/guidance/plan-overview",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/harnesses-overview",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/knowledge-copilot-studio",
+    "https://learn.microsoft.com/en-us/microsoft-copilot-studio/nlu-authoring",
+    "https://learn.microsoft.com/en-us/microsoft-copilot-studio/nlu-boost-node",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/publication-add-bot-to-microsoft-teams",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/publication-add-bot-to-sharepoint",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/publication-connect-bot-to-web-channels",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/publication-fundamentals-publish-channels",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/requirements-licensing",
+    "https://learn.microsoft.com/en-us/microsoft-copilot-studio/requirements-licensing-subscriptions",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/requirements-messages-management",
+    "https://learn.microsoft.com/en-us/microsoft-copilot-studio/requirements-quotas",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/security-and-governance",
+    "https://learn.microsoft.com/en-us/microsoft-copilot-studio/voice-basic-overview",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/voice-overview",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/whats-new",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/workflows-experience/agent-node-workflow",
@@ -16494,15 +16817,22 @@
     "https://learn.microsoft.com/en-us/onedrive/restore-deleted-onedrive",
     "https://learn.microsoft.com/en-us/onedrive/set-retention",
     "https://learn.microsoft.com/en-us/partner-center/new-commerce-license-based",
+    "https://learn.microsoft.com/en-us/power-apps/",
     "https://learn.microsoft.com/en-us/power-automate",
+    "https://learn.microsoft.com/en-us/power-automate/",
+    "https://learn.microsoft.com/en-us/power-automate/flows-designer",
     "https://learn.microsoft.com/en-us/power-bi",
+    "https://learn.microsoft.com/en-us/power-bi/",
     "https://learn.microsoft.com/en-us/power-bi/enterprise/service-admin-closing-your-account",
     "https://learn.microsoft.com/en-us/power-bi/fundamentals/desktop-getting-started",
     "https://learn.microsoft.com/en-us/power-bi/fundamentals/service-self-service-signup-for-power-bi",
     "https://learn.microsoft.com/en-us/power-pages",
+    "https://learn.microsoft.com/en-us/power-pages/",
     "https://learn.microsoft.com/en-us/power-platform",
+    "https://learn.microsoft.com/en-us/power-platform/",
     "https://learn.microsoft.com/en-us/power-platform/admin/admin-documentation",
     "https://learn.microsoft.com/en-us/power-platform/admin/apps-to-allow",
+    "https://learn.microsoft.com/en-us/power-platform/admin/default-environment-routing",
     "https://learn.microsoft.com/en-us/power-platform/admin/manage-copilot-studio-messages-capacity",
     "https://learn.microsoft.com/en-us/power-platform/architecture/products/copilot-studio",
     "https://learn.microsoft.com/en-us/powerapps",
@@ -16717,210 +17047,6 @@
     "https://learn.microsoft.com/en-us/windows/win32/wer/windows-error-reporting"
   ],
   "queue": [
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-instructions",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/knowledge-sources-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/created-files-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/skills-create",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/ai-foundry/agents/overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/authoring-test-bot",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/preview-history",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/billing-credit-understand-display",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/analytics-agent-evaluation-results",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/analytics-agent-evaluation-view",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/billing-credit-understand-display",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/publication-channels-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/billing-credit-understand-display",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/admin-share-bots",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/nlu-authoring",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/requirements-quotas",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-review-activity",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/voice-basic-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/nlu-boost-node",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-generative-actions",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-generative-actions",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/add-agent-child-agent",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/requirements-messages-management",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/power-automate/flows-designer",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-flow",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/analytics-agent-evaluation-create",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/analytics-agent-evaluation-multi-turn",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/analytics-agent-evaluation-edit",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/analytics-agent-evaluation-rest-api",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/security-and-governance",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/customize-default-canvas",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/customize-default-canvas",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/admin-share-bots",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/analytics-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/admin-dlp-troubleshooting",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/configuration-authentication-azure-ad",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/power-platform/admin/default-environment-routing",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agent-usage-estimator",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/requirements-licensing-subscriptions",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agent-usage-estimator",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/power-platform/",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/dynamics365/release-plans/",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/power-apps/",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/power-automate/",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/power-bi/",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/power-pages/",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/agents/architecture/",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/agents/",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/agents-sdk/",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-agent-365/admin/agent-registry-overview",
-      "depth": 2
-    },
     {
       "url": "https://learn.microsoft.com/en-us/agent-framework/concepts/agents/",
       "depth": 2
@@ -25700,21 +25826,1232 @@
     {
       "url": "https://learn.microsoft.com/en-us/collections/xkggupt7qm714q",
       "depth": 2
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-first-bot",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-trigger-event",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-generative-actions",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/analytics-topic-details",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-variables",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-power-fx",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/guidance/generative-mode-guidance",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/attachments-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/knowledge-add-file-upload",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/knowledge-add-public-website",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/knowledge-add-sharepoint",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/knowledge-add-dataverse-tables",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/knowledge-copilot-connectors",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/knowledge-add-existing-copilot",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/knowledge-add-existing-copilot",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/knowledge-edit-source",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/knowledge-add-existing-copilot",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/knowledge-edit-source",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/attachments-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/attachments-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/skills-add-existing",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/skills-create-customer-conversation",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/skills-add-existing",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/skills-manage",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/runtime-components",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/toolbox-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/observability/concepts/trace-agent-concept",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/agent-optimizer-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/agent-identity",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/publish-copilot",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/quickstarts/prompt-agent",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/quickstarts/prompt-agent",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/quickstarts/prompt-voice-agent",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/quickstarts/quickstart-hosted-agent",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/quickstarts/responses-api",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/prompt-agents",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/quickstarts/prompt-voice-agent",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/prompt-agents",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/use-tools-skills-copilot-harness",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/quickstarts/create-web-research-agent",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/quickstarts/prompt-voice-agent",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/hosted-agents",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/how-to/develop/framework-hosted-agents",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/how-to/develop/langchain-hosted-agents",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/quickstarts/quickstart-deploy-own-code",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/use-tools-skills-copilot-harness",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/quickstarts/responses-api",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/voice-agent-pricing",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/quickstarts/prompt-voice-agent",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/configure-voice-agent",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/voice-agent-telephony-channels",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/voice-agent-observability",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/voice-agent-best-practice",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/toolbox-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/toolbox-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/devops/mcp-server/mcp-server-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/concepts/concept-playgrounds",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/observability/concepts/trace-agent-concept",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/agent-optimizer-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/agent-applications",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/observability/how-to/how-to-monitor-agents-dashboard",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/development-lifecycle",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/agent-identity",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/virtual-networks",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/environment-setup",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/agent-applications",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/publish-copilot",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/enable-agent-to-agent-endpoint",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/guardrails/guardrails-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/virtual-networks",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/use-your-own-resources",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/responsible-use-of-ai-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/environment-setup",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/development-lifecycle",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/quickstarts/quickstart-hosted-agent",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/toolbox-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/quickstarts/quickstart-hosted-agent",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/quickstarts/prompt-voice-agent",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/voice-agent-best-practice",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/tool-catalog",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/limits-quotas-regions",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-platform/admin/early-release",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/publication-channels-mcp-agent-to-agent",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/publication-channels-mcp-agent-to-agent",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/requirements-licensing-subscriptions",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-apps/maker/canvas-apps/share-app",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/assign-roles-permissions",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/admin-transcript-controls",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-flow",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-flow",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-platform/admin/create-users-assign-online-security-roles",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-platform/admin/security-roles-privileges",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-platform/admin/database-security",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/environments-first-run-experience",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-platform/admin/security-roles-privileges",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-platform/admin/database-security",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-platform/admin/database-security",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/nlu-gpt-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/faqs-copilot",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/legal/cognitive-services/openai/transparency-note",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-language-support",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/troubleshoot/power-platform/copilot-studio/authoring/error-codes",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/knowledge-add-sharepoint",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-generative-actions",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/knowledge-unstructured-data",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/troubleshoot/power-platform/copilot-studio/generative-answers/sharepoint-no-response",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/nlu-generative-answers-sharepoint-onedrive",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/requirements-licensing-subscriptions",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/requirements-licensing-subscriptions",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/admin-upgrade-dataverse-teams",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/analytics-sessions",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/requirements-licensing-subscriptions",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-platform/admin/api-request-limits-allocations",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-platform/admin/api-request-limits-allocations",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/knowledge-unstructured-data",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/knowledge-add-unstructured-data",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/knowledge-add-sharepoint",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/knowledge-add-file-upload",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/knowledge-unstructured-data",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-automate/ip-address-configuration",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/communication-services/concepts/chat/concepts",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/configuration-hand-off-omnichannel",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/guidance/plan-agent-throughput-rate-limits",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-trigger-event",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-triggers-about",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-product-terms-dr",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-platform/admin/geographical-availability-copilot",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/manage-activity-data-m365",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-generative-actions",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/voice-get-started",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/voice-realtime-voice-agents",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/voice-dtmf",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/voice-configuration",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/voice-configuration",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/voice-configuration",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/voice-configuration",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/voice-configuration",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/voice-configuration",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/voice-configuration",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/voice-configuration",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/voice-configuration",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/voice-test",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-language-support",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/troubleshoot/power-platform/copilot-studio/channels/voice-error-codes",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/knowledge-add-public-website",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-system-topics",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/bing/search-apis/bing-web-search/overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/nlu-generative-answers-azure-openai",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/nlu-generative-answers-custom-data",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/knowledge-unstructured-data",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/nlu-generative-answers-custom-data",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/nlu-generative-answers-bing",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/nlu-generative-answers-azure-openai",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/nlu-documents",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/nlu-generative-answers-sharepoint-onedrive",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/nlu-generative-answers-custom-data",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-variables-about",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-variables-bot",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-send-message",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/configuration-authentication-azure-ad",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/content-safety/concepts/harm-categories",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/troubleshoot/power-platform/copilot-studio/generative-answers/sharepoint-no-response",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-managing-topic-inputs-outputs",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/guidance/generative-orchestration-duplicate-messages",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/guidance/generative-orchestration-topics",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-system-topics",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/multilingual",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-language-support",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/guidance/generative-mode-guidance",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-triggers",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-system-topics",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-system-topics",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-system-topics",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/knowledge-add-existing-copilot",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/guidance/generative-orchestration-subagents",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-power-fx",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-automate/overview-cloud",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-automate/error-checker",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-automate/create-cloud-flow-using-copilot",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-automate/create-cloud-flow-using-copilot",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-automate/overview-solution-flows",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-automate/create-flow-solution",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-automate/drafts-versioning",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-automate/drafts-versioning",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-automate/drafts-versioning",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/logic-apps/workflow-definition-language-functions-reference",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-automate/expressions-copilot",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-automate/drafts-versioning",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/connectors/microsoft365compliance/",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-pages/configure/cloud-flow-integration",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-automate/create-cloud-flow-using-copilot",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-automate/create-cloud-flow-without-copilot",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-automate/work-with-triggers-actions",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-automate/customize-triggers",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-automate/multi-step-logic-flow",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-flow-create",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/flow-modify-use-with-agent",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-use-flow",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/analytics-agent-evaluation-edit",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/analytics-agent-evaluation-edit",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/analytics-agent-evaluation-edit",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/analytics-agent-evaluation-edit-cases",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/rest/api/power-platform/",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-platform/admin/programmability-authentication-v2",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-platform/admin/programmability-extensibility-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-platform/admin/powerplatform-api-getting-started",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/rest/api/power-platform/copilotstudio/bots",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/rest/api/power-platform/copilotstudio/bots/list-maker-evaluation-test-sets",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/rest/api/power-platform/copilotstudio/bots/list-maker-evaluation-test-sets",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/rest/api/power-platform/copilotstudio/bots/run-maker-evaluation-test-set",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/rest/api/power-platform/copilotstudio/bots/list-maker-evaluation-test-runs",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/rest/api/power-platform/copilotstudio/bots/get-maker-evaluation-test-run",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/analytics-agent-evaluation-automate-tools",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/configure-bot-greeting",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/configuration-hand-off-omnichannel",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/resources/schema/manifest-schema",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/publication-terms-of-use-teams",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/bot-service/bot-builder-webchat-customization",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/bot-service/bot-builder-webchat-customization",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/bot-service/rest-api/bot-framework-rest-direct-line-3-0-authentication",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/analytics-improve-agent-effectiveness",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/analytics-improve-agent-health",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/analytics-improve-agent-effectiveness",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/configure-generic-handoff",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/analytics-improve-agent-health",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/analytics-improve-agent-effectiveness",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/analytics-improve-agent-health",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/analytics-transcripts-studio",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/analytics-transcripts-powerapps",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/analytics-improve-agent-effectiveness",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/analytics-themes",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/analytics-improve-agent-effectiveness",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/analytics-improve-agent-effectiveness",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/guidance/agent-business-value-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-platform/admin/wp-data-loss-prevention",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-end-user-authentication",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/active-directory/manage-apps/grant-admin-consent",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/active-directory/develop/developer-glossary",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/configure-sso",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-platform/admin/managed-environment-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-platform/developer/plan",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-platform/developer/plan",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-platform/important-changes-coming",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-platform/admin/environment-groups",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/requirements-licensing-gcc",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-automate/overview-cloud",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/connectors/connector-reference/connector-reference-premium-connectors",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-automate/overview-cloud",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-flow-create",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/configure-web-security",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/configure-web-security",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-use-skills",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-use-pva-as-a-skill",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-hand-off",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/dynamics365/release-plans/",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/powerplatform/",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-apps",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/powerplatform/power-apps",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/powerplatform/power-automate",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/powerplatform/power-bi",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/paths/power-pages-get-started",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-pages/training-videos",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/ai-builder",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/connectors/",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-platform/copilot",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-apps/maker/data-platform/",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-platform/power-fx/overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-platform/admin/",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-platform/alm/",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-platform/guidance/",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-platform/developer/",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-platform/architecture/",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-platform/well-architected/",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/dynamics365",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-apps/powerapps-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-apps/whats-new",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/training/powerplatform/power-apps",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/troubleshoot/power-platform/power-apps/welcome-power-apps",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-apps/maker/signup-for-powerapps",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-platform/admin/signup-for-powerapps-admin",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-apps/maker/",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-apps/maker/plan-designer/plan-designer",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-apps/maker/canvas-apps/",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-apps/maker/model-driven-apps/",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-apps/developer/code-apps/",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-apps/maker/canvas-apps/ai-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-apps/maker/plan-designer/plan-designer",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-apps/vibe/overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-automate/flow-types",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-bi/fundamentals/power-bi-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-pages/introduction",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/agents/design-guidelines/intro-to-agents",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/quickstart-plugin",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/agents-sdk/agents-sdk-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/copilot-tuning-overview",
+      "depth": 3
     }
   ],
   "last_batch": {
     "attempted": 36,
-    "documents_total": 1675,
-    "queued": 2246,
-    "failures": [
-      {
-        "url": "https://learn.microsoft.com/en-us/users/na/",
-        "error": "ValueError"
-      },
-      {
-        "url": "https://learn.microsoft.com/en-us/collections/xkggupt7qm714q",
-        "error": "ValueError"
-      }
-    ]
+    "documents_total": 1711,
+    "queued": 2500,
+    "failures": []
   }
 }
