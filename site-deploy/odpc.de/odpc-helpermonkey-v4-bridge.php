@@ -11,7 +11,7 @@ if(!defined('ABSPATH'))exit;
  * Never deactivate plugins, alter content, or repeatedly purge on every page view.
  */
 add_action('init',function(){
- $release='odpc-v4-bridge-20261110-cache-refresh-1';
+ $release='odpc-v4-bridge-20261112-cross-browser-cache-refresh-2';
  if(get_option('odpc_bridge_page_cache_release')===$release)return;
  if(!class_exists('WpFastestCache'))return;
  try{
