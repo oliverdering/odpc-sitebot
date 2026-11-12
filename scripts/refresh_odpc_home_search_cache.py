@@ -94,7 +94,7 @@ def main():
                     if len(canonicals) != 1:
                         continue
                     expected = TARGETS.get(canonicals[0].rstrip('/'))
-                    if expected is None or expected in source:
+                    if expected is None:
                         continue
                     digest = hashlib.sha256(raw).hexdigest()
                     backup = Path('backup-odpc-home-cache')/(digest+'.bin')
@@ -102,7 +102,7 @@ def main():
                     backup.write_bytes(raw)
                     sftp.remove(path)
                     removed += 1
-                    print('EXPIRED: verified stale design cache',posixpath.relpath(path,cache_root))
+                    print('EXPIRED: verified target design cache',posixpath.relpath(path,cache_root))
             print('Design cache variants expired:',removed)
     finally:
         transport.close()
