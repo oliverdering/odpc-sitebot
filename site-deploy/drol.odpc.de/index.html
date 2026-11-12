@@ -49,7 +49,7 @@ html[data-theme=light] .icon-button,html[data-theme=light] .menu-button,html[dat
 #odpc-utility-dock #drol-dock-remote img{width:34px;height:34px;object-fit:contain;border-radius:50%}
 #odpc-utility-dock #drol-dock-whatsapp{background:#168658;color:white}
 #odpc-utility-dock #drol-dock-home{background:rgba(16,37,46,.55);color:white}
-#odpc-utility-dock #drol-dock-whatsapp svg,#odpc-utility-dock #drol-dock-home svg{width:25px;height:25px}
+#odpc-utility-dock #drol-dock-whatsapp img{width:25px;height:25px;display:block;filter:brightness(0) invert(1)}#odpc-utility-dock #drol-dock-home svg{width:25px;height:25px}
 #odpc-utility-dock button:focus-visible,#odpc-utility-dock a:focus-visible,#odpc-utility-dock select:focus-visible{outline:2px solid #77dcff;outline-offset:2px}
 body{padding-bottom:max(80px,env(safe-area-inset-bottom))}
 @media(max-width:360px){#odpc-utility-dock{gap:2px;padding:5px}#odpc-utility-dock button,#odpc-utility-dock a{flex-basis:34px;width:34px;height:34px}#odpc-utility-dock #drol-dock-language{flex-basis:76px;width:76px}}
@@ -61,7 +61,7 @@ body{padding-bottom:max(80px,env(safe-area-inset-bottom))}
 <button type="button" id="drol-dock-play" aria-label="Vorlesen" title="Vorlesen">▶</button>
 <button type="button" id="drol-dock-stop" aria-label="Stopp" title="Stopp">■</button>
 <a id="drol-dock-remote" href="https://odpc.de/remote-fernwartung/" title="Fernhilfe" aria-label="Fernhilfe öffnen"><img src="https://odpc.de/wp-content/uploads/2026/11/file_00000000feb8820a8c57f156ec0926e2.png" alt=""></a>
-<a id="drol-dock-whatsapp" href="https://wa.me/492654882183" target="_blank" rel="noopener noreferrer" title="WhatsApp Business" aria-label="WhatsApp Business"><svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 2.6A13.2 13.2 0 0 0 4.6 22.4L2.8 29l6.8-1.8A13.2 13.2 0 1 0 16 2.6zm0 23.9a10.7 10.7 0 0 1-5.4-1.5l-.4-.2-4 1.1 1.1-3.9-.3-.4a10.7 10.7 0 1 1 9 4.9z"/></svg></a>
+<a id="drol-dock-whatsapp" href="https://wa.me/492654882183" target="_blank" rel="noopener noreferrer" title="WhatsApp Business" aria-label="WhatsApp Business"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/whatsapp.svg" alt="" width="25" height="25"></a>
 <a id="drol-dock-home" href="#start" title="Zum Seitenanfang" aria-label="Zum Seitenanfang"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg></a>
 </nav>
 <script id="drol-odpc-reference-dock-script">(function(){'use strict';
