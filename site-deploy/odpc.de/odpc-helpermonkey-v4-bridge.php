@@ -92,7 +92,20 @@ add_action('wp_footer',function(){
  u.lang=locale();u.rate=0.95;u.volume=1;
  var available=typeof synth.getVoices==='function'?(synth.getVoices()||[]):[];
  var matches=available.filter(function(x){return (x.lang||'').toLowerCase().split(/[-_]/)[0]===u.lang.split('-')[0]});
- if(voiceSelect.value!==''&&voiceList[Number(voiceSelect.value)])u.voice=voiceList[Number(voiceSelect.value)];else if(matches.length)u.voice=matches.find(function(x){return x.localService})||matches[0];
+ if(voiceSelect.value!==''&&voiceList[Number(voiceSelect.value)])u.voice=voiceList[Number(voiceSelect.value)];else if(matches.length){
+  // Prefer natural-sounding voices; localService alone is not a quality indicator.
+  var target=u.lang.toLowerCase().replace(/_/g,'-');
+  function quality(v){
+   var name=(v.name||'').toLowerCase(),region=(v.lang||'').toLowerCase().replace(/_/g,'-'),score=0;
+   if(region===target)score+=30;
+   if(/natural|neural|enhanced|premium|high quality/.test(name))score+=40;
+   if(/katja|hedda|anna|helena|marlene|petra|sophie|sophia|vicki|victoria|zira|aria|jenny|sonia|susan|samantha|amelie|audrey|hortense|paulina|lucia|irina|milena|yelena|filiz|emel|aylin|femke|claire/.test(name))score+=18;
+   if(/compact|espeak|robot|male|stefan|markus|hans|thomas|david|daniel|george/.test(name))score-=35;
+   return score;
+  }
+  matches.sort(function(a,b){return quality(b)-quality(a)});
+  u.voice=matches[0];
+ }
  var started=false;activeUtterance=u;
  u.onstart=function(){if(t===token){started=true;document.getElementById('odpc-reader').classList.add('is-playing');status.textContent='🔊 Spricht Abschnitt '+index+' von '+queue.length+' ('+u.lang+')'}};
  u.onend=function(){if(t===token)next(t)};
