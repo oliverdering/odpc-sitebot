@@ -211,7 +211,7 @@ self.onmessage = async ( e ) => {
                 } else {
                     // Piper: download the voice model so it's cached
                     const tts = await loadPiperTTS( data.voiceId );
-                    await tts.download( data.voiceId, ( prog ) => {
+                    if ( data.voiceId !== 'de_DE-eva_k-x_low' ) await tts.download( data.voiceId, ( prog ) => {
                         if ( prog.total ) {
                             self.postMessage( {
                                 type: 'downloadProgress',
