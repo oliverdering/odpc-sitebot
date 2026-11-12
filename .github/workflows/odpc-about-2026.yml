@@ -26,7 +26,7 @@ jobs:
       - name: Preflight
         run: |
           php -l site-deploy/odpc.de/odpc-about-me-2026.php
-          python3 -m py_compile scripts/deploy_odpc_about_2026.py
+          python3 -m py_compile scripts/deploy_odpc_about_2026.py scripts/refresh_odpc_home_search_cache.py
           grep -Fq 'return $html;' site-deploy/odpc.de/odpc-about-me-2026.php
           grep -q "is_page('about-me')" site-deploy/odpc.de/odpc-about-me-2026.php
           ! grep -q 'odpc-utility-dock' site-deploy/odpc.de/odpc-about-me-2026.php
@@ -38,6 +38,19 @@ jobs:
         env:
           ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
         run: python3 scripts/deploy_odpc_about_2026.py
+      - name: Refresh About and team page caches
+        if: github.event_name != 'pull_request'
+        env:
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+        run: python3 scripts/refresh_odpc_home_search_cache.py
+      - name: Retain cache backup
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: odpc-about-team-cache-backup
+          path: backup-odpc-home-cache/
+          if-no-files-found: ignore
+          retention-days: 15
       - name: Retain rollback backup
         if: always()
         uses: actions/upload-artifact@v4
