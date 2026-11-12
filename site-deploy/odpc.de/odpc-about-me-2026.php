@@ -252,3 +252,24 @@ html[data-odpc-appearance="green"] body .entry-content :is(.odpc-team,.odpc-team
 html[data-odpc-appearance="green"] body .entry-content :is(.odpc-team,.odpc-team-grid,.odpc-team-section) :is(article,details) :is(a,button){color:#315e40!important}
 </style>';
 }, 99);
+
+
+/* Classic palette for the hardware-to-AI article; leave the global dock untouched. */
+add_action('wp_head', function () {
+    if (is_admin() || !is_single(2970)) return;
+    echo '<style id="odpc-hardware-ai-classic-20261112">
+html[data-odpc-appearance="green"] body.postid-2970 .odpc-article{background:#f4efdf!important;color:#294735!important}
+html[data-odpc-appearance="green"] body.postid-2970 .odpc-article .odpc-hero,
+html[data-odpc-appearance="green"] body.postid-2970 .odpc-article .odpc-team-head{background:#e7eddf!important;color:#254a35!important}
+html[data-odpc-appearance="green"] body.postid-2970 .odpc-article .odpc-hero-content :is(h1,h2,p,span),
+html[data-odpc-appearance="green"] body.postid-2970 .odpc-article .odpc-team-head :is(h3,p,div,span){color:#254a35!important}
+html[data-odpc-appearance="green"] body.postid-2970 .odpc-article .odpc-section-soft,
+html[data-odpc-appearance="green"] body.postid-2970 .odpc-article .odpc-highlight,
+html[data-odpc-appearance="green"] body.postid-2970 .odpc-article .odpc-quote{background:#eef0e4!important;color:#294735!important;border-color:#91ac8b!important}
+html[data-odpc-appearance="green"] body.postid-2970 .odpc-article .odpc-card,
+html[data-odpc-appearance="green"] body.postid-2970 .odpc-article .odpc-team-member,
+html[data-odpc-appearance="green"] body.postid-2970 #odpc-complete-team-2026 article{background:#fffaf0!important;border:1px solid #91ac8b!important;color:#294735!important}
+html[data-odpc-appearance="green"] body.postid-2970 .odpc-article :is(h2,h3,p){color:#294735!important}
+html[data-odpc-appearance="green"] body.postid-2970 .odpc-article .odpc-card-number{background:#28513d!important;color:#fff!important}
+</style>';
+}, 100);
