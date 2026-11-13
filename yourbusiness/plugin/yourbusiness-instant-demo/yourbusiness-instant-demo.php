@@ -246,7 +246,7 @@ body{margin:0}
         <a class="kf-button" href="#kf-drinks">Getränke entdecken <span aria-hidden="true">↗</span></a>
         <a class="kf-button kf-outline" href="https://www.google.com/maps/search/?api=1&amp;query=Kleine%20Freiheit%20Altenhof%206%20Koblenz" target="_blank" rel="noopener noreferrer">Anfahrt planen <span aria-hidden="true">↗</span></a>
       </div>
-      <div class="kf-hero-facts"><span><b>Altenhof 6</b> · 56068 Koblenz</span><span><b>Altstadtkneipe</b> · Musik &amp; Begegnung</span></div>
+      <div class="kf-hero-facts"><span><b>Altenhof 6</b> · 56068 Koblenz</span><span><b>Altstadtkneipe</b> · Musik &amp; Begegnung</span><span><b>Raucherkneipe</b> · Hinweis an der Eingangstür</span></div>
     </div>
     <div class="kf-scene kf-brand-scene" aria-label="Kleine Freiheit – Koblenz">
       <?php
@@ -338,7 +338,7 @@ body{margin:0}
 <section id="kf-drinks" class="kf-chapter">
   <div class="kf-wrap"><span class="kf-eyebrow">An der Theke</span><h2>Für jeden Abend das Richtige.</h2><p class="kf-prose">Vom kühlen Bier bis zur alkoholfreien Erfrischung. Die konkrete Getränkekarte und aktuelle Preise werden noch mit dem Betreiber abgestimmt.</p>
     <div class="kf-cards">
-      <article class="kf-card"><span class="kf-number">01</span><h3>Bier &amp; Klassiker</h3><p>Pils, Biermischgetränke und weitere Klassiker – Sortiment bitte vor Ort prüfen.</p></article>
+      <article class="kf-card"><span class="kf-number">01</span><h3>Bitburger &amp; Königsbacher</h3><p>Diese Biermarken wurden vor Ort genannt und sind Teil der Kneipenkultur. Aktuelle Sorten und Preise bitte direkt beim Team erfragen.</p></article>
       <article class="kf-card"><span class="kf-number">02</span><h3>Longdrinks &amp; Kurze</h3><p>Beliebte Mixgetränke, Liköre und Shots als unverbindlicher Kartenentwurf.</p></article>
       <article class="kf-card"><span class="kf-number">03</span><h3>Ohne Alkohol</h3><p>Softdrinks, Wasser und weitere erfrischende Alternativen als Sortimentsvorschlag.</p></article>
     </div>
@@ -368,7 +368,7 @@ body{margin:0}
         <span class="kf-fineprint">Ein weiterer Festnetz-Eintrag existiert in älteren Verzeichnissen, ist aber für die aktuelle Besetzung nicht bestätigt.</span>
         <a href="https://www.google.com/maps/search/?api=1&amp;query=Kleine%20Freiheit%20Altenhof%206%20Koblenz" target="_blank" rel="noopener noreferrer">Standort und Bewertungen bei Google Maps ansehen ↗</a>
       </div>
-      <p class="kf-fineprint">Die Mobilnummer 01573 2500137 ist auf einem Originalfoto des Ladenfensters zu erkennen; eine aktuelle Bestätigung durch Charly steht noch aus. Die veröffentlichten Öffnungszeiten sind vor endgültiger Freigabe abzugleichen. Hinweis: Raucherkneipe.</p>
+      <p class="kf-fineprint">Die Mobilnummer 01573 2500137 steht auf dem fotografierten Ladenfenster. Charly sollte sie vor der offiziellen Veröffentlichung noch bestätigen. Hinweis: Raucherkneipe.</p><div class="kf-legal-note"><p><strong>Öffnungszeiten laut öffentlichen Branchenverzeichnissen (noch nicht vom Betreiber bestätigt):</strong><br>Montag–Donnerstag 10:00–23:00 Uhr · Freitag–Samstag 10:00–04:00 Uhr · Sonntag geschlossen. Feiertage und kurzfristige Änderungen bitte direkt vor Ort erfragen.</p></div>
       <div class="kf-actions"><a class="kf-button" href="https://www.google.com/maps/dir/?api=1&amp;destination=Altenhof%206%2C%2056068%20Koblenz" target="_blank" rel="noopener noreferrer">Route starten ↗</a><a class="kf-button kf-outline" href="tel:+4915732500137">Jetzt anrufen ↗</a></div>
     </div>
     <div class="kf-address-art" aria-label="Altenhof 6 in Koblenz"><span>Altenhof</span><strong>6</strong><span>Koblenz · Altstadt</span></div>
