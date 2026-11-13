@@ -8,7 +8,7 @@ PIN="SHA256:1gx2w8Rtv3wCgi7Jh8myf/KVd72cRQbow03UP8P095Q"
 BASE="/YourBusiness/wp-content/plugins"
 NAME="yourbusiness-instant-demo"
 SOURCE_DIR=pathlib.Path(__file__).resolve().parents[1]/"yourbusiness/plugin"/NAME
-FILES=(NAME+".php", "discover.php", "research.js")
+FILES=("discover.php", "research.js", NAME+".php")
 def main():
     password=os.environ.get("ODPC_SFTP_PASSWORD")
     if not password: raise RuntimeError("Missing ODPC_SFTP_PASSWORD")
