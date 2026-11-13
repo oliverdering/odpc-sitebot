@@ -26,6 +26,7 @@ jobs:
         run: |
           php -l yourbusiness/plugin/yourbusiness-instant-demo/yourbusiness-instant-demo.php
           php -l yourbusiness/plugin/yourbusiness-instant-demo/discover.php
+          php -l yourbusiness/plugin/yourbusiness-instant-demo/kf-gallery-admin.php
       - name: Install Paramiko
         run: python -m pip install 'paramiko>=3.4,<5'
       - name: Upload plugin to isolated WordPress
