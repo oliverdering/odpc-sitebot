@@ -632,3 +632,220 @@ speak.addEventListener('click',()=>{if(!('speechSynthesis' in window)){speak.tex
   <?php
   exit;
 }, 0);
+/**
+ * ODPC restaurant-specific micro demo for Döner Paradies, Koblenz (13 Nov 2026).
+ * Isolated preview only. Public directory information is unverified.
+ * No Google Translate, no third-party tracking, no fabricated customer material.
+ */
+add_action('template_redirect', function () {
+  if (is_admin() || !isset($_GET['yb_doener_paradies']) || $_GET['yb_doener_paradies'] !== '1') return;
+  status_header(200);
+  nocache_headers();
+  ?>
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="theme-color" content="#17382d">
+<meta name="description" content="Döner Paradies, Koblenz: mobile und zweisprachig erweiterbare ODPC-Kundenvorschau. Noch kein offizieller Webauftritt.">
+<title>Döner Paradies · Koblenz · ODPC Kundenvorschau</title>
+<style>
+:root{color-scheme:light;font-family:systdp-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:110px}
+body{margin:0}
+button,a{touch-action:manipulation}
+button{font:inherit;cursor:pointer}
+#dp-demo{--bg:#f5f1e6;--surface:#fffdf5;--ink:#17382d;--muted:#657367;--accent:#bf6d35;--gold:#deb46f;--line:#d9dece;--deep:#102b22;--panel:#e8e7d7;--radius:6px;min-height:100vh;background:var(--bg);color:var(--ink);padding-bottom:88px;transition:background .25s,color .25s}
+#dp-demo.modern{--bg:#0a121c;--surface:#142331;--ink:#fff4de;--muted:#b4c5cc;--accent:#f1ad51;--gold:#f5cc81;--line:#314558;--deep:#07101a;--panel:#1b3142;--radius:22px}
+#dp-demo a{color:inherit;text-underline-offset:4px}
+#dp-demo :is(a,button,input):focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+.wrap{max-width:1180px;margin:auto;padding-inline:clamp(18px,5vw,46px)}
+.demo-note{background:#172c25;color:#eaf2df;text-align:center;padding:8px 15px;font-size:11px;letter-spacing:.06em}
+.top{position:sticky;top:0;z-index:15;background:var(--bg);border-bottom:1px solid var(--line);backdrop-filter:blur(15px)}
+.top-inner{min-height:74px;display:flex;align-items:center;justify-content:space-between;gap:15px}
+.brand{text-decoration:none;font-size:18px;line-height:1;font-weight:900;letter-spacing:-.025em;white-space:nowrap}
+.brand span{color:var(--accent)}.brand small{display:block;font-size:9px;font-weight:650;letter-spacing:.17em;margin-top:8px;color:var(--muted)}
+.top-controls{display:flex;align-items:center;gap:7px}
+.pill{border:1px solid var(--line);background:var(--surface);border-radius:100px;padding:9px 13px;color:var(--ink);font-size:12px;font-weight:700}
+.pill[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.lang{padding:9px 7px;border-radius:100px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font-weight:700}
+nav{display:flex;gap:20px;padding:0 0 12px;overflow-x:auto;white-space:nowrap;font-size:12px;font-weight:750}
+nav a{text-decoration:none}
+.hero{position:relative;overflow:hidden;padding:clamp(48px,7vw,95px) 0 76px}
+.hero-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:clamp(22px,5vw,75px);align-items:center}
+.kicker{display:inline-flex;align-items:center;gap:9px;color:var(--accent);font-size:11px;font-weight:850;letter-spacing:.17em;text-transform:uppercase}
+.kicker:before{content:"";height:2px;width:32px;background:currentColor}
+h1,h2,h3,p{margin-top:0}
+h1{font:400 clamp(57px,7.4vw,105px)/.98 Georgia,serif;letter-spacing:-.068em;margin:24px 0}
+h1 em{color:var(--accent);font-weight:500}
+h2{font:400 clamp(35px,5vw,61px)/1.04 Georgia,serif;letter-spacing:-.047em;margin-bottom:22px}
+h3{font-size:22px;line-height:1.2}
+.lead{color:var(--muted);font-size:clamp(16px,2vw,19px);line-height:1.8;max-width:49ch}
+.actions{display:flex;flex-wrap:wrap;gap:11px;margin-top:30px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:49px;padding:11px 20px;text-decoration:none;font-size:13px;font-weight:800;background:var(--ink);color:var(--bg)!important;border:1px solid var(--ink);border-radius:var(--radius)}
+.btn.outline{background:transparent;color:var(--ink)!important;border-color:var(--line)}
+.hero-art{min-height:440px;position:relative;isolation:isolate;border:12px solid var(--surface);border-radius:clamp(18px,4vw,38px);background:radial-gradient(circle at 40% 35%,#56805b 1%,#1a4333 63%,#10271f 100%);box-shadow:0 32px 80px #122d2428;overflow:hidden}
+.hero-art:before{content:"";position:absolute;inset:8%;border:1px solid #ffffff55;border-radius:50%}
+.hero-art:after{content:"";position:absolute;width:250px;height:250px;border:20px solid #dfc79f22;border-radius:50%;top:50%;left:50%;transform:translate(-50%,-50%)}
+.plate{position:absolute;top:47%;left:50%;transform:translate(-50%,-50%) rotate(-14deg);width:290px;height:290px;border-radius:50%;background:radial-gradient(circle,#f4dfb0 0 48%,#c7ae82 51%,#faf2d8 56%,#c8b592 61%,#cab285 65%,transparent 66%);filter:drop-shadow(8px 14px 15px #061b15a0);display:grid;place-items:center}
+.food-icon{font-size:130px;line-height:1;filter:drop-shadow(0 8px 5px #3e2c1a55)}
+.art-caption{position:absolute;bottom:25px;left:24px;right:24px;padding:10px 15px;background:#0b201ac9;color:#fff4d8;border-radius:5px;text-align:center;font-size:11px;letter-spacing:.15em;text-transform:uppercase}
+.stamp{position:absolute;z-index:2;right:20px;top:20px;border-radius:50%;width:88px;height:88px;display:grid;place-items:center;text-align:center;transform:rotate(12deg);background:var(--gold);color:#193026;font-size:11px;font-weight:900;line-height:1.2;box-shadow:0 8px 20px #0004}
+.facts{display:flex;flex-wrap:wrap;gap:15px 32px;border-top:1px solid var(--line);margin-top:34px;padding-top:19px;color:var(--muted);font-size:12px}
+.facts strong{color:var(--ink)}
+section.section{padding:80px 0;border-top:1px solid var(--line)}
+.section-intro{max-width:670px;color:var(--muted);line-height:1.7}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px;margin-top:34px}
+.food-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:21px;min-width:0}
+.food-card .visual{height:145px;display:grid;place-items:center;font-size:73px;background:var(--panel);border-radius:calc(var(--radius) - 2px);margin-bottom:19px}
+.food-card h3{margin:0 0 12px}.food-card p{font-size:13px;color:var(--muted);line-height:1.7}
+.ribbon{background:var(--deep);padding:74px 0;color:#f9f5e7}
+.ribbon h2{max-width:790px}.ribbon p{max-width:700px;color:#cfdbd0;line-height:1.8}
+.location-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.address{font-size:19px;line-height:1.8;font-style:normal;margin:25px 0}
+.map-panel{min-height:330px;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:32px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:10px}
+.map-panel .pin{font-size:76px}.map-panel strong{font-size:26px}
+.note{margin-top:20px;color:var(--muted);font-size:12px;line-height:1.8}
+.photo-row{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-top:24px}
+.photo-box{height:190px;border:1px dashed var(--line);border-radius:var(--radius);background:var(--panel);display:flex;align-items:center;justify-content:center;gap:9px;flex-direction:column;color:var(--muted);font-size:12px;overflow:hidden;text-align:center;padding:10px}
+.photo-box b{font-size:42px}.photo-box img{width:100%;height:100%;object-fit:cover}
+.photo-btn{display:inline-block;margin-top:16px;cursor:pointer;font-size:13px;font-weight:750;border-bottom:1px solid var(--accent);padding-bottom:4px}
+.photo-btn input{position:absolute;width:1px;height:1px;opacity:0}
+footer{background:var(--deep);color:#fff2d9;padding:34px 0}
+.footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:12px}
+.footer-inner a{color:#fff2d9}.footer-inner small{color:#c0ccbd}
+.float{position:fixed;z-index:30;bottom:max(12px,env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);display:flex;gap:5px;width:min(95%,460px);padding:6px;border-radius:100px;background:#16352b;color:#fff9df;border:1px solid #668473;box-shadow:0 12px 35px #0005}
+.float a,.float button{flex:1;display:grid;place-items:center;min-height:43px;background:transparent;border:0;border-radius:100px;color:inherit;text-decoration:none;font-size:12px;font-weight:800}
+.float a.primary{background:#e7bd75;color:#162b22}
+#dp-demo.modern .hero{background:radial-gradient(ellipse at 65% 5%,#24445b 0,transparent 62%)}
+#dp-demo.modern h1,#dp-demo.modern h2{font-family:systdp-ui,sans-serif;font-weight:900;letter-spacing:-.07em}
+#dp-demo.modern h1{font-size:clamp(61px,9vw,130px)}
+#dp-demo.modern .hero-art{border:1px solid var(--line);transform:rotate(3deg);background:radial-gradient(circle at 45% 45%,#34536f 0,#071320 68%)}
+#dp-demo.modern .hero-grid{grid-template-columns:1fr 1fr}
+#dp-demo.modern .food-card{background:linear-gradient(145deg,var(--surface),var(--panel))}
+#dp-demo.modern .float{background:#071320;border-color:#47617a}
+@media(max-width:780px){.hero-grid,#dp-demo.modern .hero-grid,.location-grid{grid-template-columns:1fr}.hero{padding:35px 0 55px}.hero-art{min-height:300px}.plate{width:205px;height:205px}.food-icon{font-size:94px}.cards{grid-template-columns:1fr 1fr}.location-grid{gap:28px}.top-inner{flex-wrap:wrap;min-height:66px;padding-block:12px}.top-controls{margin-left:auto}.brand{font-size:16px}nav{gap:15px}.photo-row{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){h1{font-size:58px}.top-inner{gap:8px}.pill{padding:8px 10px}.lang{padding:7px 5px;font-size:12px}.hero-art{min-height:285px}.cards{grid-template-columns:1fr}.food-card{display:grid;grid-template-columns:94px 1fr;gap:16px;align-items:center}.food-card .visual{height:94px;font-size:48px;margin:0}.food-card h3{font-size:19px}.food-card p{margin:0}.photo-box{height:142px}.section{padding:55px 0!important}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style></head>
+<body><main id="dp-demo" class="classic">
+<div class="demo-note" data-t="notice">ODPC-KUNDENVORSCHAU · NOCH KEINE OFFIZIELLE WEBSEITE · BETRIEBSDATEN VOR ORT PRÜFEN</div>
+<header class="top"><div class="wrap">
+<div class="top-inner">
+<a class="brand" href="#start">DÖNER <span>PARADIES</span><small>KOBLENZ · MÜNZSTRASSE</small></a>
+<div class="top-controls" aria-label="Darstellung und Sprache">
+<button type="button" class="pill" id="dp-classic" aria-pressed="true" data-t="classic">Klassisch</button>
+<button type="button" class="pill" id="dp-modern" aria-pressed="false" data-t="modern">Modern</button>
+<select class="lang" id="dp-lang" aria-label="Sprache"><option value="de">🇩🇪 DE</option><option value="en">🇬🇧 EN</option><option value="tr">🇹🇷 TR</option></select>
+</div></div>
+<nav aria-label="Navigation"><a href="#start" data-t="home">Start</a><a href="#speisekarte" data-t="menu">Speisekarte</a><a href="#fotos" data-t="photos">Fotos</a><a href="#besuch" data-t="visit">Anfahrt</a><a href="#kontakt" data-t="contact">Kontakt</a></nav>
+</div></header>
+<section class="hero" id="start"><div class="wrap hero-grid">
+<div><span class="kicker" data-t="kicker">Dein Genussmoment in der Altstadt</span>
+<h1 data-t="headline">Hier schmeckt <em>Koblenz.</em></h1>
+<p class="lead" data-t="lead">Original Berliner Kebap, Pizza und vegetarische Gerichte – mitten in der Koblenzer Altstadt. Diese ODPC-Demo zeigt eine eigenständige Website als Ergänzung zur vorhandenen Bestellplattform.</p>
+<div class="actions"><a class="btn" href="#speisekarte" data-t="menuSee">Speisekarte entdecken</a><a class="btn outline" href="#besuch" data-t="directions">Standort ansehen</a><a class="btn outline" href="https://www.doenerparadieskoblenz.de/" target="_blank" rel="noopener noreferrer" data-t="order">Online bestellen ↗</a></div>
+<div class="facts"><span>📍 <strong>Münzstraße 18</strong> · 56068 Koblenz</span><span>🥙 <span data-t="takeout">Gastronomie & Imbiss</span></span></div>
+</div><div class="hero-art" role="img" aria-label="Illustrative Food-Grafik, kein echtes Produktfoto">
+<div class="stamp" data-t="stamp">DEINE<br>PAUSE<br>IN KO</div><div class="plate"><span class="food-icon">🥙</span></div>
+<div class="art-caption" data-t="visualDisclaimer">Illustration · keine Originalaufnahme</div></div>
+</div></section>
+<section class="section" id="speisekarte"><div class="wrap">
+<span class="kicker" data-t="foodTag">Genuss auf einen Blick</span><h2 data-t="menuTitle">Für jeden Hunger<br>das Richtige.</h2>
+<p class="section-intro" data-t="menuNote">Beispiel-Kategorien für die Kundenvorschau. Tatsächliches Sortiment, Allergene und Preise werden erst nach Bestätigung durch den Betreiber veröffentlicht.</p>
+<div class="cards">
+<article class="food-card"><div class="visual">🥙</div><div><h3 data-t="cardOne">Original Berliner Kebap</h3><p data-t="cardOneDesc">Drehspieß-Sandwich, Dürüm und Lahmacun als eigene Speisekartenrubrik.</p></div></article>
+<article class="food-card"><div class="visual">🍕</div><div><h3 data-t="cardTwo">Pizza & Wunsch-Pizza</h3><p data-t="cardTwoDesc">Klassische Pizza, Pizza Paradies und Wunsch-Pizza übersichtlich präsentiert.</p></div></article>
+<article class="food-card"><div class="visual">🥗</div><div><h3 data-t="cardThree">Falafel & Halloumi</h3><p data-t="cardThreeDesc">Vegetarische Alternativen, Salate und Beilagen – Sortiment vor Veröffentlichung prüfen.</p></div></article>
+</div>
+</div></section>
+<section class="ribbon"><div class="wrap"><span class="kicker" data-t="ribbonTag">Für Stammgäste. Für Entdecker.</span>
+<h2 data-t="ribbonTitle">Dein nächster Lieblingsstopp in Koblenz.</h2>
+<p data-t="ribbonText">Gut auffindbar auf dem Smartphone, mit kurzer Speisekarte, direktem Kontakt und Routenplanung. Genau dafür ist diese ODPC-Demo gestaltet.</p></div></section>
+<section class="section" id="fotos"><div class="wrap"><span class="kicker" data-t="photosTag">Echte Einblicke</span><h2 data-t="photosTitle">Der Laden. Das Essen. Die Menschen.</h2>
+<p class="section-intro" data-t="photosText">Die drei Felder sind Platzhalter. Aufgenommene Fotos erscheinen hier nur auf deinem Gerät und werden nicht auf den Server hochgeladen.</p>
+<div class="photo-row" id="dp-gallery"><div class="photo-box"><b>🏠</b><span data-t="placeholderOne">Ladenfoto</span></div><div class="photo-box"><b>🥙</b><span data-t="placeholderTwo">Gerichte</span></div><div class="photo-box"><b>✨</b><span data-t="placeholderThree">Atmosphäre</span></div></div>
+<label class="photo-btn" data-t="addPhotos">📸 Fotos vor Ort auswählen <input id="dp-pictures" type="file" accept="image/*" multiple></label>
+</div></section>
+<section class="section" id="besuch"><div class="wrap location-grid">
+<div><span class="kicker" data-t="visitTag">Mitten in der Altstadt</span><h2 data-t="visitTitle">Du findest uns<br>ganz einfach.</h2>
+<address class="address">Döner Paradies<br>Münzstraße 18<br>56068 Koblenz</address>
+<a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Emin%27s%20Grill%20M%C3%BCnzstra%C3%9Fe%2018%20Koblenz" target="_blank" rel="noopener noreferrer" data-t="maps">Route in Google Maps öffnen</a>
+<p class="note" data-t="addressNote">Name und Adresse aus öffentlichen Brancheneinträgen. Vor Übergabe an den Betreiber auf Richtigkeit prüfen.</p>
+</div><div class="map-panel"><span class="pin">📍</span><strong>KOBLENZ</strong><span>MÜNZSTRASSE 18</span><small data-t="mapLabel">Altstadt · zentral gelegen</small></div>
+</div></section>
+<section class="section" id="kontakt"><div class="wrap"><span class="kicker" data-t="contactTag">Dein direkter Draht</span><h2 data-t="contactTitle">Komm vorbei.</h2>
+<p class="section-intro" data-t="contactText">Öffnungszeiten, Telefonnummer, WhatsApp und Impressum werden vom Betreiber vor der offiziellen Veröffentlichung bestätigt.</p>
+<div class="actions"><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=M%C3%BCnzstra%C3%9Fe%2018%2056068%20Koblenz" target="_blank" rel="noopener noreferrer" data-t="findUs">Jetzt finden</a>
+<a class="btn outline" href="https://www.doenerparadieskoblenz.de/" target="_blank" rel="noopener noreferrer" data-t="order">Online bestellen ↗</a></div>
+<p class="note" data-t="callNote">Der Bestellbutton führt zur bestehenden Bestellseite des Betriebs (Lieferando). Diese ODPC-Demo nimmt selbst keine Bestellungen entgegen.</p></div></section>
+<footer><div class="wrap footer-inner"><div><strong>Döner Paradies · Koblenz</strong><br><small data-t="footerText">Unverbindliche private Kundendemonstration · keine offizielle Betreiberseite</small></div><div><span data-t="legal">Impressum & Datenschutz: vor Veröffentlichung durch Betreiber ergänzen</span><br><a href="https://odpc.de" target="_blank" rel="noopener noreferrer">powered by odpc.de</a></div></div></footer>
+<div class="float" aria-label="Schnellaktionen"><a href="#start" data-t="floatHome">⌂ Start</a><a href="#speisekarte" data-t="floatMenu">☰ Karte</a><button type="button" id="dp-speak" data-t="speak">🔊 Hören</button><a class="primary" href="#besuch" data-t="floatRoute">↗ Route</a></div>
+</main>
+<script>
+(function(){
+const root=document.getElementById('dp-demo');
+const classic=document.getElementById('dp-classic'),modern=document.getElementById('dp-modern'),langs=document.getElementById('dp-lang');
+const dict={
+de:{notice:"ODPC-KUNDENVORSCHAU · NOCH KEINE OFFIZIELLE WEBSEITE · BETRIEBSDATEN VOR ORT PRÜFEN",classic:"Klassisch",modern:"Modern",home:"Start",menu:"Speisekarte",photos:"Fotos",visit:"Anfahrt",contact:"Kontakt",kicker:"Dein Genussmoment in der Altstadt",headline:"Hier schmeckt <em>Koblenz.</em>",lead:"Original Berliner Kebap, Pizza und vegetarische Gerichte – mitten in der Koblenzer Altstadt. Diese ODPC-Demo zeigt eine eigenständige Website als Ergänzung zur vorhandenen Bestellplattform.",menuSee:"Speisekarte entdecken",directions:"Standort ansehen",takeout:"Gastronomie & Imbiss",stamp:"DEINE<br>PAUSE<br>IN KO",visualDisclaimer:"Illustration · keine Originalaufnahme",foodTag:"Genuss auf einen Blick",menuTitle:"Für jeden Hunger<br>das Richtige.",menuNote:"Beispiel-Kategorien für die Kundenvorschau. Tatsächliches Sortiment, Allergene und Preise werden erst nach Bestätigung durch den Betreiber veröffentlicht.",cardOne:"Original Berliner Kebap",cardOneDesc:"Drehspieß-Sandwich, Dürüm und Lahmacun als eigene Speisekartenrubrik.",cardTwo:"Pizza & Wunsch-Pizza",cardTwoDesc:"Klassische Pizza, Pizza Paradies und Wunsch-Pizza übersichtlich präsentiert.",cardThree:"Falafel & Halloumi",cardThreeDesc:"Vegetarische Alternativen, Salate und Beilagen – Sortiment vor Veröffentlichung prüfen.",ribbonTag:"Für Stammgäste. Für Entdecker.",ribbonTitle:"Dein nächster Lieblingsstopp in Koblenz.",ribbonText:"Gut auffindbar auf dem Smartphone, mit kurzer Speisekarte, direktem Kontakt und Routenplanung. Genau dafür ist diese ODPC-Demo gestaltet.",photosTag:"Echte Einblicke",photosTitle:"Der Laden. Das Essen. Die Menschen.",photosText:"Die drei Felder sind Platzhalter. Aufgenommene Fotos erscheinen hier nur auf deinem Gerät und werden nicht auf den Server hochgeladen.",placeholderOne:"Ladenfoto",placeholderTwo:"Gerichte",placeholderThree:"Atmosphäre",addPhotos:"📸 Fotos vor Ort auswählen",visitTag:"Mitten in der Altstadt",visitTitle:"Du findest uns<br>ganz einfach.",maps:"Route in Google Maps öffnen",addressNote:"Name und Adresse aus öffentlichen Brancheneinträgen. Vor Übergabe an den Betreiber auf Richtigkeit prüfen.",mapLabel:"Altstadt · zentral gelegen",contactTag:"Dein direkter Draht",contactTitle:"Komm vorbei.",contactText:"Öffnungszeiten, Telefonnummer, WhatsApp und Impressum werden vom Betreiber vor der offiziellen Veröffentlichung bestätigt.",findUs:"Jetzt finden",call:"Anrufen*",callNote:"Der Bestellbutton führt zur bestehenden Bestellseite des Betriebs (Lieferando). Diese ODPC-Demo nimmt selbst keine Bestellungen entgegen.",footerText:"Unverbindliche private Kundendemonstration · keine offizielle Betreiberseite",legal:"Impressum & Datenschutz: vor Veröffentlichung durch Betreiber ergänzen",floatHome:"⌂ Start",floatMenu:"☰ Karte",speak:"🔊 Hören",stop:"■ Stop",order:"Online bestellen ↗",floatRoute:"↗ Route"},
+en:{notice:"ODPC CLIENT PREVIEW · NOT AN OFFICIAL WEBSITE · VERIFY ALL DETAILS",classic:"Classic",modern:"Modern",home:"Home",menu:"Menu",photos:"Photos",visit:"Directions",contact:"Contact",kicker:"Your food stop in the old town",headline:"Taste <em>Koblenz.</em>",lead:"Kebab, pizza and vegetarian options in the heart of Koblenz. This preview demonstrates an independent website alongside the existing order platform.",menuSee:"Explore menu",directions:"Find us",takeout:"Restaurant & takeaway",stamp:"YOUR<br>FOOD<br>STOP",visualDisclaimer:"Illustration · not a real food photo",foodTag:"At a glance",menuTitle:"Something for<br>every appetite.",menuNote:"Sample categories only. Actual menu items, allergens and prices require operator approval.",cardOne:"Original Berlin-style kebab",cardOneDesc:"Döner sandwich, dürüm and lahmacun presented in a clear menu.",cardTwo:"Pizza & custom pizza",cardTwoDesc:"Classic pizza, Pizza Paradies and build-your-own options.",cardThree:"Falafel & halloumi",cardThreeDesc:"Vegetarian meals, salads and side dishes, subject to verification.",ribbonTag:"For locals. For visitors.",ribbonTitle:"Your next food stop in Koblenz.",ribbonText:"Easy to find on your phone, with menu, contact and directions. That is what this ODPC preview demonstrates.",photosTag:"A closer look",photosTitle:"The place. The food. The people.",photosText:"These are placeholders. Selected photos display only on your device, without server upload.",placeholderOne:"Storefront",placeholderTwo:"Food",placeholderThree:"Atmosphere",addPhotos:"📸 Select local photos",visitTag:"In the old town",visitTitle:"Easy<br>to find.",maps:"Open Google Maps route",addressNote:"Business name and address from public listings; verify in person.",mapLabel:"Central old town",contactTag:"Get in touch",contactTitle:"Drop by.",contactText:"Hours, phone, WhatsApp and legal details must be approved before launch.",findUs:"Find us",call:"Call*",callNote:"The order button opens the existing Lieferando ordering platform; this ODPC preview does not accept orders.",footerText:"Private non-binding client demo · not an official operator site",legal:"Legal notice & privacy: to be completed before launch",floatHome:"⌂ Home",floatMenu:"☰ Menu",speak:"🔊 Listen",stop:"■ Stop",order:"Order online ↗",floatRoute:"↗ Route"},
+tr:{notice:"ODPC MÜŞTERİ ÖN İZLEMESİ · RESMÎ WEB SİTESİ DEĞİLDİR · BİLGİLER DOĞRULANMALIDIR",classic:"Klasik",modern:"Modern",home:"Ana sayfa",menu:"Menü",photos:"Fotoğraflar",visit:"Yol tarifi",contact:"İletişim",kicker:"Eski şehirde lezzet molası",headline:"Koblenz'de <em>lezzet.</em>",lead:"Koblenz'in merkezinde kebap, pizza ve vejetaryen seçenekler. Bu taslak, mevcut sipariş platformuna ek olarak bağımsız bir web sitesi fikrini gösterir.",menuSee:"Menüyü keşfet",directions:"Konumu gör",takeout:"Restoran ve paket servis",stamp:"LEZZET<br>MOLASI",visualDisclaimer:"İllüstrasyon · gerçek yemek fotoğrafı değil",foodTag:"Lezzetler",menuTitle:"Her damak<br>tadına uygun.",menuNote:"Bunlar yalnızca örnek kategorilerdir. Gerçek menü, alerjen ve fiyat bilgileri işletmeci tarafından onaylanmalıdır.",cardOne:"Orijinal Berlin kebabı",cardOneDesc:"Döner sandviç, dürüm ve lahmacun seçenekleri.",cardTwo:"Pizza ve özel pizza",cardTwoDesc:"Pizza çeşitleri ve kendi pizzanı oluştur seçeneği.",cardThree:"Falafel ve hellim",cardThreeDesc:"Vejetaryen seçenekler, salatalar ve yan ürünler; doğrulanmalıdır.",ribbonTag:"Yerel halk ve ziyaretçiler için",ribbonTitle:"Koblenz'deki bir sonraki lezzet durağın.",ribbonText:"Telefonlarda kolay erişim, menü, iletişim ve yol tarifi. ODPC demosunun amacı budur.",photosTag:"Yakından bakın",photosTitle:"Mekân. Yemekler. İnsanlar.",photosText:"Fotoğraf alanları örnektir. Seçilen fotoğraflar sunucuya yüklenmez.",placeholderOne:"Mekân",placeholderTwo:"Yemekler",placeholderThree:"Ortam",addPhotos:"📸 Fotoğraf seç",visitTag:"Eski şehrin merkezinde",visitTitle:"Bize ulaşmak<br>çok kolay.",maps:"Google Haritalar'da aç",addressNote:"İsim ve adres kamuya açık kayıtlardan; yerinde doğrulayın.",mapLabel:"Merkez · Eski şehir",contactTag:"İletişim",contactTitle:"Bekleriz.",contactText:"Çalışma saatleri, telefon, WhatsApp ve yasal bilgiler yayından önce onaylanmalıdır.",findUs:"Konumumuz",call:"Ara*",callNote:"Sipariş düğmesi mevcut Lieferando sipariş sayfasına yönlendirir; bu ODPC demosu sipariş almaz.",footerText:"Bağlayıcı olmayan özel müşteri demosu · resmî site değil",legal:"Künye ve gizlilik metinleri yayından önce eklenmelidir",floatHome:"⌂ Başla",floatMenu:"☰ Menü",speak:"🔊 Dinle",stop:"■ Durdur",order:"Online sipariş ↗",floatRoute:"↗ Rota"}
+};
+function translate(){const lang=langs.value;document.documentElement.lang=lang;for(const el of root.querySelectorAll('[data-t]')){const key=el.dataset.t;const v=(dict[lang]||dict.de)[key]||dict.de[key];if(v!==undefined){if(key==='addPhotos'){const input=el.querySelector('input');el.replaceChildren(document.createTextNode(v+' '));if(input)el.appendChild(input)}else if(['headline','stamp','menuTitle','visitTitle'].includes(key))el.innerHTML=v;else el.textContent=v}}}
+function setTheme(mode){const isModern=mode==='modern';root.classList.toggle('modern',isModern);root.classList.toggle('classic',!isModern);classic.setAttribute('aria-pressed',String(!isModern));modern.setAttribute('aria-pressed',String(isModern));try{localStorage.setItem('odpc-dp-mode',mode)}catch{}}
+classic.addEventListener('click',()=>setTheme('classic'));modern.addEventListener('click',()=>setTheme('modern'));langs.addEventListener('change',translate);
+try{setTheme(localStorage.getItem('odpc-dp-mode')==='modern'?'modern':'classic')}catch{setTheme('classic')}
+translate();
+const file=document.getElementById('dp-pictures'),gallery=document.getElementById('dp-gallery');let urls=[];
+file.addEventListener('change',()=>{urls.forEach(u=>URL.revokeObjectURL(u));urls=[];gallery.replaceChildren();for(const f of Array.from(file.files).filter(x=>x.type.startsWith('image/')).slice(0,3)){const u=URL.createObjectURL(f);urls.push(u);const img=document.createElement('img');img.src=u;img.alt='Vom Benutzer ausgewähltes lokales Foto';const box=document.createElement('div');box.className='photo-box';box.appendChild(img);gallery.appendChild(box)}});
+const speak=document.getElementById('dp-speak');let active=false;
+speak.addEventListener('click',()=>{if(!('speechSynthesis' in window)){speak.textContent='TTS nicht verfügbar';return;}if(active){speechSynthesis.cancel();active=false;speak.textContent=dict[langs.value].speak;return;}speechSynthesis.cancel();const t=dict[langs.value];const msg=new SpeechSynthesisUtterance(['Döner Paradies, Koblenz.',t.lead,t.menuNote].join(' '));msg.lang={de:'de-DE',en:'en-GB',tr:'tr-TR'}[langs.value];msg.rate=.94;msg.onend=msg.onerror=()=>{active=false;speak.textContent=t.speak};active=true;speak.textContent=t.stop;speechSynthesis.speak(msg)});
+})();
+</script></body></html>
+  <?php
+  exit;
+}, 0);
+
+
+/** ODPC YourBusiness three-client demo launcher, isolated from theme and core pages. */
+add_action('template_redirect', function () {
+  if (is_admin() || !isset($_GET['yb_showcase']) || $_GET['yb_showcase'] !== '1') return;
+  status_header(200);
+  nocache_headers();
+  ?>
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive"><meta name="theme-color" content="#0d2533">
+<meta name="description" content="Drei unabhängige mobile Kundenvorschauen für Koblenzer Gastronomiebetriebe von ODPC.">
+<title>ODPC · Drei Kunden · Live-Vorschau</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#0e2130;color:#f7f5ee;font:16px/1.6 system-ui,-apple-system,sans-serif}
+main{max-width:1150px;margin:auto;padding:clamp(28px,6vw,80px) 20px 90px}
+.eyebrow{color:#e8c17c;letter-spacing:.15em;text-transform:uppercase;font-size:12px;font-weight:800}
+h1{font-size:clamp(41px,7vw,79px);line-height:1.04;letter-spacing:-.05em;max-width:860px;margin:18px 0}
+.lead{font-size:18px;color:#bcccd0;max-width:720px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:45px}
+.card{display:flex;flex-direction:column;gap:12px;min-width:0;background:#172f40;padding:26px;border:1px solid #3c5665;border-radius:22px}
+.symbol{font-size:48px}.label{color:#e3b874;text-transform:uppercase;letter-spacing:.13em;font-size:11px;font-weight:800}
+h2{font-size:28px;letter-spacing:-.04em;line-height:1.2;margin:0}.address{font-size:13px;color:#becfd5;margin:0}
+.card p{color:#d6e0e1;font-size:14px;margin:4px 0 14px}
+a.button{display:block;text-align:center;margin-top:auto;background:#e9bd78;color:#172838;padding:15px 18px;font-weight:800;text-decoration:none;border-radius:12px}
+a:focus-visible{outline:3px solid white;outline-offset:3px}
+footer{border-top:1px solid #3c5665;margin-top:50px;padding-top:24px;color:#c1d1d8;font-size:12px}
+footer a{color:#e9c889}
+@media(max-width:790px){.grid{grid-template-columns:1fr}.card{min-height:0}main{padding-top:32px}}
+</style></head>
+<body><main><span class="eyebrow">ODPC · YourBusiness · Live-Kundenpräsentation</span>
+<h1>Drei Lokale.<br>Drei individuelle Websites.</h1>
+<p class="lead">Direkt vor Ort recherchiert, als Smartphone-Demo gestaltet und in getrennten Vorschauen bereitgestellt. Keine dieser Demos ist die offizielle Webseite des jeweiligen Betriebs.</p>
+<div class="grid">
+<article class="card"><div class="symbol">🍻</div><span class="label">01 · Kneipe & Schlagerbar</span><h2>Kleine Freiheit</h2><p class="address">Altenhof 6, 56068 Koblenz</p><p>Gemütlich-klassisches und modernes Konzept, passende Inhalte für eine Altstadtkneipe.</p><a class="button" href="/?yb_kleine_freiheit=1&amp;design=klassisch">Kundendemo öffnen ↗</a></article>
+<article class="card"><div class="symbol">🥙</div><span class="label">02 · Grill & Imbiss</span><h2>Emin's Grill</h2><p class="address">Münzstraße 18, 56068 Koblenz</p><p>Individuelle Grill-Vorschau mit zwei Designs, drei Sprachen und mobiler Navigation.</p><a class="button" href="/?yb_emins_grill=1">Kundendemo öffnen ↗</a></article>
+<article class="card"><div class="symbol">🍕</div><span class="label">03 · Döner & Pizza</span><h2>Döner Paradies</h2><p class="address">Münzstraße 18, 56068 Koblenz</p><p>Eigene Markenpräsenz zusätzlich zur bestehenden Lieferando-Bestellseite. Zwei Designs, drei Sprachen.</p><a class="button" href="/?yb_doener_paradies=1">Kundendemo öffnen ↗</a></article>
+</div><footer>Alle Unternehmensangaben und Bilder vor kommerzieller Veröffentlichung mit dem jeweiligen Betreiber abgleichen. <a href="https://odpc.de" target="_blank" rel="noopener noreferrer">powered by odpc.de</a></footer>
+</main></body></html>
+  <?php
+  exit;
+}, 0);
