@@ -29,6 +29,9 @@
     summary.textContent = 'Weitere Angaben, Fotos, Logo und Pflichtangaben prüfen';
     advanced.appendChild(summary);
     editor.insertBefore(advanced, locationButton);
+    const sectorLabel = el('sector')?.closest('label');
+    if (sectorLabel) advanced.appendChild(sectorLabel);
+
 
     // Keep every pre-existing field/event handler. Move only the detailed controls.
     const consent = el('consent').closest('label');
@@ -61,7 +64,9 @@
       if (!input || !value) return;
       if (id === 'sector' || !input.value.trim()) input.value = value;
     };
+    let selectedCompany = null;
     function applyCompany(record) {
+      selectedCompany = record;
       ['name', 'city', 'sector', 'phone', 'email', 'address', 'hours'].forEach(key => fill(key, record[key]));
       fill('site', record.website);
       fill('google', record.google);
@@ -134,6 +139,42 @@
       }
     });
 
+    // Mark researched editorial copy as draft. Never fabricate a legal imprint.
+    const extendPreview = () => {
+      const company = selectedCompany;
+      if (!company) return;
+      const content = root.querySelector('.yb-preview .yb-content');
+      if (!content) return;
+      const section = document.createElement('section');
+      section.style.marginTop = '28px';
+      const heading = document.createElement('h2');
+      heading.textContent = 'Über uns';
+      section.appendChild(heading);
+      if (company.intro) {
+        const p = document.createElement('p');
+        p.textContent = company.intro;
+        section.appendChild(p);
+      }
+      if (Array.isArray(company.features) && company.features.length) {
+        const h = document.createElement('h3'); h.textContent = 'Was dich erwartet';
+        section.appendChild(h);
+        const ul = document.createElement('ul');
+        company.features.forEach(f => { const li = document.createElement('li'); li.textContent = f; ul.appendChild(li); });
+        section.appendChild(ul);
+      }
+      if (company.history) {
+        const h = document.createElement('h3'); h.textContent = 'Geschichte unseres Standorts';
+        const p = document.createElement('p'); p.textContent = company.history;
+        section.appendChild(h); section.appendChild(p);
+      }
+      const disclaimer = document.createElement('p');
+      disclaimer.style.cssText = 'font-size:12px;color:#526179;border-top:1px solid #ddd;padding-top:12px';
+      disclaimer.textContent = 'Unveröffentlichter Entwurf: Inhalte und Pflichtangaben vor dem Livegang mit dem Betrieb prüfen.';
+      section.appendChild(disclaimer);
+      content.appendChild(section);
+    };
+    const previewButton = el('build');
+    if (previewButton) previewButton.addEventListener('click', extendPreview);
     // Show researched address/hours in the local preview without publishing them.
     const build = el('build');
     if (build) build.addEventListener('click', () => {
