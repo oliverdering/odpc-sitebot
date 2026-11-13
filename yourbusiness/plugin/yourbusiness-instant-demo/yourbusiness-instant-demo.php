@@ -218,6 +218,29 @@ body{margin:0}
 #kf-demo.kf-theme-klassisch .kf-card{border-radius:0}
 @media(max-width:700px){#kf-demo .kf-hero-sign{inset:auto 12px 12px}#kf-demo .kf-hero-sign .kf-original-sign-style{padding:4px;min-height:80px}#kf-demo .kf-hero-sign .kf-sign-banner{min-height:76px}#kf-demo .kf-hero-sign .kf-sign-banner strong{font-size:clamp(29px,7vw,43px)}}
 
+/* ODPC dual visual systems: Grenzau heritage versus blue urban nightlife */
+#kf-demo.kf-theme-klassisch{--bg:#f1ead8;--fg:#173e2e;--sub:#4b594c;--paper:#fcf8ed;--panel:#e5dcc6;--line:#d4c7ad;--accent:#9a7537;--deep:#102d22;--radius:0}
+#kf-demo.kf-theme-klassisch .kf-top{background:#f1ead8f5}
+#kf-demo.kf-theme-klassisch .kf-brand{font-family:Georgia,serif;font-weight:600;text-transform:none;font-size:22px;letter-spacing:-.035em}
+#kf-demo.kf-theme-klassisch .kf-modes{border-radius:0}
+#kf-demo.kf-theme-klassisch .kf-modes a{border-radius:0}
+#kf-demo.kf-theme-klassisch .kf-hero{background:linear-gradient(120deg,#f1ead8,#faf5e8 65%,#e9dfc8)}
+#kf-demo.kf-theme-klassisch .kf-scene{border:10px solid #fcf8ed}
+#kf-demo.kf-theme-modern{--bg:#07101f;--fg:#f8fbff;--sub:#b8c9db;--paper:#0e2138;--panel:#132d4a;--line:#294b6b;--accent:#4dd5ef;--deep:#020b17;--radius:18px}
+#kf-demo.kf-theme-modern .kf-top{background:#07101ff2;border-bottom:1px solid #286283}
+#kf-demo.kf-theme-modern .kf-brand{font-family:system-ui,sans-serif;font-size:18px;font-weight:900;letter-spacing:.17em}
+#kf-demo.kf-theme-modern h1,#kf-demo.kf-theme-modern h2{font-family:system-ui,sans-serif;font-weight:850;letter-spacing:-.055em;text-transform:uppercase}
+#kf-demo.kf-theme-modern h1{font-size:clamp(48px,7.2vw,112px);line-height:.96}
+#kf-demo.kf-theme-modern .kf-hero{background:radial-gradient(ellipse at 83% 20%,#174a75 0%,transparent 55%),linear-gradient(135deg,#020a16,#0a1c34 65%,#04101f)}
+#kf-demo.kf-theme-modern .kf-hero-grid{grid-template-columns:1.12fr .88fr;gap:35px}
+#kf-demo.kf-theme-modern .kf-scene{transform:rotate(1deg);border:5px solid #26789b;box-shadow:0 24px 100px #00a7ff2b}
+#kf-demo.kf-theme-modern .kf-button{border-radius:100px;text-transform:uppercase;letter-spacing:.08em}
+#kf-demo.kf-theme-modern .kf-card{background:linear-gradient(150deg,#15324e,#0b1a30);border:1px solid #28577a;box-shadow:0 16px 40px #0005;border-radius:18px}
+#kf-demo.kf-theme-modern .kf-modes{border-color:#3c6786;background:#10253b}
+#kf-demo.kf-theme-modern .kf-modes a[aria-current=page]{background:#4dd5ef;color:#061325}
+#kf-demo.kf-theme-modern .kf-original-sign-style .kf-sign-banner{background:#e8e3d6}
+@media(max-width:800px){#kf-demo.kf-theme-modern .kf-hero-grid{grid-template-columns:1fr}#kf-demo.kf-theme-modern .kf-scene{transform:none}}
+
 /* ODPC-LICENSED-PHOTO-SET-20261113: curated Commons material, all labelled as samples. */
 #kf-demo .kf-photo-gallery{display:grid;grid-template-columns:1.13fr .87fr;gap:18px;margin-top:24px}
 /* Real owner-supplied photos take precedence over unrelated stock examples. */
@@ -341,6 +364,23 @@ body{margin:0}
   </div>
 </section>
 <script>
+(function(){
+  const root=document.getElementById('kf-demo');
+  const switches=Array.from(document.querySelectorAll('.kf-modes [data-kf-mode]'));
+  const valid=['klassisch','modern'];
+  function setDesign(mode){
+    if(!valid.includes(mode))return;
+    root.classList.toggle('kf-theme-klassisch',mode==='klassisch');
+    root.classList.toggle('kf-theme-modern',mode==='modern');
+    root.dataset.kfMode=mode;
+    switches.forEach(a=>{if(a.dataset.kfMode===mode)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
+    try{localStorage.setItem('odpc-kleine-freiheit-design',mode)}catch(e){}
+    const url=new URL(location.href);url.searchParams.set('design',mode);history.replaceState(null,'',url);
+    document.querySelector('meta[name="theme-color"]')?.setAttribute('content',mode==='klassisch'?'#173e2e':'#07101f');
+  }
+  switches.forEach(a=>a.addEventListener('click',e=>{e.preventDefault();setDesign(a.dataset.kfMode)}));
+  try{const saved=localStorage.getItem('odpc-kleine-freiheit-design');if(valid.includes(saved)&&!new URLSearchParams(location.search).has('design'))setDesign(saved)}catch(e){}
+})();
 (function(){
   const picker=document.getElementById('kf-local-photo-input');
   const figures=Array.from(document.querySelectorAll('#kf-bilder .kf-photo-gallery figure'));
