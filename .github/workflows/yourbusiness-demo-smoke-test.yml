@@ -50,3 +50,36 @@ jobs:
           curl --fail --location --silent --show-error --max-time 25 --retry 2 --output /tmp/yb-home.html 'https://yourbusiness.odpc.de/'
           grep -q 'Jetzt Kundenwebseite live erstellen' /tmp/yb-home.html
           echo "YOURBUSINESS_MOBILE_BUILDER_AND_ENTRY_READY"
+      - name: Verify research scripts and real public lookup endpoint
+        shell: bash
+        run: |
+          set -euo pipefail
+          grep -q 'window.YourBusinessResearch' /tmp/yb-demo.html
+          grep -q 'research.js' /tmp/yb-demo.html
+          curl --fail --location --silent --show-error --max-time 25 --retry 2 -o /tmp/yb-research.js 'https://yourbusiness.odpc.de/wp-content/plugins/yourbusiness-instant-demo/research.js'
+          grep -q 'Firmendaten automatisch recherchieren' /tmp/yb-research.js
+          python - <<'PY' > /tmp/yb-nonce.txt
+          import re,json
+          html = open('/tmp/yb-demo.html').read()
+          match = re.search(r'window\.YourBusinessResearch\s*=\s*(\{.*?\})\s*;', html, re.S)
+          if not match: raise SystemExit('Research bootstrap JSON not found')
+          config=json.loads(match.group(1))
+          assert config['url'].startswith('https://yourbusiness.odpc.de/')
+          print(config['nonce'])
+          PY
+          curl --fail --location --silent --show-error --max-time 25 --retry 2 \
+            -o /tmp/yb-discover.json \
+            --data-urlencode 'action=yb_discover' \
+            --data-urlencode "nonce=$(cat /tmp/yb-nonce.txt)" \
+            --data-urlencode 'company=Kleine Freiheit' \
+            --data-urlencode 'city=Koblenz' \
+            'https://yourbusiness.odpc.de/wp-admin/admin-ajax.php'
+          python - <<'PY'
+          import json
+          o=json.load(open('/tmp/yb-discover.json'))
+          assert o['success'] is True, o
+          a=o['data']['candidates']
+          assert a and a[0]['name']=='Kleine Freiheit' and 'Altenhof 6' in a[0]['address']
+          assert 'intro' in a[0] and 'history' in a[0]
+          print('YOURBUSINESS_PUBLIC_RESEARCH_ENDPOINT_READY')
+          PY
