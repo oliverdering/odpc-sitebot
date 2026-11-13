@@ -7,11 +7,13 @@ USER="acc1461323326"
 PIN="SHA256:1gx2w8Rtv3wCgi7Jh8myf/KVd72cRQbow03UP8P095Q"
 BASE="/YourBusiness/wp-content/plugins"
 NAME="yourbusiness-instant-demo"
-SOURCE=pathlib.Path(__file__).resolve().parents[1]/"yourbusiness/plugin"/NAME/(NAME+".php")
+SOURCE_DIR=pathlib.Path(__file__).resolve().parents[1]/"yourbusiness/plugin"/NAME
+FILES=(NAME+".php", "discover.php", "research.js")
 def main():
     password=os.environ.get("ODPC_SFTP_PASSWORD")
     if not password: raise RuntimeError("Missing ODPC_SFTP_PASSWORD")
-    if not SOURCE.is_file(): raise RuntimeError("Plugin source missing")
+    for filename in FILES:
+        if not (SOURCE_DIR/filename).is_file(): raise RuntimeError("Plugin source missing: "+filename)
     transport=paramiko.Transport((HOST,22))
     transport.start_client(timeout=30)
     try:
@@ -26,10 +28,14 @@ def main():
             try: sftp.mkdir(target)
             except OSError:
                 if not stat.S_ISDIR(sftp.stat(target).st_mode): raise
-            remote=target+"/"+NAME+".php"
-            with SOURCE.open("rb") as src, sftp.open(remote,"wb") as dest:
-                while chunk:=src.read(65536): dest.write(chunk)
-            if sftp.stat(remote).st_size!=SOURCE.stat().st_size: raise RuntimeError("Upload size mismatch")
+            for filename in FILES:
+                local=SOURCE_DIR/filename
+                remote=target+"/"+filename
+                with local.open("rb") as src, sftp.open(remote,"wb") as dest:
+                    while chunk:=src.read(65536): dest.write(chunk)
+                if sftp.stat(remote).st_size!=local.stat().st_size:
+                    raise RuntimeError("Upload size mismatch: "+filename)
+                print("Uploaded and verified: "+filename)
             print("YOURBUSINESS_PLUGIN_UPLOADED_AND_VERIFIED")
         finally: sftp.close()
     finally: transport.close()
