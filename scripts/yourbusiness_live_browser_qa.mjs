@@ -36,6 +36,14 @@ try {
     if(mode!==expected)r.errors.push('Wrong theme: '+mode);
     if(await page.locator('#kf-bilder img').count()<2)r.errors.push('Missing local photo gallery');
     if(await page.locator('#kf-local-photo-input').count()!==1)r.errors.push('Missing local photo picker');
+    // Kleine Freiheit confirmed field checks from 13 November on-site record.
+    const kfText = await page.locator('#kf-demo').innerText();
+    for (const expected of ['Charly', 'Bitburger', 'Königsbacher', 'Raucherkneipe']) {
+      if(!kfText.includes(expected))r.errors.push('Missing Kleine Freiheit detail: '+expected);
+    }
+    const kfGalleryCount = await page.locator('#kf-bilder .kf-photo-gallery img').count();
+    if(kfGalleryCount !== 2 && kfGalleryCount !== 15)r.errors.push('Kleine Freiheit gallery expected 2 placeholders or 15 originals, found '+kfGalleryCount);
+
     if(await page.locator('.kf-float-nav').count()!==0)r.errors.push('Legacy floating bar still present');
     if(await page.locator('#kf-accessibility').count()!==1)r.errors.push('Unified toolbar missing');
     const toolbar=page.locator('#kf-accessibility');
