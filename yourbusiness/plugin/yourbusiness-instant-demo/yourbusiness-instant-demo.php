@@ -2,10 +2,11 @@
 /**
  * Plugin Name: YourBusiness Instant Demo
  * Description: Mobile-first local customer website demo, without publication or server-side personal data storage.
- * Version: 0.1.1
+ * Version: 0.2.0
  * Author: ODPC
  */
 if (!defined('ABSPATH')) exit;
+require_once plugin_dir_path(__FILE__) . 'discover.php';
 
 // Direct mobile builder route; independent of pretty-permalink configuration.
 add_action('template_redirect', function () {
@@ -30,10 +31,21 @@ add_action('wp_footer', function () {
   echo '</div>';
 });
 add_shortcode('yourbusiness_demo', function () {
+  wp_enqueue_script(
+    'yourbusiness-research',
+    plugins_url('research.js', __FILE__),
+    [],
+    '0.2.0',
+    true
+  );
+  wp_add_inline_script('yourbusiness-research', 'window.YourBusinessResearch = ' . wp_json_encode([
+    'url' => admin_url('admin-ajax.php'),
+    'nonce' => wp_create_nonce('yb_discover')
+  ]) . ';', 'before');
   ob_start(); ?>
 <div id="yb-demo" class="yb-app">
   <div class="yb-editor">
-    <h2>Website in Minuten</h2><p>Unternehmensdaten eingeben oder übernehmen. Die Vorschau bleibt zunächst privat in diesem Browser.</p>
+    <h2>Website in Minuten</h2><p><strong>Nur Firmenname und Ort eingeben.</strong> Öffentliche Angaben automatisch recherchieren und danach eine private Webseiten-Vorschau erstellen.</p>
     <label>Firma <input id="yb-name" maxlength="100" placeholder="z. B. Müller Gebäudetechnik" required></label>
     <label>Branche <select id="yb-sector"><option>Handwerk</option><option>Gastronomie</option><option>Immobilien</option><option>Beratung</option><option>Einzelhandel</option><option>Dienstleistung</option><option>Gesundheit</option><option>Sonstiges</option></select></label>
     <label>Ort <input id="yb-city" maxlength="100" placeholder="z. B. Koblenz"></label>
