@@ -36,6 +36,15 @@ try {
     if(mode!==expected)r.errors.push('Wrong theme: '+mode);
     if(await page.locator('#kf-bilder img').count()<2)r.errors.push('Missing local photo gallery');
     if(await page.locator('#kf-local-photo-input').count()!==1)r.errors.push('Missing local photo picker');
+    if(await page.locator('.kf-float-nav').count()!==0)r.errors.push('Legacy floating bar still present');
+    if(await page.locator('#kf-accessibility').count()!==1)r.errors.push('Unified toolbar missing');
+    const toolbar=page.locator('#kf-accessibility');
+    const toolbarBox=await toolbar.boundingBox();
+    if(!toolbarBox || toolbarBox.x<0 || toolbarBox.x+toolbarBox.width>390)r.errors.push('Unified toolbar exceeds viewport');
+    const toolbarButtons=['#kf-voice-language','#kf-read','#kf-stop','#kf-mic','#kf-accessibility a[href="#kf-start"]','#kf-accessibility a[href="#kf-visit"]'];
+    for(const selector of toolbarButtons)if(!await page.locator(selector).isVisible())r.errors.push('Toolbar control hidden: '+selector);
+    r.actions.push('single toolbar without overlapping navigation');
+
     r.actions.push('theme query: '+mode);
    }
    if (route.name==='emins-grill'||route.name==='doener-paradies'){
