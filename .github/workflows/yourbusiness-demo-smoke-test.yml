@@ -47,6 +47,19 @@ jobs:
           grep -q 'id="yb-build"' /tmp/yb-demo.html
           grep -q 'id="yb-google-search"' /tmp/yb-demo.html
           grep -q 'id="yb-whatsapp"' /tmp/yb-demo.html
+          # Dedicated Kleine Freiheit presentation must be public and independent of the builder.
+          curl --fail --location --silent --show-error --max-time 25 --retry 2 --output /tmp/yb-kleine-freiheit.html 'https://yourbusiness.odpc.de/?yb_kleine_freiheit=1'
+          grep -q 'id="kf-demo"' /tmp/yb-kleine-freiheit.html
+          grep -q 'id="kf-switch"' /tmp/yb-kleine-freiheit.html
+          grep -q 'id="kf-drinks"' /tmp/yb-kleine-freiheit.html
+          grep -q 'id="kf-story"' /tmp/yb-kleine-freiheit.html
+          grep -q 'kf-classic' /tmp/yb-kleine-freiheit.html
+          grep -q 'max-width:700px' /tmp/yb-kleine-freiheit.html
+          if grep -q 'class="yb-launch-cta"' /tmp/yb-kleine-freiheit.html; then
+            echo 'Unexpected builder overlay in customer presentation' >&2
+            exit 1
+          fi
+          echo 'KLEINE_FREIHEIT_PRESENTATION_READY'
           curl --fail --location --silent --show-error --max-time 25 --retry 2 --output /tmp/yb-home.html 'https://yourbusiness.odpc.de/'
           grep -q 'Jetzt Kundenwebseite live erstellen' /tmp/yb-home.html
           echo "YOURBUSINESS_MOBILE_BUILDER_AND_ENTRY_READY"
