@@ -16,7 +16,7 @@ function yb_discover_company() {
     wp_send_json_error(['message' => 'Bitte den Firmennamen und den Ort eingeben.'], 400);
   }
 
-  $cache = 'yb_lookup_' . md5(mb_strtolower($name . '|' . $city));
+  $cache = 'yb_lookup_v3_' . md5(mb_strtolower($name . '|' . $city));
   $saved = get_transient($cache);
   if (is_array($saved)) wp_send_json_success($saved);
 
@@ -42,18 +42,52 @@ function yb_discover_company() {
         'email' => '', 'website' => '',
         'google' => 'https://www.google.com/maps/search/?api=1&query=Kleine%20Freiheit%20Altenhof%206%20Koblenz',
         'services' => "Gemütliche Altstadtkneipe\nBier, Longdrinks und alkoholfreie Getränke (Sortiment bestätigen)\nGesellige Treffen und Musik\nVeranstaltungen und Specials (aktuelle Termine bestätigen)",
-        'intro' => 'Mitten in der Koblenzer Altstadt ist die Kleine Freiheit ein Treffpunkt für gesellige Abende, gute Gespräche und Musik. Eine Kneipe mit Charakter direkt am Altenhof.',
-        'features' => ['Altstadt-Atmosphäre', 'Musik und gesellige Abende', 'Getränke und gute Gespräche'],
-        'history' => 'Das Wohn- und Geschäftshaus am Altenhof 6 wurde laut Stadtgeschichtsdokumentation 1954 auf einem älteren Bruchsteinkeller neu errichtet. Dies ist die Geschichte des Hauses, nicht das Gründungsjahr des heutigen Kneipenbetriebs.',
+        'intro' => 'Willkommen in der Kleinen Freiheit! Mitten im historischen Herzen von Koblenz, direkt am Altenhof 6, erwartet dich ein Ort für echte Geselligkeit, Musik und gemeinsame Abende. Ob auf ein Feierabendbier oder zum Treffen mit Freunden: Komm rein und genieß deine kleine Freiheit.',
+        'features' => ['Gemütliche Altstadtkneipe mit Schlager- und Kultbar-Atmosphäre', 'Musik, Treffen mit Freunden und gelegentliche Veranstaltungen (Termine bestätigen)', 'Bier, Longdrinks, Wein und alkoholfreie Getränke (Sortiment bestätigen)'],
+        'history' => 'Das Wohn- und Geschäftshaus am Altenhof 6 entstand 1954 auf einem erhaltenen historischen Bruchsteinkeller; das Erdgeschoss war bereits damals als Gaststätte konzipiert. Das vorliegende Dossier nennt 2000 als Beginn des Lokals unter dem Namen Kleine Freiheit. Dieses Gründungsjahr ist vor Veröffentlichung noch unabhängig zu bestätigen.',
         'hours' => 'Mo–Do 10:00–23:00; Fr–Sa 10:00–04:00; So geschlossen',
-        'imprint' => '', 'source_label' => 'Öffentliche Verzeichnisse, recherchiert am 13.11.2026',
+        'imprint' => '',
+        'host_draft' => 'Kalle (Gastgeberangabe aus dem Dossier, voller Name unbekannt)',
+        'contact_alternatives' => ['01573 2500137', '0261 50040640'],
+        'payment_draft' => 'Nur Barzahlung (vor Ort bestätigen)',
+        'access_draft' => 'Hunde erlaubt; Eingang nicht barrierefrei (vor Ort bestätigen)',
+        'menu_notice' => 'Die folgenden Produkte und Preise stammen aus einer unverbindlichen Getränkekarten-Vorlage im Komplettpaket v2. Es ist KEINE bestätigte Getränkekarte. Preise nicht für eine veröffentlichte Kundenseite übernehmen.',
+        'menu_sections' => [
+          ['title' => 'Bier & Biermischgetränke (Vorschlag)', 'items' => [
+            ['name' => 'Bitburger Pils', 'size' => '0,3 / 0,5 l', 'sample_price' => '3,20 / 4,80 €'],
+            ['name' => 'Kölsch', 'size' => '0,2 l', 'sample_price' => '2,40 €'],
+            ['name' => 'Hefeweizen', 'size' => '0,5 l', 'sample_price' => '4,80 €'],
+            ['name' => 'Radler / Alsterwasser', 'size' => '0,3 / 0,5 l', 'sample_price' => '3,20 / 4,80 €'],
+            ['name' => 'Alkoholfreies Bier', 'size' => '0,33 l', 'sample_price' => '3,50 €']
+          ]],
+          ['title' => 'Longdrinks & Shots (Vorschlag)', 'items' => [
+            ['name' => 'Klassische Longdrinks', 'size' => '0,3 l / 4 cl', 'sample_price' => '7,50 €'],
+            ['name' => 'Aperol Spritz / Lillet Wild Berry', 'size' => '0,25 l', 'sample_price' => '6,90 €'],
+            ['name' => 'Shots & Liköre', 'size' => '2 cl', 'sample_price' => '2,50 €']
+          ]],
+          ['title' => 'Wein & Alkoholfreies (Vorschlag)', 'items' => [
+            ['name' => 'Wein (Riesling / Grauburgunder / Spätburgunder)', 'size' => '0,2 l', 'sample_price' => '4,90 €'],
+            ['name' => 'Weinschorle', 'size' => '0,2 l', 'sample_price' => '4,20 €'],
+            ['name' => 'Softdrinks', 'size' => '0,3 l', 'sample_price' => '3,20 €'],
+            ['name' => 'Apfelsaftschorle / Mineralwasser', 'size' => '0,3 l', 'sample_price' => '3,00 €']
+          ]]
+        ],
+        'publication_checks' => [
+          'Vollständigen bürgerlichen Namen des aktuell verantwortlichen Betreibers erfragen',
+          'Richtige Telefonnummer(n), E-Mail-Adresse und Öffnungszeiten bestätigen',
+          'Getränkesortiment, Mengen, Bruttopreise und Zahlungsarten bestätigen',
+          'Instagram-/Facebook-Konten und aktuelle Veranstaltungstermine offiziell zuordnen',
+          'Rechte an Logos, Fotos und sonstigem Bildmaterial klären',
+          'Impressum gemäß tatsächlichem Betreiber sowie Datenschutzerklärung gemäß eingesetzter Technik finalisieren'
+        ],
+        'source_label' => 'ODPC-Recherche und zwei vom Auftraggeber bereitgestellte PDF-Dossiers (November 2026); unbestätigte Angaben als Entwurf',
         'sources' => [
           ['label' => 'RestaurantGuru (Kontakt, Zeiten, Adresse)', 'url' => 'https://de.restaurantguru.com/Kleine-Freiheit-Koblenz'],
           ['label' => 'Das ist nah (Telefon, Adresse)', 'url' => 'https://www.dasistnah.de/gaststaette-koblenz.html'],
           ['label' => 'wie.de (Standort)', 'url' => 'https://wie.de/poi/kleine-freiheit.11584352641'],
           ['label' => 'Projekt Koblenzer Altstadt (Geschichte Altenhof 6)', 'url' => 'https://reinhard-kallenbach.de/featured_item/altenhof/']
         ],
-        'warning' => 'Andere Verzeichnisse nennen abweichende Rufnummern. Getränke, Events, Öffnungszeiten, Betreiber/Impressum, Bargeldregel und Zugangsvoraussetzungen bitte mit dem Kunden bestätigen. Die Geschichte von 1954 betrifft das Gebäude, nicht das Gründungsjahr des Lokals. Keine fremden Fotos ohne Nutzungsrechte übernehmen.'
+        'warning' => 'Die vorliegenden PDF-Dossiers liefern Textentwürfe, keine Inhaber- oder Preisbestätigung. Das Gründungsjahr 2000 und Gastgeber Kalle sind noch nicht verifiziert. Zwei Telefonnummern kursieren. Öffnungszeiten, Getränke, Preise und Barzahlungsregel vor Ort bestätigen; Impressum/Datenschutz auf den tatsächlichen Betreiber abstimmen. Bilder nur mit Nutzungsrechten.'
       ]],
       'notice' => 'Öffentliche Referenzdaten gefunden; noch nicht vom Unternehmen bestätigt.'
     ];
