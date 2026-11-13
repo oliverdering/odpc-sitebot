@@ -1,0 +1,58 @@
+name: Kleine Freiheit / Isolated WordPress demo
+on:
+  push:
+    branches: [feature/kleine-freiheit-demo-20261113]
+    paths:
+      - '.github/workflows/kleine-freiheit-wordpress-demo.yml'
+      - 'yourbusiness/kleine-freiheit-demo/**'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: yourbusiness-serialized-operations
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate PHP
+        run: php -l yourbusiness/kleine-freiheit-demo/kleine-freiheit.php
+      - name: Publish isolated plugin and WordPress page
+        env:
+          SSHPASS: ${{ secrets.ODPC_SSH_PASSWORD }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -n "$SSHPASS"
+          sudo apt-get install -y -qq sshpass >/dev/null
+          mkdir -p ~/.ssh
+          ssh-keyscan -4 -t ed25519 home119567219.1and1-data.host > ~/.ssh/known_hosts 2>/dev/null
+          ssh-keygen -lf ~/.ssh/known_hosts | grep -F 'SHA256:1gx2w8Rtv3wCgi7Jh8myf/KVd72cRQbow03UP8P095Q' >/dev/null
+          opts="-4 -o StrictHostKeyChecking=yes -o PreferredAuthentications=password -o PubkeyAuthentication=no -o NumberOfPasswordPrompts=1 -o ConnectTimeout=20"
+          host="p37641258@home119567219.1and1-data.host"
+          sshpass -e ssh $opts "$host" 'set -eu
+            cd "$HOME/YourBusiness"
+            test -f wp-config.php
+            uiwpcli_PHP_FLAVOR=php8.3 wp core is-installed --quiet
+            test ! -e wp-content/plugins/odpc-kleine-freiheit || { echo "Plugin directory already exists; refusing overwrite"; exit 1; }
+            existing=$(uiwpcli_PHP_FLAVOR=php8.3 wp post list --post_type=page --name=kleine-freiheit --field=ID --format=ids)
+            test -z "$existing" || { echo "Page already exists; refusing overwrite"; exit 1; }
+            mkdir wp-content/plugins/odpc-kleine-freiheit
+          '
+          sshpass -e scp $opts yourbusiness/kleine-freiheit-demo/kleine-freiheit.php yourbusiness/kleine-freiheit-demo/page.html "$host:YourBusiness/wp-content/plugins/odpc-kleine-freiheit/"
+          sshpass -e ssh $opts "$host" 'set -eu
+            cd "$HOME/YourBusiness"
+            php -l wp-content/plugins/odpc-kleine-freiheit/kleine-freiheit.php
+            uiwpcli_PHP_FLAVOR=php8.3 wp plugin activate odpc-kleine-freiheit
+            uiwpcli_PHP_FLAVOR=php8.3 wp post create wp-content/plugins/odpc-kleine-freiheit/page.html --post_type=page --post_status=publish --post_name=kleine-freiheit --post_title="Kleine Freiheit"
+            echo KLEINE_FREIHEIT_CREATED
+          '
+      - name: Check publicly visible demo
+        run: |
+          set -euo pipefail
+          curl --fail --silent --show-error --location --max-time 30 'https://yourbusiness.odpc.de/?pagename=kleine-freiheit' -o /tmp/kf-page
+          grep -q 'Große Abende' /tmp/kf-page
+          grep -q 'KÖNIGSBACHER' /tmp/kf-page
+          echo KLEINE_FREIHEIT_PUBLIC_READY
