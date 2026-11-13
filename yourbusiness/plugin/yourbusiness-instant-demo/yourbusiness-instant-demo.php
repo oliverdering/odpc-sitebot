@@ -2,10 +2,33 @@
 /**
  * Plugin Name: YourBusiness Instant Demo
  * Description: Mobile-first local customer website demo, without publication or server-side personal data storage.
- * Version: 0.1.0
+ * Version: 0.1.1
  * Author: ODPC
  */
 if (!defined('ABSPATH')) exit;
+
+// Direct mobile builder route; independent of pretty-permalink configuration.
+add_action('template_redirect', function () {
+  if (is_admin() || !isset($_GET['yb_start']) || $_GET['yb_start'] !== '1') return;
+  status_header(200);
+  nocache_headers();
+  get_header();
+  echo '<main id="yb-mobile-builder" style="max-width:1440px;margin:30px auto;padding:0 16px">';
+  echo '<h1>YourBusiness – Webseite direkt vor Ort erstellen</h1>';
+  echo do_shortcode('[yourbusiness_demo]');
+  echo '</main>';
+  get_footer();
+  exit;
+}, 1);
+
+// Keep the presentation homepage intact while offering an obvious mobile entry point.
+add_action('wp_footer', function () {
+  if (is_admin() || !is_front_page() || isset($_GET['yb_start'])) return;
+  $link = add_query_arg('yb_start', '1', home_url('/'));
+  echo '<div class="yb-launch-cta" style="position:fixed;z-index:9999;bottom:max(18px,env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);width:min(420px,calc(100% - 32px));text-align:center">';
+  echo '<a href="' . esc_url($link) . '" style="display:block;background:#155eef;color:#fff;border-radius:14px;padding:15px 20px;box-shadow:0 6px 24px #162a4b55;font:700 16px system-ui,sans-serif;text-decoration:none">Jetzt Kundenwebseite live erstellen</a>';
+  echo '</div>';
+});
 add_shortcode('yourbusiness_demo', function () {
   ob_start(); ?>
 <div id="yb-demo" class="yb-app">
@@ -17,6 +40,8 @@ add_shortcode('yourbusiness_demo', function () {
     <button type="button" id="yb-location">Standort übernehmen (optional)</button>
     <label>Bestehende Website <input id="yb-site" type="url" placeholder="https://..."></label>
     <label>Google-Unternehmensprofil / Maps-Link <input id="yb-google" type="url" placeholder="https://maps.google.com/..."></label>
+    <button type="button" id="yb-google-search">Firma in Google Maps suchen</button>
+    <p class="yb-note">Der Suchbutton öffnet Google Maps. Firmendaten werden nicht automatisch übernommen; den geprüften Profil-Link bitte selbst eintragen.</p>
     <label>Leistungen (eine pro Zeile) <textarea id="yb-services" rows="3" placeholder="Beratung&#10;Montage&#10;Wartung"></textarea></label>
     <label>Telefon <input id="yb-phone" type="tel" placeholder="+49 ..."></label>
     <label>WhatsApp-Nummer <input id="yb-whatsapp" type="tel" placeholder="+49 ..."></label>
@@ -43,6 +68,11 @@ const status=s=>el('status').textContent=s;
 const esc=s=>String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const fileUrl=f=>f?URL.createObjectURL(f):'';
 const safeUrl=s=>{try{const u=new URL(s);return ['https:','http:'].includes(u.protocol)?u.href:''}catch{return ''}};
+el('google-search').addEventListener('click',()=>{
+ const name=val('name'),city=val('city');
+ if(!name||!city){status('Bitte zuerst Firmenname und Ort eingeben.');return}
+ window.open('https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(name+' '+city),'_blank','noopener,noreferrer');
+});
 el('location').addEventListener('click',()=>{
  if(!navigator.geolocation){status('Standortfunktion nicht verfügbar. Bitte Ort manuell eingeben.');return}
  status('Standortfreigabe wird angefragt …');
