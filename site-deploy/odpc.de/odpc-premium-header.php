@@ -224,6 +224,7 @@ add_action('wp_footer', function () {
         <li><details class="odpc-nav-group"><summary>Über ODPC</summary><div class="odpc-nav-sub"><a href="<?php echo esc_url(home_url('/about-me/')); ?>">Über mich</a><a href="<?php echo esc_url(home_url('/unser-team/')); ?>">Unser Team</a></div></details></li>
         <li><details class="odpc-nav-group"><summary>Unsere KI-Methode</summary><div class="odpc-nav-sub"><a href="<?php echo esc_url(home_url('/prompt-engineering-digitale-mitarbeiter-ki-sinnvoll-nutzen/')); ?>">Prompt Engineering &amp; digitale Mitarbeiter</a></div></details></li>
         <li><details class="odpc-nav-group"><summary>Leistungen &amp; Projekte</summary><div class="odpc-nav-sub"><a href="<?php echo esc_url(home_url('/ki-gestuetzte-dienstleistungen-automatisierung/')); ?>">KI-Automatisierung</a><a href="<?php echo esc_url(home_url('/struktur-portfolio/')); ?>">Struktur &amp; Portfolio</a><a href="<?php echo esc_url(home_url('/einsatz-von-ki-je-nach-branche/')); ?>">KI nach Branche</a></div></details></li>
+        <li data-odpc-prices="1"><a href="<?php echo esc_url(home_url('/preise-angebote/')); ?>"<?php if (is_page('preise-angebote')) echo ' aria-current="page"'; ?>>Preise &amp; Angebote</a></li>
         <li><a href="<?php echo esc_url(home_url('/kunden-referenzen/')); ?>">Kunden &amp; Referenzen</a></li>
         <li><a href="<?php echo esc_url(home_url('/aktuelles/')); ?>">Aktuelles</a></li>
         <li><a href="<?php echo esc_url(home_url('/contact-me/')); ?>">Kontakt</a></li>
