@@ -206,6 +206,18 @@ body{margin:0}
 
 @media(max-width:700px){#kf-demo .kf-brand-scene,#kf-demo.kf-theme-modern .kf-brand-scene{min-height:290px;max-height:none}#kf-demo .kf-brand-fallback{width:min(100%,260px)}}
 
+/* Bahnhof Grenzau editorial grid: same paper/forest/gold palette, straight edges and serif headlines.
+   Original venue lettering stays visible above the real bar photograph once media are imported. */
+#kf-demo .kf-hero-sign{position:absolute;inset:auto 16px 20px;z-index:3;display:flex;align-items:center;justify-content:center;max-width:calc(100% - 32px);padding:8px;background:rgba(18,43,35,.72);backdrop-filter:blur(5px)}
+#kf-demo .kf-hero-sign .kf-original-sign-style{width:min(100%,410px);min-height:110px}
+#kf-demo .kf-hero-sign .kf-sign-banner{min-height:94px}
+#kf-demo .kf-hero-sign .kf-sign-banner strong{font-size:clamp(32px,4vw,54px)}
+#kf-demo .kf-hero-sign .kf-approved-logo{max-height:125px;width:auto;max-width:100%;object-fit:contain}
+#kf-demo.kf-theme-klassisch .kf-scene{border-radius:0}
+#kf-demo.kf-theme-klassisch .kf-button{border-radius:0}
+#kf-demo.kf-theme-klassisch .kf-card{border-radius:0}
+@media(max-width:700px){#kf-demo .kf-hero-sign{inset:auto 12px 12px}#kf-demo .kf-hero-sign .kf-original-sign-style{padding:4px;min-height:80px}#kf-demo .kf-hero-sign .kf-sign-banner{min-height:76px}#kf-demo .kf-hero-sign .kf-sign-banner strong{font-size:clamp(29px,7vw,43px)}}
+
 /* ODPC-LICENSED-PHOTO-SET-20261113: curated Commons material, all labelled as samples. */
 #kf-demo .kf-photo-gallery{display:grid;grid-template-columns:1.13fr .87fr;gap:18px;margin-top:24px}
 /* Real owner-supplied photos take precedence over unrelated stock examples. */
@@ -267,11 +279,17 @@ body{margin:0}
       if ($kf_hero_id) :
         echo wp_get_attachment_image($kf_hero_id, 'large', false, ['class'=>'kf-hero-photo','fetchpriority'=>'high','loading'=>'eager','decoding'=>'async','alt'=>'Originalaufnahme: die Holztheke der Kleinen Freiheit in Koblenz']);
       ?>
-        <div class="kf-photo-brand"><strong>Kleine Freiheit</strong><span>ECHTE EINBLICKE · ALTENHOF 6</span></div>
+        <div class="kf-hero-sign">
+          <?php if ($kf_logo_url) : ?>
+            <img class="kf-approved-logo" src="<?= esc_url($kf_logo_url) ?>" alt="Originalschild der Kleinen Freiheit" decoding="async">
+          <?php else : ?>
+            <div class="kf-brand-fallback kf-original-sign-style" role="img" aria-label="Schriftzug nach dem Originalschild der Kleinen Freiheit"><span class="kf-sign-banner"><strong>Kleine Freiheit</strong><span class="kf-sign-ribbon" aria-hidden="true"></span></span></div>
+          <?php endif; ?>
+        </div>
       <?php elseif ($kf_logo_url) : ?>
-        <img class="kf-approved-logo" src="<?= esc_url($kf_logo_url) ?>" alt="Freigegebenes Kleine-Freiheit-Logo" fetchpriority="high" decoding="async">
+        <img class="kf-approved-logo" src="<?= esc_url($kf_logo_url) ?>" alt="Originalschild der Kleinen Freiheit" fetchpriority="high" decoding="async">
       <?php else : ?>
-        <div class="kf-brand-fallback kf-original-sign-style" role="img" aria-label="Kleine Freiheit – Schriftzug nach dem Originalschild vor Ort"><span class="kf-sign-banner"><strong>Kleine Freiheit</strong><span class="kf-sign-ribbon" aria-hidden="true"></span></span><span class="kf-brand-place">ALTENHOF 6a · KOBLENZ</span></div>
+        <div class="kf-brand-fallback kf-original-sign-style" role="img" aria-label="Schriftzug nach dem Originalschild der Kleinen Freiheit"><span class="kf-sign-banner"><strong>Kleine Freiheit</strong><span class="kf-sign-ribbon" aria-hidden="true"></span></span><span class="kf-brand-place">KOBLENZ · ALTENHOF</span></div>
       <?php endif; ?>
     </div>
   </div>
