@@ -1,0 +1,32 @@
+name: YourBusiness / Live Browser QA
+on:
+  push:
+    paths:
+      - 'scripts/yourbusiness_live_browser_qa.mjs'
+      - '.github/workflows/yourbusiness-live-browser-qa.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  live-qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install isolated browser test dependencies
+        run: |
+          npm install --no-save playwright@1.58.2
+          npx playwright install --with-deps chromium
+      - name: Inspect five publicly deployed pages on mobile
+        run: node scripts/yourbusiness_live_browser_qa.mjs
+      - name: Archive QA report and smartphone screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: yourbusiness-live-qa
+          path: qa-artifacts/yourbusiness/
+          retention-days: 14
+          if-no-files-found: warn
