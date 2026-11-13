@@ -1,0 +1,70 @@
+name: ODPC German voice samples
+on:
+  push:
+    paths: ['.github/workflows/odpc-german-voice-samples.yml']
+permissions:
+  contents: read
+jobs:
+  samples:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - run: npm install --no-save @mintplex-labs/piper-tts-web@1.0.4 onnxruntime-web@1.18.0 esbuild@0.25.12
+      - name: Patch local test copy only
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('node_modules/@mintplex-labs/piper-tts-web/dist/piper-tts-web.js')
+          s=p.read_text()
+          s=s.replace('new Promise(async (resolve) => {','new Promise(async (resolve, reject) => {')
+          old='resolve(JSON.parse(data).phoneme_ids);'
+          new="""const payload = JSON.parse(data);
+          const mapping = __privateGet(this, _modelConfig).phoneme_id_map;
+          const ids = [...mapping['^'], ...mapping['_']];
+          for (const phoneme of Array.from(payload.phonemes.join('').normalize('NFC'))) {
+            if (!Object.hasOwn(mapping, phoneme)) { reject(new Error('Missing model phoneme: ' + JSON.stringify(phoneme))); return; }
+            ids.push(...mapping[phoneme], ...mapping['_']);
+          }
+          ids.push(...mapping['$']);
+          resolve(ids);"""
+          assert s.count(old)==1
+          p.write_text(s.replace(old,new))
+          PY
+      - run: npx esbuild node_modules/@mintplex-labs/piper-tts-web/dist/piper-tts-web.js --bundle --format=esm --platform=browser --external:fs --external:path --outfile=patched-piper.mjs
+      - run: python3 -m pip install 'playwright>=1.50,<2'
+      - run: python3 -m playwright install --with-deps chromium
+      - name: Generate identical German voice samples
+        run: |
+          python3 -m http.server 8767 >/tmp/odpc-samples-http.log 2>&1 &
+          python3 - <<'PY'
+          import base64,json,pathlib
+          from playwright.sync_api import sync_playwright
+          text='Herzlich willkommen bei ODPC. Ich bin Oliver Dering und unterstütze Sie bei IT, Software und künstlicher Intelligenz.'
+          voices=[('Eva','de_DE-eva_k-x_low'),('Kerstin','de_DE-kerstin-low'),('Ramona','de_DE-ramona-low')]
+          with sync_playwright() as p:
+              browser=p.chromium.launch(headless=True,args=['--no-sandbox'])
+              for label,voice in voices:
+                  context=browser.new_context()
+                  page=context.new_page()
+                  page.goto('http://localhost:8767/')
+                  result=page.evaluate("""async ({voice,text})=>{
+                    try{
+                      const tts=await import('/patched-piper.mjs');
+                      const blob=await Promise.race([tts.predict({text,voiceId:voice}),new Promise((_,reject)=>setTimeout(()=>reject(new Error('timeout')),90000))]);
+                      const bytes=await blob.arrayBuffer();const ctx=new AudioContext();const decoded=await ctx.decodeAudioData(bytes.slice(0));
+                      let peak=0;for(const n of decoded.getChannelData(0))peak=Math.max(peak,Math.abs(n));
+                      let binary='';for(const x of new Uint8Array(bytes))binary+=String.fromCharCode(x);
+                      return {duration:decoded.duration,peak,wav:btoa(binary)};
+                    }catch(e){return {error:String(e)}}
+                  }""",{'voice':voice,'text':text})
+                  if 'wav' not in result or result.get('peak',0)<=0:raise RuntimeError(label+': '+json.dumps(result))
+                  pathlib.Path('ODPC-Stimmprobe-'+label+'.wav').write_bytes(base64.b64decode(result.pop('wav')))
+                  print(label,json.dumps(result),flush=True)
+                  context.close()
+              browser.close()
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: odpc-german-voice-samples
+          path: ODPC-Stimmprobe-*.wav
+          retention-days: 2
