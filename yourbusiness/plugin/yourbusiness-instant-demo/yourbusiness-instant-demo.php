@@ -305,6 +305,9 @@ body{margin:0}
       </figure>
     </div>
     <?php endif; ?>
+    <?php if (current_user_can('upload_files')) : ?>
+      <p class="kf-admin-import-link"><a class="kf-button kf-outline" href="<?= esc_url(admin_url('admin.php?page=odpc-kf-originalfotos')) ?>">15 Originalfotos dauerhaft in WordPress importieren ↗</a></p>
+    <?php endif; ?>
     <label id="kf-local-photo-picker" style="display:inline-block;margin-top:18px;padding:12px 18px;border:1px solid var(--line);border-radius:var(--radius);background:var(--paper);font-size:13px;font-weight:800;cursor:pointer">📷 Eigene Fotos für die Vorschau auswählen
       <input id="kf-local-photo-input" type="file" accept="image/*" multiple style="display:block;max-width:100%;font-size:12px;margin-top:8px">
     </label>
