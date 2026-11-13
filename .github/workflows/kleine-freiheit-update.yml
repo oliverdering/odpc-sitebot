@@ -1,0 +1,47 @@
+name: Kleine Freiheit / Update preview safely
+on:
+  push:
+    branches: [feature/kleine-freiheit-demo-20261113]
+    paths: ['.github/workflows/kleine-freiheit-update.yml']
+permissions:
+  contents: read
+concurrency:
+  group: yourbusiness-serialized-operations
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Validate and update isolated plugin
+        env:
+          SSHPASS: ${{ secrets.ODPC_SSH_PASSWORD }}
+        run: |
+          set -euo pipefail
+          php -l yourbusiness/kleine-freiheit-demo/kleine-freiheit.php
+          test -n "$SSHPASS"
+          sudo apt-get install -y -qq sshpass >/dev/null
+          mkdir -p ~/.ssh
+          ssh-keyscan -4 -t ed25519 home119567219.1and1-data.host > ~/.ssh/known_hosts 2>/dev/null
+          ssh-keygen -lf ~/.ssh/known_hosts | grep -F 'SHA256:1gx2w8Rtv3wCgi7Jh8myf/KVd72cRQbow03UP8P095Q' >/dev/null
+          opts="-4 -o StrictHostKeyChecking=yes -o PreferredAuthentications=password -o PubkeyAuthentication=no -o NumberOfPasswordPrompts=1 -o ConnectTimeout=20"
+          host="p37641258@home119567219.1and1-data.host"
+          old_hash=$(git show a282df3d85405559db676fce8bafe97c71553c30:yourbusiness/kleine-freiheit-demo/kleine-freiheit.php | sha256sum | cut -d " " -f1)
+          remote_hash=$(sshpass -e ssh $opts "$host" 'sha256sum YourBusiness/wp-content/plugins/odpc-kleine-freiheit/kleine-freiheit.php' | cut -d " " -f1)
+          test "$old_hash" = "$remote_hash" || { echo "Live plugin changed independently; stopping"; exit 1; }
+          sshpass -e scp $opts yourbusiness/kleine-freiheit-demo/kleine-freiheit.php "$host:YourBusiness/wp-content/plugins/odpc-kleine-freiheit/kleine-freiheit.php.new"
+          new_hash=$(sha256sum yourbusiness/kleine-freiheit-demo/kleine-freiheit.php | cut -d " " -f1)
+          uploaded_hash=$(sshpass -e ssh $opts "$host" 'sha256sum YourBusiness/wp-content/plugins/odpc-kleine-freiheit/kleine-freiheit.php.new' | cut -d " " -f1)
+          test "$new_hash" = "$uploaded_hash"
+          sshpass -e ssh $opts "$host" 'mv YourBusiness/wp-content/plugins/odpc-kleine-freiheit/kleine-freiheit.php.new YourBusiness/wp-content/plugins/odpc-kleine-freiheit/kleine-freiheit.php'
+      - name: Verify public output
+        run: |
+          set -euo pipefail
+          curl --fail --silent --show-error --location --max-time 30 'https://yourbusiness.odpc.de/?pagename=kleine-freiheit' -o /tmp/kf-live
+          grep -q 'class="brandmark"' /tmp/kf-live
+          grep -q 'Google Maps &amp; Bewertungen' /tmp/kf-live
+          grep -q 'id="language"' /tmp/kf-live
+          echo KLEINE_FREIHEIT_UPDATE_LIVE
