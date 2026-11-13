@@ -56,27 +56,40 @@ jobs:
             fi
             echo YOURBUSINESS_DEMO_PLUGIN_ACTIVE
           '
-      - name: Smoke test all three demos and customer launcher
+      - name: Triple independent HTTP and content acceptance for the three client demos
         run: |
           set -euo pipefail
-          root="https://yourbusiness.odpc.de/"
+          base='https://yourbusiness.odpc.de/'
           check() {
             label="$1"
             query="$2"
-            html_id="$3"
-            file="/tmp/yb-$label.html"
-            status=$(curl --location --silent --show-error --max-time 30 --retry 3 --retry-delay 2 --output "$file" --write-out '%{http_code}' "$root?$query")
-            test "$status" = "200" || { echo "HTTP $status: $label"; exit 1; }
-            grep -Fq "id=\"$html_id\"" "$file" || { echo "Missing $html_id in $label"; exit 1; }
-            echo "PASS $label HTTP $status"
+            selector="$3"
+            company="$4"
+            file="/tmp/yourbusiness-$label.html"
+            status=$(curl --fail --location --silent --show-error --max-time 35 --retry 2 \
+              --header 'Cache-Control: no-cache' --output "$file" --write-out '%{http_code}' "$base?$query")
+            test "$status" = '200' || { echo "FAILED: $label status=$status"; return 1; }
+            grep -Fq "id=\"$selector\"" "$file" || { echo "FAILED: $label missing selector $selector"; return 1; }
+            grep -Fq "$company" "$file" || { echo "FAILED: $label company $company"; return 1; }
+            grep -Fq 'name="robots" content="noindex' "$file" || { echo "FAILED: $label missing demo noindex"; return 1; }
+            echo "PASS: $label ($company), HTTP $status"
           }
-          check freiheit "yb_kleine_freiheit=1&design=klassisch" "kf-demo"
-          check emins "yb_emins_grill=1" "em-demo"
-          check paradies "yb_doener_paradies=1" "dp-demo"
-          check showcase "yb_showcase=1" "showcase-grid"
-          grep -Fq 'Döner Paradies' /tmp/yb-paradies.html
-          grep -Fq 'id="dp-modern"' /tmp/yb-paradies.html
-          grep -Fq 'id="dp-lang"' /tmp/yb-paradies.html
-          grep -Fq 'id="dp-speak"' /tmp/yb-paradies.html
-          grep -Fq 'Münzstraße 18' /tmp/yb-paradies.html
-          echo "YOURBUSINESS_ALL_THREE_PUBLIC_SMOKE_OK"
+          for round in 1 2 3; do
+            echo "---- independent verification round $round/3 ----"
+            check "freedom-$round" 'yb_kleine_freiheit=1&design=klassisch' 'kf-demo' 'Kleine Freiheit'
+            check "emins-$round" 'yb_emins_grill=1' 'em-demo' "Emin"
+            check "paradies-$round" 'yb_doener_paradies=1' 'dp-demo' 'Döner Paradies'
+          done
+          check 'freedom-modern' 'yb_kleine_freiheit=1&design=modern' 'kf-demo' 'Kleine Freiheit'
+          check 'showcase' 'yb_showcase=1' 'showcase-grid' 'Kleine Freiheit'
+          grep -Fq 'Döner Paradies' /tmp/yourbusiness-showcase.html
+          grep -Fq "Emin" /tmp/yourbusiness-showcase.html
+          grep -Fq 'id="dp-modern"' /tmp/yourbusiness-paradies-3.html
+          grep -Fq 'id="dp-lang"' /tmp/yourbusiness-paradies-3.html
+          grep -Fq 'id="dp-speak"' /tmp/yourbusiness-paradies-3.html
+          grep -Fq 'Drehspieß-Sandwich' /tmp/yourbusiness-paradies-3.html
+          grep -Fq 'id="kf-local-photo-input"' /tmp/yourbusiness-freedom-3.html
+          grep -Fq 'id="em-pictures"' /tmp/yourbusiness-emins-3.html
+          grep -Fq 'id="dp-pictures"' /tmp/yourbusiness-paradies-3.html
+          grep -Fq 'photo-credit' /tmp/yourbusiness-paradies-3.html
+          echo 'YOURBUSINESS_TRIPLE_LIVE_ACCEPTANCE_ALL_PASS'
