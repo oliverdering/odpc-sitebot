@@ -280,6 +280,22 @@ body{margin:0}
 <footer class="kf-footer">
   <div class="kf-wrap kf-footer-inner"><div><strong>Kleine Freiheit</strong> · Altenhof 6 · 56068 Koblenz</div><div><a href="#kf-start">Nach oben ↑</a> · <a href="#kf-legal">Rechtliche Hinweise</a></div><div class="kf-credit">Kundenvorschau · <a href="https://odpc.de/" target="_blank" rel="noopener noreferrer">powered by odpc.de</a></div></div>
 </footer>
+<div id="kf-accessibility" role="group" aria-label="Sprach- und Vorlesefunktionen" style="position:fixed;z-index:99;bottom:calc(12px + env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:6px;max-width:calc(100vw - 20px);padding:7px 9px;background:var(--paper);color:var(--fg);border:1px solid var(--line);border-radius:40px;box-shadow:0 6px 26px #0003;font:13px system-ui,sans-serif">
+<label for="kf-voice-language" style="position:absolute;width:1px;height:1px;overflow:hidden">Sprache</label><select id="kf-voice-language" aria-label="Vorlesesprache" style="max-width:85px;padding:7px;border-radius:20px;background:var(--bg);color:var(--fg)"><option value="de-DE">DE</option><option value="en-US">EN</option><option value="nl-NL">NL</option><option value="fr-FR">FR</option><option value="ru-RU">RU</option><option value="tr-TR">TR</option><option value="es-ES">ES</option></select>
+<button type="button" id="kf-read" style="padding:7px;border-radius:20px">▶ Vorlesen</button><button type="button" id="kf-stop" style="padding:7px;border-radius:20px">■ Stop</button><button type="button" id="kf-mic" style="padding:7px;border-radius:20px" aria-label="Spracheingabe">🎙</button><a href="#kf-start" style="padding:7px" aria-label="Zur Startseite">⌂</a>
+</div><div id="kf-voice-status" role="status" aria-live="polite" style="position:fixed;bottom:78px;left:12px;z-index:100;background:var(--paper);color:var(--fg);border-radius:8px;padding:4px 8px;font:12px system-ui,sans-serif;max-width:90vw"></div>
+<script>
+(function(){'use strict';
+var panel=document.getElementById('kf-accessibility'),lang=document.getElementById('kf-voice-language'),status=document.getElementById('kf-voice-status');
+function say(s){status.textContent=s;}
+document.getElementById('kf-read').addEventListener('click',function(){
+if(!('speechSynthesis' in window)){say('Vorlesen wird von diesem Browser nicht unterstützt.');return;}
+speechSynthesis.cancel();var content=document.querySelector('#kf-inhalt');var u=new SpeechSynthesisUtterance(content?content.innerText:'');u.lang=lang.value;u.rate=.95;u.onerror=function(){say('Sprachausgabe nicht verfügbar.');};speechSynthesis.speak(u);say('Vorlesen gestartet.');
+});
+document.getElementById('kf-stop').addEventListener('click',function(){if('speechSynthesis' in window)speechSynthesis.cancel();say('Vorlesen gestoppt.');});
+document.getElementById('kf-mic').addEventListener('click',function(){var R=window.SpeechRecognition||window.webkitSpeechRecognition;if(!R){say('Spracheingabe wird von diesem Browser nicht unterstützt.');return;}var rec=new R();rec.lang=lang.value;rec.onresult=function(e){var q=e.results[0][0].transcript;say('Erkannt: '+q);};rec.onerror=function(){say('Spracheingabe fehlgeschlagen oder nicht erlaubt.');};rec.start();say('Ich höre zu …');});
+})();
+</script>
 </main>
 <script>
 (function(){
