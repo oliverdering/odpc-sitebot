@@ -840,7 +840,7 @@ footer a{color:#e9c889}
 <body><main><span class="eyebrow">ODPC · YourBusiness · Live-Kundenpräsentation</span>
 <h1>Drei Lokale.<br>Drei individuelle Websites.</h1>
 <p class="lead">Direkt vor Ort recherchiert, als Smartphone-Demo gestaltet und in getrennten Vorschauen bereitgestellt. Keine dieser Demos ist die offizielle Webseite des jeweiligen Betriebs.</p>
-<div class="grid">
+<div class="grid" id="showcase-grid">
 <article class="card"><div class="symbol">🍻</div><span class="label">01 · Kneipe & Schlagerbar</span><h2>Kleine Freiheit</h2><p class="address">Altenhof 6, 56068 Koblenz</p><p>Gemütlich-klassisches und modernes Konzept, passende Inhalte für eine Altstadtkneipe.</p><a class="button" href="/?yb_kleine_freiheit=1&amp;design=klassisch">Kundendemo öffnen ↗</a></article>
 <article class="card"><div class="symbol">🥙</div><span class="label">02 · Grill & Imbiss</span><h2>Emin's Grill</h2><p class="address">Münzstraße 18, 56068 Koblenz</p><p>Individuelle Grill-Vorschau mit zwei Designs, drei Sprachen und mobiler Navigation.</p><a class="button" href="/?yb_emins_grill=1">Kundendemo öffnen ↗</a></article>
 <article class="card"><div class="symbol">🍕</div><span class="label">03 · Döner & Pizza</span><h2>Döner Paradies</h2><p class="address">Münzstraße 18, 56068 Koblenz</p><p>Eigene Markenpräsenz zusätzlich zur bestehenden Lieferando-Bestellseite. Zwei Designs, drei Sprachen.</p><a class="button" href="/?yb_doener_paradies=1">Kundendemo öffnen ↗</a></article>
