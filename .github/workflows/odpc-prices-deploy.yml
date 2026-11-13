@@ -1,0 +1,42 @@
+name: ODPC / Prices and offers release
+on:
+  push:
+    paths:
+      - 'site-deploy/odpc.de/odpc-prices.php'
+      - 'scripts/deploy_odpc_prices.py'
+      - '.github/workflows/odpc-prices-deploy.yml'
+      - 'deployment/odpc-prices-release.txt'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: odpc-prices-release
+  cancel-in-progress: false
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Syntax and scope checks
+        run: |
+          php -l site-deploy/odpc.de/odpc-prices.php
+          python -m py_compile scripts/deploy_odpc_prices.py
+          grep -q 'odpc-appearance' site-deploy/odpc.de/odpc-prices.php
+      - name: Install SFTP client
+        run: python -m pip install 'paramiko>=3.4,<5'
+      - name: Publish pricing module and verify public page
+        env:
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+        run: python scripts/deploy_odpc_prices.py
+      - name: Save rollback artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: odpc-prices-previous-file
+          path: odpc-prices-backup/
+          if-no-files-found: ignore
+          retention-days: 15
