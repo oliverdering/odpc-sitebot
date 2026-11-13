@@ -270,8 +270,33 @@ body{margin:0}
         <figcaption>Symbolbild Kneipenatmosphäre · Foto: <a href="https://commons.wikimedia.org/wiki/File:Pub_interior_-_geograph.org.uk_-_5856308.jpg" target="_blank" rel="noopener noreferrer">Bob Harvey / Wikimedia Commons (CC BY-SA 2.0)</a> · nicht die Räume der Kleinen Freiheit.</figcaption>
       </figure>
     </div>
+    <label id="kf-local-photo-picker" style="display:inline-block;margin-top:18px;padding:12px 18px;border:1px solid var(--line);border-radius:var(--radius);background:var(--paper);font-size:13px;font-weight:800;cursor:pointer">📷 Eigene Fotos für die Vorschau auswählen
+      <input id="kf-local-photo-input" type="file" accept="image/*" multiple style="display:block;max-width:100%;font-size:12px;margin-top:8px">
+    </label>
+    <p class="kf-fineprint">Die ausgewählten Bilder werden ausschließlich im Browser angezeigt. Keine Übertragung oder Veröffentlichung. Erst nach Genehmigung dauerhaft in die Kundenwebsite übernehmen.</p>
   </div>
 </section>
+<script>
+(function(){
+  const picker=document.getElementById('kf-local-photo-input');
+  const figures=Array.from(document.querySelectorAll('#kf-bilder .kf-photo-gallery figure'));
+  if(!picker)return;
+  let photoUrls=[];
+  picker.addEventListener('change',()=>{
+    photoUrls.forEach(url=>URL.revokeObjectURL(url));
+    photoUrls=[];
+    const uploaded=Array.from(picker.files||[]).filter(f=>f.type.startsWith('image/')).slice(0,2);
+    uploaded.forEach((file,i)=>{
+      const url=URL.createObjectURL(file);
+      photoUrls.push(url);
+      const img=figures[i].querySelector('img');
+      img.src=url;img.alt='Lokal ausgewähltes Kundenfoto (nur Browser-Vorschau)';
+      const caption=figures[i].querySelector('figcaption');
+      caption.textContent='Lokal ausgewähltes Originalfoto – nur für diese Vorschau, nicht hochgeladen';
+    });
+  });
+})();
+</script>
 <section id="kf-drinks" class="kf-chapter">
   <div class="kf-wrap"><span class="kf-eyebrow">An der Theke</span><h2>Für jeden Abend das Richtige.</h2><p class="kf-prose">Vom kühlen Bier bis zur alkoholfreien Erfrischung. Die konkrete Getränkekarte und aktuelle Preise werden noch mit dem Betreiber abgestimmt.</p>
     <div class="kf-cards">
@@ -662,7 +687,7 @@ classic.addEventListener('click',()=>setTheme('classic'));modern.addEventListene
 try{setTheme(localStorage.getItem('odpc-em-mode')==='modern'?'modern':'classic')}catch{setTheme('classic')}
 translate();
 const file=document.getElementById('em-pictures'),gallery=document.getElementById('em-gallery');let urls=[];
-file.addEventListener('change',()=>{urls.forEach(u=>URL.revokeObjectURL(u));urls=[];gallery.replaceChildren();for(const f of Array.from(file.files).filter(x=>x.type.startsWith('image/')).slice(0,3)){const u=URL.createObjectURL(f);urls.push(u);const img=document.createElement('img');img.src=u;img.alt='Vom Benutzer ausgewähltes lokales Foto';const box=document.createElement('div');box.className='photo-box';box.appendChild(img);gallery.appendChild(box)}});
+file.addEventListener('change',()=>{urls.forEach(u=>URL.revokeObjectURL(u));urls=[];gallery.replaceChildren();const credit=root.querySelector('.photo-credit');if(credit)credit.hidden=true;for(const f of Array.from(file.files).filter(x=>x.type.startsWith('image/')).slice(0,3)){const u=URL.createObjectURL(f);urls.push(u);const img=document.createElement('img');img.src=u;img.alt='Vom Benutzer ausgewähltes lokales Foto';const box=document.createElement('div');box.className='photo-box';box.appendChild(img);gallery.appendChild(box)}});
 const speak=document.getElementById('em-speak');let active=false;
 speak.addEventListener('click',()=>{if(!('speechSynthesis' in window)){speak.textContent='TTS nicht verfügbar';return;}if(active){speechSynthesis.cancel();active=false;speak.textContent=dict[langs.value].speak;return;}speechSynthesis.cancel();const t=dict[langs.value];const msg=new SpeechSynthesisUtterance(['Emin’s Grill, Koblenz.',t.lead,t.menuNote].join(' '));msg.lang={de:'de-DE',en:'en-GB',tr:'tr-TR'}[langs.value];msg.rate=.94;msg.onend=msg.onerror=()=>{active=false;speak.textContent=t.speak};active=true;speak.textContent=t.stop;speechSynthesis.speak(msg)});
 })();
@@ -873,7 +898,7 @@ classic.addEventListener('click',()=>setTheme('classic'));modern.addEventListene
 try{setTheme(localStorage.getItem('odpc-dp-mode')==='modern'?'modern':'classic')}catch{setTheme('classic')}
 translate();
 const file=document.getElementById('dp-pictures'),gallery=document.getElementById('dp-gallery');let urls=[];
-file.addEventListener('change',()=>{urls.forEach(u=>URL.revokeObjectURL(u));urls=[];gallery.replaceChildren();for(const f of Array.from(file.files).filter(x=>x.type.startsWith('image/')).slice(0,3)){const u=URL.createObjectURL(f);urls.push(u);const img=document.createElement('img');img.src=u;img.alt='Vom Benutzer ausgewähltes lokales Foto';const box=document.createElement('div');box.className='photo-box';box.appendChild(img);gallery.appendChild(box)}});
+file.addEventListener('change',()=>{urls.forEach(u=>URL.revokeObjectURL(u));urls=[];gallery.replaceChildren();const credit=root.querySelector('.photo-credit');if(credit)credit.hidden=true;for(const f of Array.from(file.files).filter(x=>x.type.startsWith('image/')).slice(0,3)){const u=URL.createObjectURL(f);urls.push(u);const img=document.createElement('img');img.src=u;img.alt='Vom Benutzer ausgewähltes lokales Foto';const box=document.createElement('div');box.className='photo-box';box.appendChild(img);gallery.appendChild(box)}});
 const speak=document.getElementById('dp-speak');let active=false;
 speak.addEventListener('click',()=>{if(!('speechSynthesis' in window)){speak.textContent='TTS nicht verfügbar';return;}if(active){speechSynthesis.cancel();active=false;speak.textContent=dict[langs.value].speak;return;}speechSynthesis.cancel();const t=dict[langs.value];const msg=new SpeechSynthesisUtterance(['Döner Paradies, Koblenz.',t.lead,t.menuNote].join(' '));msg.lang={de:'de-DE',en:'en-GB',tr:'tr-TR'}[langs.value];msg.rate=.94;msg.onend=msg.onerror=()=>{active=false;speak.textContent=t.speak};active=true;speak.textContent=t.stop;speechSynthesis.speak(msg)});
 })();
