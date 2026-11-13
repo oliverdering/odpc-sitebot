@@ -196,6 +196,14 @@ body{margin:0}
 #kf-demo .kf-brand-fallback{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:13px;color:#fff3d3;border:3px solid #d9b56c;border-radius:50%;aspect-ratio:1;width:min(100%,410px);padding:24px;background:radial-gradient(circle,#27513e,#112b25);box-shadow:inset 0 0 0 7px #17392d,0 15px 35px #0004}
 #kf-demo .kf-brand-fallback strong{font:italic 700 clamp(30px,4vw,58px)/1.1 Georgia,serif;color:#f9e3b0}
 #kf-demo .kf-brand-fallback span{font-size:clamp(10px,1.2vw,14px);letter-spacing:.12em}
+/* Original storefront sign reference (photo 1000434333): ivory banner, black handwritten lettering, ochre pennant. This typographic fallback is NOT a replacement for the actual logo photograph. */
+#kf-demo .kf-original-sign-style{width:min(100%,560px);aspect-ratio:auto;min-height:190px;background:none;border:0;border-radius:0;box-shadow:none;gap:15px;padding:14px}
+#kf-demo .kf-original-sign-style .kf-sign-banner{position:relative;isolation:isolate;display:flex;justify-content:center;align-items:center;width:100%;min-height:140px;padding:20px 22px;background:#e8e3d6;transform:rotate(-1.2deg);border:2px solid #c2b8a5;box-shadow:0 12px 30px #0006}
+#kf-demo .kf-original-sign-style .kf-sign-banner strong{font-family:"Brush Script MT","Segoe Script","URW Chancery L",cursive;font-size:clamp(42px,5.5vw,72px);font-weight:700;font-style:italic;line-height:1.12;letter-spacing:-.055em;color:#272623;text-shadow:none;white-space:nowrap;z-index:2}
+#kf-demo .kf-original-sign-style .kf-sign-ribbon{position:absolute;right:-38px;top:5px;bottom:5px;width:65px;background:#c49d57;clip-path:polygon(0 0,100% 0,78% 50%,100% 100%,0 100%);z-index:-1}
+#kf-demo .kf-original-sign-style .kf-brand-place{color:#f4e8d2;font:700 12px system-ui,sans-serif;letter-spacing:.17em}
+@media(max-width:500px){#kf-demo .kf-original-sign-style .kf-sign-banner{min-height:100px;padding:15px 7px}#kf-demo .kf-original-sign-style .kf-sign-banner strong{font-size:clamp(32px,8vw,46px)}#kf-demo .kf-original-sign-style .kf-sign-ribbon{right:-15px;width:36px}}
+
 @media(max-width:700px){#kf-demo .kf-brand-scene,#kf-demo.kf-theme-modern .kf-brand-scene{min-height:290px;max-height:none}#kf-demo .kf-brand-fallback{width:min(100%,260px)}}
 
 /* ODPC-LICENSED-PHOTO-SET-20261113: curated Commons material, all labelled as samples. */
@@ -263,7 +271,7 @@ body{margin:0}
       <?php elseif ($kf_logo_url) : ?>
         <img class="kf-approved-logo" src="<?= esc_url($kf_logo_url) ?>" alt="Freigegebenes Kleine-Freiheit-Logo" fetchpriority="high" decoding="async">
       <?php else : ?>
-        <div class="kf-brand-fallback"><span class="kf-brand-place">KOBLENZ · ALTENHOF 6</span><strong>Kleine Freiheit</strong><span>KNEIPE &amp; SCHLAGERBAR</span></div>
+        <div class="kf-brand-fallback kf-original-sign-style" role="img" aria-label="Kleine Freiheit – Schriftzug nach dem Originalschild vor Ort"><span class="kf-sign-banner"><strong>Kleine Freiheit</strong><span class="kf-sign-ribbon" aria-hidden="true"></span></span><span class="kf-brand-place">ALTENHOF 6a · KOBLENZ</span></div>
       <?php endif; ?>
     </div>
   </div>
