@@ -1,0 +1,32 @@
+name: YourBusiness / Kleine Freiheit media readiness
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/yourbusiness-kf-media-readiness.yml'
+permissions:
+  contents: read
+jobs:
+  media-readiness:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Probe authenticated WordPress image importer read-only
+        env:
+          SSHPASS: ${{ secrets.ODPC_SSH_PASSWORD }}
+        run: |
+          set -euo pipefail
+          test -n "$SSHPASS"
+          sudo apt-get install -y -qq sshpass >/dev/null
+          mkdir -p ~/.ssh
+          ssh-keyscan -4 -t ed25519 home119567219.1and1-data.host > ~/.ssh/known_hosts 2>/dev/null
+          ssh-keygen -lf ~/.ssh/known_hosts | grep -F 'SHA256:1gx2w8Rtv3wCgi7Jh8myf/KVd72cRQbow03UP8P095Q' >/dev/null
+          sshpass -e ssh -4 -o BatchMode=no -o PreferredAuthentications=password -o PubkeyAuthentication=no -o NumberOfPasswordPrompts=1 -o StrictHostKeyChecking=yes -o ConnectTimeout=20 p37641258@home119567219.1and1-data.host 'set -eu
+            cd "$HOME/YourBusiness"
+            test -f wp-content/plugins/yourbusiness-instant-demo/kf-gallery-admin.php
+            zip_ready=$(uiwpcli_PHP_FLAVOR=php8.3 wp eval "echo class_exists(ZipArchive::class) ? 1 : 0;")
+            gallery_count=$(uiwpcli_PHP_FLAVOR=php8.3 wp eval "echo count(odpc_kf_gallery_ids());")
+            echo "KF_ZIP_EXTENSION_READY=$zip_ready"
+            echo "KF_PHOTOS_IN_WORDPRESS=$gallery_count"
+            test "$zip_ready" = "1"
+          '
