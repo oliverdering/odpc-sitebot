@@ -58,6 +58,9 @@ jobs:
           grep -q 'research.js' /tmp/yb-demo.html
           curl --fail --location --silent --show-error --max-time 25 --retry 2 -o /tmp/yb-research.js 'https://yourbusiness.odpc.de/wp-content/plugins/yourbusiness-instant-demo/research.js'
           grep -q 'Firmendaten automatisch recherchieren' /tmp/yb-research.js
+          node --check /tmp/yb-research.js
+          grep -q 'yb-menu-draft' /tmp/yb-research.js
+          grep -q 'yb_company' /tmp/yb-research.js
           python - <<'PY' > /tmp/yb-nonce.txt
           import re,json
           html = open('/tmp/yb-demo.html').read()
@@ -81,5 +84,10 @@ jobs:
           a=o['data']['candidates']
           assert a and a[0]['name']=='Kleine Freiheit' and 'Altenhof 6' in a[0]['address']
           assert 'intro' in a[0] and 'history' in a[0]
+          assert len(a[0].get('menu_sections', [])) == 3
+          assert sum(len(s['items']) for s in a[0]['menu_sections']) == 12
+          assert len(a[0].get('publication_checks', [])) >= 5
+          assert a[0].get('imprint', '') == ''
+          assert all('sample_price' in item for sec in a[0]['menu_sections'] for item in sec['items'])
           print('YOURBUSINESS_PUBLIC_RESEARCH_ENDPOINT_READY')
           PY
