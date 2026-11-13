@@ -1,0 +1,4 @@
+ODPC Preise & Angebote deployment re-trigger 2026-11-13.
+Scope: deploy only odpc-prices.php mu-plugin; preserve theme, navigation design toggle, and floating dock.
+Acceptance: /preise-angebote/ HTTP 200, rendered #odpc-pricing, 59 € and 89 € visible, odpc-prices-nav present.
+Rollback on failed smoke test per scripts/deploy_odpc_prices.py.
