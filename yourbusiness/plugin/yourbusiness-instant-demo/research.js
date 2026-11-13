@@ -55,14 +55,44 @@
     field('address', 'Adresse (aus öffentlicher Recherche, überprüfen)');
     field('hours', 'Öffnungszeiten (noch nicht vom Kunden bestätigt)', 2);
     field('imprint', 'Betreiber / Impressum (nur bestätigte Kundendaten)', 3);
+    const menuIntro = document.createElement('p');
+    menuIntro.className = 'yb-research-info';
+    menuIntro.textContent = 'Getränkekarte: Die Recherche kann einen Entwurf vorbereiten. Nur tatsächlich bestätigte Preise eintragen.';
+    advanced.appendChild(menuIntro);
+    const menuLabel = document.createElement('label');
+    menuLabel.textContent = 'Getränkekarte bearbeiten: # Kategorie oder Getränk | Menge | bestätigter Preis';
+    const menuInput = document.createElement('textarea');
+    menuInput.id = 'yb-menu-draft'; menuInput.rows = 11;
+    menuInput.placeholder = '# Bier\nBitburger Pils | 0,3 l | \n# Alkoholfrei\nMineralwasser | 0,3 l | ';
+    menuLabel.appendChild(menuInput);
+    advanced.appendChild(menuLabel);
+    const demoPriceBox = document.createElement('details');
+    const demoPriceTitle = document.createElement('summary');
+    demoPriceTitle.textContent = 'Unverbindliche Preisbeispiele aus dem Dossier ansehen';
+    demoPriceBox.appendChild(demoPriceTitle);
+    const demoPriceContent = document.createElement('div');
+    demoPriceContent.className = 'yb-research-info';
+    demoPriceBox.appendChild(demoPriceContent);
+    advanced.appendChild(demoPriceBox);
+    const legalBox = document.createElement('details');
+    const legalTitle = document.createElement('summary');
+    legalTitle.textContent = 'Checkliste vor Veröffentlichung';
+    legalBox.appendChild(legalTitle);
+    const legalContent = document.createElement('ul');
+    legalBox.appendChild(legalContent);
+    advanced.appendChild(legalBox);
     editor.insertBefore(sources, consent);
 
     const status = message => { const output = el('status'); if (output) output.textContent = message; };
     const val = id => (el(id)?.value || '').trim();
+    const autoFilled = new Map();
     const fill = (id, value) => {
       const input = el(id);
       if (!input || !value) return;
-      if (id === 'sector' || !input.value.trim()) input.value = value;
+      if (id === 'sector' || !input.value.trim() || autoFilled.get(id) === input.value) {
+        input.value = value;
+        autoFilled.set(id, value);
+      }
     };
     let selectedCompany = null;
     function applyCompany(record) {
@@ -71,6 +101,37 @@
       fill('site', record.website);
       fill('google', record.google);
       fill('services', record.services);
+      if (Array.isArray(record.menu_sections) && record.menu_sections.length) {
+        const menuLines = [];
+        demoPriceContent.replaceChildren();
+        const explain = document.createElement('p');
+        explain.textContent = record.menu_notice || 'Unverbindliche Preisbeispiele. Vor Nutzung bestätigen.';
+        demoPriceContent.appendChild(explain);
+        for (const section of record.menu_sections) {
+          menuLines.push('# ' + (section.title || 'Getränke').replace(' (Vorschlag)', ''));
+          const h = document.createElement('strong');
+          h.textContent = section.title || 'Getränke';
+          demoPriceContent.appendChild(h);
+          const ul = document.createElement('ul');
+          for (const item of (section.items || [])) {
+            menuLines.push([item.name || '', item.size || '', ''].join(' | '));
+            const li = document.createElement('li');
+            li.textContent = [item.name, item.size, item.sample_price ? '[' + item.sample_price + ' – nur Musterpreis]' : ''].filter(Boolean).join(' · ');
+            ul.appendChild(li);
+          }
+          demoPriceContent.appendChild(ul);
+          menuLines.push('');
+        }
+        if (!menuInput.value.trim() || menuInput.dataset.prefilled === 'yes') {
+          menuInput.value = menuLines.join('\n').trim();
+          menuInput.dataset.prefilled = 'yes';
+        }
+      }
+      legalContent.replaceChildren();
+      if (Array.isArray(record.publication_checks)) for (const check of record.publication_checks) {
+        const li = document.createElement('li'); li.textContent = check;
+        legalContent.appendChild(li);
+      }
       sources.replaceChildren();
       const section = document.createElement('div'); section.className = 'yb-research-source';
       const title = document.createElement('strong');
@@ -95,6 +156,13 @@
       advanced.open = true;
       status('Daten vorbefüllt. Telefonnummer, Öffnungszeiten und Impressum bitte prüfen; anschließend Vorschau erstellen.');
       results.replaceChildren();
+    }
+
+    // Support a direct customer demo link without retyping the two search fields.
+    const searchParams = new URLSearchParams(window.location.search);
+    if (searchParams.get('yb_company') && searchParams.get('yb_city')) {
+      name.value = searchParams.get('yb_company').slice(0, 100);
+      city.value = searchParams.get('yb_city').slice(0, 100);
     }
 
     button.addEventListener('click', async () => {
@@ -166,6 +234,34 @@
         const h = document.createElement('h3'); h.textContent = 'Geschichte unseres Standorts';
         const p = document.createElement('p'); p.textContent = company.history;
         section.appendChild(h); section.appendChild(p);
+      }
+      const menuLines = menuInput.value.split(/\r?\n/).map(line => line.trim()).filter(Boolean);
+      if (menuLines.length) {
+        const menuHeader = document.createElement('h2');
+        menuHeader.textContent = 'Getränkekarte – Entwurf';
+        section.appendChild(menuHeader);
+        const note = document.createElement('p');
+        note.style.cssText = 'font-size:12px;color:#875400';
+        note.textContent = 'Sortiment, Mengen und Preise sind vor Veröffentlichung vom Betrieb zu bestätigen. Fehlende Preise sind kein verbindliches Angebot.';
+        section.appendChild(note);
+        const menuList = document.createElement('div'); menuList.className = 'yb-draft-menu';
+        for (const line of menuLines) {
+          if (line.startsWith('#')) {
+            const h = document.createElement('h3'); h.textContent = line.replace(/^#+\s*/, '');
+            menuList.appendChild(h);
+            continue;
+          }
+          const fields = line.split('|').map(x => x.trim());
+          const row = document.createElement('div');
+          row.style.cssText = 'display:flex;gap:12px;justify-content:space-between;align-items:baseline;border-bottom:1px solid #e1e5ec;padding:8px 0';
+          const item = document.createElement('span');
+          item.textContent = fields[0] + (fields[1] ? ' · ' + fields[1] : '');
+          const price = document.createElement('span');
+          price.style.whiteSpace = 'nowrap';
+          price.textContent = fields[2] || 'Preis folgt';
+          row.appendChild(item); row.appendChild(price); menuList.appendChild(row);
+        }
+        section.appendChild(menuList);
       }
       const disclaimer = document.createElement('p');
       disclaimer.style.cssText = 'font-size:12px;color:#526179;border-top:1px solid #ddd;padding-top:12px';
