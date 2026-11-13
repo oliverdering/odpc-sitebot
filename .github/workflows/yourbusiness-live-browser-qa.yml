@@ -5,10 +5,16 @@ on:
       - 'scripts/yourbusiness_live_browser_qa.mjs'
       - '.github/workflows/yourbusiness-live-browser-qa.yml'
   workflow_dispatch:
+  workflow_run:
+    workflows:
+      - "YourBusiness / Instant demo deployment"
+    types:
+      - completed
 permissions:
   contents: read
 jobs:
   live-qa:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
