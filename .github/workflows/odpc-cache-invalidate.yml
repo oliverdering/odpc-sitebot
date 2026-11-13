@@ -1,0 +1,105 @@
+name: ODPC / Guarded public page cache invalidation
+on:
+  push:
+    paths:
+      - '.github/workflows/odpc-cache-invalidate.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: odpc-cache-invalidate
+  cancel-in-progress: false
+jobs:
+  clear-and-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install trusted SFTP client
+        run: python -m pip install 'paramiko>=3.4,<5'
+      - name: Preserve stale cache directories and validate public Android HTML
+        env:
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+        shell: bash
+        run: |
+          python - <<'PY'
+          import base64, hashlib, hmac, os, posixpath, stat, sys, time
+          from urllib.request import Request, urlopen
+          import paramiko
+          sys.path.insert(0, 'scripts')
+          from deploy_odpc_prices import HOST, USER, KEY, ROOT
+          pw=os.environ.get('ODPC_SFTP_PASSWORD')
+          if not pw: raise RuntimeError('Missing SFTP secret')
+          t=paramiko.Transport((HOST,22))
+          t.start_client(timeout=20)
+          actual='SHA256:'+base64.b64encode(hashlib.sha256(t.get_remote_server_key().asbytes()).digest()).decode().rstrip('=')
+          if not hmac.compare_digest(KEY, actual): raise RuntimeError('Host key mismatch; no cache operation')
+          t.auth_password(USER,pw)
+          if not t.is_authenticated(): raise RuntimeError('Authentication refused; no cache operation')
+          s=paramiko.SFTPClient.from_transport(t)
+          cache=posixpath.join(ROOT,'wp-content','cache')
+          stamp=str(int(time.time()))
+          targets=[
+            ('wpo-cache/odpc.de','wpo-cache-odpc-backup-'+stamp),
+            ('all','all-odpc-backup-'+stamp),
+          ]
+          try:
+            s.stat(posixpath.join(ROOT,'wp-content/themes/astra/style.css'))
+            for relative,backup_name in targets:
+              src=posixpath.join(cache,relative)
+              dest=posixpath.join(cache,backup_name)
+              try:
+                v=s.lstat(src)
+                if not stat.S_ISDIR(v.st_mode): raise RuntimeError('Unexpected non-directory cache target: '+relative)
+              except FileNotFoundError:
+                print('SKIP absent cache directory',relative,flush=True)
+                continue
+              try:
+                s.lstat(dest)
+                raise RuntimeError('Backup name collision; refusing cache operation')
+              except FileNotFoundError:
+                pass
+              s.posix_rename(src,dest)
+              try:
+                s.mkdir(src)
+              except Exception:
+                s.posix_rename(dest,src)
+                raise
+              print('CACHE INVALIDATED',relative,'backup=',backup_name,flush=True)
+          finally:
+            s.close();t.close()
+          ua='Mozilla/5.0 (Linux; Android 17; Pixel 9) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Mobile Safari/537.36'
+          urls=[
+            ('home','https://odpc.de/'),
+            ('prices','https://odpc.de/preise-angebote/'),
+            ('webdesign','https://odpc.de/webdesign/'),
+          ]
+          failed=[]
+          for label,url in urls:
+            passed=False
+            for attempt in range(3):
+              try:
+                with urlopen(Request(url,headers={'User-Agent':ua,'Accept-Encoding':'identity'}),timeout=30) as r:
+                  html=r.read().decode('utf-8','replace')
+                  markers={
+                    'status':r.status,'nav':'data-odpc-prices="1"' in html,
+                    'switch':'odpc-appearance-switch' in html,
+                    'pricing':'id="odpc-pricing"' in html and '59 €' in html and '89 €' in html,
+                    'last_modified':r.headers.get('Last-Modified'),
+                  }
+                print('CHECK',label,'attempt',attempt+1,markers,flush=True)
+                passed=(markers['status']==200 and markers['nav'] and markers['switch'] and (label!='prices' or markers['pricing']))
+                if passed: break
+              except Exception as e:
+                print('CHECK ERROR',label,str(e),flush=True)
+              time.sleep(2)
+            if not passed: failed.append(label)
+          if failed:
+            print('FAIL stale public pages:',', '.join(failed),flush=True)
+            print('Backups retained; website files and UI controls untouched',flush=True)
+            sys.exit(1)
+          print('PASS: normal mobile requests see pricing menu on homepage, pricing page and webdesign page',flush=True)
+          PY
