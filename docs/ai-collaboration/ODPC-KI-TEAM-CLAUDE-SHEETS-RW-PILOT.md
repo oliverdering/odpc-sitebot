@@ -2,7 +2,7 @@
 
 **Stand:** 2026-11-13 · **Owner:** Oxana / ODPC · **Tracking:** [Issue #296](https://github.com/oliverdering/odpc-sitebot/issues/296)  
 **Implementierungsphase:** Claude zuerst; Claire, Lee, Copilot und Vivian danach einzeln.  
-**Status:** Lesezugriff durch Claude im ersten Pilot laut Claude-Review belegt; Schreibzugriff **noch nicht** belegt; **kein** autonomer Worker aktiv.
+**Status:** Erstes Lesen laut Claude-Review belegt. **Aktueller Chat-Test vom 13.11.2026 gescheitert:** kein Google-Sheets-Schreibtool und nun auch kein Google-Drive-Lesetool in dieser Claude-Sitzung. Im privaten Sheet: `TASK-20261113-002` = `BLOCKIERT`, `MSG-20261113-004` fehlt. Kein autonomer Worker aktiv.
 
 ## Entscheidung: offiziellen Claude-Google-Sheets-Connector vor Eigenentwicklung testen
 
@@ -14,26 +14,34 @@ Offizielle Quellen:
 
 **Wichtig:** Ein Chat-Connector ist **nicht** gleichbedeutend mit unbeaufsichtigtem Betrieb. Für automatische wiederkehrende Auftragsbearbeitung ist später ein autorisierter Dispatcher/Worker mit kontrollierter Laufzeit und ggf. Provider-API erforderlich. Ohne explicit gestattete API-Abrechnung und Datenschutzprüfung keine Aktivierung.
 
-## Einmaliges Setup im Claude-Konto (wird vom Konto-Inhaber autorisiert)
+## Nach gescheitertem Chat-Test: zwei offizielle Integrationswege
 
-1. In Claude Web (Chrome) oder Claude Desktop das betreffende Claude-Konto öffnen.
-2. Im Chat auf `+` > **Connectors** gehen und **Google Sheets** aktivieren (nicht bloß Google Drive).
-3. Falls verlangt, mit dem Google-Konto autorisieren, das Zugriff auf das private ODPC-Sheet besitzt. **Keine öffentliche Freigabe** der Tabelle.
-4. ODPC KI-Team-Zentrale V1 als Link in Claude einfügen; Claude soll die **bestehende** Tabelle bearbeiten, keine neue Kopie erstellen.
-5. Den vorbereiteten Auftrag `TASK-20261113-002` aus dem Tabellenregister `Auftraege` ausführen lassen. Den eigentlichen Testprompt und die einmalige Testkennung ausschließlich aus dem privaten Sheet, Tab `Startprompts`, übernehmen.
+**Priorität 1 – Offizielles Anthropic-Workspace-Add-on direkt in Google Sheets (interaktiv):**
 
-Falls das native Bearbeiten nicht angeboten wird, die genaue Fehlermeldung sichern. Alternativ kann nach Kosten-/Berechtigungsprüfung Googles **Google Sheets MCP Server** getestet werden; dieser ist ein **Developer Preview** und erfordert Cloud-Projekt, OAuth-Konfiguration und Freischaltung. Keine Geheimnisse in öffentlichen GitHub-Issues dokumentieren.
+1. Auf einem Rechner mit **Chrome, Edge oder Safari** und einem **berechtigten kostenpflichtigen Claude-Plan** das offizielle Anthropic-Add-on aus dem [Google Workspace Marketplace](https://workspace.google.com/marketplace/app/claude/12459801340) installieren. Ein Workspace-Administrator muss die Installation ggf. erlauben.
+2. Mit dem Google-Konto anmelden, das das private ODPC-Sheet bearbeiten darf; Zugriffsberechtigungen sorgfältig prüfen. Kein öffentliches Teilen.
+3. Das **bestehende** Google Sheet öffnen; **Erweiterungen > Claude > Open Claude**; in der Seitenleiste mit Claude anmelden und Bearbeitungsbestätigungen freigeben.
+4. Der konkrete Prüfprompt für `TASK-20261113-002` steht im **privaten** Sheet, Tab `Startprompts`. Claude darf ausschließlich die vorgesehenen Zellen bearbeiten. Nach Prüfung der Antwort Status setzen.
+5. Die Seitenleiste geöffnet lassen; sie führt **keine** Hintergrundjobs aus. Der Google-Versionsverlauf zeigt Änderungen unter der authentifizierten Google-Person, nicht als technisch separate Claude-Identität. Prozess-/Toolnachweis daher zusätzlich dokumentieren.
+
+**Priorität 2 – Alternativ native Claude-Chat-Connectors:**
+- In `claude.ai` > `+` > **Connectors** die **separaten** Google Sheets/Docs/Slides Connectoren prüfen. Bei Team/Enterprise muss ggf. der Owner diese aktivieren. Fehlende Tools können nicht durch einen Prompt nachträglich erzeugt werden.
+- Bei OAuth-Problemen Claude > **Customize > Connectors** auf Verbindungsstatus und ggf. Neuautorisierung prüfen; nicht ohne Not bestehende Google-Zugriffe entfernen.
+
+**Nicht mit einer vollautonomen Agenten-Bridge verwechseln:** Beide Wege sind vorerst nutzergetriggerte interaktive Bearbeitungen. Für autonomes Polling später verifizierbaren Worker mit separaten Credentials, Idempotenz, Audit, Quoten- und Kostenkontrolle entwickeln. Drittanbieter-API-Zahlungen nicht ohne Budgetfreigabe aktivieren.
+
+Bei nicht verfügbarem Add-on: konkrete Konto-/Plan-/Administrator-Beschränkung protokollieren. Kein sinnloser erneuter derselbe Chat-Test. Keine Geheimnisse in öffentlichen GitHub-Issues dokumentieren.
 
 ## Testplan – TASK-20261113-002
 
-**Vorher:** Tabelle ist privat; Task hat status `NEU`; Nachrichten enthält eine Auftragsnachricht und die Zielantwortzeile ist leer.
+**Aktuell:** Tabelle ist privat; Task steht nach fehlgeschlagenem Chat-Test auf `BLOCKIERT`, die Ergebniszeile ist noch leer. Nach Installation des Add-ons den Test wiederaufnehmen. Kein Erfolgseintrag bis der tatsächliche Write nachgewiesen ist.
 
 **Test:** Claude soll mit seinem eigenen Google-Sheets-Schreibwerkzeug die mit `TASK-20261113-002` verknüpfte neue Nachricht (`MSG-20261113-004`) erzeugen und den vorhandenen Auftrag erst nach erfolgreicher Antwort auf `ERLEDIGT` umstellen. Schreibbereich ausschließlich:
 - `Nachrichten!A5:J5`: `message_id`, `task_id`, `von=CLAUDE`, `an=OXANA`, `art=ERGEBNIS`, Zeit, Inhalt mit Testkennung, Notiz; alte Nachrichten unberührt.
 - `Auftraege!G3`, `K3`, `L3`: `ERLEDIGT`, Aktualisierungszeit, Ergebnisreferenz.
 
 **Akzeptanzkriterien:**
-- [ ] OAuth-Autorisierung durch Kontoinhaber abgeschlossen und Google-Sheets-Connector in Claude aktiv.
+- [ ] Offizielles Claude-for-Google-Workspace-Add-on oder nativer Google-Sheets-Chat-Connector nachweislich **mit Bearbeitungsrecht** autorisiert.
 - [ ] Claude **liest** genau den vorhandenen Testauftrag aus dem privaten Sheet.
 - [ ] Claude **schreibt selbst** eine neue Nachrichtenzeile mit der geforderten Testkennung; kein manuelles Einfügen aus Chat.
 - [ ] Claude setzt danach den Task auf `ERLEDIGT` und die korrekte `ergebnis_ref`.
@@ -43,7 +51,7 @@ Falls das native Bearbeiten nicht angeboten wird, die genaue Fehlermeldung siche
 
 **Pass:** `Agenten`-Register aktualisieren auf **READ_WRITE_VERIFIED (interaktiv)**; mit Datum und Nachweis. **Nicht** als `AUTONOM`/Hintergrundworker kennzeichnen.
 
-**Fail:** konkrete fehlende Berechtigung/Toolname/Fehlermeldung protokollieren; Status `SCHREIBTEST OFFEN` oder `BLOCKIERT` statt Erfolg behaupten. Bestehenden Gmail-Pilot nicht beschädigen.
+**Fail (bereits eingetreten):** Claude meldet keinen Google-Sheets-Schreibconnector; Google-Drive-Tools in dieser Sitzung ebenfalls fehlend. Oxana prüfte die Live-Tabelle: Ergebniszeile leer, Task unverändert. Blocker unter `BLOCKIERT` protokolliert. Add-on-Weg ist noch ungetestet. Bei weiteren Fehlern genaue Meldung erfassen. Bestehenden Gmail-Pilot nicht beschädigen.
 
 ## Nach bestandenem Claude-Schreibtest
 
