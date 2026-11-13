@@ -87,6 +87,7 @@ jobs:
               assert 'wp-block-navigation' not in html,label
               assert 'kf-theme-klassisch' in html and 'kf-theme-modern' in html,label
               assert 'data-kf-mode' in html,label
+              assert 'class="kf-float-nav"' in html,label
               assert 'max-width:700px' in html,label
           assert classic!=modern,'Design variant endpoint ignores query string'
           print('KLEINE_FREIHEIT_TWO_THEMES_AND_LINKS_READY')
