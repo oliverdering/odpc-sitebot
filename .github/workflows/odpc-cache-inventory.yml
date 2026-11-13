@@ -1,0 +1,51 @@
+name: ODPC / Read-only page cache inventory
+on:
+  push:
+    paths:
+      - '.github/workflows/odpc-cache-inventory.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install 'paramiko>=3.4,<5'
+      - name: Inspect ODPC cache directory names only (no writes)
+        env:
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+        shell: bash
+        run: |
+          python - <<'PY'
+          import sys, os, base64, hashlib, hmac, stat, posixpath, datetime
+          sys.path.insert(0,'scripts')
+          from deploy_odpc_prices import HOST,USER,KEY,ROOT
+          import paramiko
+          pw=os.environ.get('ODPC_SFTP_PASSWORD')
+          if not pw: raise RuntimeError('Missing SFTP secret')
+          t=paramiko.Transport((HOST,22))
+          t.start_client(timeout=20)
+          actual='SHA256:'+base64.b64encode(hashlib.sha256(t.get_remote_server_key().asbytes()).digest()).decode().rstrip('=')
+          if not hmac.compare_digest(KEY,actual): raise RuntimeError('Host fingerprint mismatch')
+          t.auth_password(USER,pw)
+          if not t.is_authenticated(): raise RuntimeError('SFTP authentication failed')
+          s=paramiko.SFTPClient.from_transport(t)
+          try:
+            for sub in ('wp-content/cache','wp-content/cache/all','wp-content/cache/all/preise-angebote','wp-content/cache/wpo-cache','wp-content/cache/wpo-cache/odpc.de','wp-content/cache/wpo-cache/odpc.de/preise-angebote','wp-content/cache/page_enhanced','wp-content/cache/wp-rocket'):
+              path=posixpath.join(ROOT,sub)
+              try:
+                items=s.listdir_attr(path)
+                print('DIR',sub,'ENTRIES',len(items),flush=True)
+                for f in items[:45]:
+                  dt=datetime.datetime.fromtimestamp(f.st_mtime,datetime.timezone.utc).isoformat()
+                  print(('D' if stat.S_ISDIR(f.st_mode) else 'F'),f.filename,'size',f.st_size,'mtime_utc',dt,flush=True)
+              except (FileNotFoundError,IOError) as e:
+                print('ABSENT',sub,str(e),flush=True)
+          finally:
+            s.close();t.close()
+          PY
