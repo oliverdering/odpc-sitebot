@@ -52,3 +52,15 @@ jobs:
             fi
             echo YOURBUSINESS_DEMO_PLUGIN_ACTIVE
           '
+      - name: Smoke test Emin's Grill public preview
+        run: |
+          set -euo pipefail
+          status=$(curl --location --silent --show-error --max-time 30 --retry 2 --output /tmp/yourbusiness-emins.html --write-out '%{http_code}' 'https://yourbusiness.odpc.de/?yb_emins_grill=1')
+          test "$status" = "200"
+          grep -Fq 'id="em-demo"' /tmp/yourbusiness-emins.html
+          grep -Fq 'id="em-modern"' /tmp/yourbusiness-emins.html
+          grep -Fq 'id="em-lang"' /tmp/yourbusiness-emins.html
+          grep -Fq 'id="em-speak"' /tmp/yourbusiness-emins.html
+          grep -Fq 'Münzstraße 18' /tmp/yourbusiness-emins.html
+          echo "YOURBUSINESS_EMINS_PUBLIC_SMOKE_OK"
+
