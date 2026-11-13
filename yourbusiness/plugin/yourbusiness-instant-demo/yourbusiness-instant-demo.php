@@ -113,7 +113,15 @@ body{margin:0}
 #kf-demo .kf-address-art span{font-size:12px;letter-spacing:.2em;text-transform:uppercase}
 #kf-demo .kf-legal-note{padding:25px;background:var(--panel);border-left:3px solid var(--accent);border-radius:var(--radius)}
 #kf-demo .kf-legal-note p{margin:0;font-size:13px}
-#kf-demo .kf-float-nav{position:fixed;z-index:30;bottom:max(16px,env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);display:flex;align-items:center;justify-content:center;gap:4px;max-width:calc(100% - 20px);padding:7px;background:#183b34;border:1px solid #8f9e86;border-radius:100px;box-shadow:0 12px 38px rgba(0,0,0,.28);color:#fffcf5}#kf-demo .kf-float-nav a{display:inline-flex;align-items:center;justify-content:center;padding:11px 14px;border-radius:50px;text-decoration:none;font-size:12px;font-weight:700;white-space:nowrap}#kf-demo .kf-float-nav a:hover,#kf-demo .kf-float-nav a:focus-visible{background:#fffaf0;color:#183b34}#kf-demo .kf-float-nav .kf-float-primary{background:#d7bb8e;color:#183b34}#kf-demo.kf-theme-modern .kf-float-nav{background:#0b1520;border-color:#516577}#kf-demo.kf-theme-modern .kf-float-nav .kf-float-primary{background:#e9bd76;color:#111e2b}#kf-demo .kf-footer{padding:30px 0 35px;border-top:1px solid var(--line)}
+#kf-demo .kf-float-nav{position:fixed;z-index:30;bottom:max(16px,env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);display:flex;align-items:center;justify-content:center;gap:4px;max-width:calc(100% - 20px);padding:7px;background:#183b34;border:1px solid #8f9e86;border-radius:100px;box-shadow:0 12px 38px rgba(0,0,0,.28);color:#fffcf5}#kf-demo .kf-float-nav a{display:inline-flex;align-items:center;justify-content:center;padding:11px 14px;border-radius:50px;text-decoration:none;font-size:12px;font-weight:700;white-space:nowrap}#kf-demo .kf-float-nav a:hover,#kf-demo .kf-float-nav a:focus-visible{background:#fffaf0;color:#183b34}#kf-demo .kf-float-nav .kf-float-primary{background:#d7bb8e;color:#183b34}#kf-demo.kf-theme-modern .kf-float-nav{background:#0b1520;border-color:#516577}#kf-demo.kf-theme-modern .kf-float-nav .kf-float-primary{background:#e9bd76;color:#111e2b}/* Single universal floating toolbar: speech + navigation, no overlapping second bar. */
+#kf-demo #kf-accessibility{position:fixed;z-index:99;bottom:max(12px,env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);display:flex;justify-content:space-around;align-items:center;gap:4px;width:min(440px,calc(100vw - 20px));max-width:calc(100vw - 20px);padding:6px;background:var(--paper);color:var(--fg);border:1px solid var(--line);border-radius:100px;box-shadow:0 12px 35px #0005;font:13px system-ui,sans-serif}
+#kf-demo #kf-accessibility .kf-tool{display:inline-flex;flex:1 1 0;min-width:0;min-height:40px;justify-content:center;align-items:center;text-align:center;border:1px solid var(--line);border-radius:100px;background:var(--bg);color:var(--fg);font:700 13px system-ui,sans-serif;text-decoration:none;padding:5px;white-space:nowrap}
+#kf-demo #kf-accessibility select.kf-tool{flex:0 1 65px;min-width:59px;padding:5px 3px;background:var(--bg);color:var(--fg)}
+#kf-demo #kf-accessibility .kf-tool-primary{background:var(--accent);color:var(--inverse);border-color:var(--accent)}
+#kf-demo .kf-visually-hidden{position:absolute!important;width:1px;height:1px;overflow:hidden;white-space:nowrap;clip-path:inset(50%)}
+#kf-demo .kf-float-nav{display:none}
+@media(max-width:390px){#kf-demo #kf-accessibility{gap:3px;padding:5px}#kf-demo #kf-accessibility .kf-tool{min-height:38px;padding:4px 2px}#kf-demo #kf-accessibility select.kf-tool{min-width:55px}}
+#kf-demo .kf-footer{padding:30px 0 35px;border-top:1px solid var(--line)}
 #kf-demo .kf-footer-inner{display:flex;justify-content:space-between;flex-wrap:wrap;gap:18px;font-size:12px}
 #kf-demo .kf-footer a{text-decoration:underline}
 #kf-demo .kf-footer .kf-credit{color:var(--sub)}
@@ -342,14 +350,21 @@ body{margin:0}
   </div>
 </section>
 </div>
-<nav class="kf-float-nav" aria-label="Schnellnavigation"><a href="#kf-start">Start</a><a href="#kf-drinks">Getränke</a><a href="#kf-visit">Anfahrt</a><a class="kf-float-primary" href="tel:+4915732500137">Anrufen ↗</a></nav>
+
 <footer class="kf-footer">
   <div class="kf-wrap kf-footer-inner"><div><strong>Kleine Freiheit</strong> · Altenhof 6 · 56068 Koblenz</div><div><a href="#kf-start">Nach oben ↑</a> · <a href="#kf-legal">Rechtliche Hinweise</a></div><div class="kf-credit">Kundenvorschau · <a href="https://odpc.de/" target="_blank" rel="noopener noreferrer">powered by odpc.de</a></div></div>
 </footer>
-<div id="kf-accessibility" role="group" aria-label="Sprach- und Vorlesefunktionen" style="position:fixed;z-index:99;bottom:calc(12px + env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:6px;max-width:calc(100vw - 20px);padding:7px 9px;background:var(--paper);color:var(--fg);border:1px solid var(--line);border-radius:40px;box-shadow:0 6px 26px #0003;font:13px system-ui,sans-serif">
-<label for="kf-voice-language" style="position:absolute;width:1px;height:1px;overflow:hidden">Sprache</label><select id="kf-voice-language" aria-label="Vorlesesprache" style="max-width:85px;padding:7px;border-radius:20px;background:var(--bg);color:var(--fg)"><option value="de-DE">DE</option><option value="en-US">EN</option><option value="nl-NL">NL</option><option value="fr-FR">FR</option><option value="ru-RU">RU</option><option value="tr-TR">TR</option><option value="es-ES">ES</option></select>
-<button type="button" id="kf-read" style="padding:7px;border-radius:20px">▶ Vorlesen</button><button type="button" id="kf-stop" style="padding:7px;border-radius:20px">■ Stop</button><button type="button" id="kf-mic" style="padding:7px;border-radius:20px" aria-label="Spracheingabe">🎙</button><a href="#kf-start" style="padding:7px" aria-label="Zur Startseite">⌂</a>
-</div><div id="kf-voice-status" role="status" aria-live="polite" style="position:fixed;bottom:78px;left:12px;z-index:100;background:var(--paper);color:var(--fg);border-radius:8px;padding:4px 8px;font:12px system-ui,sans-serif;max-width:90vw"></div>
+<nav id="kf-accessibility" role="navigation" aria-label="Kleine Freiheit: Navigation, Sprache und Vorlesen">
+<label for="kf-voice-language" class="kf-visually-hidden">Vorlesesprache auswählen</label>
+<select id="kf-voice-language" class="kf-tool" aria-label="Vorlesesprache">
+  <option value="de-DE">DE</option><option value="en-US">EN</option><option value="nl-NL">NL</option><option value="fr-FR">FR</option><option value="ru-RU">RU</option><option value="tr-TR">TR</option><option value="es-ES">ES</option>
+</select>
+<button type="button" class="kf-tool" id="kf-read" title="Seite vorlesen" aria-label="Seite vorlesen">▶</button>
+<button type="button" class="kf-tool" id="kf-stop" title="Vorlesen stoppen" aria-label="Vorlesen stoppen">■</button>
+<button type="button" class="kf-tool" id="kf-mic" title="Spracheingabe" aria-label="Spracheingabe">🎙</button>
+<a href="#kf-start" class="kf-tool" title="Zur Startseite" aria-label="Zur Startseite">⌂</a>
+<a href="#kf-visit" class="kf-tool kf-tool-primary" title="Anfahrt & Kontakt" aria-label="Anfahrt & Kontakt">↗</a>
+</nav><div id="kf-voice-status" role="status" aria-live="polite" style="position:fixed;bottom:78px;left:12px;z-index:100;background:var(--paper);color:var(--fg);border-radius:8px;padding:4px 8px;font:12px system-ui,sans-serif;max-width:90vw"></div>
 <script>
 (function(){'use strict';
 var panel=document.getElementById('kf-accessibility'),lang=document.getElementById('kf-voice-language'),status=document.getElementById('kf-voice-status');
