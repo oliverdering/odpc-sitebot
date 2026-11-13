@@ -47,19 +47,50 @@ jobs:
           grep -q 'id="yb-build"' /tmp/yb-demo.html
           grep -q 'id="yb-google-search"' /tmp/yb-demo.html
           grep -q 'id="yb-whatsapp"' /tmp/yb-demo.html
-          # Dedicated Kleine Freiheit presentation must be public and independent of the builder.
-          curl --fail --location --silent --show-error --max-time 25 --retry 2 --output /tmp/yb-kleine-freiheit.html 'https://yourbusiness.odpc.de/?yb_kleine_freiheit=1'
-          grep -q 'id="kf-demo"' /tmp/yb-kleine-freiheit.html
-          grep -q 'id="kf-switch"' /tmp/yb-kleine-freiheit.html
-          grep -q 'id="kf-drinks"' /tmp/yb-kleine-freiheit.html
-          grep -q 'id="kf-story"' /tmp/yb-kleine-freiheit.html
-          grep -q 'kf-classic' /tmp/yb-kleine-freiheit.html
-          grep -q 'max-width:700px' /tmp/yb-kleine-freiheit.html
-          if grep -q 'class="yb-launch-cta"' /tmp/yb-kleine-freiheit.html; then
-            echo 'Unexpected builder overlay in customer presentation' >&2
-            exit 1
-          fi
-          echo 'KLEINE_FREIHEIT_PRESENTATION_READY'
+          # Verify both real public design variants, links, scope isolation and anchors.
+          curl --fail --location --silent --show-error --max-time 25 --retry 2 -o /tmp/kf-classic.html 'https://yourbusiness.odpc.de/?yb_kleine_freiheit=1&design=klassisch'
+          curl --fail --location --silent --show-error --max-time 25 --retry 2 -o /tmp/kf-modern.html 'https://yourbusiness.odpc.de/?yb_kleine_freiheit=1&design=modern'
+          python - <<'PY'
+          from html.parser import HTMLParser
+          from pathlib import Path
+          class Inspector(HTMLParser):
+              def __init__(self):
+                  super().__init__()
+                  self.ids=set()
+                  self.hrefs=[]
+                  self.modes=[]
+                  self.title=''
+              def handle_starttag(self,tag,attrs):
+                  a=dict(attrs)
+                  if 'id' in a:self.ids.add(a['id'])
+                  if tag=='a':
+                      self.hrefs.append(a.get('href',''))
+                      if a.get('data-kf-mode'):self.modes.append((a['data-kf-mode'],a.get('aria-current')))
+          classic=Path('/tmp/kf-classic.html').read_text()
+          modern=Path('/tmp/kf-modern.html').read_text()
+          for label,html in [('klassisch',classic),('modern',modern)]:
+              p=Inspector()
+              p.feed(html)
+              assert '<!doctype html>' in html.lower(),label
+              assert f'class="kf-theme-{label}"' in html,label
+              assert {'kf-demo','kf-start','kf-about','kf-drinks','kf-story','kf-events','kf-visit','kf-legal'}.issubset(p.ids),(label,p.ids)
+              assert {mode for mode,_ in p.modes}=={'klassisch','modern'},(label,p.modes)
+              assert sum(mode==label and current=='page' for mode,current in p.modes)==1,(label,p.modes)
+              for href in p.hrefs:
+                  assert href and href!='#', (label,href)
+                  if href.startswith('#'):assert href[1:] in p.ids,(label,href)
+              assert any(h.startswith('tel:') for h in p.hrefs),label
+              assert any('google.com/maps' in h for h in p.hrefs),label
+              assert any('odpc.de' in h for h in p.hrefs),label
+              assert 'class="yb-launch-cta"' not in html,label
+              assert 'yb-mobile-builder' not in html,label
+              assert 'wp-block-navigation' not in html,label
+              assert 'kf-theme-klassisch' in html and 'kf-theme-modern' in html,label
+              assert 'data-kf-mode' in html,label
+              assert 'max-width:700px' in html,label
+          assert classic!=modern,'Design variant endpoint ignores query string'
+          print('KLEINE_FREIHEIT_TWO_THEMES_AND_LINKS_READY')
+          PY
           curl --fail --location --silent --show-error --max-time 25 --retry 2 --output /tmp/yb-home.html 'https://yourbusiness.odpc.de/'
           grep -q 'Jetzt Kundenwebseite live erstellen' /tmp/yb-home.html
           echo "YOURBUSINESS_MOBILE_BUILDER_AND_ENTRY_READY"
