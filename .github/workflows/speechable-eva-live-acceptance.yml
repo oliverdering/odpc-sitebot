@@ -30,7 +30,7 @@ jobs:
               for name,url in [('home','https://odpc.de/'),('mobile-webdesign','https://odpc.de/webdesign/')]:
                   context=browser.new_context(viewport={'width':393,'height':852} if name.startswith('mobile') else {'width':1280,'height':800},is_mobile=name.startswith('mobile'),has_touch=name.startswith('mobile'))
                   page=context.new_page()
-                  page.add_init_script("""window.__audioEvents=[];document.addEventListener('playing',e=>{if(e.target instanceof HTMLMediaElement)window.__audioEvents.push({time:Date.now(),src:e.target.currentSrc})},true);""")
+                  page.add_init_script("""window.__lastAudio=null;const oldPlay=HTMLMediaElement.prototype.play;HTMLMediaElement.prototype.play=function(){window.__lastAudio=this;return oldPlay.call(this)};""")
                   errors=[]
                   page.on('pageerror',lambda error:errors.append(str(error)))
                   try:
@@ -39,11 +39,11 @@ jobs:
                       page.wait_for_function("['eva-playing','fallback'].includes(document.querySelector('#odpc-reader-play')?.dataset.voiceState)",timeout=110000)
                       state=play.get_attribute('data-voice-state')
                       page.wait_for_timeout(1300)
-                      played=page.evaluate('window.__audioEvents.length')
+                      played=page.evaluate('window.__lastAudio ? window.__lastAudio.currentTime : 0')
                       page.locator('#odpc-reader-stop').click()
                       page.wait_for_function("!document.querySelector('#odpc-reader-play')?.dataset.voiceState",timeout=10000)
-                      result={'page':name,'state':state,'playing_events':played,'stop':'ok','errors':errors[:3]}
-                      if state!='eva-playing' or played<1:raise RuntimeError(json.dumps(result))
+                      result={'page':name,'state':state,'played_seconds':played,'stop':'ok','errors':errors[:3]}
+                      if state!='eva-playing' or played<=0:raise RuntimeError(json.dumps(result))
                       results.append(result)
                   finally:context.close()
               browser.close()
