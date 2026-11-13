@@ -1,0 +1,55 @@
+name: Kleine Freiheit / publish approved photos
+on:
+  push:
+    branches: [feature/kleine-freiheit-demo-20261113]
+    paths: ['.github/workflows/kleine-freiheit-fotos.yml']
+permissions:
+  contents: read
+concurrency:
+  group: yourbusiness-serialized-operations
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Upload approved photos and update isolated demo
+        env:
+          SSHPASS: ${{ secrets.ODPC_SSH_PASSWORD }}
+        run: |
+          set -euo pipefail
+          php -l yourbusiness/kleine-freiheit-demo/kleine-freiheit.php
+          test -n "$SSHPASS"
+          sudo apt-get install -y -qq sshpass >/dev/null
+          mkdir -p ~/.ssh
+          ssh-keyscan -4 -t ed25519 home119567219.1and1-data.host > ~/.ssh/known_hosts 2>/dev/null
+          ssh-keygen -lf ~/.ssh/known_hosts | grep -F 'SHA256:1gx2w8Rtv3wCgi7Jh8myf/KVd72cRQbow03UP8P095Q' >/dev/null
+          opts="-4 -o StrictHostKeyChecking=yes -o PreferredAuthentications=password -o PubkeyAuthentication=no -o NumberOfPasswordPrompts=1 -o ConnectTimeout=20"
+          host="p37641258@home119567219.1and1-data.host"
+          old_hash=$(git show b2174697be2d053d6440ba45c8f4264d843e3768:yourbusiness/kleine-freiheit-demo/kleine-freiheit.php | sha256sum | cut -d " " -f1)
+          remote_hash=$(sshpass -e ssh $opts "$host" 'sha256sum YourBusiness/wp-content/plugins/odpc-kleine-freiheit/kleine-freiheit.php' | cut -d " " -f1)
+          test "$old_hash" = "$remote_hash" || { echo "Live plugin changed; refusing overwrite"; exit 1; }
+          sshpass -e ssh $opts "$host" 'mkdir -p YourBusiness/wp-content/plugins/odpc-kleine-freiheit/assets'
+          for f in charly.jpg theke.jpg gaeste.jpg gastraum.jpg regal.jpg kneipe.jpg; do
+            sshpass -e scp $opts "yourbusiness/kleine-freiheit-demo/assets/$f" "$host:YourBusiness/wp-content/plugins/odpc-kleine-freiheit/assets/$f"
+            local_hash=$(sha256sum "yourbusiness/kleine-freiheit-demo/assets/$f" | cut -d " " -f1)
+            uploaded_hash=$(sshpass -e ssh $opts "$host" "sha256sum YourBusiness/wp-content/plugins/odpc-kleine-freiheit/assets/$f" | cut -d " " -f1)
+            test "$local_hash" = "$uploaded_hash"
+          done
+          sshpass -e scp $opts yourbusiness/kleine-freiheit-demo/kleine-freiheit.php "$host:YourBusiness/wp-content/plugins/odpc-kleine-freiheit/kleine-freiheit.php.new"
+          new_hash=$(sha256sum yourbusiness/kleine-freiheit-demo/kleine-freiheit.php | cut -d " " -f1)
+          staged_hash=$(sshpass -e ssh $opts "$host" 'sha256sum YourBusiness/wp-content/plugins/odpc-kleine-freiheit/kleine-freiheit.php.new' | cut -d " " -f1)
+          test "$new_hash" = "$staged_hash"
+          sshpass -e ssh $opts "$host" 'mv YourBusiness/wp-content/plugins/odpc-kleine-freiheit/kleine-freiheit.php.new YourBusiness/wp-content/plugins/odpc-kleine-freiheit/kleine-freiheit.php'
+      - name: Verify public photos
+        run: |
+          set -euo pipefail
+          curl -fsSL --max-time 30 'https://yourbusiness.odpc.de/?pagename=kleine-freiheit' -o /tmp/kf-live
+          grep -q 'Charly an der Theke' /tmp/kf-live
+          for f in charly.jpg theke.jpg gaeste.jpg gastraum.jpg regal.jpg kneipe.jpg; do
+            curl -fsSL --max-time 30 -o /dev/null "https://yourbusiness.odpc.de/wp-content/plugins/odpc-kleine-freiheit/assets/$f"
+          done
+          echo KLEINE_FREIHEIT_FOTOS_LIVE
