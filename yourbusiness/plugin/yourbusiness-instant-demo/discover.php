@@ -41,15 +41,19 @@ function yb_discover_company() {
         'sector' => 'Gastronomie', 'phone' => '+49 1573 2500137',
         'email' => '', 'website' => '',
         'google' => 'https://www.google.com/maps/search/?api=1&query=Kleine%20Freiheit%20Altenhof%206%20Koblenz',
-        'services' => "Kneipe und Getränkeausschank\nTreffpunkt in der Koblenzer Altstadt",
+        'services' => "Gemütliche Altstadtkneipe\nBier, Longdrinks und alkoholfreie Getränke (Sortiment bestätigen)\nGesellige Treffen und Musik\nVeranstaltungen und Specials (aktuelle Termine bestätigen)",
+        'intro' => 'Mitten in der Koblenzer Altstadt ist die Kleine Freiheit ein Treffpunkt für gesellige Abende, gute Gespräche und Musik. Eine Kneipe mit Charakter direkt am Altenhof.',
+        'features' => ['Altstadt-Atmosphäre', 'Musik und gesellige Abende', 'Getränke und gute Gespräche'],
+        'history' => 'Das Wohn- und Geschäftshaus am Altenhof 6 wurde laut Stadtgeschichtsdokumentation 1954 auf einem älteren Bruchsteinkeller neu errichtet. Dies ist die Geschichte des Hauses, nicht das Gründungsjahr des heutigen Kneipenbetriebs.',
         'hours' => 'Mo–Do 10:00–23:00; Fr–Sa 10:00–04:00; So geschlossen',
         'imprint' => '', 'source_label' => 'Öffentliche Verzeichnisse, recherchiert am 13.11.2026',
         'sources' => [
           ['label' => 'RestaurantGuru (Kontakt, Zeiten, Adresse)', 'url' => 'https://de.restaurantguru.com/Kleine-Freiheit-Koblenz'],
           ['label' => 'Das ist nah (Telefon, Adresse)', 'url' => 'https://www.dasistnah.de/gaststaette-koblenz.html'],
-          ['label' => 'wie.de (Standort)', 'url' => 'https://wie.de/poi/kleine-freiheit.11584352641']
+          ['label' => 'wie.de (Standort)', 'url' => 'https://wie.de/poi/kleine-freiheit.11584352641'],
+          ['label' => 'Projekt Koblenzer Altstadt (Geschichte Altenhof 6)', 'url' => 'https://reinhard-kallenbach.de/featured_item/altenhof/']
         ],
-        'warning' => 'Andere Verzeichnisse nennen abweichende Rufnummern. Telefon, Öffnungszeiten und Betreiber/Impressum mit dem Kunden prüfen. Kein automatisches Übernehmen fremder Fotos.'
+        'warning' => 'Andere Verzeichnisse nennen abweichende Rufnummern. Getränke, Events, Öffnungszeiten, Betreiber/Impressum, Bargeldregel und Zugangsvoraussetzungen bitte mit dem Kunden bestätigen. Die Geschichte von 1954 betrifft das Gebäude, nicht das Gründungsjahr des Lokals. Keine fremden Fotos ohne Nutzungsrechte übernehmen.'
       ]],
       'notice' => 'Öffentliche Referenzdaten gefunden; noch nicht vom Unternehmen bestätigt.'
     ];
