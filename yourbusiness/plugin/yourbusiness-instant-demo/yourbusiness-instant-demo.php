@@ -46,7 +46,7 @@ add_action('template_redirect', function () {
 
 // Keep the presentation homepage intact while offering an obvious mobile entry point.
 add_action('wp_footer', function () {
-  if (is_admin() || !is_front_page() || isset($_GET['yb_start'])) return;
+  if (is_admin() || !is_front_page() || isset($_GET['yb_start']) || isset($_GET['yb_kleine_freiheit'])) return;
   $link = add_query_arg('yb_start', '1', home_url('/'));
   echo '<div class="yb-launch-cta" style="position:fixed;z-index:9999;bottom:max(18px,env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);width:min(420px,calc(100% - 32px));text-align:center">';
   echo '<a href="' . esc_url($link) . '" style="display:block;background:#155eef;color:#fff;border-radius:14px;padding:15px 20px;box-shadow:0 6px 24px #162a4b55;font:700 16px system-ui,sans-serif;text-decoration:none">Jetzt Kundenwebseite live erstellen</a>';
