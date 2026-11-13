@@ -13,7 +13,7 @@ add_action('init', function () {
 }, 30);
 add_shortcode('odpc_preise', function () {
   ob_start(); ?>
-  <main class="odpc-pricing" id="odpc-pricing">
+  <div class="odpc-pricing" id="odpc-pricing">
     <section class="op-hero">
       <span class="op-kicker">ODPC · Transparente IT-Preise</span>
       <h1>Alles wird teurer. Gute IT-Hilfe muss es nicht.</h1>
@@ -25,7 +25,7 @@ add_shortcode('odpc_preise', function () {
         <article class="op-card"><div class="op-tag">Für Zuhause</div><h3>Privatkunden</h3><div class="op-price">59 € <small>/ Stunde</small></div><p>Endpreis für PC-Hilfe, WLAN, Drucker, Software, Einrichtung und Fernwartung.</p><ul><li>Fernwartung ab 30 Minuten</li><li>Vor Ort mindestens 60 Minuten</li><li>Danach in 15-Minuten-Schritten</li></ul><a href="<?php echo esc_url(home_url('/contact-me/')); ?>">Privat-Anfrage stellen →</a></article>
         <article class="op-card"><div class="op-tag">Für Unternehmen</div><h3>Geschäftskunden</h3><div class="op-price">89 € <small>/ Stunde</small></div><p>IT-Administration, Netzwerke, Microsoft-Umgebungen, WordPress, KI-Beratung und Automatisierung.</p><ul><li>Fernwartung ab 30 Minuten</li><li>Vor Ort mindestens 60 Minuten</li><li>Projekte auf Wunsch zum Festpreis</li></ul><a href="<?php echo esc_url(home_url('/contact-me/')); ?>">Business-Anfrage stellen →</a></article>
       </div>
-      <p class="op-note">Preisangaben als Rechnungsbeträge bei Anwendung der Kleinunternehmerregelung nach § 19 UStG; es wird keine Umsatzsteuer ausgewiesen. Bei Änderung der steuerlichen Behandlung werden die Preisangaben angepasst. Anfahrt und Fremdkosten nur nach vorheriger Vereinbarung.</p>
+      <p class="op-note">Alle angegebenen Beträge sind Endpreise, einschließlich gegebenenfalls anfallender Umsatzsteuer. Ob und wie Umsatzsteuer auf der Rechnung ausgewiesen wird, richtet sich nach dem für ODPC tatsächlich geltenden Steuerstatus. Die vereinbarte Endsumme wird durch eine spätere Änderung des Steuerstatus nicht einseitig erhöht. Anfahrt und Fremdkosten werden vor der Beauftragung gesondert vereinbart.</p>
     </section>
     <section class="op-section"><div class="op-heading"><span>Planbar statt überraschend</span><h2>Webseiten zum Festpreis</h2><p>Für kleine Unternehmen, Selbstständige und lokale Projekte. Die Preise gelten für die beschriebenen Standardumfänge.</p></div>
       <div class="op-grid op-three">
@@ -52,17 +52,18 @@ add_shortcode('odpc_preise', function () {
       </div>
       <div class="op-principle"><h3>Unser Versprechen: Erst prüfen, dann kaufen.</h3><p>Wir verkaufen keine unnötigen Abonnements. Bei jeder Empfehlung betrachten wir Anschaffung, Betrieb, Updates, Datensicherheit, Datenschutz, Wartung, Support und mögliche spätere Wechselkosten. Auch freie Software verursacht unter Umständen Einrichtungs- und Betreuungskosten – diese benennen wir offen.</p></div>
     </section>
-    <section class="op-section op-math"><div class="op-heading"><span>So entsteht dein Preis</span><h2>Was in einer Arbeitsstunde steckt</h2><p>59 € für Privatkunden und 89 € für Geschäftskunden sind unsere kalkulierten Leistungspreise – keine Aussage über persönlichen Stundenlohn oder Gewinn.</p></div>
+    <section class="op-section op-math"><div class="op-heading"><span>So entsteht dein Preis</span><h2>Was in einer Arbeitsstunde steckt</h2><p>59 € für Privatkunden und 89 € für Geschäftskunden sind transparente Gesamtleistungspreise. Sie berücksichtigen neben der eigentlichen Einsatzzeit auch Vorbereitung, Dokumentation, technische Infrastruktur und laufende Betriebskosten.</p></div>
       <div class="op-grid op-two">
         <article class="op-card"><h3>Du bezahlst die Fachleistung</h3><p>Analyse, Beratung, Umsetzung, Qualitätssicherung und nachvollziehbare Dokumentation – mit direktem Ansprechpartner und langjähriger Praxiserfahrung.</p><p>Im Stundensatz müssen auch Zeiten für Vorbereitung, Weiterbildung, Buchhaltung, Akquise und nicht abrechenbare Aufgaben wirtschaftlich mitgetragen werden.</p></article>
         <article class="op-card"><h3>Wir tragen die Betriebskosten</h3><p>Technik, Arbeitsmittel, Versicherungen, Fahrten, Software, Infrastruktur, Steuern und unternehmerisches Risiko sind keine zusätzlichen versteckten Positionen im Stundensatz.</p><p>Notwendige Fremdkosten, Anfahrt oder Sonderlizenzen nennen wir vor der Beauftragung separat. Es gibt keine pauschale Garantie, dass jedes Projekt ohne laufende Lizenzkosten auskommt.</p></article>
       </div>
-      <p class="op-note">Die genannten Bestandteile erklären das Kalkulationsprinzip; sie sind keine veröffentlichten Ist-Kostenanteile oder Gewinnmargen. Für die tatsächliche Wirtschaftlichkeit zählen Projektumfang, Auslastung und reale Betriebsausgaben.</p>
+      <p class="op-note">Der endgültige Aufwand hängt von der Aufgabenstellung ab. Wir besprechen den Leistungsumfang und notwendige Fremdkosten vor Auftragserteilung.</p>
     </section>
     <section class="op-section op-split"><div><span class="op-kicker">KI als Effizienzvorteil</span><h2>Mehr Erfahrung. Weniger unnötiger Aufwand.</h2><p>Wir nutzen KI dort, wo sie sinnvoll hilft: bei Analyse, Dokumentation, Recherche und Automatisierung. Fachliche Prüfung, Datenschutz und Verantwortung bleiben bei uns. Du bezahlst für die vereinbarte Leistung – nicht für vermeidbare Umwege.</p></div><div class="op-soft"><h3>Individuell nach Absprache</h3><p>KI-Einführung, Microsoft-Administration, Sicherheitsprojekte, komplexe Websites und Automatisierungen kalkulieren wir passend zu Ziel, Aufwand und Risiko.</p><a class="op-btn" href="<?php echo esc_url(home_url('/contact-me/')); ?>">Projekt besprechen</a></div></section>
     <section class="op-section op-terms"><h2>Transparente Konditionen</h2><details><summary>Wie wird Arbeitszeit abgerechnet?</summary><p>Fernwartung mindestens 30 Minuten, Vor-Ort-Leistungen mindestens 60 Minuten; danach jeweils angefangene 15 Minuten. Abweichende Projektpreise gehen bei schriftlicher Vereinbarung vor.</p></details><details><summary>Was kostet die Anfahrt?</summary><p>Die Anfahrt wird vor Beauftragung abhängig vom Einsatzort vereinbart und im Angebot gesondert ausgewiesen. Ohne vorherige Vereinbarung berechnen wir keine zusätzliche Anfahrtspauschale.</p></details><details><summary>Was ist im Festpreis enthalten?</summary><p>Nur der im jeweiligen Angebot ausdrücklich beschriebene Leistungsumfang. Erweiterungen, zusätzliche Korrekturschleifen und Fremdleistungen erfolgen nach vorheriger Zustimmung.</p></details><details><summary>Gibt es ein Widerrufsrecht?</summary><p>Bei Verbraucherverträgen gelten die gesetzlichen Rechte. Vor Beginn einer Fernwartung oder eines außerhalb der Geschäftsräume geschlossenen Auftrags informieren wir gegebenenfalls gesondert über Widerruf und einen ausdrücklich gewünschten vorzeitigen Leistungsbeginn.</p></details><details><summary>Sind die Preise verbindlich?</summary><p>Die veröffentlichten Standardpreise gelten für die beschriebenen Leistungen. Bei individuellen Projekten gilt das vor Auftragserteilung vereinbarte Angebot. Ein Vertrag entsteht nicht allein durch das Absenden einer Anfrage.</p></details></section>
+    <nav class="op-legal-links" aria-label="Rechtliche Informationen"><a href="<?php echo esc_url(home_url('/impressum/')); ?>">Impressum</a><a href="<?php echo esc_url(home_url('/datenschutzerklaerung/')); ?>">Datenschutz</a><a href="<?php echo esc_url(home_url('/remote-fernwartung/')); ?>">Fernwartung &amp; Preise</a></nav>
     <section class="op-final"><h2>Dein Anliegen. Ein klarer Preis.</h2><p>Erzähl uns, was du brauchst. Wir sagen dir vorher, welche Lösung sinnvoll ist und welche Kosten entstehen.</p><a class="op-btn" href="<?php echo esc_url(home_url('/contact-me/')); ?>">Jetzt unverbindlich anfragen</a></section>
-  </main>
+  </div>
   <?php return ob_get_clean();
 });
 add_action('wp_head', function () {
@@ -79,6 +80,7 @@ add_action('wp_head', function () {
  html[data-odpc-appearance=green] .op-price,html[data-odpc-appearance=green] .op-card>a{color:#28513d}
  html[data-odpc-appearance=green] .op-btn{background:#28513d;color:#fff!important;border-color:#28513d}
  html[data-odpc-appearance=green] .op-outline{background:transparent;color:#28513d!important}
+ #op-tarife{scroll-margin-top:80px}.op-legal-links{display:flex;flex-wrap:wrap;gap:12px 20px;margin:25px 0;font-size:14px}.op-legal-links a{color:#245985;text-decoration:underline}.odpc-pricing .op-legal-links a:focus-visible{outline:3px solid #c9a88d;outline-offset:3px}html[data-odpc-appearance=green] .op-legal-links a{color:#28513d}body.page:has(#odpc-pricing) .entry-header .entry-title{display:none!important}
  .op-principle{margin-top:17px;padding:22px 25px;border:1px solid var(--op-border);background:#e8edf3;border-radius:14px}.op-principle h3{margin:0 0 10px}.op-principle p{margin:0}.op-math .op-card p:last-child{margin-bottom:0}
  html[data-odpc-appearance=green] .op-principle{background:#fff9ec!important;border-color:#78917b!important}
  @media(max-width:800px){.op-three{grid-template-columns:1fr 1fr}.op-split{grid-template-columns:1fr}}
