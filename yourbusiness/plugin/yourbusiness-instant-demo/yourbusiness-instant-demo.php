@@ -181,6 +181,13 @@ body{margin:0}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}#kf-demo{transition:none}}
 @media print{#kf-demo .kf-top{position:static}#kf-demo .kf-modes,#kf-demo .kf-float-nav{display:none}}
+#kf-demo .kf-brand-scene{display:flex;align-items:center;justify-content:center;min-height:510px;background:radial-gradient(circle at 50% 35%,#54715b,#15382f 70%);padding:clamp(12px,3vw,35px)}
+#kf-demo .kf-brand-scene:before,#kf-demo .kf-brand-scene:after{display:none}
+#kf-demo .kf-approved-logo{display:block;width:min(100%,480px);height:auto;object-fit:contain;filter:drop-shadow(0 14px 28px rgba(0,0,0,.28))}
+#kf-demo .kf-brand-fallback{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:13px;color:#fff3d3;border:3px solid #d9b56c;border-radius:50%;aspect-ratio:1;width:min(100%,410px);padding:24px;background:radial-gradient(circle,#27513e,#112b25);box-shadow:inset 0 0 0 7px #17392d,0 15px 35px #0004}
+#kf-demo .kf-brand-fallback strong{font:italic 700 clamp(30px,4vw,58px)/1.1 Georgia,serif;color:#f9e3b0}
+#kf-demo .kf-brand-fallback span{font-size:clamp(10px,1.2vw,14px);letter-spacing:.12em}
+@media(max-width:700px){#kf-demo .kf-brand-scene,#kf-demo.kf-theme-modern .kf-brand-scene{min-height:290px;max-height:none}#kf-demo .kf-brand-fallback{width:min(100%,260px)}}
 </style>
 </head>
 <body>
@@ -214,9 +221,18 @@ body{margin:0}
       </div>
       <div class="kf-hero-facts"><span><b>Altenhof 6</b> · 56068 Koblenz</span><span><b>Altstadtkneipe</b> · Musik &amp; Begegnung</span></div>
     </div>
-    <div class="kf-scene" role="img" aria-label="Grafisches Gestaltungsmotiv mit warm beleuchteter Kneipenszene, keine Fotografie des Lokals">
-      <div class="kf-lamp" aria-hidden="true"></div>
-      <div class="kf-scene-inner"><div class="kf-scene-mark">K<span style="color:#e6b87b">&amp;</span>F</div><p>Altenhof · Koblenz</p></div>
+    <div class="kf-scene kf-brand-scene" aria-label="Kleine Freiheit – Koblenz">
+      <?php
+      // Publish the approved emblem through WordPress Media and set its attachment ID
+      // in the option 'kf_approved_logo_attachment_id'. Never substitute a fabricated logo.
+      $kf_logo_id = absint(get_option('kf_approved_logo_attachment_id', 0));
+      $kf_logo_url = $kf_logo_id ? wp_get_attachment_image_url($kf_logo_id, 'full') : false;
+      if ($kf_logo_url) :
+      ?>
+        <img class="kf-approved-logo" src="<?= esc_url($kf_logo_url) ?>" alt="Kleine Freiheit – freigegebenes Rundlogo mit Deutschem Eck" fetchpriority="high" decoding="async">
+      <?php else : ?>
+        <div class="kf-brand-fallback"><span class="kf-brand-place">KOBLENZ · ALTENHOF 6</span><strong>Kleine Freiheit</strong><span>KNEIPE &amp; SCHLAGERBAR</span></div>
+      <?php endif; ?>
     </div>
   </div>
 </section>
