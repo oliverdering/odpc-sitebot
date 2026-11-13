@@ -1,10 +1,5 @@
 name: Kleine Freiheit / Isolated WordPress demo
 on:
-  push:
-    branches: [feature/kleine-freiheit-demo-20261113]
-    paths:
-      - '.github/workflows/kleine-freiheit-wordpress-demo.yml'
-      - 'yourbusiness/kleine-freiheit-demo/**'
   workflow_dispatch:
 permissions:
   contents: read
