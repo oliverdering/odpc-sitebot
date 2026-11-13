@@ -34,7 +34,7 @@ body{margin:0}
  --bg:#f5f1e7;--fg:#183b34;--sub:#59665b;--paper:#fffcf5;--panel:#e9e5d8;
  --line:#d8d8c9;--accent:#96622f;--inverse:#fffaf0;--deep:#102e28;
  --shadow:0 20px 55px rgba(24,59,52,.09);--radius:3px;
- min-height:100vh;background:var(--bg);color:var(--fg);
+ min-height:100vh;padding-bottom:95px;background:var(--bg);color:var(--fg);
  font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-size:16px;line-height:1.7;
  transition:background .26s,color .26s;overflow-x:hidden
 }
@@ -113,7 +113,7 @@ body{margin:0}
 #kf-demo .kf-address-art span{font-size:12px;letter-spacing:.2em;text-transform:uppercase}
 #kf-demo .kf-legal-note{padding:25px;background:var(--panel);border-left:3px solid var(--accent);border-radius:var(--radius)}
 #kf-demo .kf-legal-note p{margin:0;font-size:13px}
-#kf-demo .kf-footer{padding:30px 0 35px;border-top:1px solid var(--line)}
+#kf-demo .kf-float-nav{position:fixed;z-index:30;bottom:max(16px,env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);display:flex;align-items:center;justify-content:center;gap:4px;max-width:calc(100% - 20px);padding:7px;background:#183b34;border:1px solid #8f9e86;border-radius:100px;box-shadow:0 12px 38px rgba(0,0,0,.28);color:#fffcf5}#kf-demo .kf-float-nav a{display:inline-flex;align-items:center;justify-content:center;padding:11px 14px;border-radius:50px;text-decoration:none;font-size:12px;font-weight:700;white-space:nowrap}#kf-demo .kf-float-nav a:hover,#kf-demo .kf-float-nav a:focus-visible{background:#fffaf0;color:#183b34}#kf-demo .kf-float-nav .kf-float-primary{background:#d7bb8e;color:#183b34}#kf-demo.kf-theme-modern .kf-float-nav{background:#0b1520;border-color:#516577}#kf-demo.kf-theme-modern .kf-float-nav .kf-float-primary{background:#e9bd76;color:#111e2b}#kf-demo .kf-footer{padding:30px 0 35px;border-top:1px solid var(--line)}
 #kf-demo .kf-footer-inner{display:flex;justify-content:space-between;flex-wrap:wrap;gap:18px;font-size:12px}
 #kf-demo .kf-footer a{text-decoration:underline}
 #kf-demo .kf-footer .kf-credit{color:var(--sub)}
@@ -151,7 +151,7 @@ body{margin:0}
  #kf-demo .kf-brand{display:block;font-size:15px;margin-bottom:13px}
  #kf-demo .kf-modes{width:max-content;max-width:100%}
  #kf-demo .kf-modes a{padding:8px 12px;font-size:11px}
- #kf-demo .kf-nav{gap:20px;font-size:12px;padding:8px 0 11px}
+ #kf-demo .kf-nav{gap:20px;font-size:12px;padding:8px 0 11px}#kf-demo .kf-float-nav{width:calc(100% - 20px);justify-content:space-around;gap:0;padding:5px}#kf-demo .kf-float-nav a{font-size:11px;padding:10px 6px;flex:1}
  #kf-demo .kf-nav a.kf-nav-contact{margin-left:0}
  #kf-demo .kf-hero,#kf-demo.kf-theme-modern .kf-hero{padding:37px 0 34px}
  #kf-demo .kf-hero-grid,#kf-demo.kf-theme-modern .kf-hero-grid{display:flex;flex-direction:column;align-items:stretch;gap:25px}
@@ -180,7 +180,7 @@ body{margin:0}
  #kf-demo .kf-address-art strong{font-size:110px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}#kf-demo{transition:none}}
-@media print{#kf-demo .kf-top{position:static}#kf-demo .kf-modes{display:none}}
+@media print{#kf-demo .kf-top{position:static}#kf-demo .kf-modes,#kf-demo .kf-float-nav{display:none}}
 </style>
 </head>
 <body>
@@ -276,6 +276,7 @@ body{margin:0}
   </div>
 </section>
 </div>
+<nav class="kf-float-nav" aria-label="Schnellnavigation"><a href="#kf-start">Start</a><a href="#kf-drinks">Getränke</a><a href="#kf-visit">Anfahrt</a><a class="kf-float-primary" href="tel:+4915732500137">Anrufen ↗</a></nav>
 <footer class="kf-footer">
   <div class="kf-wrap kf-footer-inner"><div><strong>Kleine Freiheit</strong> · Altenhof 6 · 56068 Koblenz</div><div><a href="#kf-start">Nach oben ↑</a> · <a href="#kf-legal">Rechtliche Hinweise</a></div><div class="kf-credit">Kundenvorschau · <a href="https://odpc.de/" target="_blank" rel="noopener noreferrer">powered by odpc.de</a></div></div>
 </footer>
