@@ -7,6 +7,7 @@
  */
 if (!defined('ABSPATH')) exit;
 require_once plugin_dir_path(__FILE__) . 'discover.php';
+require_once plugin_dir_path(__FILE__) . 'kf-gallery-admin.php';
 
 // Isolated customer presentation: no WordPress theme header, launcher or unapproved legal copy.
 add_action('template_redirect', function () {
@@ -199,6 +200,15 @@ body{margin:0}
 
 /* ODPC-LICENSED-PHOTO-SET-20261113: curated Commons material, all labelled as samples. */
 #kf-demo .kf-photo-gallery{display:grid;grid-template-columns:1.13fr .87fr;gap:18px;margin-top:24px}
+/* Real owner-supplied photos take precedence over unrelated stock examples. */
+#kf-demo .kf-gallery-originals{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+#kf-demo .kf-gallery-originals img{height:225px;max-width:100%;object-fit:cover}
+#kf-demo .kf-brand-scene .kf-hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+#kf-demo .kf-brand-scene .kf-photo-brand{position:absolute;z-index:2;bottom:20px;left:20px;right:20px;padding:15px 20px;background:linear-gradient(90deg,#11271fe8,#11271fbb);color:#ffefc9;border-radius:var(--radius);text-shadow:0 2px 10px #0004}
+#kf-demo .kf-brand-scene .kf-photo-brand strong{display:block;font:italic 700 clamp(28px,4vw,52px)/1.1 Georgia,serif}
+#kf-demo .kf-brand-scene .kf-photo-brand span{display:block;margin-top:6px;font-size:10px;letter-spacing:.14em}
+@media(max-width:700px){#kf-demo .kf-gallery-originals{grid-template-columns:repeat(2,minmax(0,1fr))}#kf-demo .kf-gallery-originals img{height:175px}#kf-demo .kf-brand-scene .kf-photo-brand strong{font-size:29px}}
+@media(max-width:390px){#kf-demo .kf-gallery-originals{grid-template-columns:1fr}#kf-demo .kf-gallery-originals img{height:210px}}
 #kf-demo .kf-photo-gallery figure{margin:0;min-width:0;background:var(--paper);border:1px solid var(--line);padding:10px;border-radius:var(--radius)}
 #kf-demo .kf-photo-gallery img{display:block;width:100%;height:clamp(180px,27vw,315px);object-fit:cover;border-radius:var(--radius)}
 #kf-demo .kf-photo-gallery figcaption{padding:12px 7px 4px;color:var(--sub);font-size:12px;line-height:1.65}
@@ -231,7 +241,7 @@ body{margin:0}
     <div class="kf-hero-copy">
       <div class="kf-kicker">Ein Stück Koblenzer Altstadt</div>
       <h1>Deine kleine <em>Freiheit.</em></h1>
-      <p class="kf-lead">Reinkommen, Freunde treffen, Musik genießen. Willkommen bei Kalle in der Kleinen Freiheit – der geselligen Kultkneipe am Altenhof.</p>
+      <p class="kf-lead">Reinkommen, Freunde treffen, Musik genießen. Willkommen bei Charly in der Kleinen Freiheit – der geselligen Kultkneipe am Altenhof.</p>
       <div class="kf-actions">
         <a class="kf-button" href="#kf-drinks">Getränke entdecken <span aria-hidden="true">↗</span></a>
         <a class="kf-button kf-outline" href="https://www.google.com/maps/search/?api=1&amp;query=Kleine%20Freiheit%20Altenhof%206%20Koblenz" target="_blank" rel="noopener noreferrer">Anfahrt planen <span aria-hidden="true">↗</span></a>
@@ -242,11 +252,16 @@ body{margin:0}
       <?php
       // Publish the approved emblem through WordPress Media and set its attachment ID
       // in the option 'kf_approved_logo_attachment_id'. Never substitute a fabricated logo.
+      $kf_originals = odpc_kf_gallery_ids();
+      $kf_hero_id = !empty($kf_originals) ? (int)$kf_originals[0] : 0;
       $kf_logo_id = absint(get_option('kf_approved_logo_attachment_id', 0));
       $kf_logo_url = $kf_logo_id ? wp_get_attachment_image_url($kf_logo_id, 'full') : false;
-      if ($kf_logo_url) :
+      if ($kf_hero_id) :
+        echo wp_get_attachment_image($kf_hero_id, 'large', false, ['class'=>'kf-hero-photo','fetchpriority'=>'high','loading'=>'eager','decoding'=>'async','alt'=>'Originalaufnahme: die Holztheke der Kleinen Freiheit in Koblenz']);
       ?>
-        <img class="kf-approved-logo" src="<?= esc_url($kf_logo_url) ?>" alt="Kleine Freiheit – freigegebenes Rundlogo mit Deutschem Eck" fetchpriority="high" decoding="async">
+        <div class="kf-photo-brand"><strong>Kleine Freiheit</strong><span>ECHTE EINBLICKE · ALTENHOF 6</span></div>
+      <?php elseif ($kf_logo_url) : ?>
+        <img class="kf-approved-logo" src="<?= esc_url($kf_logo_url) ?>" alt="Freigegebenes Kleine-Freiheit-Logo" fetchpriority="high" decoding="async">
       <?php else : ?>
         <div class="kf-brand-fallback"><span class="kf-brand-place">KOBLENZ · ALTENHOF 6</span><strong>Kleine Freiheit</strong><span>KNEIPE &amp; SCHLAGERBAR</span></div>
       <?php endif; ?>
@@ -259,9 +274,9 @@ body{margin:0}
     <div><h2>Hier trifft man sich.</h2><p class="kf-prose">Die Kleine Freiheit ist ein Ort für einen gemütlichen Feierabend, gute Gespräche und unbeschwerte Stunden. Ob Stammgast oder zum ersten Mal in der Koblenzer Altstadt: An der Theke steht das Miteinander im Mittelpunkt.</p></div>
   </div>
   <div class="kf-wrap kf-cards">
-    <article class="kf-card"><span class="kf-number">01 / ATMOSPHÄRE</span><h3>Ganz ohne Eile</h3><p>Kneipencharme, persönliche Begegnungen und eine entspannte Auszeit im Herzen der Stadt.</p></article>
-    <article class="kf-card"><span class="kf-number">02 / MUSIK</span><h3>Kult &amp; Schlager</h3><p>Ein Treffpunkt für alle, die gerne gemeinsam Musik hören, feiern und mitsingen.</p></article>
-    <article class="kf-card"><span class="kf-number">03 / GASTGEBER</span><h3>Bei Kalle</h3><p>Der persönliche Charakter macht aus einem einfachen Abend einen vertrauten Treffpunkt.</p></article>
+    <article class="kf-card"><span class="kf-number">01 / ATMOSPHÄRE</span><h3>Ganz ohne Eile</h3><p>Echte Kneipenatmosphäre, persönliche Begegnungen und eine entspannte Auszeit mitten in Koblenz. Das Lokal ist als Raucherkneipe gekennzeichnet.</p></article>
+    <article class="kf-card"><span class="kf-number">02 / MUSIK</span><h3>Kult &amp; Schlager</h3><p>Musik, Fußballschals, Dartautomat und eine lange Holztheke prägen den Gastraum – zu sehen auf den Originalfotos vom November 2026.</p></article>
+    <article class="kf-card"><span class="kf-number">03 / GASTGEBER</span><h3>Bei Charly</h3><p>Gastgeber Karl-Heinz, genannt Charly, führt die Kneipe nach den Angaben vor Ort seit November 2025.</p></article>
   </div>
 </section>
 
@@ -269,15 +284,27 @@ body{margin:0}
   <div class="kf-wrap">
     <span class="kf-eyebrow">Koblenzer Altstadt · Foto-Impressionen</span>
     <h2>Hier hat jeder Abend seine Geschichte.</h2>
-    <p class="kf-prose">Zwei redaktionelle Stimmungsbilder für die Kundenvorschau: ein echtes Foto aus der Koblenzer Altstadt und ein Kneipen-Symbolbild. Die Originalfotos der Kleinen Freiheit werden nach Freigabe durch den Betreiber ergänzt.</p>
+    <p class="kf-prose">Die Originalaufnahmen vom 13. November 2026 zeigen Theke, Gastraum, Gäste, Eingang und Kneipenschild. Bis zum WordPress-Fotoimport werden noch gekennzeichnete Platzhalterbilder angezeigt.</p>
+    <?php $kf_saved = odpc_kf_gallery_ids(); ?>
+    <?php if ($kf_saved) : ?>
+    <div class="kf-photo-gallery kf-gallery-originals">
+    <?php foreach ($kf_saved as $kf_photo_id) : ?>
+      <figure>
+        <?= wp_get_attachment_image($kf_photo_id, 'large', false, ['loading'=>'lazy','decoding'=>'async','class'=>'kf-real-photo']) ?>
+        <figcaption><?= esc_html(get_post_meta($kf_photo_id, '_wp_attachment_image_alt', true) ?: get_the_title($kf_photo_id)) ?> · Originalaufnahme der Kleinen Freiheit, November 2026</figcaption>
+      </figure>
+    <?php endforeach; ?>
+    </div>
+    <?php else : ?>
     <div class="kf-photo-gallery">
       <figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Altstadt_Koblenz%2C_der_Platz_%22Am_Plan%22.jpg/960px-Altstadt_Koblenz%2C_der_Platz_%22Am_Plan%22.jpg" alt="Historischer Platz Am Plan in der Koblenzer Altstadt; nicht die Kleine Freiheit" loading="lazy" decoding="async">
-        <figcaption>Altstadt Koblenz, Platz Am Plan · Foto: <a href="https://commons.wikimedia.org/wiki/File:Altstadt_Koblenz,_der_Platz_%22Am_Plan%22.jpg" target="_blank" rel="noopener noreferrer">Willy Horsch / Wikimedia Commons (CC BY 3.0)</a> · Standortmotiv, keine Aufnahme des Lokals.</figcaption>
+        <figcaption>Altstadt Koblenz, Platz Am Plan · Foto: <a href="https://commons.wikimedia.org/wiki/File:Altstadt_Koblenz,_der_Platz_%22Am_Plan%22.jpg" target="_blank" rel="noopener noreferrer">Willy Horsch / Wikimedia Commons (CC BY 3.0)</a> · noch kein Originalfoto des Lokals.</figcaption>
       </figure>
-      <figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Pub_interior_-_geograph.org.uk_-_5856308.jpg/960px-Pub_interior_-_geograph.org.uk_-_5856308.jpg" alt="Symbolbild eines gemütlichen Pub-Interieurs in England; nicht die Kleine Freiheit" loading="lazy" decoding="async">
-        <figcaption>Symbolbild Kneipenatmosphäre · Foto: <a href="https://commons.wikimedia.org/wiki/File:Pub_interior_-_geograph.org.uk_-_5856308.jpg" target="_blank" rel="noopener noreferrer">Bob Harvey / Wikimedia Commons (CC BY-SA 2.0)</a> · nicht die Räume der Kleinen Freiheit.</figcaption>
+      <figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Pub_interior_-_geograph.org.uk_-_5856308.jpg/960px-Pub_interior_-_geograph.org.uk_-_5856308.jpg" alt="Symbolbild eines Pub-Interieurs in England; nicht die Kleine Freiheit" loading="lazy" decoding="async">
+        <figcaption>Symbolbild Kneipenatmosphäre · Foto: <a href="https://commons.wikimedia.org/wiki/File:Pub_interior_-_geograph.org.uk_-_5856308.jpg" target="_blank" rel="noopener noreferrer">Bob Harvey / Wikimedia Commons (CC BY-SA 2.0)</a> · kein Foto des Lokals.</figcaption>
       </figure>
     </div>
+    <?php endif; ?>
     <label id="kf-local-photo-picker" style="display:inline-block;margin-top:18px;padding:12px 18px;border:1px solid var(--line);border-radius:var(--radius);background:var(--paper);font-size:13px;font-weight:800;cursor:pointer">📷 Eigene Fotos für die Vorschau auswählen
       <input id="kf-local-photo-input" type="file" accept="image/*" multiple style="display:block;max-width:100%;font-size:12px;margin-top:8px">
     </label>
@@ -312,7 +339,7 @@ body{margin:0}
       <article class="kf-card"><span class="kf-number">02</span><h3>Longdrinks &amp; Kurze</h3><p>Beliebte Mixgetränke, Liköre und Shots als unverbindlicher Kartenentwurf.</p></article>
       <article class="kf-card"><span class="kf-number">03</span><h3>Ohne Alkohol</h3><p>Softdrinks, Wasser und weitere erfrischende Alternativen als Sortimentsvorschlag.</p></article>
     </div>
-    <p class="kf-drinks-note">Kundenvorschau: keine freigegebenen Markenlogos, Verkaufspreise oder verbindliche Getränkekarte. Bitte mit Kalle abstimmen.</p>
+    <p class="kf-drinks-note">Kundenvorschau: keine freigegebenen Markenlogos, Verkaufspreise oder verbindliche Getränkekarte. Bitte mit Charly abstimmen.</p>
   </div>
 </section>
 <section id="kf-story" class="kf-chapter">
@@ -335,10 +362,10 @@ body{margin:0}
       <div class="kf-contact-list">
         <address><strong>Kleine Freiheit</strong><br>Altenhof 6<br>56068 Koblenz, Altstadt</address>
         <a href="tel:+4915732500137">01573 2500137 · Mobil anrufen</a>
-        <a href="tel:+4926150040640">0261 50040640 · Festnetz anrufen</a>
+        <span class="kf-fineprint">Ein weiterer Festnetz-Eintrag existiert in älteren Verzeichnissen, ist aber für die aktuelle Besetzung nicht bestätigt.</span>
         <a href="https://www.google.com/maps/search/?api=1&amp;query=Kleine%20Freiheit%20Altenhof%206%20Koblenz" target="_blank" rel="noopener noreferrer">Standort und Bewertungen bei Google Maps ansehen ↗</a>
       </div>
-      <p class="kf-fineprint">Telefonnummern aus öffentlichen Verzeichnissen; noch nicht vom aktuellen Betreiber bestätigt. Die Öffnungszeiten werden für die endgültige Webseite vor Ort abgeglichen.</p>
+      <p class="kf-fineprint">Die Mobilnummer 01573 2500137 ist auf einem Originalfoto des Ladenfensters zu erkennen; eine aktuelle Bestätigung durch Charly steht noch aus. Die veröffentlichten Öffnungszeiten sind vor endgültiger Freigabe abzugleichen. Hinweis: Raucherkneipe.</p>
       <div class="kf-actions"><a class="kf-button" href="https://www.google.com/maps/dir/?api=1&amp;destination=Altenhof%206%2C%2056068%20Koblenz" target="_blank" rel="noopener noreferrer">Route starten ↗</a><a class="kf-button kf-outline" href="tel:+4915732500137">Jetzt anrufen ↗</a></div>
     </div>
     <div class="kf-address-art" aria-label="Altenhof 6 in Koblenz"><span>Altenhof</span><strong>6</strong><span>Koblenz · Altstadt</span></div>
