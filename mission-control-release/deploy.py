@@ -17,8 +17,8 @@ def fetch(url):
  try:
   with urlopen(Request(url,headers={'User-Agent':'ODPC-Orchester-Deploy/1','Cache-Control':'no-cache'}),timeout=25) as r:return r.status,r.geturl(),r.read(600000)
  except HTTPError as e:return e.code,e.geturl(),e.read(600000)
-status,_,_=fetch(URL)
-if status != 404: raise RuntimeError('Target URL is not an unambiguous 404; refusing to publish, HTTP '+str(status))
+status,final,body=fetch(URL)
+if not (status==404 or (status==200 and final==URL and b'Seite nicht gefunden' in body and b'<title>' in body)): raise RuntimeError('Target URL is not a verified not-found page; refusing to publish, HTTP '+str(status))
 status,_,_=fetch(CONNECTOR)
 if status!=200: raise RuntimeError('Connector HTTP check failed: '+str(status))
 pw=os.environ.get('ODPC_SFTP_PASSWORD','')
@@ -28,7 +28,7 @@ actual='SHA256:'+base64.b64encode(hashlib.sha256(t.get_remote_server_key().asbyt
 if not hmac.compare_digest(actual,PIN):t.close();raise RuntimeError('SFTP host key mismatch')
 t.auth_password(USER,pw)
 if not t.is_authenticated():t.close();raise RuntimeError('SFTP authentication failed')
-s=t.open_sftp(); root=find_theme(s).split('/wp-content/themes/')[0]; target=posixpath.join(root,'ki-orchester'); remote=posixpath.join(root,'wp-content/mu-plugins/odpc-monkey-experience/page.php'); modified=False; created=False
+s=paramiko.SFTPClient.from_transport(t); root=find_theme(s).split('/wp-content/themes/')[0]; target=posixpath.join(root,'ki-orchester'); remote=posixpath.join(root,'wp-content/mu-plugins/odpc-monkey-experience/page.php'); modified=False; created=False
 try:
  try:s.lstat(target)
  except FileNotFoundError:pass
