@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-13T23:53:55.780527+00:00",
+  "generated_at": "2026-11-14T03:39:25.829470+00:00",
   "product": "AdminMonkey Academy",
   "certification_expansion": {
     "candidate_exam_codes": 42,
@@ -45,23 +45,23 @@
   "certification_issuer": "ODPC",
   "official_microsoft_certification": false,
   "knowledge": {
-    "documents_collected": 1924,
-    "manufacturer_verified": 1924,
+    "documents_collected": 1960,
+    "manufacturer_verified": 1960,
     "review": {
       "unreviewed": 0,
-      "approved": 1924,
+      "approved": 1960,
       "rejected": 0
     },
     "last_batch": {
       "attempted": 36,
-      "documents_total": 1924,
-      "queued": 2033,
+      "documents_total": 1960,
+      "queued": 1973,
       "failures": []
     }
   },
   "retrieval_staging": {
-    "chunked_documents": 1919,
-    "chunks_prepared": 9612,
+    "chunked_documents": 1955,
+    "chunks_prepared": 9811,
     "retrieval_quality_verified": false,
     "agent_answers_verified": 0,
     "note": "Ephemeral, provenance-checked chunk preparation; no searchable production index yet."
@@ -69,7 +69,7 @@
   "tracks": [
     {
       "track": "MS-102",
-      "manufacturer_verified_sources": 411,
+      "manufacturer_verified_sources": 427,
       "knowledge_coverage": "source_count_only_not_learning_objective_coverage",
       "practice_scenarios_available": 6,
       "agent_answers_evaluated": 0,
@@ -85,7 +85,7 @@
     },
     {
       "track": "AZ-104",
-      "manufacturer_verified_sources": 107,
+      "manufacturer_verified_sources": 109,
       "knowledge_coverage": "source_count_only_not_learning_objective_coverage",
       "practice_scenarios_available": 4,
       "agent_answers_evaluated": 0,
@@ -101,7 +101,7 @@
     },
     {
       "track": "SC-300",
-      "manufacturer_verified_sources": 346,
+      "manufacturer_verified_sources": 351,
       "knowledge_coverage": "source_count_only_not_learning_objective_coverage",
       "practice_scenarios_available": 4,
       "agent_answers_evaluated": 0,

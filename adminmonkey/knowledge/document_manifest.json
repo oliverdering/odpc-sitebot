@@ -17169,6 +17169,340 @@
       "depth": 3,
       "review_status": "manufacturer_verified",
       "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/administrativeunit-update",
+      "sha256": "bcb2f030dbeb26908f01def904ed78d0ccf47af283cb717e939df44e6166836c",
+      "captured_at": "2026-11-14T03:39:14.566783+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/administrativeunit-delete",
+      "sha256": "0ea565cb30ed8b6e7e2d83539a6c0ae1f4b82630aa637772d7d0c2d290ce6d5d",
+      "captured_at": "2026-11-14T03:39:14.755691+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/administrativeunit-post-members",
+      "sha256": "df5032f0b019ca2c5882ed30205eec90cba6b23129ca4e37c39028788b190b1c",
+      "captured_at": "2026-11-14T03:39:14.919106+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/administrativeunit-list-members",
+      "sha256": "92a94c6b0d11c5f1c5cd0037af13ef0d3e1fbcc412376a73a06f7bf644ec6c19",
+      "captured_at": "2026-11-14T03:39:15.074883+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/administrativeunit-get-members",
+      "sha256": "5e52281307bdd8f354c424e851548a50e3478d6a8c0204aa59639ab56b0f08c7",
+      "captured_at": "2026-11-14T03:39:15.314901+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/administrativeunit-delete-members",
+      "sha256": "37481ca4d133fd8fbf2730ed695e71bc11b7c04fdb0c1fcbb8ffb6c811e3eb0d",
+      "captured_at": "2026-11-14T03:39:15.498127+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/administrativeunit-list-scopedrolemembers",
+      "sha256": "8e1691625a83deef9ce3012be222dd608ec481782320c91aaeef6a7375079938",
+      "captured_at": "2026-11-14T03:39:15.626810+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/administrativeunit-post-scopedrolemembers",
+      "sha256": "3a4a78fb86dfa4260e88cd39160faeb6de1283b7a99e22ff406e07054a02a36c",
+      "captured_at": "2026-11-14T03:39:16.126648+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/administrativeunit-get-scopedrolemembers",
+      "sha256": "b7589f9291108fb7bc63ee99345609efd1b12d026f0441ab5f079f20e086bc6d",
+      "captured_at": "2026-11-14T03:39:16.354229+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/administrativeunit-delete-scopedrolemembers",
+      "sha256": "2754de153a672e5bab4b46d05887e36005f7102487ed2bb477a43a6af992e9e5",
+      "captured_at": "2026-11-14T03:39:16.601067+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/admin-units-restricted-management",
+      "sha256": "1d5e555aada89599376a95a59a528953f1eddae526710dc70acb9c0ce8c25210",
+      "captured_at": "2026-11-14T03:39:16.683322+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/fundamentals/how-subscriptions-associated-directory",
+      "sha256": "c169c18296172369a830f230be0d5be3eb5d6a4cc283479ddff9777b109c75de",
+      "captured_at": "2026-11-14T03:39:16.753889+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/users/linkedin-user-consent",
+      "sha256": "9f7ca3d4afc5db46d1027bc4de68e99392b4f2c3e24767be02a5c7c6456e2925",
+      "captured_at": "2026-11-14T03:39:16.844445+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/users/groups-settings-cmdlets",
+      "sha256": "a644b73f7e3bfbad99b996a3d65f5bec1e9ea2d2f95a74a415a70974312b55e9",
+      "captured_at": "2026-11-14T03:39:16.904225+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/authorizationpolicy-update",
+      "sha256": "8214f7d9a05a32a9dd7d55cada26c88469a7e1609936c640576ffec1315f7240",
+      "captured_at": "2026-11-14T03:39:17.214752+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/defaultuserrolepermissions",
+      "sha256": "93efe430f5a46f28206d5e212524412cb6dcd300a2e71518d5c3088ecddb9061",
+      "captured_at": "2026-11-14T03:39:17.412021+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/users/users-restrict-guest-permissions",
+      "sha256": "77956a5b25642466aef9ee15925f86c99ac672e382040fe6080a203bc279e977",
+      "captured_at": "2026-11-14T03:39:17.543199+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/MicrosoftTeams/guest-access",
+      "sha256": "243e846cd0e4eeeacf62d0adbbacf2770676cdf027116797aa15c6800996e9b1",
+      "captured_at": "2026-11-14T03:39:17.656288+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/rbac-and-directory-admin-roles",
+      "sha256": "7b10be07dac172601cc5c1160a6b69030a25131e3ecc4b59c6fd32bad2d67984",
+      "captured_at": "2026-11-14T03:39:17.748472+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/microsoft-365/solutions/manage-creation-of-groups",
+      "sha256": "a0c5b4b6cf2aa81eccc1c3e341022ca0acde7895102eb67af52c58a727818509",
+      "captured_at": "2026-11-14T03:39:17.975918+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/create-groups/manage-guest-access-in-groups",
+      "sha256": "fbff9933f45fb65f791790b3362d41de25449c59e0b579dc9bf6cb4aeea26b90",
+      "captured_at": "2026-11-14T03:39:18.284412+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/microsoft-365/solutions/groups-naming-policy",
+      "sha256": "e4210067a82979a8313a6c0dae9507faacddaf5cbdea5b2da842584c4b192ae4",
+      "captured_at": "2026-11-14T03:39:18.533532+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/create-groups/restore-deleted-group",
+      "sha256": "54c81a52121dbf581804c31f630c2f4329323c2b8ad6f49635f83998057808b5",
+      "captured_at": "2026-11-14T03:39:18.670570+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/microsoft-365/solutions/microsoft-365-groups-expiration-policy",
+      "sha256": "0aca7757ff94236dad9c2cb8216f82d697919f9d191550c2c96d06f8f395aa6c",
+      "captured_at": "2026-11-14T03:39:18.740987+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/enterprise/manage-microsoft-365-groups-with-powershell",
+      "sha256": "8ee9e1771577b9c6ea023335ddb86c8c182f108c02d1f7b97904fbf8d358a37a",
+      "captured_at": "2026-11-14T03:39:19.050793+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/microsoft-365/solutions/collaboration-governance-overview",
+      "sha256": "04ee3ac474a47d8424dc8d346c816bee910f0856ec63d49c6e25f7f7c1659148",
+      "captured_at": "2026-11-14T03:39:19.164249+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/active-directory/enterprise-users/directory-service-limits-restrictions",
+      "sha256": "7fa993a7492d6bbeb92fcbdbd8fde11c77703eeb3ecda68bfa5d8b074f62c6d7",
+      "captured_at": "2026-11-14T03:39:19.361674+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/office-365-groups",
+      "sha256": "6a4ef41b8363fa3ed69cb3ed4c8ca56cda43378edd63bb75549338c6e86bdc65",
+      "captured_at": "2026-11-14T03:39:19.673698+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/compliance/sensitivity-labels-teams-groups-sites",
+      "sha256": "e82dbf0c457655410b2cf7953447047feb75e9f5f6f45d91c7850d5960e2243b",
+      "captured_at": "2026-11-14T03:39:19.845836+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/office-365-plan-options",
+      "sha256": "d022ff0034b33f2bf081e30351194108849f7b241359290ba38058429cf403c9",
+      "captured_at": "2026-11-14T03:39:20.035725+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/powershell/exchange/open-the-exchange-management-shell",
+      "sha256": "5f2f47ef756a30db868e8b61c8f26049fcffb2130e79b6ba74ab6f70b8cad4ab",
+      "captured_at": "2026-11-14T03:39:20.203475+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/exchange/permissions/feature-permissions/recipient-permissions",
+      "sha256": "6a59fcde24434fcb4a6e7eb2ada4f4539b7f9e8e32dba971590b81794510ab73",
+      "captured_at": "2026-11-14T03:39:20.389244+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/exchange/about-documentation/exchange-admin-center-keyboard-shortcuts",
+      "sha256": "a2d88a0e83b326029bdd29a00f9336d3d70da71e7a04e1b63cd6db3f3464d26e",
+      "captured_at": "2026-11-14T03:39:20.504749+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/answers/tags/342/office-exchange-office-exchange-server-management",
+      "sha256": "95afb7ac5533c8a59d927e64217a3bfd73d307c1b2bfaca1e0005183c486bf1e",
+      "captured_at": "2026-11-14T03:39:20.833373+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/powershell/module/exchangepowershell/new-dynamicdistributiongroup",
+      "sha256": "b67d1f7f7dfc1c7d8c034d101af35838e4bdb835d172c0a5beb070b3f56ee135",
+      "captured_at": "2026-11-14T03:39:21.046738+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/powershell/module/exchangepowershell/get-dynamicdistributiongroup",
+      "sha256": "c764413c96cfef3514bc3c10a5127dc94ca05ef0aece726c8c48bd4c4045e95e",
+      "captured_at": "2026-11-14T03:39:21.214632+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
     }
   ],
   "seen": [
@@ -17187,6 +17521,7 @@
     "https://learn.microsoft.com/en-us/Exchange/recipients-in-exchange-online/manage-user-mailboxes/recover-deleted-messages",
     "https://learn.microsoft.com/en-us/Exchange/whats-new",
     "https://learn.microsoft.com/en-us/MicrosoftTeams/enhanced-teams-experience",
+    "https://learn.microsoft.com/en-us/MicrosoftTeams/guest-access",
     "https://learn.microsoft.com/en-us/MicrosoftTeams/troubleshoot/teams",
     "https://learn.microsoft.com/en-us/OfficeUpdates/",
     "https://learn.microsoft.com/en-us/OfficeUpdates/release-notes-microsoft365-apps",
@@ -17211,6 +17546,7 @@
     "https://learn.microsoft.com/en-us/answers/questions/5707555/excel-copilot-is-generating-download-links-that-ha",
     "https://learn.microsoft.com/en-us/answers/questions/5744593/visual-studio-2026-uses-excessive-memory-(20gb-)-w",
     "https://learn.microsoft.com/en-us/answers/questions/5744593/visual-studio-2026-uses-excessive-memory-20gb-with",
+    "https://learn.microsoft.com/en-us/answers/tags/342/office-exchange-office-exchange-server-management",
     "https://learn.microsoft.com/en-us/answers/tags/466/microsoft-copilot-microsoft-365-copilot-development-routing/",
     "https://learn.microsoft.com/en-us/archive/microsoft-edge/legacy/",
     "https://learn.microsoft.com/en-us/archive/microsoft-edge/legacy/developer/dev-guide/index",
@@ -17226,6 +17562,7 @@
     "https://learn.microsoft.com/en-us/azure/active-directory/develop/permissions-consent-overview",
     "https://learn.microsoft.com/en-us/azure/active-directory/develop/v1-permissions-and-consent",
     "https://learn.microsoft.com/en-us/azure/active-directory/develop/v2-app-types",
+    "https://learn.microsoft.com/en-us/azure/active-directory/enterprise-users/directory-service-limits-restrictions",
     "https://learn.microsoft.com/en-us/azure/active-directory/enterprise-users/licensing-service-plan-reference",
     "https://learn.microsoft.com/en-us/azure/active-directory/external-identities/what-is-b2b",
     "https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-licensing-whatis-azure-portal",
@@ -17301,6 +17638,7 @@
     "https://learn.microsoft.com/en-us/azure/reliability/regions-paired",
     "https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles",
     "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview",
+    "https://learn.microsoft.com/en-us/azure/role-based-access-control/rbac-and-directory-admin-roles",
     "https://learn.microsoft.com/en-us/azure/role-based-access-control/resource-provider-operations",
     "https://learn.microsoft.com/en-us/azure/role-based-access-control/role-assignments-portal",
     "https://learn.microsoft.com/en-us/azure/security/fundamentals/customer-lockbox-overview",
@@ -17426,6 +17764,7 @@
     "https://learn.microsoft.com/en-us/entra/fundamentals/custom-security-attributes-overview",
     "https://learn.microsoft.com/en-us/entra/fundamentals/data-residency",
     "https://learn.microsoft.com/en-us/entra/fundamentals/entra-admin-center",
+    "https://learn.microsoft.com/en-us/entra/fundamentals/how-subscriptions-associated-directory",
     "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-create-delete-users",
     "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-find-tenant",
     "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-manage-groups",
@@ -17676,6 +18015,7 @@
     "https://learn.microsoft.com/en-us/entra/identity/multi-tenant-organizations/cross-tenant-synchronization-overview",
     "https://learn.microsoft.com/en-us/entra/identity/multi-tenant-organizations/multi-tenant-organization-overview",
     "https://learn.microsoft.com/en-us/entra/identity/multi-tenant-organizations/overview",
+    "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/admin-units-restricted-management",
     "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/administrative-units",
     "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/concept-understand-roles",
     "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/custom-create",
@@ -17692,7 +18032,10 @@
     "https://learn.microsoft.com/en-us/entra/identity/users/groups-create-rule",
     "https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership",
     "https://learn.microsoft.com/en-us/entra/identity/users/groups-self-service-management",
+    "https://learn.microsoft.com/en-us/entra/identity/users/groups-settings-cmdlets",
     "https://learn.microsoft.com/en-us/entra/identity/users/licensing-service-plan-reference",
+    "https://learn.microsoft.com/en-us/entra/identity/users/linkedin-user-consent",
+    "https://learn.microsoft.com/en-us/entra/identity/users/users-restrict-guest-permissions",
     "https://learn.microsoft.com/en-us/entra/security-copilot/entra-investigate-incident",
     "https://learn.microsoft.com/en-us/entra/security-copilot/entra-investigate-risky-apps",
     "https://learn.microsoft.com/en-us/entra/security-copilot/entra-security-scenarios",
@@ -17706,6 +18049,7 @@
     "https://learn.microsoft.com/en-us/entra/workload-id/workload-identities-faqs",
     "https://learn.microsoft.com/en-us/entra/workload-id/workload-identities-overview",
     "https://learn.microsoft.com/en-us/entra/workload-id/workload-identity-federation",
+    "https://learn.microsoft.com/en-us/exchange/about-documentation/exchange-admin-center-keyboard-shortcuts",
     "https://learn.microsoft.com/en-us/exchange/antispam-and-antimalware/antispam-and-antimalware",
     "https://learn.microsoft.com/en-us/exchange/architecture/client-access/exchange-admin-center",
     "https://learn.microsoft.com/en-us/exchange/configure-deleted-item-retention-and-recoverable-items-quotas-exchange-2013-help",
@@ -17722,6 +18066,7 @@
     "https://learn.microsoft.com/en-us/exchange/organization-relationships-exchange-2013-help",
     "https://learn.microsoft.com/en-us/exchange/permissions-exo/feature-permissions",
     "https://learn.microsoft.com/en-us/exchange/permissions-exo/permissions-exo",
+    "https://learn.microsoft.com/en-us/exchange/permissions/feature-permissions/recipient-permissions",
     "https://learn.microsoft.com/en-us/exchange/recipients-in-exchange-online/manage-user-mailboxes/add-or-remove-email-addresses",
     "https://learn.microsoft.com/en-us/exchange/recipients-in-exchange-online/manage-user-mailboxes/manage-user-mailboxes",
     "https://learn.microsoft.com/en-us/exchange/recipients/disconnected-mailboxes/restore-deleted-mailboxes",
@@ -17737,7 +18082,17 @@
     "https://learn.microsoft.com/en-us/graph/activity-feed-concept-overview",
     "https://learn.microsoft.com/en-us/graph/api/activitiescontainer-post-contentactivities",
     "https://learn.microsoft.com/en-us/graph/api/adhoccall-getallrecordings",
+    "https://learn.microsoft.com/en-us/graph/api/administrativeunit-delete",
+    "https://learn.microsoft.com/en-us/graph/api/administrativeunit-delete-members",
+    "https://learn.microsoft.com/en-us/graph/api/administrativeunit-delete-scopedrolemembers",
     "https://learn.microsoft.com/en-us/graph/api/administrativeunit-get",
+    "https://learn.microsoft.com/en-us/graph/api/administrativeunit-get-members",
+    "https://learn.microsoft.com/en-us/graph/api/administrativeunit-get-scopedrolemembers",
+    "https://learn.microsoft.com/en-us/graph/api/administrativeunit-list-members",
+    "https://learn.microsoft.com/en-us/graph/api/administrativeunit-list-scopedrolemembers",
+    "https://learn.microsoft.com/en-us/graph/api/administrativeunit-post-members",
+    "https://learn.microsoft.com/en-us/graph/api/administrativeunit-post-scopedrolemembers",
+    "https://learn.microsoft.com/en-us/graph/api/administrativeunit-update",
     "https://learn.microsoft.com/en-us/graph/api/adminreportsettings-get",
     "https://learn.microsoft.com/en-us/graph/api/agreement-list-acceptances",
     "https://learn.microsoft.com/en-us/graph/api/application-delta",
@@ -17746,6 +18101,7 @@
     "https://learn.microsoft.com/en-us/graph/api/associatedteaminfo-list",
     "https://learn.microsoft.com/en-us/graph/api/attachment-createuploadsession",
     "https://learn.microsoft.com/en-us/graph/api/attachment-get",
+    "https://learn.microsoft.com/en-us/graph/api/authorizationpolicy-update",
     "https://learn.microsoft.com/en-us/graph/api/backupreport-getstatisticsbypolicy",
     "https://learn.microsoft.com/en-us/graph/api/bookingbusiness-list-services",
     "https://learn.microsoft.com/en-us/graph/api/browsersitelist-post-sites",
@@ -17964,6 +18320,7 @@
     "https://learn.microsoft.com/en-us/graph/api/resources/customsecurityattributevalue",
     "https://learn.microsoft.com/en-us/graph/api/resources/datasecurityandgovernance",
     "https://learn.microsoft.com/en-us/graph/api/resources/datetimetimezone",
+    "https://learn.microsoft.com/en-us/graph/api/resources/defaultuserrolepermissions",
     "https://learn.microsoft.com/en-us/graph/api/resources/device",
     "https://learn.microsoft.com/en-us/graph/api/resources/devicelocalcredentialinfo",
     "https://learn.microsoft.com/en-us/graph/api/resources/devicetemplate",
@@ -18486,6 +18843,7 @@
     "https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/microsoft-teams-user-activity-preview",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/microsoft365-apps-usage",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/microsoft365-apps-usage-ww",
+    "https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/office-365-groups",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/office-365-groups-ww",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/onedrive-for-business-activity-ww",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/onedrive-for-business-usage-ww",
@@ -18523,7 +18881,9 @@
     "https://learn.microsoft.com/en-us/microsoft-365/admin/create-groups/compare-groups",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/create-groups/create-groups",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/create-groups/manage-groups",
+    "https://learn.microsoft.com/en-us/microsoft-365/admin/create-groups/manage-guest-access-in-groups",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/create-groups/office-365-groups",
+    "https://learn.microsoft.com/en-us/microsoft-365/admin/create-groups/restore-deleted-group",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/dns/update-dns-records-to-retain-current-hosting-provider",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/email/",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/email/add-another-email-alias-for-a-user",
@@ -18623,6 +18983,7 @@
     "https://learn.microsoft.com/en-us/microsoft-365/compliance/autoexpanding-archiving",
     "https://learn.microsoft.com/en-us/microsoft-365/compliance/dlp-learn-about-dlp",
     "https://learn.microsoft.com/en-us/microsoft-365/compliance/inactive-mailboxes-in-office-365",
+    "https://learn.microsoft.com/en-us/microsoft-365/compliance/sensitivity-labels-teams-groups-sites",
     "https://learn.microsoft.com/en-us/microsoft-365/compliance/whats-new",
     "https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/connectors-gallery",
     "https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview",
@@ -18653,6 +19014,7 @@
     "https://learn.microsoft.com/en-us/microsoft-365/enterprise/create-sharepoint-sites-and-add-users-with-powershell",
     "https://learn.microsoft.com/en-us/microsoft-365/enterprise/create-user-accounts-with-microsoft-365-powershell",
     "https://learn.microsoft.com/en-us/microsoft-365/enterprise/cross-tenant-sharepoint-migration",
+    "https://learn.microsoft.com/en-us/microsoft-365/enterprise/manage-microsoft-365-groups-with-powershell",
     "https://learn.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-admin-diagnostics",
     "https://learn.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-admin-engagements",
     "https://learn.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-admin-overview-enhanced-engagements",
@@ -18836,6 +19198,7 @@
     "https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/microsoft-365-education",
     "https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/microsoft-365-operated-by-21vianet",
     "https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/office-365-operated-by-21vianet",
+    "https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/office-365-plan-options",
     "https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/office-365-us-government/office-365-us-government",
     "https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/service-health-and-continuity",
     "https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-service-descriptions-technet-library",
@@ -18864,9 +19227,12 @@
     "https://learn.microsoft.com/en-us/powerapps",
     "https://learn.microsoft.com/en-us/powershell/azure/install-azure-powershell",
     "https://learn.microsoft.com/en-us/powershell/exchange/connect-to-exchange-online-powershell",
+    "https://learn.microsoft.com/en-us/powershell/exchange/open-the-exchange-management-shell",
     "https://learn.microsoft.com/en-us/powershell/microsoftgraph/get-started",
     "https://learn.microsoft.com/en-us/powershell/microsoftgraph/migration-steps",
     "https://learn.microsoft.com/en-us/powershell/microsoftgraph/overview",
+    "https://learn.microsoft.com/en-us/powershell/module/exchangepowershell/get-dynamicdistributiongroup",
+    "https://learn.microsoft.com/en-us/powershell/module/exchangepowershell/new-dynamicdistributiongroup",
     "https://learn.microsoft.com/en-us/powershell/module/exchangepowershell/remove-mailboxfolderpermission",
     "https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.groups/set-mggrouplicense",
     "https://learn.microsoft.com/en-us/powershell/scripting/overview",
@@ -18911,6 +19277,10 @@
     "https://learn.microsoft.com/en-us/previous-versions/industry-solutions-group/",
     "https://learn.microsoft.com/en-us/previous-versions/industry-solutions-group/bb971664(v=msdn.10)",
     "https://learn.microsoft.com/en-us/previous-versions/microsoft-365/solutions/choose-domain-to-create-groups",
+    "https://learn.microsoft.com/en-us/previous-versions/microsoft-365/solutions/collaboration-governance-overview",
+    "https://learn.microsoft.com/en-us/previous-versions/microsoft-365/solutions/groups-naming-policy",
+    "https://learn.microsoft.com/en-us/previous-versions/microsoft-365/solutions/manage-creation-of-groups",
+    "https://learn.microsoft.com/en-us/previous-versions/microsoft-365/solutions/microsoft-365-groups-expiration-policy",
     "https://learn.microsoft.com/en-us/previous-versions/microsoft-365/solutions/setup-secure-collaboration-with-teams",
     "https://learn.microsoft.com/en-us/previous-versions/microsoft-esp/",
     "https://learn.microsoft.com/en-us/previous-versions/microsoft-esp/ff798293(v=msdn.10)",
@@ -19098,246 +19468,6 @@
     "https://learn.microsoft.com/en-us/windows/win32/wer/windows-error-reporting"
   ],
   "queue": [
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/administrativeunit-update",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/administrativeunit-delete",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/administrativeunit-post-members",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/administrativeunit-list-members",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/administrativeunit-get-members",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/administrativeunit-delete-members",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/administrativeunit-list-scopedrolemembers",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/scopedrolemembership",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/administrativeunit-post-scopedrolemembers",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/scopedrolemembership",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/administrativeunit-get-scopedrolemembers",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/scopedrolemembership",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/administrativeunit-delete-scopedrolemembers",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/scopedrolemembership",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/admin-units-restricted-management",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/scopedrolemembership",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/fundamentals/how-subscriptions-associated-directory",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/external-id/what-is-b2b",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/external-id/external-collaboration-settings-configure",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/users/linkedin-user-consent",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/users/groups-settings-cmdlets",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/users/groups-settings-cmdlets",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-cloud-apps",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/authorizationpolicy-update",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/defaultuserrolepermissions",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/users/users-restrict-guest-permissions",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/MicrosoftTeams/guest-access",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/external-id/external-collaboration-settings-configure",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-manage-groups",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/groups-concept",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/users/groups-create-rule",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/users/users-restrict-guest-permissions",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/fundamentals/how-subscriptions-associated-directory",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/rbac-and-directory-admin-roles",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-create-delete-users",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/previous-versions/microsoft-365/solutions/manage-creation-of-groups",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/create-groups/manage-guest-access-in-groups",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/previous-versions/microsoft-365/solutions/manage-creation-of-groups",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/previous-versions/microsoft-365/solutions/groups-naming-policy",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/previous-versions/microsoft-365/solutions/choose-domain-to-create-groups",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/create-groups/manage-guest-access-in-groups",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/create-groups/restore-deleted-group",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/previous-versions/microsoft-365/solutions/microsoft-365-groups-expiration-policy",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/enterprise/manage-microsoft-365-groups-with-powershell",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/previous-versions/microsoft-365/solutions/collaboration-governance-overview",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/active-directory/enterprise-users/directory-service-limits-restrictions",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/office-365-groups",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/compliance/sensitivity-labels-teams-groups-sites",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/office-365-plan-options",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/enterprise/manage-microsoft-365-groups-with-powershell",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/office365/servicedescriptions/sharepoint-online-service-description/sharepoint-online-limits",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/previous-versions/microsoft-365/solutions/collaboration-governance-overview",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/exchange/architecture/client-access/exchange-admin-center",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/powershell/exchange/open-the-exchange-management-shell",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/exchange/permissions/feature-permissions/recipient-permissions",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/exchange/about-documentation/exchange-admin-center-keyboard-shortcuts",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/answers/tags/342/office-exchange-office-exchange-server-management",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/powershell/module/exchangepowershell/new-dynamicdistributiongroup",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/powershell/module/exchangepowershell/get-dynamicdistributiongroup",
-      "depth": 3
-    },
     {
       "url": "https://learn.microsoft.com/en-us/powershell/module/exchangepowershell/set-dynamicdistributiongroup",
       "depth": 3
@@ -27233,8 +27363,8 @@
   ],
   "last_batch": {
     "attempted": 36,
-    "documents_total": 1924,
-    "queued": 2033,
+    "documents_total": 1960,
+    "queued": 1973,
     "failures": []
   }
 }
