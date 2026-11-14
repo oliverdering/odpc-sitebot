@@ -1,0 +1,39 @@
+name: ODPC orchestra navigation live verification
+on:
+  push:
+    branches: ['work/orchestra-nav-20261114']
+    paths: ['.github/workflows/odpc-orchestra-nav-live-check.yml']
+permissions:
+  contents: read
+jobs:
+  live:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: |
+          npm install --no-save playwright@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Verify public page and mobile paths
+        run: |
+          node <<'JS'
+          const {chromium}=require('playwright');const fs=require('fs'),crypto=require('crypto');
+          (async()=>{const b=await chromium.launch({headless:true});const p=await b.newPage({viewport:{width:390,height:844}});const r=await p.goto('https://ai.odpc.de/ki-orchester/?navcheck='+Date.now(),{waitUntil:'domcontentloaded',timeout:60000});console.log('HTTP',r.status(),'URL',p.url());if(r.status()!==200)throw Error('page HTTP');
+          const live=await r.body(),source=fs.readFileSync('mission-control-navigation/index.html');console.log('LIVE_SHA256',crypto.createHash('sha256').update(live).digest('hex'),'EXPECTED_SHA256',crypto.createHash('sha256').update(source).digest('hex'));
+          await p.locator('#odpc-utility-dock').waitFor({timeout:20000});await p.locator('.odpc-page-menu summary').click();if(!await p.locator('.odpc-page-menu').evaluate(e=>e.open))throw Error('menu closed');
+          await p.locator('[data-view-choice="apple"]').click();if(!await p.locator('#apple-weg').isVisible())throw Error('Apple path hidden');await p.locator('[data-apple-device="ios"]').click();if(await p.locator('#setup-device').inputValue()!=='ios'||!await p.locator('#geraetewege details').nth(1).evaluate(e=>e.open))throw Error('iPhone path failed');
+          await p.locator('[data-apple-device="macos"]').click();if(await p.locator('#setup-device').inputValue()!=='macos'||!await p.locator('#geraetewege details').nth(3).evaluate(e=>e.open))throw Error('Mac path failed');
+          const portraits=p.locator('.odpc-team-portraits img');await portraits.first().scrollIntoViewIfNeeded();for(let i=0;i<await portraits.count();i++){const img=portraits.nth(i);await img.scrollIntoViewIfNeeded();await img.evaluate(e=>e.loading='eager');await img.waitFor({state:'visible'});await p.waitForFunction(e=>e.complete&&e.naturalWidth>0,await img.elementHandle(),{timeout:25000})}
+          const links=['https://odpc.de/unser-team/','https://ai.odpc.de/connector-einrichten/','https://odpc.de/','https://drol.odpc.de/'];for(const url of links){try{const resp=await p.request.get(url,{timeout:30000});console.log('LINK',resp.status(),url);if(!resp.ok())throw Error('HTTP '+resp.status())}catch(e){throw Error('Link failed '+url+' '+e.message)}}
+          const map=p.locator('.odpc-map a');if(await map.count()<7)throw Error('diagram missing');if(await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth+2))throw Error('horizontal overflow');await p.screenshot({path:'live-navigation-mobile.png',fullPage:true});await b.close();console.log('PASS mobile live navigation, Apple paths, portraits, crosslinks and map')})().catch(e=>{console.error(e);process.exit(1)});
+          JS
+      - name: Store screenshot
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: orchestra-navigation-live-mobile
+          path: live-navigation-mobile.png
+          if-no-files-found: ignore
