@@ -1,0 +1,48 @@
+name: ODPC orchestra navigation QA
+on:
+  push:
+    branches: ['work/orchestra-nav-20261114']
+    paths: ['.github/workflows/odpc-orchestra-nav-qa.yml']
+permissions:
+  contents: read
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: |
+          npm install --no-save playwright@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Verify responsive navigation and Apple journeys
+        run: |
+          node <<'JS'
+          const {chromium}=require('playwright');
+          (async()=>{const b=await chromium.launch({headless:true});
+          for(const width of [390,1280]){const p=await b.newPage({viewport:{width,height:844}});const errors=[];p.on('pageerror',e=>errors.push(e.message));
+          await p.route('https://translate.google.com/translate_a/element.js**',r=>r.fulfill({status:200,contentType:'application/javascript',body:'window.google={translate:{TranslateElement:function(){var c=document.createElement("select");c.className="goog-te-combo";["de","en","nl","fr","ru","tr","es"].forEach(x=>{var o=document.createElement("option");o.value=x;c.appendChild(o)});document.body.appendChild(c)}}};window.odpcGoogleTranslateInit()'}));
+          await p.goto('file://'+process.cwd()+'/mission-control-navigation/index.html');
+          await p.locator('.odpc-page-menu summary').click();if(!await p.locator('.odpc-page-menu').evaluate(e=>e.open))throw Error('menu failed');
+          for(const l of await p.locator('.odpc-page-menu a[href^="#"]').all()){const id=(await l.getAttribute('href')).slice(1);if(await p.locator('[id="'+id+'"]').count()!==1)throw Error('missing anchor '+id)}
+          await p.locator('[data-view-choice="apple"]').click();if(!await p.locator('#apple-weg').isVisible())throw Error('Apple guide not visible');
+          await p.locator('[data-apple-device="ios"]').click();if(await p.locator('#setup-device').inputValue()!=='ios'||!await p.locator('#geraetewege details').nth(1).evaluate(e=>e.open))throw Error('iPhone guide failed');
+          await p.locator('[data-apple-device="macos"]').click();if(await p.locator('#setup-device').inputValue()!=='macos'||!await p.locator('#geraetewege details').nth(3).evaluate(e=>e.open))throw Error('Mac guide failed');
+          await p.locator('#setup-language').selectOption('tr');if(await p.locator('#setup-device').inputValue()!=='macos'||await p.locator('body').getAttribute('data-view')!=='apple'||await p.locator('.odpc-language-fallback').inputValue()!=='tr')throw Error('choices are not independent');
+          await p.locator('[data-view-choice="default"]').click();if(await p.locator('#apple-weg').isVisible())throw Error('Apple guide visible in default');if(await p.locator('#setup-device').inputValue()!=='macos')throw Error('design reset device');
+          if(await p.locator('.odpc-team-portraits a').count()!==6)throw Error('team portrait count');
+          if(await p.locator('.odpc-map a').count()<7)throw Error('map nodes missing');
+          if(await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth+2))throw Error('horizontal overflow');
+          if(errors.length)throw Error('JS errors '+errors.join('; '));
+          if(width===390){await p.locator('[data-view-choice="apple"]').click();await p.screenshot({path:'navigation-mobile.png',fullPage:true})}
+          await p.close();console.log('PASS layout '+width)}await b.close()})().catch(e=>{console.error(e);process.exit(1)});
+          JS
+      - name: Preserve mobile screenshot
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: orchestra-navigation-mobile
+          path: navigation-mobile.png
+          if-no-files-found: ignore
