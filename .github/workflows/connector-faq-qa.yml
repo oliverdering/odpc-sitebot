@@ -1,0 +1,21 @@
+name: Connector FAQ QA
+on:
+  push:
+    branches: ['work/connector-faq-20261114']
+    paths: ['.github/workflows/connector-faq-qa.yml']
+permissions:
+  contents: read
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: php -l connector-faq-release/odpc-connector-faq-expansion.php
+      - run: python3 -m py_compile connector-faq-release/deploy.py
+      - run: npm install --no-save playwright@1.55.0
+      - run: npx playwright install --with-deps chromium
+      - run: node connector-faq-release/test.cjs
