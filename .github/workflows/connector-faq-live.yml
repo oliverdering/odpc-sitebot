@@ -1,0 +1,25 @@
+name: Connector FAQ live verification
+on:
+  push:
+    branches: ['work/connector-faq-20261114']
+    paths: ['.github/workflows/connector-faq-live.yml']
+permissions:
+  contents: read
+jobs:
+  live:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-save playwright@1.55.0
+      - run: npx playwright install --with-deps chromium
+      - run: node connector-faq-release/live-test.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: connector-faq-mobile
+          path: connector-faq-live.png
+          if-no-files-found: ignore
