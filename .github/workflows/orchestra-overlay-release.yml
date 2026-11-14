@@ -1,0 +1,33 @@
+name: ODPC orchestra overlay release
+on:
+  push:
+    branches: ['work/orchestra-no-popups-20261114']
+    paths: ['.github/workflows/orchestra-overlay-release.yml']
+permissions:
+  contents: read
+concurrency:
+  group: odpc-orchestra-release
+  cancel-in-progress: false
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify tested source
+        run: |
+          test "$(git rev-parse HEAD:orchestra-overlay-release/index.html)" = "331f94ef8d46179fdeab65978d1b1b4c19516aad"
+          python3 -m py_compile orchestra-overlay-release/deploy.py
+      - run: python3 -m pip install 'paramiko>=3.4,<5'
+      - name: Publish overlay fix
+        env:
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+          AI_ODPC_THEME_PATH: ${{ secrets.AI_ODPC_THEME_PATH }}
+        run: python3 -m orchestra-overlay-release.deploy
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: orchestra-before-overlay-fix
+          path: orchestra-overlay-backup/
+          if-no-files-found: ignore
+          retention-days: 15
