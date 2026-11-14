@@ -190,5 +190,5 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 window.addEventListener('load',mount);
 var attempts=0;var retry=setInterval(function(){mount();var dock=document.getElementById('odpc-utility-dock');if(dock&&moveLanguage(dock)){clearInterval(retry);return}if(++attempts>=12){clearInterval(retry);if(dock)fallbackLanguage(dock)}},500);
 })();
-</script></body></html>
+</script><script id="odpc-selection-bridge">(function(){'use strict';var l=document.getElementById('setup-language');if(!l||!window.ODPCLanguage)return;function fromDock(){var value=window.ODPCLanguage.get(),dock=document.querySelector('.odpc-language-fallback');if(dock&&dock.value!==value)dock.value=value;if(l.value!==value){l.value=value;l.dispatchEvent(new Event('change',{bubbles:true}))}}l.addEventListener('change',function(){if(window.ODPCLanguage.get()!==l.value)window.ODPCLanguage.set(l.value)});document.addEventListener('odpc:languagechange',fromDock);fromDock()})();</script></body></html>
 
