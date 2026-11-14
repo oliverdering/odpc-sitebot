@@ -1,0 +1,33 @@
+name: ODPC orchestra review release
+on:
+  push:
+    branches: ['work/orchestra-review-20261114']
+    paths: ['.github/workflows/orchestra-review-release.yml']
+permissions:
+  contents: read
+concurrency:
+  group: odpc-orchestra-release
+  cancel-in-progress: false
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify tested source
+        run: |
+          test "$(git rev-parse HEAD:orchestra-review-release/index.html)" = "e697f7ff9d0c86b6f408d94c28636de512648a5a"
+          python3 -m py_compile orchestra-review-release/deploy.py
+      - run: python3 -m pip install 'paramiko>=3.4,<5'
+      - name: Publish reviewed page
+        env:
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+          AI_ODPC_THEME_PATH: ${{ secrets.AI_ODPC_THEME_PATH }}
+        run: python3 -m orchestra-review-release.deploy
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: orchestra-before-review
+          path: orchestra-review-backup/
+          if-no-files-found: ignore
+          retention-days: 15
