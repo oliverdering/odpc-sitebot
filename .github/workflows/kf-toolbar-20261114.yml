@@ -1,0 +1,26 @@
+name: Kleine Freiheit toolbar repair
+on:
+  push:
+    branches: [fix/kleine-freiheit-live-20261114]
+    paths: [.github/workflows/kf-toolbar-20261114.yml]
+permissions:
+  contents: read
+concurrency:
+  group: yourbusiness-serialized-operations
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - name: Back up and update toolbar
+        env:
+          SSHPASS: ${{ secrets.ODPC_SSH_PASSWORD }}
+        run: |
+          set -euo pipefail
+          test -n "$SSHPASS"
+          sudo apt-get install -y -qq sshpass >/dev/null
+          mkdir -p ~/.ssh
+          ssh-keyscan -4 -t ed25519 home119567219.1and1-data.host > ~/.ssh/known_hosts 2>/dev/null
+          ssh-keygen -lf ~/.ssh/known_hosts | grep -F 'SHA256:1gx2w8Rtv3wCgi7Jh8myf/KVd72cRQbow03UP8P095Q' >/dev/null
+          sshpass -e ssh -4 -o StrictHostKeyChecking=yes -o PreferredAuthentications=password -o PubkeyAuthentication=no -o NumberOfPasswordPrompts=1 -o ConnectTimeout=20 p37641258@home119567219.1and1-data.host 'python3 -c "import base64;exec(base64.b64decode(\"aW1wb3J0IGhhc2hsaWIsIG9zLCBwYXRobGliLCBzaHV0aWwsIHN1YnByb2Nlc3MsIHRlbXBmaWxlLCB0aW1lCnA9cGF0aGxpYi5QYXRoLmhvbWUoKS8iWW91ckJ1c2luZXNzL3dwLWNvbnRlbnQvcGx1Z2lucy9vZHBjLWtsZWluZS1mcmVpaGVpdC9rbGVpbmUtZnJlaWhlaXQucGhwIgpvbGQ9cC5yZWFkX2J5dGVzKCkKcz1vbGQuZGVjb2RlKCJ1dGYtOCIpCm1hcmtlcj0nPC9hPjwvZGl2PjxzY3JpcHQ+JwpzdGFydD1zLmluZGV4KCc8ZGl2IGNsYXNzPSJ0b29sYmFyIiBhcmlhLWxhYmVsPSJTcHJhY2hlIHVuZCBCZWRpZW51bmciPicpCnBvcz1zLmluZGV4KG1hcmtlcixzdGFydCkKYXNzZXJ0IHMuZmluZChtYXJrZXIscG9zKzEpPT0tMSBvciBwb3MgPCBzLmluZGV4KCc8L3NjcmlwdD4nLHBvcykKcz1zWzpwb3NdK3NbcG9zOl0ucmVwbGFjZShtYXJrZXIsJzwvYT48YSBocmVmPSIjYmVzdWNoIiBhcmlhLWxhYmVsPSJLb250YWt0IHVuZCBBbmZhaHJ0IiB0aXRsZT0iS29udGFrdCB1bmQgQW5mYWhydCI+JiM5NzQyOzwvYT48L2Rpdj48c2NyaXB0PicsMSkKY3NzPSc8c3R5bGU+aWZyYW1lLlZJcGdKZC1aVmk5b2QtT1JIYi1PRVZtY2QsaWZyYW1lLmdvb2ctdGUtYmFubmVyLWZyYW1le2Rpc3BsYXk6bm9uZSFpbXBvcnRhbnQ7dmlzaWJpbGl0eTpoaWRkZW4haW1wb3J0YW50fWJvZHl7dG9wOjAhaW1wb3J0YW50fS50b29sYmFye3otaW5kZXg6MjE0NzQ4MDAwMH0udG9vbGJhciBhLC50b29sYmFyIGJ1dHRvbnt0b3VjaC1hY3Rpb246bWFuaXB1bGF0aW9ufUBtZWRpYShtYXgtd2lkdGg6MzYwcHgpey50b29sYmFye2dhcDowO3BhZGRpbmc6NHB4fS50b29sYmFyIGJ1dHRvbiwudG9vbGJhciBhe21pbi13aWR0aDozOXB4fS50b29sYmFyIHNlbGVjdHttYXgtd2lkdGg6NjdweH19PC9zdHlsZT4nCmFzc2VydCBzLmNvdW50KCc8L2hlYWQ+Jyk9PTEKcz1zLnJlcGxhY2UoJzwvaGVhZD4nLGNzcysnPC9oZWFkPicsMSkKYmFja3VwPXAud2l0aF9uYW1lKHAubmFtZSsiLmJhY2t1cC10b29sYmFyLSIrdGltZS5zdHJmdGltZSgiJVklbSVkJUglTSVTIikpCnNodXRpbC5jb3B5MihwLGJhY2t1cCkKZmQsdG1wPXRlbXBmaWxlLm1rc3RlbXAocHJlZml4PSIua2YtIixzdWZmaXg9Ii5waHAiLGRpcj1wLnBhcmVudCkKdHJ5Ogogd2l0aCBvcy5mZG9wZW4oZmQsInciLGVuY29kaW5nPSJ1dGYtOCIpIGFzIGY6IGYud3JpdGUocykKIG9zLmNobW9kKHRtcCxwLnN0YXQoKS5zdF9tb2RlICYgMG83NzcpCiBzdWJwcm9jZXNzLnJ1bihbInBocDguMyIsIi1sIix0bXBdLGNoZWNrPVRydWUpCiBhc3NlcnQgaGFzaGxpYi5zaGEyNTYocC5yZWFkX2J5dGVzKCkpLmRpZ2VzdCgpPT1oYXNobGliLnNoYTI1NihvbGQpLmRpZ2VzdCgpCiBvcy5yZXBsYWNlKHRtcCxwKQogcHJpbnQoIlRPT0xCQVJfVVBEQVRFRF9CQUNLVVBfQ1JFQVRFRCIpCmZpbmFsbHk6CiBpZiBvcy5wYXRoLmV4aXN0cyh0bXApOiBvcy51bmxpbmsodG1wKQo=\"))"'
