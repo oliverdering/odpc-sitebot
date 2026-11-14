@@ -1,0 +1,46 @@
+name: ODPC Orchester Master isolated QA
+on:
+  push:
+    branches: ['work/orchestra-master-20261114']
+    paths: ['.github/workflows/odpc-orchestra-master-qa.yml']
+permissions:
+  contents: read
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: |
+          npm install --no-save playwright@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Test mobile choices and toolbar
+        run: |
+          node <<'JS'
+          const {chromium}=require('playwright');
+          (async()=>{const b=await chromium.launch({headless:true});const p=await b.newPage({viewport:{width:390,height:844}});
+          await p.addInitScript(()=>{window.__speak=0;Object.defineProperty(window,'speechSynthesis',{value:{getVoices:()=>[],addEventListener:()=>{},cancel:()=>{},speak:u=>{window.__speak++;if(u.onstart)u.onstart()},speaking:false,pending:false,paused:false},configurable:true});window.SpeechSynthesisUtterance=function(s){this.text=s}});
+          await p.route('https://translate.google.com/translate_a/element.js**',route=>route.fulfill({status:200,contentType:'application/javascript',body:'window.google={translate:{TranslateElement:function(){var c=document.createElement("select");c.className="goog-te-combo";["de","en","nl","fr","ru","tr","es"].forEach(x=>{var o=document.createElement("option");o.value=x;c.appendChild(o)});document.body.appendChild(c)}}};window.odpcGoogleTranslateInit()'}));
+          const errors=[];p.on('pageerror',e=>errors.push(e.message));
+          await p.goto('file://'+process.cwd()+'/mission-control-release-v2/index.html');
+          await p.locator('#odpc-utility-dock').waitFor({timeout:10000});
+          for(const d of ['android','ios','windows','macos'])for(const l of ['de','en','nl','fr','ru','tr','es'])for(const v of ['default','apple','android']){
+          await p.locator('#setup-device').selectOption(d);await p.locator('#setup-language').selectOption(l);await p.locator('[data-view-choice="'+v+'"]').click();
+          if(await p.locator('#setup-device').inputValue()!=d||await p.locator('#setup-language').inputValue()!=l||await p.locator('body').getAttribute('data-view')!=v)throw Error('state coupling '+d+l+v);
+          }
+          await p.locator('#odpc-reader-play').click();if(await p.evaluate(()=>window.__speak)<1)throw Error('speech callback failed');await p.locator('#odpc-reader-stop').click();
+          await p.locator('.odpc-language-fallback').selectOption('tr');await p.waitForTimeout(800);if(await p.evaluate(()=>document.documentElement.lang)!=='tr')throw Error('translation bridge failed');
+          if(await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth+2))throw Error('mobile overflow');
+          if(errors.length)throw Error('JS '+errors.join(';'));
+          await p.screenshot({path:'master-mobile-qa.png',fullPage:true});await b.close();console.log('PASS: mobile selectors 84, original dock, speech mock, translation mock');})().catch(e=>{console.error(e);process.exit(1)});
+          JS
+      - name: Store screenshot
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: master-mobile-qa
+          path: master-mobile-qa.png
+          if-no-files-found: ignore
