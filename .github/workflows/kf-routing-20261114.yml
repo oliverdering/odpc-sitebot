@@ -1,0 +1,31 @@
+name: Kleine Freiheit temporary routing
+on:
+  push:
+    branches: [fix/kleine-freiheit-live-20261114]
+    paths: [.github/workflows/kf-routing-20261114.yml]
+permissions:
+  contents: read
+concurrency:
+  group: yourbusiness-serialized-operations
+  cancel-in-progress: false
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install reversible temporary redirect in isolated directory
+        env:
+          SSHPASS: ${{ secrets.ODPC_SSH_PASSWORD }}
+        run: |
+          set -euo pipefail
+          sudo apt-get install -y -qq sshpass >/dev/null
+          mkdir -p ~/.ssh
+          ssh-keyscan -4 -t ed25519 home119567219.1and1-data.host > ~/.ssh/known_hosts 2>/dev/null
+          ssh-keygen -lf ~/.ssh/known_hosts | grep -F 'SHA256:1gx2w8Rtv3wCgi7Jh8myf/KVd72cRQbow03UP8P095Q' >/dev/null
+          sshpass -e ssh -4 -o StrictHostKeyChecking=yes -o PreferredAuthentications=password -o PubkeyAuthentication=no -o NumberOfPasswordPrompts=1 -o ConnectTimeout=20 p37641258@home119567219.1and1-data.host 'set -eu
+            cd "$HOME/KleineFreiheit"
+            test -f .htaccess
+            test ! -e index.html
+            test ! -e index.php
+            printf "%s\n" "Redirect 302 / https://yourbusiness.odpc.de/?pagename=kleine-freiheit" >> .htaccess
+            echo TEMPORARY_REDIRECT_PREPARED
+          '
