@@ -19,3 +19,5 @@ jobs:
       - run: npm install --no-save playwright@1.55.0
       - run: npx playwright install --with-deps chromium
       - run: node connector-faq-release/test.cjs
+
+# Test final design modes
