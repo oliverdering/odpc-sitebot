@@ -37,6 +37,15 @@ jobs:
           if(errors.length)throw Error('JS '+errors.join(';'));
           await p.screenshot({path:'master-mobile-qa.png',fullPage:true});await b.close();console.log('PASS: mobile selectors 84, original dock, speech mock, translation mock');})().catch(e=>{console.error(e);process.exit(1)});
           JS
+      - name: Check real translation provider
+        run: |
+          python3 -m http.server 8765 --directory mission-control-release-v2 > /tmp/odpc-server.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" || true' EXIT
+          node <<'JS'
+          const {chromium}=require('playwright');
+          (async()=>{const b=await chromium.launch({headless:true});const p=await b.newPage({viewport:{width:390,height:844}});await p.goto('http://127.0.0.1:8765/index.html');await p.locator('.odpc-language-fallback').waitFor();const before=await p.locator('h1').innerText();await p.locator('.odpc-language-fallback').selectOption('en');await p.waitForTimeout(20000);const after=await p.locator('h1').innerText();const status=await p.locator('#odpc-translation-status').innerText();console.log('ORIGINAL',before,'AFTER',after,'STATUS',status);await b.close();if(before===after)throw Error('Real translation did not change page heading');})().catch(e=>{console.error(e);process.exit(1)});
+          JS
       - name: Store screenshot
         if: always()
         uses: actions/upload-artifact@v4
