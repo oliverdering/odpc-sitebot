@@ -1,0 +1,36 @@
+name: ODPC Orchester Master guarded deployment
+on:
+  push:
+    branches: ['work/orchestra-master-20261114']
+    paths: ['.github/workflows/odpc-orchestra-master-deploy.yml']
+permissions:
+  contents: read
+concurrency:
+  group: odpc-orchestra-release
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify tested source and asset
+        run: |
+          test "$(git rev-parse HEAD:mission-control-release-v2/index.html)" = "f4283dbb5b442216c7c28ed21a64808379a110ad"
+          test "$(git rev-parse HEAD:mission-control-release-v2/oliver-claire-klavier.webp)" = "34e4a709950f6bde2d71b66d828e2957278b6bc1"
+          python3 -m py_compile mission-control-release-v2/deploy-master.py
+      - name: Install SFTP client
+        run: python3 -m pip install 'paramiko>=3.4,<5'
+      - name: Publish single page, verify and rollback on error
+        env:
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+          AI_ODPC_THEME_PATH: ${{ secrets.AI_ODPC_THEME_PATH }}
+        run: python3 -m mission-control-release-v2.deploy-master
+      - name: Preserve previous page
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: orchestra-master-backup
+          path: master-backup/
+          retention-days: 15
+          if-no-files-found: ignore
