@@ -1,0 +1,21 @@
+{
+  "status": "PASS_STAGING",
+  "productionImport": false,
+  "candidateCount": 1,
+  "createdToday": 5,
+  "errors": [],
+  "blockedFromImport": [
+    {
+      "id": "mk-research-20261024-ly-assia-bzaar",
+      "unmapped": [
+        "7-spice"
+      ],
+      "issues": [
+        "Gehäuftes EL-Maß verlustfrei im Produktionsmodell, in Anzeige und Rezeptskalierung erhalten; keine stille Umdeutung zu gestrichenem EL.",
+        "Verlinkte Bokharat-Komponente fachlich und technisch abbilden, Einzelzutaten und Allergene prüfen.",
+        "Dublettenprüfung nach vollständiger Komponentenauflösung erneut durchführen."
+      ],
+      "reason": "research_pending"
+    }
+  ]
+}

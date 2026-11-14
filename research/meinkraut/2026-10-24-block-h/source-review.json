@@ -1,0 +1,24 @@
+{
+  "checkedAt": "2026-10-24",
+  "selectedSource": "https://www.thelibyankitchen.com/2012/12/the-bzaar-mix.html",
+  "componentSource": "https://www.food.com/recipe/arabic-7-seven-spice-bokharat-194721",
+  "componentRead": true,
+  "componentIngredientCount": 8,
+  "componentNotAnAdditionalCandidate": true,
+  "screenedNotCandidates": [
+    {
+      "url": "https://blog.212.com.tw/posts/five-spice-secret",
+      "productEvidence": "https://www.212.com.tw/products/cinnamon-bark-100g",
+      "reason": "Read recipe, linked bark product and brand page. Bark identity needs review; TW is absent from current supported country list. No country assignment or recipe candidate created."
+    },
+    {
+      "url": "https://libyanheritagehouse.org/arts-culture/libyan-cuisine",
+      "reason": "Hararat section read; chili form and cinnamon-stick dimensions unspecified. No candidate created."
+    },
+    {
+      "url": "https://oea-libya.com/products/bzaar-spice",
+      "reason": "No readable body returned; no composition or recipe inferred from search snippet."
+    }
+  ],
+  "newCandidatesInScreening": 0
+}

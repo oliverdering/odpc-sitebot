@@ -1,0 +1,23 @@
+{
+  "status": "PASS_STAGING_WITH_IMPORT_BLOCKS",
+  "checkedAt": "2026-10-24",
+  "dataCommit": "80de7a6d42303ea078fda323955e24ff2d45ff98",
+  "ci": {
+    "url": "https://github.com/oliverdering/odpc-sitebot/actions/runs/40066033590",
+    "jobId": 120789376963,
+    "conclusion": "success",
+    "checks": [
+      "research packages",
+      "JavaScript application",
+      "PHP routes, catalog transactions and source attribution"
+    ]
+  },
+  "changedFilesScope": "research/meinkraut/2026-10-24-block-h/ only",
+  "activeCatalogChanged": false,
+  "readyForImport": false,
+  "unresolved": [
+    "Heaped tablespoon qualifier preserved through production model, display and scaling",
+    "Nested Bokharat identity and constituent allergen assessment",
+    "Final duplicate review after component mapping"
+  ]
+}
