@@ -1,0 +1,57 @@
+name: ODPC KI-Orchester V2 release
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/odpc-orchestra-v2-release.yml'
+permissions:
+  contents: read
+concurrency:
+  group: odpc-orchestra-release
+  cancel-in-progress: false
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate source and image
+        run: |
+          python3 -m py_compile mission-control-release-v2/deploy.py
+          python3 - <<'PY'
+          from html.parser import HTMLParser
+          from pathlib import Path
+          s=Path('mission-control-release-v2/index.html').read_text()
+          HTMLParser().feed(s)
+          assert 'architektur-netzwerk' in s and s.count('<details') >= 30
+          assert '/ki-orchester/orchester.webp' in s
+          assert Path('mission-control-release-v2/orchester.webp').stat().st_size > 1000
+          PY
+      - name: Check mobile layout and interactive diagram
+        run: |
+          npm install --no-save playwright@1.55.0
+          npx playwright install --with-deps chromium
+          node <<'JS'
+          const {chromium}=require('playwright');
+          (async()=>{const b=await chromium.launch({headless:true});const p=await b.newPage({viewport:{width:390,height:844},deviceScaleFactor:1});await p.goto('file://'+process.cwd()+'/mission-control-release-v2/index.html');const item=p.locator('#architektur-netzwerk details').first();await item.locator('summary').click();if(!await item.evaluate(e=>e.open))throw Error('Diagram node failed to open');if(await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth+2))throw Error('Horizontal mobile overflow');await p.screenshot({path:'orchester-mobile-qa.png',fullPage:true});await b.close();console.log('PASS mobile 390px, diagram opens');})().catch(e=>{console.error(e);process.exit(1)});
+          JS
+      - name: Install SFTP client
+        run: python3 -m pip install 'paramiko>=3.4,<5'
+      - name: Publish with backup, live checks and rollback
+        env:
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+          AI_ODPC_THEME_PATH: ${{ secrets.AI_ODPC_THEME_PATH }}
+        run: python3 -m mission-control-release-v2.deploy
+      - name: Preserve previous page and mobile screenshot
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: odpc-orchestra-v2-qa-and-backup
+          path: |
+            mission-control-backup-v2/
+            orchester-mobile-qa.png
+          retention-days: 15
+          if-no-files-found: ignore
