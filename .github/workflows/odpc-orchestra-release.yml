@@ -36,3 +36,5 @@ jobs:
           path: mission-control-backup/
           retention-days: 15
           if-no-files-found: ignore
+
+# Retry after verified WordPress soft-404 and read-only server inspection.
