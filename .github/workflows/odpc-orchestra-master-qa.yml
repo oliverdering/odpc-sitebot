@@ -28,7 +28,7 @@ jobs:
           await p.goto('file://'+process.cwd()+'/mission-control-release-v2/index.html');
           await p.locator('#odpc-utility-dock').waitFor({timeout:10000});
           for(const d of ['android','ios','windows','macos'])for(const l of ['de','en','nl','fr','ru','tr','es'])for(const v of ['default','apple','android']){
-          await p.locator('#setup-device').selectOption(d);await p.locator('#setup-language').selectOption(l);await p.locator('[data-view-choice="'+v+'"]').click();
+          await p.locator('#setup-device').selectOption(d);await p.locator('#setup-language').selectOption(l);if(await p.locator('.odpc-language-fallback').inputValue()!==l)throw Error('dock language mismatch '+l);await p.locator('[data-view-choice="'+v+'"]').click();
           if(await p.locator('#setup-device').inputValue()!=d||await p.locator('#setup-language').inputValue()!=l||await p.locator('body').getAttribute('data-view')!=v)throw Error('state coupling '+d+l+v);
           }
           await p.locator('#odpc-reader-play').click();if(await p.evaluate(()=>window.__speak)<1)throw Error('speech callback failed');await p.locator('#odpc-reader-stop').click();
@@ -53,3 +53,5 @@ jobs:
           name: master-mobile-qa
           path: master-mobile-qa.png
           if-no-files-found: ignore
+
+# Verify the updated language synchronization.
