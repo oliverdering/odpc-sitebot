@@ -1,4 +1,5 @@
 name: YourBusiness / Instant demo deployment
+# 2026-11-14: Re-run isolated customer deployment and acceptance checks.
 on:
   push:
     paths:
