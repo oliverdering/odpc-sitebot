@@ -1,0 +1,53 @@
+{
+  "status": "PASS_STAGING_WITH_IMPORT_BLOCKS",
+  "productionImport": false,
+  "baseCommit": "caed05fe64fe4f900320bc2d7aa4974276d728e2",
+  "candidateCount": 1,
+  "dailyNewCandidatesIncludingOpenBranches": 4,
+  "sourceIngredients": 5,
+  "numericAmountsVerified": [
+    3,
+    2,
+    2,
+    1,
+    0.5
+  ],
+  "units": [
+    "TL",
+    "TL",
+    "TL",
+    "TL",
+    "TL"
+  ],
+  "sourceReadInFull": true,
+  "sourceOptionsPreserved": true,
+  "sourceSaltNotAdded": true,
+  "allergenAssessment": {
+    "known": [],
+    "complete": true,
+    "note": "Die fünf genannten reinen Gewürz-/Kräuterzutaten ergeben kein daraus abzuleitendes benanntes Allergen. Produktidentität der Piri-Piri-Flocken bleibt offen; Etiketten und Spuren gesondert prüfen, keine Allergenfrei-Garantie."
+  },
+  "catalogRecipes": 665,
+  "catalogIngredients": 299,
+  "sameSourceFound": false,
+  "readyForImport": false,
+  "openIssues": [
+    "Piri-Piri-Flocken als passende Zutatenidentität prüfen; keine ungeprüfte Gleichsetzung mit beliebigen Chiliflocken oder Cayennepulver.",
+    "Mahlzustand des schwarzen Pfeffers vor dem Abmessen anhand weiterer Originalbelege prüfen.",
+    "Dublettenprüfung nach endgültiger Zutatenzuordnung nochmals durchführen."
+  ],
+  "negativeProbes": [
+    {
+      "name": "premature_readiness",
+      "result": "rejected"
+    },
+    {
+      "name": "unknown_ingredient",
+      "result": "rejected"
+    },
+    {
+      "name": "unproven_100g_conversion",
+      "result": "rejected"
+    }
+  ]
+}

@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "batchId": "oxana-research-2026-10-24-d",
+  "createdAt": "2026-10-24",
+  "productionImport": false,
+  "dailyCandidateCountIncludingOpenBranches": 4,
+  "dailyCountNote": "Zwei live (CH/NA), Malta in Entwurf 19 und dieser Portugal-Entwurf; insgesamt vier neue Kandidaten.",
+  "candidates": [
+    {
+      "id": "mk-research-20261024-pt-clara-piri-piri",
+      "name": "Piri-Piri-Trockenmischung – Clara de Sousas Variante",
+      "kind": "Trockenmischung",
+      "countries": [
+        "PT"
+      ],
+      "region": "Portugiesische Autorenveröffentlichung; kein Nationalstandard",
+      "description": "Trockene Paprika-Oregano-Mischung mit Knoblauch, Piri-Piri-Flocken und schwarzem Pfeffer; ohne zugesetztes Salz im Quellansatz.",
+      "editorialType": "Veröffentlichte Autorenvariante; erlaubte Option mit einfachem Knoblauchpulver gewählt",
+      "reviewStatus": "Originalquelle und Autorenkontext am 24.10.2026 gelesen. Fünf Mengen erhalten; Piri-Piri-Identität und Pfefferform vor Import prüfen. Nicht verkostet.",
+      "ingredients": [
+        {
+          "sourceName": "paprika",
+          "ingredient": "paprika-gemahlen-unspezifiziert",
+          "amount": 3,
+          "unit": "TL",
+          "preparation": "Paprika ohne belegte Sorten-/Schärfeangabe. Keine Gleichsetzung mit edelsüßer oder geräucherter Paprika."
+        },
+        {
+          "sourceName": "orégãos secos",
+          "ingredient": "oregano",
+          "amount": 2,
+          "unit": "TL",
+          "preparation": "Getrocknet."
+        },
+        {
+          "sourceName": "alho em pó (simples ou fumado)",
+          "ingredient": "knoblauchpulver",
+          "amount": 2,
+          "unit": "TL",
+          "preparation": "Die ausdrücklich erlaubte einfache, nicht geräucherte Pulveroption ist ausgewählt."
+        },
+        {
+          "sourceName": "piri-piri em flocos (ou a gosto)",
+          "ingredient": null,
+          "amount": 1,
+          "unit": "TL",
+          "mappingIssue": "Kein eigener Piri-Piri-Flocken-Eintrag im Atlas. Taxon/Produkt und Abbildung gegenüber generischen chiliflocken vor Import prüfen; keine beliebige Chili als identisch ausgeben.",
+          "sourceQuantity": "1 colher de chá de piri-piri em flocos (ou a gosto)",
+          "preparation": "Bezifferte Ausgangsmenge gewählt. Die Quelle erlaubt Anpassung nach Geschmack; keine zusätzliche Menge ergänzt."
+        },
+        {
+          "sourceName": "pimenta-preta",
+          "ingredient": "schwarzer-pfeffer",
+          "amount": 0.5,
+          "unit": "TL",
+          "preparation": "Schwarzer Pfeffer ist benannt, Mahlzustand beim Abmessen im gelesenen Text nicht ausdrücklich angegeben. Nicht als gemahlen bestätigt."
+        }
+      ],
+      "methodSteps": [
+        "Die fünf trockenen Zutaten laut Quelle vermischen und in einem gut schließenden Glas aufbewahren.",
+        "Vor einem ausführbaren Import Piri-Piri-Identität und Pfefferform beim Abmessen klären; keine Mengen oder Zutatenformen schätzen."
+      ],
+      "application": "Würze für Fleisch, Fisch, Kartoffeln oder Gemüse beim Braten beziehungsweise im Ofen; kein belegter Dosierwert pro Kilogramm.",
+      "serving": "Originalansatz: 3 TL Paprika, 2 TL getrockneter Oregano, 2 TL einfaches Knoblauchpulver, 1 TL Piri-Piri-Flocken und 1/2 TL schwarzer Pfeffer. Kein Gramm-Ertrag.",
+      "massBasis": "Fünf originale TL-Mengen; keine Grammumrechnung und keine Ausbeuteschätzung",
+      "normalization100g": null,
+      "allergenAssessment": {
+        "known": [],
+        "complete": true,
+        "note": "Die fünf genannten reinen Gewürz-/Kräuterzutaten ergeben kein daraus abzuleitendes benanntes Allergen. Produktidentität der Piri-Piri-Flocken bleibt offen; Etiketten und Spuren gesondert prüfen, keine Allergenfrei-Garantie."
+      },
+      "storageNotes": [
+        "Trockene Zutaten in einem sauberen, trockenen, gut schließenden Glas aufbewahren. Keine eigene Haltbarkeitsfrist oder ungekühlte Lagerfreigabe für frische Zusätze."
+      ],
+      "sources": [
+        {
+          "title": "Mix de Piri-Piri (Tempero Seco)",
+          "url": "https://claradesousa.pt/receita/mix-de-piri-piri/",
+          "author": "Clara de Sousa",
+          "publishedAt": "2022-11-09",
+          "accessedAt": "2026-10-24",
+          "primarySource": true,
+          "contentChecked": true,
+          "evidenceScope": "Vollständige eigene Rezeptveröffentlichung mit fünf Zahlenmengen, trockener Einordnung, Knoblauchoption und ausdrücklichem Hinweis ohne zugesetztes Salz.",
+          "license": "Sachliche Zutaten/Mengen und eigene deutsche Notizen; keine Bilder, Artikel- oder Werbetexte übernommen."
+        },
+        {
+          "title": "Sobre a Clara",
+          "url": "https://claradesousa.pt/sobre-a-clara/",
+          "author": "Clara de Sousa",
+          "accessedAt": "2026-10-24",
+          "primarySource": true,
+          "contentChecked": true,
+          "evidenceScope": "Eigene Vorstellung des Kochprojekts und des portugiesischen Publikationskontexts; keine persönlichen Familienangaben übernommen."
+        },
+        {
+          "title": "Geração 60 – Clara de Sousa, Folge 1",
+          "url": "https://podcasts.apple.com/pt/podcast/clara-de-sousa-a-minha-visibilidade-pode-ser-um/id1798202538?i=1000697312415",
+          "author": "SIC Notícias / Geração 60",
+          "publishedAt": "2025-03-03",
+          "accessedAt": "2026-10-24",
+          "primarySource": true,
+          "contentChecked": true,
+          "evidenceScope": "Originalbeschreibung des Senders zu seinem Interview; nur der geografische Autorenbezug Estoril/Cascais in Portugal ausgewertet. Keine Familien-/Geburtsdetails übernommen."
+        }
+      ],
+      "countryEvidence": "PT kennzeichnet Clara de Sousas portugiesische Autorenveröffentlichung. Eigene Kochprojekt-Vorstellung und die Original-Interviewbeschreibung von SIC Notícias belegen diesen Kontext. Keine Ursprungs- oder Nationalstandardbehauptung für alle Piri-Piri-Mischungen.",
+      "duplicateReview": {
+        "catalogRecipeCount": 665,
+        "sameSourceFound": false,
+        "comparisonRecipeIds": [
+          "m47",
+          "r061",
+          "r069"
+        ],
+        "result": "Vorhandene trockene Basis m47 enthält Knoblauchgranulat, Ingwer und Zitronenschale, hat andere Mengen und keine gleichlautende Quelle. r061/r069 sind frische öl-/säurehaltige Zubereitungen. Formale Vollprüfung nach Freigabe der fehlenden Piri-Piri-Identität wiederholen."
+      },
+      "scopeNotes": [
+        "Kein Salz in diese Mischung ergänzt. Die Quelle empfiehlt separat Salz beim Kochen; daraus wird keine zusätzliche mengenlose Mischungszutat.",
+        "Einfaches Knoblauchpulver ist eine ausdrücklich erlaubte Quelloption. Keine geräucherte Variante zusätzlich angelegt.",
+        "Die Zahl 1 TL Piri-Piri bleibt Ausgangsmenge; der erlaubte Geschmacksspielraum ist als Quellenhinweis erhalten, nicht als zweite Rezeptur."
+      ],
+      "openIssues": [
+        "Piri-Piri-Flocken als passende Zutatenidentität prüfen; keine ungeprüfte Gleichsetzung mit beliebigen Chiliflocken oder Cayennepulver.",
+        "Mahlzustand des schwarzen Pfeffers vor dem Abmessen anhand weiterer Originalbelege prüfen.",
+        "Dublettenprüfung nach endgültiger Zutatenzuordnung nochmals durchführen."
+      ],
+      "readyForImport": false,
+      "importStatus": "research_pending"
+    }
+  ]
+}
