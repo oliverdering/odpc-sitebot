@@ -1,0 +1,26 @@
+name: Kleine Freiheit display fix
+on:
+  push:
+    branches: [fix/kleine-freiheit-live-20261114]
+    paths: [.github/workflows/kf-escape-fix-20261114.yml]
+permissions:
+  contents: read
+concurrency:
+  group: yourbusiness-serialized-operations
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - name: Update beer brands with backup and PHP validation
+        env:
+          SSHPASS: ${{ secrets.ODPC_SSH_PASSWORD }}
+        run: |
+          set -euo pipefail
+          test -n "$SSHPASS"
+          sudo apt-get install -y -qq sshpass >/dev/null
+          mkdir -p ~/.ssh
+          ssh-keyscan -4 -t ed25519 home119567219.1and1-data.host > ~/.ssh/known_hosts 2>/dev/null
+          ssh-keygen -lf ~/.ssh/known_hosts | grep -F 'SHA256:1gx2w8Rtv3wCgi7Jh8myf/KVd72cRQbow03UP8P095Q' >/dev/null
+          sshpass -e ssh -4 -o StrictHostKeyChecking=yes -o PreferredAuthentications=password -o PubkeyAuthentication=no -o NumberOfPasswordPrompts=1 -o ConnectTimeout=20 p37641258@home119567219.1and1-data.host 'python3 -c "import base64;exec(base64.b64decode(\"aW1wb3J0IGhhc2hsaWIsb3MscGF0aGxpYixzaHV0aWwsc3VicHJvY2Vzcyx0ZW1wZmlsZSx0aW1lCnA9cGF0aGxpYi5QYXRoLmhvbWUoKS8iWW91ckJ1c2luZXNzL3dwLWNvbnRlbnQvcGx1Z2lucy9vZHBjLWtsZWluZS1mcmVpaGVpdC9rbGVpbmUtZnJlaWhlaXQucGhwIgpvbGQ9cC5yZWFkX2J5dGVzKCk7cz1vbGQuZGVjb2RlKCJ1dGYtOCIpCmE9Y2hyKDkyKSoyCmFzc2VydCBzLmNvdW50KGErInUwMGZjZ2JhciIpPT0xIGFuZCBzLmNvdW50KGErInV7MUY0Q0R9Iik9PTEKcz1zLnJlcGxhY2UoYSsidTAwZmNnYmFyIixjaHIoOTIpKyJ1MDBmY2diYXIiKS5yZXBsYWNlKGErInV7MUY0Q0R9IixjaHIoOTIpKyJ1ezFGNENEfSIpCnNodXRpbC5jb3B5MihwLHAud2l0aF9uYW1lKHAubmFtZSsiLmJhY2t1cC1lc2NhcGUtIit0aW1lLnN0cmZ0aW1lKCIlWSVtJWQlSCVNJVMiKSkpCmZkLHRtcD10ZW1wZmlsZS5ta3N0ZW1wKHByZWZpeD0iLmtmLSIsc3VmZml4PSIucGhwIixkaXI9cC5wYXJlbnQpCnRyeToKIHdpdGggb3MuZmRvcGVuKGZkLCJ3IixlbmNvZGluZz0idXRmLTgiKSBhcyBmOmYud3JpdGUocykKIG9zLmNobW9kKHRtcCxwLnN0YXQoKS5zdF9tb2RlICYgMG83NzcpCiBzdWJwcm9jZXNzLnJ1bihbInBocDguMyIsIi1sIix0bXBdLGNoZWNrPVRydWUpCiBhc3NlcnQgaGFzaGxpYi5zaGEyNTYocC5yZWFkX2J5dGVzKCkpLmRpZ2VzdCgpPT1oYXNobGliLnNoYTI1NihvbGQpLmRpZ2VzdCgpCiBvcy5yZXBsYWNlKHRtcCxwKQogcHJpbnQoIkRJU1BMQVlfRVNDQVBFU19GSVhFRCIpCmZpbmFsbHk6CiBpZiBvcy5wYXRoLmV4aXN0cyh0bXApOm9zLnVubGluayh0bXApCg==\"))"'
