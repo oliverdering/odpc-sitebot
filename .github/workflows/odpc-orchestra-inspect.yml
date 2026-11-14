@@ -1,0 +1,45 @@
+name: ODPC Orchestra read-only path inspection
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/odpc-orchestra-inspect.yml'
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m pip install 'paramiko>=3.4,<5'
+      - name: Inspect public routes and SFTP destination
+        env:
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+          AI_ODPC_THEME_PATH: ${{ secrets.AI_ODPC_THEME_PATH }}
+        run: |
+          python3 - <<'PY'
+          from urllib.request import urlopen,Request
+          from urllib.error import HTTPError
+          import re,hashlib,base64,hmac,os,posixpath,paramiko
+          from scripts.deploy_helpermonkey_v4 import HOST,USER,PIN,find_theme
+          for p in ['/','/ki-orchester/','/odpc-ki-orchester-20261114/','/connector-einrichten/']:
+            try:
+              with urlopen(Request('https://ai.odpc.de'+p,headers={'User-Agent':'ODPC-Path-Check/1'}),timeout=20) as r:
+                body=r.read(500000).decode('utf8','replace'); title=re.search(r'<title[^>]*>(.*?)</title>',body,re.I|re.S);print('PUBLIC',p,'status',r.status,'final',r.geturl(),'title',title.group(1).strip()[:150] if title else 'none','bodyhash',hashlib.sha256(body.encode()).hexdigest()[:12])
+            except HTTPError as e: print('PUBLIC',p,'status',e.code)
+            except Exception as e: print('PUBLIC',p,'error',type(e).__name__)
+          t=paramiko.Transport((HOST,22));t.start_client(timeout=25); actual='SHA256:'+base64.b64encode(hashlib.sha256(t.get_remote_server_key().asbytes()).digest()).decode().rstrip('=')
+          if not hmac.compare_digest(actual,PIN):raise RuntimeError('Host key mismatch')
+          t.auth_password(USER,os.environ['ODPC_SFTP_PASSWORD']);s=t.open_sftp()
+          try:
+            root=find_theme(s).split('/wp-content/themes/')[0]
+            for p in ['ki-orchester','odpc-ki-orchester-20261114']:
+              try: s.lstat(posixpath.join(root,p));print('SFTP',p,'EXISTS')
+              except FileNotFoundError:print('SFTP',p,'ABSENT')
+            p=posixpath.join(root,'wp-content/mu-plugins/odpc-monkey-experience/page.php')
+            with s.open(p,'rb') as f: live=f.read()
+            local=open('site-deploy/ai.odpc.de/experience/page.php','rb').read()
+            print('CONNECTOR', 'MATCH' if live==local else 'DIFFERS')
+          finally:s.close();t.close()
+          PY
