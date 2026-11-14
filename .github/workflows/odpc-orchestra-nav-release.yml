@@ -1,0 +1,34 @@
+name: ODPC orchestra navigation release
+on:
+  push:
+    branches: ['work/orchestra-nav-20261114']
+    paths: ['.github/workflows/odpc-orchestra-nav-release.yml']
+permissions:
+  contents: read
+concurrency:
+  group: odpc-orchestra-release
+  cancel-in-progress: false
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify tested source
+        run: |
+          test "$(git rev-parse HEAD:mission-control-navigation/index.html)" = "d2e4c3027c943984da74b908a328d9af5970600b"
+          python3 -m py_compile mission-control-navigation/deploy.py
+      - run: python3 -m pip install 'paramiko>=3.4,<5'
+      - name: Deploy one page with backup and verification
+        env:
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+          AI_ODPC_THEME_PATH: ${{ secrets.AI_ODPC_THEME_PATH }}
+        run: python3 -m mission-control-navigation.deploy
+      - name: Preserve previous version
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: orchestra-navigation-previous
+          path: orchestra-nav-backup/
+          retention-days: 15
+          if-no-files-found: ignore
