@@ -1,0 +1,25 @@
+name: ODPC orchestra visual live verification
+on:
+  push:
+    branches: ['work/orchestra-polish-20261114']
+    paths: ['.github/workflows/odpc-orchestra-polish-live.yml']
+permissions:
+  contents: read
+jobs:
+  live:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-save playwright@1.55.0
+      - run: npx playwright install --with-deps chromium
+      - run: node mission-control-polish/live-test.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: orchestra-polish-mobile
+          path: orchestra-polish-live.png
+          if-no-files-found: ignore
