@@ -1,0 +1,20 @@
+name: Orchestra translation overlay QA
+on:
+  push:
+    branches: ['work/orchestra-no-popups-20261114']
+    paths: ['.github/workflows/orchestra-overlay-qa.yml']
+permissions:
+  contents: read
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: python3 -m py_compile orchestra-overlay-release/deploy.py
+      - run: npm install --no-save playwright@1.55.0
+      - run: npx playwright install --with-deps chromium
+      - run: node orchestra-overlay-release/test.cjs
