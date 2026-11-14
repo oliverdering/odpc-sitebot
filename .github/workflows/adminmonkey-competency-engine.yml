@@ -77,6 +77,33 @@ jobs:
             python adminmonkey/academy/run_competency_engine.py --limit "${LIMIT:-1}" --output competency-report.json
             echo 'Real Gemini model request completed; lexical screening is NOT independent competence evidence.' >> "$GITHUB_STEP_SUMMARY"
           fi
+      - name: Publish honest assessment readiness
+        if: always()
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          report_path = Path('competency-report.json')
+          report = json.loads(report_path.read_text()) if report_path.exists() else {}
+          model_invoked = bool(report.get('model_invoked', False))
+          errors = report.get('errors', {})
+          lines = [
+              '## AdminMonkey competency readiness',
+              f"- Real model invoked: **{'yes' if model_invoked else 'no'}**",
+              f"- Scenario answers: **{report.get('answered', 0)}**",
+              f"- Lexical screening passes (not certification): **{report.get('passed', 0)}**",
+              f"- Execution errors: **{len(errors)}**",
+              '- Independently graded scenarios: **not produced by this workflow**',
+              '- Certification: **not awarded**',
+              '- Next gate: independent grader + signed evidence + domain coverage',
+          ]
+          if not model_invoked:
+              lines.append('- Blocker: offline smoke test only; run workflow_dispatch with dry_run=false and configured credentials to test a real model.')
+          if errors:
+              lines.append('- Blocker: model errors; inspect private Actions artifact and logs.')
+          Path(os.environ['GITHUB_STEP_SUMMARY']).open('a').write('\\n'.join(lines)+'\\n')
+          PY
       - name: Upload report (private Actions artifact)
         if: always()
         uses: actions/upload-artifact@v4
