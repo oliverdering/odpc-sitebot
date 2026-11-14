@@ -1,0 +1,32 @@
+name: ODPC Orchester Master live browser QA
+on:
+  push:
+    branches: ['work/orchestra-master-20261114']
+    paths: ['.github/workflows/odpc-orchestra-master-live-qa.yml']
+permissions:
+  contents: read
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: |
+          npm install --no-save playwright@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Test published page on mobile
+        run: |
+          node <<'JS'
+          const {chromium}=require('playwright');
+          (async()=>{const b=await chromium.launch({headless:true});const p=await b.newPage({viewport:{width:390,height:844}});const errors=[];p.on('pageerror',e=>errors.push(e.message));await p.goto('https://ai.odpc.de/ki-orchester/?qa='+Date.now(),{waitUntil:'domcontentloaded'});await p.locator('#odpc-utility-dock').waitFor({timeout:20000});await p.locator('#setup-device').selectOption('ios');await p.locator('[data-view-choice="apple"]').click();if(await p.locator('body').getAttribute('data-view')!=='apple')throw Error('Apple view unavailable');const img=p.locator('img[src*="oliver-claire-klavier.webp"]');await img.scrollIntoViewIfNeeded();await p.waitForFunction(()=>{let i=document.querySelector('img[src*="oliver-claire-klavier.webp"]');return i&&i.complete&&i.naturalWidth>0});const item=p.locator('#architektur-netzwerk details').first();await item.locator('summary').click();if(!await item.evaluate(e=>e.open))throw Error('diagram did not open');const before=await p.locator('h1').innerText();await p.locator('.odpc-language-fallback').selectOption('en');await p.waitForFunction(original=>document.querySelector('h1')?.innerText!==original,before,{timeout:45000});if(await p.locator('#setup-language').inputValue()!=='en')throw Error('language selectors disagree');await p.locator('.odpc-language-fallback').selectOption('de');await p.waitForFunction(original=>document.querySelector('h1')?.innerText===original,before,{timeout:45000});if(await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth+2))throw Error('mobile overflow');await p.screenshot({path:'orchester-live-mobile.png',fullPage:true});await b.close();if(errors.length)throw Error('page errors: '+errors.join('; '));console.log('PASS live 390px: dock, image, diagram, Apple theme, EN-DE translation');})().catch(e=>{console.error(e);process.exit(1)});
+          JS
+      - name: Save screenshot
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: orchestra-live-mobile-qa
+          path: orchester-live-mobile.png
+          if-no-files-found: ignore
