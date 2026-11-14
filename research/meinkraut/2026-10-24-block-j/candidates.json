@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "batchId": "oxana-research-2026-10-24-j",
+  "createdAt": "2026-10-24",
+  "productionImport": false,
+  "dailyCandidateCountIncludingOpenBranches": 10,
+  "dailyCountNote": "Fünf live CH/NA/NP/NZ/Coles, fünf offene MT/PT/RO/LY/SG; Tagesgrenze erreicht.",
+  "candidates": [
+    {
+      "id": "mk-research-20261024-sg-vasun-nonya-curry",
+      "name": "Nonya-Currypulver – Vasuns veröffentlichte Sesamvariante",
+      "kind": "Trockenmischung",
+      "countries": [
+        "SG"
+      ],
+      "region": "Singapurer Autorenvariante; veröffentlichte Anpassung",
+      "description": "Korianderbetonte trockene Currymischung mit Chili, Fenchel, Cassia und weißem Sesam; Mengenbereich und Stückbruch bewusst erhalten.",
+      "editorialType": "Veröffentlichte Autorenvariante; Vasuns Anpassung, keine unveränderte Buchrezeptur",
+      "reviewStatus": "Elf Originalzutaten am 24.10.2026 gelesen. Nicht verkostet; Spur-Chili, Mengenbereich und Stückqualifikation vor Import klären.",
+      "ingredients": [
+        {
+          "sourceName": "dried spur chillies",
+          "ingredient": null,
+          "amount": 35,
+          "unit": "g",
+          "mappingIssue": "Spezifische getrocknete Spur-Chili hat keine bestätigte passende Atlasidentität; nicht als beliebige Chiliflocken, Cayenne oder frische Chili ersetzen."
+        },
+        {
+          "sourceName": "coriander seeds",
+          "ingredient": "koriandersaat",
+          "amount": 150,
+          "unit": "g"
+        },
+        {
+          "sourceName": "cumin seeds",
+          "ingredient": "kreuzkummel",
+          "amount": 35,
+          "unit": "g"
+        },
+        {
+          "sourceName": "fennel seeds",
+          "ingredient": "fenchelsamen",
+          "amount": 20,
+          "unit": "g",
+          "preparation": "Fenchel, nicht Anis; die Autorin warnt ausdrücklich vor Fehlbeschriftung."
+        },
+        {
+          "sourceName": "cinnamon (cassia)",
+          "ingredient": "zimt",
+          "amount": 5,
+          "unit": "g",
+          "preparation": "Cassia-Rinde ausdrücklich erhalten, keine Behauptung von Ceylon-Zimt."
+        },
+        {
+          "sourceName": "whole cloves",
+          "ingredient": "gewurznelken",
+          "amount": 2,
+          "unit": "Stück",
+          "unitLabel": "ganze Nelken"
+        },
+        {
+          "sourceName": "white peppercorns",
+          "ingredient": "weier-pfeffer",
+          "amount": 13,
+          "amountMax": 15,
+          "unit": "g",
+          "quantityMode": "approximate_range",
+          "amountRole": "lower_bound_only",
+          "sourceQuantity": "about 13-15 grams",
+          "preparation": "13 ist ausschließlich die untere Bereichsgrenze im Staging, keine gewählte feste Rezeptmenge. Etwa 13–15 g als vollständige Quellenangabe erhalten."
+        },
+        {
+          "sourceName": "small nutmeg",
+          "ingredient": "muskatnuss",
+          "amount": 0.3333333333333333,
+          "unit": "Stück",
+          "quantityFraction": {
+            "numerator": 1,
+            "denominator": 3
+          },
+          "sizeQualifier": "klein",
+          "sourceQuantity": "1/3 of a small nutmeg",
+          "preparation": "Drittel einer kleinen ganzen Muskatnuss; keine Grammumrechnung oder angenommene Standardgröße."
+        },
+        {
+          "sourceName": "green cardamoms",
+          "ingredient": "kardamom",
+          "amount": 2,
+          "unit": "Stück",
+          "unitLabel": "grüne Kapseln",
+          "preparation": "Ganze grüne Kardamomkapseln, nicht zwei einzelne Samen."
+        },
+        {
+          "sourceName": "white sesame seeds",
+          "ingredient": "sesam-wei",
+          "amount": 50,
+          "unit": "g"
+        },
+        {
+          "sourceName": "turmeric powder",
+          "ingredient": "kurkuma",
+          "amount": 25,
+          "unit": "g"
+        }
+      ],
+      "methodSteps": [
+        "Zutaten prüfen. Getrocknete Chilis nach der Quelle nur kurz separat trocken anrösten; die anderen ganzen Gewürze und Sesam ohne Kurkumapulver portionsweise trocken aromatisch rösten.",
+        "Vollständig abkühlen lassen und zusammen mit Kurkumapulver fein mahlen.",
+        "Trocken in ein sauberes, gut schließendes Gefäß füllen. Vor ausführbarem Import Chiliidentität, ungefähren Pfefferbereich und qualifizierte Stückmengen korrekt abbilden."
+      ],
+      "application": "Würzbasis für die von der Autorin benannten Singapurer Currys; kein neu erfundener Dosierwert.",
+      "serving": "Originale Gramm-, Stück- und Bruchangaben, einschließlich etwa 13–15 g weißem Pfeffer; keine Gramm-Gesamtausbeute.",
+      "massBasis": "Gemischte Originalmaße, Bereich und größenqualifizierter Stückbruch; keine Normalisierung.",
+      "normalization100g": null,
+      "allergenAssessment": {
+        "known": [
+          "Sesam"
+        ],
+        "complete": false,
+        "note": "Sesam aus 50 g weißer Sesamsaat ausdrücklich abgeleitet. Gesamtbewertung nach bestätigter Spur-Chili-Identität abschließen; Etiketten/Spuren prüfen."
+      },
+      "storageNotes": [
+        "Trocken und gut verschlossen lagern; keine eigene Haltbarkeitsfrist oder Übernahme der unbestätigten Sechsmonatsangabe."
+      ],
+      "sources": [
+        {
+          "title": "Nonya Curry Powder",
+          "url": "https://monsoontable.wordpress.com/2019/02/15/nonya-curry-powder/",
+          "author": "Vasun / Monsoon Table",
+          "publishedAt": "2019-02-15",
+          "accessedAt": "2026-10-24",
+          "primarySource": true,
+          "contentChecked": true,
+          "evidenceScope": "Vollständige eigene Autorenvariante mit elf Zutaten und Kommentar der Autorin zur Spur-Chili gelesen. Buchvorlage nicht separat gelesen; nur Vasuns veröffentlichte Anpassung ausgewertet.",
+          "license": "Sachliche Zutaten/Mengen und eigene deutsche Prüfanmerkungen; keine Bilder oder Artikeltexte übernommen."
+        }
+      ],
+      "countryEvidence": "Die Autorin ordnet die Mischung ausdrücklich mehreren Singapurer Gerichten zu und markiert Singapore. Nur SG; keine nationale Standard- oder Exklusivitätsbehauptung.",
+      "duplicateReview": {
+        "catalogRecipeCount": 668,
+        "sameSourceFound": false,
+        "comparisonRecipeIds": [
+          "r037",
+          "atlas6-suedostasiatische-sambal-belacan-zitruswuerze",
+          "atlas6-suedostasiatisches-soja-limetten-chili-dressing"
+        ],
+        "result": "Keine gleiche Autorenquelle. Bestehende drei SG-Rezepte sind frische Chili-/Soja-/Belacan-Zubereitungen. Vollständige Prüfung nach Chili-Mapping und Mengenmodell erneut durchführen."
+      },
+      "scopeNotes": [
+        "Weißer Sesam ersetzt in der ausdrücklich veröffentlichten Autorenanpassung die Mohnvorlage; kein Mohn ergänzt.",
+        "150 g Koriander laut Mengenliste erhalten, nicht wegen einer unbeantworteten Leserfrage geändert.",
+        "Bereichsuntergrenze 13 g ist keine neue feste Dosierung. Kein Mittelwert erfunden.",
+        "Buchvorlage von Sharon Wee wird als Bezug der Autorin benannt, nicht als selbst gelesen ausgegeben."
+      ],
+      "openIssues": [
+        "Getrocknete Spur-Chili fachlich passend zuordnen.",
+        "Ungefähren Pfefferbereich 13–15 g verlustfrei im Produktionsmodell und in Anzeige/Skalierung unterstützen; keine feste Menge aus der Untergrenze machen.",
+        "Drittel einer kleinen Muskatnuss sowie grüne Kardamomkapseln mit eindeutigen Stückbezeichnungen erhalten.",
+        "Dubletten- und vollständige Allergenprüfung nach Mapping erneut durchführen."
+      ],
+      "readyForImport": false,
+      "importStatus": "research_pending"
+    }
+  ]
+}
