@@ -26,6 +26,6 @@ jobs:
           sshpass -e ssh -4 -o StrictHostKeyChecking=yes -o PreferredAuthentications=password -o PubkeyAuthentication=no -o NumberOfPasswordPrompts=1 -o ConnectTimeout=20 p37641258@home119567219.1and1-data.host 'set -eu
             cd "$HOME/YourBusiness"
             uiwpcli_PHP_FLAVOR=php8.3 wp post list --post_type=page --name=kleine-freiheit --fields=ID,post_name,post_status,post_modified --format=json
-            uiwpcli_PHP_FLAVOR=php8.3 wp post get 7 --field=post_content
+            grep -R -l -i -E "KUNDENDEMO|Keine offizielle Website" wp-content/themes wp-content/mu-plugins wp-content/plugins/yourbusiness-instant-demo 2>/dev/null | head -40 || true
             if [ -e "$HOME/KleineFreiheit" ]; then echo KF_DIRECTORY_EXISTS; ls -ld "$HOME/KleineFreiheit"; else echo KF_DIRECTORY_ABSENT; fi
           '
