@@ -1,0 +1,20 @@
+name: Orchestra FAQ QA
+on:
+  push:
+    branches: ['work/orchestra-faq-20261114']
+    paths: ['.github/workflows/orchestra-faq-qa.yml']
+permissions:
+  contents: read
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: python3 -m py_compile mission-control-faq/deploy.py
+      - run: npm install --no-save playwright@1.55.0
+      - run: npx playwright install --with-deps chromium
+      - run: node mission-control-faq/test.cjs
