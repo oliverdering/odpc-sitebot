@@ -1,0 +1,27 @@
+name: AdminMonkey evidence contract CI
+
+on:
+  pull_request:
+    paths:
+      - 'adminmonkey/knowledge/test_evidence_contract.py'
+      - 'adminmonkey/knowledge/academy_progress.json'
+      - 'adminmonkey/academy/competency_bank.json'
+      - '.github/workflows/adminmonkey-evidence-contract.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  evidence-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate evidence contract and scenario counts (read only)
+        run: python -m unittest discover -s adminmonkey/knowledge -p 'test_evidence_contract.py' -v
+      - name: Validate MS-102 screening safety gates
+        run: python -m unittest discover -s adminmonkey/knowledge -p 'test_assess_ms102.py' -v
