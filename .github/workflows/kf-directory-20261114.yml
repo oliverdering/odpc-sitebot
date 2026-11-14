@@ -1,0 +1,31 @@
+name: Kleine Freiheit isolated directory
+on:
+  push:
+    branches: [fix/kleine-freiheit-live-20261114]
+    paths: [.github/workflows/kf-directory-20261114.yml]
+permissions:
+  contents: read
+concurrency:
+  group: yourbusiness-serialized-operations
+  cancel-in-progress: false
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Create isolated target directory
+        env:
+          SSHPASS: ${{ secrets.ODPC_SSH_PASSWORD }}
+        run: |
+          set -euo pipefail
+          test -n "$SSHPASS"
+          sudo apt-get install -y -qq sshpass >/dev/null
+          mkdir -p ~/.ssh
+          ssh-keyscan -4 -t ed25519 home119567219.1and1-data.host > ~/.ssh/known_hosts 2>/dev/null
+          ssh-keygen -lf ~/.ssh/known_hosts | grep -F 'SHA256:1gx2w8Rtv3wCgi7Jh8myf/KVd72cRQbow03UP8P095Q' >/dev/null
+          sshpass -e ssh -4 -o StrictHostKeyChecking=yes -o PreferredAuthentications=password -o PubkeyAuthentication=no -o NumberOfPasswordPrompts=1 -o ConnectTimeout=20 p37641258@home119567219.1and1-data.host 'set -eu
+            test ! -e "$HOME/KleineFreiheit" || { echo TARGET_ALREADY_EXISTS; exit 1; }
+            mkdir -m 755 "$HOME/KleineFreiheit"
+            printf "%s\n" "Options -Indexes" > "$HOME/KleineFreiheit/.htaccess"
+            echo ISOLATED_TARGET_CREATED
+          '
