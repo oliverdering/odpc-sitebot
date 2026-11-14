@@ -31,7 +31,7 @@ jobs:
             except Exception as e: print('PUBLIC',p,'error',type(e).__name__)
           t=paramiko.Transport((HOST,22));t.start_client(timeout=25); actual='SHA256:'+base64.b64encode(hashlib.sha256(t.get_remote_server_key().asbytes()).digest()).decode().rstrip('=')
           if not hmac.compare_digest(actual,PIN):raise RuntimeError('Host key mismatch')
-          t.auth_password(USER,os.environ['ODPC_SFTP_PASSWORD']);s=t.open_sftp()
+          t.auth_password(USER,os.environ['ODPC_SFTP_PASSWORD']);s=paramiko.SFTPClient.from_transport(t)
           try:
             root=find_theme(s).split('/wp-content/themes/')[0]
             for p in ['ki-orchester','odpc-ki-orchester-20261114']:
