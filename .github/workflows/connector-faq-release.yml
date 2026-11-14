@@ -1,0 +1,27 @@
+name: ODPC connector FAQ release
+on:
+  push:
+    branches: ['work/connector-faq-20261114']
+    paths: ['.github/workflows/connector-faq-release.yml']
+permissions:
+  contents: read
+concurrency:
+  group: odpc-connector-release
+  cancel-in-progress: false
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify tested source
+        run: |
+          test "$(git rev-parse HEAD:connector-faq-release/odpc-connector-faq-expansion.php)" = "b9bca7d441a2576600353a46095090c7cb9e3ae9"
+          php -l connector-faq-release/odpc-connector-faq-expansion.php
+          python3 -m py_compile connector-faq-release/deploy.py
+      - run: python3 -m pip install 'paramiko>=3.4,<5'
+      - name: Deploy new scoped FAQ module
+        env:
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+          AI_ODPC_THEME_PATH: ${{ secrets.AI_ODPC_THEME_PATH }}
+        run: python3 -m connector-faq-release.deploy
