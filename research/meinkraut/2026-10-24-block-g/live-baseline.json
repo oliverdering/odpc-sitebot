@@ -1,0 +1,28 @@
+{
+  "checkedAt": "2026-10-24T04:34:44.957737+00:00",
+  "catalog": {
+    "status": "ok",
+    "platformVersion": "3.0.0-test",
+    "shopMode": "test",
+    "checkoutEnabled": false,
+    "products": 21,
+    "version": "3.0.21",
+    "catalog": "database",
+    "ingredients": 299,
+    "recipes": 667,
+    "countries": 195,
+    "countryProfiles": 24,
+    "spiceProfiles": 35
+  },
+  "countryRouteStatus": 200,
+  "country": "RO",
+  "countryRecipeIds": [
+    "c021",
+    "atlas6-zacusc-rumaenische-paprika-auberginenpaste",
+    "atlas6-rumaenische-paprika-knoblauch-bratwuerze"
+  ],
+  "countryDryRecipeIds": [
+    "atlas6-rumaenische-paprika-knoblauch-bratwuerze"
+  ],
+  "newCandidateLive": false
+}
