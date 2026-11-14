@@ -1,0 +1,38 @@
+name: ODPC KI-Orchester guarded release
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/odpc-orchestra-release.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: odpc-orchestra-release
+  cancel-in-progress: false
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate release source
+        run: |
+          python3 -m py_compile mission-control-release/deploy.py
+          php -l site-deploy/ai.odpc.de/experience/page.php
+          test -s mission-control-release/odpc-ki-orchester.html
+      - name: Install SFTP client
+        run: python3 -m pip install 'paramiko>=3.4,<5'
+      - name: Publish safely with live verification and rollback
+        env:
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+          AI_ODPC_THEME_PATH: ${{ secrets.AI_ODPC_THEME_PATH }}
+        run: python3 -m mission-control-release.deploy
+      - name: Retain connector backup
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: odpc-orchestra-connector-backup
+          path: mission-control-backup/
+          retention-days: 15
+          if-no-files-found: ignore
