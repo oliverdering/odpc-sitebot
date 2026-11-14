@@ -1,0 +1,21 @@
+name: Orchestra navigation and language QA
+on:
+  push:
+    branches: ['work/orchestra-menu-languages-20261114']
+    paths: ['.github/workflows/orchestra-menu-language-qa.yml']
+permissions:
+  contents: read
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: php -l orchestra-menu-release/odpc-orchestra-menu.php
+      - run: python3 -m py_compile orchestra-menu-release/deploy-home.py orchestra-menu-release/deploy-orchestra.py
+      - run: npm install --no-save playwright@1.55.0
+      - run: npx playwright install --with-deps chromium
+      - run: node orchestra-menu-release/test.cjs
