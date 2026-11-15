@@ -18469,6 +18469,294 @@
       "depth": 3,
       "review_status": "manufacturer_verified",
       "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/educationgradingscheme",
+      "sha256": "53a87d91e68c0fc58b1f73571653b74ebf627720713c3400f1de6d34ba06bdc8",
+      "captured_at": "2026-11-15T00:39:31.792291+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/best-practices-concept",
+      "sha256": "ea556d4610e44acdadf6ecb65c6a5ab7c45b1deee82da516244abd715319042d",
+      "captured_at": "2026-11-15T00:39:31.981724+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/educationassignmentrecipient",
+      "sha256": "52cb6d2114007d085b1b4c0fa2537677bff88348b74d1398db05cdf813b41756",
+      "captured_at": "2026-11-15T00:39:32.255690+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/educationassignmentgradetype",
+      "sha256": "d9fab6cb43f5753172d37270c99c346a33d18bd74de92c0a4593260d89b6338b",
+      "captured_at": "2026-11-15T00:39:32.801424+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/educationassignmentclassrecipient",
+      "sha256": "3f396e6813ea960d9d25cc0574e7fee55c59a9f6ab1eac5b87cdf07632ba059e",
+      "captured_at": "2026-11-15T00:39:33.360439+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/educationrubric",
+      "sha256": "8149d3dac64a50b9d54bcc14277be86b7940f6bf1204450b9f472c7ba0f7b87c",
+      "captured_at": "2026-11-15T00:39:33.857442+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/educationsubmission-setupresourcesfolder",
+      "sha256": "d2cd436bf064d8a90c11f35e896c9ed15da4aaab6e0dd22ba4fbcddd109b6a42",
+      "captured_at": "2026-11-15T00:39:34.227419+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/educationsubmission-get",
+      "sha256": "78c4fd21b622a76d5421abd768d166fc7d7054d5877e0d1e930ef63e43bb6232",
+      "captured_at": "2026-11-15T00:39:34.542234+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/educationsubmission-list-resources",
+      "sha256": "9549f2fbd96b57b5799ec35bd0333debc1bdfab533e6d7557336b77b28d855eb",
+      "captured_at": "2026-11-15T00:39:34.931377+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/educationsubmission-list-submittedresources",
+      "sha256": "dfca1b51ba1eb6ef4ec878f08903fb716e83a25d4d5652615d8fab8ab622b1ef",
+      "captured_at": "2026-11-15T00:39:35.394873+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/educationsubmission-list-outcomes",
+      "sha256": "f835a0a84f337e2cddb93b3503c88692d234775c6d88e938bc7b2e0ac762e101",
+      "captured_at": "2026-11-15T00:39:35.811076+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/educationoutcome",
+      "sha256": "7db2a27313427d5a55f6de6d2908e7c21b9d5467214dfad92b46275702eacbef",
+      "captured_at": "2026-11-15T00:39:36.476592+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/educationsubmission-excuse",
+      "sha256": "1e20b8d8e47131bff661f93182d6b81892b38d80de78e7bbbc34460f2ce19f40",
+      "captured_at": "2026-11-15T00:39:36.865228+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/educationsubmission-return",
+      "sha256": "652f00fcc8a36a9da0f438caff83ff73eb805eb4be3385ef1c6cb7168a53a523",
+      "captured_at": "2026-11-15T00:39:37.268833+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/educationsubmission-reassign",
+      "sha256": "abfa0073721484cd449f82e0fa25a1b14e5491769464d057dcc289d00374a368",
+      "captured_at": "2026-11-15T00:39:37.635736+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/educationsubmission-submit",
+      "sha256": "e74ce6a63c0190cfe469af36e3d91a3ee39256e1afe7d3686e0f21183131e36b",
+      "captured_at": "2026-11-15T00:39:38.001198+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/educationsubmission-unsubmit",
+      "sha256": "20dede3a80c046963b1fc426f63ccfdb5fdc45204e615249d7f737cf14578446",
+      "captured_at": "2026-11-15T00:39:38.340567+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/educationsubmissionrecipient",
+      "sha256": "85cfed5bf63d36c8b92a637eb77795dd3be7ff2605d23b76e694a12a8498d280",
+      "captured_at": "2026-11-15T00:39:38.684642+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/educationexcelresource",
+      "sha256": "32b165e042c60afaa4aa778d923dc8a91f495a0e85ae96df72efc3865deaf76f",
+      "captured_at": "2026-11-15T00:39:39.018813+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/educationexternalresource",
+      "sha256": "be2c45e84bf8ced494834ae804e1f3e9bd55e7373141417f8050ee2d6241adeb",
+      "captured_at": "2026-11-15T00:39:39.447913+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/educationfileresource",
+      "sha256": "99010dc7d3278bfcc765a314ad2dacb7c669ddd43d3de7a5df25addc727c3ef3",
+      "captured_at": "2026-11-15T00:39:39.704735+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/educationlinkresource",
+      "sha256": "f6ae2fc5a0dffa8ecee6e0c1f597054ba492ef44ef241286d944710130181377",
+      "captured_at": "2026-11-15T00:39:39.991492+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/educationmediaresource",
+      "sha256": "348ad5131f1c67fbdaf6b431051c480f6a991d5fddc1b76523bdb9b2a015bee0",
+      "captured_at": "2026-11-15T00:39:40.370569+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/educationpowerpointresource",
+      "sha256": "03a1708d677c31f560ffddd99cbafa2b07dc608d1ea5fdd712d873a89f773e82",
+      "captured_at": "2026-11-15T00:39:40.747466+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/educationspeakerprogressresource",
+      "sha256": "ee969ee5076439e2e264748b666ed8bf141f672f1ab67b3b0ee49836279e39d6",
+      "captured_at": "2026-11-15T00:39:41.040068+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/educationteamsappresource",
+      "sha256": "45040a15372288b793e73ff76b6e0e9cedc26051004cb3a012a01fa5c96496df",
+      "captured_at": "2026-11-15T00:39:41.408495+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/educationwordresource",
+      "sha256": "17f8316e5a83ee56c8919cbd400a3597621516ca18abc64993b2fd4f441127fb",
+      "captured_at": "2026-11-15T00:39:41.708847+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/assignments-submissions-status-transition",
+      "sha256": "b28fd5639a371e904639080cf65d775e789d24c475f265ce24e344a24c69434e",
+      "captured_at": "2026-11-15T00:39:41.864671+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/reflectcheckinresponse",
+      "sha256": "a37ab2ea5b7355613794e4732439d5f26c92b763d83de1a91c2f12453e6bb003",
+      "captured_at": "2026-11-15T00:39:42.451774+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/educationterm",
+      "sha256": "c67eda68f8c41e1263774c25991e63fc6d1325edb24c7f8d6d29fa7e0b7d4d03",
+      "captured_at": "2026-11-15T00:39:42.778327+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/educationteacher",
+      "sha256": "63d5fc3e40bb7bc388f44a3e86d1367e9fec83861a6a5dab6ba665ed987f0dd5",
+      "captured_at": "2026-11-15T00:39:43.035842+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/educationstudent",
+      "sha256": "076cf74d9375d3ad8312793c47b660b73ea326993d74059aa3a57a124baefefc",
+      "captured_at": "2026-11-15T00:39:43.315775+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/educationschool-list",
+      "sha256": "42be13c723ed3fc6ed1f015e8f8902395091f22b9e0301c41912e8db2f72237f",
+      "captured_at": "2026-11-15T00:39:43.797793+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/educationclass-list-schools",
+      "sha256": "260601deb8e125dc74a36781beb8f0509a7a357c4ee071154f0a2b77aaedcd64",
+      "captured_at": "2026-11-15T00:39:44.223673+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/educationuser-list-schools",
+      "sha256": "c494f5dd72b7c4b209bcd281b89ba54bf4a96f116b4a85c50d7b7e2e5257f272",
+      "captured_at": "2026-11-15T00:39:45.041845+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/educationclass-list",
+      "sha256": "ec2ca09c6963905dc8167230bda418e0e79e442b250beb65680c76f9c9bab2f5",
+      "captured_at": "2026-11-15T00:39:45.521003+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
     }
   ],
   "seen": [
@@ -19182,12 +19470,26 @@
     "https://learn.microsoft.com/en-us/graph/api/educationassignment-update",
     "https://learn.microsoft.com/en-us/graph/api/educationassignmentresource-delete",
     "https://learn.microsoft.com/en-us/graph/api/educationassignmentresource-get",
+    "https://learn.microsoft.com/en-us/graph/api/educationclass-list",
     "https://learn.microsoft.com/en-us/graph/api/educationclass-list-assignments",
     "https://learn.microsoft.com/en-us/graph/api/educationclass-list-members",
+    "https://learn.microsoft.com/en-us/graph/api/educationclass-list-schools",
     "https://learn.microsoft.com/en-us/graph/api/educationclass-post-assignments",
     "https://learn.microsoft.com/en-us/graph/api/educationoutcome-update",
+    "https://learn.microsoft.com/en-us/graph/api/educationschool-list",
     "https://learn.microsoft.com/en-us/graph/api/educationschool-list-classes",
+    "https://learn.microsoft.com/en-us/graph/api/educationsubmission-excuse",
+    "https://learn.microsoft.com/en-us/graph/api/educationsubmission-get",
+    "https://learn.microsoft.com/en-us/graph/api/educationsubmission-list-outcomes",
+    "https://learn.microsoft.com/en-us/graph/api/educationsubmission-list-resources",
+    "https://learn.microsoft.com/en-us/graph/api/educationsubmission-list-submittedresources",
+    "https://learn.microsoft.com/en-us/graph/api/educationsubmission-reassign",
+    "https://learn.microsoft.com/en-us/graph/api/educationsubmission-return",
+    "https://learn.microsoft.com/en-us/graph/api/educationsubmission-setupresourcesfolder",
+    "https://learn.microsoft.com/en-us/graph/api/educationsubmission-submit",
+    "https://learn.microsoft.com/en-us/graph/api/educationsubmission-unsubmit",
     "https://learn.microsoft.com/en-us/graph/api/educationuser-list-classes",
+    "https://learn.microsoft.com/en-us/graph/api/educationuser-list-schools",
     "https://learn.microsoft.com/en-us/graph/api/employeeexperienceuser-list-assignedroles",
     "https://learn.microsoft.com/en-us/graph/api/event-accept",
     "https://learn.microsoft.com/en-us/graph/api/event-cancel",
@@ -19382,15 +19684,34 @@
     "https://learn.microsoft.com/en-us/graph/api/resources/driveitem",
     "https://learn.microsoft.com/en-us/graph/api/resources/education-overview",
     "https://learn.microsoft.com/en-us/graph/api/resources/educationassignment",
+    "https://learn.microsoft.com/en-us/graph/api/resources/educationassignmentclassrecipient",
+    "https://learn.microsoft.com/en-us/graph/api/resources/educationassignmentgradetype",
+    "https://learn.microsoft.com/en-us/graph/api/resources/educationassignmentrecipient",
     "https://learn.microsoft.com/en-us/graph/api/resources/educationassignmentresource",
     "https://learn.microsoft.com/en-us/graph/api/resources/educationcategory",
     "https://learn.microsoft.com/en-us/graph/api/resources/educationclass",
+    "https://learn.microsoft.com/en-us/graph/api/resources/educationexcelresource",
+    "https://learn.microsoft.com/en-us/graph/api/resources/educationexternalresource",
+    "https://learn.microsoft.com/en-us/graph/api/resources/educationfileresource",
     "https://learn.microsoft.com/en-us/graph/api/resources/educationgradingcategory",
+    "https://learn.microsoft.com/en-us/graph/api/resources/educationgradingscheme",
+    "https://learn.microsoft.com/en-us/graph/api/resources/educationlinkresource",
+    "https://learn.microsoft.com/en-us/graph/api/resources/educationmediaresource",
+    "https://learn.microsoft.com/en-us/graph/api/resources/educationoutcome",
+    "https://learn.microsoft.com/en-us/graph/api/resources/educationpowerpointresource",
     "https://learn.microsoft.com/en-us/graph/api/resources/educationresource",
+    "https://learn.microsoft.com/en-us/graph/api/resources/educationrubric",
     "https://learn.microsoft.com/en-us/graph/api/resources/educationschool",
+    "https://learn.microsoft.com/en-us/graph/api/resources/educationspeakerprogressresource",
+    "https://learn.microsoft.com/en-us/graph/api/resources/educationstudent",
     "https://learn.microsoft.com/en-us/graph/api/resources/educationsubmission",
+    "https://learn.microsoft.com/en-us/graph/api/resources/educationsubmissionrecipient",
     "https://learn.microsoft.com/en-us/graph/api/resources/educationsubmissionresource",
+    "https://learn.microsoft.com/en-us/graph/api/resources/educationteacher",
+    "https://learn.microsoft.com/en-us/graph/api/resources/educationteamsappresource",
+    "https://learn.microsoft.com/en-us/graph/api/resources/educationterm",
     "https://learn.microsoft.com/en-us/graph/api/resources/educationuser",
+    "https://learn.microsoft.com/en-us/graph/api/resources/educationwordresource",
     "https://learn.microsoft.com/en-us/graph/api/resources/emailaddress",
     "https://learn.microsoft.com/en-us/graph/api/resources/emailauthenticationmethod",
     "https://learn.microsoft.com/en-us/graph/api/resources/emaildetails",
@@ -19524,6 +19845,7 @@
     "https://learn.microsoft.com/en-us/graph/api/resources/provisionedplan",
     "https://learn.microsoft.com/en-us/graph/api/resources/recipient",
     "https://learn.microsoft.com/en-us/graph/api/resources/referenceattachment",
+    "https://learn.microsoft.com/en-us/graph/api/resources/reflectcheckinresponse",
     "https://learn.microsoft.com/en-us/graph/api/resources/reminder",
     "https://learn.microsoft.com/en-us/graph/api/resources/report",
     "https://learn.microsoft.com/en-us/graph/api/resources/reportroot",
@@ -19713,6 +20035,7 @@
     "https://learn.microsoft.com/en-us/graph/api/userteamwork-post-installedapps",
     "https://learn.microsoft.com/en-us/graph/api/userteamwork-post-sections",
     "https://learn.microsoft.com/en-us/graph/api/userteamwork-teamsappinstallation-upgrade",
+    "https://learn.microsoft.com/en-us/graph/assignments-submissions-status-transition",
     "https://learn.microsoft.com/en-us/graph/auth-limit-mailbox-access",
     "https://learn.microsoft.com/en-us/graph/auth-register-app-v2",
     "https://learn.microsoft.com/en-us/graph/auth-v2-service",
@@ -19721,6 +20044,7 @@
     "https://learn.microsoft.com/en-us/graph/auth/auth-concepts",
     "https://learn.microsoft.com/en-us/graph/azuread-users-concept-overview",
     "https://learn.microsoft.com/en-us/graph/backup-storage-concept-overview",
+    "https://learn.microsoft.com/en-us/graph/best-practices-concept",
     "https://learn.microsoft.com/en-us/graph/booking-concept-overview",
     "https://learn.microsoft.com/en-us/graph/browser-edge-concept-overview",
     "https://learn.microsoft.com/en-us/graph/change-notifications-overview",
@@ -20542,278 +20866,6 @@
     "https://learn.microsoft.com/en-us/windows/win32/wer/windows-error-reporting"
   ],
   "queue": [
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/educationgradingscheme",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/educationgradingscheme",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/best-practices-concept",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/educationassignmentrecipient",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/identityset",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/educationassignmentgradetype",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/entity",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/identityset",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/channel",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/educationassignmentclassrecipient",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/best-practices-concept",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/educationcategory",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/educationgradingcategory",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/educationgradingscheme",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/educationassignmentresource",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/educationrubric",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/educationsubmission",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/educationsubmission-setupresourcesfolder",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/educationsubmission-get",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/educationsubmission-list-resources",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/educationsubmissionresource",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/educationsubmission-list-submittedresources",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/educationsubmissionresource",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/educationsubmission-list-outcomes",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/educationoutcome",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/educationsubmission-excuse",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/educationsubmission-return",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/educationsubmission-reassign",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/educationsubmission-setupresourcesfolder",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/educationsubmission-submit",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/educationsubmission-unsubmit",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/identityset",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/identityset",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/identityset",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/educationsubmissionrecipient",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/identityset",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/best-practices-concept",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/identityset",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/identityset",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/educationoutcome",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/educationsubmissionresource",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/educationsubmissionresource",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/educationexcelresource",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/educationexternalresource",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/educationfileresource",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/educationlinkresource",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/educationmediaresource",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/educationpowerpointresource",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/educationspeakerprogressresource",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/educationteamsappresource",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/educationwordresource",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/identityset",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/identityset",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/assignments-submissions-status-transition",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/educationoutcome",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/educationoutcome",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/reflectcheckinresponse",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/reflectcheckinresponse",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/auth/",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/educationschool",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/educationclass",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/educationterm",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/educationteacher",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/educationstudent",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/educationschool-list",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/educationclass-list-schools",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/educationuser-list-schools",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/educationclass-list",
-      "depth": 3
-    },
     {
       "url": "https://learn.microsoft.com/en-us/graph/api/educationschool-post-classes",
       "depth": 3
@@ -27437,8 +27489,8 @@
   ],
   "last_batch": {
     "attempted": 36,
-    "documents_total": 2068,
-    "queued": 1723,
+    "documents_total": 2104,
+    "queued": 1655,
     "failures": []
   }
 }

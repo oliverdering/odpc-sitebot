@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T20:57:35.857069+00:00",
+  "generated_at": "2026-11-15T00:39:51.116692+00:00",
   "product": "AdminMonkey Academy",
   "certification_expansion": {
     "candidate_exam_codes": 42,
@@ -45,23 +45,23 @@
   "certification_issuer": "ODPC",
   "official_microsoft_certification": false,
   "knowledge": {
-    "documents_collected": 2068,
-    "manufacturer_verified": 2068,
+    "documents_collected": 2104,
+    "manufacturer_verified": 2104,
     "review": {
       "unreviewed": 0,
-      "approved": 2068,
+      "approved": 2104,
       "rejected": 0
     },
     "last_batch": {
       "attempted": 36,
-      "documents_total": 2068,
-      "queued": 1723,
+      "documents_total": 2104,
+      "queued": 1655,
       "failures": []
     }
   },
   "retrieval_staging": {
-    "chunked_documents": 2063,
-    "chunks_prepared": 10345,
+    "chunked_documents": 2099,
+    "chunks_prepared": 10440,
     "retrieval_quality_verified": false,
     "agent_answers_verified": 0,
     "note": "Ephemeral, provenance-checked chunk preparation; no searchable production index yet."
