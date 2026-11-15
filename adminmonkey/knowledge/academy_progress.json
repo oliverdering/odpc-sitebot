@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15T07:09:46.810539+00:00",
+  "generated_at": "2026-11-15T19:57:16.872320+00:00",
   "product": "AdminMonkey Academy",
   "certification_expansion": {
     "candidate_exam_codes": 42,
@@ -45,23 +45,23 @@
   "certification_issuer": "ODPC",
   "official_microsoft_certification": false,
   "knowledge": {
-    "documents_collected": 2140,
-    "manufacturer_verified": 2140,
+    "documents_collected": 2212,
+    "manufacturer_verified": 2212,
     "review": {
       "unreviewed": 0,
-      "approved": 2140,
+      "approved": 2212,
       "rejected": 0
     },
     "last_batch": {
       "attempted": 36,
-      "documents_total": 2140,
-      "queued": 1602,
+      "documents_total": 2212,
+      "queued": 1473,
       "failures": []
     }
   },
   "retrieval_staging": {
-    "chunked_documents": 2134,
-    "chunks_prepared": 10622,
+    "chunked_documents": 2206,
+    "chunks_prepared": 10970,
     "retrieval_quality_verified": false,
     "agent_answers_verified": 0,
     "note": "Ephemeral, provenance-checked chunk preparation; no searchable production index yet."
@@ -69,7 +69,7 @@
   "tracks": [
     {
       "track": "MS-102",
-      "manufacturer_verified_sources": 469,
+      "manufacturer_verified_sources": 488,
       "knowledge_coverage": "source_count_only_not_learning_objective_coverage",
       "practice_scenarios_available": 6,
       "agent_answers_evaluated": 0,
@@ -85,7 +85,7 @@
     },
     {
       "track": "AZ-104",
-      "manufacturer_verified_sources": 113,
+      "manufacturer_verified_sources": 119,
       "knowledge_coverage": "source_count_only_not_learning_objective_coverage",
       "practice_scenarios_available": 4,
       "agent_answers_evaluated": 0,
@@ -101,7 +101,7 @@
     },
     {
       "track": "SC-300",
-      "manufacturer_verified_sources": 376,
+      "manufacturer_verified_sources": 380,
       "knowledge_coverage": "source_count_only_not_learning_objective_coverage",
       "practice_scenarios_available": 4,
       "agent_answers_evaluated": 0,
