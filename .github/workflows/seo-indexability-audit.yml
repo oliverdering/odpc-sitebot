@@ -1,0 +1,38 @@
+name: ODPC SEO indexability audit (read-only)
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'tools/seo/read_only_index_audit.py'
+      - '.github/workflows/seo-indexability-audit.yml'
+  schedule:
+    - cron: '23 5 * * 1'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: odpc-seo-readonly-audit
+  cancel-in-progress: false
+
+jobs:
+  audit:
+    name: Read-only public URL audit
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run public URL and sitemap audit
+        shell: bash
+        run: |
+          python3 tools/seo/read_only_index_audit.py | tee seo-indexability-report.txt
+          test ${PIPESTATUS[0]} -eq 0
+      - name: Upload audit report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: seo-indexability-report
+          path: seo-indexability-report.txt
+          retention-days: 14
+          if-no-files-found: warn
