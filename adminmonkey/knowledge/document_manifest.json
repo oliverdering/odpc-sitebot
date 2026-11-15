@@ -18757,6 +18757,338 @@
       "depth": 3,
       "review_status": "manufacturer_verified",
       "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/educationschool-post-classes",
+      "sha256": "60df150f7d1b86204a7da2309b43ea2adeb90770891d87fc1d07b148b740219a",
+      "captured_at": "2026-11-15T07:09:35.775243+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/educationclass-post-members",
+      "sha256": "3f05ae6e774454749e8856d5625d58c3fb684f30262feb9ce9048e39212681eb",
+      "captured_at": "2026-11-15T07:09:36.059667+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/educationclass-list-teachers",
+      "sha256": "f789b9aab6f6fee66dc0eed1fd56dc4c7af2b294fced1d090b58c2f5599b8f3b",
+      "captured_at": "2026-11-15T07:09:36.274869+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/educationschool-list-users",
+      "sha256": "bb936bc044260414c7e018b6899c74f58145cb50e30ffdbc22ce730f3812548a",
+      "captured_at": "2026-11-15T07:09:36.527498+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/educationsubmission-post-resources",
+      "sha256": "8d3165c78e30ea2c71d69ed25610614c4d71056feb82eb866e3904c8735caf88",
+      "captured_at": "2026-11-15T07:09:36.821974+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/educationuser-list-assignments",
+      "sha256": "a8370b09fb3e201f095ed2896422ae5163888e68762eb86fb1d5a12dfc838d60",
+      "captured_at": "2026-11-15T07:09:37.017402+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/agents-in-teams/quickstart-create-agent-teams-sdk",
+      "sha256": "d43ea4588379842f1f2a949251269f30e810ec892c31eada95565275e0357639",
+      "captured_at": "2026-11-15T07:09:37.146580+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/agents-in-teams/port-slack-bolt-javascript-app",
+      "sha256": "46882541f343fdccf658239f636808d78dabf6d146d3a265b876fdd5fceaea55",
+      "captured_at": "2026-11-15T07:09:37.341291+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/bots/how-to/teams-conversational-ai/agents-best-practices-features-checklist",
+      "sha256": "b86155b979e5c75310bbb3c40631fddda0365fc2c0eede6570795cee5243dfae",
+      "captured_at": "2026-11-15T07:09:37.459050+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/agents-in-teams/overview",
+      "sha256": "d5bf2f6bf3e96046923870388e230170409053a36ecf97abb10feef05d5f591f",
+      "captured_at": "2026-11-15T07:09:37.517406+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/bots/bot-concepts",
+      "sha256": "c95e0e9aeb2d0e8e21bc2f14bf2cf81438bc5490ed445bfa1bd29f608a7a0f4e",
+      "captured_at": "2026-11-15T07:09:37.706322+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/developer-announcements",
+      "sha256": "7c0fd6bf2d1bd24862cbaae545cf1f9368c6efaa090bcce031995e97cd623cae",
+      "captured_at": "2026-11-15T07:09:37.943076+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/get-started/code-samples",
+      "sha256": "418bed7f40bddd7b4056c00ff1a21e650c7ef797f811513aebf4606481f7bf95",
+      "captured_at": "2026-11-15T07:09:38.062409+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/bots/streaming-ux",
+      "sha256": "6bb0bc6cb94f36613f345117d3bdbf50aad553760183aabb1b05f152bcb2e920",
+      "captured_at": "2026-11-15T07:09:38.189906+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/agents-in-teams/targeted-messages",
+      "sha256": "af6cc9b0057139788f2854584bc481ac36e15d4291d29ba284f8ac18494d0a8d",
+      "captured_at": "2026-11-15T07:09:38.526914+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/bots/how-to/conversations/suggested-actions",
+      "sha256": "b71c57a2e0e8ff2325237f9b382328051427168716954bdb43f75660fd6f052b",
+      "captured_at": "2026-11-15T07:09:38.722502+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/agents-in-teams/agent-slash-commands",
+      "sha256": "02f28fe8576fc6047351da9f1f6485103ff331f407fa2869aec16044c1851500",
+      "captured_at": "2026-11-15T07:09:38.863047+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/agents-in-teams/agent-reactions",
+      "sha256": "319bbbe8e1cb9398d76274d16c42107ec42499949db919638fbb2056ab4035ec",
+      "captured_at": "2026-11-15T07:09:38.991076+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/bots/how-to/conversations/prompt-starters",
+      "sha256": "d9273b080fb589276f9bc6dc393e6a3ab7051a86a5bb57aef51a115ee09013a4",
+      "captured_at": "2026-11-15T07:09:39.173928+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/tabs/what-are-tabs",
+      "sha256": "74d0a444fac6831181a96c030b276d601e025566b8c999c10d9a5aa431c0f2df",
+      "captured_at": "2026-11-15T07:09:39.379383+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/messaging-extensions/what-are-messaging-extensions",
+      "sha256": "327e697482bd017bd9314e4767857920ed5a728c0da28530e950bddb98d395ed",
+      "captured_at": "2026-11-15T07:09:39.463219+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/apps-in-teams-meetings/teams-apps-in-meetings",
+      "sha256": "00cb38063914416867ad0dffa923b2ff0f5f42cd6699d05b06c9d7ff891b1b10",
+      "captured_at": "2026-11-15T07:09:39.608974+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/microsoftteams/platform/bots/overview",
+      "sha256": "c68fc26c97b37ab8725c81c13917c56da28e0512e60aed30b8dbba222fb32312",
+      "captured_at": "2026-11-15T07:09:39.725398+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/what-are-webhooks-and-connectors",
+      "sha256": "ef7b6d2f7280fc912ae58cb768bf8eba7e7c5759b913411c76b05236a1043571",
+      "captured_at": "2026-11-15T07:09:39.819876+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/task-modules-and-cards/what-are-cards",
+      "sha256": "3a364219b41cfa6155e8bad8a299a6fe85a8d59d15a128ba5f5a3d523b01447c",
+      "captured_at": "2026-11-15T07:09:39.954439+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/overview",
+      "sha256": "4c935e38d6052363286d73f15d1c6130eddb2d7fc2669ea23dc3a7a17fea4cb8",
+      "captured_at": "2026-11-15T07:09:40.055291+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/call",
+      "sha256": "69d004f601f84c62ba45e8d8965544f6cd88d39bee4ee8f578613e0ac566cd58",
+      "captured_at": "2026-11-15T07:09:40.244961+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/channel-get-filesfolder",
+      "sha256": "37d159b881058316d55cb2a65932e7bdb39b31d44af5f1b477717f22bfb39429",
+      "captured_at": "2026-11-15T07:09:40.491562+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/channel-post-tabs",
+      "sha256": "7abcde686843de5fbf97f15cd7315217bf166d52c43c36cebbe9943af3d9983e",
+      "captured_at": "2026-11-15T07:09:40.778068+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/team-unarchive",
+      "sha256": "2feb8a1bbee44d941f6bfabcea4f223a0f1158bdf8c1f98c78aad4083ab66edd",
+      "captured_at": "2026-11-15T07:09:40.962608+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/channel-list",
+      "sha256": "c8b105608922d2cb64277d386a7ba3d8a01ad932f214a06da7ac0a7543f1ad15",
+      "captured_at": "2026-11-15T07:09:41.178112+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/team-list-incomingchannels",
+      "sha256": "0cdadda775896da7c61922f94be8e55ea09783e05fd731b0c164d0677283544f",
+      "captured_at": "2026-11-15T07:09:41.402195+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/team-list-allchannels",
+      "sha256": "ba03af2fc57712937f1afd2425078c8107c342dba92a96677c5bc4f7af292796",
+      "captured_at": "2026-11-15T07:09:41.652302+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/team-get",
+      "sha256": "de126097e75ca3f6e2bdc34768115813b46566b7b59c0fa166badcbf9669bc5e",
+      "captured_at": "2026-11-15T07:09:41.921065+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/monitor-call-quality-qos",
+      "sha256": "9aab12417660043f28e17eafac6728a0d48d6c6bcc63b46b2e6e38c3586691c3",
+      "captured_at": "2026-11-15T07:09:42.009441+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/teams-powershell-supported-versions",
+      "sha256": "5d50e446b80e5ffdf4a1fdf01c2f4920ae243900fa061d2edecfde00e8a71237",
+      "captured_at": "2026-11-15T07:09:42.100628+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
     }
   ],
   "seen": [
@@ -19411,7 +19743,10 @@
     "https://learn.microsoft.com/en-us/graph/api/call-reject",
     "https://learn.microsoft.com/en-us/graph/api/call-subscribetotone",
     "https://learn.microsoft.com/en-us/graph/api/call-transfer",
+    "https://learn.microsoft.com/en-us/graph/api/channel-get-filesfolder",
+    "https://learn.microsoft.com/en-us/graph/api/channel-list",
     "https://learn.microsoft.com/en-us/graph/api/channel-post",
+    "https://learn.microsoft.com/en-us/graph/api/channel-post-tabs",
     "https://learn.microsoft.com/en-us/graph/api/chatmessage-post",
     "https://learn.microsoft.com/en-us/graph/api/cloudpcmanagedlicense-retrievemanagedlicenseoperation",
     "https://learn.microsoft.com/en-us/graph/api/cloudpcmanagedlicense-submitmanagedlicenseoperation",
@@ -19474,20 +19809,26 @@
     "https://learn.microsoft.com/en-us/graph/api/educationclass-list-assignments",
     "https://learn.microsoft.com/en-us/graph/api/educationclass-list-members",
     "https://learn.microsoft.com/en-us/graph/api/educationclass-list-schools",
+    "https://learn.microsoft.com/en-us/graph/api/educationclass-list-teachers",
     "https://learn.microsoft.com/en-us/graph/api/educationclass-post-assignments",
+    "https://learn.microsoft.com/en-us/graph/api/educationclass-post-members",
     "https://learn.microsoft.com/en-us/graph/api/educationoutcome-update",
     "https://learn.microsoft.com/en-us/graph/api/educationschool-list",
     "https://learn.microsoft.com/en-us/graph/api/educationschool-list-classes",
+    "https://learn.microsoft.com/en-us/graph/api/educationschool-list-users",
+    "https://learn.microsoft.com/en-us/graph/api/educationschool-post-classes",
     "https://learn.microsoft.com/en-us/graph/api/educationsubmission-excuse",
     "https://learn.microsoft.com/en-us/graph/api/educationsubmission-get",
     "https://learn.microsoft.com/en-us/graph/api/educationsubmission-list-outcomes",
     "https://learn.microsoft.com/en-us/graph/api/educationsubmission-list-resources",
     "https://learn.microsoft.com/en-us/graph/api/educationsubmission-list-submittedresources",
+    "https://learn.microsoft.com/en-us/graph/api/educationsubmission-post-resources",
     "https://learn.microsoft.com/en-us/graph/api/educationsubmission-reassign",
     "https://learn.microsoft.com/en-us/graph/api/educationsubmission-return",
     "https://learn.microsoft.com/en-us/graph/api/educationsubmission-setupresourcesfolder",
     "https://learn.microsoft.com/en-us/graph/api/educationsubmission-submit",
     "https://learn.microsoft.com/en-us/graph/api/educationsubmission-unsubmit",
+    "https://learn.microsoft.com/en-us/graph/api/educationuser-list-assignments",
     "https://learn.microsoft.com/en-us/graph/api/educationuser-list-classes",
     "https://learn.microsoft.com/en-us/graph/api/educationuser-list-schools",
     "https://learn.microsoft.com/en-us/graph/api/employeeexperienceuser-list-assignedroles",
@@ -19637,6 +19978,7 @@
     "https://learn.microsoft.com/en-us/graph/api/resources/browsersitelist",
     "https://learn.microsoft.com/en-us/graph/api/resources/calendar",
     "https://learn.microsoft.com/en-us/graph/api/resources/calendargroup",
+    "https://learn.microsoft.com/en-us/graph/api/resources/call",
     "https://learn.microsoft.com/en-us/graph/api/resources/callrecords-api-overview",
     "https://learn.microsoft.com/en-us/graph/api/resources/callrecords-callrecord",
     "https://learn.microsoft.com/en-us/graph/api/resources/channel",
@@ -19940,9 +20282,13 @@
     "https://learn.microsoft.com/en-us/graph/api/subscription-post-subscriptions",
     "https://learn.microsoft.com/en-us/graph/api/team-archive",
     "https://learn.microsoft.com/en-us/graph/api/team-delete-members",
+    "https://learn.microsoft.com/en-us/graph/api/team-get",
+    "https://learn.microsoft.com/en-us/graph/api/team-list-allchannels",
+    "https://learn.microsoft.com/en-us/graph/api/team-list-incomingchannels",
     "https://learn.microsoft.com/en-us/graph/api/team-post-installedapps",
     "https://learn.microsoft.com/en-us/graph/api/team-post-members",
     "https://learn.microsoft.com/en-us/graph/api/team-put-teams",
+    "https://learn.microsoft.com/en-us/graph/api/team-unarchive",
     "https://learn.microsoft.com/en-us/graph/api/team-update-members",
     "https://learn.microsoft.com/en-us/graph/api/teamworkcustomemoji-delete",
     "https://learn.microsoft.com/en-us/graph/api/teamworkcustomemoji-get",
@@ -20546,16 +20892,36 @@
     "https://learn.microsoft.com/en-us/microsoftteams/itadmin-readiness",
     "https://learn.microsoft.com/en-us/microsoftteams/manage-teams-in-modern-portal",
     "https://learn.microsoft.com/en-us/microsoftteams/manage-teams-overview",
+    "https://learn.microsoft.com/en-us/microsoftteams/monitor-call-quality-qos",
     "https://learn.microsoft.com/en-us/microsoftteams/office-365-groups",
     "https://learn.microsoft.com/en-us/microsoftteams/platform",
     "https://learn.microsoft.com/en-us/microsoftteams/platform/",
+    "https://learn.microsoft.com/en-us/microsoftteams/platform/agents-in-teams/agent-reactions",
+    "https://learn.microsoft.com/en-us/microsoftteams/platform/agents-in-teams/agent-slash-commands",
+    "https://learn.microsoft.com/en-us/microsoftteams/platform/agents-in-teams/overview",
+    "https://learn.microsoft.com/en-us/microsoftteams/platform/agents-in-teams/port-slack-bolt-javascript-app",
+    "https://learn.microsoft.com/en-us/microsoftteams/platform/agents-in-teams/quickstart-create-agent-teams-sdk",
+    "https://learn.microsoft.com/en-us/microsoftteams/platform/agents-in-teams/targeted-messages",
+    "https://learn.microsoft.com/en-us/microsoftteams/platform/apps-in-teams-meetings/teams-apps-in-meetings",
+    "https://learn.microsoft.com/en-us/microsoftteams/platform/bots/bot-concepts",
+    "https://learn.microsoft.com/en-us/microsoftteams/platform/bots/how-to/conversations/prompt-starters",
+    "https://learn.microsoft.com/en-us/microsoftteams/platform/bots/how-to/conversations/suggested-actions",
+    "https://learn.microsoft.com/en-us/microsoftteams/platform/bots/how-to/teams-conversational-ai/agents-best-practices-features-checklist",
+    "https://learn.microsoft.com/en-us/microsoftteams/platform/bots/streaming-ux",
     "https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/bots/bots-overview",
     "https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/cards/cards",
     "https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/concepts-overview",
     "https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/connectors/connectors",
     "https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/messaging-extensions",
     "https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/tabs/tabs-overview",
+    "https://learn.microsoft.com/en-us/microsoftteams/platform/developer-announcements",
+    "https://learn.microsoft.com/en-us/microsoftteams/platform/get-started/code-samples",
     "https://learn.microsoft.com/en-us/microsoftteams/platform/graph-api/rsc/resource-specific-consent",
+    "https://learn.microsoft.com/en-us/microsoftteams/platform/messaging-extensions/what-are-messaging-extensions",
+    "https://learn.microsoft.com/en-us/microsoftteams/platform/overview",
+    "https://learn.microsoft.com/en-us/microsoftteams/platform/tabs/what-are-tabs",
+    "https://learn.microsoft.com/en-us/microsoftteams/platform/task-modules-and-cards/what-are-cards",
+    "https://learn.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/what-are-webhooks-and-connectors",
     "https://learn.microsoft.com/en-us/microsoftteams/policy-assignment-overview",
     "https://learn.microsoft.com/en-us/microsoftteams/settings-policies-reference",
     "https://learn.microsoft.com/en-us/microsoftteams/slack-to-teams-migration-tool",
@@ -20565,6 +20931,7 @@
     "https://learn.microsoft.com/en-us/microsoftteams/teams-client-desktop-admin",
     "https://learn.microsoft.com/en-us/microsoftteams/teams-overview",
     "https://learn.microsoft.com/en-us/microsoftteams/teams-powershell-overview",
+    "https://learn.microsoft.com/en-us/microsoftteams/teams-powershell-supported-versions",
     "https://learn.microsoft.com/en-us/microsoftteams/training-microsoft-teams-landing-page",
     "https://learn.microsoft.com/en-us/microsoftteams/upgrade-assisted",
     "https://learn.microsoft.com/en-us/microsoftteams/upgrade-start-here",
@@ -20682,6 +21049,7 @@
     "https://learn.microsoft.com/en-us/previous-versions/microsoft-esp/ff798293(v=msdn.10)",
     "https://learn.microsoft.com/en-us/previous-versions/microsoft-robotics/",
     "https://learn.microsoft.com/en-us/previous-versions/microsoft-robotics/cc998476(v=msdn.10)",
+    "https://learn.microsoft.com/en-us/previous-versions/microsoftteams/platform/bots/overview",
     "https://learn.microsoft.com/en-us/previous-versions/mim/",
     "https://learn.microsoft.com/en-us/previous-versions/mim/cc720621(v=ws.10)",
     "https://learn.microsoft.com/en-us/previous-versions/msp-n-p/",
@@ -20866,218 +21234,6 @@
     "https://learn.microsoft.com/en-us/windows/win32/wer/windows-error-reporting"
   ],
   "queue": [
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/educationschool-post-classes",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/educationclass-post-members",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/educationclass-list-teachers",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/educationschool-list-users",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/educationassignment-publish",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/educationassignment-post-resources",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/educationsubmission-post-resources",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/educationsubmission-submit",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/educationsubmission-unsubmit",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/educationsubmission-return",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/educationuser-list-assignments",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/educationassignment-post-resources",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/educationassignment-get",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/agents-in-teams/quickstart-create-agent-teams-sdk",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/agents-in-teams/port-slack-bolt-javascript-app",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/bots/how-to/teams-conversational-ai/agents-best-practices-features-checklist",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/agents-in-teams/overview",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/bots/bot-concepts",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/developer-announcements",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/get-started/code-samples",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/bots/streaming-ux",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/agents-in-teams/targeted-messages",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/bots/how-to/conversations/suggested-actions",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/agents-in-teams/agent-slash-commands",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/agents-in-teams/agent-reactions",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/bots/how-to/conversations/prompt-starters",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/tabs/what-are-tabs",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/messaging-extensions/what-are-messaging-extensions",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/apps-in-teams-meetings/teams-apps-in-meetings",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/tabs/what-are-tabs",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/previous-versions/microsoftteams/platform/bots/overview",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/previous-versions/microsoftteams/platform/bots/overview",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/what-are-webhooks-and-connectors",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/task-modules-and-cards/what-are-cards",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/messaging-extensions/what-are-messaging-extensions",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/overview",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/call",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/channel",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/channel-get-filesfolder",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/channel-get-filesfolder",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/channel-post-tabs",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/teamsapp",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/team-unarchive",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/graph-api/rsc/resource-specific-consent",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/channel-list",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/team-list-incomingchannels",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/team-list-allchannels",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/tabs/what-are-tabs",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/teams-api-overview",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/team-get",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoftteams/policy-assignment-overview",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoftteams/monitor-call-quality-qos",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoftteams/teams-powershell-supported-versions",
-      "depth": 3
-    },
     {
       "url": "https://learn.microsoft.com/en-us/graph/api/team-list-installedapps",
       "depth": 3
@@ -27489,8 +27645,8 @@
   ],
   "last_batch": {
     "attempted": 36,
-    "documents_total": 2104,
-    "queued": 1655,
+    "documents_total": 2140,
+    "queued": 1602,
     "failures": []
   }
 }
