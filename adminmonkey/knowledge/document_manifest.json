@@ -20020,6 +20020,296 @@
       "depth": 3,
       "review_status": "manufacturer_verified",
       "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/messagetracingroot-list-messagetraces",
+      "sha256": "8e0817e6420d0b91a16634f8152b063f4382218395463b92c0c9713a2d97821f",
+      "captured_at": "2026-11-16T03:07:59.793447+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/partner-center/csp-overview",
+      "sha256": "5748bac76ee40b7b2acae5346d5b7367ed22f7c5577a238ac3f46c5ad9d73d5c",
+      "captured_at": "2026-11-16T03:07:59.894808+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/security-auditdata",
+      "sha256": "e2a6b887c20b1d4455f2da43fb5ab59e539df637c1c96a3ca28d6139ea685c12",
+      "captured_at": "2026-11-16T03:08:00.293760+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/security-auditlogrecord",
+      "sha256": "2cbb7585b85953f8cfad64418de7db29764dd828f8e1d52d716715e72176a709",
+      "captured_at": "2026-11-16T03:08:00.503143+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/meetingattendancereport",
+      "sha256": "15c1d7c44219ef6a4b0c84dce0db3ffc4ee4894a3c072bf2d6a9d8df5298f6e2",
+      "captured_at": "2026-11-16T03:08:00.961343+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/attendancerecord-list",
+      "sha256": "774fd135ce486bde0525054c50262e8512e5a39c3dc62576c9d46e86962bc0b7",
+      "captured_at": "2026-11-16T03:08:01.162322+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/attendanceinterval",
+      "sha256": "3aa48afef02447c7e069bd36c4395bb6acfdfedc9d21b03ab931a1b4a32101bf",
+      "captured_at": "2026-11-16T03:08:01.347669+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/crosstenantmigrationjob",
+      "sha256": "d5c4ce95b05024e9a0900f78f9c5827879b0148a19b95fb67278aaa0e243c607",
+      "captured_at": "2026-11-16T03:08:01.542502+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/tenantgovernanceservices-relatedtenant-refresh",
+      "sha256": "c69e7346c8cedbb51d2687a135daba3be201ef9e6ac44eddb9b0b208eff6fae7",
+      "captured_at": "2026-11-16T03:08:01.954907+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/tenantappmanagementpolicy",
+      "sha256": "8d5b7e7f2087170bcf65c5b5a5de99cf2fb73d863aaec24922f6971695bc31ff",
+      "captured_at": "2026-11-16T03:08:02.095884+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/backuppolicyactivitylog",
+      "sha256": "38ea6623c63a7237c7cfea633dc64cd2895e0b31e36e45884792bbd350136c2d",
+      "captured_at": "2026-11-16T03:08:02.248526+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/backuprestoreroot-list-activitylogs",
+      "sha256": "2f33e1dbfada0d2952725ec8922df7ff22df75881f3fdcddd0327c0d2da2ead9",
+      "captured_at": "2026-11-16T03:08:02.453030+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows/desktop/sysinfo/registry-hives",
+      "sha256": "3df672ca89d4b3c1f41242bf40d5f597e1ca3d29ae5a48ff8193ff4ae6a0eaac",
+      "captured_at": "2026-11-16T03:08:02.858124+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/virtualendpoint-list-deviceimages",
+      "sha256": "32f20839ee65f82ee909025858aa10de921bd055d669fd86ad1cdfaca08ae07c",
+      "captured_at": "2026-11-16T03:08:03.454980+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/cloudpcdeviceimage-get",
+      "sha256": "1622fbab36400ee5ab41c12646d1b969effc82f02144ed794cce3fbfbb9a4b2b",
+      "captured_at": "2026-11-16T03:08:05.656288+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/virtualendpoint-list-galleryimages",
+      "sha256": "31bd1829bd920a8601008495cfc0054cb29163f2f561a0748e4a91f81b26af58",
+      "captured_at": "2026-11-16T03:08:05.924101+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/cloudpcmanagedlicenseoperation",
+      "sha256": "a44d2f41f908c721f55c5eefd82f31027a0d94c704028d7b4eac23c25f4be3f8",
+      "captured_at": "2026-11-16T03:08:06.185034+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-policy",
+      "sha256": "1be215e3d67617341afbef96a0e2c4fd22b1af3afc74019efd41bc2e3563f82d",
+      "captured_at": "2026-11-16T03:08:06.406232+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-ring",
+      "sha256": "815b642b160c31dc8e500af453478d6df3804d39df87e5ac91d37b365ac0aa3a",
+      "captured_at": "2026-11-16T03:08:06.680670+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-approvalrule",
+      "sha256": "b236cf849763867e333eebbac65864f2f21d0c02478d2093e9635bef8b237abf",
+      "captured_at": "2026-11-16T03:08:06.885259+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/windowsupdates-tenantsetting-get",
+      "sha256": "37bf82d8e43458bcf26d83df331db8174b1891b1d59a5942717cd6d50bd2c39e",
+      "captured_at": "2026-11-16T03:08:07.057822+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/windowsupdates-tenantsetting-list-mdmappsettings",
+      "sha256": "ab53b41a7300e606887deb5fcb8ed88f0d83a51ebd5a9231ccc65afcb5460798",
+      "captured_at": "2026-11-16T03:08:07.363178+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/windowsupdates-applicablecatalog-get",
+      "sha256": "34cf7840a8166a1852dd7483965c946b72658c5f47bea84c010a4235be3321c8",
+      "captured_at": "2026-11-16T03:08:07.496856+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/windowsupdates-applicablecatalog-list-devices",
+      "sha256": "9ff3a8647c50996f282e01678b982a9bb6fbe2d9832d5ecc9cd8045051323630",
+      "captured_at": "2026-11-16T03:08:07.777913+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/adminwindowsupdates",
+      "sha256": "8759293115c0eceb0e78bb7bbad94227f05e1b937c90a99486991a404d2d890a",
+      "captured_at": "2026-11-16T03:08:07.990997+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/sharepointreportsettings-enableapiusagereport",
+      "sha256": "54dc042a548cf0e8452fe56e47e192398ad594b2e86ec3aad962a6d50bdeb513",
+      "captured_at": "2026-11-16T03:08:08.178047+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/synchronization-synchronization-list-jobs",
+      "sha256": "1676b8958246a3c65c5b5d71e6d31b2c93fc65e466c098991f90e6c512d235f1",
+      "captured_at": "2026-11-16T03:08:08.318108+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/accessdriftdetail",
+      "sha256": "db26b4c0d955c8453716988b68c09c8ca02cc1d1b6418b24094f5ac3d3adf996",
+      "captured_at": "2026-11-16T03:08:08.521559+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/entitlementmanagement-overview",
+      "sha256": "0d34570ff9d969e8af322a7a98ccc7e7ab4e42576ca66641c80fd457c5b811ed",
+      "captured_at": "2026-11-16T03:08:09.054201+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-lifecyclepolicy",
+      "sha256": "1895c62f2d69a62d4f590f54fb8c2f0b253f81f2c673e3fcf2d245e3649ea59d",
+      "captured_at": "2026-11-16T03:08:09.304866+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/customauthenticationextension",
+      "sha256": "d98d99460e1c03ad0f758c4eeb72b49915fcc15cd55536139cb0a14dacccf364",
+      "captured_at": "2026-11-16T03:08:09.523764+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/onpasswordupdatecustomextensionhandler",
+      "sha256": "93b30e2a04f871a2baf4b8d6ad9f1fd26fe112d91bc57da92e249d9c2d0daa6f",
+      "captured_at": "2026-11-16T03:08:09.703433+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/verifiablecredentialsauthenticationmethodconfiguration-list",
+      "sha256": "9ace4751296c100beeb2c832adfa996cf3a5aece397ca3608ab833530c7ceda6",
+      "captured_at": "2026-11-16T03:08:09.902669+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/verifiablecredentialsauthenticationmethodconfiguration-get",
+      "sha256": "d5c2af15a3071037850c86370b91332d431c4cf81910d3a6a3733af4fa0ad856",
+      "captured_at": "2026-11-16T03:08:10.100665+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/application-get",
+      "sha256": "cd4619fc8a8bc6bdbb9f4b8bd7e25b1ccaddd3901ecbd8e6acca33e714176d9e",
+      "captured_at": "2026-11-16T03:08:10.271754+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/application-list",
+      "sha256": "1aa0a9d325a17c82866fe2b150a93888a6c43f45e8a54936b37392de9eced133",
+      "captured_at": "2026-11-16T03:08:10.428900+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
     }
   ],
   "seen": [
@@ -20672,13 +20962,17 @@
     "https://learn.microsoft.com/en-us/graph/api/agentuser-list",
     "https://learn.microsoft.com/en-us/graph/api/agreement-list-acceptances",
     "https://learn.microsoft.com/en-us/graph/api/application-delta",
+    "https://learn.microsoft.com/en-us/graph/api/application-get",
+    "https://learn.microsoft.com/en-us/graph/api/application-list",
     "https://learn.microsoft.com/en-us/graph/api/application-post-calls",
     "https://learn.microsoft.com/en-us/graph/api/application-post-onlinemeetings",
     "https://learn.microsoft.com/en-us/graph/api/associatedteaminfo-list",
     "https://learn.microsoft.com/en-us/graph/api/attachment-createuploadsession",
     "https://learn.microsoft.com/en-us/graph/api/attachment-get",
+    "https://learn.microsoft.com/en-us/graph/api/attendancerecord-list",
     "https://learn.microsoft.com/en-us/graph/api/authorizationpolicy-update",
     "https://learn.microsoft.com/en-us/graph/api/backupreport-getstatisticsbypolicy",
+    "https://learn.microsoft.com/en-us/graph/api/backuprestoreroot-list-activitylogs",
     "https://learn.microsoft.com/en-us/graph/api/bookingbusiness-list-services",
     "https://learn.microsoft.com/en-us/graph/api/browsersitelist-post-sites",
     "https://learn.microsoft.com/en-us/graph/api/calendar-delta",
@@ -20703,6 +20997,7 @@
     "https://learn.microsoft.com/en-us/graph/api/chat-list-installedapps",
     "https://learn.microsoft.com/en-us/graph/api/chat-post-installedapps",
     "https://learn.microsoft.com/en-us/graph/api/chatmessage-post",
+    "https://learn.microsoft.com/en-us/graph/api/cloudpcdeviceimage-get",
     "https://learn.microsoft.com/en-us/graph/api/cloudpcmanagedlicense-retrievemanagedlicenseoperation",
     "https://learn.microsoft.com/en-us/graph/api/cloudpcmanagedlicense-submitmanagedlicenseoperation",
     "https://learn.microsoft.com/en-us/graph/api/contact-delta",
@@ -20854,6 +21149,7 @@
     "https://learn.microsoft.com/en-us/graph/api/mailfolder-post-messages",
     "https://learn.microsoft.com/en-us/graph/api/message-get",
     "https://learn.microsoft.com/en-us/graph/api/message-update",
+    "https://learn.microsoft.com/en-us/graph/api/messagetracingroot-list-messagetraces",
     "https://learn.microsoft.com/en-us/graph/api/multivaluelegacyextendedproperty-get",
     "https://learn.microsoft.com/en-us/graph/api/multivaluelegacyextendedproperty-post-multivalueextendedproperties",
     "https://learn.microsoft.com/en-us/graph/api/notebook-get",
@@ -20901,6 +21197,7 @@
     "https://learn.microsoft.com/en-us/graph/api/reportroot-getoffice365groupsactivitycounts",
     "https://learn.microsoft.com/en-us/graph/api/reportroot-getsharepointapiusage",
     "https://learn.microsoft.com/en-us/graph/api/reportsroot-list-reflectcheckinresponses",
+    "https://learn.microsoft.com/en-us/graph/api/resources/accessdriftdetail",
     "https://learn.microsoft.com/en-us/graph/api/resources/accessdriftsummary",
     "https://learn.microsoft.com/en-us/graph/api/resources/accesspackageassignment",
     "https://learn.microsoft.com/en-us/graph/api/resources/accessreviewhistoryschedulesettings",
@@ -20910,6 +21207,7 @@
     "https://learn.microsoft.com/en-us/graph/api/resources/adhoccall",
     "https://learn.microsoft.com/en-us/graph/api/resources/administrativeunit",
     "https://learn.microsoft.com/en-us/graph/api/resources/adminreportsettings",
+    "https://learn.microsoft.com/en-us/graph/api/resources/adminwindowsupdates",
     "https://learn.microsoft.com/en-us/graph/api/resources/agentid-platform-overview",
     "https://learn.microsoft.com/en-us/graph/api/resources/agentidentityblueprint",
     "https://learn.microsoft.com/en-us/graph/api/resources/agentuser",
@@ -20928,6 +21226,7 @@
     "https://learn.microsoft.com/en-us/graph/api/resources/assignedplan",
     "https://learn.microsoft.com/en-us/graph/api/resources/associatedteaminfo",
     "https://learn.microsoft.com/en-us/graph/api/resources/attachment",
+    "https://learn.microsoft.com/en-us/graph/api/resources/attendanceinterval",
     "https://learn.microsoft.com/en-us/graph/api/resources/attendancerecord",
     "https://learn.microsoft.com/en-us/graph/api/resources/attendee",
     "https://learn.microsoft.com/en-us/graph/api/resources/attendeebase",
@@ -20941,6 +21240,7 @@
     "https://learn.microsoft.com/en-us/graph/api/resources/authorizationpolicy",
     "https://learn.microsoft.com/en-us/graph/api/resources/automaticrepliesmailtips",
     "https://learn.microsoft.com/en-us/graph/api/resources/automaticrepliessetting",
+    "https://learn.microsoft.com/en-us/graph/api/resources/backuppolicyactivitylog",
     "https://learn.microsoft.com/en-us/graph/api/resources/backuppolicyreport",
     "https://learn.microsoft.com/en-us/graph/api/resources/backupreport",
     "https://learn.microsoft.com/en-us/graph/api/resources/bitlockerrecoverykey",
@@ -20961,6 +21261,7 @@
     "https://learn.microsoft.com/en-us/graph/api/resources/cloudpcdeviceimage",
     "https://learn.microsoft.com/en-us/graph/api/resources/cloudpcgalleryimage",
     "https://learn.microsoft.com/en-us/graph/api/resources/cloudpcmanagedlicense",
+    "https://learn.microsoft.com/en-us/graph/api/resources/cloudpcmanagedlicenseoperation",
     "https://learn.microsoft.com/en-us/graph/api/resources/cloudpconpremisesconnection",
     "https://learn.microsoft.com/en-us/graph/api/resources/cloudpcprovisioningpolicy",
     "https://learn.microsoft.com/en-us/graph/api/resources/cloudpcsourcedeviceimage",
@@ -20978,7 +21279,9 @@
     "https://learn.microsoft.com/en-us/graph/api/resources/convertidresult",
     "https://learn.microsoft.com/en-us/graph/api/resources/crosstenant-migration-api-overview",
     "https://learn.microsoft.com/en-us/graph/api/resources/crosstenantaccesspolicy-overview",
+    "https://learn.microsoft.com/en-us/graph/api/resources/crosstenantmigrationjob",
     "https://learn.microsoft.com/en-us/graph/api/resources/custom-security-attributes-overview",
+    "https://learn.microsoft.com/en-us/graph/api/resources/customauthenticationextension",
     "https://learn.microsoft.com/en-us/graph/api/resources/customcalloutextension",
     "https://learn.microsoft.com/en-us/graph/api/resources/customsecurityattributevalue",
     "https://learn.microsoft.com/en-us/graph/api/resources/datasecurityandgovernance",
@@ -21035,6 +21338,7 @@
     "https://learn.microsoft.com/en-us/graph/api/resources/employeeorgdata",
     "https://learn.microsoft.com/en-us/graph/api/resources/engagement-api-overview",
     "https://learn.microsoft.com/en-us/graph/api/resources/engagementrole",
+    "https://learn.microsoft.com/en-us/graph/api/resources/entitlementmanagement-overview",
     "https://learn.microsoft.com/en-us/graph/api/resources/entity",
     "https://learn.microsoft.com/en-us/graph/api/resources/entradriftidentityinfo",
     "https://learn.microsoft.com/en-us/graph/api/resources/entrarecoveryservices-backup-recovery-overview",
@@ -21067,6 +21371,7 @@
     "https://learn.microsoft.com/en-us/graph/api/resources/groupsetting",
     "https://learn.microsoft.com/en-us/graph/api/resources/groupsettingtemplate",
     "https://learn.microsoft.com/en-us/graph/api/resources/identity-network-access-overview",
+    "https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-lifecyclepolicy",
     "https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-lifecyclepolicyrule",
     "https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-lifecycleworkflows-overview",
     "https://learn.microsoft.com/en-us/graph/api/resources/identityset",
@@ -21106,6 +21411,7 @@
     "https://learn.microsoft.com/en-us/graph/api/resources/mailsearchfolder",
     "https://learn.microsoft.com/en-us/graph/api/resources/mailtips",
     "https://learn.microsoft.com/en-us/graph/api/resources/manage-focused-inbox",
+    "https://learn.microsoft.com/en-us/graph/api/resources/meetingattendancereport",
     "https://learn.microsoft.com/en-us/graph/api/resources/meetingtimesuggestionsresult",
     "https://learn.microsoft.com/en-us/graph/api/resources/message",
     "https://learn.microsoft.com/en-us/graph/api/resources/messagerule",
@@ -21126,6 +21432,7 @@
     "https://learn.microsoft.com/en-us/graph/api/resources/onlinemeeting",
     "https://learn.microsoft.com/en-us/graph/api/resources/onlinemeetinginfo",
     "https://learn.microsoft.com/en-us/graph/api/resources/onpasswordupdatecustomextension",
+    "https://learn.microsoft.com/en-us/graph/api/resources/onpasswordupdatecustomextensionhandler",
     "https://learn.microsoft.com/en-us/graph/api/resources/onpasswordupdatelistener",
     "https://learn.microsoft.com/en-us/graph/api/resources/onpremisesdirectorysynchronization",
     "https://learn.microsoft.com/en-us/graph/api/resources/onpremisesdirectorysynchronizationconfiguration",
@@ -21203,7 +21510,9 @@
     "https://learn.microsoft.com/en-us/graph/api/resources/searchresponse",
     "https://learn.microsoft.com/en-us/graph/api/resources/sectiongroup",
     "https://learn.microsoft.com/en-us/graph/api/resources/security-api-overview",
+    "https://learn.microsoft.com/en-us/graph/api/resources/security-auditdata",
     "https://learn.microsoft.com/en-us/graph/api/resources/security-auditdata-derived-types",
+    "https://learn.microsoft.com/en-us/graph/api/resources/security-auditlogrecord",
     "https://learn.microsoft.com/en-us/graph/api/resources/security-auditlogrecordtype",
     "https://learn.microsoft.com/en-us/graph/api/resources/security-casemanagement-comment",
     "https://learn.microsoft.com/en-us/graph/api/resources/security-detectionaction",
@@ -21235,6 +21544,7 @@
     "https://learn.microsoft.com/en-us/graph/api/resources/teamworksection",
     "https://learn.microsoft.com/en-us/graph/api/resources/teamworksectionitem",
     "https://learn.microsoft.com/en-us/graph/api/resources/teamworktag",
+    "https://learn.microsoft.com/en-us/graph/api/resources/tenantappmanagementpolicy",
     "https://learn.microsoft.com/en-us/graph/api/resources/tenantinformation",
     "https://learn.microsoft.com/en-us/graph/api/resources/timezoneinformation",
     "https://learn.microsoft.com/en-us/graph/api/resources/todo",
@@ -21253,12 +21563,15 @@
     "https://learn.microsoft.com/en-us/graph/api/resources/voiceauthenticationmethodconfiguration",
     "https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-applicablecatalog",
     "https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-applicabledevice",
+    "https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-approvalrule",
     "https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-driverupdateapprovalrule",
     "https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-driverupdatepolicy",
     "https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-driverupdatering",
     "https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-featureupdatepolicy",
     "https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-featureupdatering",
     "https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-mdmappsetting",
+    "https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-policy",
+    "https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-ring",
     "https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-tenantsetting",
     "https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-updatedata",
     "https://learn.microsoft.com/en-us/graph/api/resources/workbookchart",
@@ -21274,10 +21587,12 @@
     "https://learn.microsoft.com/en-us/graph/api/serviceprincipal-delta",
     "https://learn.microsoft.com/en-us/graph/api/serviceprincipal-update",
     "https://learn.microsoft.com/en-us/graph/api/sharepointbrowsesession-browse",
+    "https://learn.microsoft.com/en-us/graph/api/sharepointreportsettings-enableapiusagereport",
     "https://learn.microsoft.com/en-us/graph/api/singlevaluelegacyextendedproperty-get",
     "https://learn.microsoft.com/en-us/graph/api/singlevaluelegacyextendedproperty-post-singlevalueextendedproperties",
     "https://learn.microsoft.com/en-us/graph/api/site-get",
     "https://learn.microsoft.com/en-us/graph/api/subscription-post-subscriptions",
+    "https://learn.microsoft.com/en-us/graph/api/synchronization-synchronization-list-jobs",
     "https://learn.microsoft.com/en-us/graph/api/team-archive",
     "https://learn.microsoft.com/en-us/graph/api/team-delete-installedapps",
     "https://learn.microsoft.com/en-us/graph/api/team-delete-members",
@@ -21303,6 +21618,7 @@
     "https://learn.microsoft.com/en-us/graph/api/teamworksectionitem-move",
     "https://learn.microsoft.com/en-us/graph/api/teamworksectionitem-reorder",
     "https://learn.microsoft.com/en-us/graph/api/teamworktag-list",
+    "https://learn.microsoft.com/en-us/graph/api/tenantgovernanceservices-relatedtenant-refresh",
     "https://learn.microsoft.com/en-us/graph/api/tenantgovernanceservices-relatedtenant-refreshstatus",
     "https://learn.microsoft.com/en-us/graph/api/todo-list-lists",
     "https://learn.microsoft.com/en-us/graph/api/todo-post-lists",
@@ -21386,6 +21702,14 @@
     "https://learn.microsoft.com/en-us/graph/api/userteamwork-post-installedapps",
     "https://learn.microsoft.com/en-us/graph/api/userteamwork-post-sections",
     "https://learn.microsoft.com/en-us/graph/api/userteamwork-teamsappinstallation-upgrade",
+    "https://learn.microsoft.com/en-us/graph/api/verifiablecredentialsauthenticationmethodconfiguration-get",
+    "https://learn.microsoft.com/en-us/graph/api/verifiablecredentialsauthenticationmethodconfiguration-list",
+    "https://learn.microsoft.com/en-us/graph/api/virtualendpoint-list-deviceimages",
+    "https://learn.microsoft.com/en-us/graph/api/virtualendpoint-list-galleryimages",
+    "https://learn.microsoft.com/en-us/graph/api/windowsupdates-applicablecatalog-get",
+    "https://learn.microsoft.com/en-us/graph/api/windowsupdates-applicablecatalog-list-devices",
+    "https://learn.microsoft.com/en-us/graph/api/windowsupdates-tenantsetting-get",
+    "https://learn.microsoft.com/en-us/graph/api/windowsupdates-tenantsetting-list-mdmappsettings",
     "https://learn.microsoft.com/en-us/graph/assignments-submissions-status-transition",
     "https://learn.microsoft.com/en-us/graph/auth-limit-mailbox-access",
     "https://learn.microsoft.com/en-us/graph/auth-register-app-v2",
@@ -21997,6 +22321,7 @@
     "https://learn.microsoft.com/en-us/office365/servicedescriptions/sharepoint-online-service-description/sharepoint-online-limits",
     "https://learn.microsoft.com/en-us/onedrive/restore-deleted-onedrive",
     "https://learn.microsoft.com/en-us/onedrive/set-retention",
+    "https://learn.microsoft.com/en-us/partner-center/csp-overview",
     "https://learn.microsoft.com/en-us/partner-center/membership/isv-success",
     "https://learn.microsoft.com/en-us/partner-center/new-commerce-license-based",
     "https://learn.microsoft.com/en-us/power-apps/",
@@ -22267,216 +22592,13 @@
     "https://learn.microsoft.com/en-us/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-logging",
     "https://learn.microsoft.com/en-us/windows/deployment/update/check-release-health",
     "https://learn.microsoft.com/en-us/windows/deployment/windows-autopatch/overview/windows-autopatch-overview",
+    "https://learn.microsoft.com/en-us/windows/desktop/sysinfo/registry-hives",
     "https://learn.microsoft.com/en-us/windows/project-rome/",
     "https://learn.microsoft.com/en-us/windows/whats-new/extended-security-updates",
     "https://learn.microsoft.com/en-us/windows/win32/appxpkg/windows-desktop-application-program",
     "https://learn.microsoft.com/en-us/windows/win32/wer/windows-error-reporting"
   ],
   "queue": [
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/authenticationmethodconfiguration",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/messagetracingroot-list-messagetraces",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/partner-center/csp-overview",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/partner-center/csp-overview",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/security-auditdata",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/security-auditlogrecord",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/security-security-runhuntingquery",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/meetingattendancereport",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/attendancerecord-list",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/attendanceinterval",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/crosstenantmigrationjob",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/tenantgovernanceservices-relatedtenant-refresh",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/tenantappmanagementpolicy",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/backuppolicyactivitylog",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/backuprestoreroot-list-activitylogs",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/windows/desktop/sysinfo/registry-hives",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/entity",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/virtualendpoint-list-deviceimages",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/cloudpcdeviceimage-get",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/entity",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/virtualendpoint-list-galleryimages",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/cloudpcmanagedlicense",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/entity",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/cloudpcmanagedlicenseoperation",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-policy",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-ring",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-approvalrule",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-policy",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/windowsupdates-ring",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/windowsupdates-tenantsetting-get",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/windowsupdates-tenantsetting-list-mdmappsettings",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/windowsupdates-applicablecatalog-get",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/windowsupdates-applicablecatalog-list-devices",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/adminwindowsupdates",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/sharepointreportsettings-enableapiusagereport",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/synchronization-synchronizationjob",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/synchronization-synchronization-list-jobs",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/entity",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/accessdriftdetail",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/entitlementmanagement-overview",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-lifecyclepolicy",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/customauthenticationextension",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/onpasswordupdatecustomextensionhandler",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/authenticationeventlistener",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/authenticationmethodconfiguration",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/verifiablecredentialsauthenticationmethodconfiguration-list",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/verifiablecredentialsauthenticationmethodconfiguration-get",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/entity",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/agentidentityblueprint",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/application-get",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/application-list",
-      "depth": 3
-    },
     {
       "url": "https://learn.microsoft.com/en-us/graph/api/resources/agentidentityblueprintprincipal",
       "depth": 3
@@ -27940,8 +28062,8 @@
   ],
   "last_batch": {
     "attempted": 36,
-    "documents_total": 2248,
-    "queued": 1416,
+    "documents_total": 2284,
+    "queued": 1365,
     "failures": []
   }
 }
