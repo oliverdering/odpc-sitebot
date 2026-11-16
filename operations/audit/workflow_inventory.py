@@ -9,7 +9,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 WF = ROOT / ".github" / "workflows"
 KEYS = ("push", "pull_request", "workflow_dispatch", "schedule", "workflow_call", "repository_dispatch")
-SENSITIVE = re.compile(r"\b(deploy|publish|release|sftp|ftp|ssh|rsync|migrat|import|upload|sync|database|db)\b", re.I)
+SENSITIVE = re.compile(r"(?:deploy|publish|release|sftp|ftp|ssh|rsync|migrat|import|upload|sync|database|db)", re.I)
 SECRET = re.compile(r"secrets\.([A-Za-z_][A-Za-z_0-9]*)")
 SCRIPT = re.compile(r"(?:python(?:3)?\s+|bash\s+|sh\s+)([A-Za-z0-9_./-]+)")
 GROUP = re.compile(r"^\s*group:\s*(.+?)\s*$", re.M)
