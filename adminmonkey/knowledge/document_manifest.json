@@ -20310,6 +20310,310 @@
       "depth": 3,
       "review_status": "manufacturer_verified",
       "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/agentidentityblueprintprincipal",
+      "sha256": "51e3460a0cea75670cfbe4d3a61ea65a4924febcf0c9702dceb720362845b8fa",
+      "captured_at": "2026-11-16T11:01:32.520408+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/mailboxfolder-delta",
+      "sha256": "832c81ce80dea1cb6285056c0d36433cb202eb8180884413c662ae1dfc7b35de",
+      "captured_at": "2026-11-16T11:01:32.732333+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/mailbox-post-folders",
+      "sha256": "94e1592e24767527378f313dfda2fd460c62bb0d42faacab8ac7e5e5485735e1",
+      "captured_at": "2026-11-16T11:01:33.187571+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/directoryaudit",
+      "sha256": "cca773a1273841a31231bf9a6b49b13dd9ec141b6d779b96db49ae8b5c2d7ded",
+      "captured_at": "2026-11-16T11:01:33.453793+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/appmanagementaudit-list",
+      "sha256": "87e0cca3501e8cd418e7d00ffd27133dbaa1f04b29071ec5e312077ac3108c87",
+      "captured_at": "2026-11-16T11:01:33.897345+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/appmanagementaudit-get",
+      "sha256": "3bba907ed325b74590a57cb167c5ff5bc9c186750c4e91853b8f672ef8f70ad2",
+      "captured_at": "2026-11-16T11:01:34.190020+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/signin",
+      "sha256": "98f6693d5ed2d13ab774d8f506094a4d872498e1f4eb64e6311b118a5a489892",
+      "captured_at": "2026-11-16T11:01:34.469962+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/security-alerttemplate",
+      "sha256": "3980aab67adf61663df6582a4e4268897872587ce9a4a04623f15afbcbf46c45",
+      "captured_at": "2026-11-16T11:01:34.696375+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/security-casemanagement-activity",
+      "sha256": "d77c50f86e3cc2752f9a2bde3618e78802fa1e7c31c65b37fbea4e3f1823c4b9",
+      "captured_at": "2026-11-16T11:01:34.858139+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/security-casemanagement-activity-get",
+      "sha256": "55eaed5248b88816809fc7c33c6592687ab97ca221c7a387320997c4ec0f220a",
+      "captured_at": "2026-11-16T11:01:35.198465+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/security-casemanagement-case",
+      "sha256": "c2c583eff7a7eaa37575074ab0232c44de88319fdc035c85ea649f9ab666de5a",
+      "captured_at": "2026-11-16T11:01:35.542047+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/processconversationmetadata",
+      "sha256": "6c1a7afa50a9215d910c637848c357cb803c11162b93a8656c9f344c7c01fda6",
+      "captured_at": "2026-11-16T11:01:35.796617+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/processfilemetadata",
+      "sha256": "b28fe2a0927475cbe2a53b403ccd54dc0b46b919ea3210300fbf91b38e5691df",
+      "captured_at": "2026-11-16T11:01:36.023812+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/evaluationincompleteactivitymetadata",
+      "sha256": "32879602d00cdec6ea3bab7da940fe1da855ecb660f77178be12a4c85609da27",
+      "captured_at": "2026-11-16T11:01:36.288886+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/security-list-workbooks",
+      "sha256": "abfe9d52bfacd9f36f1f0e420ce5de9fe7584f2881dd965bc087512530ac63b5",
+      "captured_at": "2026-11-16T11:01:36.616886+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-how-subscriptions-associated-directory",
+      "sha256": "c169c18296172369a830f230be0d5be3eb5d6a4cc283479ddff9777b109c75de",
+      "captured_at": "2026-11-16T11:01:36.867281+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/microsoft-365/solutions/cloud-architecture-models",
+      "sha256": "d605116f3f26398ac1f75c23ff0a54f12eb0fbc5c45c12790007c08bf1b0379d",
+      "captured_at": "2026-11-16T11:01:36.958989+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/bookingbusiness",
+      "sha256": "5d03556f8d5a332ee1fb300aa719626b4fa8606e6ecd786bf813d71e8f738de8",
+      "captured_at": "2026-11-16T11:01:37.260871+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/compliance/sensitivity-labels-sharepoint-onedrive-files",
+      "sha256": "c283973e4fc8f54a73300a79164e902c0a789cf0b9c594aa9b63fce1fe2f9a04",
+      "captured_at": "2026-11-16T11:01:37.630370+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/cost-management-billing/",
+      "sha256": "fe084fb3a895ea9f132119f3677678f17420c9806389b1a1fda6c2b32e1734f6",
+      "captured_at": "2026-11-16T11:01:37.718761+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/api-management/api-management-howto-use-managed-service-identity",
+      "sha256": "ca5272845ec0ce91142360e7571948327c5299d0ff8dddece7ab9cbc88815dff",
+      "captured_at": "2026-11-16T11:01:37.821516+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/tutorial-windows-vm-ua-arm",
+      "sha256": "7db3970e4854d0821b1b935b880dac0245aff709db9e680a41b5c66e420a38bd",
+      "captured_at": "2026-11-16T11:01:38.122419+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/quick-acm-cost-analysis",
+      "sha256": "0e49fe65db4279040529e54e7aae05f810b9df85778ced24a15fb2fe508c712c",
+      "captured_at": "2026-11-16T11:01:38.386633+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/v2-conditional-access-dev-guide",
+      "sha256": "3d5031ef93d9ba08d40307edab7cec7b726d42ceae764403e1140e9b3e53883d",
+      "captured_at": "2026-11-16T11:01:38.497029+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/callrecords-cloudcommunications-list-callrecords",
+      "sha256": "7e6dbf71a58ca0d37be77c7e214e43f7565419658cad9c80b2788cbd7661a82a",
+      "captured_at": "2026-11-16T11:01:38.986307+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/sdks/paging",
+      "sha256": "e5eb6ec97ae34333a56f2648d84bab627634f187153ccb7edbd911ba21f94861",
+      "captured_at": "2026-11-16T11:01:39.235215+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/directoryObject",
+      "sha256": "c46d2d587c08635b8cd6149ca250cc97a9d5760c2951e5129d6f4ac37f3a5b60",
+      "captured_at": "2026-11-16T11:01:39.545376+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/use-postman-with-delegated-authentication",
+      "sha256": "43c184ceb19fcd001ddc0856365a11e8a12130402007e75736931b18230d6c4a",
+      "captured_at": "2026-11-16T11:01:39.671802+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/use-postman-with-app-only-authentication",
+      "sha256": "5257cd109b7da04eab7d99a66dc54a1fff3a4d1b04f518858097636fd9383fb9",
+      "captured_at": "2026-11-16T11:01:39.813006+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/security/zero-trust/security-adoption-discipline-overview",
+      "sha256": "b038a3f01eec0e23714e93da612e7b07c1fa5b97e3efcfb2849df277bfad14d6",
+      "captured_at": "2026-11-16T11:01:40.027719+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/security/zero-trust/deploy/overview",
+      "sha256": "87cb5c5335796af56d4cfb7a5a5faa0f1ee7ef34898884ce84e795dc6a1888f0",
+      "captured_at": "2026-11-16T11:01:40.137524+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/security/zero-trust/security-adoption-discipline-strategy",
+      "sha256": "1471cf99bc5a1e7788a372dba7a10fb2becd61acc84702366e88cfda2d4b9876",
+      "captured_at": "2026-11-16T11:01:40.285365+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/security/zero-trust/security-adoption-discipline-posture",
+      "sha256": "043df9484b5bb1fac4191965482c51571be2213b6d434242dc16f47097f9f502",
+      "captured_at": "2026-11-16T11:01:40.539522+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/security/zero-trust/security-standards-and-frameworks",
+      "sha256": "68f0b7c5819473bacacd07441c02454bc4aae5475c0c7584c314797bd005e7eb",
+      "captured_at": "2026-11-16T11:01:40.686623+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/security/zero-trust/security-adoption-journey",
+      "sha256": "80cbb24783d6a9ad592e0eda947d71daeb95d1e74204abee9c8e53c3ef3a6021",
+      "captured_at": "2026-11-16T11:01:40.778882+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/security/zero-trust/workshop-business-security-leaders",
+      "sha256": "d4e5b6fe5b0bab6f7bea1fa84b04019924d7dcfa3e5ef4b6ab23cce9ffcd0141",
+      "captured_at": "2026-11-16T11:01:41.148796+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
     }
   ],
   "seen": [
@@ -20382,11 +20686,13 @@
     "https://learn.microsoft.com/en-us/azure/active-directory/enterprise-users/groups-dynamic-rule-member-of",
     "https://learn.microsoft.com/en-us/azure/active-directory/enterprise-users/licensing-service-plan-reference",
     "https://learn.microsoft.com/en-us/azure/active-directory/external-identities/what-is-b2b",
+    "https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-how-subscriptions-associated-directory",
     "https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-licensing-whatis-azure-portal",
     "https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-whatis",
     "https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/users-default-permissions",
     "https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/whats-new",
     "https://learn.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection",
+    "https://learn.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/tutorial-windows-vm-ua-arm",
     "https://learn.microsoft.com/en-us/azure/active-directory/reports-monitoring/howto-manage-inactive-user-accounts",
     "https://learn.microsoft.com/en-us/azure/active-directory/roles/custom-overview",
     "https://learn.microsoft.com/en-us/azure/active-directory/roles/manage-roles-portal",
@@ -20397,6 +20703,7 @@
     "https://learn.microsoft.com/en-us/azure/active-directory/users-groups-roles/licensing-groups-resolve-problems",
     "https://learn.microsoft.com/en-us/azure/ai-foundry/agents/overview",
     "https://learn.microsoft.com/en-us/azure/ai-foundry/what-is-azure-ai-foundry",
+    "https://learn.microsoft.com/en-us/azure/api-management/api-management-howto-use-managed-service-identity",
     "https://learn.microsoft.com/en-us/azure/architecture/best-practices/index-best-practices",
     "https://learn.microsoft.com/en-us/azure/architecture/checklist/resiliency-per-service",
     "https://learn.microsoft.com/en-us/azure/architecture/identity/identity-start-here",
@@ -20436,7 +20743,9 @@
     "https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/decision-guides/resource-tagging/",
     "https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-setup-guide/identity",
     "https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/considerations/fundamental-concepts",
+    "https://learn.microsoft.com/en-us/azure/cost-management-billing/",
     "https://learn.microsoft.com/en-us/azure/cost-management-billing/cost-management-billing-overview",
+    "https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/quick-acm-cost-analysis",
     "https://learn.microsoft.com/en-us/azure/cost-management-billing/manage/cancel-azure-subscription",
     "https://learn.microsoft.com/en-us/azure/cost-management-billing/manage/microsoft-entra-id-free",
     "https://learn.microsoft.com/en-us/azure/defender-for-cloud/cost-calculator",
@@ -20749,6 +21058,7 @@
     "https://learn.microsoft.com/en-us/entra/identity-platform/sample-v2-code",
     "https://learn.microsoft.com/en-us/entra/identity-platform/secure-least-privileged-access",
     "https://learn.microsoft.com/en-us/entra/identity-platform/v2-app-types",
+    "https://learn.microsoft.com/en-us/entra/identity-platform/v2-conditional-access-dev-guide",
     "https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-client-creds-grant-flow",
     "https://learn.microsoft.com/en-us/entra/identity-platform/v2-overview",
     "https://learn.microsoft.com/en-us/entra/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts",
@@ -20966,6 +21276,8 @@
     "https://learn.microsoft.com/en-us/graph/api/application-list",
     "https://learn.microsoft.com/en-us/graph/api/application-post-calls",
     "https://learn.microsoft.com/en-us/graph/api/application-post-onlinemeetings",
+    "https://learn.microsoft.com/en-us/graph/api/appmanagementaudit-get",
+    "https://learn.microsoft.com/en-us/graph/api/appmanagementaudit-list",
     "https://learn.microsoft.com/en-us/graph/api/associatedteaminfo-list",
     "https://learn.microsoft.com/en-us/graph/api/attachment-createuploadsession",
     "https://learn.microsoft.com/en-us/graph/api/attachment-get",
@@ -20989,6 +21301,7 @@
     "https://learn.microsoft.com/en-us/graph/api/call-reject",
     "https://learn.microsoft.com/en-us/graph/api/call-subscribetotone",
     "https://learn.microsoft.com/en-us/graph/api/call-transfer",
+    "https://learn.microsoft.com/en-us/graph/api/callrecords-cloudcommunications-list-callrecords",
     "https://learn.microsoft.com/en-us/graph/api/channel-get-filesfolder",
     "https://learn.microsoft.com/en-us/graph/api/channel-list",
     "https://learn.microsoft.com/en-us/graph/api/channel-post",
@@ -21141,6 +21454,8 @@
     "https://learn.microsoft.com/en-us/graph/api/list-get",
     "https://learn.microsoft.com/en-us/graph/api/listitem-list",
     "https://learn.microsoft.com/en-us/graph/api/mailbox-list-folders",
+    "https://learn.microsoft.com/en-us/graph/api/mailbox-post-folders",
+    "https://learn.microsoft.com/en-us/graph/api/mailboxfolder-delta",
     "https://learn.microsoft.com/en-us/graph/api/mailboxfolder-list-childfolders",
     "https://learn.microsoft.com/en-us/graph/api/mailfolder-delta",
     "https://learn.microsoft.com/en-us/graph/api/mailfolder-importmime",
@@ -21210,6 +21525,7 @@
     "https://learn.microsoft.com/en-us/graph/api/resources/adminwindowsupdates",
     "https://learn.microsoft.com/en-us/graph/api/resources/agentid-platform-overview",
     "https://learn.microsoft.com/en-us/graph/api/resources/agentidentityblueprint",
+    "https://learn.microsoft.com/en-us/graph/api/resources/agentidentityblueprintprincipal",
     "https://learn.microsoft.com/en-us/graph/api/resources/agentuser",
     "https://learn.microsoft.com/en-us/graph/api/resources/agreementacceptance",
     "https://learn.microsoft.com/en-us/graph/api/resources/application",
@@ -21244,6 +21560,7 @@
     "https://learn.microsoft.com/en-us/graph/api/resources/backuppolicyreport",
     "https://learn.microsoft.com/en-us/graph/api/resources/backupreport",
     "https://learn.microsoft.com/en-us/graph/api/resources/bitlockerrecoverykey",
+    "https://learn.microsoft.com/en-us/graph/api/resources/bookingbusiness",
     "https://learn.microsoft.com/en-us/graph/api/resources/browsequeryresponseitem",
     "https://learn.microsoft.com/en-us/graph/api/resources/browsersitelist",
     "https://learn.microsoft.com/en-us/graph/api/resources/building",
@@ -21292,6 +21609,8 @@
     "https://learn.microsoft.com/en-us/graph/api/resources/devicelocalcredentialinfo",
     "https://learn.microsoft.com/en-us/graph/api/resources/devicetemplate",
     "https://learn.microsoft.com/en-us/graph/api/resources/directory",
+    "https://learn.microsoft.com/en-us/graph/api/resources/directoryObject",
+    "https://learn.microsoft.com/en-us/graph/api/resources/directoryaudit",
     "https://learn.microsoft.com/en-us/graph/api/resources/directoryobject",
     "https://learn.microsoft.com/en-us/graph/api/resources/directoryrole",
     "https://learn.microsoft.com/en-us/graph/api/resources/directoryroletemplate",
@@ -21344,6 +21663,7 @@
     "https://learn.microsoft.com/en-us/graph/api/resources/entrarecoveryservices-backup-recovery-overview",
     "https://learn.microsoft.com/en-us/graph/api/resources/enums",
     "https://learn.microsoft.com/en-us/graph/api/resources/evaluationerrordetail",
+    "https://learn.microsoft.com/en-us/graph/api/resources/evaluationincompleteactivitymetadata",
     "https://learn.microsoft.com/en-us/graph/api/resources/event",
     "https://learn.microsoft.com/en-us/graph/api/resources/eventmessage",
     "https://learn.microsoft.com/en-us/graph/api/resources/excel",
@@ -21473,6 +21793,8 @@
     "https://learn.microsoft.com/en-us/graph/api/resources/processcontentmetadatabase",
     "https://learn.microsoft.com/en-us/graph/api/resources/processcontentrequest",
     "https://learn.microsoft.com/en-us/graph/api/resources/processcontentresponse",
+    "https://learn.microsoft.com/en-us/graph/api/resources/processconversationmetadata",
+    "https://learn.microsoft.com/en-us/graph/api/resources/processfilemetadata",
     "https://learn.microsoft.com/en-us/graph/api/resources/profile",
     "https://learn.microsoft.com/en-us/graph/api/resources/profilephoto",
     "https://learn.microsoft.com/en-us/graph/api/resources/project-rome-overview",
@@ -21509,11 +21831,14 @@
     "https://learn.microsoft.com/en-us/graph/api/resources/searchrequest",
     "https://learn.microsoft.com/en-us/graph/api/resources/searchresponse",
     "https://learn.microsoft.com/en-us/graph/api/resources/sectiongroup",
+    "https://learn.microsoft.com/en-us/graph/api/resources/security-alerttemplate",
     "https://learn.microsoft.com/en-us/graph/api/resources/security-api-overview",
     "https://learn.microsoft.com/en-us/graph/api/resources/security-auditdata",
     "https://learn.microsoft.com/en-us/graph/api/resources/security-auditdata-derived-types",
     "https://learn.microsoft.com/en-us/graph/api/resources/security-auditlogrecord",
     "https://learn.microsoft.com/en-us/graph/api/resources/security-auditlogrecordtype",
+    "https://learn.microsoft.com/en-us/graph/api/resources/security-casemanagement-activity",
+    "https://learn.microsoft.com/en-us/graph/api/resources/security-casemanagement-case",
     "https://learn.microsoft.com/en-us/graph/api/resources/security-casemanagement-comment",
     "https://learn.microsoft.com/en-us/graph/api/resources/security-detectionaction",
     "https://learn.microsoft.com/en-us/graph/api/resources/security-detectionrule",
@@ -21524,6 +21849,7 @@
     "https://learn.microsoft.com/en-us/graph/api/resources/serviceprincipal",
     "https://learn.microsoft.com/en-us/graph/api/resources/serviceprovisioningerror",
     "https://learn.microsoft.com/en-us/graph/api/resources/shift",
+    "https://learn.microsoft.com/en-us/graph/api/resources/signin",
     "https://learn.microsoft.com/en-us/graph/api/resources/signinactivity",
     "https://learn.microsoft.com/en-us/graph/api/resources/singlevaluelegacyextendedproperty",
     "https://learn.microsoft.com/en-us/graph/api/resources/site",
@@ -21581,8 +21907,10 @@
     "https://learn.microsoft.com/en-us/graph/api/restorepoint-search",
     "https://learn.microsoft.com/en-us/graph/api/search-query",
     "https://learn.microsoft.com/en-us/graph/api/section-post-pages",
+    "https://learn.microsoft.com/en-us/graph/api/security-casemanagement-activity-get",
     "https://learn.microsoft.com/en-us/graph/api/security-casemanagement-activity-update",
     "https://learn.microsoft.com/en-us/graph/api/security-casemanagement-case-post-activities",
+    "https://learn.microsoft.com/en-us/graph/api/security-list-workbooks",
     "https://learn.microsoft.com/en-us/graph/api/security-security-runhuntingquery",
     "https://learn.microsoft.com/en-us/graph/api/serviceprincipal-delta",
     "https://learn.microsoft.com/en-us/graph/api/serviceprincipal-update",
@@ -21799,6 +22127,7 @@
     "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
     "https://learn.microsoft.com/en-us/graph/sdks/generate-with-kiota",
     "https://learn.microsoft.com/en-us/graph/sdks/national-clouds",
+    "https://learn.microsoft.com/en-us/graph/sdks/paging",
     "https://learn.microsoft.com/en-us/graph/sdks/sdk-installation",
     "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview",
     "https://learn.microsoft.com/en-us/graph/search-concept-aggregation",
@@ -21837,6 +22166,8 @@
     "https://learn.microsoft.com/en-us/graph/tutorials/",
     "https://learn.microsoft.com/en-us/graph/universal-print-concept-overview",
     "https://learn.microsoft.com/en-us/graph/use-postman",
+    "https://learn.microsoft.com/en-us/graph/use-postman-with-app-only-authentication",
+    "https://learn.microsoft.com/en-us/graph/use-postman-with-delegated-authentication",
     "https://learn.microsoft.com/en-us/graph/use-the-api",
     "https://learn.microsoft.com/en-us/graph/versioning-and-support",
     "https://learn.microsoft.com/en-us/graph/whats-new-earlier",
@@ -22057,6 +22388,7 @@
     "https://learn.microsoft.com/en-us/microsoft-365/compliance/autoexpanding-archiving",
     "https://learn.microsoft.com/en-us/microsoft-365/compliance/dlp-learn-about-dlp",
     "https://learn.microsoft.com/en-us/microsoft-365/compliance/inactive-mailboxes-in-office-365",
+    "https://learn.microsoft.com/en-us/microsoft-365/compliance/sensitivity-labels-sharepoint-onedrive-files",
     "https://learn.microsoft.com/en-us/microsoft-365/compliance/sensitivity-labels-teams-groups-sites",
     "https://learn.microsoft.com/en-us/microsoft-365/compliance/whats-new",
     "https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/connector-agent",
@@ -22402,6 +22734,7 @@
     "https://learn.microsoft.com/en-us/previous-versions/industry-solutions-group/bb971664(v=msdn.10)",
     "https://learn.microsoft.com/en-us/previous-versions/microsoft-365/solutions/allow-members-to-send-as-or-send-on-behalf-of-group",
     "https://learn.microsoft.com/en-us/previous-versions/microsoft-365/solutions/choose-domain-to-create-groups",
+    "https://learn.microsoft.com/en-us/previous-versions/microsoft-365/solutions/cloud-architecture-models",
     "https://learn.microsoft.com/en-us/previous-versions/microsoft-365/solutions/collaboration-governance-overview",
     "https://learn.microsoft.com/en-us/previous-versions/microsoft-365/solutions/groups-naming-policy",
     "https://learn.microsoft.com/en-us/previous-versions/microsoft-365/solutions/manage-creation-of-groups",
@@ -22491,9 +22824,16 @@
     "https://learn.microsoft.com/en-us/security/benchmark/azure/baselines/defender-for-identity-security-baseline",
     "https://learn.microsoft.com/en-us/security/engineering/solving-tls1-problem",
     "https://learn.microsoft.com/en-us/security/zero-trust/assessment/overview",
+    "https://learn.microsoft.com/en-us/security/zero-trust/deploy/overview",
     "https://learn.microsoft.com/en-us/security/zero-trust/implement-overview",
     "https://learn.microsoft.com/en-us/security/zero-trust/security-adoption-business-scenarios-overview",
+    "https://learn.microsoft.com/en-us/security/zero-trust/security-adoption-discipline-overview",
+    "https://learn.microsoft.com/en-us/security/zero-trust/security-adoption-discipline-posture",
+    "https://learn.microsoft.com/en-us/security/zero-trust/security-adoption-discipline-strategy",
+    "https://learn.microsoft.com/en-us/security/zero-trust/security-adoption-journey",
     "https://learn.microsoft.com/en-us/security/zero-trust/security-adoption-model",
+    "https://learn.microsoft.com/en-us/security/zero-trust/security-standards-and-frameworks",
+    "https://learn.microsoft.com/en-us/security/zero-trust/workshop-business-security-leaders",
     "https://learn.microsoft.com/en-us/security/zero-trust/zero-trust-overview",
     "https://learn.microsoft.com/en-us/sharepoint/advanced-management",
     "https://learn.microsoft.com/en-us/sharepoint/change-your-sharepoint-domain-name",
@@ -22599,286 +22939,6 @@
     "https://learn.microsoft.com/en-us/windows/win32/wer/windows-error-reporting"
   ],
   "queue": [
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/agentidentityblueprintprincipal",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/mailfolder-post-messages",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/mailboxfolder-delta",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/extended-properties-overview",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/mailbox-list-folders",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/mailbox-post-folders",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/directoryaudit",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/appmanagementaudit-list",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/appmanagementaudit-get",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/authenticationeventlistener",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/signin",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/security-alerttemplate",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/security-casemanagement-activity",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/security-casemanagement-activity",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/security-casemanagement-case-post-activities",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/security-casemanagement-activity-get",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/security-casemanagement-case",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/security-casemanagement-case",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/processconversationmetadata",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/processfilemetadata",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/evaluationincompleteactivitymetadata",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/entity",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/security-list-workbooks",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/teamworkcustomemoji",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/teamworkcustomemoji",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/teamworkhostedcontent",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/chatmessage",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/chatmessage",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-how-subscriptions-associated-directory",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/previous-versions/microsoft-365/solutions/cloud-architecture-models",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/bookingbusiness",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/driveitem-assignsensitivitylabel",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/driveitem-assignsensitivitylabel",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/compliance/sensitivity-labels-sharepoint-onedrive-files",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/metered-api-setup",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/cost-management-billing/",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/active-directory/develop/active-directory-conditional-access-developer",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/azure-services-resource-providers",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/api-management/api-management-howto-use-managed-service-identity",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/tutorial-windows-vm-ua-arm",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/cost-management-billing/cost-management-billing-overview",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/quick-acm-cost-analysis",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/v2-conditional-access-dev-guide",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/v2-conditional-access-dev-guide",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/v2-conditional-access-dev-guide",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/v2-conditional-access-dev-guide",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/auth/",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/callrecords-callrecord",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/callrecords-cloudcommunications-list-callrecords",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/sdks/paging",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/directoryObject",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/use-postman-with-delegated-authentication",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/use-postman-with-app-only-authentication",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/office/developer-program/microsoft-365-developer-program-faq",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/use-postman-with-delegated-authentication",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/use-postman-with-app-only-authentication",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/security/zero-trust/security-adoption-business-scenarios-overview",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/security/zero-trust/security-adoption-discipline-overview",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/security/zero-trust/deploy/overview",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/security/zero-trust/implement-overview",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/security/zero-trust/security-adoption-business-scenarios-overview",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/security/zero-trust/deploy/overview",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/security/zero-trust/implement-overview",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/security/zero-trust/security-adoption-discipline-overview",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/security/zero-trust/security-adoption-discipline-strategy",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/security/zero-trust/security-adoption-discipline-posture",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/security/zero-trust/security-adoption-business-scenarios-overview",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/security/zero-trust/security-standards-and-frameworks",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/security/zero-trust/security-adoption-journey",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/security/zero-trust/workshop-business-security-leaders",
-      "depth": 3
-    },
     {
       "url": "https://learn.microsoft.com/en-us/security/zero-trust/microsoft-reference-architecture",
       "depth": 3
@@ -28062,8 +28122,8 @@
   ],
   "last_batch": {
     "attempted": 36,
-    "documents_total": 2284,
-    "queued": 1365,
+    "documents_total": 2320,
+    "queued": 1295,
     "failures": []
   }
 }
