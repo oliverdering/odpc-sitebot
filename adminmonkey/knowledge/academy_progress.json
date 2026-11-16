@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T11:01:49.271382+00:00",
+  "generated_at": "2026-11-16T20:53:54.388478+00:00",
   "product": "AdminMonkey Academy",
   "certification_expansion": {
     "candidate_exam_codes": 42,
@@ -45,23 +45,28 @@
   "certification_issuer": "ODPC",
   "official_microsoft_certification": false,
   "knowledge": {
-    "documents_collected": 2320,
-    "manufacturer_verified": 2320,
+    "documents_collected": 2355,
+    "manufacturer_verified": 2355,
     "review": {
       "unreviewed": 0,
-      "approved": 2320,
+      "approved": 2355,
       "rejected": 0
     },
     "last_batch": {
       "attempted": 36,
-      "documents_total": 2320,
-      "queued": 1295,
-      "failures": []
+      "documents_total": 2355,
+      "queued": 1233,
+      "failures": [
+        {
+          "url": "https://learn.microsoft.com/en-us/entra/identity/domain-services/sam-account-name/sam-account-name",
+          "error": "HTTPError"
+        }
+      ]
     }
   },
   "retrieval_staging": {
-    "chunked_documents": 2313,
-    "chunks_prepared": 11371,
+    "chunked_documents": 2348,
+    "chunks_prepared": 11538,
     "retrieval_quality_verified": false,
     "agent_answers_verified": 0,
     "note": "Ephemeral, provenance-checked chunk preparation; no searchable production index yet."
@@ -85,7 +90,7 @@
     },
     {
       "track": "AZ-104",
-      "manufacturer_verified_sources": 125,
+      "manufacturer_verified_sources": 129,
       "knowledge_coverage": "source_count_only_not_learning_objective_coverage",
       "practice_scenarios_available": 4,
       "agent_answers_evaluated": 0,
@@ -101,7 +106,7 @@
     },
     {
       "track": "SC-300",
-      "manufacturer_verified_sources": 381,
+      "manufacturer_verified_sources": 398,
       "knowledge_coverage": "source_count_only_not_learning_objective_coverage",
       "practice_scenarios_available": 4,
       "agent_answers_evaluated": 0,
@@ -117,7 +122,7 @@
     },
     {
       "track": "MD-102",
-      "manufacturer_verified_sources": 29,
+      "manufacturer_verified_sources": 30,
       "knowledge_coverage": "source_count_only_not_learning_objective_coverage",
       "practice_scenarios_available": 4,
       "agent_answers_evaluated": 0,
