@@ -21638,6 +21638,361 @@
       "mapped_tracks": [
         "SC-300"
       ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/aks/workload-identity-overview",
+      "sha256": "534913f550d1c9024d51f4f590ce32195b841cf274831b105e791a7be5cb8939",
+      "captured_at": "2026-11-17T20:16:00.776415+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/workload-id/workload-identity-federation-create-trust-user-assigned-managed-identity",
+      "sha256": "a26b105d85f625f9fbee74010d578cb2270288c858a1fc7fd2a43b6d82f09e32",
+      "captured_at": "2026-11-17T20:16:00.962109+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/agent-id/agent-users",
+      "sha256": "1b674c1510ce64e4e7f9dc62ab2245531e47eb765c617c93428abfb3492f7bfa",
+      "captured_at": "2026-11-17T20:16:01.345671+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/agent-id/identity-platform/what-is-agent-id-platform",
+      "sha256": "a77a79a847cf7a7786567898d629d86943de239d6ee781c6cf698179a9ed04bf",
+      "captured_at": "2026-11-17T20:16:01.787585+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/lighthouse/concepts/cloud-solution-provider",
+      "sha256": "d484b04fc16948d2b8c6fa512ac18f7946de4d54b3451663255133ac2e25a32b",
+      "captured_at": "2026-11-17T20:16:02.310183+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/agent-id/agent-oauth-protocols",
+      "sha256": "b5cdd183a205773779c3d7e348073439a62d6e9f52d73120f90def2ce4f605da",
+      "captured_at": "2026-11-17T20:16:02.437931+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/agent-optimization",
+      "sha256": "6e492e65b6599a65a8158dbb4621abb3748af6a6bef923891ae1fbee252a79ea",
+      "captured_at": "2026-11-17T20:16:03.044277+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/agent-id/integrate-aws-bedrock-agent",
+      "sha256": "5ba107bac64b247586c9abbe57777039e233ba3cea9ef31d83798fb6c05d56f9",
+      "captured_at": "2026-11-17T20:16:03.394155+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/agent-id/manage-agent-identities-admin",
+      "sha256": "3457312a5e3d45149d8e87dfb296e8418e3a76929e5f2e3f2ea5fe774ea058ae",
+      "captured_at": "2026-11-17T20:16:03.523961+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/grant-admin-consent",
+      "sha256": "bc76510afdd2c1ac87f44d023743b996830098850d5e39e9246c5ac38183f401",
+      "captured_at": "2026-11-17T20:16:03.659225+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/scopes-oidc",
+      "sha256": "f56d6b711b78483ee5a6c1e5db3126227c415e51e5c3928096d50d31bc41c665",
+      "captured_at": "2026-11-17T20:16:03.832282+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/architecture/resilience-in-infrastructure",
+      "sha256": "dc7272f546733f6700ccc72ee9e8c3425d2035c5a8fbc52fed858c9e6f56a7a8",
+      "captured_at": "2026-11-17T20:16:04.340499+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/architecture/identity/identity-get-started",
+      "sha256": "27de0af0ed96e8d86b30eda3e4b4efc32366537fcb6dcfab118e97548237d776",
+      "captured_at": "2026-11-17T20:16:04.561437+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104",
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-staged-rollout",
+      "sha256": "13f8ba64902dd18be6c9b96dc2098ab366a5449942f3d148a2b0b7ac29055c6b",
+      "captured_at": "2026-11-17T20:16:04.733712+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-password-hash-synchronization",
+      "sha256": "caa7ceb9bcc07ac2b6cd26470785bfc53cff63d015b1822afcca21c3891a1657",
+      "captured_at": "2026-11-17T20:16:05.062395+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/fundamentals/data-storage-eu",
+      "sha256": "9fd4602e5186af63ec3ae52aa1ec59c2b3472a03ec2a740298acda25a0344379",
+      "captured_at": "2026-11-17T20:16:05.323016+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/security/zero-trust/deploy/identity",
+      "sha256": "56ff463ad3dcce126d91da7608eb1b81aaa71adf38ba9926cfba8c1757b34577",
+      "captured_at": "2026-11-17T20:16:05.463353+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-authentication-passkeys-fido2",
+      "sha256": "d8fb722edc102b9761b8a3b461abfc5f72e2f5f2000deabe51a6f79c19e40606",
+      "captured_at": "2026-11-17T20:16:05.605781+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-plan-prerequisites-phishing-resistant-passwordless-authentication",
+      "sha256": "fdde09fabeb8fc045e0d1a7723532dd1c6a996ad03ed87c6760c33dc60f9c525",
+      "captured_at": "2026-11-17T20:16:05.881845+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows/security/identity-protection/hello-for-business/hello-identity-verification",
+      "sha256": "7909136cd7747760854b475c87c272efacd775db9c66bcab9fb75c74af96a467",
+      "captured_at": "2026-11-17T20:16:06.967490+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/tutorial-manage-certificates-for-federated-single-sign-on",
+      "sha256": "2708bf34fbbe78e540a4852299771546d8f8916d90701a6f189e166e72ffa6da",
+      "captured_at": "2026-11-17T20:16:07.556968+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/application-properties",
+      "sha256": "460e10a30e47ff17f698d558f19e640e718c3362035957ca79e10aac7b66ece9",
+      "captured_at": "2026-11-17T20:16:07.709622+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/devices/concept-device-registration",
+      "sha256": "669ec4da65b2d8fdf61a95ee9f7fc24d3f987aa3251fb97d5e7ac997e65877eb",
+      "captured_at": "2026-11-17T20:16:07.915131+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/plan-cloud-sync-topologies",
+      "sha256": "715fea0113fc1d79c3cc1b037a8d2301745dad59a19bfae22d207b98946a9bb1",
+      "captured_at": "2026-11-17T20:16:08.473985+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/security/fundamentals/identity-management-overview",
+      "sha256": "4bcb082be2fab88c6b07244967dd45a36237c7435bc86affeb7ed95d28369fb2",
+      "captured_at": "2026-11-17T20:16:08.782930+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-sso-faq",
+      "sha256": "34e69a7821fdbceaf56d9ff4395310069cf95426d7a779e484a022a07e885d19",
+      "captured_at": "2026-11-17T20:16:08.967324+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/architecture/1-secure-access-posture",
+      "sha256": "77ec46b7c56bf7284cbe2ae2aff99290257d61d4b2d314de29b9de1cffd54fc9",
+      "captured_at": "2026-11-17T20:16:09.169817+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/architecture/2-secure-access-current-state",
+      "sha256": "64282be13e5b265932a907b6d20a8624bc328d0f5ed43571fc540ef148c237ab",
+      "captured_at": "2026-11-17T20:16:09.673444+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/architecture/3-secure-access-plan",
+      "sha256": "d539c508104b04f0b7824edb158e5c6980cca8782981dc7fcc45a10be7bd0b9f",
+      "captured_at": "2026-11-17T20:16:09.856227+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/identity-network-access-overview/",
+      "sha256": "18a8d06ec27833e12ad5f25b2f7b0bbae1d776d6fc8dbba4c93198379fcdf7f8",
+      "captured_at": "2026-11-17T20:16:10.555851+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/privileged-roles-permissions",
+      "sha256": "404489302105181aa8df00cfce91b6bb439f8ad69fdf3df4a5322b4f11603026",
+      "captured_at": "2026-11-17T20:16:11.127230+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/tshoot-connect-sync-errors",
+      "sha256": "8a11b95d1c1b2ceab8d74ed3db48565a587451a402b7eb51783cd91a2a1b6d49",
+      "captured_at": "2026-11-17T20:16:11.300720+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-sync-configure-filtering",
+      "sha256": "039a5154ceb5f74a838b5ed6511d72edf27544c780e424708d5425a6314f9701",
+      "captured_at": "2026-11-17T20:16:11.823332+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/plan-connect-design-concepts",
+      "sha256": "679841c52a97ceb39369790e31999502c36ee53a2ae83fadff790cf63dfd9ff2",
+      "captured_at": "2026-11-17T20:16:12.114607+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-install-automatic-upgrade",
+      "sha256": "a27860380f158f4200f6e1fbeb7a5778025db69d4b8899ff897ef379bfa55ce9",
+      "captured_at": "2026-11-17T20:16:12.265804+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-fed-whatis",
+      "sha256": "25a5975e5558426f03eed2fece63baa8ec7a700b218566c2365e080d4bd01c3e",
+      "captured_at": "2026-11-17T20:16:12.489504+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
     }
   ],
   "seen": [
@@ -21731,9 +22086,11 @@
     "https://learn.microsoft.com/en-us/azure/active-directory/users-groups-roles/licensing-groups-resolve-problems",
     "https://learn.microsoft.com/en-us/azure/ai-foundry/agents/overview",
     "https://learn.microsoft.com/en-us/azure/ai-foundry/what-is-azure-ai-foundry",
+    "https://learn.microsoft.com/en-us/azure/aks/workload-identity-overview",
     "https://learn.microsoft.com/en-us/azure/api-management/api-management-howto-use-managed-service-identity",
     "https://learn.microsoft.com/en-us/azure/architecture/best-practices/index-best-practices",
     "https://learn.microsoft.com/en-us/azure/architecture/checklist/resiliency-per-service",
+    "https://learn.microsoft.com/en-us/azure/architecture/identity/identity-get-started",
     "https://learn.microsoft.com/en-us/azure/architecture/identity/identity-start-here",
     "https://learn.microsoft.com/en-us/azure/architecture/patterns/",
     "https://learn.microsoft.com/en-us/azure/architecture/patterns/ambassador",
@@ -21790,6 +22147,7 @@
     "https://learn.microsoft.com/en-us/azure/information-protection/byok-price-restrictions",
     "https://learn.microsoft.com/en-us/azure/key-vault/general/logging",
     "https://learn.microsoft.com/en-us/azure/key-vault/general/rbac-guide",
+    "https://learn.microsoft.com/en-us/azure/lighthouse/concepts/cloud-solution-provider",
     "https://learn.microsoft.com/en-us/azure/lighthouse/overview",
     "https://learn.microsoft.com/en-us/azure/logic-apps/logic-apps-overview",
     "https://learn.microsoft.com/en-us/azure/networking/check-usage-against-limits",
@@ -21806,6 +22164,7 @@
     "https://learn.microsoft.com/en-us/azure/role-based-access-control/resource-provider-operations",
     "https://learn.microsoft.com/en-us/azure/role-based-access-control/role-assignments-portal",
     "https://learn.microsoft.com/en-us/azure/security/fundamentals/customer-lockbox-overview",
+    "https://learn.microsoft.com/en-us/azure/security/fundamentals/identity-management-overview",
     "https://learn.microsoft.com/en-us/azure/sentinel/data-connectors-reference",
     "https://learn.microsoft.com/en-us/azure/sentinel/data-connectors/azure-active-directory-identity-protection",
     "https://learn.microsoft.com/en-us/azure/sentinel/overview",
@@ -21888,14 +22247,22 @@
     "https://learn.microsoft.com/en-us/dynamics365/release-plans/",
     "https://learn.microsoft.com/en-us/education/",
     "https://learn.microsoft.com/en-us/entra/agent-id/agent-blueprint",
+    "https://learn.microsoft.com/en-us/entra/agent-id/agent-oauth-protocols",
     "https://learn.microsoft.com/en-us/entra/agent-id/agent-owners-sponsors-managers",
+    "https://learn.microsoft.com/en-us/entra/agent-id/agent-users",
     "https://learn.microsoft.com/en-us/entra/agent-id/configure-third-party-agents",
     "https://learn.microsoft.com/en-us/entra/agent-id/identity-platform/agent-blueprint",
+    "https://learn.microsoft.com/en-us/entra/agent-id/identity-platform/what-is-agent-id-platform",
+    "https://learn.microsoft.com/en-us/entra/agent-id/integrate-aws-bedrock-agent",
+    "https://learn.microsoft.com/en-us/entra/agent-id/manage-agent-identities-admin",
     "https://learn.microsoft.com/en-us/entra/agent-id/security-for-ai-overview",
     "https://learn.microsoft.com/en-us/entra/agent-id/sign-in-audit-logs-agents",
     "https://learn.microsoft.com/en-us/entra/agent-id/what-are-agent-identities",
     "https://learn.microsoft.com/en-us/entra/agent-id/what-is-agent-id-platform",
     "https://learn.microsoft.com/en-us/entra/agent-id/what-is-microsoft-entra-agent-id",
+    "https://learn.microsoft.com/en-us/entra/architecture/1-secure-access-posture",
+    "https://learn.microsoft.com/en-us/entra/architecture/2-secure-access-current-state",
+    "https://learn.microsoft.com/en-us/entra/architecture/3-secure-access-plan",
     "https://learn.microsoft.com/en-us/entra/architecture/architecture",
     "https://learn.microsoft.com/en-us/entra/architecture/deployment-plans",
     "https://learn.microsoft.com/en-us/entra/architecture/ops-guide-auth",
@@ -21904,6 +22271,7 @@
     "https://learn.microsoft.com/en-us/entra/architecture/ops-guide-intro",
     "https://learn.microsoft.com/en-us/entra/architecture/ops-guide-ops",
     "https://learn.microsoft.com/en-us/entra/architecture/resilience-in-hybrid",
+    "https://learn.microsoft.com/en-us/entra/architecture/resilience-in-infrastructure",
     "https://learn.microsoft.com/en-us/entra/architecture/resilience-overview",
     "https://learn.microsoft.com/en-us/entra/architecture/road-to-the-cloud-establish",
     "https://learn.microsoft.com/en-us/entra/architecture/road-to-the-cloud-posture",
@@ -21951,6 +22319,7 @@
     "https://learn.microsoft.com/en-us/entra/fundamentals/create-new-tenant",
     "https://learn.microsoft.com/en-us/entra/fundamentals/custom-security-attributes-overview",
     "https://learn.microsoft.com/en-us/entra/fundamentals/data-residency",
+    "https://learn.microsoft.com/en-us/entra/fundamentals/data-storage-eu",
     "https://learn.microsoft.com/en-us/entra/fundamentals/entra-admin-center",
     "https://learn.microsoft.com/en-us/entra/fundamentals/how-subscriptions-associated-directory",
     "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-create-delete-users",
@@ -22137,6 +22506,7 @@
     "https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app",
     "https://learn.microsoft.com/en-us/entra/identity-platform/reply-url",
     "https://learn.microsoft.com/en-us/entra/identity-platform/sample-v2-code",
+    "https://learn.microsoft.com/en-us/entra/identity-platform/scopes-oidc",
     "https://learn.microsoft.com/en-us/entra/identity-platform/secure-least-privileged-access",
     "https://learn.microsoft.com/en-us/entra/identity-platform/single-and-multi-tenant-apps",
     "https://learn.microsoft.com/en-us/entra/identity-platform/v2-app-types",
@@ -22177,7 +22547,9 @@
     "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-writeback",
     "https://learn.microsoft.com/en-us/entra/identity/authentication/feature-availability",
     "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-account-recovery-for-users",
+    "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-authentication-passkeys-fido2",
     "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-migrate-mfa-server-to-azure-mfa",
+    "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-plan-prerequisites-phishing-resistant-passwordless-authentication",
     "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-register-passkey",
     "https://learn.microsoft.com/en-us/entra/identity/authentication/howto-authentication-passwordless-deployment",
     "https://learn.microsoft.com/en-us/entra/identity/authentication/howto-authentication-passwordless-phone",
@@ -22189,6 +22561,7 @@
     "https://learn.microsoft.com/en-us/entra/identity/authentication/tutorial-configure-custom-password-protection",
     "https://learn.microsoft.com/en-us/entra/identity/conditional-access/",
     "https://learn.microsoft.com/en-us/entra/identity/conditional-access/agent-id",
+    "https://learn.microsoft.com/en-us/entra/identity/conditional-access/agent-optimization",
     "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-assignment-network",
     "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-cloud-apps",
     "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-conditions",
@@ -22214,6 +22587,7 @@
     "https://learn.microsoft.com/en-us/entra/identity/conditional-access/policy-risk-based-sign-in",
     "https://learn.microsoft.com/en-us/entra/identity/conditional-access/terms-of-use",
     "https://learn.microsoft.com/en-us/entra/identity/conditional-access/workload-identity",
+    "https://learn.microsoft.com/en-us/entra/identity/devices/concept-device-registration",
     "https://learn.microsoft.com/en-us/entra/identity/devices/concept-hybrid-join",
     "https://learn.microsoft.com/en-us/entra/identity/devices/manage-stale-devices",
     "https://learn.microsoft.com/en-us/entra/identity/devices/overview",
@@ -22232,24 +22606,36 @@
     "https://learn.microsoft.com/en-us/entra/identity/domain-services/tutorial-create-instance",
     "https://learn.microsoft.com/en-us/entra/identity/domain-services/tutorial-create-instance-advanced",
     "https://learn.microsoft.com/en-us/entra/identity/domain-services/tutorial-create-management-vm",
+    "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/application-properties",
     "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/assign-user-or-group-access-portal",
     "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/custom-security-attributes-apps",
+    "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/grant-admin-consent",
     "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/myapps-overview",
     "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/plan-sso-deployment",
+    "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/tutorial-manage-certificates-for-federated-single-sign-on",
     "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/what-is-application-management",
     "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/what-is-single-sign-on",
     "https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory",
+    "https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/plan-cloud-sync-topologies",
     "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/choose-ad-authn",
+    "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-fed-whatis",
     "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-health-agent-install",
     "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-health-operations",
+    "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-install-automatic-upgrade",
+    "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-password-hash-synchronization",
     "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-pta",
+    "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-sso-faq",
     "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-sso-how-it-works",
     "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-sso-quick-start",
+    "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-staged-rollout",
+    "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-sync-configure-filtering",
     "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-sync-feature-directory-extensions",
     "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-sync-whatis",
     "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-syncservice-features",
     "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/migrate-from-federation-to-cloud-authentication",
+    "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/plan-connect-design-concepts",
     "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/reference-connect-pta-version-history",
+    "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/tshoot-connect-sync-errors",
     "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/whatis-azure-ad-connect",
     "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/whatis-fed",
     "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/whatis-phs",
@@ -22284,6 +22670,7 @@
     "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/groups-concept",
     "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/manage-roles-portal",
     "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference",
+    "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/privileged-roles-permissions",
     "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/security-emergency-access",
     "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/security-planning",
     "https://learn.microsoft.com/en-us/entra/identity/saas-apps/dropboxforbusiness-provisioning-tutorial",
@@ -22324,6 +22711,7 @@
     "https://learn.microsoft.com/en-us/entra/workload-id/workload-identities-overview",
     "https://learn.microsoft.com/en-us/entra/workload-id/workload-identity-federation",
     "https://learn.microsoft.com/en-us/entra/workload-id/workload-identity-federation-config-app-trust-managed-identity",
+    "https://learn.microsoft.com/en-us/entra/workload-id/workload-identity-federation-create-trust-user-assigned-managed-identity",
     "https://learn.microsoft.com/en-us/exchange/about-documentation/exchange-admin-center-keyboard-shortcuts",
     "https://learn.microsoft.com/en-us/exchange/antispam-and-antimalware/antispam-and-antimalware",
     "https://learn.microsoft.com/en-us/exchange/architecture/client-access/exchange-admin-center",
@@ -23199,6 +23587,7 @@
     "https://learn.microsoft.com/en-us/graph/graph-explorer/graph-explorer-overview",
     "https://learn.microsoft.com/en-us/graph/group-directory-settings",
     "https://learn.microsoft.com/en-us/graph/identity-network-access-overview",
+    "https://learn.microsoft.com/en-us/graph/identity-network-access-overview/",
     "https://learn.microsoft.com/en-us/graph/industrydata-concept-overview",
     "https://learn.microsoft.com/en-us/graph/insights-customize-item-insights-privacy",
     "https://learn.microsoft.com/en-us/graph/insights-customize-people-insights-privacy",
@@ -23948,6 +24337,7 @@
     "https://learn.microsoft.com/en-us/security/privileged-access-workstations/overview",
     "https://learn.microsoft.com/en-us/security/zero-trust/",
     "https://learn.microsoft.com/en-us/security/zero-trust/assessment/overview",
+    "https://learn.microsoft.com/en-us/security/zero-trust/deploy/identity",
     "https://learn.microsoft.com/en-us/security/zero-trust/deploy/overview",
     "https://learn.microsoft.com/en-us/security/zero-trust/implement-overview",
     "https://learn.microsoft.com/en-us/security/zero-trust/microsoft-reference-architecture",
@@ -24065,279 +24455,12 @@
     "https://learn.microsoft.com/en-us/windows/deployment/windows-autopatch/overview/windows-autopatch-overview",
     "https://learn.microsoft.com/en-us/windows/desktop/sysinfo/registry-hives",
     "https://learn.microsoft.com/en-us/windows/project-rome/",
+    "https://learn.microsoft.com/en-us/windows/security/identity-protection/hello-for-business/hello-identity-verification",
     "https://learn.microsoft.com/en-us/windows/whats-new/extended-security-updates",
     "https://learn.microsoft.com/en-us/windows/win32/appxpkg/windows-desktop-application-program",
     "https://learn.microsoft.com/en-us/windows/win32/wer/windows-error-reporting"
   ],
   "queue": [
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/aks/workload-identity-overview",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/workload-id/workload-identity-federation-create-trust-user-assigned-managed-identity",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/agent-id/agent-users",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/agent-id/identity-platform/what-is-agent-id-platform",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/lighthouse/concepts/cloud-solution-provider",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/agent-id/agent-oauth-protocols",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/agent-optimization",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/agent-id/integrate-aws-bedrock-agent",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/agent-id/manage-agent-identities-admin",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/id-protection/id-protection-dashboard",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/concept-traffic-forwarding",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/best-practices-concept",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/agentidentityblueprint",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/delegated-access-primer",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/grant-admin-consent",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/howto-add-app-roles-in-apps",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-client-creds-grant-flow",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/howto-add-app-roles-in-apps",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/permissions-consent-overview",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/scopes-oidc",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/whatis-phs",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-pta",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/whatis-fed",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/architecture/resilience-in-infrastructure",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/architecture/identity/identity-get-started",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-staged-rollout",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-password-hash-synchronization",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-pta",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/services-in-china/services-in-china",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/fundamentals/data-storage-eu",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/security/zero-trust/deploy/identity",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-authentication-passkeys-fido2",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-plan-prerequisites-phishing-resistant-passwordless-authentication",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-writeback",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/windows/security/identity-protection/hello-for-business/hello-identity-verification",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-plan-prerequisites-phishing-resistant-passwordless-authentication",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/plan-sso-deployment",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/tutorial-manage-certificates-for-federated-single-sign-on",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/application-properties",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/devices/concept-device-registration",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/plan-cloud-sync-topologies",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/plan-cloud-sync-topologies",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/hybrid/whatis-hybrid-identity",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/whatis-phs",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/security/fundamentals/identity-management-overview",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/app-proxy/application-proxy-add-on-premises-application",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-pta",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-sso-faq",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/app-provisioning/on-premises-application-provisioning-architecture",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/architecture/1-secure-access-posture",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/architecture/2-secure-access-current-state",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/architecture/3-secure-access-plan",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/identity-network-access-overview/",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-change-default-settings",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/privileged-roles-permissions",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/overview-monitoring-health",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/whatis-azure-ad-connect",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/tshoot-connect-sync-errors",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-sync-configure-filtering",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/plan-connect-design-concepts",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-howitworks",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-staged-rollout",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-install-automatic-upgrade",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-fed-whatis",
-      "depth": 3
-    },
     {
       "url": "https://learn.microsoft.com/en-us/entra/identity/hybrid/whatis-hybrid-identity",
       "depth": 3
@@ -28393,8 +28516,8 @@
   ],
   "last_batch": {
     "attempted": 36,
-    "documents_total": 2427,
-    "queued": 1080,
+    "documents_total": 2463,
+    "queued": 1013,
     "failures": []
   }
 }
