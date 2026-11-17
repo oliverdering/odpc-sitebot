@@ -351,8 +351,9 @@ function mount(){
  if(!dock||!playButton||!stopButton||!home)return false;
  playButton.setAttribute('aria-label','SmartGuide starten');playButton.title='SmartGuide starten';
  stopButton.setAttribute('aria-label','SmartGuide stoppen');stopButton.title='SmartGuide stoppen';
- home.href='https://odpc.de/';home.setAttribute('aria-label','Zur ODPC-Startseite');home.title='Zur ODPC-Startseite';
- home.onclick=null;
+ var isHome=(window.location.pathname.replace(/\/+$/,'')==='');
+ home.href=isHome?'#top':'https://odpc.de/';home.setAttribute('aria-label',isHome?'Zum Seitenanfang':'Zur ODPC-Startseite');home.title=isHome?'Zum Seitenanfang':'Zur ODPC-Startseite';
+ home.onclick=isHome?function(e){e.preventDefault();window.scrollTo({top:0,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'})}:null;
  var wa=dock.querySelector('.odpc-wa-sticky,#odpc-hm-v4-wa,.odpc-hm-v4-wa');
  if(wa&&!wa.querySelector('.odpc-smartguide-wa-icon')){
   wa.setAttribute('aria-label','WhatsApp Business');wa.title='WhatsApp Business';
