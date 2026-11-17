@@ -44,6 +44,15 @@ def summarize_release_notes(raw):
     topics=[name for name,pattern in keywords.items() if re.search(pattern,clean,re.I)]
     return {"excerpt":clean[:1200],"sha256":hashlib.sha256(raw.encode()).hexdigest(),"topics":topics}
 
+def release_markers(issues):
+    """Dedup markers (drol-release:owner/repo:tag) already present in issue bodies."""
+    return {marker for issue in issues
+            for marker in re.findall(r"drol-release:[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+:[^\s<>]+",issue.get("body") or "")}
+def quote_references(text):
+    """Put @mentions and owner/repo#123 references in code spans, so the copied release notes
+    don't notify upstream people or add cross-references to upstream issues and PRs."""
+    return re.sub(r"(?<![\w`])(@[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?(?:/[A-Za-z0-9_.-]+)?|[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+#\d+|#\d+)\b",
+                  r"`\1`",text)
 def main():
     out=[]
     existing_issues=[]
@@ -55,8 +64,7 @@ def main():
             batch=request(f"{API}/repos/{target}/issues?state=all&per_page=100&page={page}")
             existing_issues.extend(i for i in batch if "pull_request" not in i)
             if len(batch)<100:break
-    known_markers={marker for issue in existing_issues
-                   for marker in re.findall(r"drol-release:[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+:[^\\s<>]+",issue.get("body") or "")}
+    known_markers=release_markers(existing_issues)
     for product,repo in REPOS.items():
         try:
             release=request(f"{API}/repos/{repo}/releases/latest")
@@ -74,16 +82,16 @@ def main():
                 title=f"[D.R.O.L. Review] {product} {tag}"
                 if marker not in known_markers:
                     topic_label=", ".join(notes["topics"]) or "keine"
-                    excerpt=notes["excerpt"][:600]
-                    body=(f"Automatisch entdeckter Software-Release-Kandidat.\\n\\n"
-                          f"- Projekt: {product}\\n- Upstream: {repo}\\n- Version: {tag}\\n"
-                          f"- Primärquelle: {url}\\n- Automatisch erkannte Themen (E0): {topic_label}\\n"
-                          f"- Auszug aus Release Notes (unverifiziert): {excerpt}\\n"
-                          f"- Veröffentlicht: {release.get('published_at') or 'unbekannt'}\\n"
-                          f"- Evidenz: E0 / UNREVIEWED\\n- Modell- und Firmware-Kompatibilität: UNKNOWN\\n\\n"
+                    excerpt=quote_references(notes["excerpt"][:600])
+                    body=(f"Automatisch entdeckter Software-Release-Kandidat.\n\n"
+                          f"- Projekt: {product}\n- Upstream: {repo}\n- Version: {tag}\n"
+                          f"- Primärquelle: {url}\n- Automatisch erkannte Themen (E0): {topic_label}\n"
+                          f"- Auszug aus Release Notes (unverifiziert): {excerpt}\n"
+                          f"- Veröffentlicht: {release.get('published_at') or 'unbekannt'}\n"
+                          f"- Evidenz: E0 / UNREVIEWED\n- Modell- und Firmware-Kompatibilität: UNKNOWN\n\n"
                           "Prüfauftrag: offizielle Release Notes lesen; sicherheitsrelevante Änderungen, "
                           "API-Brüche und betroffene Versionen prüfen. Erst nach redaktioneller Prüfung "
-                          "als Fakten in die D.R.O.L.-Datenbank übernehmen.\\n\\n"
+                          "als Fakten in die D.R.O.L.-Datenbank übernehmen.\n\n"
                           f"<!-- {marker} -->")
                     request(f"{API}/repos/{target}/issues","POST",{"title":title,"body":body})
                     known_markers.add(marker)
