@@ -22341,6 +22341,358 @@
       "mapped_tracks": [
         "SC-300"
       ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/migrate-applications-from-secrets",
+      "sha256": "1df2c96e52d4ed2d1d2b96342977b6ac2d839860a6edd42375bd4e86e2a8b5f7",
+      "captured_at": "2026-11-18T10:27:42.889931+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/how-to-add-credentials",
+      "sha256": "4f0149940eda6d64722844b2b4ab59c12289008fd03e1e1e53400102ab11d54d",
+      "captured_at": "2026-11-18T10:27:43.036888+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/certificatebasedapplicationconfiguration",
+      "sha256": "c81adc0450c7044f428467ab5ddcc14b261f18da2b1e1f8fe363d66defe4eb82",
+      "captured_at": "2026-11-18T10:27:43.298143+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/applicationauthenticationmethodpolicy",
+      "sha256": "b306adcd915767e071fceaf06bae0270683558abdbc81278309b22dfefa5d27a",
+      "captured_at": "2026-11-18T10:27:43.509002+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/tutorial-enforce-secret-standards",
+      "sha256": "726d699600e603e063fcfd0fb92938c374d0cbc9b88c04b1ed3ec47ee0e15763",
+      "captured_at": "2026-11-18T10:27:43.614648+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/reference-audit-activities",
+      "sha256": "89bb7799613fbe6b3bf4ed7985269605c56896fff2da33ad62c7ef5889f15597",
+      "captured_at": "2026-11-18T10:27:43.844745+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/protected-actions-add",
+      "sha256": "2366826eeae8d76efdbe3294bae174506de8f713fc62fc7d48d240d53f7f5278",
+      "captured_at": "2026-11-18T10:27:43.998876+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/best-practices",
+      "sha256": "b62a4252749de6b9b55e381ad23ec7e9dcb7e356d60213157771231c6486e11b",
+      "captured_at": "2026-11-18T10:27:44.137555+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/howto-configure-app-instance-property-locks",
+      "sha256": "571cbb3c8e3fe235956147cd166d0423e4e810a3d5b29ad207748c4222c4b097",
+      "captured_at": "2026-11-18T10:27:44.365210+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/howto-conditional-access-session-lifetime",
+      "sha256": "15f12517b610378c4aef2a47406989f8699d24a0cbf4f06e84f862e0967ee9bb",
+      "captured_at": "2026-11-18T10:27:44.499946+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/policy-guests-mfa-strength",
+      "sha256": "4311e92b2ab1d3b573fd49709ba4a118ed539dc9f28e740296135f5e0a2dca1f",
+      "captured_at": "2026-11-18T10:27:44.648797+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/external-id/b2b-sponsors",
+      "sha256": "b272837d7a0f36d2cd5034f3de7649d4cd646594e794bb7f2c31e10ba74dd531",
+      "captured_at": "2026-11-18T10:27:44.780252+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/devices/assign-local-admin",
+      "sha256": "b0137033141cb1d873a6df0e83cb470290c501ae68e1ed84426c4d2ef59912de",
+      "captured_at": "2026-11-18T10:27:44.867369+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/devices/manage-device-identities",
+      "sha256": "2e08ff66d00b1f7213c072b9935c466c1edd5f8f3b9e7d8b815646403ce760c0",
+      "captured_at": "2026-11-18T10:27:45.008785+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/external-id/tenant-restrictions-v2",
+      "sha256": "60165d1256a314c69d476aef268b9f692646b8bfbfe10089a08bdf10d8234a99",
+      "captured_at": "2026-11-18T10:27:45.246945+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/reference-web-content-filtering-categories",
+      "sha256": "9c1fb071c1c71a1203af2553ce9a17e776d2b410fe9a1e100ad8802caa69ed6e",
+      "captured_at": "2026-11-18T10:27:45.377800+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-transport-layer-security",
+      "sha256": "24ae6b65acc39efc126191b5366ac0d359419b98f99e7d2235570b75d065fe47",
+      "captured_at": "2026-11-18T10:27:45.564274+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/networkaccess-tlsinspectionpolicy",
+      "sha256": "ab6ef0bbfdb9badd3e5157a873ff76db2b9e9486040652eced5fef366e652594",
+      "captured_at": "2026-11-18T10:27:46.087615+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/scripts/powershell-open-secure-sockets-layer",
+      "sha256": "06eb33e8ba1a11830f4d10c9d5072f627944f6fa1981bcbbd3f8a3732f6570ca",
+      "captured_at": "2026-11-18T10:27:46.235128+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/troubleshoot-transport-layer-security",
+      "sha256": "93b8fbe791af006e858545784022d9be19d225db0ca8d5526dd74aa152eae28d",
+      "captured_at": "2026-11-18T10:27:46.350731+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/faq-transport-layer-security",
+      "sha256": "e14dcbd74f2ec6c46cdc08830a36f30a796f6fc158100f840dc90b5e1df6cfb7",
+      "captured_at": "2026-11-18T10:27:46.469482+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-ai-prompt-shield",
+      "sha256": "95a9468bc1d12f64be95b4407d4fd45687b94c8885fa924125245a3e9209ab43",
+      "captured_at": "2026-11-18T10:27:46.783964+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-configure-cloud-firewall",
+      "sha256": "1394289f59df0f71b8d2ab469241f324c140280e1f98e0cc6fbf52847f35b075",
+      "captured_at": "2026-11-18T10:27:46.943354+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-manage-private-access-profile",
+      "sha256": "3969c847f1329570f400af91962624101191f7965132e9ae5485baca7f51c57b",
+      "captured_at": "2026-11-18T10:27:47.134175+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-manage-users-groups-assignment",
+      "sha256": "6a10b89a020d7ed637790552add28dd02bae05f6287d722bfefceb9ac5946a58",
+      "captured_at": "2026-11-18T10:27:47.516629+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/troubleshoot-connectors",
+      "sha256": "c4dc04e44cf721e3c938cf12e1b670874e5684b0eb035981a21d376696eb2906",
+      "captured_at": "2026-11-18T10:27:47.852865+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/app-proxy/application-proxy-high-availability-load-balancing",
+      "sha256": "0eba8669d129d9a9647fd5d13434a3a5a20dc353b0672a132151b3bd273ffb40",
+      "captured_at": "2026-11-18T10:27:47.977209+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/enable-intelligent-local-access",
+      "sha256": "750e4257cf8ae1dba46daa72571ef3bbf8f5ad73716c8596223625fbc7b399e0",
+      "captured_at": "2026-11-18T10:27:48.108264+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-target-resource-private-access-apps",
+      "sha256": "687392b1a163e33fd659055b378149e942e0d34092d543eaf523d95f46611abc",
+      "captured_at": "2026-11-18T10:27:48.234510+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-deploy-phishing-resistant-passwordless-authentication",
+      "sha256": "2c7e5aaea21ab5db0558b4a22afc4c6fb88c06fcc3b3155f93bb5d7fa238d979",
+      "captured_at": "2026-11-18T10:27:48.407341+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-configure-domain-controllers",
+      "sha256": "84bb01d92348c4cba95f3513ff6e9920bade0a97a46cb3b127afd7808472ccd0",
+      "captured_at": "2026-11-18T10:27:48.581681+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-approval-workflow",
+      "sha256": "6d5aa2b4fe823be89b76fd96e31a487c8901e399ce25f50b85af31718200bcbd",
+      "captured_at": "2026-11-18T10:27:48.724062+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/concept-usage-insights-report",
+      "sha256": "e44be07f383e4b76faaf0b7c74b096d777d092c41187793616633690f459cb0d",
+      "captured_at": "2026-11-18T10:27:48.878619+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/delegate-app-roles",
+      "sha256": "53853c688e9d26f9b6263e6fd3d86445218a556776f61fb6c8c4d6db00a36310",
+      "captured_at": "2026-11-18T10:27:49.006744+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/serviceprincipal-delete",
+      "sha256": "8749e082196db0e47ba444dfe6fe8482eff57179ee6c286f88e9e8f00d02049a",
+      "captured_at": "2026-11-18T10:27:49.365251+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/graph-api/rsc/preapproval-instruction-docs",
+      "sha256": "6bcc925c54a3ec1f77115eaf78b5056b3cad3bb9988cf14fbc6d065c7233c526",
+      "captured_at": "2026-11-18T10:27:49.522986+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
     }
   ],
   "seen": [
@@ -22650,6 +23002,7 @@
     "https://learn.microsoft.com/en-us/entra/external-id/allow-deny-list",
     "https://learn.microsoft.com/en-us/entra/external-id/authentication-conditional-access",
     "https://learn.microsoft.com/en-us/entra/external-id/b2b-direct-connect-overview",
+    "https://learn.microsoft.com/en-us/entra/external-id/b2b-sponsors",
     "https://learn.microsoft.com/en-us/entra/external-id/cross-cloud-settings",
     "https://learn.microsoft.com/en-us/entra/external-id/cross-tenant-access-overview",
     "https://learn.microsoft.com/en-us/entra/external-id/cross-tenant-access-settings-b2b-collaboration",
@@ -22669,6 +23022,7 @@
     "https://learn.microsoft.com/en-us/entra/external-id/hybrid-cloud-to-on-premises",
     "https://learn.microsoft.com/en-us/entra/external-id/leave-the-organization",
     "https://learn.microsoft.com/en-us/entra/external-id/tenant-configurations",
+    "https://learn.microsoft.com/en-us/entra/external-id/tenant-restrictions-v2",
     "https://learn.microsoft.com/en-us/entra/external-id/use-dynamic-groups",
     "https://learn.microsoft.com/en-us/entra/external-id/user-properties",
     "https://learn.microsoft.com/en-us/entra/external-id/what-is-b2b",
@@ -22723,10 +23077,15 @@
     "https://learn.microsoft.com/en-us/entra/global-secure-access/concept-traffic-forwarding",
     "https://learn.microsoft.com/en-us/entra/global-secure-access/concept-universal-conditional-access",
     "https://learn.microsoft.com/en-us/entra/global-secure-access/concept-universal-continuous-access-evaluation",
+    "https://learn.microsoft.com/en-us/entra/global-secure-access/enable-intelligent-local-access",
+    "https://learn.microsoft.com/en-us/entra/global-secure-access/faq-transport-layer-security",
     "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-ai-prompt-injection-protection",
+    "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-ai-prompt-shield",
     "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-application-discovery",
     "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-compliant-network",
+    "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-configure-cloud-firewall",
     "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-configure-connectors",
+    "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-configure-domain-controllers",
     "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-configure-kerberos-sso",
     "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-configure-per-app-access",
     "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-configure-quick-access",
@@ -22739,10 +23098,14 @@
     "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-install-windows-client",
     "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-manage-internet-access-profile",
     "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-manage-microsoft-profile",
+    "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-manage-private-access-profile",
     "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-manage-remote-network-device-links",
+    "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-manage-users-groups-assignment",
     "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-network-content-filtering",
     "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-secure-web-ai-gateway-agents",
     "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-source-ip-restoration",
+    "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-target-resource-private-access-apps",
+    "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-transport-layer-security",
     "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-transport-layer-security-settings",
     "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-universal-tenant-restrictions",
     "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-view-enriched-logs",
@@ -22755,8 +23118,12 @@
     "https://learn.microsoft.com/en-us/entra/global-secure-access/reference-points-of-presence",
     "https://learn.microsoft.com/en-us/entra/global-secure-access/reference-remote-network-configurations",
     "https://learn.microsoft.com/en-us/entra/global-secure-access/reference-role-based-permissions",
+    "https://learn.microsoft.com/en-us/entra/global-secure-access/reference-web-content-filtering-categories",
     "https://learn.microsoft.com/en-us/entra/global-secure-access/remote-network-resilience",
     "https://learn.microsoft.com/en-us/entra/global-secure-access/scripts/powershell-active-directory-certificate-service",
+    "https://learn.microsoft.com/en-us/entra/global-secure-access/scripts/powershell-open-secure-sockets-layer",
+    "https://learn.microsoft.com/en-us/entra/global-secure-access/troubleshoot-connectors",
+    "https://learn.microsoft.com/en-us/entra/global-secure-access/troubleshoot-transport-layer-security",
     "https://learn.microsoft.com/en-us/entra/global-secure-access/tutorial-internet-access-tls-inspection",
     "https://learn.microsoft.com/en-us/entra/global-secure-access/tutorial-private-access-app-segmentation",
     "https://learn.microsoft.com/en-us/entra/global-secure-access/tutorial-private-access-vpn-replacement",
@@ -22818,6 +23185,7 @@
     "https://learn.microsoft.com/en-us/entra/id-governance/my-access-portal-overview",
     "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/",
     "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/concept-pim-for-groups",
+    "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-approval-workflow",
     "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure",
     "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review",
     "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-deployment-plan",
@@ -22860,8 +23228,10 @@
     "https://learn.microsoft.com/en-us/entra/identity-platform/concept-native-authentication-web-fallback",
     "https://learn.microsoft.com/en-us/entra/identity-platform/delegated-access-primer",
     "https://learn.microsoft.com/en-us/entra/identity-platform/developer-glossary",
+    "https://learn.microsoft.com/en-us/entra/identity-platform/how-to-add-credentials",
     "https://learn.microsoft.com/en-us/entra/identity-platform/howto-add-app-roles-in-apps",
     "https://learn.microsoft.com/en-us/entra/identity-platform/howto-add-branding-in-apps",
+    "https://learn.microsoft.com/en-us/entra/identity-platform/howto-configure-app-instance-property-locks",
     "https://learn.microsoft.com/en-us/entra/identity-platform/howto-convert-app-to-be-multi-tenant",
     "https://learn.microsoft.com/en-us/entra/identity-platform/id-tokens",
     "https://learn.microsoft.com/en-us/entra/identity-platform/msal-client-applications",
@@ -22895,6 +23265,7 @@
     "https://learn.microsoft.com/en-us/entra/identity/app-provisioning/user-provisioning",
     "https://learn.microsoft.com/en-us/entra/identity/app-provisioning/what-is-hr-driven-provisioning",
     "https://learn.microsoft.com/en-us/entra/identity/app-proxy/application-proxy-add-on-premises-application",
+    "https://learn.microsoft.com/en-us/entra/identity/app-proxy/application-proxy-high-availability-load-balancing",
     "https://learn.microsoft.com/en-us/entra/identity/app-proxy/conceptual-deployment-plan",
     "https://learn.microsoft.com/en-us/entra/identity/app-proxy/conceptual-sso-apps",
     "https://learn.microsoft.com/en-us/entra/identity/app-proxy/overview-what-is-app-proxy",
@@ -22913,6 +23284,7 @@
     "https://learn.microsoft.com/en-us/entra/identity/authentication/feature-availability",
     "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-account-recovery-for-users",
     "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-authentication-passkeys-fido2",
+    "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-deploy-phishing-resistant-passwordless-authentication",
     "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-migrate-mfa-server-to-azure-mfa",
     "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-plan-prerequisites-phishing-resistant-passwordless-authentication",
     "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-register-passkey",
@@ -22942,6 +23314,7 @@
     "https://learn.microsoft.com/en-us/entra/identity/conditional-access/howto-conditional-access-policy-all-users-mfa",
     "https://learn.microsoft.com/en-us/entra/identity/conditional-access/howto-conditional-access-policy-azure-management",
     "https://learn.microsoft.com/en-us/entra/identity/conditional-access/howto-conditional-access-policy-block-legacy",
+    "https://learn.microsoft.com/en-us/entra/identity/conditional-access/howto-conditional-access-session-lifetime",
     "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview",
     "https://learn.microsoft.com/en-us/entra/identity/conditional-access/plan-conditional-access",
     "https://learn.microsoft.com/en-us/entra/identity/conditional-access/policy-admin-phish-resistant-mfa",
@@ -22950,13 +23323,16 @@
     "https://learn.microsoft.com/en-us/entra/identity/conditional-access/policy-alt-all-users-compliant-hybrid-or-mfa",
     "https://learn.microsoft.com/en-us/entra/identity/conditional-access/policy-block-by-location",
     "https://learn.microsoft.com/en-us/entra/identity/conditional-access/policy-block-legacy-authentication",
+    "https://learn.microsoft.com/en-us/entra/identity/conditional-access/policy-guests-mfa-strength",
     "https://learn.microsoft.com/en-us/entra/identity/conditional-access/policy-old-require-mfa-admin",
     "https://learn.microsoft.com/en-us/entra/identity/conditional-access/policy-old-require-mfa-azure-mgmt",
     "https://learn.microsoft.com/en-us/entra/identity/conditional-access/policy-risk-based-sign-in",
     "https://learn.microsoft.com/en-us/entra/identity/conditional-access/terms-of-use",
     "https://learn.microsoft.com/en-us/entra/identity/conditional-access/workload-identity",
+    "https://learn.microsoft.com/en-us/entra/identity/devices/assign-local-admin",
     "https://learn.microsoft.com/en-us/entra/identity/devices/concept-device-registration",
     "https://learn.microsoft.com/en-us/entra/identity/devices/concept-hybrid-join",
+    "https://learn.microsoft.com/en-us/entra/identity/devices/manage-device-identities",
     "https://learn.microsoft.com/en-us/entra/identity/devices/manage-stale-devices",
     "https://learn.microsoft.com/en-us/entra/identity/devices/overview",
     "https://learn.microsoft.com/en-us/entra/identity/devices/plan-device-deployment",
@@ -22978,8 +23354,10 @@
     "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/assign-user-or-group-access-portal",
     "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/custom-security-attributes-apps",
     "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/grant-admin-consent",
+    "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/migrate-applications-from-secrets",
     "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/myapps-overview",
     "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/plan-sso-deployment",
+    "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/tutorial-enforce-secret-standards",
     "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/tutorial-manage-certificates-for-federated-single-sign-on",
     "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/what-is-application-management",
     "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/what-is-single-sign-on",
@@ -23022,6 +23400,7 @@
     "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/concept-provisioning-logs",
     "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/concept-sign-ins",
     "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/concept-sign-ups",
+    "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/concept-usage-insights-report",
     "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/howto-access-activity-logs",
     "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs",
     "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/howto-manage-inactive-user-accounts",
@@ -23030,6 +23409,7 @@
     "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/overview-monitoring-health",
     "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/overview-recommendations",
     "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/plan-monitoring-and-reporting",
+    "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/reference-audit-activities",
     "https://learn.microsoft.com/en-us/entra/identity/multi-tenant-organizations/",
     "https://learn.microsoft.com/en-us/entra/identity/multi-tenant-organizations/cross-tenant-synchronization-configure",
     "https://learn.microsoft.com/en-us/entra/identity/multi-tenant-organizations/cross-tenant-synchronization-overview",
@@ -23037,14 +23417,17 @@
     "https://learn.microsoft.com/en-us/entra/identity/multi-tenant-organizations/overview",
     "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/admin-units-restricted-management",
     "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/administrative-units",
+    "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/best-practices",
     "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/concept-understand-roles",
     "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/custom-create",
     "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/custom-overview",
+    "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/delegate-app-roles",
     "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/delegate-by-task",
     "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/groups-concept",
     "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/manage-roles-portal",
     "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference",
     "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/privileged-roles-permissions",
+    "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/protected-actions-add",
     "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/security-emergency-access",
     "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/security-planning",
     "https://learn.microsoft.com/en-us/entra/identity/saas-apps/dropboxforbusiness-provisioning-tutorial",
@@ -23404,6 +23787,7 @@
     "https://learn.microsoft.com/en-us/graph/api/resources/agentuser",
     "https://learn.microsoft.com/en-us/graph/api/resources/agreementacceptance",
     "https://learn.microsoft.com/en-us/graph/api/resources/application",
+    "https://learn.microsoft.com/en-us/graph/api/resources/applicationauthenticationmethodpolicy",
     "https://learn.microsoft.com/en-us/graph/api/resources/applications-api-overview",
     "https://learn.microsoft.com/en-us/graph/api/resources/appliedauthenticationeventlistener",
     "https://learn.microsoft.com/en-us/graph/api/resources/appliedconditionalaccesspolicy",
@@ -23444,6 +23828,7 @@
     "https://learn.microsoft.com/en-us/graph/api/resources/call",
     "https://learn.microsoft.com/en-us/graph/api/resources/callrecords-api-overview",
     "https://learn.microsoft.com/en-us/graph/api/resources/callrecords-callrecord",
+    "https://learn.microsoft.com/en-us/graph/api/resources/certificatebasedapplicationconfiguration",
     "https://learn.microsoft.com/en-us/graph/api/resources/changetrackedentity",
     "https://learn.microsoft.com/en-us/graph/api/resources/channel",
     "https://learn.microsoft.com/en-us/graph/api/resources/chat",
@@ -23618,6 +24003,7 @@
     "https://learn.microsoft.com/en-us/graph/api/resources/mobiledevicemanagementpolicy",
     "https://learn.microsoft.com/en-us/graph/api/resources/multivaluelegacyextendedproperty",
     "https://learn.microsoft.com/en-us/graph/api/resources/muteparticipantoperation",
+    "https://learn.microsoft.com/en-us/graph/api/resources/networkaccess-tlsinspectionpolicy",
     "https://learn.microsoft.com/en-us/graph/api/resources/note",
     "https://learn.microsoft.com/en-us/graph/api/resources/notebook",
     "https://learn.microsoft.com/en-us/graph/api/resources/oauth2permissiongrant",
@@ -23791,6 +24177,7 @@
     "https://learn.microsoft.com/en-us/graph/api/security-casemanagement-case-post-activities",
     "https://learn.microsoft.com/en-us/graph/api/security-list-workbooks",
     "https://learn.microsoft.com/en-us/graph/api/security-security-runhuntingquery",
+    "https://learn.microsoft.com/en-us/graph/api/serviceprincipal-delete",
     "https://learn.microsoft.com/en-us/graph/api/serviceprincipal-delta",
     "https://learn.microsoft.com/en-us/graph/api/serviceprincipal-update",
     "https://learn.microsoft.com/en-us/graph/api/sharepointbrowsesession-browse",
@@ -24487,6 +24874,7 @@
     "https://learn.microsoft.com/en-us/microsoftteams/platform/get-started/code-samples",
     "https://learn.microsoft.com/en-us/microsoftteams/platform/get-started/get-started-overview",
     "https://learn.microsoft.com/en-us/microsoftteams/platform/graph-api/import-messages/import-external-messages-to-teams",
+    "https://learn.microsoft.com/en-us/microsoftteams/platform/graph-api/rsc/preapproval-instruction-docs",
     "https://learn.microsoft.com/en-us/microsoftteams/platform/graph-api/rsc/resource-specific-consent",
     "https://learn.microsoft.com/en-us/microsoftteams/platform/m365-apps/prerequisites",
     "https://learn.microsoft.com/en-us/microsoftteams/platform/messaging-extensions/what-are-messaging-extensions",
@@ -24845,362 +25233,6 @@
     "https://learn.microsoft.com/en-us/windows/win32/wer/windows-error-reporting"
   ],
   "queue": [
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/migrate-applications-from-secrets",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/how-to-add-credentials",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/certificatebasedapplicationconfiguration",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/applicationauthenticationmethodpolicy",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/tutorial-enforce-secret-standards",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/custom-create",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/applicationauthenticationmethodpolicy",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/certificatebasedapplicationconfiguration",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/custom-create",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/tutorial-enforce-secret-standards",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/reference-audit-activities",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/protected-actions-add",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/protected-actions-add",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/external-id/allow-deny-list",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/best-practices",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/howto-configure-app-instance-property-locks",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/howto-conditional-access-session-lifetime",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/policy-guests-mfa-strength",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/users/users-restrict-guest-permissions",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/external-id/b2b-sponsors",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/users/clean-up-stale-guest-accounts",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-organization",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-create",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-approval-policy",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-request-policy",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-reviews-create",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/devices/assign-local-admin",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/devices/manage-device-identities",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-assignment-network",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/external-id/tenant-restrictions-v2",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-continuous-access-evaluation",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/concept-traffic-dashboard",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/fundamentals/whats-new",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-manage-internet-access-profile",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/concept-traffic-forwarding",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/reference-web-content-filtering-categories",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/reference-web-content-filtering-categories",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-manage-internet-access-profile",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-transport-layer-security",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/networkaccess-tlsinspectionpolicy",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-transport-layer-security",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-transport-layer-security-settings",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/scripts/powershell-active-directory-certificate-service",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/scripts/powershell-open-secure-sockets-layer",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/troubleshoot-transport-layer-security",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-transport-layer-security",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/faq-transport-layer-security",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-session",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-manage-internet-access-profile",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-transport-layer-security-settings",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-ai-prompt-shield",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-configure-cloud-firewall",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-manage-internet-access-profile",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-transport-layer-security",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-ai-prompt-shield",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-configure-cloud-firewall",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/concept-microsoft-traffic-profile",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/external-id/tenant-restrictions-v2",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/concept-clients",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/concept-clients",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-manage-private-access-profile",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-manage-internet-access-profile",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-manage-users-groups-assignment",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/troubleshoot-connectors",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/app-proxy/application-proxy-high-availability-load-balancing",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/troubleshoot-connectors",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/concept-private-access",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/enable-intelligent-local-access",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-manage-private-access-profile",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/concept-private-access",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-target-resource-private-access-apps",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-deploy-phishing-resistant-passwordless-authentication",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-configure-domain-controllers",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-configure-domain-controllers",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-change-default-settings",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-approval-workflow",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-plan-prerequisites-phishing-resistant-passwordless-authentication",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-strengths",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/concept-usage-insights-report",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/delegate-app-roles",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/serviceprincipal-update",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/serviceprincipal-delete",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/serviceprincipal-update",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/v2-app-types",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/serviceprincipal-delete",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/reply-url",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/reply-url",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/reply-url",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoftteams/platform/graph-api/rsc/preapproval-instruction-docs",
-      "depth": 3
-    },
     {
       "url": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-resource-roles-assign-roles",
       "depth": 3
@@ -28652,8 +28684,8 @@
   ],
   "last_batch": {
     "attempted": 36,
-    "documents_total": 2499,
-    "queued": 951,
+    "documents_total": 2535,
+    "queued": 862,
     "failures": []
   }
 }
