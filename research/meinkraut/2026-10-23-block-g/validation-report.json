@@ -1,0 +1,22 @@
+{
+  "status": "PASS_STAGING",
+  "productionImport": false,
+  "candidateCount": 1,
+  "createdToday": 6,
+  "errors": [],
+  "blockedFromImport": [
+    {
+      "id": "mk-research-20261023-al-tresova-tarator",
+      "unmapped": [
+        "white vinegar"
+      ],
+      "issues": [
+        "Klären, ob die 2 TL Öl zum Beträufeln zusätzlich zu den 2 EL der Zutatenliste gemeint sind oder daraus entnommen werden.",
+        "Eine vor Import eindeutige Knoblauchzehen-Einheit für Darstellung, Kopie und Skalierung verwenden; Stück-Container nicht live übernehmen.",
+        "Essigidentität beziehungsweise Produktdetails prüfen und abbilden; keine unbelegte 5-%- oder Weinherkunftsangabe.",
+        "Allergenbewertung für das konkrete Essigprodukt abschließen; Sulfite und Spuren nicht aus fehlenden Angaben ausschließen."
+      ],
+      "reason": "research_pending"
+    }
+  ]
+}

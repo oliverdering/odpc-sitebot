@@ -1,0 +1,54 @@
+{
+  "schemaVersion":1,
+  "batchId":"oxana-research-2026-10-23-g",
+  "createdAt":"2026-10-23",
+  "productionImport":false,
+  "dailyCandidateCountIncludingOpenBranches":7,
+  "dailyCountNote":"Fünf Tageskandidaten im Hauptbranch, SI im Entwurfs-PR 10 und dieser AL-Kandidat; insgesamt sieben.",
+  "candidates":[{
+    "id":"mk-research-20261023-al-tresova-tarator",
+    "name":"Tarator – Mimoza Tresovas Joghurt-Gurken-Dill-Sauce",
+    "kind":"Frische Würzsauce / Dip",
+    "countries":["AL"],
+    "region":"Albanische Autorenvariante aus Mimis Recipes",
+    "description":"Frische Joghurtsauce mit Gurke, Knoblauch, Dill und Essig.",
+    "editorialType":"Veröffentlichte Autorenvariante",
+    "reviewStatus":"Originalquelle, Mengenliste und albanischer Küchenbezug geprüft; Ölgesamtmenge, Essigreferenz und Knoblauch-Einheit vor Import klären. Unverkostet.",
+    "ingredients":[
+      {"sourceName":"plain yogurt","ingredient":"joghurt-natur","amount":2,"unit":"Tasse","sourceUnit":"cups","preparation":"Naturjoghurt; Quelle nennt kein Tassenvolumen und kein Grammgewicht."},
+      {"sourceName":"medium cucumber","ingredient":"gurke","amount":1,"unit":"Stück","preparation":"Mittelgroß, ungeschält, entkernt und fein gerieben; keine Grammumrechnung."},
+      {"sourceName":"sea salt","ingredient":"meersalz","amount":1,"unit":"TL","preparation":"Quellmenge ohne unbelegtes Grammgewicht."},
+      {"sourceName":"fresh dill chopped","ingredient":"dill-frisch","amount":2,"unit":"EL","preparation":"Frisch und gehackt."},
+      {"sourceName":"garlic cloves","ingredient":"knoblauch-frisch","amount":2,"unit":"Stück","sourceUnit":"cloves","unitLabel":"Zehen","quantityMeaning":"Zwei Knoblauchzehen, keine ganzen Knollen. Der Staging-Container Stück muss vor Import durch eine eindeutig dargestellte Zehen-Einheit ersetzt werden.","preparation":"Gepresst oder zerdrückt."},
+      {"sourceName":"extra virgin olive oil","ingredient":"olivenol","amount":2,"unit":"EL","preparation":"Nur die Zutatenlistenmenge. Das Verhältnis zu den 2 TL Öl im Servierschritt ist ungeklärt."},
+      {"sourceName":"cold water","ingredient":"wasser","amount":0.25,"unit":"Tasse","sourceFraction":"1/4","sourceUnit":"cup","preparation":"Kalt; Tassenvolumen nicht definiert, keine ml-Umrechnung."},
+      {"sourceName":"white vinegar","ingredient":null,"proposedIngredient":"essig-weiss-unspezifiziert","mappingIssue":"Quelle nennt weder Ausgangsstoff noch Säuregrad. Vorhandener weißer 5-%-Essig und Weißweinessig belegen diese Details nicht.","amount":1,"unit":"TL","preparation":"Weißer Speiseessig laut Quelle; keine Säurekonzentration ergänzt."}
+    ],
+    "methodQuantityNotes":[{"ingredient":"olivenol","amount":2,"unit":"TL","sourceLocation":"Servierschritt 4","includedInIngredientTotal":"unresolved","note":"Quelle nennt 2 TL zum Beträufeln. Nicht zu den 2 EL addiert oder davon abgezogen; Gesamtmenge bleibt bis zur Klärung offen."}],
+    "methodSteps":["Gurke entkernen und fein reiben; Knoblauchzehen pressen oder zerdrücken. Dill frisch hacken.","Die Quelle mischt Gurke, Knoblauch, Salz, Öl und Essig; Joghurt wird getrennt mit kaltem Wasser verrührt und anschließend untergemischt.","Beim Servieren nennt die Quelle weitere 2 TL Öl zum Beträufeln. Ob diese zur Listenmenge gehören, ist offen; vor Veröffentlichung klären.","Mit Dill garnieren und laut Quelle 30 bis 60 Minuten im Kühlschrank kühlen. Frisch und gekühlt behandeln."],
+    "application":"Frischer Dip beziehungsweise Beilage zu gegrilltem Fisch, Fleisch oder Gemüse; keine Trockenmischung.",
+    "serving":"Quelle: vier Portionen. Originale Zutatenlistenmengen in Tassen, Löffeln, einer Gurke und zwei Knoblauchzehen; Ölgesamtmenge ungeklärt. Kein fertiger Gramm- oder ml-Ertrag angegeben.",
+    "massBasis":"Originale Tassen-/Löffel-/Stückangaben; keine Grammumrechnung",
+    "normalization100g":null,
+    "allergenAssessment":{"known":["Milch"],"complete":false,"note":"Milch aus Naturjoghurt sicher abgeleitet. Essigprodukt und mögliche Sulfite produktabhängig prüfen; keine Allergenfrei-Garantie und keine ungeprüfte Sulfitfreiheit behauptet."},
+    "storageNotes":["Frische, gekühlte Zubereitung; Quelle nennt 30 bis 60 Minuten Kühlzeit vor dem Servieren. Keine eigene Haltbarkeitsfrist und keine Vorratsfreigabe ergänzt."],
+    "sources":[
+      {"title":"Yogurt Sauce with Cucumber and Dill (Tarator)","url":"https://www.mimisrecipes.com/recipes/yogurt-sauce-with-cucumber-and-dill-tarator","author":"Mimoza Tresova / Mimis Recipes","accessedAt":"2026-10-23","primarySource":true,"contentChecked":true,"evidenceScope":"Original-Zutatenliste und Methode einschließlich widersprüchlich wirkender Ölverteilung; Quelle ordnet das Rezept ausdrücklich der albanischen Küche zu. Kein Veröffentlichungsdatum auf der gelesenen Seite eindeutig angegeben.","license":"Sachliche Mengen und eigene deutsche Kurzfassung; keine Fotos oder fremden Beschreibungstexte übernommen."},
+      {"title":"About Me & My Passion","url":"https://www.mimisrecipes.com/about","author":"Mimoza Tresova / Mimis Recipes","accessedAt":"2026-10-23","primarySource":true,"contentChecked":true,"evidenceScope":"Eigene Erklärung der Autorin zum albanischen und mediterranen Rezeptprojekt für die Diaspora."}
+    ],
+    "countryEvidence":"Die Originalrezeptseite bezeichnet Tarator als albanische Variante und führt Cuisine Albanian. Die eigene Projektvorstellung belegt den albanischen Küchenkontext. Keine zusätzliche Länderzuordnung nur aus ähnlich klingenden Gerichten übernommen.",
+    "duplicateReview":{"catalogRecipeCount":661,"sameSourceFound":false,"comparisonRecipeIds":["atlas-al-salc-kosi-albanischer-knoblauch-joghurt-dip"],"result":"Bestehender AL-Knoblauch-Joghurt-Dip hat weder Gurke noch Wasser oder Essig und verwendet andere Mengen. Die neue Quelle wurde nicht gefunden; keine zusätzliche Kopie derselben Rezeptur identifiziert."},
+    "scopeNotes":["Frische und ölhaltige Würzsauce, keine Lager-Trockenmischung.","Die im Quelltext beschriebenen alternativen Gemüse sind nicht als zusätzliche Rezeptvarianten erfasst.","Ölgesamtmenge nicht geraten; white vinegar nicht ungeprüft mit Weißweinessig oder einer bestimmten Säurestärke gleichgesetzt."],
+    "openIssues":["Klären, ob die 2 TL Öl zum Beträufeln zusätzlich zu den 2 EL der Zutatenliste gemeint sind oder daraus entnommen werden.","Eine vor Import eindeutige Knoblauchzehen-Einheit für Darstellung, Kopie und Skalierung verwenden; Stück-Container nicht live übernehmen.","Essigidentität beziehungsweise Produktdetails prüfen und abbilden; keine unbelegte 5-%- oder Weinherkunftsangabe.","Allergenbewertung für das konkrete Essigprodukt abschließen; Sulfite und Spuren nicht aus fehlenden Angaben ausschließen."],
+    "readyForImport":false,
+    "importStatus":"research_pending"
+  }],
+  "ingredientProposals":[{
+    "id":"essig-weiss-unspezifiziert","name":"Weißer Speiseessig (Ausgangsstoff und Säuregrad nicht spezifiziert)","group":"Saucen & Fermente","form":"flüssig","allergens":[],
+    "reason":"Die Autorenquelle nennt white vinegar ohne Ausgangsstoff oder Säurekonzentration. Vorhandene spezifische Referenzen würden zusätzliche Details behaupten.",
+    "allergenNote":"Produktabhängige Bewertung offen, insbesondere Sulfite. Leere Liste ist keine Feststellung einer Sulfit- oder Allergenfreiheit; Kandidat bleibt gesperrt.",
+    "notEquivalentTo":["essig-weiss-5","weiweinessig"],
+    "sources":[{"url":"https://www.mimisrecipes.com/recipes/yogurt-sauce-with-cucumber-and-dill-tarator","primarySource":true,"contentChecked":true}],
+    "active":false,"readyForImport":false,"status":"proposal_only"
+  }]
+}
