@@ -1,0 +1,50 @@
+name: HiDrive / Manual verified storage transfer
+
+on:
+  workflow_dispatch:
+    inputs:
+      operation:
+        description: 'Plan only, authenticated probe, connection test, or selected source backup'
+        type: choice
+        default: plan
+        options: [plan, probe, test, backup]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: hidrive-storage
+  cancel-in-progress: false
+
+jobs:
+  transfer:
+    # Keep credentials away from arbitrary branches and all PR events.
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - name: Validate client safety
+        run: python3 -m unittest discover -s integrations/hidrive -p 'test_*.py' -v
+      - name: Offline plan
+        if: inputs.operation == 'plan'
+        run: python3 integrations/hidrive/hidrive_webdav.py plan README.md integrations/hidrive/hidrive_webdav.py
+      - name: Authenticated probe or test
+        if: inputs.operation == 'probe' || inputs.operation == 'test'
+        env:
+          HIDRIVE_USERNAME: ${{ secrets.HIDRIVE_USERNAME }}
+          HIDRIVE_PASSWORD: ${{ secrets.HIDRIVE_PASSWORD }}
+          HIDRIVE_ROOT_PATH: ${{ secrets.HIDRIVE_ROOT_PATH }}
+          HIDRIVE_PRIVATE_TARGET_VERIFIED: ${{ vars.HIDRIVE_PRIVATE_TARGET_VERIFIED }}
+          HIDRIVE_OPERATION: ${{ inputs.operation }}
+        run: python3 integrations/hidrive/hidrive_webdav.py "$HIDRIVE_OPERATION"
+      - name: Back up explicitly selected public source files
+        if: inputs.operation == 'backup'
+        env:
+          HIDRIVE_USERNAME: ${{ secrets.HIDRIVE_USERNAME }}
+          HIDRIVE_PASSWORD: ${{ secrets.HIDRIVE_PASSWORD }}
+          HIDRIVE_ROOT_PATH: ${{ secrets.HIDRIVE_ROOT_PATH }}
+          HIDRIVE_PRIVATE_TARGET_VERIFIED: ${{ vars.HIDRIVE_PRIVATE_TARGET_VERIFIED }}
+        run: python3 integrations/hidrive/hidrive_webdav.py backup README.md integrations/hidrive/hidrive_webdav.py
