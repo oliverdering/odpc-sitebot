@@ -1,0 +1,22 @@
+{
+  "status": "PASS_STAGING",
+  "productionImport": false,
+  "candidateCount": 1,
+  "createdToday": 6,
+  "errors": [],
+  "blockedFromImport": [
+    {
+      "id": "mk-research-20261024-sg-vasun-nonya-curry",
+      "unmapped": [
+        "dried spur chillies"
+      ],
+      "issues": [
+        "Getrocknete Spur-Chili fachlich passend zuordnen.",
+        "Ungefähren Pfefferbereich 13–15 g verlustfrei im Produktionsmodell und in Anzeige/Skalierung unterstützen; keine feste Menge aus der Untergrenze machen.",
+        "Drittel einer kleinen Muskatnuss sowie grüne Kardamomkapseln mit eindeutigen Stückbezeichnungen erhalten.",
+        "Dubletten- und vollständige Allergenprüfung nach Mapping erneut durchführen."
+      ],
+      "reason": "research_pending"
+    }
+  ]
+}

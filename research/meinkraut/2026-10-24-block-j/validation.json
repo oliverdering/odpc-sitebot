@@ -1,0 +1,44 @@
+{
+  "status": "PASS_STAGING_WITH_IMPORT_BLOCKS",
+  "productionImport": false,
+  "candidateCount": 1,
+  "dailyCandidateCountIncludingOpenBranches": 10,
+  "ingredientCount": 11,
+  "mappedCount": 10,
+  "unmappedCount": 1,
+  "rangePreserved": {
+    "min": 13,
+    "max": 15,
+    "unit": "g",
+    "approximate": true,
+    "fixedAmountSelected": false
+  },
+  "fractionPreserved": {
+    "numerator": 1,
+    "denominator": 3,
+    "sizeQualifier": "small"
+  },
+  "volumeToGramsConversion": false,
+  "allergenAssessment": {
+    "known": [
+      "Sesam"
+    ],
+    "complete": false,
+    "note": "Sesam aus 50 g weißer Sesamsaat ausdrücklich abgeleitet. Gesamtbewertung nach bestätigter Spur-Chili-Identität abschließen; Etiketten/Spuren prüfen."
+  },
+  "negativeProbes": [
+    "range_premature_ready",
+    "range_reversed",
+    "range_role_missing",
+    "missing_sesame",
+    "unproved_grams"
+  ],
+  "readyForImport": false,
+  "liveVerified": false,
+  "openIssues": [
+    "Getrocknete Spur-Chili fachlich passend zuordnen.",
+    "Ungefähren Pfefferbereich 13–15 g verlustfrei im Produktionsmodell und in Anzeige/Skalierung unterstützen; keine feste Menge aus der Untergrenze machen.",
+    "Drittel einer kleinen Muskatnuss sowie grüne Kardamomkapseln mit eindeutigen Stückbezeichnungen erhalten.",
+    "Dubletten- und vollständige Allergenprüfung nach Mapping erneut durchführen."
+  ]
+}

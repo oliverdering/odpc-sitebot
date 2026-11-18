@@ -1,0 +1,26 @@
+{
+  "status": "PASS_STAGING_WITH_IMPORT_BLOCKS",
+  "checkedAt": "2026-10-24",
+  "dataCommit": "2f8d7e0be95d48d29f3ff1b0e68bd65479e7de4f",
+  "ci": {
+    "url": "https://github.com/oliverdering/odpc-sitebot/actions/runs/40076133793",
+    "jobId": 120819753143,
+    "conclusion": "success",
+    "checks": [
+      "research packages",
+      "JavaScript application",
+      "PHP routes, catalog transactions and source attribution"
+    ]
+  },
+  "changedFilesScope": "research/meinkraut/2026-10-24-block-j/ and research-only validator",
+  "activeCatalogChanged": false,
+  "readyForImport": false,
+  "rangeMeansFixedDose": false,
+  "unresolved": [
+    "Dried spur chilli identity",
+    "Production support for approximate range and qualified count fraction",
+    "Final duplicate/allergen review"
+  ],
+  "globalDailyCandidateCount": 10,
+  "dailyCapReached": true
+}

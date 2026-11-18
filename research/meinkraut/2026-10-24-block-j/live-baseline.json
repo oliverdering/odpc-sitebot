@@ -1,0 +1,26 @@
+{
+  "checkedAt": "2026-10-24T07:56:30.874592+00:00",
+  "health": {
+    "status": "ok",
+    "platformVersion": "3.0.0-test",
+    "shopMode": "test",
+    "checkoutEnabled": false,
+    "products": 21,
+    "version": "3.0.22",
+    "catalog": "database",
+    "ingredients": 299,
+    "recipes": 668,
+    "countries": 195,
+    "countryProfiles": 24,
+    "spiceProfiles": 35
+  },
+  "country": "SG",
+  "routeStatus": 200,
+  "countryRecipeIds": [
+    "r037",
+    "atlas6-suedostasiatische-sambal-belacan-zitruswuerze",
+    "atlas6-suedostasiatisches-soja-limetten-chili-dressing"
+  ],
+  "countryDryRecipeIds": [],
+  "newCandidateLive": false
+}
