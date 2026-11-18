@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "batchId": "oxana-research-2026-10-23-c",
+  "createdAt": "2026-10-23",
+  "productionImport": false,
+  "candidates": [{
+    "id": "mk-research-20261023-si-znam-vegetable-seasoning",
+    "name": "Gemüsewürze – Autorenvariante von Jožica Čerin",
+    "kind": "Trockenmischung aus frischer Rohware",
+    "countries": ["SI"],
+    "region": "Slowenischsprachige Veröffentlichung; Länderzuordnung noch zu bestätigen",
+    "description": "Gemüse-Salz-Würze mit Kurkuma; frische Gemüse werden vor dem Mischen getrocknet.",
+    "editorialType": "Veröffentlichte Autorenvariante",
+    "reviewStatus": "Originalquelle und Mengenbasis geprüft; Zutatenzuordnung, Länderbeleg, Einheiten und Trocknung noch offen. Unverkostet.",
+    "processType": "Trocknung frischer Rohware",
+    "massBasis": "Gemüsegewichte als frische Einwaagen vor der Trocknung",
+    "finalDryYieldGrams": null,
+    "normalization100g": null,
+    "ingredients": [
+      {"sourceName":"korenje","ingredient":"karotte-frisch","amount":500,"unit":"g","preparation":"Frische Einwaage vor der Trocknung."},
+      {"sourceName":"por","ingredient":null,"proposedIngredient":"lauch-frisch","mappingIssue":"Frischer Lauch fehlt; keine Frühlingszwiebeln einsetzen.","amount":500,"unit":"g","preparation":"Frische Einwaage vor der Trocknung."},
+      {"sourceName":"peteršiljeva korenina","ingredient":null,"proposedIngredient":"petersilienwurzel-frisch","mappingIssue":"Petersilienwurzel fehlt; Petersilienblätter sind keine Entsprechung.","amount":500,"unit":"g","preparation":"Frische Wurzel vor der Trocknung wiegen."},
+      {"sourceName":"gomoljna zelena","ingredient":null,"proposedIngredient":"knollensellerie-frisch","mappingIssue":"Frische Sellerieknolle fehlt; nicht durch Saat oder Stangen ersetzen.","amount":500,"unit":"g","preparation":"Frische Knolle vor der Trocknung wiegen."},
+      {"sourceName":"čebula","ingredient":"zwiebel-frisch","amount":500,"unit":"g","preparation":"Frische Einwaage vor der Trocknung."},
+      {"sourceName":"česen","ingredient":"knoblauch-frisch","amount":200,"unit":"g","preparation":"Frische Einwaage vor der Trocknung."},
+      {"sourceName":"peteršiljevi listi","ingredient":"petersilie-frisch","amount":1,"unit":"Stück","sourceUnit":"šop","unitLabel":"Bund","quantityMeaning":"Ein Bund Blätter, keine einzelne Blattmenge; Produktionsdarstellung muss Bund erhalten.","preparation":"Frische Blätter; Quelle empfiehlt ohne Stiele."},
+      {"sourceName":"listi stebelne zelene","ingredient":null,"proposedIngredient":"sellerieblaetter-frisch","mappingIssue":"Frische Sellerieblätter fehlen; vorhandene Stangen oder Saat sind keine Entsprechung.","amount":1,"unit":"Stück","sourceUnit":"šop","unitLabel":"Bund","quantityMeaning":"Ein Bund Blätter; keine Grammumrechnung und kein einzelnes Blatt.","preparation":"Frische Blätter vor der Trocknung."},
+      {"sourceName":"rumena paprika","ingredient":"paprika-frisch","amount":1,"unit":"Stück","preparation":"Gelbe Gemüsepaprika, frisch; Farbe erhalten."},
+      {"sourceName":"rdeča paprika","ingredient":"paprika-frisch","amount":1,"unit":"Stück","preparation":"Rote Gemüsepaprika, frisch; Farbe erhalten."},
+      {"sourceName":"zelena paprika","ingredient":"paprika-frisch","amount":1,"unit":"Stück","preparation":"Grüne Gemüsepaprika, frisch; Farbe erhalten."},
+      {"sourceName":"bio kurkuma","ingredient":"kurkuma","amount":100,"unit":"g","sourceSpecification":"Bio in der Quelle; keine eigene Zertifizierungsbehauptung. Form vor Import bestätigen.","preparation":"Erst nach dem Trocknen zumischen; die Quelle spezifiziert die Form nicht ausdrücklich."},
+      {"sourceName":"piranska sol","ingredient":"salz","amount":250,"unit":"g","sourceSpecification":"Piran-Salz laut Quelle; die generische Atlas-ID belegt keine Herkunft.","preparation":"Erst nach dem Trocknen zumischen."}
+    ],
+    "optionalSourceAdditions": [
+      {"name":"Schnittlauch","amount":null,"optional":true,"includedInSelectedBase":false},
+      {"name":"Liebstöckel","amount":null,"optional":true,"includedInSelectedBase":false},
+      {"name":"Thymian","amount":null,"optional":true,"includedInSelectedBase":false},
+      {"name":"Basilikum","amount":null,"optional":true,"includedInSelectedBase":false}
+    ],
+    "methodSteps": [
+      "Gemüse waschen, oberflächlich trocknen und dünn schneiden.",
+      "Quelle nennt 50 °C im Ofen bei angelehnter Tür oder ein Dörrgerät. Zeit und überprüfbarer Endpunkt fehlen; Verfahren vor Veröffentlichung fachlich prüfen.",
+      "Nach dem Trocknen zerkleinern und mit Salz und Kurkuma vermischen. Keine Umrechnung der frischen Einwaagen in Trockenmengen."
+    ],
+    "application": "Würzgrundlage für Suppen und Gemüse; Dosierung erst nach Prozessprüfung festlegen.",
+    "serving": "Originalansatz mit Frischgewichten, zwei Bund und drei Paprika; trockene Endausbeute unbekannt.",
+    "storageNotes": ["Quelle nennt trockene Gläser. Keine eigene Haltbarkeit oder Freigabe zur ungekühlten Vorratshaltung; Trocknungsendpunkt und Aufbewahrung noch zu prüfen."],
+    "allergenAssessment": {
+      "known": ["Sellerie"],
+      "complete": true,
+      "scope": "Ausgewählte Basiszutaten; keine Spuren- oder Allergenfrei-Garantie.",
+      "derivedFrom": ["knollensellerie-frisch", "sellerieblaetter-frisch"],
+      "note": "Sellerieknolle und Sellerieblätter enthalten Sellerie. Produktetiketten und mögliche Spuren bleiben getrennt zu prüfen.",
+      "evidenceUrls": ["https://food.ec.europa.eu/food-safety/campaign-2026/allergies_en", "https://www.gov.uk/government/publications/food-allergen-labelling-and-information-requirements-technical-guidance/food-allergen-labelling-and-information-requirements-technical-guidance"]
+    },
+    "sources": [
+      {"title":"Domača suha vegeta","url":"https://znam.si/recepti-in-hrana/ozimnica/domaca-suha-vegeta/","author":"Jožica Čerin / Znam.si","publishedAt":"2020-12-04","accessedAt":"2026-10-23","primarySource":true,"contentChecked":true,"evidenceScope":"Zutaten, Originalmengen, Methode und Herausgeberantwort vom 30.09.2023: Gemüse frisch gewogen. Keine behauptete Gleichwertigkeit von frischen und trockenen Mengen übernommen.","license":"Sachliche Mengen erfasst, eigene deutsche Kurzfassung; keine Bilder oder Werbetexte übernommen."},
+      {"title":"O nas","url":"https://znam.si/informacije/o-nas/","author":"Znam.si / Aljoša Lovšin","accessedAt":"2026-10-23","primarySource":true,"contentChecked":true,"evidenceScope":"Mediterraner Herausgeberkontext und Slowenien-Ausflugsrubrik; allein kein vollständiger Beleg einer spezifisch slowenischen Rezepttradition."},
+      {"title":"Allergies","url":"https://food.ec.europa.eu/food-safety/campaign-2026/allergies_en","author":"Europäische Kommission, DG SANTE","accessedAt":"2026-10-23","primarySource":true,"contentChecked":true,"evidenceScope":"Sellerie in der Liste der deklarationspflichtigen Allergene."},
+      {"title":"Food allergen labelling and information requirements technical guidance","url":"https://www.gov.uk/government/publications/food-allergen-labelling-and-information-requirements-technical-guidance/food-allergen-labelling-and-information-requirements-technical-guidance","author":"Food Standards Agency","accessedAt":"2026-10-23","primarySource":true,"contentChecked":true,"evidenceScope":"Absatz 45: Sellerie umfasst Knolle und Blätter."}
+    ],
+    "countryEvidence": "SI ist ein Prüfziel: slowenischsprachige Autorenquelle mit Slowenien-Kontext des Portals. Vor Atlaszuordnung engeren Herausgeber- oder Autorenbeleg ergänzen. Kein traditioneller Nationalstandard behauptet; der Vegeta-Markenursprung rechtfertigt keine HR-Zuordnung dieses Autorenrezepts.",
+    "duplicateReview": {"catalogRecipeCount":658,"sameSourceFound":false,"comparisonRecipeIds":["mk-gemuesebruehe-trocken"],"result":"Vorhandene DE-Vorratsbasis ist eine Zwiebel-Kräuter-Mischung ohne frisches Gemüse; diese getrocknete Gemüse-Autorenvariante ist keine identische Rezeptur. Kein identischer Quellenlink im Bestand gefunden."},
+    "openIssues": [
+      "Vier neue Zutatenidentitäten vor Import prüfen und anlegen; keine falschen Ersatzreferenzen.",
+      "Bund-Mengen explizit in Schema, Skalierung und UI unterstützen; Stück ist hier nur der blockierte Staging-Container mit unitLabel Bund.",
+      "Trocknungsdauer, verifizierbarer Endpunkt und sichere Lagerung fachlich prüfen; keine Shelf-Life-Aussage ableiten.",
+      "Kurkumaform bestätigen: vorhandene Atlas-ID ist gemahlen, Quelle nicht ausdrücklich.",
+      "SI-Zuordnung als lokale Autorenveröffentlichung durch engeren Herausgeber-/Autorenbeleg bestätigen."
+    ],
+    "readyForImport": false,
+    "importStatus": "research_pending"
+  }],
+  "ingredientProposals": [
+    {"id":"lauch-frisch","name":"Lauch, frisch","group":"Frisch & Aromaten","form":"frisch","allergens":[],"reason":"Die Quelle benötigt frischen Porree vor dem Trocknen; keine entsprechende Atlasidentität vorhanden.","allergenNote":"Keines der 14 benannten Allergene aus der reinen Zutatenidentität abgeleitet; keine Allergenfrei-Garantie.","notEquivalentTo":["fruhlingszwiebel","zwiebel-frisch"],"sources":[{"url":"https://znam.si/recepti-in-hrana/ozimnica/domaca-suha-vegeta/","primarySource":true,"contentChecked":true}],"active":false,"readyForImport":false,"status":"proposal_only"},
+    {"id":"petersilienwurzel-frisch","name":"Petersilienwurzel, frisch","group":"Frisch & Aromaten","form":"frisch","allergens":[],"reason":"Die Quelle nennt ausdrücklich die Wurzel, getrennt von Blättern.","allergenNote":"Keines der 14 benannten Allergene aus der reinen Zutatenidentität abgeleitet; keine Allergenfrei-Garantie.","notEquivalentTo":["petersilie","petersilie-frisch"],"sources":[{"url":"https://znam.si/recepti-in-hrana/ozimnica/domaca-suha-vegeta/","primarySource":true,"contentChecked":true}],"active":false,"readyForImport":false,"status":"proposal_only"},
+    {"id":"knollensellerie-frisch","name":"Knollensellerie, frisch","group":"Frisch & Aromaten","form":"frisch","allergens":["Sellerie"],"reason":"Frische Sellerieknolle der Quelle ist weder Saat noch Stangensellerie.","allergenNote":"Sellerie; FSA-Originalleitfaden Absatz 45 umfasst die Knolle.","notEquivalentTo":["sellerie-stauden","selleriesaat"],"sources":[{"url":"https://znam.si/recepti-in-hrana/ozimnica/domaca-suha-vegeta/","primarySource":true,"contentChecked":true},{"url":"https://www.gov.uk/government/publications/food-allergen-labelling-and-information-requirements-technical-guidance/food-allergen-labelling-and-information-requirements-technical-guidance","primarySource":true,"contentChecked":true}],"active":false,"readyForImport":false,"status":"proposal_only"},
+    {"id":"sellerieblaetter-frisch","name":"Sellerieblätter, frisch","group":"Frisch & Aromaten","form":"frisch","allergens":["Sellerie"],"reason":"Blätter des Stangenselleries werden ausdrücklich als eigene Zutat benötigt.","allergenNote":"Sellerie; FSA-Originalleitfaden Absatz 45 umfasst die Blätter.","notEquivalentTo":["sellerie-stauden","selleriesaat"],"sources":[{"url":"https://znam.si/recepti-in-hrana/ozimnica/domaca-suha-vegeta/","primarySource":true,"contentChecked":true},{"url":"https://www.gov.uk/government/publications/food-allergen-labelling-and-information-requirements-technical-guidance/food-allergen-labelling-and-information-requirements-technical-guidance","primarySource":true,"contentChecked":true}],"active":false,"readyForImport":false,"status":"proposal_only"}
+  ]
+}

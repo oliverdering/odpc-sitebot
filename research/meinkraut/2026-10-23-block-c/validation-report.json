@@ -1,0 +1,26 @@
+{
+  "status": "PASS_STAGING",
+  "productionImport": false,
+  "candidateCount": 1,
+  "createdToday": 3,
+  "errors": [],
+  "blockedFromImport": [
+    {
+      "id": "mk-research-20261023-si-znam-vegetable-seasoning",
+      "unmapped": [
+        "por",
+        "peteršiljeva korenina",
+        "gomoljna zelena",
+        "listi stebelne zelene"
+      ],
+      "issues": [
+        "Vier neue Zutatenidentitäten vor Import prüfen und anlegen; keine falschen Ersatzreferenzen.",
+        "Bund-Mengen explizit in Schema, Skalierung und UI unterstützen; Stück ist hier nur der blockierte Staging-Container mit unitLabel Bund.",
+        "Trocknungsdauer, verifizierbarer Endpunkt und sichere Lagerung fachlich prüfen; keine Shelf-Life-Aussage ableiten.",
+        "Kurkumaform bestätigen: vorhandene Atlas-ID ist gemahlen, Quelle nicht ausdrücklich.",
+        "SI-Zuordnung als lokale Autorenveröffentlichung durch engeren Herausgeber-/Autorenbeleg bestätigen."
+      ],
+      "reason": "research_pending"
+    }
+  ]
+}
