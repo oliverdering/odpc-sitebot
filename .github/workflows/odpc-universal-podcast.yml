@@ -1,0 +1,57 @@
+name: ODPC Universal Podcast - Validate and Package
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'site-deploy/odpc.de/odpc-universal-podcast.php'
+      - '.github/workflows/odpc-universal-podcast.yml'
+  pull_request:
+    paths:
+      - 'site-deploy/odpc.de/odpc-universal-podcast.php'
+      - '.github/workflows/odpc-universal-podcast.yml'
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate PHP syntax
+        run: php -l site-deploy/odpc.de/odpc-universal-podcast.php
+      - name: Validate embedded JavaScript syntax
+        run: |
+          python3 - <<'PY'
+          import pathlib,re,subprocess,tempfile
+          src=pathlib.Path('site-deploy/odpc.de/odpc-universal-podcast.php').read_text()
+          scripts=re.findall(r'<script[^>]*>(.*?)</script>',src,re.S|re.I)
+          assert scripts,'Missing inline JS'
+          for script in scripts:
+              script=re.sub(r'<\?php.*?\?>','0',script,flags=re.S)
+              with tempfile.NamedTemporaryFile(mode='w',suffix='.js') as f:
+                  f.write(script);f.flush()
+                  subprocess.run(['node','--check',f.name],check=True)
+          print('PASS JS syntax',len(scripts))
+          PY
+      - name: Validate integration and secrets policy
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('site-deploy/odpc.de/odpc-universal-podcast.php')
+          s=p.read_text()
+          for token in ['odpc-podcast/v1','get_queried_object_id','odpc-reader-play','odpc-reader-stop','ODPC_PODCAST_GEMINI_KEY','ODPC_PODCAST_GOOGLE_TTS_KEY','get_transient','set_transient','wp_strip_all_tags']:
+              assert token in s,token
+          assert 'AIza' not in s,'Do not commit API credentials'
+          assert 'odpc-utility-dock{position:' not in s,'Existing dock geometry must remain untouched'
+          print('PASS integration contract')
+          PY
+      - name: Package isolated plugin (not deployed)
+        run: |
+          mkdir -p dist/odpc-universal-podcast
+          cp site-deploy/odpc.de/odpc-universal-podcast.php dist/odpc-universal-podcast/odpc-universal-podcast.php
+          cd dist && zip -r odpc-universal-podcast-pilot.zip odpc-universal-podcast
+      - uses: actions/upload-artifact@v4
+        with:
+          name: odpc-universal-podcast-pilot
+          path: dist/odpc-universal-podcast-pilot.zip
+          retention-days: 14
