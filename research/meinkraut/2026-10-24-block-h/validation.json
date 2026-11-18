@@ -1,0 +1,30 @@
+{
+  "status": "PASS_STAGING_WITH_IMPORT_BLOCKS",
+  "productionImport": false,
+  "candidateCount": 1,
+  "dailyCandidateCountIncludingOpenBranches": 8,
+  "ingredientCount": 4,
+  "mappedCount": 3,
+  "unmappedCount": 1,
+  "heapedMeasurePreserved": true,
+  "originalUnitsPreserved": true,
+  "volumeToGramsConversion": false,
+  "sourcePagesFullyRead": true,
+  "allergenAssessment": {
+    "known": [],
+    "complete": false,
+    "note": "Drei eindeutig zugeordnete reine Gewürze ergeben kein benanntes Allergen. Die zusammengesetzte Zutat muss vor Import vollständig zugeordnet und geprüft werden; Etiketten und Spuren beachten."
+  },
+  "negativeProbes": [
+    "premature_ready",
+    "unknown_id",
+    "unproved_grams"
+  ],
+  "readyForImport": false,
+  "liveVerified": false,
+  "openIssues": [
+    "Gehäuftes EL-Maß verlustfrei im Produktionsmodell, in Anzeige und Rezeptskalierung erhalten; keine stille Umdeutung zu gestrichenem EL.",
+    "Verlinkte Bokharat-Komponente fachlich und technisch abbilden, Einzelzutaten und Allergene prüfen.",
+    "Dublettenprüfung nach vollständiger Komponentenauflösung erneut durchführen."
+  ]
+}
