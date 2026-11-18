@@ -1,0 +1,26 @@
+{
+  "status": "PASS_STAGING",
+  "productionImport": false,
+  "candidateCount": 1,
+  "createdToday": 1,
+  "errors": [],
+  "blockedFromImport": [
+    {
+      "id": "mk-research-20261024-mt-mc-aljoli",
+      "unmapped": [
+        "red elmar tuna",
+        "red elmar anchovy fillets",
+        "bread crumbs",
+        "galletti (water biscuits)"
+      ],
+      "issues": [
+        "Thunfisch, Sardellenfilets, ungeröstet nicht spezifizierte Brotbrösel und Galletti gegen geeignete Zutatenidentitäten abgleichen; Fischprodukte und Mengenbasis prüfen.",
+        "Petersilien- und Chilimengen sind nicht angegeben. Im produktiven Datenmodell erst nach geprüfter Unterstützung nicht numerischer Mengen abbilden; nichts schätzen.",
+        "Knoblauchzehen und Sardellenfilets müssen vor Import eindeutig dargestellt/kopiert/skaliert werden; Stück-Container nicht live übernehmen.",
+        "Vollständige Hersteller-/Produktallergene für Fischkonserven, Brotbrösel, Galletti und Oliven prüfen; Getreideart und mögliche weitere Allergene offen.",
+        "Formale Dublettenprüfung nach Zutatenfreigabe erneut durchführen."
+      ],
+      "reason": "research_pending"
+    }
+  ]
+}

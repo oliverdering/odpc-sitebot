@@ -1,0 +1,65 @@
+{
+  "status": "PASS_STAGING_WITH_IMPORT_BLOCKS",
+  "productionImport": false,
+  "candidateCount": 1,
+  "dailyNewCandidatesIncludingOpenBranches": 1,
+  "baseCommit": "608f65de8f02c31362bd76c00eaa427b63358135",
+  "catalog": {
+    "version": "3.0.17",
+    "recipes": 663,
+    "ingredients": 299
+  },
+  "errors": [],
+  "blockedFromImport": [
+    {
+      "id": "mk-research-20261024-mt-mc-aljoli",
+      "unmapped": [
+        "red elmar tuna",
+        "red elmar anchovy fillets",
+        "bread crumbs",
+        "galletti (water biscuits)"
+      ],
+      "issues": [
+        "Thunfisch, Sardellenfilets, ungeröstet nicht spezifizierte Brotbrösel und Galletti gegen geeignete Zutatenidentitäten abgleichen; Fischprodukte und Mengenbasis prüfen.",
+        "Petersilien- und Chilimengen sind nicht angegeben. Im produktiven Datenmodell erst nach geprüfter Unterstützung nicht numerischer Mengen abbilden; nichts schätzen.",
+        "Knoblauchzehen und Sardellenfilets müssen vor Import eindeutig dargestellt/kopiert/skaliert werden; Stück-Container nicht live übernehmen.",
+        "Vollständige Hersteller-/Produktallergene für Fischkonserven, Brotbrösel, Galletti und Oliven prüfen; Getreideart und mögliche weitere Allergene offen.",
+        "Formale Dublettenprüfung nach Zutatenfreigabe erneut durchführen."
+      ],
+      "reason": "research_pending",
+      "qualitativeIngredients": [
+        "fresh parsley",
+        "chilli flakes"
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "check": "invented_qualitative_quantity",
+      "result": "rejected"
+    },
+    {
+      "check": "premature_import_ready",
+      "result": "rejected"
+    },
+    {
+      "check": "premature_live_verified",
+      "result": "rejected"
+    },
+    {
+      "check": "unknown_qualitative_id",
+      "result": "rejected"
+    }
+  ],
+  "sourceCompleteness": {
+    "numericIngredients": 9,
+    "qualitativeIngredients": 2,
+    "sourceIngredientsTotal": 11,
+    "noEstimatedQuantities": true
+  },
+  "qualitativeValidation": {
+    "validatorFromDraftPR": 17,
+    "productionSupportApproved": false,
+    "note": "Zusätzlich mit der ungemergten Validator-Erweiterung aus Entwurf 17 geprüft. Keine Validator- oder produktive Codeänderung in diesem Paket."
+  }
+}

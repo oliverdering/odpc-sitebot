@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "batchId": "oxana-research-2026-10-24-a",
+  "createdAt": "2026-10-24",
+  "productionImport": false,
+  "dailyCandidateCountIncludingOpenBranches": 1,
+  "dailyCountNote": "Erster neuer Kandidat am 24.10.2026. Die zehn Kandidaten des Vortags und dessen offene Entwürfe zählen nicht erneut als neue Kandidaten.",
+  "candidates": [{
+    "id": "mk-research-20261024-mt-mc-aljoli",
+    "name": "Aljoli – veröffentlichte Maltese-Cuisine-Variante",
+    "kind": "Frischer Fisch-Tomaten-Dip",
+    "countries": ["MT"],
+    "region": "Malta; veröffentlichte Autorenvariante",
+    "description": "Frischer Dip aus Thunfisch, Sardellen, Tomatenkonzentrat, Oliven und Brotprodukten.",
+    "editorialType": "Veröffentlichte Autorenvariante; kein einheitlicher Nationalstandard",
+    "reviewStatus": "Originalrezept und eigene Projektvorstellung am 24.10.2026 gelesen. Nicht verkostet; Produktidentitäten, Einheiten und nicht bezifferte Mengen bleiben importgesperrt.",
+    "ingredients": [
+      {"sourceName":"red elmar tuna","ingredient":null,"amount":100,"unit":"g","mappingIssue":"Keine Thunfischzutat im Atlas. Konkretes Markenprodukt, Einlegemedium und Bezugsbasis der 100 g nicht eindeutig; kein Abtropfgewicht ergänzt."},
+      {"sourceName":"red elmar anchovy fillets","ingredient":null,"amount":3,"unit":"Stück","sourceUnit":"fillets","unitLabel":"Filets","mappingIssue":"Keine passende Sardellenfilet-Zutat. Drei Filets müssen vor Import eindeutig angezeigt und skaliert werden; Stück ist nur Staging-Container, keine ganzen Fische."},
+      {"sourceName":"tomato concentrate","ingredient":"tomatenmark","amount":200,"unit":"g","preparation":"Tomatenkonzentrat; keine Konzentrationsstufe oder zusätzliche Zutaten behauptet."},
+      {"sourceName":"onion chopped","ingredient":"zwiebel-frisch","amount":1,"unit":"Stück","preparation":"Gehackt; Größe und Gewicht nicht angegeben."},
+      {"sourceName":"garlic cloves","ingredient":"knoblauch-frisch","amount":2,"unit":"Stück","sourceUnit":"cloves","unitLabel":"Zehen","quantityMeaning":"Zwei Zehen, keine Knollen; Stück nur Staging-Container bis zur geprüften Zehen-Darstellung."},
+      {"sourceName":"FOS Kalamata pitted olives","ingredient":"oliven","amount":50,"unit":"g","preparation":"Genanntes FOS-Kalamata-Produkt, entsteint. Sorte und Marke im Quellnamen erhalten; Produktdeklaration noch zu prüfen."},
+      {"sourceName":"bread crumbs","ingredient":null,"amount":75,"unit":"g","mappingIssue":"Quelle nennt Brotbrösel ohne Röstung oder Produktzusammensetzung. Vorhandene geroestete-brotbroesel sind nicht ungeprüft gleichwertig."},
+      {"sourceName":"galletti (water biscuits)","ingredient":null,"amount":75,"unit":"g","mappingIssue":"Keine Galletti-/Wassercracker-Zutat. Zusammengesetztes Produkt und Allergendeklaration vor Import prüfen."},
+      {"sourceName":"golden drop olive oil","ingredient":"olivenol","amount":175,"unit":"ml","preparation":"Olivenöl der genannten Marke; keine unbelegte native/extra-native Güteklasse ergänzt."}
+    ],
+    "qualitativeIngredients": [
+      {"sourceName":"fresh parsley","ingredient":"petersilie-frisch","amount":null,"unit":null,"quantityMode":"unspecified","sourceQuantity":"fresh parsley","note":"Quelle nennt keine Menge. Keine Zahl, Prise oder Bundmenge ergänzt."},
+      {"sourceName":"chilli flakes","ingredient":"chiliflocken","amount":null,"unit":null,"quantityMode":"unspecified","sourceQuantity":"chilli flakes","note":"Quelle nennt keine Menge; nicht als ausdrücklich nach Geschmack ausgegeben."}
+    ],
+    "methodSteps": ["Die im Original genannten Zutaten im geeigneten Mixer zu einem dicken Dip verarbeiten. Petersilie und Chiliflocken sind nicht beziffert; vor einem ausführbaren Import klären.","Mit separat gereichtem Brot, Crackern oder Galletti servieren; diese Servierbeilagen nicht nochmals in die Dipmengen einrechnen."],
+    "application":"Frischer Dip zum direkten Servieren; kein trockenes Würzpulver und keine Vorratsmischung.",
+    "serving":"Originalansatz ohne belegte Portionszahl oder fertiges Ertragsgewicht. Neun bezifferte und zwei nicht bezifferte Zutaten.",
+    "massBasis":"Originale g/ml-Angaben, eine Zwiebel, zwei Knoblauchzehen und drei Sardellenfilets; Kräuter/Chili ohne Mengen. Keine Umrechnung in Gramm.",
+    "normalization100g":null,
+    "allergenAssessment":{"known":["Fisch"],"potential":["Gluten"],"complete":false,"note":"Fisch sicher aus Thunfisch und Sardellen. Brotbrösel und Galletti als glutenrelevant vorsorglich gesperrt; konkrete Getreideart und vollständige Produktdeklarationen fehlen. Weitere produktabhängige Allergene und Spuren nicht ausgeschlossen. Keine Allergenfrei-Aussage."},
+    "storageNotes":["Frischer fischhaltiger Dip mit frischen Aromaten und Öl; bis zum Servieren gekühlt behandeln. Keine Konservierungs- oder ungekühlte Lagerfreigabe. Keine eigene Haltbarkeitsfrist ergänzt."],
+    "sources":[
+      {"title":"Aljoli Dip","url":"https://maltesecuisine.com/2020/06/28/aljoli-dip/","author":"MC / Maltese Cuisine (heute Mediterranean Cuisine)","publishedAt":"2020-06-28","accessedAt":"2026-10-24","primarySource":true,"contentChecked":true,"evidenceScope":"Eigene veröffentlichte Rezeptur: neun Mengen, zwei unbezifferte Zutaten, Zubereitung. Markenbezeichnungen und Quellmengen erhalten.","license":"Nur sachliche Zutaten/Mengen; deutsche Notizen eigenständig. Keine Fotos, Artikel- oder Werbetexte übernommen."},
+      {"title":"About Us","url":"https://maltesecuisine.com/about-us/","author":"Mediterranean Cuisine / Maltese Cuisine","accessedAt":"2026-10-24","primarySource":true,"contentChecked":true,"evidenceScope":"Eigene Vorstellung als Hobbyköche/Videografen mit besonderem Fokus auf maltesisches Essen; Autorenkontext, kein Nachweis einer normierten Nationalrezeptur."},
+      {"title":"Arjoli Dip","url":"https://thehealthymalteser.com/arjoli_dip/","author":"Geraldine Bartolo / The Healthy Malteser","accessedAt":"2026-10-24","primarySource":true,"contentChecked":true,"evidenceScope":"Unabhängige Autorin beschreibt Arjoli als maltesischen Dip und unterscheidet ihre eigene vegetarische Abwandlung von Varianten mit Thunfisch/Sardellen. Nur Länder-/Gerichtskontext, keine Mengen übernommen."}
+    ],
+    "countryEvidence":"Maltesischer Gerichtstyp durch die eigene Einordnung von Geraldine Bartolo belegt; MC-Rezept als konkrete veröffentlichte Variante separat benannt. Nur MT, keine zusätzlichen Länder aus ähnlich benannten Aioli-Rezepten.",
+    "duplicateReview":{"catalogRecipeCount":663,"sameSourceFound":false,"comparisonRecipeIds":["c014","atlas6-mediterranes-zitronen-kapern-dressing","atlas6-maltesische-kunserva-tomaten-wuerzsauce"],"result":"Kein Quelllink vorhanden. Bestehende MT-Einträge enthalten weder Thunfisch/Sardellen noch Brotbrösel/Galletti. Formale Prüfung nach Freigabe der fehlenden Zutatenidentitäten wiederholen."},
+    "scopeNotes":["FOS/Kalamata, Red Elmar und Golden Drop bleiben nachvollziehbare Quellbezeichnungen; kein identischer Marken-Nachbau behauptet.","Kräuter und Chili ohne Mengen sind vollständig erhalten und nicht durch Nullwerte oder geschätzte Mengen ersetzt.","Qualitative Angaben sind Forschungsschema wie in Entwurf 17. Dessen Validator-Erweiterung ist noch nicht im Hauptbranch; produktive Unterstützung bleibt ungeprüft."],
+    "openIssues":["Thunfisch, Sardellenfilets, ungeröstet nicht spezifizierte Brotbrösel und Galletti gegen geeignete Zutatenidentitäten abgleichen; Fischprodukte und Mengenbasis prüfen.","Petersilien- und Chilimengen sind nicht angegeben. Im produktiven Datenmodell erst nach geprüfter Unterstützung nicht numerischer Mengen abbilden; nichts schätzen.","Knoblauchzehen und Sardellenfilets müssen vor Import eindeutig dargestellt/kopiert/skaliert werden; Stück-Container nicht live übernehmen.","Vollständige Hersteller-/Produktallergene für Fischkonserven, Brotbrösel, Galletti und Oliven prüfen; Getreideart und mögliche weitere Allergene offen.","Formale Dublettenprüfung nach Zutatenfreigabe erneut durchführen."],
+    "readyForImport":false,
+    "importStatus":"research_pending"
+  }]
+}
