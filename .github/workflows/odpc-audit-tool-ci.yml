@@ -1,0 +1,26 @@
+name: ODPC Audit Tool CI (no deployment)
+on:
+  pull_request:
+    paths:
+      - 'operations/audit/**'
+      - '.github/workflows/odpc-audit-tool-ci.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  offline-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Syntax check
+        run: python -m py_compile operations/audit/workflow_inventory.py operations/audit/test_workflow_inventory.py
+      - name: Offline unit tests
+        run: python -m unittest discover -s operations/audit -p 'test_*.py' -v
+      - name: Produce local read-only inventory (no upload)
+        run: |
+          python operations/audit/workflow_inventory.py --output operations/audit/workflow-inventory.generated.json
+          python -c "import json; d=json.load(open('operations/audit/workflow-inventory.generated.json')); assert d['read_only'] and d['workflow_count'] > 0; print('Workflows inventoried:', d['workflow_count'])"
