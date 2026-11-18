@@ -1,0 +1,48 @@
+{
+  "checkedAt": "2026-10-23",
+  "status": "PASS_STAGING_WITH_IMPORT_BLOCKS",
+  "productionImport": false,
+  "candidateId": "mk-research-20261023-lu-vegelizious-mustard-sauce",
+  "catalogBaseline": {
+    "commit": "282f658a30fc87fd3bfba706f53ec708be9a222f",
+    "ingredients": 299,
+    "recipes": 663
+  },
+  "sourceRead": true,
+  "countryEvidenceChecked": true,
+  "numericSourceIngredients": 4,
+  "qualitativeSourceIngredients": 2,
+  "allergenAssessment": {
+    "known": [
+      "Milch",
+      "Senf"
+    ],
+    "complete": false,
+    "note": "Milch aus lait, Senf aus den beiden Herstellerprodukten. Wein ist beim körnigen Senf genannt; Sulfitgehalt und vollständige produktspezifische Allergendeklaration sind nicht belegt. Keine Sulfitfreiheit behauptet. Weizen/Ei des getrennten Kniddelen-Teigs gehören nicht in diese Sauce."
+  },
+  "unresolvedNumericIngredients": [
+    "lait",
+    "Moutarde original",
+    "Moutarde à l’ancienne"
+  ],
+  "duplicateReview": {
+    "sameSourceFound": false,
+    "existingLURecipeIds": [
+      "c013",
+      "atlas6-mitteleuropaeische-senf-schalotten-sauce",
+      "atlas6-nordwesteuropaeische-kraeuter-mayonnaise"
+    ],
+    "difference": "Vorhandene drei LU-Saucen haben weder Milch noch Bohnenkraut; keine identische Herstellerquelle. Vollständige formale Rezeptvergleichbarkeit nach Freigabe der neuen Zutatenidentitäten nochmals prüfen."
+  },
+  "adversarialChecks": [
+    "unapproved import readiness denied",
+    "invented quantity denied",
+    "allergens from qualitative ingredient enforced",
+    "unknown ingredient denied",
+    "live_verified denied until production support reviewed"
+  ],
+  "existingBranchPackagesPass": true,
+  "readyForImport": false,
+  "dailyCandidateCountIncludingOpenBranches": 10,
+  "activeCatalogChanged": false
+}
