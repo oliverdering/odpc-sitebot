@@ -1,0 +1,20 @@
+name: D.R.O.L. / Hardware candidate staging CI
+on:
+  pull_request:
+    paths:
+      - 'scripts/drol_hardware_stage.py'
+      - 'tests/test_drol_hardware_stage.py'
+      - '.github/workflows/drol-hardware-stage.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  stage-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compile and run staging regression tests
+        run: |
+          python3 -m py_compile scripts/drol_hardware_stage.py
+          python3 -m unittest discover -s tests -p 'test_drol_hardware_stage.py' -v
