@@ -23736,6 +23736,302 @@
       "mapped_tracks": [
         "SC-300"
       ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/identity",
+      "sha256": "30fa790c4423189fa022a729bc7af95bd99515adbed497d4e9c5b541361fc040",
+      "captured_at": "2026-11-19T17:23:36.097255+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/change-notifications-with-resource-data",
+      "sha256": "1fa997c0073b467f7ce2df44974ee5145a86c815b07f3d1eb14bacd713eaf799",
+      "captured_at": "2026-11-19T17:23:36.342034+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/api/ai-services/interaction-export/resources/aiinteraction",
+      "sha256": "f9a6d9b46d0a39f90e17011ef659ee4130ecb9f336338c0f0cba97d8970d9b25",
+      "captured_at": "2026-11-19T17:23:37.049496+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/chart-list",
+      "sha256": "fd167afff3685ad619254d871c44f047fb4b0c70cc18b244ef1bfe699bb67edd",
+      "captured_at": "2026-11-19T17:23:37.435959+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/chart-get",
+      "sha256": "e1c5370998fb6f6a9e4a0d33f9346e650142dd223f02418bb5f9f99e696651a9",
+      "captured_at": "2026-11-19T17:23:37.915321+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/chart-update",
+      "sha256": "18671ecabb25c351227dc5561348dc705a2a8b9c4f0c89cc59707978930899eb",
+      "captured_at": "2026-11-19T17:23:38.395042+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/reportroot-authorization",
+      "sha256": "31bcc336ea835dfe5769376da55ee840e495bede49428fa0b25ffdaf9ab2f378",
+      "captured_at": "2026-11-19T17:23:38.607808+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/planner-overview",
+      "sha256": "f8bd9c5a02dc4c1fb1e0855e22734a142c19b35c9b21b5644475dbbe9e2abb41",
+      "captured_at": "2026-11-19T17:23:38.977173+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/plannerassignment",
+      "sha256": "2b4322ebe2ad08f4a2f1488845c454450ccb429d9c04a484a4c296b10b0b229e",
+      "captured_at": "2026-11-19T17:23:39.533996+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/application-post-applications",
+      "sha256": "ca5e016c5801165aa8b414638aa7887b5965f5bd68de75c44a81363553b8eadd",
+      "captured_at": "2026-11-19T17:23:39.966717+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/application-update",
+      "sha256": "3af6bfdf9b9a6157f696b4656da645cb925093c3b1ffd31f828a0d173fec62fe",
+      "captured_at": "2026-11-19T17:23:40.464451+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/application-delete",
+      "sha256": "59e29782021bcc961ebc088f205a6c114150504adbe230e3351fc05295aaaa74",
+      "captured_at": "2026-11-19T17:23:40.879681+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/application-addpassword",
+      "sha256": "527e9d9fda81e0bb05ede57b77bdd71a41cff190d7df7c8dbda0080a20041d8e",
+      "captured_at": "2026-11-19T17:23:41.275481+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/application-removepassword",
+      "sha256": "17c133923dfd124d3ce9a9f31e8851913d8c3b4c4a2be57f81085212af179e10",
+      "captured_at": "2026-11-19T17:23:41.723272+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/federatedidentitycredentials-overview",
+      "sha256": "c979a405309b02adda699b3a6a34f6d20f76cd0721b03cb83c86e82255c7dafd",
+      "captured_at": "2026-11-19T17:23:42.165626+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/application-addkey",
+      "sha256": "c701addd4a38b5414c22c7e1679b410f57a189555e17af7dfce733587bb374ec",
+      "captured_at": "2026-11-19T17:23:42.532520+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/agent-id/identity-professional/microsoft-entra-agent-identities-for-ai-agents",
+      "sha256": "62c03576bceee15f6d4752556f900588b14af2e2a1108183884044e1d4e0ec6c",
+      "captured_at": "2026-11-19T17:23:43.041605+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/bitlocker-list-recoverykeys",
+      "sha256": "a4a4070d2c8bfb2024204cbbb2cc618d91a622eceee1722199126e5167ecc545",
+      "captured_at": "2026-11-19T17:23:43.682305+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/bitlockerrecoverykey-get",
+      "sha256": "0ef2680f7401cf7bc7b244b5ed77f02bafd75990e98026440c89f42250d58b9d",
+      "captured_at": "2026-11-19T17:23:44.031241+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/custom-security-attributes-overview",
+      "sha256": "11ed584fcca8d8f4e9dedc734c664b3ac7a6211c12d03fb7a8a63dd03dfa70d6",
+      "captured_at": "2026-11-19T17:23:44.447613+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/backup/overview",
+      "sha256": "0c94c2fcccbf060a8c0e26f298e7cd87cf4826bb9010e3afbdbdbbc2664aadfa",
+      "captured_at": "2026-11-19T17:23:44.705969+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/device-list",
+      "sha256": "b799d2644be50cfbb71ce8148d49e577ca6ee6eb0aabfd1ebb5ef5fc6100b869",
+      "captured_at": "2026-11-19T17:23:45.213698+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/device-get",
+      "sha256": "8223cf40b061a18ecb4023d3570bb1e0659b464778aca4bcf3e6e7ed03bdb7cf",
+      "captured_at": "2026-11-19T17:23:45.660903+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/device-delete",
+      "sha256": "d2eb32930094329516564b0501892f4fe85a8f986c7112f9f553ac079aeb87dc",
+      "captured_at": "2026-11-19T17:23:46.105572+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/device-provision",
+      "sha256": "d0d69fa4a6648e548fd1bd56dd64b824828a6f98ff30ad74b13d49f0076a9a6a",
+      "captured_at": "2026-11-19T17:23:46.675426+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/template-list-devicetemplates",
+      "sha256": "ba80bc0e11b5c5381d0d96515a718049b5eb0c09c6a5c487c470fde222114119",
+      "captured_at": "2026-11-19T17:23:47.198583+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/directory-list-devicelocalcredentials",
+      "sha256": "b98402367ee2a99595223d85c503dcfee802728e6fe14f554cac4462efbf57a2",
+      "captured_at": "2026-11-19T17:23:47.690871+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/directoryroletemplate-get",
+      "sha256": "4c3f7f15a81d1a7f606dfdd373621ec44a7ebdaca888fb3f88496fd14d17b8bf",
+      "captured_at": "2026-11-19T17:23:48.119135+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/rest/api/authorization/privileged-role-eligibility-rest-sample",
+      "sha256": "d775474868f2e64f88432b347686af28226e52f1a14d9154f2a09455e3d497f7",
+      "captured_at": "2026-11-19T17:23:48.323173+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/groupsettingtemplate-get",
+      "sha256": "e9e07b896bd1cfab4efd3f38f544959fccbf111a56424075708d74444d3b2be5",
+      "captured_at": "2026-11-19T17:23:48.854624+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/domain-post-domains",
+      "sha256": "255f8b0e7fd4692e8d61181efdbe57575b89df804b96d0e7b8a6582f1108ee77",
+      "captured_at": "2026-11-19T17:23:49.556194+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/domain-list-verificationdnsrecords",
+      "sha256": "9ce8892c1824d1272ea0815814d1a4a8fe7fa6eceb0e7a56d3d2f8c140d98685",
+      "captured_at": "2026-11-19T17:23:50.048345+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/pendingexternaluserprofile",
+      "sha256": "d0249b7439379d98c36b1d92ba026f78869bf995474e69efac812630e0b0772f",
+      "captured_at": "2026-11-19T17:23:50.525950+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/featurerolloutpolicies-list",
+      "sha256": "87fccac77ffad290dfff2e19009fdd32b32daccc00950fcca360e5feb9c6f713",
+      "captured_at": "2026-11-19T17:23:51.112459+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/featurerolloutpolicy-get",
+      "sha256": "02db906b74343fa40cae866a303dcb31e4c1140ef458d858507986e7d609b1ed",
+      "captured_at": "2026-11-19T17:23:51.665810+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/mobilitymanagementpolicy",
+      "sha256": "1f8804dc666864fc59431d482d8b4837a99fe652b730ceb6c96a2731158dbbf4",
+      "captured_at": "2026-11-19T17:23:52.154427+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
     }
   ],
   "seen": [
@@ -23815,6 +24111,7 @@
     "https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-how-subscriptions-associated-directory",
     "https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-licensing-whatis-azure-portal",
     "https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-whatis",
+    "https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/custom-security-attributes-overview",
     "https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/how-to-manage-groups",
     "https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/users-default-permissions",
     "https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/whats-new",
@@ -24023,6 +24320,7 @@
     "https://learn.microsoft.com/en-us/entra/agent-id/grant-agent-access-microsoft-365",
     "https://learn.microsoft.com/en-us/entra/agent-id/identity-platform/agent-blueprint",
     "https://learn.microsoft.com/en-us/entra/agent-id/identity-platform/what-is-agent-id-platform",
+    "https://learn.microsoft.com/en-us/entra/agent-id/identity-professional/microsoft-entra-agent-identities-for-ai-agents",
     "https://learn.microsoft.com/en-us/entra/agent-id/integrate-aws-bedrock-agent",
     "https://learn.microsoft.com/en-us/entra/agent-id/interactive-agent-authentication-authorization-flow",
     "https://learn.microsoft.com/en-us/entra/agent-id/manage-agent",
@@ -24060,6 +24358,7 @@
     "https://learn.microsoft.com/en-us/entra/architecture/security-operations-privileged-identity-management",
     "https://learn.microsoft.com/en-us/entra/architecture/security-operations-user-accounts",
     "https://learn.microsoft.com/en-us/entra/architecture/service-accounts-principal",
+    "https://learn.microsoft.com/en-us/entra/backup/overview",
     "https://learn.microsoft.com/en-us/entra/external-id/allow-deny-list",
     "https://learn.microsoft.com/en-us/entra/external-id/authentication-conditional-access",
     "https://learn.microsoft.com/en-us/entra/external-id/b2b-direct-connect-overview",
@@ -24660,11 +24959,17 @@
     "https://learn.microsoft.com/en-us/graph/api/adminreportsettings-get",
     "https://learn.microsoft.com/en-us/graph/api/agentuser-list",
     "https://learn.microsoft.com/en-us/graph/api/agreement-list-acceptances",
+    "https://learn.microsoft.com/en-us/graph/api/application-addkey",
+    "https://learn.microsoft.com/en-us/graph/api/application-addpassword",
+    "https://learn.microsoft.com/en-us/graph/api/application-delete",
     "https://learn.microsoft.com/en-us/graph/api/application-delta",
     "https://learn.microsoft.com/en-us/graph/api/application-get",
     "https://learn.microsoft.com/en-us/graph/api/application-list",
+    "https://learn.microsoft.com/en-us/graph/api/application-post-applications",
     "https://learn.microsoft.com/en-us/graph/api/application-post-calls",
     "https://learn.microsoft.com/en-us/graph/api/application-post-onlinemeetings",
+    "https://learn.microsoft.com/en-us/graph/api/application-removepassword",
+    "https://learn.microsoft.com/en-us/graph/api/application-update",
     "https://learn.microsoft.com/en-us/graph/api/appmanagementaudit-get",
     "https://learn.microsoft.com/en-us/graph/api/appmanagementaudit-list",
     "https://learn.microsoft.com/en-us/graph/api/associatedteaminfo-list",
@@ -24674,6 +24979,8 @@
     "https://learn.microsoft.com/en-us/graph/api/authorizationpolicy-update",
     "https://learn.microsoft.com/en-us/graph/api/backupreport-getstatisticsbypolicy",
     "https://learn.microsoft.com/en-us/graph/api/backuprestoreroot-list-activitylogs",
+    "https://learn.microsoft.com/en-us/graph/api/bitlocker-list-recoverykeys",
+    "https://learn.microsoft.com/en-us/graph/api/bitlockerrecoverykey-get",
     "https://learn.microsoft.com/en-us/graph/api/bookingbusiness-list-services",
     "https://learn.microsoft.com/en-us/graph/api/browsersitelist-post-sites",
     "https://learn.microsoft.com/en-us/graph/api/calendar-delta",
@@ -24695,6 +25002,9 @@
     "https://learn.microsoft.com/en-us/graph/api/channel-list",
     "https://learn.microsoft.com/en-us/graph/api/channel-post",
     "https://learn.microsoft.com/en-us/graph/api/channel-post-tabs",
+    "https://learn.microsoft.com/en-us/graph/api/chart-get",
+    "https://learn.microsoft.com/en-us/graph/api/chart-list",
+    "https://learn.microsoft.com/en-us/graph/api/chart-update",
     "https://learn.microsoft.com/en-us/graph/api/chat-get-installedapps",
     "https://learn.microsoft.com/en-us/graph/api/chat-list-installedapps",
     "https://learn.microsoft.com/en-us/graph/api/chat-post-installedapps",
@@ -24707,7 +25017,11 @@
     "https://learn.microsoft.com/en-us/graph/api/contactfolder-post-childfolders",
     "https://learn.microsoft.com/en-us/graph/api/conversationthread-list-posts",
     "https://learn.microsoft.com/en-us/graph/api/conversationthread-reply",
+    "https://learn.microsoft.com/en-us/graph/api/device-delete",
+    "https://learn.microsoft.com/en-us/graph/api/device-get",
+    "https://learn.microsoft.com/en-us/graph/api/device-list",
     "https://learn.microsoft.com/en-us/graph/api/device-post-devices",
+    "https://learn.microsoft.com/en-us/graph/api/device-provision",
     "https://learn.microsoft.com/en-us/graph/api/device-update",
     "https://learn.microsoft.com/en-us/graph/api/directory-deleteditems-delete",
     "https://learn.microsoft.com/en-us/graph/api/directory-deleteditems-get",
@@ -24715,6 +25029,7 @@
     "https://learn.microsoft.com/en-us/graph/api/directory-deleteditems-list",
     "https://learn.microsoft.com/en-us/graph/api/directory-deleteditems-restore",
     "https://learn.microsoft.com/en-us/graph/api/directory-list-administrativeunits",
+    "https://learn.microsoft.com/en-us/graph/api/directory-list-devicelocalcredentials",
     "https://learn.microsoft.com/en-us/graph/api/directory-post-administrativeunits",
     "https://learn.microsoft.com/en-us/graph/api/directoryobject-checkmembergroups",
     "https://learn.microsoft.com/en-us/graph/api/directoryobject-checkmemberobjects",
@@ -24730,7 +25045,10 @@
     "https://learn.microsoft.com/en-us/graph/api/directoryrole-list-scopedmembers",
     "https://learn.microsoft.com/en-us/graph/api/directoryrole-post-directoryroles",
     "https://learn.microsoft.com/en-us/graph/api/directoryrole-post-members",
+    "https://learn.microsoft.com/en-us/graph/api/directoryroletemplate-get",
     "https://learn.microsoft.com/en-us/graph/api/directoryroletemplate-list",
+    "https://learn.microsoft.com/en-us/graph/api/domain-list-verificationdnsrecords",
+    "https://learn.microsoft.com/en-us/graph/api/domain-post-domains",
     "https://learn.microsoft.com/en-us/graph/api/drive-get",
     "https://learn.microsoft.com/en-us/graph/api/drive-list",
     "https://learn.microsoft.com/en-us/graph/api/driveitem-assignsensitivitylabel",
@@ -24808,6 +25126,8 @@
     "https://learn.microsoft.com/en-us/graph/api/externalconnectors-externalconnection-put-items",
     "https://learn.microsoft.com/en-us/graph/api/externalconnectors-externalitem-addactivities",
     "https://learn.microsoft.com/en-us/graph/api/externalconnectors-externalitem-get",
+    "https://learn.microsoft.com/en-us/graph/api/featurerolloutpolicies-list",
+    "https://learn.microsoft.com/en-us/graph/api/featurerolloutpolicy-get",
     "https://learn.microsoft.com/en-us/graph/api/federatedtokenvalidationpolicy-get",
     "https://learn.microsoft.com/en-us/graph/api/group-assignlicense",
     "https://learn.microsoft.com/en-us/graph/api/group-delete",
@@ -24831,6 +25151,7 @@
     "https://learn.microsoft.com/en-us/graph/api/grouplifecyclepolicy-removegroup",
     "https://learn.microsoft.com/en-us/graph/api/grouplifecyclepolicy-update",
     "https://learn.microsoft.com/en-us/graph/api/groupresource-get",
+    "https://learn.microsoft.com/en-us/graph/api/groupsettingtemplate-get",
     "https://learn.microsoft.com/en-us/graph/api/groupsettingtemplate-list",
     "https://learn.microsoft.com/en-us/graph/api/identitygovernance-taskprocessingresult-resume",
     "https://learn.microsoft.com/en-us/graph/api/inferenceclassification-list-overrides",
@@ -25081,6 +25402,7 @@
     "https://learn.microsoft.com/en-us/graph/api/resources/externalconnectors-urltoitemresolverbase",
     "https://learn.microsoft.com/en-us/graph/api/resources/externaluserprofile",
     "https://learn.microsoft.com/en-us/graph/api/resources/featurerolloutpolicy",
+    "https://learn.microsoft.com/en-us/graph/api/resources/federatedidentitycredentials-overview",
     "https://learn.microsoft.com/en-us/graph/api/resources/federatedtokenvalidationpolicy",
     "https://learn.microsoft.com/en-us/graph/api/resources/fileattachment",
     "https://learn.microsoft.com/en-us/graph/api/resources/floor",
@@ -25091,6 +25413,7 @@
     "https://learn.microsoft.com/en-us/graph/api/resources/groups-overview",
     "https://learn.microsoft.com/en-us/graph/api/resources/groupsetting",
     "https://learn.microsoft.com/en-us/graph/api/resources/groupsettingtemplate",
+    "https://learn.microsoft.com/en-us/graph/api/resources/identity",
     "https://learn.microsoft.com/en-us/graph/api/resources/identity-network-access-overview",
     "https://learn.microsoft.com/en-us/graph/api/resources/identitycorrelation",
     "https://learn.microsoft.com/en-us/graph/api/resources/identitygovernance-lifecyclepolicy",
@@ -25141,6 +25464,7 @@
     "https://learn.microsoft.com/en-us/graph/api/resources/messageruleactions",
     "https://learn.microsoft.com/en-us/graph/api/resources/mobileappmanagementpolicy",
     "https://learn.microsoft.com/en-us/graph/api/resources/mobiledevicemanagementpolicy",
+    "https://learn.microsoft.com/en-us/graph/api/resources/mobilitymanagementpolicy",
     "https://learn.microsoft.com/en-us/graph/api/resources/multivaluelegacyextendedproperty",
     "https://learn.microsoft.com/en-us/graph/api/resources/muteparticipantoperation",
     "https://learn.microsoft.com/en-us/graph/api/resources/networkaccess-tlsinspectionpolicy",
@@ -25179,12 +25503,15 @@
     "https://learn.microsoft.com/en-us/graph/api/resources/partners-billing-billedaggregatedusage",
     "https://learn.microsoft.com/en-us/graph/api/resources/passwordprofile",
     "https://learn.microsoft.com/en-us/graph/api/resources/patternedrecurrence",
+    "https://learn.microsoft.com/en-us/graph/api/resources/pendingexternaluserprofile",
     "https://learn.microsoft.com/en-us/graph/api/resources/person",
     "https://learn.microsoft.com/en-us/graph/api/resources/persontype",
     "https://learn.microsoft.com/en-us/graph/api/resources/phone",
     "https://learn.microsoft.com/en-us/graph/api/resources/physicaladdress",
     "https://learn.microsoft.com/en-us/graph/api/resources/place",
     "https://learn.microsoft.com/en-us/graph/api/resources/places-api-overview",
+    "https://learn.microsoft.com/en-us/graph/api/resources/planner-overview",
+    "https://learn.microsoft.com/en-us/graph/api/resources/plannerassignment",
     "https://learn.microsoft.com/en-us/graph/api/resources/plannerassignments",
     "https://learn.microsoft.com/en-us/graph/api/resources/plannerplan",
     "https://learn.microsoft.com/en-us/graph/api/resources/plannertask",
@@ -25354,6 +25681,7 @@
     "https://learn.microsoft.com/en-us/graph/api/teamworksectionitem-move",
     "https://learn.microsoft.com/en-us/graph/api/teamworksectionitem-reorder",
     "https://learn.microsoft.com/en-us/graph/api/teamworktag-list",
+    "https://learn.microsoft.com/en-us/graph/api/template-list-devicetemplates",
     "https://learn.microsoft.com/en-us/graph/api/tenantgovernanceservices-relatedtenant-refresh",
     "https://learn.microsoft.com/en-us/graph/api/tenantgovernanceservices-relatedtenant-refreshstatus",
     "https://learn.microsoft.com/en-us/graph/api/todo-list-lists",
@@ -25459,6 +25787,7 @@
     "https://learn.microsoft.com/en-us/graph/booking-concept-overview",
     "https://learn.microsoft.com/en-us/graph/browser-edge-concept-overview",
     "https://learn.microsoft.com/en-us/graph/change-notifications-overview",
+    "https://learn.microsoft.com/en-us/graph/change-notifications-with-resource-data",
     "https://learn.microsoft.com/en-us/graph/cloud-communication-online-meeting-application-access-policy",
     "https://learn.microsoft.com/en-us/graph/cloudpc-concept-overview",
     "https://learn.microsoft.com/en-us/graph/connecting-external-content-build-quickstart",
@@ -25532,6 +25861,7 @@
     "https://learn.microsoft.com/en-us/graph/permissions-reference",
     "https://learn.microsoft.com/en-us/graph/planner-concept-overview",
     "https://learn.microsoft.com/en-us/graph/query-parameters",
+    "https://learn.microsoft.com/en-us/graph/reportroot-authorization",
     "https://learn.microsoft.com/en-us/graph/reportroot-concept-overview",
     "https://learn.microsoft.com/en-us/graph/sdks/choose-authentication-providers",
     "https://learn.microsoft.com/en-us/graph/sdks/generate-with-kiota",
@@ -25629,6 +25959,7 @@
     "https://learn.microsoft.com/en-us/mem/intune/developer/reports-ref-devices",
     "https://learn.microsoft.com/en-us/microsoft-365-apps/outlook/calendaring/open-shared-calendar",
     "https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility",
+    "https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/api/ai-services/interaction-export/resources/aiinteraction",
     "https://learn.microsoft.com/en-us/microsoft-365-copilot/microsoft-365-copilot-overview",
     "https://learn.microsoft.com/en-us/microsoft-365/",
     "https://learn.microsoft.com/en-us/microsoft-365/admin/",
@@ -26233,6 +26564,7 @@
     "https://learn.microsoft.com/en-us/purview/unified-catalog",
     "https://learn.microsoft.com/en-us/purview/unified-catalog-regions",
     "https://learn.microsoft.com/en-us/purview/whats-new",
+    "https://learn.microsoft.com/en-us/rest/api/authorization/privileged-role-eligibility-rest-sample",
     "https://learn.microsoft.com/en-us/rest/api/azure/",
     "https://learn.microsoft.com/en-us/rest/api/keyvault/",
     "https://learn.microsoft.com/en-us/rest/api/mysql/databases/create-or-update",
@@ -26384,234 +26716,6 @@
     "https://learn.microsoft.com/en-us/windows/win32/wer/windows-error-reporting"
   ],
   "queue": [
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/cost-management-billing/manage/understand-ea-roles",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/identity",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/identity",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/identity",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/identity",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/identity",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/outlook-get-shared-events-calendars",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/change-notifications-with-resource-data",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/api/ai-services/interaction-export/resources/aiinteraction",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/api/ai-services/interaction-export/resources/aiinteraction",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/chart-list",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/chart-get",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/chart-update",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/reportroot-authorization",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/plannerplan",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/planner-overview",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/plannerassignment",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/page",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/page",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/application-post-applications",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/application-update",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/application-delete",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/application-addpassword",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/application-removepassword",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/federatedidentitycredentials-overview",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/application-addkey",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/agent-id/identity-professional/microsoft-entra-agent-identities-for-ai-agents",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/bitlocker-list-recoverykeys",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/bitlockerrecoverykey-get",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/custom-security-attributes-overview",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/backup/overview",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/device-list",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/device-post-devices",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/device-get",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/device-update",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/device-delete",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/device-provision",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/template-list-devicetemplates",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/directory-list-devicelocalcredentials",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/unifiedroledefinition",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/directoryroletemplate-get",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/directoryroletemplate-list",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/active-directory/roles/custom-overview",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/rest/api/authorization/privileged-role-eligibility-rest-sample",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/privilegedaccessgroup-post-assignmentschedulerequests",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/directorysettingtemplate",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/groupsettingtemplate",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/groupsettingtemplate",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/groupsettingtemplate-get",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/domain-post-domains",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/domain-list-verificationdnsrecords",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/pendingexternaluserprofile",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/featurerolloutpolicies-list",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/featurerolloutpolicy-get",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/group-assignlicense",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/group-assignlicense",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/mobilitymanagementpolicy",
-      "depth": 3
-    },
     {
       "url": "https://learn.microsoft.com/en-us/graph/api/resources/mobilitymanagementpolicy",
       "depth": 3
@@ -29067,8 +29171,8 @@
   ],
   "last_batch": {
     "attempted": 36,
-    "documents_total": 2643,
-    "queued": 670,
+    "documents_total": 2679,
+    "queued": 613,
     "failures": []
   }
 }
