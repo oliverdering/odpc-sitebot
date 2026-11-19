@@ -23044,6 +23044,346 @@
       "mapped_tracks": [
         "SC-300"
       ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/app-provisioning/inbound-provisioning-api-powershell",
+      "sha256": "8fc379f9fca440244ef361527132cc0daeb8fd85007963c139960d2dc6027dd6",
+      "captured_at": "2026-11-19T00:56:25.872978+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/app-provisioning/inbound-provisioning-api-logic-apps",
+      "sha256": "a31fcceb625c8a947f8c1bdb43638f6d3e92a2bf0826286397fd5946b7696697",
+      "captured_at": "2026-11-19T00:56:25.968432+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/app-provisioning/inbound-provisioning-api-issues",
+      "sha256": "dd2218d680b5ae36658d393b8b947c64673083c13f66cb9ec1fc5add0a7fae74",
+      "captured_at": "2026-11-19T00:56:26.033695+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-identity-manager/microsoft-identity-manager-2016",
+      "sha256": "282c3c39616c14be77d046b0891c29404a2b82bfcb2f258e3c90dc12b7b82c33",
+      "captured_at": "2026-11-19T00:56:26.232878+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/v2-howto-app-gallery-listing",
+      "sha256": "de19ad5cab2ca9457a73c4e0a2ca68e519c331de5a035d62eadfe06011deb1cb",
+      "captured_at": "2026-11-19T00:56:26.408159+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/saas-apps/atlassian-cloud-tutorial",
+      "sha256": "6bcf8ec27ba1476983bc80af08049bfde513f6733bae66a0881d03e82409557b",
+      "captured_at": "2026-11-19T00:56:26.507678+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/how-to-prerequisites",
+      "sha256": "a37f1f135637e4bba0e6898ecbc7b105927842309ec13e801471c331f5359427",
+      "captured_at": "2026-11-19T00:56:26.646144+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/app-provisioning/known-issues",
+      "sha256": "2ab26ae4140d2f41c4ca19acb5cee2f19e1f2072857885deb0f3da58a5a63046",
+      "captured_at": "2026-11-19T00:56:26.963558+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/multi-tenant-organizations/cross-tenant-synchronization-topology",
+      "sha256": "7dc05c6457f36695954d19af3fef667d1f0f060da6c2bf4e4751ea7b420a1ab1",
+      "captured_at": "2026-11-19T00:56:27.038374+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/identitygovernance-taskprocessingresult-resume",
+      "sha256": "fc5fead7dd793bf08d044ac568531f34c52417b8d3629c32b9d4b8d542b89568",
+      "captured_at": "2026-11-19T00:56:27.361907+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/logic-apps/create-managed-service-identity",
+      "sha256": "c00a5095e1fd5c3769a87550562da6cbc042d32b05357bdd861fc123e1798ead",
+      "captured_at": "2026-11-19T00:56:27.546656+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/id-governance/trigger-custom-task",
+      "sha256": "33e3aaf62863ac37fb9b7437e18fe58c51e7eb0f70e06f452df34e141e392f1a",
+      "captured_at": "2026-11-19T00:56:27.681163+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/groups-approval-workflow",
+      "sha256": "261d86554013fbc2db28d56294a495697e20d0dc4c4b85e46dad45a6c19b34d3",
+      "captured_at": "2026-11-19T00:56:27.833367+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/id-governance/perform-access-review",
+      "sha256": "8babe56217b5099302fd0eff7728ebae023ea007ee366479a1a4260fe3221ec1",
+      "captured_at": "2026-11-19T00:56:27.938537+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-catalog-create",
+      "sha256": "f7054933278714549130b169b5d6887e9ff57317ded539453d1686c9caf8a4d7",
+      "captured_at": "2026-11-19T00:56:28.054516+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/id-governance/using-multi-stage-reviews",
+      "sha256": "ffb7249ea8d7a62371bb37844996272b307702bee6315202aca47c45663a08d5",
+      "captured_at": "2026-11-19T00:56:28.304644+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/accessreviewset-post-definitions",
+      "sha256": "8836896d833efdc6ed52818fcfb5fbd073ca6753d49b850e74e604af6c5a01de",
+      "captured_at": "2026-11-19T00:56:29.024305+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-edit",
+      "sha256": "24ab4e29345f611643686b553c322629e5fa517baa6847fac12757abaeaa5871",
+      "captured_at": "2026-11-19T00:56:29.119619+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/entitlementmanagement-list-assignments",
+      "sha256": "7652c8be7cdbdebd85ab94929341ef97634d47d32d8f502ba264fc8ea7292b3c",
+      "captured_at": "2026-11-19T00:56:29.429546+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-create-app",
+      "sha256": "33837fedac6372fee17041b838c3dedc2f87f5db887a8c9595c36d65ed307e36",
+      "captured_at": "2026-11-19T00:56:29.598076+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/agent-id/manage-agent",
+      "sha256": "2ed7cbd1760acdb5b6e6ebe016263bbf7c0537c62a4948607eab2154aca13f0e",
+      "captured_at": "2026-11-19T00:56:29.788765+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-request-approve",
+      "sha256": "7209cef5ad7993f74ab2c46777e2a15d781cf042a5f3e54dd54dec6dbb9680c8",
+      "captured_at": "2026-11-19T00:56:29.946888+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-process",
+      "sha256": "09489bb8cb645acda626872739ce536a8490d9b0eb7e12e33f0f0071e8f89448",
+      "captured_at": "2026-11-19T00:56:30.141183+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/groups-discover-groups",
+      "sha256": "f474251769dc4eb08ac48d78818b61493861107125fb8f42b8e12f3c9743dc14",
+      "captured_at": "2026-11-19T00:56:30.326780+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/entitlementmanagement-post-resourcerequests",
+      "sha256": "2f46c8db292f7f6069f9dbeeee2e1ce2c8c675538384ed56926e41ef9e8d8b8e",
+      "captured_at": "2026-11-19T00:56:30.707609+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/accesspackage-post-resourcerolescopes",
+      "sha256": "38e8a294eca4a48038964bb21f0c0725723bb264b58706f9236dd79ed6ceb49a",
+      "captured_at": "2026-11-19T00:56:30.944068+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-reports",
+      "sha256": "f7e4fc3a180ef4e2edb80aa44eb3415ff6c58951bfe033aadfba638bf5656b29",
+      "captured_at": "2026-11-19T00:56:31.008934+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/saas-apps/sap-cloud-platform-identity-authentication-provisioning-tutorial",
+      "sha256": "eeff733f6970d4859681d8c8ada9e89278ecf067d5a0526bbe15868df1198bd5",
+      "captured_at": "2026-11-19T00:56:31.176810+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-manage-user-profile-info",
+      "sha256": "584a43db0443d622659e0aec17549344bf9db7518f47dbf52c6a2cd717f969f0",
+      "captured_at": "2026-11-19T00:56:31.420223+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/accesspackageapprovalstage",
+      "sha256": "8df9b9c29ae11c309785cd7ab44e74862806c2d9d56efefcb4493dd28c694cd9",
+      "captured_at": "2026-11-19T00:56:31.809168+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/architecture/6-secure-access-entitlement-managment",
+      "sha256": "9cc63b26f3802bdcd1874d52430e72db9c4ae5e7a8f2037f2815b0130564c781",
+      "captured_at": "2026-11-19T00:56:32.066333+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/accesspackagesubject",
+      "sha256": "e65696b09abbe851d7223dce770bfac9cb1f72ae35a7ad02622c87a79bd40b8b",
+      "captured_at": "2026-11-19T00:56:32.314647+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/resources/accesspackage",
+      "sha256": "1b773b03988ba739fb5510cb1205939c1fe661223c84bf2707fe9fe4708792a1",
+      "captured_at": "2026-11-19T00:56:32.515756+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/api/accesspackageassignment-additionalaccess",
+      "sha256": "136fac075dac42da9158a3a046d08816bc2f721d5018090fa8427b45b4cc2511",
+      "captured_at": "2026-11-19T00:56:32.794436+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-logs-and-reporting",
+      "sha256": "745c37b0a468850a31fd166c02d4df827b207b511629008dad737a09727a7587",
+      "captured_at": "2026-11-19T00:56:32.886851+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/verified-id/verifiable-credentials-configure-issuer",
+      "sha256": "fe8809f050c459d7363b9e44cfb616d504cc5646fd64853b7c5b4a4bd37a381e",
+      "captured_at": "2026-11-19T00:56:32.971502+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
     }
   ],
   "seen": [
@@ -23211,6 +23551,7 @@
     "https://learn.microsoft.com/en-us/azure/key-vault/general/rbac-guide",
     "https://learn.microsoft.com/en-us/azure/lighthouse/concepts/cloud-solution-provider",
     "https://learn.microsoft.com/en-us/azure/lighthouse/overview",
+    "https://learn.microsoft.com/en-us/azure/logic-apps/create-managed-service-identity",
     "https://learn.microsoft.com/en-us/azure/logic-apps/logic-apps-overview",
     "https://learn.microsoft.com/en-us/azure/networking/check-usage-against-limits",
     "https://learn.microsoft.com/en-us/azure/notification-hubs",
@@ -23325,6 +23666,7 @@
     "https://learn.microsoft.com/en-us/entra/agent-id/identity-platform/what-is-agent-id-platform",
     "https://learn.microsoft.com/en-us/entra/agent-id/integrate-aws-bedrock-agent",
     "https://learn.microsoft.com/en-us/entra/agent-id/interactive-agent-authentication-authorization-flow",
+    "https://learn.microsoft.com/en-us/entra/agent-id/manage-agent",
     "https://learn.microsoft.com/en-us/entra/agent-id/manage-agent-identities-admin",
     "https://learn.microsoft.com/en-us/entra/agent-id/manage-agent-identities-end-user",
     "https://learn.microsoft.com/en-us/entra/agent-id/security-for-ai-overview",
@@ -23335,6 +23677,7 @@
     "https://learn.microsoft.com/en-us/entra/architecture/1-secure-access-posture",
     "https://learn.microsoft.com/en-us/entra/architecture/2-secure-access-current-state",
     "https://learn.microsoft.com/en-us/entra/architecture/3-secure-access-plan",
+    "https://learn.microsoft.com/en-us/entra/architecture/6-secure-access-entitlement-managment",
     "https://learn.microsoft.com/en-us/entra/architecture/architecture",
     "https://learn.microsoft.com/en-us/entra/architecture/deployment-plans",
     "https://learn.microsoft.com/en-us/entra/architecture/ops-guide-auth",
@@ -23404,6 +23747,7 @@
     "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-get-support",
     "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-manage-groups",
     "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-manage-stay-signed-in-prompt",
+    "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-manage-user-profile-info",
     "https://learn.microsoft.com/en-us/entra/fundamentals/identity-fundamental-concepts",
     "https://learn.microsoft.com/en-us/entra/fundamentals/licensing",
     "https://learn.microsoft.com/en-us/entra/fundamentals/properties-area",
@@ -23506,6 +23850,8 @@
     "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-assignments",
     "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-auto-assignment-policy",
     "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-create",
+    "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-create-app",
+    "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-edit",
     "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-eligible",
     "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-first",
     "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-incompatible",
@@ -23514,6 +23860,7 @@
     "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-request-policy",
     "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-resources",
     "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-reviews-create",
+    "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-catalog-create",
     "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-configure-id-protection-approvals",
     "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-configure-insider-risk-management-approvals",
     "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-delegate",
@@ -23521,9 +23868,13 @@
     "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-external-users",
     "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-group-writeback",
     "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-logic-apps-integration",
+    "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-logs-and-reporting",
     "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-onboard-external-user",
     "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-organization",
     "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-overview",
+    "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-process",
+    "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-reports",
+    "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-request-approve",
     "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-request-behalf",
     "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-roles",
     "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-sap-integration",
@@ -23546,8 +23897,11 @@
     "https://learn.microsoft.com/en-us/entra/id-governance/microsoft-entra-id-governance-licensing-for-guest-users",
     "https://learn.microsoft.com/en-us/entra/id-governance/my-access-approver-details",
     "https://learn.microsoft.com/en-us/entra/id-governance/my-access-portal-overview",
+    "https://learn.microsoft.com/en-us/entra/id-governance/perform-access-review",
     "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/",
     "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/concept-pim-for-groups",
+    "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/groups-approval-workflow",
+    "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/groups-discover-groups",
     "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-approval-workflow",
     "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure",
     "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review",
@@ -23564,8 +23918,10 @@
     "https://learn.microsoft.com/en-us/entra/id-governance/scenarios/identity-governance-use-cases",
     "https://learn.microsoft.com/en-us/entra/id-governance/scenarios/least-privileged",
     "https://learn.microsoft.com/en-us/entra/id-governance/services-and-integration-partners",
+    "https://learn.microsoft.com/en-us/entra/id-governance/trigger-custom-task",
     "https://learn.microsoft.com/en-us/entra/id-governance/tutorial-onboard-custom-workflow-portal",
     "https://learn.microsoft.com/en-us/entra/id-governance/tutorial-scheduled-leaver-portal",
+    "https://learn.microsoft.com/en-us/entra/id-governance/using-multi-stage-reviews",
     "https://learn.microsoft.com/en-us/entra/id-governance/what-are-lifecycle-workflows",
     "https://learn.microsoft.com/en-us/entra/id-governance/what-is-provisioning",
     "https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-policies",
@@ -23626,6 +23982,10 @@
     "https://learn.microsoft.com/en-us/entra/identity/app-provisioning/inbound-provisioning-api-faqs",
     "https://learn.microsoft.com/en-us/entra/identity/app-provisioning/inbound-provisioning-api-grant-access",
     "https://learn.microsoft.com/en-us/entra/identity/app-provisioning/inbound-provisioning-api-graph-explorer",
+    "https://learn.microsoft.com/en-us/entra/identity/app-provisioning/inbound-provisioning-api-issues",
+    "https://learn.microsoft.com/en-us/entra/identity/app-provisioning/inbound-provisioning-api-logic-apps",
+    "https://learn.microsoft.com/en-us/entra/identity/app-provisioning/inbound-provisioning-api-powershell",
+    "https://learn.microsoft.com/en-us/entra/identity/app-provisioning/known-issues",
     "https://learn.microsoft.com/en-us/entra/identity/app-provisioning/migrate-from-sap-idm",
     "https://learn.microsoft.com/en-us/entra/identity/app-provisioning/on-premises-application-provisioning-architecture",
     "https://learn.microsoft.com/en-us/entra/identity/app-provisioning/on-premises-ldap-connector-configure",
@@ -23738,9 +24098,11 @@
     "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/plan-sso-deployment",
     "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/tutorial-enforce-secret-standards",
     "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/tutorial-manage-certificates-for-federated-single-sign-on",
+    "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/v2-howto-app-gallery-listing",
     "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/what-is-application-management",
     "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/what-is-single-sign-on",
     "https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory",
+    "https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/how-to-prerequisites",
     "https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/plan-cloud-sync-topologies",
     "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/choose-ad-authn",
     "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-device-writeback",
@@ -23795,6 +24157,7 @@
     "https://learn.microsoft.com/en-us/entra/identity/multi-tenant-organizations/",
     "https://learn.microsoft.com/en-us/entra/identity/multi-tenant-organizations/cross-tenant-synchronization-configure",
     "https://learn.microsoft.com/en-us/entra/identity/multi-tenant-organizations/cross-tenant-synchronization-overview",
+    "https://learn.microsoft.com/en-us/entra/identity/multi-tenant-organizations/cross-tenant-synchronization-topology",
     "https://learn.microsoft.com/en-us/entra/identity/multi-tenant-organizations/multi-tenant-organization-overview",
     "https://learn.microsoft.com/en-us/entra/identity/multi-tenant-organizations/overview",
     "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/admin-units-restricted-management",
@@ -23812,7 +24175,9 @@
     "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/protected-actions-add",
     "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/security-emergency-access",
     "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/security-planning",
+    "https://learn.microsoft.com/en-us/entra/identity/saas-apps/atlassian-cloud-tutorial",
     "https://learn.microsoft.com/en-us/entra/identity/saas-apps/dropboxforbusiness-provisioning-tutorial",
+    "https://learn.microsoft.com/en-us/entra/identity/saas-apps/sap-cloud-platform-identity-authentication-provisioning-tutorial",
     "https://learn.microsoft.com/en-us/entra/identity/saas-apps/servicenow-provisioning-tutorial",
     "https://learn.microsoft.com/en-us/entra/identity/saas-apps/tutorial-list",
     "https://learn.microsoft.com/en-us/entra/identity/users/clean-up-stale-guest-accounts",
@@ -23843,6 +24208,7 @@
     "https://learn.microsoft.com/en-us/entra/verified-id/how-to-dnsbind",
     "https://learn.microsoft.com/en-us/entra/verified-id/how-to-use-quickstart-idtoken",
     "https://learn.microsoft.com/en-us/entra/verified-id/rules-and-display-definitions-model",
+    "https://learn.microsoft.com/en-us/entra/verified-id/verifiable-credentials-configure-issuer",
     "https://learn.microsoft.com/en-us/entra/verified-id/verifiable-credentials-configure-tenant",
     "https://learn.microsoft.com/en-us/entra/verified-id/verifiable-credentials-configure-tenant-quick",
     "https://learn.microsoft.com/en-us/entra/verified-id/verifiable-credentials-faq",
@@ -23895,6 +24261,9 @@
     "https://learn.microsoft.com/en-us/graph/",
     "https://learn.microsoft.com/en-us/graph/aad-advanced-queries",
     "https://learn.microsoft.com/en-us/graph/activity-feed-concept-overview",
+    "https://learn.microsoft.com/en-us/graph/api/accesspackage-post-resourcerolescopes",
+    "https://learn.microsoft.com/en-us/graph/api/accesspackageassignment-additionalaccess",
+    "https://learn.microsoft.com/en-us/graph/api/accessreviewset-post-definitions",
     "https://learn.microsoft.com/en-us/graph/api/activitiescontainer-post-contentactivities",
     "https://learn.microsoft.com/en-us/graph/api/adhoccall-getallrecordings",
     "https://learn.microsoft.com/en-us/graph/api/administrativeunit-delete",
@@ -24037,7 +24406,9 @@
     "https://learn.microsoft.com/en-us/graph/api/employeeexperience-list-learningproviders",
     "https://learn.microsoft.com/en-us/graph/api/employeeexperience-post-learningproviders",
     "https://learn.microsoft.com/en-us/graph/api/employeeexperienceuser-list-assignedroles",
+    "https://learn.microsoft.com/en-us/graph/api/entitlementmanagement-list-assignments",
     "https://learn.microsoft.com/en-us/graph/api/entitlementmanagement-post-assignmentrequests",
+    "https://learn.microsoft.com/en-us/graph/api/entitlementmanagement-post-resourcerequests",
     "https://learn.microsoft.com/en-us/graph/api/event-accept",
     "https://learn.microsoft.com/en-us/graph/api/event-cancel",
     "https://learn.microsoft.com/en-us/graph/api/event-decline",
@@ -24081,6 +24452,7 @@
     "https://learn.microsoft.com/en-us/graph/api/grouplifecyclepolicy-update",
     "https://learn.microsoft.com/en-us/graph/api/groupresource-get",
     "https://learn.microsoft.com/en-us/graph/api/groupsettingtemplate-list",
+    "https://learn.microsoft.com/en-us/graph/api/identitygovernance-taskprocessingresult-resume",
     "https://learn.microsoft.com/en-us/graph/api/inferenceclassification-list-overrides",
     "https://learn.microsoft.com/en-us/graph/api/inferenceclassification-post-overrides",
     "https://learn.microsoft.com/en-us/graph/api/inferenceclassificationoverride-update",
@@ -24155,7 +24527,10 @@
     "https://learn.microsoft.com/en-us/graph/api/reportsroot-list-reflectcheckinresponses",
     "https://learn.microsoft.com/en-us/graph/api/resources/accessdriftdetail",
     "https://learn.microsoft.com/en-us/graph/api/resources/accessdriftsummary",
+    "https://learn.microsoft.com/en-us/graph/api/resources/accesspackage",
+    "https://learn.microsoft.com/en-us/graph/api/resources/accesspackageapprovalstage",
     "https://learn.microsoft.com/en-us/graph/api/resources/accesspackageassignment",
+    "https://learn.microsoft.com/en-us/graph/api/resources/accesspackagesubject",
     "https://learn.microsoft.com/en-us/graph/api/resources/accessreviewhistoryschedulesettings",
     "https://learn.microsoft.com/en-us/graph/api/resources/accessreviewschedulesettings",
     "https://learn.microsoft.com/en-us/graph/api/resources/activitiescontainer",
@@ -25209,6 +25584,7 @@
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/workflows-experience/flow-designer",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/workflows-experience/flows-overview",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/workflows-experience/microsoft-365-copilot-node-workflow",
+    "https://learn.microsoft.com/en-us/microsoft-identity-manager/microsoft-identity-manager-2016",
     "https://learn.microsoft.com/en-us/microsoftsearch/",
     "https://learn.microsoft.com/en-us/microsoftsearch/connectors-gallery",
     "https://learn.microsoft.com/en-us/microsoftsearch/connectors-in-all-vertical",
@@ -25620,218 +25996,6 @@
     "https://learn.microsoft.com/en-us/windows/win32/wer/windows-error-reporting"
   ],
   "queue": [
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/app-provisioning/clear-attribute-values",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/app-provisioning/inbound-provisioning-api-powershell",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/app-provisioning/inbound-provisioning-api-logic-apps",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/app-provisioning/inbound-provisioning-api-issues",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-identity-manager/microsoft-identity-manager-2016",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/v2-howto-app-gallery-listing",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/saas-apps/atlassian-cloud-tutorial",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/how-to-prerequisites",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/app-provisioning/known-issues",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/multi-tenant-organizations/cross-tenant-synchronization-topology",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/logic-apps/logic-apps-overview",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/identitygovernance-taskprocessingresult-resume",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/logic-apps/create-managed-service-identity",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/id-governance/trigger-custom-task",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/groups-approval-workflow",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/id-governance/perform-access-review",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/id-governance/custom-data-resource-access-reviews",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/id-governance/custom-data-resource-access-reviews",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-catalog-create",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/id-governance/using-multi-stage-reviews",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/accessreviewset-post-definitions",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-catalog-create",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-request-behalf",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-edit",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/entitlementmanagement-list-assignments",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/entitlementmanagement-post-assignmentrequests",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-create-app",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/agent-id/manage-agent",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-request-approve",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-process",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-catalog-create",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/groups-discover-groups",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/entitlementmanagement-post-resourcerequests",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/accesspackage-post-resourcerolescopes",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-reports",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/saas-apps/sap-cloud-platform-identity-authentication-provisioning-tutorial",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-manage-user-profile-info",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-request-approve",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/logic-apps/logic-apps-overview",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/accesspackageapprovalstage",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-delegate",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles/integration",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-delegate",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/architecture/6-secure-access-entitlement-managment",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/accesspackagesubject",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/resources/accesspackage",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/api/accesspackageassignment-additionalaccess",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-logs-and-reporting",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/verified-id/verifiable-credentials-configure-tenant-quick",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/verified-id/verifiable-credentials-configure-issuer",
-      "depth": 3
-    },
     {
       "url": "https://learn.microsoft.com/en-us/entra/verified-id/using-facecheck",
       "depth": 3
@@ -28767,8 +28931,8 @@
   ],
   "last_batch": {
     "attempted": 36,
-    "documents_total": 2571,
-    "queued": 786,
+    "documents_total": 2607,
+    "queued": 733,
     "failures": []
   }
 }
