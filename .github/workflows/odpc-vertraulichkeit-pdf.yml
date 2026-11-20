@@ -1,0 +1,53 @@
+name: ODPC Vertraulichkeit PDF bereitstellen
+on:
+  push:
+    paths:
+      - '.github/workflows/odpc-vertraulichkeit-pdf.yml'
+      - 'site-deploy/odpc.de/assets/vertraulichkeitsvereinbarung-20261120.pdf.b64'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install 'paramiko>=3.4,<5'
+      - name: Upload PDF with integrity verification
+        env:
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+        run: |
+          python - <<'PY'
+          import os, base64, hashlib, hmac, urllib.request
+          from pathlib import Path
+          import paramiko
+          blob=base64.b64decode(Path('site-deploy/odpc.de/assets/vertraulichkeitsvereinbarung-20261120.pdf.b64').read_text(),validate=True)
+          expected='e4e027136d284e01ec32007c0cc76effa6979a551679781914f2a39aa7c62272'
+          assert blob.startswith(b'%PDF-') and hashlib.sha256(blob).hexdigest()==expected
+          t=paramiko.Transport(('home119567219.1and1-data.host',22));t.start_client(timeout=25)
+          try:
+              fp='SHA256:'+base64.b64encode(hashlib.sha256(t.get_remote_server_key().asbytes()).digest()).decode().rstrip('=')
+              assert hmac.compare_digest(fp,'SHA256:1gx2w8Rtv3wCgi7Jh8myf/KVd72cRQbow03UP8P095Q')
+              t.auth_password('acc1461323326',os.environ['ODPC_SFTP_PASSWORD'])
+              s=paramiko.SFTPClient.from_transport(t)
+              try:
+                  s.stat('/clickandbuilds/Dering/wp-config.php')
+                  target='/clickandbuilds/Dering/wp-content/uploads/2026/11/odpc-vertraulichkeit-stage-e4e02713.pdf'
+                  try:
+                      s.stat(target)
+                      with s.open(target,'rb') as f: assert hashlib.sha256(f.read()).hexdigest()==expected
+                  except FileNotFoundError:
+                      with s.open(target+'.upload','wb') as f: f.write(blob)
+                      with s.open(target+'.upload','rb') as f: assert hashlib.sha256(f.read()).hexdigest()==expected
+                      s.posix_rename(target+'.upload',target)
+              finally: s.close()
+          finally: t.close()
+          url='https://odpc.de/wp-content/uploads/2026/11/odpc-vertraulichkeit-stage-e4e02713.pdf'
+          with urllib.request.urlopen(url,timeout=30) as r: got=r.read()
+          assert hashlib.sha256(got).hexdigest()==expected
+          print('PDF verified',url)
+          PY
