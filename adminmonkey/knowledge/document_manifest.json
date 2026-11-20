@@ -24664,6 +24664,364 @@
       "mapped_tracks": [
         "MS-102"
       ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/purview/office-365-azure-encryption",
+      "sha256": "4b3a6d0b09bb7b48bdc110d8fbcefe6868d0bbff51f6f6633bae58c10580509d",
+      "captured_at": "2026-11-20T12:58:00.382806+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/purview/office-365-bitlocker-and-distributed-key-manager-for-encryption",
+      "sha256": "95af81ca55a9f77ff41c2d31dbb947880b1b0d8095357af94c2b94a5681dc83e",
+      "captured_at": "2026-11-20T12:58:00.791687+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/purview/microsoft-365-service-encryption",
+      "sha256": "34099b1a00f6d34471beda13815c663c95f1bdeae408320f01982dde819b0c87",
+      "captured_at": "2026-11-20T12:58:01.328669+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/compliance/assurance/assurance-encryption-for-microsoft-365-services",
+      "sha256": "4525c364373d1bcee72f5908bcb7341a9d37d8ae7f3a41fd3722f35828f5539a",
+      "captured_at": "2026-11-20T12:58:01.824130+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/compliance/assurance/assurance-encryption-in-transit",
+      "sha256": "4c27f67745599d11e15b00fc14bc7fb97768721c926499a13940a12d28cbf427",
+      "captured_at": "2026-11-20T12:58:02.263078+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/purview/office-365-customer-managed-encryption-features",
+      "sha256": "408a4b60f955d4be6f3b36506e5fc5a0761e53f2f159916d640369c7622bffb7",
+      "captured_at": "2026-11-20T12:58:02.754593+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/purview/office-365-encryption-risks-and-protections",
+      "sha256": "8768183c3a80a7a50b6b32b78416a0cff63deb67c54c10a23380906e2c3436b6",
+      "captured_at": "2026-11-20T12:58:03.125097+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/purview/office-365-encryption-in-microsoft-dynamics-365",
+      "sha256": "aa6cc8382cc24dd9f253c0f963d1492998f2c7d9957817b69a40ab694068f06f",
+      "captured_at": "2026-11-20T12:58:03.610385+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/sharepoint/content-governance-agent",
+      "sha256": "7d74b083a7fe04fed34a3d4b48cd0a63ce01821e576832babf47adf9582a3ae9",
+      "captured_at": "2026-11-20T12:58:04.067796+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/sharepoint/site-ownership-policy",
+      "sha256": "8eeded183e75eaf6f81f90223ef4e9b5a00aa33285c3ed62f3dd107a64d39df2",
+      "captured_at": "2026-11-20T12:58:04.446295+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/sharepoint/inactive-site-policy",
+      "sha256": "4c3bc9ffa6361a111a89bd3c84747bf6c3f0aa263a443885f4fce147251e6ccb",
+      "captured_at": "2026-11-20T12:58:04.919912+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/sharepoint/request-site-attestations",
+      "sha256": "8b65e75d290acb1dd5323acd69fd152a4cfd92237a6eff970f98db8bd554392f",
+      "captured_at": "2026-11-20T12:58:05.498509+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/sharepoint/catalog-management",
+      "sha256": "650ca9c201f7bd1162b13b4df7bb40b6f866fa953e08f271cc4e8d9bcaedb4ca",
+      "captured_at": "2026-11-20T12:58:06.213289+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/sharepoint/change-history-report",
+      "sha256": "393ee294938abe18b40f62c26f6ef94b61754169054da68360727539e399dc1d",
+      "captured_at": "2026-11-20T12:58:06.504904+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/sharepoint/recent-actions-panel",
+      "sha256": "46bc46ada05c96cacd9ad574cce37365b7c11a6e4243379f958034a80619b4cb",
+      "captured_at": "2026-11-20T12:58:07.296068+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/sharepoint/restricted-site-creation-by-apps",
+      "sha256": "493496b052d5c7dc2b8cb700c9d8c888842a02ba1e6c64d5c1bac89ebc7d4a4c",
+      "captured_at": "2026-11-20T12:58:07.818768+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/sharepoint/authentication-context-example",
+      "sha256": "5bdf45053103cc4c63e455a60e5adf95dab20bb7d6ed1359723eb600c61d89c6",
+      "captured_at": "2026-11-20T12:58:08.226963+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/sharepoint/restricted-access-control",
+      "sha256": "5be3874cc3415b33b2bf6e04b3b29d2f391e5550995f1bc506e49e5403211b3b",
+      "captured_at": "2026-11-20T12:58:08.788316+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/sharepoint/content-management-assessment",
+      "sha256": "fd9a46cccbd1dfc18d83df4590cee97dc3656e6c6d6db5a2a95f2ff0f7916d53",
+      "captured_at": "2026-11-20T12:58:09.129259+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/sharepoint/block-download-from-sites",
+      "sha256": "ef13e0679b6a67fee681192fc9b1c76c108de2b8d4ab32d1dd7b2ac03121de1e",
+      "captured_at": "2026-11-20T12:58:09.686710+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/sharepoint/app-insights",
+      "sha256": "de5a3cd352af1758e29071319b40e05dfc75638eb480d2723ff3c2ed303395e4",
+      "captured_at": "2026-11-20T12:58:09.977632+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/sharepoint/ai-insights",
+      "sha256": "5ff0761b3f466f4123c95c3d478b40a725e121e277b3c2d18ba2c93c5fc3b12a",
+      "captured_at": "2026-11-20T12:58:10.338366+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/sharepoint/insights-on-sharepoint-agents",
+      "sha256": "39004ca78abecb1a4b6f765d0e701995b709e83a03c1cf4e746105f223442731",
+      "captured_at": "2026-11-20T12:58:10.828002+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/sharepoint/restricted-content-discovery",
+      "sha256": "8fe92c3786d012206ab07b30ab85360ab90acbca5475b7d2da41f40f396ac5b2",
+      "captured_at": "2026-11-20T12:58:11.350695+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/sharepoint/data-access-governance-site-permissions-report",
+      "sha256": "6b7ba68b0d4d6d10f5cff2024cf16790938d2d211030f126061b845b5ee8750b",
+      "captured_at": "2026-11-20T12:58:11.704305+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/sharepoint/data-access-governance-site-permissions-users-report",
+      "sha256": "259720fe56b660bb28ccafc5d514cec8fc576e036af295d165c17456f62eea92",
+      "captured_at": "2026-11-20T12:58:12.182122+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/sharepoint/data-access-governance-sensitivity-label-report",
+      "sha256": "e85b45389cfc67508fdefa66f7df6eaf7355b4e328fcc496a2b952781b1c1f0f",
+      "captured_at": "2026-11-20T12:58:12.516284+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/sharepoint/data-access-governance-sharing-links-report",
+      "sha256": "8f26c97aa16701c709ac17e358997a394769d830ef2861e9625c38bbebf04079",
+      "captured_at": "2026-11-20T12:58:12.869591+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/sharepoint/data-access-governance-everyone-except-external-user-report",
+      "sha256": "17791468b1d1d51e036f768b83eb421e3e5f907ec2619a0f2e5bdb274689e309",
+      "captured_at": "2026-11-20T12:58:13.169537+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/sharepoint/powershell-for-data-access-governance",
+      "sha256": "0823188807445ca457fb468f6888da6ed7bef43da00015de45446852f5345054",
+      "captured_at": "2026-11-20T12:58:13.696307+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/sharepoint/site-access-review",
+      "sha256": "7f27b66aef36db9371461341c354a602d934c4c01f3e9973607157588e33c6ec",
+      "captured_at": "2026-11-20T12:58:14.058566+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/sharepoint/site-policy-comparison",
+      "sha256": "ec0ee90f985c5b2c58bed662d9f25f038fb2de356fbfb0d2a02a2e6d29482e35",
+      "captured_at": "2026-11-20T12:58:14.543412+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/sharepoint/insights-on-agent-access",
+      "sha256": "0c631092e9ed487b913b512a549a72f916ec80a3b83486fc5fdd6b41de324d33",
+      "captured_at": "2026-11-20T12:58:14.908245+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/sharepoint/limit-access",
+      "sha256": "7575393c6e702f4440250a57cabb3bd91a2d349cf27eae78c8044c00e49265ff",
+      "captured_at": "2026-11-20T12:58:15.355174+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/sharepoint/onedrive-site-access-restriction",
+      "sha256": "8fc9e618540993ca8cd5c26c7fc3318e94e366e8049d120a9fee2009d47156ba",
+      "captured_at": "2026-11-20T12:58:15.795359+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/sharepoint/restricted-site-creation",
+      "sha256": "7f775fcb8f47a974252a49981fa101543776b5a88e6ea952e41a2bfa7bc39965",
+      "captured_at": "2026-11-20T12:58:16.169524+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
     }
   ],
   "seen": [
@@ -24882,6 +25240,8 @@
     "https://learn.microsoft.com/en-us/cli/azure/reference-index",
     "https://learn.microsoft.com/en-us/cli/azure/release-notes-azure-cli",
     "https://learn.microsoft.com/en-us/cloud-app-security/what-is-cloud-app-security",
+    "https://learn.microsoft.com/en-us/compliance/assurance/assurance-encryption-for-microsoft-365-services",
+    "https://learn.microsoft.com/en-us/compliance/assurance/assurance-encryption-in-transit",
     "https://learn.microsoft.com/en-us/compliance/regulatory/gdpr",
     "https://learn.microsoft.com/en-us/compliance/regulatory/gdpr-data-subject-requests",
     "https://learn.microsoft.com/en-us/connectors/connector-reference/connector-reference-mcpserver-connectors",
@@ -27245,7 +27605,13 @@
     "https://learn.microsoft.com/en-us/purview/insider-risk-management-adaptive-protection",
     "https://learn.microsoft.com/en-us/purview/insider-risk-management-configure",
     "https://learn.microsoft.com/en-us/purview/insider-risk-management-solution-overview",
+    "https://learn.microsoft.com/en-us/purview/microsoft-365-service-encryption",
+    "https://learn.microsoft.com/en-us/purview/office-365-azure-encryption",
+    "https://learn.microsoft.com/en-us/purview/office-365-bitlocker-and-distributed-key-manager-for-encryption",
+    "https://learn.microsoft.com/en-us/purview/office-365-customer-managed-encryption-features",
+    "https://learn.microsoft.com/en-us/purview/office-365-encryption-in-microsoft-dynamics-365",
     "https://learn.microsoft.com/en-us/purview/office-365-encryption-in-the-microsoft-cloud-overview",
+    "https://learn.microsoft.com/en-us/purview/office-365-encryption-risks-and-protections",
     "https://learn.microsoft.com/en-us/purview/purview",
     "https://learn.microsoft.com/en-us/purview/purview-compliance",
     "https://learn.microsoft.com/en-us/purview/purview-portal",
@@ -27300,9 +27666,22 @@
     "https://learn.microsoft.com/en-us/security/zero-trust/zero-trust-identity-device-access-policies-overview",
     "https://learn.microsoft.com/en-us/security/zero-trust/zero-trust-overview",
     "https://learn.microsoft.com/en-us/sharepoint/advanced-management",
+    "https://learn.microsoft.com/en-us/sharepoint/ai-insights",
+    "https://learn.microsoft.com/en-us/sharepoint/app-insights",
+    "https://learn.microsoft.com/en-us/sharepoint/authentication-context-example",
+    "https://learn.microsoft.com/en-us/sharepoint/block-download-from-sites",
+    "https://learn.microsoft.com/en-us/sharepoint/catalog-management",
+    "https://learn.microsoft.com/en-us/sharepoint/change-history-report",
     "https://learn.microsoft.com/en-us/sharepoint/change-your-sharepoint-domain-name",
+    "https://learn.microsoft.com/en-us/sharepoint/content-governance-agent",
+    "https://learn.microsoft.com/en-us/sharepoint/content-management-assessment",
     "https://learn.microsoft.com/en-us/sharepoint/create-site-collection",
+    "https://learn.microsoft.com/en-us/sharepoint/data-access-governance-everyone-except-external-user-report",
     "https://learn.microsoft.com/en-us/sharepoint/data-access-governance-reports",
+    "https://learn.microsoft.com/en-us/sharepoint/data-access-governance-sensitivity-label-report",
+    "https://learn.microsoft.com/en-us/sharepoint/data-access-governance-sharing-links-report",
+    "https://learn.microsoft.com/en-us/sharepoint/data-access-governance-site-permissions-report",
+    "https://learn.microsoft.com/en-us/sharepoint/data-access-governance-site-permissions-users-report",
     "https://learn.microsoft.com/en-us/sharepoint/dev/solution-guidance/modern-experience-site-classification",
     "https://learn.microsoft.com/en-us/sharepoint/dev/solution-guidance/multigeo-discovery",
     "https://learn.microsoft.com/en-us/sharepoint/dev/solution-guidance/multigeo-introduction",
@@ -27310,11 +27689,26 @@
     "https://learn.microsoft.com/en-us/sharepoint/dev/solution-guidance/multigeo-permissions",
     "https://learn.microsoft.com/en-us/sharepoint/dev/solution-guidance/multigeo-sites",
     "https://learn.microsoft.com/en-us/sharepoint/guide-to-sharepoint-modern-experience",
+    "https://learn.microsoft.com/en-us/sharepoint/inactive-site-policy",
+    "https://learn.microsoft.com/en-us/sharepoint/insights-on-agent-access",
+    "https://learn.microsoft.com/en-us/sharepoint/insights-on-sharepoint-agents",
     "https://learn.microsoft.com/en-us/sharepoint/introduction",
+    "https://learn.microsoft.com/en-us/sharepoint/limit-access",
     "https://learn.microsoft.com/en-us/sharepoint/manage-sites-in-new-admin-center",
+    "https://learn.microsoft.com/en-us/sharepoint/onedrive-site-access-restriction",
+    "https://learn.microsoft.com/en-us/sharepoint/powershell-for-data-access-governance",
+    "https://learn.microsoft.com/en-us/sharepoint/recent-actions-panel",
+    "https://learn.microsoft.com/en-us/sharepoint/request-site-attestations",
+    "https://learn.microsoft.com/en-us/sharepoint/restricted-access-control",
+    "https://learn.microsoft.com/en-us/sharepoint/restricted-content-discovery",
+    "https://learn.microsoft.com/en-us/sharepoint/restricted-site-creation",
+    "https://learn.microsoft.com/en-us/sharepoint/restricted-site-creation-by-apps",
     "https://learn.microsoft.com/en-us/sharepoint/sharepoint-admin-role",
     "https://learn.microsoft.com/en-us/sharepoint/sharepoint-online",
     "https://learn.microsoft.com/en-us/sharepoint/sharepoint-storage-planning",
+    "https://learn.microsoft.com/en-us/sharepoint/site-access-review",
+    "https://learn.microsoft.com/en-us/sharepoint/site-ownership-policy",
+    "https://learn.microsoft.com/en-us/sharepoint/site-policy-comparison",
     "https://learn.microsoft.com/en-us/sharepoint/sites/create-a-site-collection",
     "https://learn.microsoft.com/en-us/sharepoint/teams-connected-sites",
     "https://learn.microsoft.com/en-us/sharepoint/technical-reference/query-variables",
@@ -27415,150 +27809,6 @@
     "https://learn.microsoft.com/en-us/windows/win32/wer/windows-error-reporting"
   ],
   "queue": [
-    {
-      "url": "https://learn.microsoft.com/en-us/purview/office-365-azure-encryption",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/purview/office-365-bitlocker-and-distributed-key-manager-for-encryption",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/purview/microsoft-365-service-encryption",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/compliance/assurance/assurance-encryption-for-microsoft-365-services",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/compliance/assurance/assurance-encryption-in-transit",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/purview/office-365-customer-managed-encryption-features",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/purview/office-365-encryption-risks-and-protections",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/purview/office-365-encryption-in-microsoft-dynamics-365",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/sharepoint/content-governance-agent",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/sharepoint/site-ownership-policy",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/sharepoint/inactive-site-policy",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/sharepoint/request-site-attestations",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/sharepoint/catalog-management",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/sharepoint/change-history-report",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/sharepoint/recent-actions-panel",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/sharepoint/restricted-site-creation-by-apps",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/sharepoint/authentication-context-example",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/sharepoint/restricted-access-control",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/sharepoint/content-management-assessment",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/sharepoint/block-download-from-sites",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/sharepoint/app-insights",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/sharepoint/ai-insights",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/sharepoint/insights-on-sharepoint-agents",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/sharepoint/restricted-content-discovery",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/sharepoint/data-access-governance-site-permissions-report",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/sharepoint/data-access-governance-site-permissions-users-report",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/sharepoint/data-access-governance-sensitivity-label-report",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/sharepoint/data-access-governance-sharing-links-report",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/sharepoint/data-access-governance-everyone-except-external-user-report",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/sharepoint/powershell-for-data-access-governance",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/sharepoint/site-access-review",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/sharepoint/site-policy-comparison",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/sharepoint/insights-on-agent-access",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/sharepoint/limit-access",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/sharepoint/onedrive-site-access-restriction",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/sharepoint/restricted-site-creation",
-      "depth": 3
-    },
     {
       "url": "https://learn.microsoft.com/en-us/sharepoint/sharepoint-advanced-management-prerequisites",
       "depth": 3
@@ -29522,29 +29772,8 @@
   ],
   "last_batch": {
     "attempted": 36,
-    "documents_total": 2746,
-    "queued": 526,
-    "failures": [
-      {
-        "url": "https://learn.microsoft.com/en-us/microsoft-365/business-video/",
-        "error": "ValueError"
-      },
-      {
-        "url": "https://learn.microsoft.com/en-us/admin/add-users/about-admin-roles",
-        "error": "ValueError"
-      },
-      {
-        "url": "https://learn.microsoft.com/en-us/admin",
-        "error": "ValueError"
-      },
-      {
-        "url": "https://learn.microsoft.com/en-us/admin/setup/add-or-replace-your-onmicrosoftcom-domain",
-        "error": "ValueError"
-      },
-      {
-        "url": "https://learn.microsoft.com/en-us/office365/smallbusiness/build-your-small-business/build-your-small-business",
-        "error": "ValueError"
-      }
-    ]
+    "documents_total": 2782,
+    "queued": 490,
+    "failures": []
   }
 }
