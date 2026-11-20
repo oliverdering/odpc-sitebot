@@ -1,0 +1,26 @@
+name: Security Monkey deployment
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: security-monkey-release
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check source and syntax
+        run: |
+          test -s site-deploy/ai.odpc.de/securitymonkey/index.html
+          grep -q 'Welche Geräte verwendest du' site-deploy/ai.odpc.de/securitymonkey/index.html
+          php -l site-deploy/ai.odpc.de/odpc-securitymonkey-entry.php
+          python3 -m py_compile scripts/deploy_securitymonkey.py
+      - run: python3 -m pip install 'paramiko>=3.4,<5'
+      - name: Publish and verify
+        env:
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+          AI_ODPC_THEME_PATH: ${{ secrets.AI_ODPC_THEME_PATH }}
+        run: python3 -m scripts.deploy_securitymonkey
