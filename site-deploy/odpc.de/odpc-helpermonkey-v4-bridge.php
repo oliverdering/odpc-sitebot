@@ -11,7 +11,7 @@ if(!defined('ABSPATH'))exit;
  * Never deactivate plugins, alter content, or repeatedly purge on every page view.
  */
 add_action('init',function(){
- $release='odpc-v4-bridge-20261112-cross-browser-cache-refresh-2';
+ $release='odpc-v4-bridge-20261120-remote-profile-photo';
  if(get_option('odpc_bridge_page_cache_release')===$release)return;
  if(!class_exists('WpFastestCache'))return;
  try{
@@ -417,7 +417,7 @@ body.odpc-smartguide-pilot #odpc-utility-dock{width:min(390px,calc(100vw - 14px)
 (function(){
  'use strict';
  var url='https://odpc.de/remote-fernwartung/';
- var logo='https://odpc.de/wp-content/uploads/2026/11/file_00000000feb8820a8c57f156ec0926e2.png';
+ var logo='https://odpc.de/wp-content/uploads/2026/08/cropped-1786371119667.png';
  function mount(){
   var dock=document.getElementById('odpc-utility-dock');
   if(dock&&!document.getElementById('odpc-dock-remote')){
