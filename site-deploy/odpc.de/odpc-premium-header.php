@@ -230,6 +230,8 @@ add_action('wp_footer', function () {
         <li><a href="<?php echo esc_url(home_url('/contact-me/')); ?>">Kontakt</a></li>
         <li><a href="https://ai.odpc.de/" target="_blank" rel="noopener noreferrer">Helper Monkey ↗</a></li>
         <li><a href="<?php echo esc_url(home_url('/remote-fernwartung/')); ?>">Fernhilfe / Fernwartung</a></li>
+        <li><a href="<?php echo esc_url(home_url('/impressum/')); ?>">Impressum</a></li>
+        <li><a href="<?php echo esc_url(home_url('/datenschutzerklaerung/')); ?>">Datenschutz</a></li>
       </ul>
       <div class="odpc-search"><form role="search" method="get" class="search-form" action="<?php echo esc_url(home_url('/')); ?>"><label style="flex:1;min-width:0"><span class="screen-reader-text">Website durchsuchen</span><input type="search" name="s" class="search-field" placeholder="Website durchsuchen …" aria-label="Suchbegriff" required></label><button type="submit" class="search-submit">Suchen</button></form></div>
     </nav>
