@@ -1,6 +1,63 @@
 <!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Security Monkey · Sicherheitscheck</title><style>
 :root{font-family:system-ui,sans-serif;background:#091e1a;color:#effaf5}*{box-sizing:border-box}body{margin:0}main{max-width:760px;margin:auto;padding:20px}a{color:#b9f5d1}.card{background:#17372d;padding:clamp(18px,4vw,30px);border:1px solid #406456;border-radius:18px}.choice{display:block;width:100%;padding:13px;margin:9px 0;background:#f3fbf6;color:#102f25;border:2px solid transparent;border-radius:10px;font:inherit;text-align:left;cursor:pointer}.choice:hover,.choice:focus-visible{outline:3px solid #f4d27c}.selected{background:#c6f6d5;border-color:#38a775}.secondary{background:#31584a;color:white}.help{color:#d2e7db}.controls{display:flex;gap:10px;flex-wrap:wrap}.controls .choice{flex:1;min-width:130px}h1{font-size:clamp(2rem,7vw,3rem)}h2{font-size:1.35rem}li{margin:10px 0}.hint{font-size:.95rem;color:#d2e7db}.item{border-bottom:1px solid #547568;padding-bottom:12px}section{margin:18px 0}
-</style></head><body><main><img alt="helper monkey Originalsymbol" width="76" src="https://ai.odpc.de/wp-content/themes/helpermonkey-business-v3/assets/brand/helper-monkey-symbol.png"><h1>Security Monkey</h1><p>Wir schauen gemeinsam, wie du deine Geräte und Daten schützt. Du kannst den Check selbst durchführen oder Oliver per Fernwartung beziehungsweise vor Ort hinzuziehen.</p><p class="hint">Die Auswertung beruht auf deinen Angaben; sie ist keine technische Prüfung. Bitte keine Passwörter oder Kundendaten eingeben. Deine Antworten bleiben im Browserfenster und werden beim Schließen gelöscht.</p><div class="card"><p id="progress" aria-live="polite"></p><div id="content" aria-live="polite"></div><div class="controls"><button type="button" id="back" class="choice secondary" hidden>Zurück</button><button type="button" id="restart" class="choice secondary">Neu starten</button></div><p><a href="https://odpc.de/remote-fernwartung/">Oliver um Hilfe bitten – Fernwartung oder vor Ort</a></p></div><p class="hint">Eine erste Orientierung, angelehnt an die <a href="https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Publikationen/Broschueren/Cybersicherheit_KMU.pdf">Sicherheitsempfehlungen des BSI für kleine Unternehmen</a>. Kein offizieller CyberRisikoCheck und keine Zertifizierung.</p></main><script>
+</style>
+<style id="odpc-ai-translate-style">
+ #odpc-ai-translate{position:fixed;left:12px;bottom:72px;z-index:9997;background:#123b30;color:#f4fff8;border:1px solid #4c9a77;border-radius:12px;box-shadow:0 5px 18px #09261d66;padding:6px 8px;font:600 12px/1.4 system-ui,sans-serif}
+ #odpc-ai-translate label{display:inline-flex;align-items:center;gap:5px;color:inherit}
+ #odpc-ai-translate select{max-width:105px;min-height:32px;background:#123b30;color:#f4fff8;border:0;border-radius:7px;padding:4px;font:inherit;cursor:pointer}
+ #odpc-ai-translate select:focus-visible{outline:2px solid #a9e7c5}
+ #odpc-ai-translate-element{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+ body{top:0!important} .goog-te-banner-frame,.skiptranslate iframe{display:none!important}
+ @media(max-width:600px){#odpc-ai-translate{left:9px;bottom:70px;padding:4px 6px}#odpc-ai-translate select{max-width:90px}}
+ </style>
+<style id="odpc-reader-css">
+ #odpc-reader{position:fixed;left:12px;bottom:132px;z-index:9995;background:#182c39;color:#fff;border:1px solid #8ba6b4;border-radius:12px;padding:8px;box-shadow:0 4px 18px #0005;max-width:min(370px,calc(100vw - 24px));font:13px/1.4 system-ui,sans-serif}
+ #odpc-reader button{background:#edf6f3;color:#142f29;border:0;border-radius:7px;padding:7px 9px;margin:2px;cursor:pointer;font:600 12px system-ui,sans-serif}
+ #odpc-reader button:focus-visible{outline:2px solid #f0b854}
+ #odpc-reader-status{font-size:11px;display:block;margin:3px}
+ @media(max-width:600px){#odpc-reader{left:9px;bottom:125px;padding:5px}}
+ </style>
+<style id="odpc-ai-unified-dock-css">
+#odpc-utility-dock{position:fixed!important;z-index:99990!important;left:50%!important;right:auto!important;bottom:max(12px,env(safe-area-inset-bottom))!important;transform:translateX(-50%)!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:5px!important;width:min(352px,calc(100vw - 20px))!important;box-sizing:border-box!important;height:56px!important;min-height:56px!important;padding:6px 7px!important;border:1px solid #647e8a!important;border-radius:999px!important;background:rgba(24,44,57,.20)!important;backdrop-filter:blur(5px)!important;-webkit-backdrop-filter:blur(5px)!important;box-shadow:0 4px 16px #0002!important;overflow:visible!important}
+body.odpc-ai-dock-active #hm-v4-helpbtn,body.odpc-ai-dock-active .hm-v4-helpbtn,body.odpc-ai-dock-active .odpc-wa-sticky,body.odpc-ai-dock-active .odpc-hm-v4-wa,body.odpc-ai-dock-active #odpc-hm-v4-wa,body.odpc-ai-dock-active .gt_float_switcher,body.odpc-ai-dock-active #gt_float_wrapper{display:none!important}body.odpc-ai-dock-active .hm-v4-floating:not(#odpc-utility-dock .hm-v4-floating){display:none!important}body.odpc-ai-dock-active #odpc-reader:not(#odpc-utility-dock #odpc-reader),body.odpc-ai-dock-active #odpc-ai-translate:not(#odpc-utility-dock #odpc-ai-translate){display:none!important}body.odpc-ai-dock-active .hm-v4-helpbtn,body.odpc-ai-dock-active #hm-v4-helpbtn,body.odpc-ai-dock-active #hm-v4-wa:not(#odpc-utility-dock #hm-v4-wa),body.odpc-ai-dock-active .hm-v4-floating:not(#odpc-utility-dock .hm-v4-floating),body.odpc-ai-dock-active .odpc-hm-v4-helpbtn,body.odpc-ai-dock-active .odpc-hm-v4-wa,body.odpc-ai-dock-active .odpc-wa-sticky,body.odpc-ai-dock-active .odpc-reader-floating,body.odpc-ai-dock-active .odpc-floating-toolbar{display:none!important}#odpc-utility-dock #odpc-dock-home{display:grid!important;place-items:center!important;flex:0 0 28px!important;width:28px!important;height:36px!important;min-width:28px!important;border-radius:50%!important;background:rgba(16,37,46,.42)!important;color:#eef8f5!important;text-decoration:none!important}
+#odpc-utility-dock #odpc-dock-home svg{width:19px!important;height:19px!important}
+#odpc-utility-dock #odpc-ai-translate{position:relative!important;inset:auto!important;flex:0 0 88px!important;width:88px!important;max-width:88px!important;height:42px!important;display:flex!important;align-items:center!important;padding:0!important;margin:0!important;background:transparent!important;border:0!important;box-shadow:none!important}
+#odpc-utility-dock #odpc-ai-translate label{display:block!important;width:100%!important;font-size:0!important}
+#odpc-utility-dock #odpc-ai-language{display:block!important;box-sizing:border-box!important;width:88px!important;max-width:88px!important;height:40px!important;min-height:40px!important;padding:0 3px!important;border:1px solid #65737b!important;border-radius:12px!important;background:#eaf2f2!important;color:#132c2e!important;font:600 12px system-ui,sans-serif!important}
+#odpc-utility-dock #odpc-reader{position:relative!important;inset:auto!important;display:flex!important;flex:0 0 88px!important;align-items:center!important;justify-content:center!important;gap:4px!important;box-sizing:border-box!important;width:88px!important;min-width:88px!important;max-width:88px!important;padding:0!important;margin:0!important;background:transparent!important;border:0!important;box-shadow:none!important}
+#odpc-utility-dock #odpc-reader #odpc-reader-play,#odpc-utility-dock #odpc-reader #odpc-reader-stop{display:flex!important;align-items:center!important;justify-content:center!important;box-sizing:border-box!important;flex:0 0 40px!important;width:40px!important;min-width:40px!important;height:40px!important;min-height:40px!important;padding:0!important;margin:0!important;border:0!important;border-radius:50%!important;background:#edf6f3!important;color:#142f29!important;font:600 20px system-ui,sans-serif!important}
+#odpc-utility-dock #odpc-reader #odpc-reader-pause,#odpc-utility-dock #odpc-reader-status{display:none!important}
+#odpc-utility-dock .hm-v4-floating,#odpc-utility-dock #hm-v4-floating{position:relative!important;inset:auto!important;display:flex!important;align-items:center!important;justify-content:center!important;flex:0 0 95px!important;box-sizing:border-box!important;width:95px!important;min-width:95px!important;height:42px!important;min-height:42px!important;padding:0 5px!important;margin:0!important;border:0!important;border-radius:22px!important;background:#167c52!important;color:white!important;box-shadow:none!important;font:700 13px system-ui,sans-serif!important;text-decoration:none!important}
+/* Suppress only redundant external floating translation chrome; the dock's own language selector remains functional. */
+body.odpc-ai-dock-active #gt_float_wrapper,body.odpc-ai-dock-active .gt_switcher_wrapper,body.odpc-ai-dock-active .gt_float_switcher{display:none!important;visibility:hidden!important;pointer-events:none!important}
+body.odpc-ai-dock-active{padding-bottom:75px!important}
+@media(max-width:360px){#odpc-utility-dock{gap:3px!important;padding:5px!important}#odpc-utility-dock .hm-v4-floating{flex-basis:80px!important;width:80px!important;min-width:80px!important}}
+</style>
+<style id="odpc-smartguide-global-css">
+/* Pilot only: preserve transparent dock and existing language dropdown. */
+body.odpc-smartguide-global #odpc-utility-dock{justify-content:space-between!important;gap:4px!important}
+body.odpc-smartguide-global #odpc-utility-dock>#odpc-dock-home{order:4!important;flex:0 0 32px!important;width:32px!important;min-width:32px!important}
+body.odpc-smartguide-global #odpc-utility-dock>#odpc-ai-translate{order:0!important;flex:0 0 76px!important;width:76px!important;min-width:76px!important;max-width:76px!important}
+body.odpc-smartguide-global #odpc-utility-dock #odpc-ai-language{width:76px!important;max-width:76px!important}
+body.odpc-smartguide-global #odpc-utility-dock>#odpc-reader{order:1!important;flex:0 0 78px!important;width:78px!important;min-width:78px!important;max-width:78px!important;gap:3px!important}
+body.odpc-smartguide-global #odpc-utility-dock #odpc-reader #odpc-reader-play,
+body.odpc-smartguide-global #odpc-utility-dock #odpc-reader #odpc-reader-stop{flex:0 0 37px!important;width:37px!important;min-width:37px!important;height:37px!important;min-height:37px!important}
+body.odpc-smartguide-global #odpc-utility-dock>.hm-v4-floating,
+body.odpc-smartguide-global #odpc-utility-dock>.odpc-wa-sticky,
+body.odpc-smartguide-global #odpc-utility-dock>#hm-v4-wa{order:3!important;flex:0 0 43px!important;width:43px!important;min-width:43px!important;max-width:43px!important;height:42px!important;padding:0!important;font-size:0!important}
+body.odpc-smartguide-global #odpc-utility-dock>#hm-v4-wa::after{content:none!important}
+body.odpc-smartguide-global #odpc-utility-dock .odpc-smartguide-wa-icon{width:25px;height:25px;display:block;flex:none;filter:brightness(0) invert(1)}
+body.odpc-smartguide-global .odpc-smartguide-active{outline:2px solid #1caa83!important;outline-offset:5px!important;border-radius:5px!important;scroll-margin-top:100px!important;transition:outline-color .2s ease}
+@media(max-width:360px){body.odpc-smartguide-global #odpc-utility-dock{width:calc(100vw - 12px)!important;padding:5px!important;gap:2px!important}}
+</style>
+<style id="odpc-ai-reference-dock-css">
+body.odpc-smartguide-global #odpc-utility-dock{width:min(390px,calc(100vw - 14px))!important;max-width:390px!important;background:rgba(24,44,57,.20)!important;backdrop-filter:blur(5px)!important;-webkit-backdrop-filter:blur(5px)!important;border:1px solid #647e8a!important;border-radius:999px!important}
+#odpc-utility-dock #odpc-dock-remote{order:2!important;display:flex!important;align-items:center!important;justify-content:center!important;flex:0 0 38px!important;width:38px!important;min-width:38px!important;height:38px!important;padding:0!important;border-radius:50%!important;background:rgba(10,38,65,.48)!important;border:1px solid rgba(106,213,255,.45)!important;overflow:hidden!important;text-decoration:none!important}
+#odpc-utility-dock #odpc-dock-remote img{display:block;width:34px;height:34px;object-fit:contain;border-radius:50%}
+#odpc-utility-dock #odpc-dock-remote:focus-visible{outline:2px solid #77dcff!important;outline-offset:2px!important}
+@media(max-width:360px){body.odpc-smartguide-global #odpc-utility-dock{gap:2px!important;padding:5px!important}#odpc-utility-dock #odpc-dock-remote{flex-basis:32px!important;width:32px!important;min-width:32px!important;height:32px!important}#odpc-utility-dock #odpc-dock-remote img{width:30px;height:30px}}
+</style>
+<style>body{padding-bottom:100px!important}.security-nav{display:flex;gap:14px;flex-wrap:wrap;max-width:760px;margin:auto;padding:16px 20px 0}.security-nav a,.security-footer a{color:#b9f5d1}.security-footer{max-width:760px;margin:auto;padding:0 20px 30px;color:#d2e7db}</style></head><body><nav class="security-nav" aria-label="Navigation"><a href="https://ai.odpc.de/start/">← Zurück zu den Monkeys</a><a href="https://ai.odpc.de/connector-einrichten/">Connector</a><a href="https://odpc.de/">ODPC Startseite</a></nav><main><img alt="helper monkey Originalsymbol" width="76" src="https://ai.odpc.de/wp-content/themes/helpermonkey-business-v3/assets/brand/helper-monkey-symbol.png"><h1>Security Monkey</h1><p>Wir schauen gemeinsam, wie du deine Geräte und Daten schützt. Du kannst den Check selbst durchführen oder Oliver per Fernwartung beziehungsweise vor Ort hinzuziehen.</p><p class="hint">Die Auswertung beruht auf deinen Angaben; sie ist keine technische Prüfung. Bitte keine Passwörter oder Kundendaten eingeben. Deine Antworten bleiben im Browserfenster und werden beim Schließen gelöscht.</p><div class="card"><p id="progress" aria-live="polite"></p><div id="content" aria-live="polite"></div><div class="controls"><button type="button" id="back" class="choice secondary" hidden>Zurück</button><button type="button" id="restart" class="choice secondary">Neu starten</button></div><p><a href="https://odpc.de/remote-fernwartung/">Oliver um Hilfe bitten – Fernwartung oder vor Ort</a></p></div><p class="hint">Eine erste Orientierung, angelehnt an die <a href="https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Publikationen/Broschueren/Cybersicherheit_KMU.pdf">Sicherheitsempfehlungen des BSI für kleine Unternehmen</a>. Kein offizieller CyberRisikoCheck und keine Zertifizierung.</p></main><script>
 const inventory=[
  {id:'devices',title:'Welche Geräte verwendest du für deine Arbeit?',hint:'Wähle alles aus, was im Betrieb genutzt wird. Auch private Geräte zählen, wenn du damit dienstlich arbeitest.',options:[['windows','Windows-PC oder Laptop'],['mac','Apple Mac oder MacBook'],['android','Android-Handy oder Tablet'],['iphone','iPhone oder iPad'],['server','Server oder NAS im Büro'],['pos','Kasse, Kartenterminal oder Spezialgerät'],['other','Andere Geräte']]},
  {id:'mailapp',title:'Wie bearbeitest du deine E-Mails?',hint:'Das Programm ist nicht immer der Anbieter deines Postfachs. Mehrfachauswahl möglich.',options:[['outlook','Outlook'],['gmailapp','Gmail-App oder Gmail im Browser'],['applemail','Apple Mail'],['thunderbird','Thunderbird'],['webmail','Im Browser beim E-Mail-Anbieter'],['other','Anderes Programm'],['none','Keine geschäftlichen E-Mails']]},
@@ -36,5 +93,128 @@ function btn(label,fn,selected=false){const b=el('button',label);b.type='button'
 function routes(){return questions.filter(q=>q.when(state,answers))}
 function show(){content.replaceChildren();back.hidden=trail.length===0;if(stage==='result'){report();return}if(stage==='inventory'){const q=inventory[index];progress.textContent='Bestandsaufnahme · '+(index+1)+' / '+inventory.length;el('h2',q.title);el('p',q.hint).className='help';q.options.forEach(([value,label])=>{let b=btn((state[q.id].includes(value)?'☑ ':'☐ ')+label,()=>{let set=state[q.id];if(value==='none'){state[q.id]=set.includes('none')?[]:['none']}else{set=set.filter(x=>x!=='none');state[q.id]=set.includes(value)?set.filter(x=>x!==value):[...set,value]}show()},state[q.id].includes(value));b.setAttribute('aria-pressed',state[q.id].includes(value)?'true':'false')});btn('Weiter',()=>{if(!state[q.id].length){el('p','Bitte wähle mindestens eine passende Antwort.');return}trail.push({stage,index});if(q.id==='mailapp'&&state.mailapp.includes('none')){state.mailprovider=[];index+=2}else index++;if(index>=inventory.length){stage='questions';index=0;answers={}}show()});return}let r=routes();if(index>=r.length){stage='result';show();return}const q=r[index];progress.textContent='Sicherheitsfragen · '+(index+1)+' / '+r.length;el('h2',q.title);el('p',q.hint).className='help';(q.options||answers4).forEach(([v,label])=>btn(label,()=>{answers[q.id]=v;trail.push({stage,index});index++;show()}))}
 function report(){progress.textContent='Deine Auswertung';el('h2','Deine nächsten Schritte');el('p','Die folgenden Hinweise beruhen auf deinen Angaben. Geräte, Konten und Sicherungen wurden nicht technisch geprüft.');let list=el('ul'),count=0;routes().forEach(q=>{const a=answers[q.id];if(!a||a==='yes'||a==='alone')return;count++;const status=a==='unknown'?'Noch zu klären':a==='partial'?'Teilweise umgesetzt':'Noch nicht umgesetzt';const li=el('li','',list);li.textContent=status+': '+q.action});if(has(state,'mailprovider','unknown')){count++;el('li','Noch zu klären: Finde heraus, bei welchem Anbieter dein E-Mail-Postfach liegt. Oliver kann dir dabei helfen.',list)}if(!count)el('p','Du hast für die gestellten Fragen keine offenen Punkte angegeben. Die Antworten sind noch nicht technisch geprüft.');el('p','Weitere Themen wie sämtliche Konten, Netzwerkzugänge und konkrete Schwachstellen wurden nicht vollständig untersucht.');el('h2','Wie möchtest du weitermachen?');el('p','Selbst umsetzen: Beginne mit den Hinweisen oben. Wenn du bei einem Schritt unsicher bist, hole dir Unterstützung.');el('p','Mit Oliver: Gemeinsam per Fernwartung oder vor Ort die offenen Punkte prüfen und Maßnahmen einrichten. Umfang und Kosten werden vorher besprochen.');const a=el('a','Fernhilfe und persönliche Unterstützung');a.href='https://odpc.de/remote-fernwartung/';el('p','Professionelle Betreuung: Oliver kann auf Wunsch die Umsetzung und regelmäßige Überprüfung übernehmen.')}
-back.onclick=()=>{if(!trail.length)return;const prev=trail.pop();stage=prev.stage;index=prev.index;if(stage==='inventory')answers={};show()};restart.onclick=()=>{state={devices:[],mailapp:[],mailprovider:[],services:[],network:[]};answers={};trail=[];stage='inventory';index=0;show()};show();
-</script></body></html>
+back.onclick=()=>{if(!trail.length)return;const prev=trail.pop();stage=prev.stage;index=prev.index;if(stage==='inventory')answers={};show()};restart.onclick=()=>{state={devices:[],mailapp:[],mailprovider:[],services:[],network:[]};answers={};trail=[];stage='inventory';index=0;show()};try{const saved=JSON.parse(sessionStorage.getItem('security_monkey_language_return')||'null');if(saved){state=saved.state;answers=saved.answers;trail=saved.trail;stage=saved.stage;index=saved.index;sessionStorage.removeItem('security_monkey_language_return')}}catch(e){}show();
+</script><footer class="security-footer">helper · monkey © · powered by <a href="https://odpc.de/">odpc.de</a> · <a href="https://ai.odpc.de/">Alle Monkeys</a> · <a href="https://odpc.de/impressum/">Impressum</a> · <a href="https://odpc.de/datenschutzerklaerung/">Datenschutz</a></footer>
+<div id="odpc-ai-translate" role="group" aria-label="Webseite übersetzen"><label for="odpc-ai-language">🌐 <select id="odpc-ai-language" aria-label="Sprache der gesamten Webseite wählen"><option value="de">🇩🇪 DE</option><option value="en">🇬🇧 EN</option><option value="nl">🇳🇱 NL</option><option value="es">🇪🇸 ES</option><option value="fr">🇫🇷 FR</option><option value="ru">🇷🇺 RU</option><option value="tr">🇹🇷 TR</option></select></label></div>
+ <div id="odpc-ai-translate-element" aria-hidden="true"></div>
+ 
+<div id="odpc-reader" role="group" aria-label="Artikel vorlesen"><button type="button" id="odpc-reader-play" aria-label="Vorlesen" title="Vorlesen">▶</button><button type="button" id="odpc-reader-pause" aria-label="Pause" title="Pause">⏸</button><button type="button" id="odpc-reader-stop" aria-label="Stopp" title="Stopp">■</button><span id="odpc-reader-status" role="status" aria-live="polite"></span></div>
+ 
+<script>document.getElementById('odpc-ai-language').addEventListener('change',function(){try{sessionStorage.setItem('security_monkey_language_return',JSON.stringify({state,answers,trail,stage,index}))}catch(e){}},true);</script>
+<script id="odpc-ai-translate-js">
+ (function(){
+ 'use strict';
+ var key='odpc_global_language_v1',supported=['de','en','nl','es','fr','ru','tr'],sel=document.getElementById('odpc-ai-language');
+ if(!sel)return;
+ function read(){var m=document.cookie.match(/(?:^|;\s*)odpc_language=([^;]+)/);var v=m?decodeURIComponent(m[1]):null;try{return v||localStorage.getItem(key)||localStorage.getItem('odpc_ai_site_language')||'de'}catch(e){return v||'de'}}
+ function store(v){try{localStorage.setItem(key,v)}catch(e){}document.cookie='odpc_language='+encodeURIComponent(v)+';path=/;domain=.odpc.de;max-age=31536000;SameSite=Lax;Secure'}
+ function cookie(v){var value='/de/'+v;document.cookie='googtrans='+value+';path=/;SameSite=Lax';document.cookie='googtrans='+value+';path=/;domain=.odpc.de;SameSite=Lax;Secure';if(v==='de'){document.cookie='googtrans=;Max-Age=0;path=/';document.cookie='googtrans=;Max-Age=0;path=/;domain=.odpc.de';document.cookie='googtrans=;Max-Age=0;path=/;domain=.ai.odpc.de'}}
+ function apply(v){if(v==='de')return true;var combo=document.querySelector('.goog-te-combo');if(!combo)return false;combo.value=v;combo.dispatchEvent(new Event('change',{bubbles:true}));return true}
+ var chosen=read();if(!supported.includes(chosen))chosen='de';sel.value=chosen;store(chosen);window.ODPCLanguage={get:read,set:function(v){if(supported.includes(v)){store(v);location.reload()}},locale:function(){return window.odpcAiLocale()}};window.odpcAiLocale=function(){return ({de:'de-DE',en:'en-US',nl:'nl-NL',es:'es-ES',fr:'fr-FR',ru:'ru-RU',tr:'tr-TR'})[read()]||'de-DE'};
+ window.odpcAiTranslateInit=function(){new google.translate.TranslateElement({pageLanguage:'de',includedLanguages:'de,en,nl,es,fr,ru,tr',autoDisplay:false},'odpc-ai-translate-element');var n=0;var timer=setInterval(function(){if(apply(chosen)||++n>35)clearInterval(timer)},200)};
+ sel.addEventListener('change',function(){var v=sel.value;if(!supported.includes(v))return;store(v);cookie(v);document.documentElement.lang=v;document.dispatchEvent(new CustomEvent('odpc:languagechange',{detail:{language:v,locale:window.odpcAiLocale()}}));location.reload()});
+ if(chosen!=='de')cookie(chosen);
+ var script=document.createElement('script');script.src='https://translate.google.com/translate_a/element.js?cb=odpcAiTranslateInit';script.async=true;script.onerror=function(){sel.title='Google Übersetzung derzeit nicht erreichbar'};document.head.appendChild(script);
+ })();
+ </script>
+<script id="odpc-reader-js">
+ (function(){
+ 'use strict';
+ var synth=window.speechSynthesis,play=document.getElementById('odpc-reader-play'),pause=document.getElementById('odpc-reader-pause'),stop=document.getElementById('odpc-reader-stop'),status=document.getElementById('odpc-reader-status'),queue=[],index=0,token=0,paused=false;
+ function lang(){var site=document.getElementById('odpc-ai-language');if(site)return site.value;try{var c=decodeURIComponent(document.cookie.match(/(?:^|; )googtrans=([^;]+)/)?.[1]||'');return c.split('/').pop()||'de'}catch(e){return 'de'}}
+ function locale(){return ({de:'de-DE',en:'en-US',nl:'nl-NL',es:'es-ES',fr:'fr-FR',ru:'ru-RU',tr:'tr-TR'})[lang()]||'de-DE'}
+ function text(){var root=document.querySelector('article .entry-content,main .entry-content,main article,article,main,#content');if(!root)return '';var clone=root.cloneNode(true);clone.querySelectorAll('script,style,nav,form,button,footer,aside,.screen-reader-text,#odpc-reader,.gtranslate_wrapper').forEach(function(e){e.remove()});return (clone.innerText||clone.textContent||'').replace(/\s+/g,' ').trim().slice(0,85000)}
+ function split(s){var parts=s.match(/[^.!?。！？]+[.!?。！？]?/g)||[s],out=[],chunk='';parts.forEach(function(p){if((chunk+p).length>175){if(chunk)out.push(chunk);chunk='';while(p.length>175){out.push(p.slice(0,175));p=p.slice(175)}chunk+=p}else chunk+=p});if(chunk)out.push(chunk);return out.filter(Boolean)}
+ function cancel(){token++;queue=[];index=0;paused=false;if(synth)synth.cancel();status.textContent='Gestoppt'}
+ function next(t){if(t!==token||index>=queue.length){if(t===token)status.textContent='Wiedergabe beendet';return}var u=new SpeechSynthesisUtterance(queue[index++]);u.lang=locale();u.rate=1;var v=synth.getVoices().filter(function(x){return x.lang.toLowerCase().split(/[-_]/)[0]===u.lang.split('-')[0]});if(v.length)u.voice=v[0];u.onend=function(){next(t)};u.onerror=function(){if(t===token){status.textContent='Stimme nicht verfügbar oder Wiedergabe unterbrochen';}};synth.speak(u);status.textContent='Lese Abschnitt '+index+' von '+queue.length+' ('+u.lang+')'}
+ play.addEventListener('click',function(){if(!synth){status.textContent='Vorlesen in diesem Browser nicht unterstützt';return}if(paused){synth.resume();paused=false;status.textContent='Fortgesetzt';return}cancel();var s=text();if(!s){status.textContent='Kein Artikeltext gefunden';return}queue=split(s);index=0;var t=token;next(t)});
+ pause.addEventListener('click',function(){if(!synth)return;if(synth.paused){synth.resume();paused=false;status.textContent='Fortgesetzt'}else if(synth.speaking){synth.pause();paused=true;status.textContent='Pausiert'}});
+ stop.addEventListener('click',cancel);document.addEventListener('odpc:languagechange',cancel);window.addEventListener('pagehide',cancel);
+ })();
+ </script>
+<script id="odpc-ai-unified-dock-js">
+(function(){'use strict';function mount(){var language=document.getElementById('odpc-ai-translate'),reader=document.getElementById('odpc-reader');if(!language||!reader)return;var dock=document.getElementById('odpc-utility-dock');if(!dock){dock=document.createElement('nav');dock.id='odpc-utility-dock';dock.setAttribute('aria-label','ODPC Schnellfunktionen');document.body.appendChild(dock)}var home=document.getElementById('odpc-dock-home');if(!home){home=document.createElement('a');home.id='odpc-dock-home';home.href=window.location.origin+'/';home.setAttribute('aria-label','Zur Monkey-Startseite');home.setAttribute('title','Zur Startseite');home.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg>';dock.appendChild(home)}dock.appendChild(language);dock.appendChild(reader);var wa=document.getElementById('hm-v4-wa')||document.querySelector('.hm-v4-floating');if(!wa){wa=document.createElement('a');wa.id='hm-v4-wa';wa.className='hm-v4-floating';wa.href='https://wa.me/492654882183';wa.target='_blank';wa.rel='noopener noreferrer';wa.setAttribute('aria-label','WhatsApp Business');}dock.appendChild(wa);wa.textContent='WhatsApp';document.body.classList.add('odpc-ai-dock-active');document.querySelectorAll('#hm-v4-wa,.hm-v4-floating').forEach(function(el){if(el!==wa)el.style.setProperty('display','none','important')});var oldHelp=document.getElementById('hm-v4-helpbtn');if(oldHelp)oldHelp.style.setProperty('display','none','important');dedupe(dock)}function dedupe(dock){var legacy=['#hm-v4-helpbtn','.hm-v4-helpbtn','.odpc-hm-v4-helpbtn','#odpc-hm-v4-helpbtn','.odpc-wa-sticky','.odpc-hm-v4-wa','#odpc-hm-v4-wa','#gt_float_wrapper','.gt_float_switcher','.gt_switcher_wrapper'];legacy.forEach(function(selector){document.querySelectorAll(selector).forEach(function(el){if(!dock.contains(el))el.style.setProperty('display','none','important')})});document.querySelectorAll('a[href*="wa.me"],a[href*="api.whatsapp.com"]').forEach(function(el){if(dock.contains(el))return;var style=window.getComputedStyle(el);if(style.position==='fixed'||style.position==='sticky')el.style.setProperty('display','none','important')});document.querySelectorAll('#odpc-ai-translate,#odpc-reader').forEach(function(el){if(!dock.contains(el))el.style.setProperty('display','none','important')})}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount);else mount();window.addEventListener('load',mount);var debounce=false;new MutationObserver(function(){if(debounce)return;debounce=true;requestAnimationFrame(function(){debounce=false;var dock=document.getElementById('odpc-utility-dock');if(dock)dedupe(dock)})}).observe(document.documentElement,{childList:true,subtree:true})})();
+</script>
+<script id="odpc-smartguide-global-js">
+(function(){
+'use strict';
+
+document.body.classList.add('odpc-smartguide-global');
+var active=false,segments=[],index=0,token=0,current=null;
+function stop(){
+ active=false;token++;if(window.speechSynthesis)window.speechSynthesis.cancel();
+ if(current)current.classList.remove('odpc-smartguide-active');current=null;
+}
+function language(){
+ var el=document.querySelector('#odpc-ai-language');
+ var l=(el&&el.value)||(window.ODPCLanguage&&window.ODPCLanguage.get())||'de';
+ return ({de:'de-DE',en:'en-US',nl:'nl-NL',fr:'fr-FR',es:'es-ES',it:'it-IT',pt:'pt-PT',tr:'tr-TR',ru:'ru-RU'})[l]||'de-DE';
+}
+function collect(){
+ var root=document.querySelector('article .entry-content,main .entry-content,.entry-content,main article,main,#content,article');
+ if(!root)return [];
+ return Array.from(root.querySelectorAll('h1,h2,h3,p,li')).filter(function(el){
+  return !el.closest('nav,footer,header,#odpc-utility-dock,script,style')&&
+   el.getClientRects().length&&el.innerText.trim().length>24&&el.innerText.trim().length<1800;
+ }).slice(0,90);
+}
+function speakNext(id){
+ if(!active||id!==token)return;
+ if(current)current.classList.remove('odpc-smartguide-active');
+ if(index>=segments.length){stop();return}
+ var el=segments[index++];current=el;el.classList.add('odpc-smartguide-active');
+ if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches)el.scrollIntoView({behavior:'smooth',block:'center'});
+ var u=new SpeechSynthesisUtterance(el.innerText.trim().slice(0,1200));u.lang=language();u.rate=.94;
+ var voices=window.speechSynthesis.getVoices();var exact=voices.find(function(v){return v.lang.toLowerCase()===u.lang.toLowerCase()&&v.localService})||voices.find(function(v){return v.lang.toLowerCase()===u.lang.toLowerCase()})||voices.find(function(v){return v.lang.toLowerCase().split('-')[0]===u.lang.split('-')[0]});
+ if(exact)u.voice=exact;
+ u.onend=function(){speakNext(id)};
+ u.onerror=function(e){if(e.error==='interrupted'||e.error==='canceled')return;stop()};
+ window.speechSynthesis.speak(u);
+}
+function play(){
+ if(!('speechSynthesis'in window)){alert('Die Sprachausgabe wird von diesem Browser nicht unterstützt.');return}
+ stop();segments=collect();index=0;if(!segments.length)return;
+ active=true;var id=token;speakNext(id);
+}
+function mount(){
+ var dock=document.getElementById('odpc-utility-dock'),playButton=document.getElementById('odpc-reader-play'),stopButton=document.getElementById('odpc-reader-stop'),home=document.getElementById('odpc-dock-home');
+ if(!dock||!playButton||!stopButton||!home)return false;
+ playButton.setAttribute('aria-label','SmartGuide starten');playButton.title='SmartGuide starten';
+ stopButton.setAttribute('aria-label','SmartGuide stoppen');stopButton.title='SmartGuide stoppen';
+ home.href='https://ai.odpc.de/';home.setAttribute('aria-label','Zur Helper-Monkey-Startseite');home.title='Zur Startseite';
+ 
+ var wa=dock.querySelector('#hm-v4-wa,.hm-v4-floating');
+ if(wa&&!wa.querySelector('.odpc-smartguide-wa-icon')){
+  wa.setAttribute('aria-label','WhatsApp Business');wa.title='WhatsApp Business';
+  wa.textContent='';
+  wa.insertAdjacentHTML('afterbegin','<img class="odpc-smartguide-wa-icon" src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/whatsapp.svg" alt="" width="25" height="25">');
+ }
+ return true;
+}
+document.addEventListener('click',function(e){
+ if(!document.body.classList.contains('odpc-smartguide-global'))return;
+ if(e.target.closest('#odpc-reader-play')){e.preventDefault();e.stopImmediatePropagation();play()}
+ else if(e.target.closest('#odpc-reader-stop')){e.preventDefault();e.stopImmediatePropagation();stop()}
+},true);
+document.addEventListener('odpc:languagechange',stop);
+window.addEventListener('pagehide',stop);
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount);else mount();
+window.addEventListener('load',mount);
+})();
+</script>
+<script id="odpc-ai-reference-dock-js">
+(function(){'use strict';
+ function mount(){
+  var dock=document.getElementById('odpc-utility-dock');if(!dock)return;
+  if(!document.getElementById('odpc-dock-remote')){
+   var a=document.createElement('a');a.id='odpc-dock-remote';a.href='https://odpc.de/remote-fernwartung/';a.title='Fernhilfe / Remote Support';a.setAttribute('aria-label','Fernhilfe öffnen');
+   var img=document.createElement('img');img.src='https://odpc.de/wp-content/uploads/2026/11/file_00000000feb8820a8c57f156ec0926e2.png';img.alt='';img.width=34;img.height=34;a.appendChild(img);dock.appendChild(a);
+  }
+  var wa=dock.querySelector('#hm-v4-wa,.hm-v4-floating');
+  if(wa){wa.href='https://wa.me/492654882183';wa.setAttribute('aria-label','WhatsApp Business');}
+ }
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount);else mount();window.addEventListener('load',mount);
+})();
+</script>
+</body></html>
+
