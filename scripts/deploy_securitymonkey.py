@@ -86,7 +86,7 @@ def main():
             try:
                 put_atomic(sftp, targets[0][0], targets[0][1])
                 changed.append(targets[0][0])
-                public_check("https://ai.odpc.de/securitymonkey/", ("Security Monkey", "Welche Geräte verwendest du"))
+                public_check("https://ai.odpc.de/securitymonkey/", ("Security Monkey", "Welche Geräte verwendest du", "odpc-ai-unified-dock-js", "odpc-ai-language", "odpc-ai-reference-dock-js", "security_monkey_language_return", "powered by"))
                 put_atomic(sftp, targets[1][0], targets[1][1])
                 changed.append(targets[1][0])
                 # WordPress cache is bypassed with the request query. Both the new
