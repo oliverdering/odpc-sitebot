@@ -24366,6 +24366,304 @@
       "mapped_tracks": [
         "MD-102"
       ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-edge/web-platform/site-impacting-changes",
+      "sha256": "3ab67b7953c84142d223898dfbf0c6aa4935ad16da9978852a9dbe0baee387de",
+      "captured_at": "2026-11-20T04:16:13.599527+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/intune/configmgr/core/plan-design/security/enable-tls-1-2-client",
+      "sha256": "40dc81dd7f061397932982df3d4cda72fda8e019405402a8c053e810d7a71897",
+      "captured_at": "2026-11-20T04:16:13.755409+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MD-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/storage/common/transport-layer-security-configure-minimum-version",
+      "sha256": "fcb99e7012a65d45211ec9842f5149aca4c3672dfd9e0c34e04a1bedc13b7ad6",
+      "captured_at": "2026-11-20T04:16:14.379407+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/troubleshoot/entra/entra-id/ad-dmn-services/enable-support-tls-environment",
+      "sha256": "0e09c8d6ab16d010bd08ddf19864a5627c0dc6fef92713a011c5f80d98fb8f3b",
+      "captured_at": "2026-11-20T04:16:14.642307+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "SC-300"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/dotnet/core/extensions/sslstream-best-practices",
+      "sha256": "7e7c59965c8af64494e7daff0678a14f9c2fcc533c0ca4d795ec07aa8b64a6d0",
+      "captured_at": "2026-11-20T04:16:15.008857+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/rest/api/keyvault/keyvault/vaults/check-name-availability",
+      "sha256": "b1a007c99d33fc4705b5a7e0d7e9960ff1b964f0ab614a746edaec7eac4bbf99",
+      "captured_at": "2026-11-20T04:16:15.295593+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/bot-service/",
+      "sha256": "5f3165f98935ba7351a1e45d1ea7b2930fa03119f19f9fd6fe8e14e17b220951",
+      "captured_at": "2026-11-20T04:16:15.625948+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/devops/deliver/what-is-continuous-delivery",
+      "sha256": "c33dd60fe7a21890b5b14fe5daa15e75d4f7b41d01bfad58b5a251116d904de7",
+      "captured_at": "2026-11-20T04:16:17.384691+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/iac-vulnerabilities",
+      "sha256": "9aa80cb38c19fe4bf082d1a668ac21bf714cbb136a0423b22023434d6dd366a4",
+      "captured_at": "2026-11-20T04:16:17.543983+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/developer/terraform/overview",
+      "sha256": "7ce4f56f97ecbbd60772e4b4b19bafd887c262e100423ebbe5faacd04f100ed8",
+      "captured_at": "2026-11-20T04:16:17.709033+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/template-functions-deployment",
+      "sha256": "556d5bc1f065ebc4eefedfbe9a0023385ec4959c43e1aa3b086824c449c2acc3",
+      "captured_at": "2026-11-20T04:16:17.813768+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/governance/policy/concepts/effect-deploy-if-not-exists",
+      "sha256": "0610c69d3509c639c9835b8906fcdd926613bffa82ef0db874c33b57cf7a75f0",
+      "captured_at": "2026-11-20T04:16:17.936459+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-portal/azure-portal-dashboards-create-programmatically",
+      "sha256": "0567c4724d6ece62cb9981a14844f0c145e2f3d896800e2b99e005715499bfb1",
+      "captured_at": "2026-11-20T04:16:18.136489+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/rest/api/support",
+      "sha256": "723f92fe1e8173b615e426abc54794e3795dd0e670df7e55b8cb5789158a8015",
+      "captured_at": "2026-11-20T04:16:18.709174+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/storage/blobs/immutable-version-level-worm-policies",
+      "sha256": "2f135c4cba08c757851c756d94df3138f5111d456ff591746330217117234bc9",
+      "captured_at": "2026-11-20T04:16:18.928064+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-naming",
+      "sha256": "ce796e8749cac11697f4e64dcf9a44e8187abaed0a6bc8c7adea5422c0d8f32c",
+      "captured_at": "2026-11-20T04:16:19.048823+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/custom-roles",
+      "sha256": "da97fc711fa4555dfa63fff41f0053d717bb023da6024c45e7fdbc35bc5f32ca",
+      "captured_at": "2026-11-20T04:16:19.446543+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/cost-management-billing/understand/analyze-unexpected-charges",
+      "sha256": "b730a6fe9221ed359181f0ed2c42b387cf2ed9fe0eb6d0f97d6e74fd34600a4e",
+      "captured_at": "2026-11-20T04:16:19.936698+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/template-tutorial-create-first-template",
+      "sha256": "d0ec1c63cfc8bc0b42b1333a29e9952711b5349d729d73b3626f150fd710914d",
+      "captured_at": "2026-11-20T04:16:20.420655+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/powershell/azure/release-notes-azureps",
+      "sha256": "0c91029d7196f06eac0c3b1cc26c03c7252d7a3ed148834a4df737ed24936186",
+      "captured_at": "2026-11-20T04:16:20.925462+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/powershell/azure/install-azps-windows",
+      "sha256": "2f4714ec11dfedb0086c5c0382b7fa0be155ed7af3a23a4f28d99aa528ba508e",
+      "captured_at": "2026-11-20T04:16:21.107663+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/powershell/azure/install-azps-linux",
+      "sha256": "6bb917f355e694dc3634f3a19f9fb4ac6dfb0a60fe6e404ea546be4f742955d9",
+      "captured_at": "2026-11-20T04:16:21.845520+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/powershell/azure/install-azps-macos",
+      "sha256": "0607e1c86b98b641a31674bacba37ea336d0346ac255d158bd1ed68c992f06bd",
+      "captured_at": "2026-11-20T04:16:22.373840+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/cli/azure/release-notes-azure-cli",
+      "sha256": "344d4c69033354af2e38000084531f671742d74f5c2fc226ca4e5b386ef249de",
+      "captured_at": "2026-11-20T04:16:22.770013+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/dotnet/api/overview/azure/",
+      "sha256": "bcdcf047a17f6c7b3211928698afbfb93952c0dfb2522b64f00e8eaf9a02ada3",
+      "captured_at": "2026-11-20T04:16:23.753681+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/azure/governance/resource-graph/samples/samples-by-table",
+      "sha256": "b1e878a71ae59dc0171f9caf7576f9613f5d306652c944b2d5b684a22520b532",
+      "captured_at": "2026-11-20T04:16:24.370630+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview",
+      "sha256": "29883cdcbfeb2e885600ca18209e22dcdc3539545a63888f48111d46560e3329",
+      "captured_at": "2026-11-20T04:16:24.478174+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/reliability/reliability-ai-search",
+      "sha256": "27323b19f46b024e53207a2bd03ee4ff6bbf0a6a498c3f0ff21c06197ee65a25",
+      "captured_at": "2026-11-20T04:16:25.098693+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows/device-security/bitlocker/bitlocker-overview",
+      "sha256": "fb3936e483705fc4f33a311de58a18f90d92319b8c15601bb162d2bcbd95b119",
+      "captured_at": "2026-11-20T04:16:26.760439+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/purview/exchange-online-secures-email-secrets",
+      "sha256": "d618e3f30567bb8742e39bd957a6777db9dc0b1fd0b8440135d046d09e0358c2",
+      "captured_at": "2026-11-20T04:16:26.850980+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/purview/set-up-new-message-encryption-capabilities",
+      "sha256": "d4d26b52613629a0e205e68af2f34f7cc1831db1c9d5d05277a29d1a02ce0d1a",
+      "captured_at": "2026-11-20T04:16:26.952013+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
     }
   ],
   "seen": [
@@ -24485,6 +24783,7 @@
     "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/manage-access",
     "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/quick-create-workspace",
     "https://learn.microsoft.com/en-us/azure/azure-monitor/overview",
+    "https://learn.microsoft.com/en-us/azure/azure-portal/azure-portal-dashboards-create-programmatically",
     "https://learn.microsoft.com/en-us/azure/azure-portal/quickstart-portal-dashboard-azure-cli",
     "https://learn.microsoft.com/en-us/azure/azure-portal/supportability/how-to-create-azure-support-request",
     "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview",
@@ -24508,9 +24807,13 @@
     "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-to-tenant",
     "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/overview",
     "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/quickstart-create-templates-use-the-portal",
+    "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/template-functions-deployment",
     "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/template-functions-resource",
+    "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/template-tutorial-create-first-template",
+    "https://learn.microsoft.com/en-us/azure/bot-service/",
     "https://learn.microsoft.com/en-us/azure/china/",
     "https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/decision-guides/resource-tagging/",
+    "https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-naming",
     "https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-setup-guide/identity",
     "https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/considerations/fundamental-concepts",
     "https://learn.microsoft.com/en-us/azure/cost-management-billing/",
@@ -24520,13 +24823,17 @@
     "https://learn.microsoft.com/en-us/azure/cost-management-billing/manage/microsoft-entra-id-free",
     "https://learn.microsoft.com/en-us/azure/cost-management-billing/manage/understand-ea-roles",
     "https://learn.microsoft.com/en-us/azure/cost-management-billing/manage/view-all-accounts",
+    "https://learn.microsoft.com/en-us/azure/cost-management-billing/understand/analyze-unexpected-charges",
     "https://learn.microsoft.com/en-us/azure/defender-for-cloud/cost-calculator",
     "https://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-cloud-introduction",
+    "https://learn.microsoft.com/en-us/azure/defender-for-cloud/iac-vulnerabilities",
+    "https://learn.microsoft.com/en-us/azure/developer/terraform/overview",
     "https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-about",
     "https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-create",
     "https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-quotas",
     "https://learn.microsoft.com/en-us/azure/foundry/what-is-foundry",
     "https://learn.microsoft.com/en-us/azure/governance/management-groups/overview",
+    "https://learn.microsoft.com/en-us/azure/governance/policy/concepts/effect-deploy-if-not-exists",
     "https://learn.microsoft.com/en-us/azure/governance/policy/how-to/remediate-resources",
     "https://learn.microsoft.com/en-us/azure/governance/policy/overview",
     "https://learn.microsoft.com/en-us/azure/governance/resource-graph/reference/supported-tables-resources",
@@ -24546,9 +24853,11 @@
     "https://learn.microsoft.com/en-us/azure/reliability/overview-reliability-guidance",
     "https://learn.microsoft.com/en-us/azure/reliability/regions-list",
     "https://learn.microsoft.com/en-us/azure/reliability/regions-paired",
+    "https://learn.microsoft.com/en-us/azure/reliability/reliability-ai-search",
     "https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles",
     "https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles/integration",
     "https://learn.microsoft.com/en-us/azure/role-based-access-control/conditions-overview",
+    "https://learn.microsoft.com/en-us/azure/role-based-access-control/custom-roles",
     "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview",
     "https://learn.microsoft.com/en-us/azure/role-based-access-control/rbac-and-directory-admin-roles",
     "https://learn.microsoft.com/en-us/azure/role-based-access-control/resource-provider-operations",
@@ -24561,13 +24870,17 @@
     "https://learn.microsoft.com/en-us/azure/sentinel/overview",
     "https://learn.microsoft.com/en-us/azure/sentinel/quickstart-onboard",
     "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction",
+    "https://learn.microsoft.com/en-us/azure/storage/blobs/immutable-version-level-worm-policies",
     "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-upload-process-images",
+    "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview",
     "https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy",
     "https://learn.microsoft.com/en-us/azure/storage/common/transport-layer-security-configure-client-version",
+    "https://learn.microsoft.com/en-us/azure/storage/common/transport-layer-security-configure-minimum-version",
     "https://learn.microsoft.com/en-us/cli/azure/account",
     "https://learn.microsoft.com/en-us/cli/azure/account/tenant",
     "https://learn.microsoft.com/en-us/cli/azure/install-azure-cli",
     "https://learn.microsoft.com/en-us/cli/azure/reference-index",
+    "https://learn.microsoft.com/en-us/cli/azure/release-notes-azure-cli",
     "https://learn.microsoft.com/en-us/cloud-app-security/what-is-cloud-app-security",
     "https://learn.microsoft.com/en-us/compliance/regulatory/gdpr",
     "https://learn.microsoft.com/en-us/compliance/regulatory/gdpr-data-subject-requests",
@@ -24637,8 +24950,11 @@
     "https://learn.microsoft.com/en-us/deployedge/microsoft-edge-supported-operating-systems",
     "https://learn.microsoft.com/en-us/deployoffice/overview-update-channels",
     "https://learn.microsoft.com/en-us/deployoffice/privacy/manage-privacy-controls",
+    "https://learn.microsoft.com/en-us/devops/deliver/what-is-continuous-delivery",
     "https://learn.microsoft.com/en-us/devops/deliver/what-is-infrastructure-as-code",
     "https://learn.microsoft.com/en-us/devops/devsecops/capability-model",
+    "https://learn.microsoft.com/en-us/dotnet/api/overview/azure/",
+    "https://learn.microsoft.com/en-us/dotnet/core/extensions/sslstream-best-practices",
     "https://learn.microsoft.com/en-us/dotnet/framework/network-programming/tls",
     "https://learn.microsoft.com/en-us/dynamics365/",
     "https://learn.microsoft.com/en-us/dynamics365/get-started/",
@@ -26267,6 +26583,7 @@
     "https://learn.microsoft.com/en-us/intune/app-management/protection/overview",
     "https://learn.microsoft.com/en-us/intune/app-management/ref-protected-apps",
     "https://learn.microsoft.com/en-us/intune/configmgr/comanage/company-portal",
+    "https://learn.microsoft.com/en-us/intune/configmgr/core/plan-design/security/enable-tls-1-2-client",
     "https://learn.microsoft.com/en-us/intune/copilot/",
     "https://learn.microsoft.com/en-us/intune/developer/app-sdk/",
     "https://learn.microsoft.com/en-us/intune/device-configuration/settings-catalog/",
@@ -26664,6 +26981,7 @@
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/workflows-experience/flow-designer",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/workflows-experience/flows-overview",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/workflows-experience/microsoft-365-copilot-node-workflow",
+    "https://learn.microsoft.com/en-us/microsoft-edge/web-platform/site-impacting-changes",
     "https://learn.microsoft.com/en-us/microsoft-identity-manager/microsoft-identity-manager-2016",
     "https://learn.microsoft.com/en-us/microsoftsearch/",
     "https://learn.microsoft.com/en-us/microsoftsearch/connectors-gallery",
@@ -26794,7 +27112,11 @@
     "https://learn.microsoft.com/en-us/power-platform/admin/use-service-admin-role-manage-tenant",
     "https://learn.microsoft.com/en-us/power-platform/architecture/products/copilot-studio",
     "https://learn.microsoft.com/en-us/powerapps",
+    "https://learn.microsoft.com/en-us/powershell/azure/install-azps-linux",
+    "https://learn.microsoft.com/en-us/powershell/azure/install-azps-macos",
+    "https://learn.microsoft.com/en-us/powershell/azure/install-azps-windows",
     "https://learn.microsoft.com/en-us/powershell/azure/install-azure-powershell",
+    "https://learn.microsoft.com/en-us/powershell/azure/release-notes-azureps",
     "https://learn.microsoft.com/en-us/powershell/exchange/connect-to-exchange-online-powershell",
     "https://learn.microsoft.com/en-us/powershell/exchange/open-the-exchange-management-shell",
     "https://learn.microsoft.com/en-us/powershell/microsoftgraph/get-started",
@@ -26830,6 +27152,7 @@
     "https://learn.microsoft.com/en-us/previous-versions/azure/bot-service/index-bf-sdk/",
     "https://learn.microsoft.com/en-us/previous-versions/azure/devops/",
     "https://learn.microsoft.com/en-us/previous-versions/azure/devops/user-guide/what-is-azure-devops",
+    "https://learn.microsoft.com/en-us/previous-versions/azure/governance/resource-graph/samples/samples-by-table",
     "https://learn.microsoft.com/en-us/previous-versions/bing/",
     "https://learn.microsoft.com/en-us/previous-versions/bing/speech/",
     "https://learn.microsoft.com/en-us/previous-versions/cc722488(v=technet.10)",
@@ -26913,6 +27236,7 @@
     "https://learn.microsoft.com/en-us/purview/edisc-ref-advanced-indexing",
     "https://learn.microsoft.com/en-us/purview/ediscovery-export-search-results",
     "https://learn.microsoft.com/en-us/purview/ediscovery-set-up-compliance-boundaries",
+    "https://learn.microsoft.com/en-us/purview/exchange-online-secures-email-secrets",
     "https://learn.microsoft.com/en-us/purview/free-version",
     "https://learn.microsoft.com/en-us/purview/get-started-with-sensitivity-labels",
     "https://learn.microsoft.com/en-us/purview/information-barriers",
@@ -26928,14 +27252,17 @@
     "https://learn.microsoft.com/en-us/purview/purview-security",
     "https://learn.microsoft.com/en-us/purview/purview-trial",
     "https://learn.microsoft.com/en-us/purview/records-management",
+    "https://learn.microsoft.com/en-us/purview/set-up-new-message-encryption-capabilities",
     "https://learn.microsoft.com/en-us/purview/unified-catalog",
     "https://learn.microsoft.com/en-us/purview/unified-catalog-regions",
     "https://learn.microsoft.com/en-us/purview/whats-new",
     "https://learn.microsoft.com/en-us/rest/api/authorization/privileged-role-eligibility-rest-sample",
     "https://learn.microsoft.com/en-us/rest/api/azure/",
     "https://learn.microsoft.com/en-us/rest/api/keyvault/",
+    "https://learn.microsoft.com/en-us/rest/api/keyvault/keyvault/vaults/check-name-availability",
     "https://learn.microsoft.com/en-us/rest/api/mysql/databases/create-or-update",
     "https://learn.microsoft.com/en-us/rest/api/resources/tenants/list",
+    "https://learn.microsoft.com/en-us/rest/api/support",
     "https://learn.microsoft.com/en-us/security-copilot/agents-overview",
     "https://learn.microsoft.com/en-us/security-copilot/authentication",
     "https://learn.microsoft.com/en-us/security-copilot/experiences-security-copilot",
@@ -27016,6 +27343,7 @@
     "https://learn.microsoft.com/en-us/training/support/plans-create-manage",
     "https://learn.microsoft.com/en-us/troubleshoot/azure/active-directory/enable-support-tls-environment",
     "https://learn.microsoft.com/en-us/troubleshoot/azure/general/dependency-availability-by-country",
+    "https://learn.microsoft.com/en-us/troubleshoot/entra/entra-id/ad-dmn-services/enable-support-tls-environment",
     "https://learn.microsoft.com/en-us/troubleshoot/exchange/administration/endpoint-connection-405-error",
     "https://learn.microsoft.com/en-us/troubleshoot/exchange/administration/term-new-mailbox-not-recognized-error",
     "https://learn.microsoft.com/en-us/troubleshoot/exchange/exchange-hybrid-welcome",
@@ -27078,6 +27406,7 @@
     "https://learn.microsoft.com/en-us/windows/deployment/update/check-release-health",
     "https://learn.microsoft.com/en-us/windows/deployment/windows-autopatch/overview/windows-autopatch-overview",
     "https://learn.microsoft.com/en-us/windows/desktop/sysinfo/registry-hives",
+    "https://learn.microsoft.com/en-us/windows/device-security/bitlocker/bitlocker-overview",
     "https://learn.microsoft.com/en-us/windows/project-rome/",
     "https://learn.microsoft.com/en-us/windows/security/identity-protection/hello-for-business/hello-identity-verification",
     "https://learn.microsoft.com/en-us/windows/security/operating-system-security/device-management/windows-security-configuration-framework/security-compliance-toolkit-10",
@@ -27086,194 +27415,6 @@
     "https://learn.microsoft.com/en-us/windows/win32/wer/windows-error-reporting"
   ],
   "queue": [
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-edge/web-platform/site-impacting-changes",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/dotnet/framework/network-programming/tls",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/intune/configmgr/core/plan-design/security/enable-tls-1-2-client",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/intune/configmgr/core/plan-design/security/enable-tls-1-2-client",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/storage/common/transport-layer-security-configure-minimum-version",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/troubleshoot/entra/entra-id/ad-dmn-services/enable-support-tls-environment",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/dotnet/core/extensions/sslstream-best-practices",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/rest/api/keyvault/keyvault/vaults/check-name-availability",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/bot-service/",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/devops/deliver/what-is-continuous-delivery",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/iac-vulnerabilities",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/developer/terraform/overview",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/template-functions-deployment",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/fundamentals/add-custom-domain",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/governance/policy/concepts/effect-deploy-if-not-exists",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/azure-portal/azure-portal-dashboards-create-programmatically",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/rest/api/support",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/groups-concept",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-add-role-to-user",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/storage/blobs/immutable-version-level-worm-policies",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-naming",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/custom-roles",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/powershell/azure/install-azure-powershell",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/cost-management-billing/understand/analyze-unexpected-charges",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/template-tutorial-create-first-template",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/powershell/azure/release-notes-azureps",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/powershell/azure/install-azps-windows",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/powershell/azure/install-azps-linux",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/powershell/azure/install-azps-macos",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/cli/azure/release-notes-azure-cli",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/dotnet/api/overview/azure/",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/previous-versions/azure/governance/resource-graph/samples/samples-by-table",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/previous-versions/azure/governance/resource-graph/samples/samples-by-table",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/reliability/reliability-ai-search",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/business-video/",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/admin/add-users/about-admin-roles",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/business-video/",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/admin",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/admin/setup/add-or-replace-your-onmicrosoftcom-domain",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/office365/smallbusiness/build-your-small-business/build-your-small-business",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-purview-service-description",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/windows/device-security/bitlocker/bitlocker-overview",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/purview/exchange-online-secures-email-secrets",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/purview/set-up-new-message-encryption-capabilities",
-      "depth": 3
-    },
     {
       "url": "https://learn.microsoft.com/en-us/purview/office-365-azure-encryption",
       "depth": 3
@@ -29357,12 +29498,53 @@
     {
       "url": "https://learn.microsoft.com/en-us/entra/identity/domain-services/sam-account-name/sam-account-name",
       "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/business-video/",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/admin/add-users/about-admin-roles",
+      "depth": 2
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/admin",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/admin/setup/add-or-replace-your-onmicrosoftcom-domain",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/office365/smallbusiness/build-your-small-business/build-your-small-business",
+      "depth": 2
     }
   ],
   "last_batch": {
     "attempted": 36,
-    "documents_total": 2715,
-    "queued": 568,
-    "failures": []
+    "documents_total": 2746,
+    "queued": 526,
+    "failures": [
+      {
+        "url": "https://learn.microsoft.com/en-us/microsoft-365/business-video/",
+        "error": "ValueError"
+      },
+      {
+        "url": "https://learn.microsoft.com/en-us/admin/add-users/about-admin-roles",
+        "error": "ValueError"
+      },
+      {
+        "url": "https://learn.microsoft.com/en-us/admin",
+        "error": "ValueError"
+      },
+      {
+        "url": "https://learn.microsoft.com/en-us/admin/setup/add-or-replace-your-onmicrosoftcom-domain",
+        "error": "ValueError"
+      },
+      {
+        "url": "https://learn.microsoft.com/en-us/office365/smallbusiness/build-your-small-business/build-your-small-business",
+        "error": "ValueError"
+      }
+    ]
   }
 }
