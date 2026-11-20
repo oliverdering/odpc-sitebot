@@ -30,7 +30,10 @@ def site_has_marker():
     req = Request(url, headers={"User-Agent": "ODPC-Deployment-SmokeTest/1.0", "Cache-Control": "no-cache"})
     with urlopen(req, timeout=30) as response:
         html = response.read().decode("utf-8", "replace")
-    return "id=\"odpc-navigation\"" in html and "id=\"odpc-nav-panel\"" in html and "odpc-premium-header-style" in html
+    if not ("id=\"odpc-navigation\"" in html and "id=\"odpc-nav-panel\"" in html and "odpc-premium-header-style" in html):
+        return False
+    nav = html.split('id="odpc-nav-panel"', 1)[1].split("</nav>", 1)[0]
+    return all(item in nav for item in ("Impressum", "Datenschutz", "/impressum/", "/datenschutzerklaerung/"))
 
 
 def main():
