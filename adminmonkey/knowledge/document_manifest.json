@@ -25926,6 +25926,348 @@
       "mapped_tracks": [
         "AZ-104"
       ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/quickstarts/responses-api",
+      "sha256": "bdf0fb3d15e853ccf951d22a88ff9881d4dfb00517477f3e5117a122e8e709a0",
+      "captured_at": "2026-11-21T16:26:41.909870+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/prompt-agents",
+      "sha256": "b5dcc904aa5ccab1c7117eaefea0f840973eb170ace94f7b49d4f641ed196b93",
+      "captured_at": "2026-11-21T16:26:42.063398+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/use-tools-skills-copilot-harness",
+      "sha256": "f4ba1f613de5dd054779ac5239f36bd2887b1c498e51fe6edd3cac70d3a1fdb4",
+      "captured_at": "2026-11-21T16:26:42.166392+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/quickstarts/create-web-research-agent",
+      "sha256": "12ab29bb26570a8efc0820d8d6261df42a16ceedd35d72f39fabc673656f39a2",
+      "captured_at": "2026-11-21T16:26:42.381115+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/hosted-agents",
+      "sha256": "53f8cc06ec87a8dfa2120441de804a43ee562c8bcea81d2227cab44451f8b3f6",
+      "captured_at": "2026-11-21T16:26:42.493974+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/how-to/develop/framework-hosted-agents",
+      "sha256": "fe36e11003a68af079300a48dda82c7b0c275504931b9784439ac417ad25420d",
+      "captured_at": "2026-11-21T16:26:42.664757+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/how-to/develop/langchain-hosted-agents",
+      "sha256": "c7bcd928a3f8bb0a4afbeee66b96a2320db2423f9611527c089b290c260b37b9",
+      "captured_at": "2026-11-21T16:26:42.972761+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/quickstarts/quickstart-deploy-own-code",
+      "sha256": "b74ac11f8c44c7a6a7fb89cc006b6e69b3ffff8b4382c2dd2a945af577d14cb3",
+      "captured_at": "2026-11-21T16:26:43.205892+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/voice-agent-pricing",
+      "sha256": "c4bebf752374b260574d55088522fb51acd246dc1d05e19934a353a7e9dbad5a",
+      "captured_at": "2026-11-21T16:26:43.401514+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/configure-voice-agent",
+      "sha256": "09dffaa716972d59de7aaebcb6fb4d688d5dc0d132ed1885961ecc5702021667",
+      "captured_at": "2026-11-21T16:26:43.619116+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/voice-agent-telephony-channels",
+      "sha256": "dd8717c12bf5e121010a0be76e3253708308854e60cc7d06da712ce491e3c15d",
+      "captured_at": "2026-11-21T16:26:44.019320+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/voice-agent-observability",
+      "sha256": "dc7e06619c99933bd3f6620d3406ecb4e17b140b54383ec1c0e979aabe0aa804",
+      "captured_at": "2026-11-21T16:26:44.190311+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/voice-agent-best-practice",
+      "sha256": "067c095f6cfb8cbdd81f41b2275310d703ce8e96c73d26365e141e82174efd4b",
+      "captured_at": "2026-11-21T16:26:44.376834+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/devops/mcp-server/mcp-server-overview",
+      "sha256": "bd17d54b60a649a9927cc29cee099fe89929f33b15ce1759f9ff91411d6e7f4f",
+      "captured_at": "2026-11-21T16:26:44.551207+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/concepts/concept-playgrounds",
+      "sha256": "6848007b330e3b6a359aa68d59b6471592b722d5a10fb9e7237866b667ebdaa7",
+      "captured_at": "2026-11-21T16:26:44.827858+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/agent-applications",
+      "sha256": "ecb02a789bffbe9c3b04c5ee5ee394370ab607742736f883ae03b02fce8251df",
+      "captured_at": "2026-11-21T16:26:45.081704+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/observability/how-to/how-to-monitor-agents-dashboard",
+      "sha256": "6ffe358f674ab5e79c747bd0513d787add6afd94f5c5dbec8d102404dcc9dad4",
+      "captured_at": "2026-11-21T16:26:45.246747+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/development-lifecycle",
+      "sha256": "04f9bdfadccd11c3301818f7a32aa203fa9a17f3eb8d70c2601a1ded12005798",
+      "captured_at": "2026-11-21T16:26:45.476529+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/virtual-networks",
+      "sha256": "2c76d3ecfd5ebee303c1059cc7b33e0f3115de4f8e6e4ee71cb7d74d7af52caa",
+      "captured_at": "2026-11-21T16:26:45.679525+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/environment-setup",
+      "sha256": "d6f3f3e672c07fd2a60173b5f5de7c34b36ba85cb787eac3a8ae0b743bd612ec",
+      "captured_at": "2026-11-21T16:26:45.781861+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/enable-agent-to-agent-endpoint",
+      "sha256": "1822d2850b732e7f21b38165856b59f5eb10733afee33dc4737f103058ada562",
+      "captured_at": "2026-11-21T16:26:45.898945+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/guardrails/guardrails-overview",
+      "sha256": "f0a70575899a108d58a6912f6c70eefd11f5e6e00be8632af4ae663598998d60",
+      "captured_at": "2026-11-21T16:26:46.061386+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/use-your-own-resources",
+      "sha256": "bcb46018627e39001437d1d5123072dd943de86ad28822acd0314f1e1d44567f",
+      "captured_at": "2026-11-21T16:26:46.336702+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/responsible-use-of-ai-overview",
+      "sha256": "347543ebeb9b43d036bc6e1e1cbc6f44a59102ddcd2a9922d9393176a1f96638",
+      "captured_at": "2026-11-21T16:26:46.568307+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/tool-catalog",
+      "sha256": "d2bb24d77c97dde96875234fdc6da7cd26e27e346322e86c4699bf5845106f76",
+      "captured_at": "2026-11-21T16:26:46.965741+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/limits-quotas-regions",
+      "sha256": "1f319623217ad7a60a5eacd0d083f0035a21b0ff769c42278bf9d0e2679844f4",
+      "captured_at": "2026-11-21T16:26:47.267292+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-platform/admin/early-release",
+      "sha256": "b1cbbcc3293257122c69f06f17ed74482f81da6c0393795881fb48fa8b1097f2",
+      "captured_at": "2026-11-21T16:26:47.461136+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/publication-channels-mcp-agent-to-agent",
+      "sha256": "43abd1d067b0d96d00ae2cddeaeb5170964702cf6534cd4bd7513269af909d47",
+      "captured_at": "2026-11-21T16:26:47.631197+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-apps/maker/canvas-apps/share-app",
+      "sha256": "42bc19b411fd5b80a9662957163c5b9aa3acaf4f06abd1af151d161707f04fec",
+      "captured_at": "2026-11-21T16:26:47.785912+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoftteams/assign-roles-permissions",
+      "sha256": "22b72f29aab012427447eaeea01b4bf478b6e60690d32b8a4766b28c7213fa03",
+      "captured_at": "2026-11-21T16:26:47.949884+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/admin-transcript-controls",
+      "sha256": "5516ce9383eb662c06776f179dbf85cfaa41df9c3fa7f4e44060736b8d86b617",
+      "captured_at": "2026-11-21T16:26:48.116438+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-platform/admin/create-users-assign-online-security-roles",
+      "sha256": "00bf20a664302f07565c8e0c9728a4aab265fb7d4020fdbc59f1bc9225c93ea5",
+      "captured_at": "2026-11-21T16:26:48.532398+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-platform/admin/security-roles-privileges",
+      "sha256": "819c3a75e9a608db34c249125585f5298a8576da14645f1907afad9a3ba784ba",
+      "captured_at": "2026-11-21T16:26:48.717411+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-platform/admin/database-security",
+      "sha256": "be001a164583d01c6402d732468022b2fa72df00a32ef5098ddc208066f21409",
+      "captured_at": "2026-11-21T16:26:48.890668+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/environments-first-run-experience",
+      "sha256": "7589055a36cf407b9943b333f9099bda362d87fb1e26df1b6c4e635ca130865d",
+      "captured_at": "2026-11-21T16:26:49.110250+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/nlu-gpt-overview",
+      "sha256": "c002c7f00d0580a7532668dbb99efd867e1d9146a87c22929b4cbaa31bbc82ed",
+      "captured_at": "2026-11-21T16:26:49.263086+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
     }
   ],
   "seen": [
@@ -26092,19 +26434,45 @@
     "https://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-cloud-introduction",
     "https://learn.microsoft.com/en-us/azure/defender-for-cloud/iac-vulnerabilities",
     "https://learn.microsoft.com/en-us/azure/developer/terraform/overview",
+    "https://learn.microsoft.com/en-us/azure/devops/mcp-server/mcp-server-overview",
     "https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-about",
     "https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-create",
     "https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-quotas",
     "https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/agent-identity",
     "https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/agent-optimizer-overview",
+    "https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/development-lifecycle",
+    "https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/hosted-agents",
+    "https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/limits-quotas-regions",
+    "https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/prompt-agents",
     "https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/runtime-components",
+    "https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/tool-catalog",
     "https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/toolbox-overview",
+    "https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/voice-agent-best-practice",
+    "https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/voice-agent-observability",
+    "https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/voice-agent-pricing",
+    "https://learn.microsoft.com/en-us/azure/foundry/agents/environment-setup",
+    "https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/agent-applications",
+    "https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/configure-voice-agent",
+    "https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/enable-agent-to-agent-endpoint",
     "https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/publish-copilot",
+    "https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/use-tools-skills-copilot-harness",
+    "https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/use-your-own-resources",
+    "https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/virtual-networks",
+    "https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/voice-agent-telephony-channels",
     "https://learn.microsoft.com/en-us/azure/foundry/agents/overview",
+    "https://learn.microsoft.com/en-us/azure/foundry/agents/quickstarts/create-web-research-agent",
     "https://learn.microsoft.com/en-us/azure/foundry/agents/quickstarts/prompt-agent",
     "https://learn.microsoft.com/en-us/azure/foundry/agents/quickstarts/prompt-voice-agent",
+    "https://learn.microsoft.com/en-us/azure/foundry/agents/quickstarts/quickstart-deploy-own-code",
     "https://learn.microsoft.com/en-us/azure/foundry/agents/quickstarts/quickstart-hosted-agent",
+    "https://learn.microsoft.com/en-us/azure/foundry/agents/quickstarts/responses-api",
+    "https://learn.microsoft.com/en-us/azure/foundry/concepts/concept-playgrounds",
+    "https://learn.microsoft.com/en-us/azure/foundry/guardrails/guardrails-overview",
+    "https://learn.microsoft.com/en-us/azure/foundry/how-to/develop/framework-hosted-agents",
+    "https://learn.microsoft.com/en-us/azure/foundry/how-to/develop/langchain-hosted-agents",
     "https://learn.microsoft.com/en-us/azure/foundry/observability/concepts/trace-agent-concept",
+    "https://learn.microsoft.com/en-us/azure/foundry/observability/how-to/how-to-monitor-agents-dashboard",
+    "https://learn.microsoft.com/en-us/azure/foundry/responsible-use-of-ai-overview",
     "https://learn.microsoft.com/en-us/azure/foundry/what-is-foundry",
     "https://learn.microsoft.com/en-us/azure/governance/management-groups/overview",
     "https://learn.microsoft.com/en-us/azure/governance/policy/concepts/effect-deploy-if-not-exists",
@@ -28198,6 +28566,7 @@
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/admin-data-loss-prevention",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/admin-dlp-troubleshooting",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/admin-share-bots",
+    "https://learn.microsoft.com/en-us/microsoft-copilot-studio/admin-transcript-controls",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-entities-slot-filling",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-flow",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-generative-actions",
@@ -28233,6 +28602,7 @@
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/overview-customer-conversation",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/preview-history",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/preview-overview",
+    "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/publication-channels-mcp-agent-to-agent",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/publication-channels-overview",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/publication-fundamentals-publish-channels",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/publication-publish-agent",
@@ -28276,6 +28646,7 @@
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/configure-starter-prompts",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/create-automation-natural-language",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/customize-default-canvas",
+    "https://learn.microsoft.com/en-us/microsoft-copilot-studio/environments-first-run-experience",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/flow-agent",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/flow-designer",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/flows-overview",
@@ -28307,6 +28678,7 @@
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/knowledge-copilot-studio",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/nlu-authoring",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/nlu-boost-node",
+    "https://learn.microsoft.com/en-us/microsoft-copilot-studio/nlu-gpt-overview",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/publication-add-bot-to-microsoft-teams",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/publication-add-bot-to-sharepoint",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/publication-connect-bot-to-web-channels",
@@ -28341,6 +28713,7 @@
     "https://learn.microsoft.com/en-us/microsoftsearch/setup-microsoft-search",
     "https://learn.microsoft.com/en-us/microsoftteams/aa-cq-manage-resource-accounts",
     "https://learn.microsoft.com/en-us/microsoftteams/apps-in-teams",
+    "https://learn.microsoft.com/en-us/microsoftteams/assign-roles-permissions",
     "https://learn.microsoft.com/en-us/microsoftteams/best-practice-dashboard",
     "https://learn.microsoft.com/en-us/microsoftteams/communicate-with-users-from-other-organizations",
     "https://learn.microsoft.com/en-us/microsoftteams/create-custom-meeting-template",
@@ -28438,6 +28811,7 @@
     "https://learn.microsoft.com/en-us/partner-center/membership/isv-success",
     "https://learn.microsoft.com/en-us/partner-center/new-commerce-license-based",
     "https://learn.microsoft.com/en-us/power-apps/",
+    "https://learn.microsoft.com/en-us/power-apps/maker/canvas-apps/share-app",
     "https://learn.microsoft.com/en-us/power-automate",
     "https://learn.microsoft.com/en-us/power-automate/",
     "https://learn.microsoft.com/en-us/power-automate/flows-designer",
@@ -28456,7 +28830,10 @@
     "https://learn.microsoft.com/en-us/power-platform/admin/apps-to-allow",
     "https://learn.microsoft.com/en-us/power-platform/admin/copilot/copilot-hub",
     "https://learn.microsoft.com/en-us/power-platform/admin/create-environment",
+    "https://learn.microsoft.com/en-us/power-platform/admin/create-users-assign-online-security-roles",
+    "https://learn.microsoft.com/en-us/power-platform/admin/database-security",
     "https://learn.microsoft.com/en-us/power-platform/admin/default-environment-routing",
+    "https://learn.microsoft.com/en-us/power-platform/admin/early-release",
     "https://learn.microsoft.com/en-us/power-platform/admin/environment-groups",
     "https://learn.microsoft.com/en-us/power-platform/admin/environments-overview",
     "https://learn.microsoft.com/en-us/power-platform/admin/geographical-availability-copilot",
@@ -28468,6 +28845,7 @@
     "https://learn.microsoft.com/en-us/power-platform/admin/pay-as-you-go-set-up",
     "https://learn.microsoft.com/en-us/power-platform/admin/pay-as-you-go-usage-costs",
     "https://learn.microsoft.com/en-us/power-platform/admin/power-platform-advisor",
+    "https://learn.microsoft.com/en-us/power-platform/admin/security-roles-privileges",
     "https://learn.microsoft.com/en-us/power-platform/admin/security/security-overview",
     "https://learn.microsoft.com/en-us/power-platform/admin/tenant-settings",
     "https://learn.microsoft.com/en-us/power-platform/admin/use-service-admin-role-manage-tenant",
@@ -28819,278 +29197,6 @@
     "https://learn.microsoft.com/en-us/windows/win32/wer/windows-error-reporting"
   ],
   "queue": [
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/quickstarts/responses-api",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/prompt-agents",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/quickstarts/prompt-voice-agent",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/overview",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/prompt-agents",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/use-tools-skills-copilot-harness",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/quickstarts/create-web-research-agent",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/quickstarts/prompt-voice-agent",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/overview",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/hosted-agents",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/foundry/how-to/develop/framework-hosted-agents",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/foundry/how-to/develop/langchain-hosted-agents",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/quickstarts/quickstart-deploy-own-code",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/use-tools-skills-copilot-harness",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/quickstarts/responses-api",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/voice-agent-pricing",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/quickstarts/prompt-voice-agent",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/configure-voice-agent",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/voice-agent-telephony-channels",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/voice-agent-observability",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/voice-agent-best-practice",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/toolbox-overview",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/toolbox-overview",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/devops/mcp-server/mcp-server-overview",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/foundry/concepts/concept-playgrounds",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/foundry/observability/concepts/trace-agent-concept",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/agent-optimizer-overview",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/agent-applications",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/foundry/observability/how-to/how-to-monitor-agents-dashboard",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/development-lifecycle",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/agent-identity",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/virtual-networks",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/environment-setup",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/agent-applications",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/overview",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/publish-copilot",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/enable-agent-to-agent-endpoint",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/foundry/guardrails/guardrails-overview",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/virtual-networks",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/use-your-own-resources",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/foundry/responsible-use-of-ai-overview",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/environment-setup",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/development-lifecycle",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/quickstarts/quickstart-hosted-agent",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/toolbox-overview",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/quickstarts/quickstart-hosted-agent",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/quickstarts/prompt-voice-agent",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/voice-agent-best-practice",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/tool-catalog",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/limits-quotas-regions",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/overview",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/power-platform/admin/early-release",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/publication-channels-mcp-agent-to-agent",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/publication-channels-mcp-agent-to-agent",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/requirements-licensing-subscriptions",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/power-apps/maker/canvas-apps/share-app",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoftteams/assign-roles-permissions",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/admin-transcript-controls",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-flow",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-flow",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/power-platform/admin/create-users-assign-online-security-roles",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/power-platform/admin/security-roles-privileges",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/power-platform/admin/database-security",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/environments-first-run-experience",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/power-platform/admin/security-roles-privileges",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/power-platform/admin/database-security",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/power-platform/admin/database-security",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/nlu-gpt-overview",
-      "depth": 3
-    },
     {
       "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/faqs-copilot",
       "depth": 3
@@ -30198,17 +30304,8 @@
   ],
   "last_batch": {
     "attempted": 36,
-    "documents_total": 2888,
-    "queued": 344,
-    "failures": [
-      {
-        "url": "https://learn.microsoft.com/en-us/users/na/",
-        "error": "ValueError"
-      },
-      {
-        "url": "https://learn.microsoft.com/en-us/collections/xkggupt7qm714q",
-        "error": "ValueError"
-      }
-    ]
+    "documents_total": 2924,
+    "queued": 276,
+    "failures": []
   }
 }
