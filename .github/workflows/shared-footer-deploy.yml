@@ -10,7 +10,7 @@ on:
 permissions:
   contents: read
 concurrency:
-  group: odpc-shared-footer
+  group: odpc-production-sftp
   cancel-in-progress: false
 jobs:
   deploy:
