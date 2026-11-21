@@ -57,7 +57,8 @@ add_action('wp_head', function() {
       'provider'=>[
         '@type'=>'Organization',
         '@id'=>'https://odpc.de/#organization',
-        'name'=>'ODPC',
+        'name'=>'Oliver Dering IT Consulting',
+        'alternateName'=>'ODPC',
         'url'=>'https://odpc.de/'
       ],
       'areaServed'=>array_map(static function($place) {
