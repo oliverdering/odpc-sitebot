@@ -76,10 +76,45 @@ add_filter('the_content', function($original) {
  ['06 · Referenzen','Websites und digitale Kundenprojekte','Individuelle Umsetzungen für unterschiedliche Branchen, etwa Gastronomie, Immobilien, Kanzleien und technische Dienstleistungen.','https://odpc.de/kunden-referenzen/']
  ];
  $html='<section class="odpc-about26" aria-label="Oliver Dering – Leistungen, Projekte und Lebenslauf"><div class="oa-intro"><img class="oa-portrait" src="https://odpc.de/wp-content/uploads/2026/08/1786371119667.png.webp" alt="Porträt Oliver Dering" width="168" height="168"><div class="oa-hero-copy"><p class="oa-kicker">ODPC · Oliver Dering</p><h2>25+ Jahre IT. Webseiten, Hosting, Infrastruktur und KI.</h2><p>Ich plane, gestalte, hoste und betreue Websites in unterschiedlichen Stilrichtungen – und verbinde das mit langjähriger Enterprise-IT-Erfahrung, Automatisierung und moderner KI-Integration. Von der ersten Idee bis zum stabilen Betrieb.</p><div class="oa-links"><a href="#odpc-stationen">Leistungen ansehen</a><a href="#odpc-cv">Lebenslauf & Downloads</a></div></div></div><h2 id="odpc-stationen" style="margin-top:34px">Was ich heute anbiete und entwickle</h2><div class="oa-grid">';
- foreach($groups as $g) $html.='<details><summary><span><small style="display:block;color:#866b56">'.esc_html($g[0]).'</small>'.esc_html($g[1]).'</span></summary><div class="oa-body"><p>'.esc_html($g[2]).'</p><a href="'.esc_url($g[3]).'">Details ansehen →</a></div></details>';
- $html.='</div><section class="oa-career"><h2>Berufliche Erfahrung auf einen Blick</h2><div class="oa-grid"><details><summary><span><small>Aktuell · 2024–2026</small>ODPC, Applied AI & digitale Lösungen</span></summary><div class="oa-body"><p>Eigenständige Entwicklung von Websites, Hosting- und KI-Integrationslösungen, digitalen Plattformen und Automatisierungen. IT-Verantwortung und KI-Einführung im Kanzlei- und Unternehmensumfeld.</p></div></details><details><summary><span><small>2021–2023</small>Enterprise-IT · Deutsche Telekom / VMware</span></summary><div class="oa-body"><p>Second- und Third-Level-Support für produktive VMware-, Server- und VDI-Infrastrukturen im Finanz- und Leasingumfeld.</p></div></details><details><summary><span><small>Frühere IT-Laufbahn</small>IT-Beratung, Systembetrieb & internationaler Support</span></summary><div class="oa-body"><p>Mehr als 25 Jahre Erfahrung mit IT-Infrastruktur, Kundenprojekten, Systemadministration, Support und technischer Beratung. Die vollständigen Arbeitgeber, Zeiträume und Tätigkeiten stehen im detaillierten Lebenslauf.</p></div></details></div></section><section id="odpc-cv" class="oa-footer"><h2>Vollständiger Lebenslauf & Nachweise</h2><p>Alle Stationen, Tätigkeiten, Zeugnisse, Zertifikate und Dokumente bleiben vollständig erhalten. Bei Bedarf kannst du die ausführliche Fassung öffnen.</p><details class="oa-full-cv"><summary>Detaillierten Lebenslauf mit allen Stationen öffnen</summary><div class="oa-body"><p><a href="https://odpc.de/lebenslauf-oliver-dering/">Original-Lebenslauf und Downloads separat öffnen →</a></p><div class="oa-cv">'.$cv_html.'</div></div></details></section></section>';
+ foreach($groups as $g) $html.='<details><summary><span>'.esc_html($g[1]).'</span></summary><div class="oa-body"><p>'.esc_html($g[2]).'</p><a href="'.esc_url($g[3]).'">Details ansehen →</a></div></details>';
+ $html.='</div><section class="oa-career"><h2>Berufliche Erfahrung auf einen Blick</h2><div class="oa-grid"><details><summary><span><small>Aktuell · 2024–2026</small>ODPC, Applied AI & digitale Lösungen</span></summary><div class="oa-body"><p>Eigenständige Entwicklung von Websites, Hosting- und KI-Integrationslösungen, digitalen Plattformen und Automatisierungen. IT-Verantwortung und KI-Einführung im Kanzlei- und Unternehmensumfeld.</p></div></details><details><summary><span><small>2021–2023</small>Enterprise-IT · Deutsche Telekom / VMware</span></summary><div class="oa-body"><p>Second- und Third-Level-Support für produktive VMware-, Server- und VDI-Infrastrukturen im Finanz- und Leasingumfeld.</p></div></details><details><summary><span><small>Frühere IT-Laufbahn</small>IT-Beratung, Systembetrieb & internationaler Support</span></summary><div class="oa-body"><p>Mehr als 25 Jahre Erfahrung mit IT-Infrastruktur, Kundenprojekten, Systemadministration, Support und technischer Beratung. Die vollständigen Arbeitgeber, Zeiträume und Tätigkeiten stehen im detaillierten Lebenslauf.</p></div></details></div></section><section id="odpc-cv" class="oa-footer"><h2>Vollständiger Lebenslauf & Nachweise</h2><p>Alle Stationen, Tätigkeiten, Zeugnisse, Zertifikate und Dokumente bleiben vollständig erhalten. Bei Bedarf kannst du die ausführliche Fassung öffnen.</p><p class="oa-language-links"><a href="#cv-de">Lebenslauf auf Deutsch</a> · <a href="#cv-english">Curriculum vitae in English</a></p><details class="oa-full-cv"><summary>Detaillierten Lebenslauf mit allen Stationen öffnen</summary><div class="oa-body"><p><a href="https://odpc.de/lebenslauf-oliver-dering/">Original-Lebenslauf und Downloads separat öffnen →</a></p><div class="oa-cv">'.$cv_html.'</div></div></details></section></section>';
  return $html;
 }, 50);
+
+/* About page only: readable card titles and working language shortcuts. */
+add_action('wp_head', function () {
+    if (!odpc_about_2026_target()) return;
+    echo '<style id="odpc-about-readability-fix">
+html:not([data-odpc-appearance="green"]) body.page-id-1066 .odpc-about26 .oa-grid details > summary,
+html:not([data-odpc-appearance="green"]) body.page-id-1066 .odpc-about26 .oa-grid details > summary span{color:#fff!important}
+html[data-odpc-appearance="green"] body.page-id-1066 .odpc-about26 .oa-grid details > summary,
+html[data-odpc-appearance="green"] body.page-id-1066 .odpc-about26 .oa-grid details > summary span{color:#254a35!important}
+.odpc-about26 .oa-language-links{display:flex;flex-wrap:wrap;gap:8px 14px}
+</style>';
+}, 999);
+add_action('wp_footer', function () {
+    if (!odpc_about_2026_target()) return;
+    ?>
+    <script id="odpc-about-cv-navigation">
+    (function(){
+      function openCV(hash, scroll){
+        if(hash!=='#cv-de' && hash!=='#cv-english') return;
+        var target=document.getElementById(hash.slice(1));
+        if(!target) return;
+        var node=target;
+        while(node){if(node.tagName==='DETAILS') node.open=true; node=node.parentElement;}
+        if(scroll) requestAnimationFrame(function(){target.scrollIntoView({block:'start'});});
+      }
+      document.addEventListener('click',function(event){
+        var link=event.target.closest('a[href="#cv-de"],a[href="#cv-english"]');
+        if(link) openCV(link.getAttribute('href'),true);
+      });
+      window.addEventListener('hashchange',function(){openCV(location.hash,true);});
+      openCV(location.hash,true);
+    })();
+    </script>
+    <?php
+}, 999);
 
 /**
  * Global presentation copy: one concise service statement in the branded header.
