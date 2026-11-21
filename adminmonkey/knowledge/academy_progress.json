@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T16:26:57.739971+00:00",
+  "generated_at": "2026-11-21T21:46:12.961679+00:00",
   "product": "AdminMonkey Academy",
   "certification_expansion": {
     "candidate_exam_codes": 42,
@@ -45,23 +45,23 @@
   "certification_issuer": "ODPC",
   "official_microsoft_certification": false,
   "knowledge": {
-    "documents_collected": 2924,
-    "manufacturer_verified": 2924,
+    "documents_collected": 2960,
+    "manufacturer_verified": 2960,
     "review": {
       "unreviewed": 0,
-      "approved": 2924,
+      "approved": 2960,
       "rejected": 0
     },
     "last_batch": {
       "attempted": 36,
-      "documents_total": 2924,
-      "queued": 276,
+      "documents_total": 2960,
+      "queued": 207,
       "failures": []
     }
   },
   "retrieval_staging": {
-    "chunked_documents": 2909,
-    "chunks_prepared": 15041,
+    "chunked_documents": 2945,
+    "chunks_prepared": 15281,
     "retrieval_quality_verified": false,
     "agent_answers_verified": 0,
     "note": "Ephemeral, provenance-checked chunk preparation; no searchable production index yet."
@@ -69,7 +69,7 @@
   "tracks": [
     {
       "track": "MS-102",
-      "manufacturer_verified_sources": 564,
+      "manufacturer_verified_sources": 567,
       "knowledge_coverage": "source_count_only_not_learning_objective_coverage",
       "practice_scenarios_available": 6,
       "agent_answers_evaluated": 0,
@@ -85,7 +85,7 @@
     },
     {
       "track": "AZ-104",
-      "manufacturer_verified_sources": 218,
+      "manufacturer_verified_sources": 220,
       "knowledge_coverage": "source_count_only_not_learning_objective_coverage",
       "practice_scenarios_available": 4,
       "agent_answers_evaluated": 0,

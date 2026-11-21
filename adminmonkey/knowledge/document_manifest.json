@@ -26268,6 +26268,304 @@
       "depth": 3,
       "review_status": "manufacturer_verified",
       "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/faqs-copilot",
+      "sha256": "483b5ec4d5bbf6d79156ca91c8f01867c6e13d7ffd750ec309943f4f3a5f8e4f",
+      "captured_at": "2026-11-21T21:45:57.115770+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/legal/cognitive-services/openai/transparency-note",
+      "sha256": "9459f3782240de900fac861f75c46bf71cd081ec875bae8343c0e92073f4bc7f",
+      "captured_at": "2026-11-21T21:45:57.461955+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-language-support",
+      "sha256": "4b53e237cedd259109d7b4deaf1c8dcade6e60a65f1ac704f7ca62faccafa5ce",
+      "captured_at": "2026-11-21T21:45:57.568355+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/troubleshoot/power-platform/copilot-studio/authoring/error-codes",
+      "sha256": "28229bebd7965dd48875704591f204921b9d48e7985869a1349f37431569e2ae",
+      "captured_at": "2026-11-21T21:45:57.798812+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/knowledge-unstructured-data",
+      "sha256": "a11bcbb6735c7e0ba01a5fa11f616e00c0182079e4db50e7689342d3c0cfc970",
+      "captured_at": "2026-11-21T21:45:57.983301+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/troubleshoot/power-platform/copilot-studio/generative-answers/sharepoint-no-response",
+      "sha256": "d5c7236e9c065d94873fa399b309a6c5b5cad06e7d9a7487e48eb37e926f62d0",
+      "captured_at": "2026-11-21T21:45:58.636598+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/nlu-generative-answers-sharepoint-onedrive",
+      "sha256": "d7b49fcec639ea6556708ddee8b67b2740d36c8942f23918f42525c17294e3ee",
+      "captured_at": "2026-11-21T21:45:58.845063+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/admin-upgrade-dataverse-teams",
+      "sha256": "7d3d28f47cf4e14aa25be798fcc1e11d8a8cfa5e26ad28ba9bf3e805d88c52ca",
+      "captured_at": "2026-11-21T21:45:58.930908+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/analytics-sessions",
+      "sha256": "2197eec831f9327218bc4e051c39d80c9c5187b943d6776667dd7fc34f719abb",
+      "captured_at": "2026-11-21T21:45:59.179242+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-platform/admin/api-request-limits-allocations",
+      "sha256": "2a58794c3971d73347de67ba95a0a762f5cc6e3bc6960372dee0f2c484f18519",
+      "captured_at": "2026-11-21T21:45:59.405790+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/knowledge-add-unstructured-data",
+      "sha256": "e0fa9b9026ef25465cd2210ec62d3e505f6619f8d856872ae46e189e457bc0ac",
+      "captured_at": "2026-11-21T21:45:59.523934+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/power-automate/ip-address-configuration",
+      "sha256": "01ba3aa83bce705ac2ec221703c582bd161b735c6f837c42dee83ac03a109efa",
+      "captured_at": "2026-11-21T21:45:59.617167+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/communication-services/concepts/chat/concepts",
+      "sha256": "d46cc1f05f01bab431facdaaf5d7d5bf250095ca58839ab9395c23d5714f923d",
+      "captured_at": "2026-11-21T21:45:59.718640+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/configuration-hand-off-omnichannel",
+      "sha256": "c7eec8a54d72b862d4a620c0066866dd3a52b5806e553e9deec71de6360e24f2",
+      "captured_at": "2026-11-21T21:45:59.869114+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-triggers-about",
+      "sha256": "5cacad67b52f1680766c760892a70bcb233b0cc40a066313f70cc1d68c5f476a",
+      "captured_at": "2026-11-21T21:46:00.063934+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-product-terms-dr",
+      "sha256": "de4b1283b3b021992248fbc779ef8fa3d94a6e9434b98bd20f556fd4fb654d85",
+      "captured_at": "2026-11-21T21:46:00.567492+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/manage-activity-data-m365",
+      "sha256": "8abf80820b9e9f287e3d215f0d5f6fd34e77eaf284c481e84ac29ce02c9104cc",
+      "captured_at": "2026-11-21T21:46:00.923410+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/voice-get-started",
+      "sha256": "bd76cd4353ab7c48733227495c588bf9d19fe539c950de529c3bf7fabc3164de",
+      "captured_at": "2026-11-21T21:46:01.029566+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/voice-realtime-voice-agents",
+      "sha256": "d5a76e08871dc691f4e5fbdc025f8ad8cea8b7eff0d68bc2d312fb9fd3cae5c1",
+      "captured_at": "2026-11-21T21:46:01.370581+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/voice-dtmf",
+      "sha256": "4072f5e0874e77c457e7a1e8d1508b162ca4e656156580e3023ae97108282d72",
+      "captured_at": "2026-11-21T21:46:01.506093+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/voice-configuration",
+      "sha256": "06aaddaad1d453486b19f628b0d3d0890b1c22539b70ab9297d3542099a44bc2",
+      "captured_at": "2026-11-21T21:46:01.606808+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/voice-test",
+      "sha256": "36ee10e4e9f85cf507835104795dcc8ef2d5870ed8cc2d805d9e4a63858fd4d5",
+      "captured_at": "2026-11-21T21:46:01.695498+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/troubleshoot/power-platform/copilot-studio/channels/voice-error-codes",
+      "sha256": "a190589efd8740faed71caa6dfc16ef024ed2a7c692acbd2d35f0709d4d81916",
+      "captured_at": "2026-11-21T21:46:01.815438+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-system-topics",
+      "sha256": "3256bbff93701b9974da6c608855cd09da286586143ef25c6223b3823fa50913",
+      "captured_at": "2026-11-21T21:46:02.201761+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/bing/search-apis/bing-web-search/overview",
+      "sha256": "f697cd19ef2ece22c233fcb19855732ba668ab2f7d4b05aeadc9831b60aa8a90",
+      "captured_at": "2026-11-21T21:46:02.599626+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/nlu-generative-answers-azure-openai",
+      "sha256": "49f5c0a5b2e24f3bbbfa0cad0731150fb8af241352d35e0fbc19c6b6c5357e92",
+      "captured_at": "2026-11-21T21:46:02.823350+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/nlu-generative-answers-custom-data",
+      "sha256": "65d74f05b2e7d8da5267423487ff0bb492a2df2e26d77277708556d13a578a13",
+      "captured_at": "2026-11-21T21:46:03.009393+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/nlu-generative-answers-bing",
+      "sha256": "cbd84d59f6febc3048af8db2f2aa6acb8d792d24bb5f297746ab2eb1b89ce695",
+      "captured_at": "2026-11-21T21:46:03.239490+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/nlu-documents",
+      "sha256": "2bca8c9bb1395c9bc96c8e66f558a9c7ae464019aa9965ffce5e121f23b69464",
+      "captured_at": "2026-11-21T21:46:03.462030+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-variables-bot",
+      "sha256": "cf82ef5fbc937097b7dab86d6626f8eedbc4f9d06b169e35595a9e725f6cb36b",
+      "captured_at": "2026-11-21T21:46:03.662282+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-send-message",
+      "sha256": "78a6dab933f9a33d2074672fb6d8cc1ee22741c1efa31dcacbc401d898f153cc",
+      "captured_at": "2026-11-21T21:46:03.840540+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/content-safety/concepts/harm-categories",
+      "sha256": "8ff0305ae934ca34e7a1bc23653c5f39f912d7c4d124f472d32aac0d22aeb165",
+      "captured_at": "2026-11-21T21:46:03.991721+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-managing-topic-inputs-outputs",
+      "sha256": "a32fa49888b87b76fe9e3a0d458888a89c02c0f622190087826423cbced01f91",
+      "captured_at": "2026-11-21T21:46:04.104499+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/guidance/generative-orchestration-duplicate-messages",
+      "sha256": "a20beef11608ba25a182c8eedf84ec013ab63aec4856d4db4dea7a994de955f4",
+      "captured_at": "2026-11-21T21:46:04.234468+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/guidance/generative-orchestration-topics",
+      "sha256": "4692ae272ff59d475fbd9f912b16c10acc8d2c9f189ca703f75b777f358c5c54",
+      "captured_at": "2026-11-21T21:46:04.306635+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/multilingual",
+      "sha256": "532bbb4e1965f41fac2d2b785db5dcb803e0c2b781dfe9d11b3181f7bdb81ffd",
+      "captured_at": "2026-11-21T21:46:04.551671+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
     }
   ],
   "seen": [
@@ -26366,6 +26664,7 @@
     "https://learn.microsoft.com/en-us/azure/active-directory/users-groups-roles/licensing-groups-resolve-problems",
     "https://learn.microsoft.com/en-us/azure/ai-foundry/agents/overview",
     "https://learn.microsoft.com/en-us/azure/ai-foundry/what-is-azure-ai-foundry",
+    "https://learn.microsoft.com/en-us/azure/ai-services/content-safety/concepts/harm-categories",
     "https://learn.microsoft.com/en-us/azure/aks/workload-identity-overview",
     "https://learn.microsoft.com/en-us/azure/api-management/api-management-howto-use-managed-service-identity",
     "https://learn.microsoft.com/en-us/azure/architecture/best-practices/index-best-practices",
@@ -26422,6 +26721,7 @@
     "https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-naming",
     "https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-setup-guide/identity",
     "https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/considerations/fundamental-concepts",
+    "https://learn.microsoft.com/en-us/azure/communication-services/concepts/chat/concepts",
     "https://learn.microsoft.com/en-us/azure/cost-management-billing/",
     "https://learn.microsoft.com/en-us/azure/cost-management-billing/cost-management-billing-overview",
     "https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/quick-acm-cost-analysis",
@@ -26518,6 +26818,7 @@
     "https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy",
     "https://learn.microsoft.com/en-us/azure/storage/common/transport-layer-security-configure-client-version",
     "https://learn.microsoft.com/en-us/azure/storage/common/transport-layer-security-configure-minimum-version",
+    "https://learn.microsoft.com/en-us/bing/search-apis/bing-web-search/overview",
     "https://learn.microsoft.com/en-us/cli/azure/account",
     "https://learn.microsoft.com/en-us/cli/azure/account/tenant",
     "https://learn.microsoft.com/en-us/cli/azure/install-azure-cli",
@@ -28278,6 +28579,7 @@
     "https://learn.microsoft.com/en-us/intune/whats-new/",
     "https://learn.microsoft.com/en-us/intune/whats-new/archive",
     "https://learn.microsoft.com/en-us/javascript/api/@azure/msal-react",
+    "https://learn.microsoft.com/en-us/legal/cognitive-services/openai/transparency-note",
     "https://learn.microsoft.com/en-us/legal/microsoft-365/supplemental-terms",
     "https://learn.microsoft.com/en-us/legal/microsoft-apis/terms-of-use",
     "https://learn.microsoft.com/en-us/legal/microsoft-apis/terms-of-use-changelog",
@@ -28522,6 +28824,7 @@
     "https://learn.microsoft.com/en-us/microsoft-365/enterprise/create-user-accounts-with-microsoft-365-powershell",
     "https://learn.microsoft.com/en-us/microsoft-365/enterprise/cross-tenant-sharepoint-migration",
     "https://learn.microsoft.com/en-us/microsoft-365/enterprise/deploy-identity-solution-overview",
+    "https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-product-terms-dr",
     "https://learn.microsoft.com/en-us/microsoft-365/enterprise/manage-microsoft-365-groups-with-powershell",
     "https://learn.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-admin-diagnostics",
     "https://learn.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-admin-engagements",
@@ -28567,9 +28870,11 @@
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/admin-dlp-troubleshooting",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/admin-share-bots",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/admin-transcript-controls",
+    "https://learn.microsoft.com/en-us/microsoft-copilot-studio/admin-upgrade-dataverse-teams",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-entities-slot-filling",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-flow",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-generative-actions",
+    "https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-managing-topic-inputs-outputs",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-power-fx",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agent-extend-action-mcp",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agent-usage-estimator",
@@ -28624,6 +28929,7 @@
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/analytics-consumption",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/analytics-csat",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/analytics-overview",
+    "https://learn.microsoft.com/en-us/microsoft-copilot-studio/analytics-sessions",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/analytics-summary",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/analytics-topic-details",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/apps-experience/apps-overview",
@@ -28634,19 +28940,26 @@
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-create-edit-topics",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-first-bot",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-instructions",
+    "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-language-support",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-review-activity",
+    "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-send-message",
+    "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-system-topics",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-test-bot",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-trigger-event",
+    "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-triggers-about",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-variables",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-variables-about",
+    "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-variables-bot",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/billing-licensing",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/configuration-authentication-azure-ad",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/configuration-end-user-authentication",
+    "https://learn.microsoft.com/en-us/microsoft-copilot-studio/configuration-hand-off-omnichannel",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/configure-bot-greeting",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/configure-starter-prompts",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/create-automation-natural-language",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/customize-default-canvas",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/environments-first-run-experience",
+    "https://learn.microsoft.com/en-us/microsoft-copilot-studio/faqs-copilot",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/flow-agent",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/flow-designer",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/flows-overview",
@@ -28659,6 +28972,8 @@
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/guidance/architecture-overview",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/guidance/choose-harness",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/guidance/generative-mode-guidance",
+    "https://learn.microsoft.com/en-us/microsoft-copilot-studio/guidance/generative-orchestration-duplicate-messages",
+    "https://learn.microsoft.com/en-us/microsoft-copilot-studio/guidance/generative-orchestration-topics",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/guidance/govern-credit-consumption",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/guidance/language-understanding",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/guidance/plan-agent-throughput-rate-limits",
@@ -28674,10 +28989,19 @@
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/knowledge-add-file-upload",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/knowledge-add-public-website",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/knowledge-add-sharepoint",
+    "https://learn.microsoft.com/en-us/microsoft-copilot-studio/knowledge-add-unstructured-data",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/knowledge-copilot-connectors",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/knowledge-copilot-studio",
+    "https://learn.microsoft.com/en-us/microsoft-copilot-studio/knowledge-unstructured-data",
+    "https://learn.microsoft.com/en-us/microsoft-copilot-studio/manage-activity-data-m365",
+    "https://learn.microsoft.com/en-us/microsoft-copilot-studio/multilingual",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/nlu-authoring",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/nlu-boost-node",
+    "https://learn.microsoft.com/en-us/microsoft-copilot-studio/nlu-documents",
+    "https://learn.microsoft.com/en-us/microsoft-copilot-studio/nlu-generative-answers-azure-openai",
+    "https://learn.microsoft.com/en-us/microsoft-copilot-studio/nlu-generative-answers-bing",
+    "https://learn.microsoft.com/en-us/microsoft-copilot-studio/nlu-generative-answers-custom-data",
+    "https://learn.microsoft.com/en-us/microsoft-copilot-studio/nlu-generative-answers-sharepoint-onedrive",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/nlu-gpt-overview",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/publication-add-bot-to-microsoft-teams",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/publication-add-bot-to-sharepoint",
@@ -28691,7 +29015,12 @@
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/unified-authoring-conversion",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/upgrade-to-github-copilot-from-standard-harness",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/voice-basic-overview",
+    "https://learn.microsoft.com/en-us/microsoft-copilot-studio/voice-configuration",
+    "https://learn.microsoft.com/en-us/microsoft-copilot-studio/voice-dtmf",
+    "https://learn.microsoft.com/en-us/microsoft-copilot-studio/voice-get-started",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/voice-overview",
+    "https://learn.microsoft.com/en-us/microsoft-copilot-studio/voice-realtime-voice-agents",
+    "https://learn.microsoft.com/en-us/microsoft-copilot-studio/voice-test",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/whats-new",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/workflows-experience/agent-node-workflow",
     "https://learn.microsoft.com/en-us/microsoft-copilot-studio/workflows-experience/classify-node-workflow",
@@ -28815,6 +29144,7 @@
     "https://learn.microsoft.com/en-us/power-automate",
     "https://learn.microsoft.com/en-us/power-automate/",
     "https://learn.microsoft.com/en-us/power-automate/flows-designer",
+    "https://learn.microsoft.com/en-us/power-automate/ip-address-configuration",
     "https://learn.microsoft.com/en-us/power-bi",
     "https://learn.microsoft.com/en-us/power-bi/",
     "https://learn.microsoft.com/en-us/power-bi/enterprise/service-admin-closing-your-account",
@@ -28827,6 +29157,7 @@
     "https://learn.microsoft.com/en-us/power-platform/",
     "https://learn.microsoft.com/en-us/power-platform/admin/admin-documentation",
     "https://learn.microsoft.com/en-us/power-platform/admin/advanced-connector-policies",
+    "https://learn.microsoft.com/en-us/power-platform/admin/api-request-limits-allocations",
     "https://learn.microsoft.com/en-us/power-platform/admin/apps-to-allow",
     "https://learn.microsoft.com/en-us/power-platform/admin/copilot/copilot-hub",
     "https://learn.microsoft.com/en-us/power-platform/admin/create-environment",
@@ -29148,7 +29479,10 @@
     "https://learn.microsoft.com/en-us/troubleshoot/outlook/legacy-outlook-mac-welcome",
     "https://learn.microsoft.com/en-us/troubleshoot/outlook/new-outlook-windows-welcome",
     "https://learn.microsoft.com/en-us/troubleshoot/outlook/overview-new-outlook-mac",
+    "https://learn.microsoft.com/en-us/troubleshoot/power-platform/copilot-studio/authoring/error-codes",
+    "https://learn.microsoft.com/en-us/troubleshoot/power-platform/copilot-studio/channels/voice-error-codes",
     "https://learn.microsoft.com/en-us/troubleshoot/power-platform/copilot-studio/generative-answers/generative-ai-not-available",
+    "https://learn.microsoft.com/en-us/troubleshoot/power-platform/copilot-studio/generative-answers/sharepoint-no-response",
     "https://learn.microsoft.com/en-us/troubleshoot/power-platform/copilot-studio/welcome-copilot-studio",
     "https://learn.microsoft.com/en-us/troubleshoot/sharepoint/administration/access-denied-or-need-permission-error-sharepoint-online-or-onedrive-for-business",
     "https://learn.microsoft.com/en-us/troubleshoot/sharepoint/infopath/soapserverexception-when-customizing-list-form-using-infopath-designer",
@@ -29197,282 +29531,6 @@
     "https://learn.microsoft.com/en-us/windows/win32/wer/windows-error-reporting"
   ],
   "queue": [
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/faqs-copilot",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/legal/cognitive-services/openai/transparency-note",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-language-support",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/troubleshoot/power-platform/copilot-studio/authoring/error-codes",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/knowledge-add-sharepoint",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-generative-actions",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/knowledge-unstructured-data",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/troubleshoot/power-platform/copilot-studio/generative-answers/sharepoint-no-response",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/nlu-generative-answers-sharepoint-onedrive",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/requirements-licensing-subscriptions",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/requirements-licensing-subscriptions",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/admin-upgrade-dataverse-teams",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/analytics-sessions",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/requirements-licensing-subscriptions",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/power-platform/admin/api-request-limits-allocations",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/power-platform/admin/api-request-limits-allocations",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/knowledge-unstructured-data",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/knowledge-add-unstructured-data",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/knowledge-add-sharepoint",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/knowledge-add-file-upload",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/knowledge-unstructured-data",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/power-automate/ip-address-configuration",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/communication-services/concepts/chat/concepts",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/configuration-hand-off-omnichannel",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/guidance/plan-agent-throughput-rate-limits",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-trigger-event",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-triggers-about",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-product-terms-dr",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/power-platform/admin/geographical-availability-copilot",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/manage-activity-data-m365",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-generative-actions",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/voice-get-started",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/voice-realtime-voice-agents",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/voice-dtmf",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/voice-configuration",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/voice-configuration",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/voice-configuration",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/voice-configuration",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/voice-configuration",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/voice-configuration",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/voice-configuration",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/voice-configuration",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/voice-configuration",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/voice-test",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-language-support",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/troubleshoot/power-platform/copilot-studio/channels/voice-error-codes",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/knowledge-add-public-website",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-system-topics",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/bing/search-apis/bing-web-search/overview",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/nlu-generative-answers-azure-openai",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/nlu-generative-answers-custom-data",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/knowledge-unstructured-data",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/nlu-generative-answers-custom-data",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/nlu-generative-answers-bing",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/nlu-generative-answers-azure-openai",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/nlu-documents",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/nlu-generative-answers-sharepoint-onedrive",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/nlu-generative-answers-custom-data",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-variables-about",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-variables-bot",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-send-message",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/configuration-authentication-azure-ad",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/ai-services/content-safety/concepts/harm-categories",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/troubleshoot/power-platform/copilot-studio/generative-answers/sharepoint-no-response",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-managing-topic-inputs-outputs",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/guidance/generative-orchestration-duplicate-messages",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/guidance/generative-orchestration-topics",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-system-topics",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/multilingual",
-      "depth": 3
-    },
     {
       "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-language-support",
       "depth": 3
@@ -30304,8 +30362,8 @@
   ],
   "last_batch": {
     "attempted": 36,
-    "documents_total": 2924,
-    "queued": 276,
+    "documents_total": 2960,
+    "queued": 207,
     "failures": []
   }
 }
