@@ -59,7 +59,13 @@ add_filter('the_content', function($original) {
    $label='Berufliche Station';
    if(preg_match('~<p class="cv-date">(.*?)</p>~si',$m[1],$date)) $label=wp_strip_all_tags($date[1]);
    if(preg_match('~<p class="cv-role">(.*?)</p>~si',$m[1],$role)) $label.=' · '.wp_strip_all_tags($role[1]);
-   return '<details class="oa-cv-entry"><summary>'.esc_html($label).'</summary><div class="oa-body">'.$m[1].'</div></details>';
+   // The summary already shows date and role; retain document links in the expanded body.
+   $body = preg_replace('~<p class="cv-date">.*?</p>~si', '', $m[1], 1);
+   $body = preg_replace_callback('~<p class="cv-role">(.*?)</p>~si', function($role_html) {
+     preg_match_all('~<a\\b[^>]*>.*?</a>~si', $role_html[1], $links);
+     return !empty($links[0]) ? '<p class="cv-docstack">'.implode(' ', $links[0]).'</p>' : '';
+   }, $body, 1);
+   return '<details class="oa-cv-entry"><summary>'.esc_html($label).'</summary><div class="oa-body">'.$body.'</div></details>';
  },$cv_html);
  $groups=[
  ['01 · Leistungsspektrum','Webdesign, Websites & Hosting','Individuelle Webseiten in jedem passenden Stil: von klaren Business-Websites über Gastronomie und Dienstleister bis zu interaktiven Plattformen. WordPress, responsive Gestaltung, Domains, Hosting, Wartung, SEO, Formulare, Mehrsprachigkeit und technische Betreuung.','https://odpc.de/webdesign/'],
