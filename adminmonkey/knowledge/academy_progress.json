@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T01:51:42.295311+00:00",
+  "generated_at": "2026-11-21T08:52:27.934359+00:00",
   "product": "AdminMonkey Academy",
   "certification_expansion": {
     "candidate_exam_codes": 42,
@@ -45,23 +45,32 @@
   "certification_issuer": "ODPC",
   "official_microsoft_certification": false,
   "knowledge": {
-    "documents_collected": 2854,
-    "manufacturer_verified": 2854,
+    "documents_collected": 2888,
+    "manufacturer_verified": 2888,
     "review": {
       "unreviewed": 0,
-      "approved": 2854,
+      "approved": 2888,
       "rejected": 0
     },
     "last_batch": {
       "attempted": 36,
-      "documents_total": 2854,
-      "queued": 399,
-      "failures": []
+      "documents_total": 2888,
+      "queued": 344,
+      "failures": [
+        {
+          "url": "https://learn.microsoft.com/en-us/users/na/",
+          "error": "ValueError"
+        },
+        {
+          "url": "https://learn.microsoft.com/en-us/collections/xkggupt7qm714q",
+          "error": "ValueError"
+        }
+      ]
     }
   },
   "retrieval_staging": {
-    "chunked_documents": 2842,
-    "chunks_prepared": 14552,
+    "chunked_documents": 2875,
+    "chunks_prepared": 14761,
     "retrieval_quality_verified": false,
     "agent_answers_verified": 0,
     "note": "Ephemeral, provenance-checked chunk preparation; no searchable production index yet."
@@ -69,7 +78,7 @@
   "tracks": [
     {
       "track": "MS-102",
-      "manufacturer_verified_sources": 562,
+      "manufacturer_verified_sources": 563,
       "knowledge_coverage": "source_count_only_not_learning_objective_coverage",
       "practice_scenarios_available": 6,
       "agent_answers_evaluated": 0,
@@ -85,7 +94,7 @@
     },
     {
       "track": "AZ-104",
-      "manufacturer_verified_sources": 182,
+      "manufacturer_verified_sources": 192,
       "knowledge_coverage": "source_count_only_not_learning_objective_coverage",
       "practice_scenarios_available": 4,
       "agent_answers_evaluated": 0,
