@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated": "2026-11-07",
+  "updated": "2026-11-22",
   "purpose": "Editorial cross-manufacturer E0 catalog seeds; entries without a verified source are unverified discovery records, not technical specifications",
   "evidence_levels": {
     "E0": "unverified",
@@ -598,6 +598,566 @@
       },
       "sources": [
         "https://enterprise.dji.com/matrice-4-series/specs"
+      ]
+    },
+    {
+      "id": "ratefpv-rate-s30-pro",
+      "manufacturer": "RATEFPV",
+      "name": "RATE S30 Pro",
+      "category": "fpv_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": [
+        "https://ratefpv.com/collections/fpv-drones"
+      ]
+    },
+    {
+      "id": "ratefpv-l40-pro",
+      "manufacturer": "RATEFPV",
+      "name": "L40 Pro",
+      "category": "fpv_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": [
+        "https://ratefpv.com/collections/fpv-drones"
+      ]
+    },
+    {
+      "id": "ratefpv-snap-x5",
+      "manufacturer": "RATEFPV",
+      "name": "Snap X5",
+      "category": "fpv_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": [
+        "https://ratefpv.com/collections/fpv-drones"
+      ]
+    },
+    {
+      "id": "ratefpv-snap-30",
+      "manufacturer": "RATEFPV",
+      "name": "Snap 30",
+      "category": "fpv_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": [
+        "https://ratefpv.com/collections/fpv-drones"
+      ]
+    },
+    {
+      "id": "betafpv-meteor75-pro-ii",
+      "manufacturer": "BETAFPV",
+      "name": "Meteor75 Pro II",
+      "category": "fpv_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": [
+        "https://betafpv.com/collections/all-drone"
+      ]
+    },
+    {
+      "id": "betafpv-meteor65-pro-ii",
+      "manufacturer": "BETAFPV",
+      "name": "Meteor65 Pro II",
+      "category": "fpv_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": [
+        "https://betafpv.com/collections/all-drone"
+      ]
+    },
+    {
+      "id": "betafpv-meteor75-pro-ii-o4",
+      "manufacturer": "BETAFPV",
+      "name": "Meteor75 Pro II O4",
+      "category": "fpv_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": [
+        "https://betafpv.com/collections/all-drone"
+      ]
+    },
+    {
+      "id": "betafpv-meteor65-pro-ii-o4",
+      "manufacturer": "BETAFPV",
+      "name": "Meteor65 Pro II O4",
+      "category": "fpv_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": [
+        "https://betafpv.com/collections/all-drone"
+      ]
+    },
+    {
+      "id": "betafpv-pavo20-pro-ii",
+      "manufacturer": "BETAFPV",
+      "name": "Pavo20 Pro II",
+      "category": "fpv_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": [
+        "https://betafpv.com/collections/all-drone"
+      ]
+    },
+    {
+      "id": "betafpv-pavo-pico-ii",
+      "manufacturer": "BETAFPV",
+      "name": "Pavo Pico II",
+      "category": "fpv_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": [
+        "https://betafpv.com/collections/all-drone"
+      ]
+    },
+    {
+      "id": "betafpv-air65-ii",
+      "manufacturer": "BETAFPV",
+      "name": "Air65 II",
+      "category": "fpv_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": [
+        "https://betafpv.com/collections/all-drone"
+      ]
+    },
+    {
+      "id": "betafpv-air75-ii",
+      "manufacturer": "BETAFPV",
+      "name": "Air75 II",
+      "category": "fpv_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": [
+        "https://betafpv.com/collections/all-drone"
+      ]
+    },
+    {
+      "id": "betafpv-aquila20-hd",
+      "manufacturer": "BETAFPV",
+      "name": "Aquila20 HD",
+      "category": "fpv_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": [
+        "https://betafpv.com/collections/all-drone"
+      ]
+    },
+    {
+      "id": "betafpv-meteor75-pro-p1",
+      "manufacturer": "BETAFPV",
+      "name": "Meteor75 Pro P1",
+      "category": "fpv_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": [
+        "https://betafpv.com/collections/all-drone"
+      ]
+    },
+    {
+      "id": "betafpv-pavo-femto",
+      "manufacturer": "BETAFPV",
+      "name": "Pavo Femto",
+      "category": "fpv_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": [
+        "https://betafpv.com/collections/all-drone"
+      ]
+    },
+    {
+      "id": "betafpv-aquila20",
+      "manufacturer": "BETAFPV",
+      "name": "Aquila20",
+      "category": "fpv_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": [
+        "https://betafpv.com/collections/all-drone"
+      ]
+    },
+    {
+      "id": "betafpv-aquila16",
+      "manufacturer": "BETAFPV",
+      "name": "Aquila16",
+      "category": "fpv_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": [
+        "https://betafpv.com/collections/all-drone"
+      ]
+    },
+    {
+      "id": "betafpv-pavo20-pro",
+      "manufacturer": "BETAFPV",
+      "name": "Pavo20 Pro",
+      "category": "fpv_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": [
+        "https://betafpv.com/collections/all-drone"
+      ]
+    },
+    {
+      "id": "betafpv-air75",
+      "manufacturer": "BETAFPV",
+      "name": "Air75",
+      "category": "fpv_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": [
+        "https://betafpv.com/collections/all-drone"
+      ]
+    },
+    {
+      "id": "betafpv-cetus-x",
+      "manufacturer": "BETAFPV",
+      "name": "Cetus X",
+      "category": "fpv_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": [
+        "https://betafpv.com/collections/all-drone"
+      ]
+    },
+    {
+      "id": "betafpv-meteor75-pro",
+      "manufacturer": "BETAFPV",
+      "name": "Meteor75 Pro",
+      "category": "fpv_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": [
+        "https://betafpv.com/collections/all-drone"
+      ]
+    },
+    {
+      "id": "betafpv-meteor65-pro-o4",
+      "manufacturer": "BETAFPV",
+      "name": "Meteor65 Pro O4",
+      "category": "fpv_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": [
+        "https://betafpv.com/collections/all-drone"
+      ]
+    },
+    {
+      "id": "betafpv-air65",
+      "manufacturer": "BETAFPV",
+      "name": "Air65",
+      "category": "fpv_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": [
+        "https://betafpv.com/collections/all-drone"
+      ]
+    },
+    {
+      "id": "betafpv-pavo-pico",
+      "manufacturer": "BETAFPV",
+      "name": "Pavo Pico",
+      "category": "fpv_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": [
+        "https://betafpv.com/collections/all-drone"
+      ]
+    },
+    {
+      "id": "betafpv-pavo20",
+      "manufacturer": "BETAFPV",
+      "name": "Pavo20",
+      "category": "fpv_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": [
+        "https://betafpv.com/collections/all-drone"
+      ]
+    },
+    {
+      "id": "betafpv-pavo25-v2",
+      "manufacturer": "BETAFPV",
+      "name": "Pavo25 V2",
+      "category": "fpv_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": [
+        "https://betafpv.com/collections/all-drone"
+      ]
+    },
+    {
+      "id": "betafpv-meteor75-pro-o4",
+      "manufacturer": "BETAFPV",
+      "name": "Meteor75 Pro O4",
+      "category": "fpv_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": [
+        "https://betafpv.com/collections/all-drone"
+      ]
+    },
+    {
+      "id": "betafpv-pavo35",
+      "manufacturer": "BETAFPV",
+      "name": "Pavo35",
+      "category": "fpv_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": [
+        "https://betafpv.com/collections/all-drone"
+      ]
+    },
+    {
+      "id": "betafpv-pavo20-pocket",
+      "manufacturer": "BETAFPV",
+      "name": "Pavo20 Pocket",
+      "category": "fpv_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": [
+        "https://betafpv.com/collections/all-drone"
+      ]
+    },
+    {
+      "id": "betafpv-meteor85",
+      "manufacturer": "BETAFPV",
+      "name": "Meteor85",
+      "category": "fpv_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": [
+        "https://betafpv.com/collections/all-drone"
+      ]
+    },
+    {
+      "id": "betafpv-pavo360",
+      "manufacturer": "BETAFPV",
+      "name": "Pavo360",
+      "category": "fpv_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": [
+        "https://betafpv.com/collections/all-drone"
+      ]
+    },
+    {
+      "id": "betafpv-beta95x-v3",
+      "manufacturer": "BETAFPV",
+      "name": "Beta95X V3",
+      "category": "fpv_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": [
+        "https://betafpv.com/collections/all-drone"
+      ]
+    },
+    {
+      "id": "betafpv-beta75-pro-2",
+      "manufacturer": "BETAFPV",
+      "name": "Beta75 Pro 2",
+      "category": "fpv_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": [
+        "https://betafpv.com/collections/all-drone"
+      ]
+    },
+    {
+      "id": "betafpv-beta65-pro-2",
+      "manufacturer": "BETAFPV",
+      "name": "Beta65 Pro 2",
+      "category": "fpv_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": [
+        "https://betafpv.com/collections/all-drone"
+      ]
+    },
+    {
+      "id": "betafpv-aquila16-hd",
+      "manufacturer": "BETAFPV",
+      "name": "Aquila16 HD",
+      "category": "fpv_drone",
+      "facts": {},
+      "capabilities": {
+        "sdk_api": {
+          "assessment": "UNKNOWN",
+          "evidence": "E0"
+        }
+      },
+      "sources": [
+        "https://betafpv.com/collections/all-drone"
       ]
     }
   ]
