@@ -385,6 +385,30 @@
       "scope": "official product documentation",
       "evidence": "E0",
       "status": "monitor_only"
+    },
+    {
+      "name": "RATEFPV",
+      "category": "manufacturer",
+      "url": "https://ratefpv.com/collections/fpv-drones",
+      "scope": "FPV drones and components",
+      "evidence": "E0",
+      "status": "monitor_only"
+    },
+    {
+      "name": "BETAFPV",
+      "category": "manufacturer",
+      "url": "https://betafpv.com/collections/all-drone",
+      "scope": "FPV whoops and kits",
+      "evidence": "E0",
+      "status": "monitor_only"
+    },
+    {
+      "name": "FPV24",
+      "category": "retailer",
+      "url": "https://www.fpv24.com/de/race-copter-rtf",
+      "scope": "multi-brand FPV drones and equipment",
+      "evidence": "E0",
+      "status": "monitor_only"
     }
   ]
 }
