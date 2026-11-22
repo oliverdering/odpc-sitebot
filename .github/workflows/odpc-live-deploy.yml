@@ -1,0 +1,76 @@
+name: Deploy ODPC Live
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'site-deploy/odpc.de/live/index.html'
+      - '.github/workflows/odpc-live-deploy.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: odpc-live-deploy
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m pip install 'paramiko>=3.4,<5'
+      - name: Deploy new live page without overwriting existing content
+        env:
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+        run: |
+          python3 - <<'PY'
+          import base64, hashlib, hmac, os, stat, time
+          from pathlib import Path
+          from urllib.request import Request, urlopen
+          from urllib.error import HTTPError
+          import paramiko
+          url='https://odpc.de/live/'
+          try:
+              with urlopen(Request(url,headers={'User-Agent':'ODPC-Live-Deploy-QA','Cache-Control':'no-cache'}),timeout=25) as r:
+                  raise RuntimeError('Live URL already exists; refusing to replace it')
+          except HTTPError as e:
+              if e.code != 404: raise
+          src=Path('site-deploy/odpc.de/live/index.html').read_bytes()
+          assert b'channel=odering' in src and b'ODPC LIVE' in src
+          root='/clickandbuilds/Dering'
+          target=root+'/live'
+          tr=paramiko.Transport(('home119567219.1and1-data.host',22))
+          tr.start_client(timeout=25)
+          try:
+              fingerprint='SHA256:'+base64.b64encode(hashlib.sha256(tr.get_remote_server_key().asbytes()).digest()).decode().rstrip('=')
+              if not hmac.compare_digest(fingerprint,'SHA256:1gx2w8Rtv3wCgi7Jh8myf/KVd72cRQbow03UP8P095Q'): raise RuntimeError('Host key mismatch')
+              tr.auth_password('acc1461323326',os.environ['ODPC_SFTP_PASSWORD'])
+              sftp=paramiko.SFTPClient.from_transport(tr)
+              try:
+                  for path in ('wp-admin','wp-content','wp-includes'):
+                      if not stat.S_ISDIR(sftp.stat(root+'/'+path).st_mode): raise RuntimeError('WordPress root invalid')
+                  try: sftp.lstat(target)
+                  except FileNotFoundError: pass
+                  else: raise RuntimeError('Live directory already exists; refusing to overwrite')
+                  sftp.mkdir(target)
+                  try:
+                      with sftp.open(target+'/index.html','wb') as f: f.write(src)
+                      with sftp.open(target+'/index.html','rb') as f:
+                          if hashlib.sha256(f.read()).digest()!=hashlib.sha256(src).digest(): raise RuntimeError('Upload checksum mismatch')
+                      for attempt in range(5):
+                          time.sleep(3)
+                          try:
+                              with urlopen(Request(url+'?qa='+str(time.time_ns()),headers={'Cache-Control':'no-cache'}),timeout=20) as r: page=r.read()
+                              if b'ODPC LIVE' in page and b'channel=odering' in page:
+                                  print('PASS: '+url)
+                                  break
+                          except Exception as exc: print('Waiting for public page:',type(exc).__name__)
+                      else: raise RuntimeError('Public verification failed')
+                  except Exception:
+                      try: sftp.remove(target+'/index.html')
+                      except OSError: pass
+                      try: sftp.rmdir(target)
+                      except OSError: pass
+                      raise
+              finally: sftp.close()
+          finally: tr.close()
+          PY
