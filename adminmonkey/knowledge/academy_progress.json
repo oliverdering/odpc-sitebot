@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T22:00:47.806363+00:00",
+  "generated_at": "2026-11-23T02:24:11.696916+00:00",
   "product": "AdminMonkey Academy",
   "certification_expansion": {
     "candidate_exam_codes": 42,
@@ -45,18 +45,58 @@
   "certification_issuer": "ODPC",
   "official_microsoft_certification": false,
   "knowledge": {
-    "documents_collected": 3102,
-    "manufacturer_verified": 3102,
+    "documents_collected": 3110,
+    "manufacturer_verified": 3110,
     "review": {
       "unreviewed": 0,
-      "approved": 3102,
+      "approved": 3110,
       "rejected": 0
     },
     "last_batch": {
-      "attempted": 36,
-      "documents_total": 3102,
-      "queued": 21,
+      "attempted": 20,
+      "documents_total": 3110,
+      "queued": 12,
       "failures": [
+        {
+          "url": "https://learn.microsoft.com/en-us/Briefing/be-overview",
+          "error": "ValueError"
+        },
+        {
+          "url": "https://learn.microsoft.com/en-us/viva/engage/overview-native-mode",
+          "error": "HTTPError"
+        },
+        {
+          "url": "https://learn.microsoft.com/en-us/entra/identity/domain-services/sam-account-name/sam-account-name",
+          "error": "HTTPError"
+        },
+        {
+          "url": "https://learn.microsoft.com/en-us/microsoft-365/business-video/",
+          "error": "ValueError"
+        },
+        {
+          "url": "https://learn.microsoft.com/en-us/admin/add-users/about-admin-roles",
+          "error": "ValueError"
+        },
+        {
+          "url": "https://learn.microsoft.com/en-us/admin",
+          "error": "ValueError"
+        },
+        {
+          "url": "https://learn.microsoft.com/en-us/admin/setup/add-or-replace-your-onmicrosoftcom-domain",
+          "error": "ValueError"
+        },
+        {
+          "url": "https://learn.microsoft.com/en-us/office365/smallbusiness/build-your-small-business/build-your-small-business",
+          "error": "ValueError"
+        },
+        {
+          "url": "https://learn.microsoft.com/en-us/users/na/",
+          "error": "ValueError"
+        },
+        {
+          "url": "https://learn.microsoft.com/en-us/collections/xkggupt7qm714q",
+          "error": "ValueError"
+        },
         {
           "url": "https://learn.microsoft.com/en-us/graph/powershell/installation",
           "error": "HTTPError"
@@ -69,8 +109,8 @@
     }
   },
   "retrieval_staging": {
-    "chunked_documents": 3086,
-    "chunks_prepared": 16002,
+    "chunked_documents": 3094,
+    "chunks_prepared": 16066,
     "retrieval_quality_verified": false,
     "agent_answers_verified": 0,
     "note": "Ephemeral, provenance-checked chunk preparation; no searchable production index yet."
@@ -78,7 +118,7 @@
   "tracks": [
     {
       "track": "MS-102",
-      "manufacturer_verified_sources": 600,
+      "manufacturer_verified_sources": 608,
       "knowledge_coverage": "source_count_only_not_learning_objective_coverage",
       "practice_scenarios_available": 6,
       "agent_answers_evaluated": 0,

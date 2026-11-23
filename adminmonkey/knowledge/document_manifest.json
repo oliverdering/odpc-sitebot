@@ -27792,6 +27792,86 @@
       "mapped_tracks": [
         "MS-102"
       ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/purview/data-security-investigations-scope",
+      "sha256": "4ad940f30035f85835b5e9b957efd30ace022010f983ff3ef5a2e559b8179c9b",
+      "captured_at": "2026-11-23T02:23:53.495639+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/purview/ediscovery-content-search-overview",
+      "sha256": "e739ce4296701332c17aebe2df6f4fe9fd03c1ca58e1fe200f26a0a961f1be7d",
+      "captured_at": "2026-11-23T02:23:53.767721+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/purview/ediscovery-standard-get-started",
+      "sha256": "f3f1b833ff125c479818f06b30aa5b160a7d6e5ad4de035c5c5f1adaebdafac3",
+      "captured_at": "2026-11-23T02:23:54.091242+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/purview/audit-log-enable-disable",
+      "sha256": "c6ff3809e8e6b96951bff22991e5cc3facc814ad6b6e03acc2802b4f1cbaf03d",
+      "captured_at": "2026-11-23T02:23:54.310033+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/purview/audit-log-detailed-properties",
+      "sha256": "0cea8d37ec2caacbdf5314e93d63fb4ecb116e7b9b24ba095514940a2e2cf1ee",
+      "captured_at": "2026-11-23T02:23:54.503535+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/purview/compliance-manager-assessments",
+      "sha256": "50df7b319a6761b0015ce991f8b801d4b1bd9ce0b6cf7a4e37be117fa08c0432",
+      "captured_at": "2026-11-23T02:23:55.455960+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/purview/edisc-ref-partially-indexed-items",
+      "sha256": "4ac9cf3013fb41ea3ca4d80b264ba45e16e28f0f649b9943f745338eaa04959c",
+      "captured_at": "2026-11-23T02:23:55.637506+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/purview/edisc-settings-search-analytics",
+      "sha256": "ea6660e17f5c3233cac300753f7940055c283e1175c4925e806f0be4271cf7e3",
+      "captured_at": "2026-11-23T02:23:56.084254+00:00",
+      "depth": 3,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "MS-102"
+      ]
     }
   ],
   "seen": [
@@ -30625,12 +30705,15 @@
     "https://learn.microsoft.com/en-us/purview/",
     "https://learn.microsoft.com/en-us/purview/ai-microsoft-purview-considerations",
     "https://learn.microsoft.com/en-us/purview/audit-log-activities",
+    "https://learn.microsoft.com/en-us/purview/audit-log-detailed-properties",
+    "https://learn.microsoft.com/en-us/purview/audit-log-enable-disable",
     "https://learn.microsoft.com/en-us/purview/audit-premium",
     "https://learn.microsoft.com/en-us/purview/audit-solutions-overview",
     "https://learn.microsoft.com/en-us/purview/collection-policies-solution-overview",
     "https://learn.microsoft.com/en-us/purview/communication-compliance",
     "https://learn.microsoft.com/en-us/purview/compliance-easy-trials",
     "https://learn.microsoft.com/en-us/purview/compliance-manager",
+    "https://learn.microsoft.com/en-us/purview/compliance-manager-assessments",
     "https://learn.microsoft.com/en-us/purview/compliance-manager-regulations-list",
     "https://learn.microsoft.com/en-us/purview/customer-key-overview",
     "https://learn.microsoft.com/en-us/purview/data-gov-live-view",
@@ -30645,6 +30728,7 @@
     "https://learn.microsoft.com/en-us/purview/data-map-scan-ingestion",
     "https://learn.microsoft.com/en-us/purview/data-security-investigations",
     "https://learn.microsoft.com/en-us/purview/data-security-investigations-personal-data",
+    "https://learn.microsoft.com/en-us/purview/data-security-investigations-scope",
     "https://learn.microsoft.com/en-us/purview/data-security-posture-management-learn-about",
     "https://learn.microsoft.com/en-us/purview/developer",
     "https://learn.microsoft.com/en-us/purview/developer/",
@@ -30655,8 +30739,12 @@
     "https://learn.microsoft.com/en-us/purview/dlp-network-data-security-learn",
     "https://learn.microsoft.com/en-us/purview/edisc",
     "https://learn.microsoft.com/en-us/purview/edisc-ref-advanced-indexing",
+    "https://learn.microsoft.com/en-us/purview/edisc-ref-partially-indexed-items",
+    "https://learn.microsoft.com/en-us/purview/edisc-settings-search-analytics",
+    "https://learn.microsoft.com/en-us/purview/ediscovery-content-search-overview",
     "https://learn.microsoft.com/en-us/purview/ediscovery-export-search-results",
     "https://learn.microsoft.com/en-us/purview/ediscovery-set-up-compliance-boundaries",
+    "https://learn.microsoft.com/en-us/purview/ediscovery-standard-get-started",
     "https://learn.microsoft.com/en-us/purview/exchange-online-secures-email-secrets",
     "https://learn.microsoft.com/en-us/purview/free-version",
     "https://learn.microsoft.com/en-us/purview/get-started-with-sensitivity-labels",
@@ -30900,43 +30988,7 @@
   ],
   "queue": [
     {
-      "url": "https://learn.microsoft.com/en-us/purview/data-security-investigations-scope",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/purview/ediscovery-content-search-overview",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/purview/ediscovery-standard-get-started",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/purview/audit-log-enable-disable",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/purview/audit-log-detailed-properties",
-      "depth": 3
-    },
-    {
       "url": "https://learn.microsoft.com/en-us/Briefing/be-overview",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/purview/compliance-manager-assessments",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/purview/compliance-manager-assessments",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/purview/edisc-ref-partially-indexed-items",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/purview/edisc-settings-search-analytics",
       "depth": 3
     },
     {
@@ -30985,10 +31037,50 @@
     }
   ],
   "last_batch": {
-    "attempted": 36,
-    "documents_total": 3102,
-    "queued": 21,
+    "attempted": 20,
+    "documents_total": 3110,
+    "queued": 12,
     "failures": [
+      {
+        "url": "https://learn.microsoft.com/en-us/Briefing/be-overview",
+        "error": "ValueError"
+      },
+      {
+        "url": "https://learn.microsoft.com/en-us/viva/engage/overview-native-mode",
+        "error": "HTTPError"
+      },
+      {
+        "url": "https://learn.microsoft.com/en-us/entra/identity/domain-services/sam-account-name/sam-account-name",
+        "error": "HTTPError"
+      },
+      {
+        "url": "https://learn.microsoft.com/en-us/microsoft-365/business-video/",
+        "error": "ValueError"
+      },
+      {
+        "url": "https://learn.microsoft.com/en-us/admin/add-users/about-admin-roles",
+        "error": "ValueError"
+      },
+      {
+        "url": "https://learn.microsoft.com/en-us/admin",
+        "error": "ValueError"
+      },
+      {
+        "url": "https://learn.microsoft.com/en-us/admin/setup/add-or-replace-your-onmicrosoftcom-domain",
+        "error": "ValueError"
+      },
+      {
+        "url": "https://learn.microsoft.com/en-us/office365/smallbusiness/build-your-small-business/build-your-small-business",
+        "error": "ValueError"
+      },
+      {
+        "url": "https://learn.microsoft.com/en-us/users/na/",
+        "error": "ValueError"
+      },
+      {
+        "url": "https://learn.microsoft.com/en-us/collections/xkggupt7qm714q",
+        "error": "ValueError"
+      },
       {
         "url": "https://learn.microsoft.com/en-us/graph/powershell/installation",
         "error": "HTTPError"
