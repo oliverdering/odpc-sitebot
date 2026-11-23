@@ -18,7 +18,6 @@ permissions:
   issues: write
 jobs:
   discover:
-    if: ${{ false }} # Temporarily paused to stop unintended upstream notifications.
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
