@@ -146,8 +146,8 @@ def with_shared_appearance(payload: bytes, filename: str = "") -> bytes:
     source = payload.decode("utf-8")
     for marker in ("drol-shared-appearance-css", "drol-shared-appearance-js",
                    "drol-site-shell-v1", "drol-site-shell-js"):
-        source = re.sub(r'<(?:style|script)\\b[^>]*\\bid=["\\']' + re.escape(marker) +
-                        r'["\\'][^>]*>.*?</(?:style|script)>', '', source,
+        source = re.sub(r'<(?:style|script)\\b[^>]*\\bid=.' + re.escape(marker) +
+                        r'.[^>]*>.*?</(?:style|script)>', '', source,
                         flags=re.I | re.S)
     pos = source.lower().rfind("</body>")
     return (source[:pos] + DROL_SHARED_APPEARANCE + DROL_SITE_SHELL +
