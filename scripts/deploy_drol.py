@@ -97,19 +97,20 @@ DROL_SITE_SHELL = """<style id="drol-site-shell-v1">
 html[data-drol-style="army"]{--ui-bg:var(--bg);--ui-panel:var(--surface);--ui-panel2:var(--surface2);--ui-text:var(--ink);--ui-muted:var(--muted);--ui-line:var(--line);--ui-accent:var(--accent);--ui-btn:var(--surface2);--ui-btn-text:var(--ink)}
 html[data-drol-style="tech"]{--bg:#031322;--surface:#0b2031;--surface2:#163447;--ink:#f4f9fd;--muted:#bdd0dc;--line:#34576d;--accent:#53e8f3;--ui-bg:var(--bg);--ui-panel:var(--surface);--ui-panel2:var(--surface2);--ui-text:var(--ink);--ui-muted:var(--muted);--ui-line:var(--line);--ui-accent:var(--accent);--ui-btn:var(--surface2);--ui-btn-text:var(--ink)}
 html[data-drol-style="tech"][data-drol-tone="light"]{--bg:#f4f8fb;--surface:#fff;--surface2:#e7f1f7;--ink:#09283b;--muted:#405d6c;--line:#b8d3de;--accent:#006e86;--ui-bg:var(--bg);--ui-panel:var(--surface);--ui-panel2:var(--surface2);--ui-text:var(--ink);--ui-muted:var(--muted);--ui-line:var(--line);--ui-accent:var(--accent);--ui-btn:var(--surface2);--ui-btn-text:var(--ink)}
-html[data-drol-style="army"] body{background-color:var(--bg)!important;color:var(--ink)!important}
-body>header,.drol-unified-header,.drol-floating,.quick,.floating-bar,#odpc-utility-dock{display:none!important}
+html[data-drol-style="army"] body{background-color:var(--bg)!important;color:var(--ink)!important;background-size:420px 320px!important;background-attachment:fixed}
+body>header,body>nav.drol-core-nav,.drol-unified-header,.drol-floating,.quick,.floating-bar,#drol-global-quickbar{display:none!important}
 #drol-global-header{display:flex!important;position:relative;z-index:2000;align-items:center;flex-wrap:wrap;gap:14px;padding:14px max(18px,calc((100% - 1320px)/2));background:var(--bg);color:var(--ink);border-bottom:1px solid var(--line);font:600 14px system-ui,sans-serif}
 #drol-global-header .drol-logo{display:flex;align-items:center;gap:12px;margin-right:auto;text-decoration:none;color:var(--ink);font-weight:850;letter-spacing:.08em}
-#drol-global-header .drol-logo img{width:56px;height:56px;object-fit:contain}
+#drol-global-header .drol-logo img{width:54px;height:54px;object-fit:cover;border-radius:50%}
 #drol-global-header nav{display:flex;flex-wrap:wrap;gap:7px}
 #drol-global-header nav a,#drol-global-header button{border:1px solid var(--line)!important;border-radius:9px;padding:10px 12px;min-height:44px;background:var(--surface2)!important;color:var(--ink)!important;text-decoration:none;box-shadow:none!important;font:700 13px system-ui;cursor:pointer}
-#drol-global-header .drol-controls{display:flex;gap:6px}
+#drol-global-header .drol-controls{display:flex;gap:6px}#drol-global-header details{display:none}#drol-global-header summary{cursor:pointer;min-height:44px;padding:12px;border:1px solid var(--line);border-radius:9px;list-style:none;background:var(--surface2);color:var(--ink)}
 #drol-global-dock{position:fixed;z-index:99990;bottom:max(10px,env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);width:calc(100% - 16px);height:58px;border-radius:999px;border:1px solid var(--line);background:color-mix(in srgb,var(--surface) 85%,transparent);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:space-around;gap:4px;padding:5px 8px;box-sizing:border-box}
 #drol-global-dock button,#drol-global-dock a,#drol-global-dock select{background:var(--surface2);color:var(--ink);border:1px solid var(--line);border-radius:50px;min-height:42px;min-width:42px;padding:5px 8px;display:grid;place-items:center;text-decoration:none;font:700 14px system-ui;cursor:pointer}
 #drol-global-dock select{max-width:105px;min-width:78px}
 body{padding-bottom:85px!important}
-@media(max-width:760px){#drol-global-header{padding:12px 14px}#drol-global-header .drol-logo{width:100%}#drol-global-header nav{width:100%;overflow-x:auto;flex-wrap:nowrap}#drol-global-header nav a{white-space:nowrap}#drol-global-header .drol-controls{margin-left:auto}}
+@media(max-width:760px){#drol-global-header{padding:12px 14px;gap:8px}#drol-global-header .drol-logo{flex:1 1 auto}#drol-global-header .drol-logo small{display:none!important}#drol-global-header>nav{display:none}#drol-global-header details{display:block;position:relative}#drol-global-header details nav{display:flex;position:absolute;right:0;top:100%;min-width:200px;padding:8px;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:9px}#drol-global-header details nav a{white-space:nowrap}#drol-global-header .drol-controls{margin-left:auto}}
+
 </style><script id="drol-site-shell-js">(function(){
 var d=document.documentElement;
 function get(k,v){try{return localStorage.getItem(k)||v}catch(e){return v}}
@@ -118,17 +119,12 @@ function start(){
 if(document.getElementById('drol-global-header'))return;
 var h=document.createElement('header');h.id='drol-global-header';
 h.innerHTML='<a class="drol-logo" href="/"><img src="https://odpc.de/wp-content/uploads/2026/10/file_00000000c37c81f49cf793debb38a1c5.png" alt="D.R.O.L."><span>D.R.O.L.<small style="display:block;font-size:10px">DRONE RECON OPERATION LAB</small></span></a><nav aria-label="Hauptnavigation"><a href="/">Start</a><a href="/katalog.html">Drohnenkatalog</a><a href="/vorhandene-drohne.html">Meine Drohne</a><a href="/mission-control.html">Mission Control</a><a href="/wissen.html">Wissen</a><a href="/faq.html">FAQ</a></nav><div class="drol-controls"><button id="drol-global-style" type="button"></button><button id="drol-global-tone" type="button"></button></div>';
-document.body.insertBefore(h,document.body.firstChild);
-var dock=document.createElement('nav');dock.id='drol-global-dock';dock.setAttribute('aria-label','D.R.O.L. Schwebebalken');
-dock.innerHTML='<select id="drol-global-lang" aria-label="Sprache"><option value="de">🇩🇪 DE</option><option value="en">🇬🇧 EN</option><option value="nl">🇳🇱 NL</option><option value="fr">🇫🇷 FR</option><option value="es">🇪🇸 ES</option><option value="it">🇮🇹 IT</option><option value="tr">🇹🇷 TR</option><option value="ru">🇷🇺 RU</option></select><button id="drol-global-play" aria-label="Seite vorlesen">▶</button><button id="drol-global-stop" aria-label="Vorlesen stoppen">■</button><a href="https://odpc.de/remote-fernwartung/" aria-label="Fernwartung">🖥</a><a href="https://wa.me/492654882183" aria-label="WhatsApp">✆</a><a href="/" aria-label="Startseite">⌂</a>';
-document.body.appendChild(dock);
+var menu=document.createElement('details');menu.innerHTML='<summary aria-label="Navigation öffnen">Menü ☰</summary>';menu.appendChild(h.querySelector('nav').cloneNode(true));h.appendChild(menu);document.body.insertBefore(h,document.body.firstChild);
 var a=document.getElementById('drol-global-style'),b=document.getElementById('drol-global-tone');
-function sync(){d.dataset.theme=d.dataset.drolTone==='light'?'light':'dark';a.textContent=d.dataset.drolStyle==='army'?'Army':'Technisch';b.textContent=d.dataset.drolTone==='light'?'Hell':'Dunkel'}
+function sync(){d.dataset.theme=d.dataset.drolTone==='light'?'light':'dark';a.textContent=d.dataset.drolStyle==='army'?'Army':'Technisch';b.textContent=d.dataset.drolTone==='light'?'Hell':'Dunkel';h.querySelector('.drol-logo img').src=d.dataset.drolStyle==='army'?'/drol-logo-army.png':'https://odpc.de/wp-content/uploads/2026/10/file_00000000c37c81f49cf793debb38a1c5.png'}
 a.onclick=function(){d.dataset.drolStyle=d.dataset.drolStyle==='army'?'tech':'army';try{localStorage.setItem('drol-style',d.dataset.drolStyle)}catch(e){}sync()};
 b.onclick=function(){d.dataset.drolTone=d.dataset.drolTone==='light'?'dark':'light';try{localStorage.setItem('drol-tone',d.dataset.drolTone)}catch(e){}sync()};sync();
-var sel=document.getElementById('drol-global-lang');sel.value=get('drol-language','de');sel.onchange=function(){try{localStorage.setItem('drol-language',sel.value)}catch(e){}document.cookie='googtrans=/de/'+sel.value+';path=/;SameSite=Lax';location.reload()};
-var speech=window.speechSynthesis;document.getElementById('drol-global-stop').onclick=function(){if(speech)speech.cancel()};
-document.getElementById('drol-global-play').onclick=function(){if(!speech||!window.SpeechSynthesisUtterance)return;speech.cancel();var m=document.querySelector('main');if(!m)return;var u=new SpeechSynthesisUtterance((m.innerText||m.textContent||'').slice(0,15000));u.lang=sel.value==='en'?'en-GB':sel.value==='de'?'de-DE':sel.value;speech.speak(u)};
+
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start);else start();
 })();</script>"""
@@ -150,8 +146,33 @@ def with_shared_appearance(payload: bytes, filename: str = "") -> bytes:
                         r'.[^>]*>.*?</(?:style|script)>', '', source,
                         flags=re.I | re.S)
     pos = source.lower().rfind("</body>")
-    return (source[:pos] + DROL_SHARED_APPEARANCE + DROL_SITE_SHELL +
-            source[pos:]).encode("utf-8")
+    # Use the actual homepage component, including its speech and language logic.
+    master = (SOURCE / "index.html").read_text(encoding="utf-8")
+    def extract(pattern):
+        found = re.search(pattern, master, re.I | re.S)
+        if not found:
+            raise RuntimeError("Homepage component missing: " + pattern)
+        return found.group(0)
+    dock_style = extract(r'<style id="drol-odpc-reference-dock-style">.*?</style>')
+    dock_style = dock_style.replace('</style>', '#odpc-utility-dock #drol-dock-language{min-width:0}html[data-drol-style="army"] #odpc-utility-dock{background:color-mix(in srgb,var(--surface) 85%,transparent);border-color:var(--line)}html[data-drol-style="army"] #odpc-utility-dock button,html[data-drol-style="army"] #odpc-utility-dock select{background:var(--surface2);color:var(--ink);border-color:var(--line)}</style>')
+    dock_nav = extract(r'<nav id="odpc-utility-dock".*?</nav>')
+    dock_script = extract(r'<script id="drol-odpc-reference-dock-script">.*?</script>')
+    camo = extract(r'<style>html\[data-drol-style="army"\]\[data-drol-tone="dark"\] body\{background-image:url\(.*?</style>')
+    # Strip old copies before appending a single authoritative component.
+    for pattern in (r'<style id="drol-odpc-reference-dock-style">.*?</style>',
+                    r'<nav id="odpc-utility-dock".*?</nav>',
+                    r'<script id="drol-odpc-reference-dock-script">.*?</script>'):
+        source = re.sub(pattern, '', source, flags=re.I | re.S)
+    if 'id="drol-i18n"' not in source:
+        i18n = extract(r'<script id="drol-i18n">.*?</script>')
+        source = source.replace('</body>', '<div id="drol-google-element" aria-hidden="true"></div>' + i18n + '</body>', 1)
+    # The master language handler uses these buttons; add them only if absent.
+    if 'data-drol-language=' not in source:
+        languages = ('de','en','nl','fr','it','es','pt','tr','ru','zh-CN','ar','ja','ko','hi','pl','uk')
+        buttons = ''.join('<button data-drol-language="' + lang + '"></button>' for lang in languages)
+        source = source.replace('</body>', '<div hidden>' + buttons + '</div></body>', 1)
+    pos = source.lower().rfind('</body>')
+    return (source[:pos] + DROL_SHARED_APPEARANCE + camo + DROL_SITE_SHELL + dock_style + dock_nav + dock_script + source[pos:]).encode('utf-8')
 
 def with_asset_version(payload: bytes) -> bytes:
     """Cache-bust the shared header stylesheet using its deployed content hash."""
@@ -189,6 +210,7 @@ def main():
             files=[(source,ROOT+"/"+source.name) for source in sorted(SOURCE.glob("*.html"))]
             # Publish shared stylesheets referenced by the HTML pages.
             files.extend((source,ROOT+"/"+source.name) for source in sorted(SOURCE.glob("*.css")))
+            files.insert(0, (SOURCE / "drol-logo-army.png", ROOT + "/drol-logo-army.png"))
             files.append((lab_source,lab_dir+"/index.html"))
             for seo_name in ("robots.txt","sitemap.xml"):
                 seo_file=SOURCE/seo_name
@@ -231,7 +253,7 @@ def main():
                     raise RuntimeError("D.R.O.L. data path is not a directory")
                 files.append((events_source,data_dir+"/events.json"))
             for source,target in files:
-                payload=with_shared_appearance(with_odpc_credit(with_drol_seo(with_asset_version(source.read_bytes()),source.name)),source.name) if source.suffix==".html" else source.read_bytes()
+                payload=with_shared_appearance(with_odpc_credit(with_drol_seo(with_asset_version(source.read_bytes()),source.relative_to(SOURCE).as_posix())),source.relative_to(SOURCE).as_posix()) if source.suffix==".html" else source.read_bytes()
                 try:
                     with sf.open(target,"rb") as f:old=f.read()
                     if source.suffix==".html" and b"D.R.O.L." not in old:raise RuntimeError("Refusing to overwrite unrelated content: "+target)
