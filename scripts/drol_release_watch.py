@@ -59,7 +59,7 @@ def no_notifications(text):
 def main():
     out=[]
     existing_issues=[]
-    if TOKEN and os.environ.get("GITHUB_REPOSITORY"):
+    if TOKEN and os.environ.get("GITHUB_REPOSITORY") and os.environ.get("DROL_CREATE_REVIEW_ISSUES") == "1":
         target=os.environ["GITHUB_REPOSITORY"]
         # Fetch once per run, rather than querying the same issues for every upstream.
         # Paginate to avoid duplicate review issues after the first 100.
@@ -79,7 +79,7 @@ def main():
                   "published_at":release.get("published_at"),"status":"UNREVIEWED",
                   "evidence_level":"E0","model_compatibility":"UNKNOWN"}
             out.append(item)
-            if TOKEN and os.environ.get("GITHUB_REPOSITORY"):
+            if TOKEN and os.environ.get("GITHUB_REPOSITORY") and os.environ.get("DROL_CREATE_REVIEW_ISSUES") == "1":
                 target=os.environ["GITHUB_REPOSITORY"]
                 marker=f"drol-release:{repo}:{tag}"
                 title=f"[D.R.O.L. Review] {product} {no_notifications(tag)}"
