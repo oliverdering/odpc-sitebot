@@ -133,14 +133,25 @@ document.getElementById('drol-global-play').onclick=function(){if(!speech||!wind
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start);else start();
 })();</script>"""
 
-def with_shared_appearance(payload: bytes) -> bytes:
-    if b'id="drol-shared-appearance-js"' in payload:
+def with_shared_appearance(payload: bytes, filename: str = "") -> bytes:
+    """Keep the approved homepage untouched; use one shell on every subpage."""
+    if filename == "index.html":
         return payload
     lower = payload.lower()
     pos = lower.rfind(b"</body>")
     if pos < 0:
         raise RuntimeError("Cannot add shared appearance: missing </body>")
-    return payload[:pos] + DROL_SHARED_APPEARANCE.encode("utf-8") + (b"" if b'id="drol-site-shell-js"' in payload or b'class="header"' in payload else DROL_SITE_SHELL.encode("utf-8")) + payload[pos:]
+    # Remove previously injected controls/shell to make redeploy idempotent.
+    import re
+    source = payload.decode("utf-8")
+    for marker in ("drol-shared-appearance-css", "drol-shared-appearance-js",
+                   "drol-site-shell-v1", "drol-site-shell-js"):
+        source = re.sub(r'<(?:style|script)\\b[^>]*\\bid=["\\']' + re.escape(marker) +
+                        r'["\\'][^>]*>.*?</(?:style|script)>', '', source,
+                        flags=re.I | re.S)
+    pos = source.lower().rfind("</body>")
+    return (source[:pos] + DROL_SHARED_APPEARANCE + DROL_SITE_SHELL +
+            source[pos:]).encode("utf-8")
 
 def with_asset_version(payload: bytes) -> bytes:
     """Cache-bust the shared header stylesheet using its deployed content hash."""
@@ -220,7 +231,7 @@ def main():
                     raise RuntimeError("D.R.O.L. data path is not a directory")
                 files.append((events_source,data_dir+"/events.json"))
             for source,target in files:
-                payload=with_shared_appearance(with_odpc_credit(with_drol_seo(with_asset_version(source.read_bytes()),source.name))) if source.suffix==".html" else source.read_bytes()
+                payload=with_shared_appearance(with_odpc_credit(with_drol_seo(with_asset_version(source.read_bytes()),source.name)),source.name) if source.suffix==".html" else source.read_bytes()
                 try:
                     with sf.open(target,"rb") as f:old=f.read()
                     if source.suffix==".html" and b"D.R.O.L." not in old:raise RuntimeError("Refusing to overwrite unrelated content: "+target)
