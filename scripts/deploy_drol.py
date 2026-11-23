@@ -174,6 +174,21 @@ def with_shared_appearance(payload: bytes, filename: str = "") -> bytes:
     pos = source.lower().rfind('</body>')
     return (source[:pos] + DROL_SHARED_APPEARANCE + camo + DROL_SITE_SHELL + dock_style + dock_nav + dock_script + source[pos:]).encode('utf-8')
 
+def with_translation_ui(payload: bytes) -> bytes:
+    """Keep the site's language selector while suppressing translation banners."""
+    style = b"""<style id="drol-translation-ui">
+body > .skiptranslate,body > .VIpgJd-ZVi9od-ORHb-OEVmcd,iframe.goog-te-banner-frame,iframe.VIpgJd-ZVi9od-ORHb-OEVmcd{display:none!important}
+body{top:0!important}
+</style>"""
+    pos = payload.lower().find(b"</head>")
+    if pos < 0:
+        raise RuntimeError("Cannot add translation controls: missing </head>")
+    # Keep meaningful errors, but do not show the permanent success notice.
+    payload = payload.replace("status('Automatic translation is loading…')".encode("utf-8"), b"status('')")
+    payload = payload.replace(b"status('Automatic translation by Google; technical content is not professionally verified.')", b"status('')")
+    pos = payload.lower().find(b"</head>")
+    return payload[:pos] + style + payload[pos:]
+
 def with_asset_version(payload: bytes) -> bytes:
     """Cache-bust the shared header stylesheet using its deployed content hash."""
     import re
@@ -253,7 +268,7 @@ def main():
                     raise RuntimeError("D.R.O.L. data path is not a directory")
                 files.append((events_source,data_dir+"/events.json"))
             for source,target in files:
-                payload=with_shared_appearance(with_odpc_credit(with_drol_seo(with_asset_version(source.read_bytes()),source.relative_to(SOURCE).as_posix())),source.relative_to(SOURCE).as_posix()) if source.suffix==".html" else source.read_bytes()
+                payload=with_translation_ui(with_shared_appearance(with_odpc_credit(with_drol_seo(with_asset_version(source.read_bytes()),source.relative_to(SOURCE).as_posix())),source.relative_to(SOURCE).as_posix())) if source.suffix==".html" else source.read_bytes()
                 try:
                     with sf.open(target,"rb") as f:old=f.read()
                     if source.suffix==".html" and b"D.R.O.L." not in old:raise RuntimeError("Refusing to overwrite unrelated content: "+target)
