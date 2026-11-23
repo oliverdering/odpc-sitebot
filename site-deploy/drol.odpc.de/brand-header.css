@@ -61,3 +61,13 @@ html[data-theme="army"] .drol-unified-menu svg,
 html[data-appearance="army"] .header .menu-button svg,
 html[data-appearance="army"] .drol-unified-menu svg,
 body.theme-army .header .menu-button svg {stroke:#e5dfc7!important;color:#e5dfc7!important}
+
+/* Actual D.R.O.L. appearance attributes (style + tone). */
+html[data-drol-style="army"] .header .menu-button,
+html[data-drol-style="army"] .drol-unified-header .drol-unified-menu {
+ background:#252f20!important;background-image:none!important;
+ border-color:#778568!important;color:#e5dfc7!important;
+ box-shadow:inset 0 1px #ffffff22,0 3px 0 #151d12!important;
+}
+html[data-drol-style="army"] .header .menu-button span,
+html[data-drol-style="army"] .header .menu-button svg {color:#e5dfc7!important;stroke:#e5dfc7!important}
