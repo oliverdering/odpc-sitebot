@@ -4,7 +4,7 @@ import unittest
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
-from drol_release_watch import quote_references, release_markers, summarize_release_notes
+from drol_release_watch import no_notifications, release_markers, summarize_release_notes
 
 
 class ReleaseNotesTests(unittest.TestCase):
@@ -33,15 +33,26 @@ class DedupTests(unittest.TestCase):
         self.assertEqual(release_markers([{"body": body}, {"body": None}, {}]), {"drol-release:iNavFlight/inav:9.1.0"})
 
 
-class QuoteReferencesTests(unittest.TestCase):
-    def test_mentions_and_references(self):
-        text = "* [module] parachute by @dewagter in paparazzi/paparazzi#3273, see #12 and @org/team"
-        self.assertEqual(quote_references(text),
-                         "* [module] parachute by `@dewagter` in `paparazzi/paparazzi#3273`, see `#12` and `@org/team`")
+class NoNotificationsTests(unittest.TestCase):
+    def test_no_at_sign_left(self):
+        # every way upstream text can write a mention: plain, quoted, in code, in an unbalanced
+        # code span, team, after punctuation, as HTML entity, e-mail address
+        texts = ["by @dewagter in paparazzi/paparazzi#3273", "'@user' \"@user\" (@user) cc:@user @user.",
+                 "`@user`", "see `foo @user` and ` @user", "@org/team", "&#64;user &#x40;user &commat;user &#064;user",
+                 "@@user", "dev@example.com"]
+        for text in texts:
+            out = no_notifications(text)
+            self.assertNotIn("@", out, text)
+            self.assertNotRegex(out.lower(), r"&(#0*64|#x0*40|commat)", text)
 
-    def test_email_and_urls_untouched(self):
-        text = "mail dev@example.com or https://github.com/paparazzi/paparazzi/pull/3273"
-        self.assertEqual(quote_references(text), text)
+    def test_references(self):
+        self.assertEqual(no_notifications("paparazzi/paparazzi#3273, #12, # 7, ## What's Changed"),
+                         "paparazzi/paparazzi\uff033273, \uff0312, \uff03 7, ## What's Changed")
+
+    def test_readable_and_urls_untouched(self):
+        self.assertEqual(no_notifications("parachute by @dewagter"), "parachute by \uff20dewagter")
+        url = "https://github.com/paparazzi/paparazzi/pull/3273"
+        self.assertEqual(no_notifications(url), url)
 
 
 if __name__ == "__main__":

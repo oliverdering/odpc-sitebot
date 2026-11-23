@@ -48,11 +48,14 @@ def release_markers(issues):
     """Dedup markers (drol-release:owner/repo:tag) already present in issue bodies."""
     return {marker for issue in issues
             for marker in re.findall(r"drol-release:[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+:[^\s<>]+",issue.get("body") or "")}
-def quote_references(text):
-    """Put @mentions and owner/repo#123 references in code spans, so the copied release notes
-    don't notify upstream people or add cross-references to upstream issues and PRs."""
-    return re.sub(r"(?<![\w`])(@[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?(?:/[A-Za-z0-9_.-]+)?|[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+#\d+|#\d+)\b",
-                  r"`\1`",text)
+def no_notifications(text):
+    """Imported upstream text must not notify anyone. GitHub sends e-mails for @mentions and adds
+    cross-references for #123 / owner/repo#123, also inside backticks that the text itself
+    unbalances. Replace the characters instead of quoting: every @ (also written as an HTML
+    entity) becomes a full-width at sign and # before a digit a full-width number sign."""
+    text=re.sub(r"&(?:#0*64|#x0*40|commat);?","@",str(text),flags=re.I)
+    text=text.replace("@","\uff20")
+    return re.sub(r"#(?=\s*\d)","\uff03",text)
 def main():
     out=[]
     existing_issues=[]
@@ -79,12 +82,12 @@ def main():
             if TOKEN and os.environ.get("GITHUB_REPOSITORY"):
                 target=os.environ["GITHUB_REPOSITORY"]
                 marker=f"drol-release:{repo}:{tag}"
-                title=f"[D.R.O.L. Review] {product} {tag}"
+                title=f"[D.R.O.L. Review] {product} {no_notifications(tag)}"
                 if marker not in known_markers:
                     topic_label=", ".join(notes["topics"]) or "keine"
-                    excerpt=quote_references(notes["excerpt"][:600])
+                    excerpt=no_notifications(notes["excerpt"][:600])
                     body=(f"Automatisch entdeckter Software-Release-Kandidat.\n\n"
-                          f"- Projekt: {product}\n- Upstream: {repo}\n- Version: {tag}\n"
+                          f"- Projekt: {product}\n- Upstream: {repo}\n- Version: {no_notifications(tag)}\n"
                           f"- Primärquelle: {url}\n- Automatisch erkannte Themen (E0): {topic_label}\n"
                           f"- Auszug aus Release Notes (unverifiziert): {excerpt}\n"
                           f"- Veröffentlicht: {release.get('published_at') or 'unbekannt'}\n"
