@@ -42,3 +42,22 @@
  .drol-unified-header>.drol-unified-toggle,.drol-unified-header>.drol-lang,.drol-unified-header>.drol-unified-menu{grid-row:2!important}
  .drol-unified-header .drol-unified-nav{grid-column:1 / -1!important;grid-row:3!important}
 }
+
+/* Army theme: remove legacy blue hamburger styling across D.R.O.L. pages. */
+html[data-theme="army"] .header .menu-button,
+html[data-theme="army"] .drol-unified-header .drol-unified-menu,
+html[data-appearance="army"] .header .menu-button,
+html[data-appearance="army"] .drol-unified-header .drol-unified-menu,
+html[data-drol-theme="army"] .header .menu-button,
+html[data-drol-theme="army"] .drol-unified-header .drol-unified-menu,
+body.theme-army .header .menu-button,
+body.theme-army .drol-unified-header .drol-unified-menu {
+ background:#252f20!important;background-image:none!important;
+ border:1px solid #778568!important;color:#e5dfc7!important;
+ box-shadow:inset 0 1px #ffffff22,0 3px 0 #151d12!important;
+}
+html[data-theme="army"] .header .menu-button svg,
+html[data-theme="army"] .drol-unified-menu svg,
+html[data-appearance="army"] .header .menu-button svg,
+html[data-appearance="army"] .drol-unified-menu svg,
+body.theme-army .header .menu-button svg {stroke:#e5dfc7!important;color:#e5dfc7!important}
