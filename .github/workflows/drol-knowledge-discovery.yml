@@ -15,7 +15,7 @@ on:
       - 'scripts/drol_ionos_candidate_ingest.py'
 permissions:
   contents: read
-  issues: write
+  issues: read
 jobs:
   discover:
     runs-on: ubuntu-latest
@@ -26,9 +26,10 @@ jobs:
         run: python3 -m py_compile scripts/drol_release_watch.py scripts/drol_ionos_candidate_ingest.py scripts/drol_publish_release_feed.py
       - name: Verify evidence extraction regression tests
         run: python3 -m unittest discover -s tests -p 'test_drol_release_watch.py' -v
-      - name: Discover new releases and create deduplicated review issues
+      - name: Discover new releases without public review issues
         env:
           GH_TOKEN: ${{ github.token }}
+          DROL_CREATE_REVIEW_ISSUES: '0'
         run: python3 scripts/drol_release_watch.py
       - name: Validate provenance and evidence isolation before publishing
         run: |
