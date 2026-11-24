@@ -34,3 +34,6 @@ jobs:
           path: drol-db-backup.json
           if-no-files-found: error
           retention-days: 1
+
+
+# Pre-migration backup checkpoint for metadata inbox.
