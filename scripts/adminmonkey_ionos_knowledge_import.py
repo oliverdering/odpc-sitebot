@@ -60,7 +60,7 @@ try {
     foreach($docs as $d) {
         if (!is_array($d)) throw new RuntimeException('document');
         $url=$d['url']??'';$body=$d['text']??'';$hash=$d['sha256']??'';
-        if (!is_string($url)||!preg_match('~^https://learn[.]microsoft[.]com/en-us/[a-zA-Z0-9/_-]+$~D',$url)
+        if (!is_string($url)||!preg_match('~^https://learn[.]microsoft[.]com/en-us/[a-zA-Z0-9/_.()=,-]*$~D',$url)
             ||strlen($url)>768 || !is_string($body)||strlen($body)<100||strlen($body)>200000
             ||!is_string($hash)||!preg_match('/^[a-f0-9]{64}$/D',$hash)
             ||!hash_equals($hash,hash('sha256',$body))) throw new RuntimeException('validation');
