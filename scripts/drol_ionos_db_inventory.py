@@ -102,6 +102,15 @@ def main():
             print("DATABASE VERSION", result.get("server_version"))
             if not any(item["name"] == "drol_metadata_inbox" for item in result.get("inventory", [])):
                 raise RuntimeError("Metadata inbox missing")
+            from datetime import datetime, timezone
+            from pathlib import Path
+            counts = {item["name"]: item["rows"] for item in result["inventory"]}
+            public = {"measured_at": datetime.now(timezone.utc).isoformat(),
+                      "metadata_inbox": counts["drol_metadata_inbox"],
+                      "candidate_facts_total": counts["drol_candidate_facts"],
+                      "model_facts_total": counts["drol_model_facts"],
+                      "source_records": counts["drol_sources"]}
+            Path("drol-knowledge-metrics.json").write_text(json.dumps(public, indent=2)+"\n", encoding="utf-8")
         finally:
             # Deletion is attempted regardless of HTTP success.
             pass
