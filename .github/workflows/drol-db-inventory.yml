@@ -1,6 +1,11 @@
 name: D.R.O.L. / Live schema inventory
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/drol_ionos_db_inventory.py'
+      - '.github/workflows/drol-db-inventory.yml'
 permissions:
   contents: read
 concurrency:
