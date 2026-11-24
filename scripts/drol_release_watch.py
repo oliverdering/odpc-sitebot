@@ -51,7 +51,7 @@ def summarize_release_notes(raw):
               "sensor":r"\b(lidar|camera|imu|gps|gnss|sensor)\b",
               "navigation":r"\b(navigation|mission|waypoint|geofence)\b"}
     topics=[name for name,pattern in keywords.items() if re.search(pattern,clean,re.I)]
-    return {"excerpt":clean[:1200],"sha256":hashlib.sha256(raw.encode()).hexdigest(),"topics":topics}
+    return {"excerpt":"","sha256":hashlib.sha256(raw.encode()).hexdigest(),"topics":topics}
 
 def release_markers(issues):
     """Dedup markers (drol-release:owner/repo:tag) already present in issue bodies."""

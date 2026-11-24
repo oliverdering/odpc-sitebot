@@ -18,8 +18,13 @@ class ReleaseNotesTests(unittest.TestCase):
         self.assertEqual(summarize_release_notes(None)["topics"], [])
         self.assertEqual(summarize_release_notes("<p>Firmware update</p>")["topics"], ["firmware"])
 
-    def test_bounded_excerpt(self):
-        self.assertEqual(len(summarize_release_notes("x" * 5000)["excerpt"]), 1200)
+    def test_public_artifacts_contain_no_upstream_prose_or_developer_handles(self):
+        raw = "Updated firmware by @external-developer in project/repo#12"
+        notes = summarize_release_notes(raw)
+        self.assertEqual(notes["excerpt"], "")
+        self.assertNotIn("@external-developer", str(notes))
+        self.assertEqual(notes["topics"], ["firmware"])
+        self.assertEqual(len(notes["sha256"]), 64)
 
 
 class DedupTests(unittest.TestCase):
