@@ -1,6 +1,19 @@
 <?php
 /** Plugin Name: ODPC Sonde – D.R.O.L. */
 if (!defined('ABSPATH')) { exit; }
+// Keep the original Alpha project address available while the dossier lives on D.R.O.L.
+add_action('template_redirect', static function () {
+    if (!is_page(2790) || is_preview() || is_feed() || is_embed()) {
+        return;
+    }
+    if (!in_array($_SERVER['REQUEST_METHOD'] ?? '', ['GET', 'HEAD'], true)) {
+        return;
+    }
+    nocache_headers();
+    wp_redirect('https://drol.odpc.de/alpha-eigenbau.html', 302, 'ODPC DROL');
+    exit;
+}, 1);
+
 add_action('wp_head', function () {
  if (!is_page(2973)) { return; }
  echo '<style id="sonde-page-shell">body.page-id-2973 #masthead{display:none!important}body.page-id-2973 #content,body.page-id-2973 .site-content{background:#031322!important}body.page-id-2973 .site-content>.ast-container{max-width:100%!important;padding:0!important}body.page-id-2973 .site-main,body.page-id-2973 .ast-article-single{margin:0!important;padding:0!important;background:#031322!important}body.page-id-2973 .entry-content{margin:0!important}body.page-id-2973 .entry-header{display:none!important}body.page-id-2973 .sonde-drol .hero a.button,body.page-id-2973 .sonde-drol .hero button{background:linear-gradient(155deg,#163447,#0b2031)!important;color:#f4f9fd!important;border:1px solid #34576d!important}body.page-id-2973 .sonde-drol .hero a.button:visited{color:#f4f9fd!important}</style>';

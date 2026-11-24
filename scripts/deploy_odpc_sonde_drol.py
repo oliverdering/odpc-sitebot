@@ -30,7 +30,13 @@ def site_has_marker():
     req = Request(url, headers={"User-Agent": "ODPC-Deployment-SmokeTest/1.0", "Cache-Control": "no-cache"})
     with urlopen(req, timeout=30) as response:
         html = response.read().decode("utf-8", "replace")
-    return "sonde-drol-v1" in html and "DJI Mini 4 Pro" in html
+    if "sonde-drol-v1" not in html or "DJI Mini 4 Pro" not in html:
+        return False
+    alpha = Request("https://odpc.de/d-r-o-l?drol_qa=" + str(int(time.time())),
+                    headers={"Cache-Control": "no-cache"})
+    with urlopen(alpha, timeout=30) as response:
+        return (response.geturl() == "https://drol.odpc.de/alpha-eigenbau.html"
+                and b"alpha-eigenbau" in response.read())
 
 
 def main():
