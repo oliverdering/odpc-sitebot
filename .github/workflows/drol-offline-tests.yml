@@ -4,10 +4,16 @@ on:
   push:
     paths:
       - 'research/drol/**'
+      - 'scripts/drol_metadata_staging.py'
+      - 'scripts/test_drol_metadata_staging.py'
+      - 'site-deploy/drol.odpc.de/database/source-registry.json'
       - '.github/workflows/drol-offline-tests.yml'
   pull_request:
     paths:
       - 'research/drol/**'
+      - 'scripts/drol_metadata_staging.py'
+      - 'scripts/test_drol_metadata_staging.py'
+      - 'site-deploy/drol.odpc.de/database/source-registry.json'
       - '.github/workflows/drol-offline-tests.yml'
   workflow_dispatch:
 
@@ -25,3 +31,6 @@ jobs:
           python-version: '3.11'
       - name: Offline unit tests (no hardware or network required)
         run: python -m unittest discover -s research/drol -p 'test_*.py' -v
+
+      - name: Metadata staging regression tests (offline)
+        run: python -m unittest discover -s scripts -p 'test_drol_metadata_staging.py' -v
