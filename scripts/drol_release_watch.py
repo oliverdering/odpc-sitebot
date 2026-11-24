@@ -1,4 +1,4 @@
-"""Discover upstream UAV software releases and open deduplicated review issues.
+"""Discover upstream UAV software releases without creating public issues.
 
 A release is a *candidate*, not evidence of model compatibility. Never writes
 unreviewed technical claims to the public database.
@@ -25,6 +25,7 @@ REPOS={
 API="https://api.github.com"
 TOKEN=os.environ.get("GH_TOKEN","")
 def request(url,method="GET",payload=None):
+    if method != "GET" or payload is not None: raise ValueError("Discovery is read-only")
     headers={"Accept":"application/vnd.github+json","User-Agent":"DROL-Knowledge-Watch/1.0"}
     if TOKEN:headers["Authorization"]="Bearer "+TOKEN
     body=json.dumps(payload).encode() if payload is not None else None
@@ -58,16 +59,6 @@ def no_notifications(text):
     return re.sub(r"#(?=\s*\d)","\uff03",text)
 def main():
     out=[]
-    existing_issues=[]
-    if TOKEN and os.environ.get("GITHUB_REPOSITORY") and os.environ.get("DROL_CREATE_REVIEW_ISSUES") == "1":
-        target=os.environ["GITHUB_REPOSITORY"]
-        # Fetch once per run, rather than querying the same issues for every upstream.
-        # Paginate to avoid duplicate review issues after the first 100.
-        for page in range(1,11):
-            batch=request(f"{API}/repos/{target}/issues?state=all&per_page=100&page={page}")
-            existing_issues.extend(i for i in batch if "pull_request" not in i)
-            if len(batch)<100:break
-    known_markers=release_markers(existing_issues)
     for product,repo in REPOS.items():
         try:
             release=request(f"{API}/repos/{repo}/releases/latest")
@@ -79,27 +70,6 @@ def main():
                   "published_at":release.get("published_at"),"status":"UNREVIEWED",
                   "evidence_level":"E0","model_compatibility":"UNKNOWN"}
             out.append(item)
-            if TOKEN and os.environ.get("GITHUB_REPOSITORY") and os.environ.get("DROL_CREATE_REVIEW_ISSUES") == "1":
-                target=os.environ["GITHUB_REPOSITORY"]
-                marker=f"drol-release:{repo}:{tag}"
-                title=f"[D.R.O.L. Review] {product} {no_notifications(tag)}"
-                if marker not in known_markers:
-                    topic_label=", ".join(notes["topics"]) or "keine"
-                    excerpt=no_notifications(notes["excerpt"][:600])
-                    body=(f"Automatisch entdeckter Software-Release-Kandidat.\n\n"
-                          f"- Projekt: {product}\n- Upstream: {repo}\n- Version: {no_notifications(tag)}\n"
-                          f"- Primärquelle: {url}\n- Automatisch erkannte Themen (E0): {topic_label}\n"
-                          f"- Auszug aus Release Notes (unverifiziert): {excerpt}\n"
-                          f"- Veröffentlicht: {release.get('published_at') or 'unbekannt'}\n"
-                          f"- Evidenz: E0 / UNREVIEWED\n- Modell- und Firmware-Kompatibilität: UNKNOWN\n\n"
-                          "Prüfauftrag: offizielle Release Notes lesen; sicherheitsrelevante Änderungen, "
-                          "API-Brüche und betroffene Versionen prüfen. Erst nach redaktioneller Prüfung "
-                          "als Fakten in die D.R.O.L.-Datenbank übernehmen.\n\n"
-                          f"<!-- {marker} -->")
-                    request(f"{API}/repos/{target}/issues","POST",{"title":title,"body":body})
-                    known_markers.add(marker)
-                    print("CREATED review issue:",title)
-                else:print("KNOWN candidate:",title)
         except (urllib.error.URLError,ValueError,KeyError,TimeoutError) as exc:
             print("WARN: upstream unavailable",repo,type(exc).__name__)
     report={"checked_utc":datetime.now(timezone.utc).isoformat(),
