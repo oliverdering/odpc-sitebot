@@ -97,8 +97,15 @@ def main():
             from pathlib import Path
             import datetime
             backup = result.get("backup")
-            if not isinstance(backup, list) or len(backup) != 14:
-                raise RuntimeError("Expected all 14 production D.R.O.L. tables; refusing incomplete backup")
+            required = {"drol_attributes","drol_candidate_facts","drol_capability_evidence",
+                        "drol_change_log","drol_entity_aliases","drol_firmware_releases",
+                        "drol_hardware","drol_hardware_sources","drol_manufacturers",
+                        "drol_model_facts","drol_release_batches","drol_source_snapshots",
+                        "drol_source_watch","drol_sources","drol_metadata_inbox"}
+            if not isinstance(backup, list) or not required.issubset(
+                    {entry.get("name") for entry in backup if isinstance(entry, dict)
+                     and isinstance(entry.get("rows"), list) and entry.get("ddl")}):
+                raise RuntimeError("Required production tables missing; refusing incomplete backup")
             out = Path("drol-db-backup.json")
             if out.exists():
                 raise RuntimeError("Refusing to overwrite existing backup")
