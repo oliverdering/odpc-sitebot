@@ -4,6 +4,26 @@ import hashlib
 import json
 from pathlib import Path
 
+def review_gate(source):
+    """Fail closed: a license label alone is not permission to collect."""
+    reasons = []
+    if source.get("civil_relevance") != "civil_verified":
+        reasons.append("civil_scope_unverified")
+    if source.get("license_type") in (None, "", "unverified"):
+        reasons.append("license_unverified")
+    review = source.get("metadata_review")
+    if not isinstance(review, dict):
+        reasons.append("review_missing")
+    else:
+        if review.get("decision") != "approved_metadata_only":
+            reasons.append("metadata_permission_missing")
+        for field in ("reviewer", "reviewed_at", "evidence_url"):
+            if not isinstance(review.get(field), str) or not review[field].strip():
+                reasons.append("missing_" + field)
+        if not str(review.get("evidence_url", "")).startswith("https://"):
+            reasons.append("invalid_evidence_url")
+    return reasons
+
 def stage(registry, records):
     sources = {s["url"]: s for s in registry["sources"]}
     accepted, rejected, seen = [], [], set()
@@ -27,6 +47,7 @@ def stage(registry, records):
         accepted.append({"source_url": url, "title": title.strip(), "key": key,
                          "evidence": "E0", "status": "pending",
                          "license_type": source.get("license_type", "unverified"),
+                         "review_blockers": review_gate(source),
                          "production_import_allowed": False})
     return {"mode": "offline_dry_run", "accepted": accepted, "rejected": rejected}
 
