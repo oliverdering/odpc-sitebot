@@ -132,21 +132,21 @@
     },
     {
       "key": "ardupilot",
-      "type": "software",
+      "type": "flight_stack",
       "manufacturer": "ArduPilot",
       "name": "ArduPilot",
       "review_status": "seed"
     },
     {
       "key": "px4",
-      "type": "software",
+      "type": "flight_stack",
       "manufacturer": "PX4",
       "name": "PX4 Autopilot",
       "review_status": "seed"
     },
     {
       "key": "mavlink",
-      "type": "software",
+      "type": "protocol",
       "manufacturer": "Dronecode",
       "name": "MAVLink",
       "review_status": "seed"

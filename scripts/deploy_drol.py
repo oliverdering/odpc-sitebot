@@ -1,8 +1,6 @@
 """Deploy only D.R.O.L. to its existing /drol IONOS directory; never touch ODPC."""
 import base64,hashlib,hmac,os,posixpath,stat
 from pathlib import Path
-import paramiko
-from deploy_helpermonkey_v4 import HOST,USER,PIN
 # Shared ODPC attribution on every published D.R.O.L. HTML page.
 # Keep the approved page design; the credit is appended immediately before </body>.
 ODPC_CREDIT = """<style id="drol-odpc-credit-style">
@@ -120,7 +118,7 @@ d.dataset.drolStyle=get('drol-style','army');d.dataset.drolTone=get('drol-tone',
 function start(){
 if(document.getElementById('drol-global-header'))return;
 var h=document.createElement('header');h.id='drol-global-header';
-h.innerHTML='<a class="drol-logo" href="/"><img src="https://odpc.de/wp-content/uploads/2026/10/file_00000000c37c81f49cf793debb38a1c5.png" alt="D.R.O.L."><span>D.R.O.L.<small style="display:block;font-size:10px">DRONE RECON OPERATION LAB</small></span></a><nav aria-label="Hauptnavigation"><a href="/">Start</a><a href="/katalog.html">Drohnenkatalog</a><a href="/vorhandene-drohne.html">Meine Drohne</a><a href="/mission-control.html">Mission Control</a><a href="/wissen.html">Wissen</a><a href="/faq.html">FAQ</a></nav><div class="drol-controls"><button id="drol-global-style" type="button"></button><button id="drol-global-tone" type="button"></button></div>';
+h.innerHTML='<a class="drol-logo" href="/"><img src="https://odpc.de/wp-content/uploads/2026/10/file_00000000c37c81f49cf793debb38a1c5.png" alt="D.R.O.L."><span>D.R.O.L.<small style="display:block;font-size:10px">DRONE RECON OPERATION LAB</small></span></a><nav aria-label="Hauptnavigation"><a href="/">Start</a><a href="/#knowledge-monitor">Datenbankmonitor</a><a href="/katalog.html">Drohnenkatalog</a><a href="/vorhandene-drohne.html">Meine Drohne</a><a href="/mission-control.html">Mission Control</a><a href="/wissen.html">Wissen</a><a href="/faq.html">FAQ</a></nav><div class="drol-controls"><button id="drol-global-style" type="button"></button><button id="drol-global-tone" type="button"></button></div>';
 var menu=document.createElement('details');menu.innerHTML='<summary aria-label="Navigation öffnen">Menü ☰</summary>';menu.appendChild(h.querySelector('nav').cloneNode(true));h.appendChild(menu);document.body.insertBefore(h,document.body.firstChild);
 var a=document.getElementById('drol-global-style'),b=document.getElementById('drol-global-tone');
 function sync(){d.dataset.theme=d.dataset.drolTone==='light'?'light':'dark';a.textContent=d.dataset.drolStyle==='army'?'Army':'Technisch';b.textContent=d.dataset.drolTone==='light'?'Hell':'Dunkel';h.querySelector('.drol-logo img').src=d.dataset.drolStyle==='army'?'/drol-logo-army.png':'https://odpc.de/wp-content/uploads/2026/10/file_00000000c37c81f49cf793debb38a1c5.png'}
@@ -202,7 +200,36 @@ def with_asset_version(payload: bytes) -> bytes:
 
 ROOT="/drol"
 SOURCE=Path("site-deploy/drol.odpc.de")
+def render_page(source):
+    """Build the same themed HTML for deployment, audits and browser tests."""
+    import re
+    name = source.relative_to(SOURCE).as_posix()
+    html = source.read_text(encoding="utf-8")
+    # Legacy editorial pages used white card surfaces and fixed navy text.
+    # Update whole CSS declarations so foreground and background change together.
+    def theme_style(match):
+        def theme_rule(rule):
+            body = rule.group(2)
+            white = r"(background(?:-color)?\s*:)\s*(?:white|#fff(?:fff)?)(?=\s*(?:!important)?\s*(?:;|$))"
+            if not re.search(white, body, re.I):
+                return rule.group(0)
+            body = re.sub(white, r"\1var(--surface, #fff)", body, flags=re.I)
+            text = r"(^|;)\s*color\s*:[^;!]+"
+            if re.search(text, body, re.I):
+                body = re.sub(text, r"\1color:var(--ink, #15374d)", body, flags=re.I)
+            else:
+                body += ";color:var(--ink, #15374d)"
+            return rule.group(1) + "{" + body + "}"
+        return re.sub(r"([^{}]*?)\{([^{}]*)\}", theme_rule, match.group(0))
+    if name != "index.html":
+        html = re.sub(r"<style\b[^>]*>.*?</style>", theme_style, html, flags=re.I | re.S)
+    payload = with_drol_seo(with_asset_version(html.encode("utf-8")), name)
+    return with_translation_ui(with_shared_appearance(with_odpc_credit(payload), name))
+
+
 def main():
+    import paramiko
+    from deploy_helpermonkey_v4 import HOST,USER,PIN
     if not (SOURCE/"index.html").is_file():raise RuntimeError("Missing D.R.O.L. homepage")
     payload=(SOURCE/"index.html").read_bytes()
     if b"Wissen erkunden" not in payload:raise RuntimeError("Invalid release")
@@ -270,7 +297,7 @@ def main():
                     raise RuntimeError("D.R.O.L. data path is not a directory")
                 files.append((events_source,data_dir+"/events.json"))
             for source,target in files:
-                payload=with_translation_ui(with_shared_appearance(with_odpc_credit(with_drol_seo(with_asset_version(source.read_bytes()),source.relative_to(SOURCE).as_posix())),source.relative_to(SOURCE).as_posix())) if source.suffix==".html" else source.read_bytes()
+                payload=render_page(source) if source.suffix == ".html" else source.read_bytes()
                 try:
                     with sf.open(target,"rb") as f:old=f.read()
                     if source.suffix==".html" and b"D.R.O.L." not in old:raise RuntimeError("Refusing to overwrite unrelated content: "+target)

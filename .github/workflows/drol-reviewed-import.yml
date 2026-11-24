@@ -1,0 +1,63 @@
+name: D.R.O.L. / Reviewed knowledge import
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/drol-reviewed-import.yml'
+      - 'scripts/drol_reviewed_*'
+      - 'scripts/drol_firmware*'
+      - 'scripts/drol_graph_*'
+      - 'site-deploy/drol.odpc.de/database/reviewed-*.json'
+      - 'site-deploy/drol.odpc.de/database/005_uav_relationships.sql'
+      - 'site-deploy/drol.odpc.de/database/knowledge-graph-seed.json'
+permissions:
+  contents: read
+concurrency:
+  group: drol-db-production
+  cancel-in-progress: false
+jobs:
+  production:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m pip install 'paramiko>=3.4,<5'
+      - name: Validate PHP modules and reviewed packages
+        run: |
+          python3 scripts/drol_reviewed_import.py --check
+          python3 -m unittest discover -s tests -p 'test_drol*.py'
+      - name: Exercise model facts on an isolated database
+        run: |
+          docker run -d --name drol-test -p 127.0.0.1:43372:3306 -e MARIADB_ALLOW_EMPTY_ROOT_PASSWORD=yes -e MARIADB_DATABASE=drol_test mariadb:11.8@sha256:e1d5495f445654134f226f55a41ce0da227116f6f27f283101f405c794d841fc
+          trap 'docker rm -fv drol-test >/dev/null' EXIT
+          for i in {1..60}; do
+            docker exec drol-test healthcheck.sh --connect --innodb_initialized && break
+            sleep 2
+          done
+          for sql in site-deploy/drol.odpc.de/database/00{1,2,3}_*.sql; do
+            docker exec -i drol-test mariadb drol_test < "$sql"
+          done
+          export DROL_FACT_TEST_DSN='mysql:host=127.0.0.1;port=43372;dbname=drol_test;charset=utf8mb4'
+          PYTHONPATH=scripts python3 -c 'import json;from drol_reviewed_facts import load_facts;print(json.dumps(load_facts()))' | php scripts/test_drol_reviewed_facts.php
+      - name: Measure live inventory before import
+        env:
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+          DROL_DB_PASSWORD: ${{ secrets.DROL_DB_PASSWORD }}
+        run: python3 scripts/drol_ionos_db_inventory.py
+      - name: Verify protected backup by restoring a separate MariaDB instance
+        env:
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+          DROL_DB_PASSWORD: ${{ secrets.DROL_DB_PASSWORD }}
+        run: python3 scripts/drol_ionos_db_backup.py
+      - name: Import verified knowledge
+        env:
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+          DROL_DB_PASSWORD: ${{ secrets.DROL_DB_PASSWORD }}
+        run: python3 scripts/drol_reviewed_import.py
+      - name: Measure live inventory after import
+        if: always() && !cancelled()
+        env:
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+          DROL_DB_PASSWORD: ${{ secrets.DROL_DB_PASSWORD }}
+        run: python3 scripts/drol_ionos_db_inventory.py

@@ -3,15 +3,10 @@
 Uses an ephemeral authenticated PHP bridge because GitHub runners cannot connect
 directly to the IONOS database. Never publishes or approves candidate facts.
 """
-import base64,hashlib,hmac,json,os,secrets
+import json
+import os
 from pathlib import Path
-from urllib.request import Request,urlopen
-from urllib.error import HTTPError
-import paramiko
-from deploy_helpermonkey_v4 import HOST,USER,PIN
 
-ROOT="/drol"
-URL="https://drol.odpc.de"
 PHP=r"""<?php
 declare(strict_types=1);
 header('Content-Type: application/json; charset=utf-8');
@@ -77,6 +72,7 @@ try {
         $value=json_encode(['repository'=>$item['repository'],'tag'=>$item['tag'],
             'published_at'=>$item['published_at']??null,'evidence'=>'E0',
             'compatibility'=>'UNKNOWN','review_status'=>'UNREVIEWED',
+            'software_class'=>$item['software_class']??'unclassified',
             'topics_unverified'=>$topics,'release_notes_sha256'=>$digest,
             'release_notes_excerpt'=>$excerpt],JSON_THROW_ON_ERROR);
         $candidateAdd->execute([substr($data['run_id']??'drol-auto',0,80),
@@ -84,31 +80,9 @@ try {
             substr($excerpt!==''?$excerpt:($item['product'].' release '.$item['tag']),0,500),$url]);
         $created++;
     }
-    // Explicit manufacturer-published aircraft firmware history; never infer from SDK tags.
-    $firmwareCreated=0;
-    $fwModel=$pdo->prepare("SELECT h.id FROM drol_hardware h JOIN drol_manufacturers m ON m.id=h.manufacturer_id WHERE m.name='DJI' AND h.model IN ('Mini 4 Pro','DJI Mini 4 Pro')");
-    $fwModel->execute();$fwIds=$fwModel->fetchAll(PDO::FETCH_COLUMN);
-    if(count($fwIds)===1){
-        $fwUrl='https://bbs.dji.com/thread-355708-1-1.html';
-        $sourceFind->execute([$fwUrl]);$fwSource=$sourceFind->fetchColumn();
-        if(!$fwSource){$sourceAdd->execute(['DJI support team: Mini 4 Pro aircraft firmware history',$fwUrl]);$fwSource=$pdo->lastInsertId();}
-        $fwFind=$pdo->prepare("SELECT id FROM drol_firmware_releases WHERE hardware_id=? AND version=? AND region='' AND channel='aircraft'");
-        $fwAdd=$pdo->prepare("INSERT INTO drol_firmware_releases(hardware_id,version,region,channel,released_on,source_id) VALUES (?,?,'','aircraft',?,?) ON DUPLICATE KEY UPDATE id=id");
-        $fwAudit=$pdo->prepare("INSERT INTO drol_change_log(actor,action,object_type,object_id,after_json) VALUES ('ODPC source review','insert','firmware_release',?,?)");
-        foreach(['v01.00.0210'=>'2023-11-08','v01.00.1000'=>'2025-05-13','v01.00.1100'=>'2025-11-05'] as $version=>$date){
-            $fwFind->execute([(int)$fwIds[0],$version]);
-            if($fwFind->fetchColumn())continue;
-            $fwAdd->execute([(int)$fwIds[0],$version,$date,(int)$fwSource]);
-            if($fwAdd->rowCount()===1){
-                $fwId=(int)$pdo->lastInsertId();
-                $fwAudit->execute([$fwId,json_encode(['version'=>$version,'released_on'=>$date,'source'=>$fwUrl,'scope'=>'aircraft'],JSON_THROW_ON_ERROR)]);
-                $firmwareCreated++;
-            }
-        }
-    }
     $pdo->commit();
     $total=(int)$pdo->query("SELECT COUNT(*) FROM drol_candidate_facts WHERE status='pending'")->fetchColumn();
-    echo json_encode(['status'=>'ok','created'=>$created,'existing'=>$known,'pending_total'=>$total,'firmware_created'=>$firmwareCreated,'firmware_model_matches'=>count($fwIds)],JSON_THROW_ON_ERROR);
+    echo json_encode(['status'=>'ok','created'=>$created,'existing'=>$known,'pending_total'=>$total],JSON_THROW_ON_ERROR);
 } catch(Throwable $e) {
     if(isset($pdo)&&$pdo->inTransaction())$pdo->rollBack();
     http_response_code(503);echo json_encode(['status'=>'unavailable']);
@@ -118,49 +92,10 @@ def main():
     report=json.loads(Path("drol-release-candidates.json").read_text(encoding="utf-8"))
     items=report.get("candidates")
     if not isinstance(items,list) or not 1<=len(items)<=30:raise RuntimeError("No candidates")
-    token=secrets.token_urlsafe(48)
-    name="drol-candidates-"+secrets.token_hex(20)+".php"
-    script=PHP.replace("__TOKEN_HASH__",hashlib.sha256(token.encode()).hexdigest())
-    transport=paramiko.Transport((HOST,22))
-    transport.start_client(timeout=25)
-    sf=None;uploaded=False
-    try:
-        fingerprint="SHA256:"+base64.b64encode(hashlib.sha256(transport.get_remote_server_key().asbytes()).digest()).decode().rstrip("=")
-        if not hmac.compare_digest(fingerprint,PIN):raise RuntimeError("SFTP host key mismatch")
-        transport.auth_password(USER,os.environ["ODPC_SFTP_PASSWORD"])
-        sf=paramiko.SFTPClient.from_transport(transport)
-        with sf.open(ROOT+"/"+name,"wx") as f:
-            uploaded=True;f.write(script)
-        sf.chmod(ROOT+"/"+name,0o644)
-        try:
-            try:
-                with urlopen(Request(URL+"/"+name,data=b"{}",method="POST"),timeout=20):
-                    raise RuntimeError("Unauthenticated endpoint accepted")
-            except HTTPError as exc:
-                if exc.code!=404:raise RuntimeError("Access control failed") from None
-            payload={"host":"db5021788879.hosting-data.io","database":"dbs16292022",
-                "username":"dbu1397392","password":os.environ["DROL_DB_PASSWORD"],
-                "run_id":os.environ.get("GITHUB_RUN_ID","drol-auto"),"candidates":items}
-            req=Request(URL+"/"+name,data=json.dumps(payload).encode(),method="POST",
-                headers={"Content-Type":"application/json","X-DROL-Probe":token})
-            try:
-                with urlopen(req,timeout=40) as response:result=json.load(response)
-            except HTTPError as exc:
-                raise RuntimeError("MariaDB candidate import rejected HTTP "+str(exc.code)) from None
-            if result.get("status")!="ok" or result.get("created",0)+result.get("existing",0)!=len(items):
-                raise RuntimeError("Candidate import not confirmed")
-            print("PASS: MariaDB candidate facts created:",result["created"])
-            print("Existing deduplicated:",result["existing"])
-            print("Total pending candidates:",result["pending_total"])
-            print("Firmware versions created:",result.get("firmware_created"))
-            print("Firmware model matches:",result.get("firmware_model_matches"))
-        finally:pass
-    finally:
-        if sf:
-            try:
-                if uploaded:
-                    sf.remove(ROOT+"/"+name)
-                    print("Temporary candidate endpoint removed")
-            finally:sf.close()
-        transport.close()
+    from drol_db_bridge import invoke
+    result = invoke(PHP, {"run_id": os.environ.get("GITHUB_RUN_ID", "drol-auto"), "candidates": items})
+    if result.get("status") != "ok" or result["created"] + result["existing"] != len(items):
+        raise RuntimeError("Candidate import not confirmed")
+    print("New E0 candidates:", result["created"], "existing:", result["existing"],
+          "total pending:", result["pending_total"])
 if __name__=="__main__":main()

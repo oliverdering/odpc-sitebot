@@ -1,55 +1,73 @@
-"""D.R.O.L. daily source health monitor; never promotes claims automatically."""
+"""Check civilian editorial source availability without collecting page contents."""
 import datetime
 import json
-import urllib.request
-import urllib.error
+import time
 from pathlib import Path
-from urllib.parse import urlparse
+from urllib.error import HTTPError, URLError
+from urllib.parse import urlsplit
+from urllib.request import Request, build_opener
 
-root=Path("site-deploy/drol.odpc.de/database/model-schema.json")
-data=json.loads(root.read_text(encoding="utf-8"))
-registry_path=Path("site-deploy/drol.odpc.de/database/source-registry.json")
-registry=json.loads(registry_path.read_text(encoding="utf-8"))
-# Exclude sources explicitly outside the civilian editorial scope, including catalog references.
-blocked_urls={source["url"] for source in registry["sources"] if source.get("status")=="excluded" and isinstance(source.get("url"),str)}
-urls=sorted((
-    {url for model in data["models"] for url in model.get("sources",[]) if isinstance(url,str) and url.startswith("https://")}
-    | {source["url"] for source in registry["sources"] if source.get("status")=="monitor_only" and isinstance(source.get("url"),str) and source["url"].startswith("https://")}
-) - blocked_urls)
-results=[]
-for url in urls:
-    parsed=urlparse(url)
-    if not parsed.hostname:
-        continue
-    req=urllib.request.Request(url,headers={"User-Agent":"DROL-SourceMonitor/1.0 (+https://drol.odpc.de/; documentation health check)","Accept":"text/html,application/json;q=0.9,*/*;q=0.5"},method="HEAD")
-    try:
-        with urllib.request.urlopen(req,timeout=12) as response:
-            status=response.status
-            result="reachable" if status<400 else "review"
-    except urllib.error.HTTPError as exc:
-        status=exc.code
-        if status == 405:
-            # Some documentation servers reject HEAD while allowing GET.
-            # Read no response body: this is an availability check, not evidence validation.
-            try:
-                get_req=urllib.request.Request(url,headers={"User-Agent":"DROL-SourceMonitor/1.0 (+https://drol.odpc.de/; documentation health check)","Accept":"text/html,application/json;q=0.9,*/*;q=0.5"},method="GET")
-                with urllib.request.urlopen(get_req,timeout=12) as response:
-                    status=response.status
-                    result="reachable" if status<400 else "review"
-            except urllib.error.HTTPError as get_exc:
-                status=get_exc.code
-                result="restricted_or_missing" if status in (403,404,429) else "review"
-            except (urllib.error.URLError,TimeoutError,OSError):
-                status=None
-                result="network_unavailable"
-        else:
-            result="restricted_or_missing" if status in (403,404,429) else "review"
-    except (urllib.error.URLError,TimeoutError,OSError) as exc:
-        status=None
-        result="network_unavailable"
-    results.append({"url":url,"status":status,"result":result})
-report={"checked_utc":datetime.datetime.now(datetime.timezone.utc).isoformat(),"source_count":len(results),"sources":results,"note":"HTTP status is not a factual verification. No technical claims are automatically approved."}
-Path("drol-source-health.json").write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
-print("D.R.O.L. source health checked:",len(results))
-for item in results:
-    print(item["result"],item["status"],item["url"])
+from drol_document_discovery import AGENT, USER_AGENT, NoRedirect, robot_rules
+
+
+def eligible_urls(models, sources):
+    excluded = {s["url"] for s in sources if s.get("status") == "excluded"}
+    urls = {u for m in models for u in m.get("sources", []) if isinstance(u, str)}
+    urls.update(s["url"] for s in sources if s.get("status") == "monitor_only")
+    return sorted(url for url in urls - excluded if url.startswith("https://") and urlsplit(url).hostname)
+
+
+def main():
+    directory = Path("site-deploy/drol.odpc.de/database")
+    models = json.loads((directory / "model-schema.json").read_text())["models"]
+    sources = json.loads((directory / "source-registry.json").read_text())["sources"]
+    urls = eligible_urls(models, sources)
+    opener = build_opener(NoRedirect())
+    rules_by_host, next_allowed = {}, {}
+    results = []
+    # Spread the full roster over four days. A failed host cannot consume the entire job budget.
+    day = datetime.datetime.now(datetime.timezone.utc).date().toordinal()
+    for url in urls[day % 4::4]:
+        host = urlsplit(url).netloc
+        status, result = None, "network_unavailable"
+        try:
+            if host not in rules_by_host:
+                rules_by_host[host] = None
+                rules_by_host[host] = robot_rules(url, opener)
+                next_allowed[host] = time.monotonic() + 1
+            rules = rules_by_host[host]
+            if rules is None or not rules.can_fetch(AGENT, url):
+                result = "robots_unavailable_or_disallowed"
+            else:
+                rate = rules.request_rate(AGENT)
+                delay = max(1, rules.crawl_delay(AGENT) or 0, rate.seconds if rate else 0)
+                wait = next_allowed[host] - time.monotonic()
+                if wait > 30 or delay > 30:
+                    result = "deferred_host_limit"
+                else:
+                    # Include the initial robots request when enforcing host spacing.
+                    if next_allowed[host] > time.monotonic():
+                        time.sleep(max(wait, delay))
+                    req = Request(url, headers={"User-Agent": USER_AGENT}, method="HEAD")
+                    try:
+                        with opener.open(req, timeout=8) as response:
+                            status, result = response.status, "reachable"
+                    finally:
+                        next_allowed[host] = time.monotonic() + delay
+        except HTTPError as exc:
+            status = exc.code
+            result = "redirect" if 300 <= status < 400 else "restricted_or_missing"
+            if status in (401, 403, 429, 503):
+                rules_by_host[host] = None
+        except (URLError, OSError, ValueError):
+            pass
+        results.append({"url": url, "status": status, "result": result})
+    report = {"checked_utc": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+              "eligible_source_count": len(urls), "source_count": len(results), "sources": results,
+              "note": "Rotating health check; reachability does not verify a technical claim."}
+    Path("drol-source-health.json").write_text(json.dumps(report, indent=2) + "\n")
+    print("Source health checked:", len(results), "of", len(urls))
+
+
+if __name__ == "__main__":
+    main()

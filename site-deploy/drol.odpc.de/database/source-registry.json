@@ -967,6 +967,48 @@
       "feed_type": "unverified",
       "civil_relevance": "review_required",
       "last_reviewed": null
+    },
+    {
+      "name": "GDAL raster terrain utilities",
+      "url": "https://gdal.org/en/stable/programs/index.html",
+      "category": "technical_documentation",
+      "scope": "civilian terrain mapping and orthophotos",
+      "evidence": "E0",
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required",
+      "license_type": "MIT (exceptions listed by project)",
+      "feed_type": "html_index",
+      "civil_relevance": "civil_verified",
+      "last_reviewed": "2026-11-24",
+      "metadata_review": {
+        "decision": "approved_metadata_only",
+        "reviewer": "Oxana (ODPC automated source review)",
+        "reviewed_at": "2026-11-24",
+        "evidence_url": "https://gdal.org/en/stable/license.html"
+      },
+      "discovery_path_regex": "/en/stable/programs/gdal_raster_(?:aspect|contour|fill_nodata|hillshade|mosaic|overview|reproject|resample|roughness|slope|tiles|viewshed|zonal_stats)(?:_[a-z0-9_]+)?\\.html"
+    },
+    {
+      "name": "PDAL point cloud input documentation",
+      "url": "https://pdal.io/en/stable/stages/readers.html",
+      "category": "technical_documentation",
+      "scope": "civilian LiDAR and survey data formats",
+      "evidence": "E0",
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required",
+      "license_type": "BSD-3-Clause (exceptions listed by project)",
+      "feed_type": "html_index",
+      "civil_relevance": "civil_verified",
+      "last_reviewed": "2026-11-24",
+      "metadata_review": {
+        "decision": "approved_metadata_only",
+        "reviewer": "Oxana (ODPC automated source review)",
+        "reviewed_at": "2026-11-24",
+        "evidence_url": "https://pdal.io/en/stable/copyright.html"
+      },
+      "discovery_path_regex": "/en/stable/stages/readers\\.(?:las|copc|e57|pts|ply|pcd|qfit|terrasolid|tiledb|ept|gdal|ilvis2|pgpointcloud)\\.html"
     }
   ]
 }

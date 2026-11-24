@@ -6,7 +6,8 @@ import sys
 
 root = Path("site-deploy/drol.odpc.de/database")
 migrations = sorted(root.glob("[0-9][0-9][0-9]_*.sql"))
-expected = ["001_catalog.sql", "002_evidence_model.sql", "003_knowledge_core.sql"]
+expected = ["001_catalog.sql", "002_evidence_model.sql", "003_knowledge_core.sql",
+            "004_metadata_inbox.sql", "005_uav_relationships.sql"]
 errors = []
 if [p.name for p in migrations] != expected:
     errors.append("Unexpected migration sequence: " + ", ".join(p.name for p in migrations))

@@ -38,6 +38,8 @@ jobs:
           PY
       - name: Check page scripts and studio interactions before upload
         run: |
+          python3 scripts/drol_site_audit.py
+          python3 -m unittest discover -s tests -p test_drol_metric_history.py
           node site-deploy/drol.odpc.de/tests/release.test.cjs
           node site-deploy/drol.odpc.de/tests/studio.test.cjs
       - run: python3 -m pip install 'paramiko>=3.4,<5'

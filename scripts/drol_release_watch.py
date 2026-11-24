@@ -22,6 +22,14 @@ REPOS={
  "ExpressLRS":"ExpressLRS/ExpressLRS",
  "Paparazzi UAV":"paparazzi/paparazzi",
 }
+SOFTWARE_CLASSES = {
+    "PX4": "flight_control_software", "ArduPilot": "flight_control_software",
+    "Betaflight": "flight_control_software", "INAV": "flight_control_software",
+    "Paparazzi UAV": "uav_software_suite", "ExpressLRS": "radio_link_firmware",
+    "MAVSDK": "sdk", "MAVLink protocol": "protocol",
+    "QGroundControl": "application", "OpenDroneMap": "application", "COLMAP": "application",
+    "ROS 2": "middleware", "OpenCV": "library",
+}
 API="https://api.github.com"
 TOKEN=os.environ.get("GH_TOKEN","")
 def request(url,method="GET",payload=None):
@@ -67,6 +75,7 @@ def main():
             if not tag or not url or not url.startswith("https://github.com/"):raise ValueError("invalid release")
             notes=summarize_release_notes(release.get("body",""))
             item={"product":product,"repository":repo,"tag":tag,"url":url,"release_notes":notes,
+                  "software_class":SOFTWARE_CLASSES[product],
                   "published_at":release.get("published_at"),"status":"UNREVIEWED",
                   "evidence_level":"E0","model_compatibility":"UNKNOWN"}
             out.append(item)

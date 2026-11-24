@@ -1,21 +1,14 @@
 """Publish only aggregate DROL metrics, atomically, via pinned SFTP."""
 import base64, hashlib, hmac, json, os, secrets
 from pathlib import Path
-from datetime import datetime
+from drol_metric_history import assemble, import_observation
 from urllib.request import urlopen, Request
 import paramiko
 from deploy_helpermonkey_v4 import HOST, USER, PIN
 
 def main():
     data = json.loads(Path("drol-knowledge-metrics.json").read_text())
-    keys = {"metadata_inbox", "candidate_facts_total", "model_facts_total", "source_records"}
-    optional = {"hardware_models", "manufacturers", "hardware_source_links", "firmware_releases", "source_snapshots", "attribute_definitions"}
-    present = set(data) - {"measured_at"}
-    if not keys <= present <= keys | optional or any(type(data[k]) is not int or data[k] < 0 for k in present):
-        raise ValueError("Invalid aggregate metrics")
-    if datetime.fromisoformat(data["measured_at"]).tzinfo is None:
-        raise ValueError("Missing timezone")
-    raw = json.dumps(data, indent=2).encode()
+    observed = import_observation()
     target = "/drol/data/knowledge-metrics.json"
     tmp = target + "." + secrets.token_hex(8) + ".uploading"
     transport = paramiko.Transport((HOST,22))
@@ -27,6 +20,13 @@ def main():
         transport.auth_password(USER,os.environ["ODPC_SFTP_PASSWORD"])
         with paramiko.SFTPClient.from_transport(transport) as sf:
             try:
+                with sf.open(target, "rb") as previous:
+                    prior = json.load(previous)
+            except FileNotFoundError:
+                prior = None
+            data = assemble(data, prior, observed)
+            raw = json.dumps(data, indent=2).encode()
+            try:
                 with sf.open(tmp,"wx") as f:
                     f.write(raw)
                 sf.chmod(tmp,0o644)
@@ -37,7 +37,7 @@ def main():
         with urlopen(Request("https://drol.odpc.de/data/knowledge-metrics.json?ts="+secrets.token_hex(8),headers={"Cache-Control":"no-cache"}),timeout=20) as response:
             if json.load(response) != data:
                 raise RuntimeError("Public metrics mismatch")
-        print("PASS public aggregate metrics verified",data)
+        print("PASS public aggregate metrics verified",data["measured_at"])
     finally:
         transport.close()
 

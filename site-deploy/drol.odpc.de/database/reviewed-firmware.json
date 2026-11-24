@@ -1,0 +1,164 @@
+{
+  "schema_version": 1,
+  "documents": [
+    {
+      "manufacturer": "DJI",
+      "model": "Mini 4 Pro",
+      "kind": "aircraft_firmware",
+      "evidence": "E1",
+      "checked_on": "2026-11-24",
+      "source_url": "https://dl.djicdn.com/downloads/DJI_Mini_4_Pro/20251105/DJI_Mini_4_Pro_Release_Notes_EN.pdf",
+      "releases": [
+        {
+          "version": "v01.00.1100",
+          "released_on": "2025-11-05",
+          "page": 1
+        },
+        {
+          "version": "v01.00.1000",
+          "released_on": "2025-05-13",
+          "page": 2
+        },
+        {
+          "version": "v01.00.0800",
+          "released_on": "2024-11-23",
+          "page": 3
+        },
+        {
+          "version": "v01.00.0700",
+          "released_on": "2024-09-05",
+          "page": 4
+        },
+        {
+          "version": "v01.00.0600",
+          "released_on": "2024-06-27",
+          "page": 5
+        },
+        {
+          "version": "v01.00.0500",
+          "released_on": "2024-04-23",
+          "page": 6
+        },
+        {
+          "version": "v01.00.0400",
+          "released_on": "2024-04-11",
+          "page": 7
+        },
+        {
+          "version": "v01.00.0300",
+          "released_on": "2023-12-21",
+          "page": 8
+        },
+        {
+          "version": "v01.00.0210",
+          "released_on": "2023-11-08",
+          "page": 9
+        },
+        {
+          "version": "v01.00.0200",
+          "released_on": "2023-09-25",
+          "page": 10
+        }
+      ],
+      "source_sha256": "054386f7f74bd9f4630ad8710568606b9086a81a7f7eb658a9f7105508291fc0"
+    },
+    {
+      "manufacturer": "DJI",
+      "model": "Mini 3",
+      "kind": "aircraft_firmware",
+      "evidence": "E1",
+      "checked_on": "2026-11-24",
+      "source_url": "https://dl.djicdn.com/downloads/DJI_Mini_3/RN/20240528/DJI_Mini_3_Release_Notes_EN.pdf",
+      "releases": [
+        {
+          "version": "v01.00.0500",
+          "released_on": "2024-05-28",
+          "page": 1
+        },
+        {
+          "version": "v01.00.0410",
+          "released_on": "2024-01-25",
+          "page": 2
+        },
+        {
+          "version": "v01.00.0300",
+          "released_on": "2023-09-15",
+          "page": 3
+        },
+        {
+          "version": "v01.00.0200",
+          "released_on": "2023-03-28",
+          "page": 4
+        },
+        {
+          "version": "v01.00.0100",
+          "released_on": "2022-12-09",
+          "page": 5
+        }
+      ],
+      "source_sha256": "4406bfb16fdd9c25c57e6e3d23075acc23bfef78e53abfba0796874468222cdc"
+    },
+    {
+      "manufacturer": "DJI",
+      "model": "Mini 3 Pro",
+      "kind": "aircraft_firmware",
+      "evidence": "E1",
+      "checked_on": "2026-11-24",
+      "source_url": "https://dl.djicdn.com/downloads/DJI_Mini_3_Pro/RN/20240723/DJI_Mini_3_Pro_Release_Notes_EN.pdf",
+      "releases": [
+        {
+          "version": "v01.00.0900",
+          "released_on": "2024-07-23",
+          "page": 1
+        },
+        {
+          "version": "v01.00.0800",
+          "released_on": "2024-07-11",
+          "page": 2
+        },
+        {
+          "version": "v01.00.0600",
+          "released_on": "2023-04-25",
+          "page": 5
+        },
+        {
+          "version": "v01.00.0500",
+          "released_on": "2023-03-28",
+          "page": 6
+        },
+        {
+          "version": "v01.00.0450",
+          "released_on": "2022-12-22",
+          "page": 7
+        },
+        {
+          "version": "v01.00.0400",
+          "released_on": "2022-10-26",
+          "page": 8
+        },
+        {
+          "version": "v01.00.0300",
+          "released_on": "2022-08-17",
+          "page": 9
+        },
+        {
+          "version": "v01.00.0201",
+          "released_on": "2022-06-30",
+          "page": 10
+        },
+        {
+          "version": "v01.00.0150",
+          "released_on": "2022-06-16",
+          "page": 11
+        },
+        {
+          "version": "v01.00.0100",
+          "released_on": "2022-05-17",
+          "page": 12
+        }
+      ],
+      "review_note": "Pages 3 and 4 list the same aircraft version v01.00.0700 on different dates. The release date remains unresolved and this version is excluded.",
+      "source_sha256": "15521e6602d6ba9fd3cb3f27989442d60029f967d4a4717f662ebabdb0e3311b"
+    }
+  ]
+}

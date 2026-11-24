@@ -8,6 +8,10 @@ on:
     paths:
       - '.github/workflows/drol-source-monitor.yml'
       - 'scripts/drol_source_monitor.py'
+      - 'scripts/drol_document_discovery.py'
+      - 'scripts/drol_document_metadata.php'
+      - 'scripts/drol_db_bridge.py'
+      - 'tests/test_drol_document_discovery.py'
       - 'site-deploy/drol.odpc.de/database/source-registry.json'
 permissions:
   contents: read
@@ -25,4 +29,31 @@ jobs:
           name: drol-source-health
           path: drol-source-health.json
           if-no-files-found: error
+          retention-days: 30
+
+  documentation-discovery:
+    runs-on: ubuntu-latest
+    concurrency:
+      group: drol-document-discovery
+      cancel-in-progress: false
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate metadata policy and anti-spam regressions
+        run: |
+          php -l scripts/drol_document_metadata.php
+          python3 -m unittest discover -s tests -p 'test_drol_document_discovery.py'
+          python3 -m unittest discover -s tests -p 'test_drol_release_watch.py'
+      - run: python3 -m pip install 'paramiko>=3.4,<5'
+      - name: Discover and ingest pending technical documentation references
+        env:
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+          DROL_DB_PASSWORD: ${{ secrets.DROL_DB_PASSWORD }}
+        run: python3 scripts/drol_document_discovery.py --apply
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: drol-document-discovery
+          path: drol-document-discovery.json
+          if-no-files-found: warn
           retention-days: 30

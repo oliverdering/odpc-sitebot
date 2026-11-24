@@ -3,30 +3,35 @@ from pathlib import Path
 from html.parser import HTMLParser
 from urllib.parse import urlsplit,unquote
 import json,re
+from deploy_drol import render_page
 ROOT=Path("site-deploy/drol.odpc.de")
 class Page(HTMLParser):
  def __init__(self):
-  super().__init__();self.links=[];self.ids=set();self.languages=set();self.title=False;self.description=False;self.main=False;self.images=[]
+  super().__init__();self.links=[];self.ids=set();self.languages=set();self.title=False;self.description=False;self.main=False;self.images=[];self.in_dock_select=False
  def handle_starttag(self,tag,attrs):
   a=dict(attrs)
   if tag=="a" and a.get("href"):self.links.append(a["href"])
   if a.get("id"):self.ids.add(a["id"])
-  if a.get("data-drol-language"):self.languages.add(a["data-drol-language"])
+  if tag=="select":self.in_dock_select=a.get("id")=="drol-dock-language"
+  if tag=="option" and self.in_dock_select and a.get("value"):self.languages.add(a["value"])
   if tag=="title":self.title=True
   if tag=="meta" and a.get("name")=="description":self.description=True
   if tag=="main":self.main=True
   if tag=="img":self.images.append(a)
+ def handle_endtag(self,tag):
+  if tag=="select":self.in_dock_select=False
 def main():
- pages={}
+ pages={}; rendered={}
  for f in sorted(ROOT.glob("*.html")):
-  p=Page();p.feed(f.read_text(encoding="utf-8"));pages[f.name]=p
+  rendered[f.name]=render_page(f).decode("utf-8")
+  p=Page();p.feed(rendered[f.name]);pages[f.name]=p
  problems=[];warnings=[]
  for name,p in pages.items():
-  raw=(ROOT/name).read_text(encoding="utf-8")
+  raw=rendered[name]
   if not p.title:problems.append(f"{name}: missing title")
   if not p.description:warnings.append(f"{name}: missing meta description")
   if not p.main:warnings.append(f"{name}: missing semantic main")
-  if len(p.languages)<2:warnings.append(f"{name}: no integrated multilingual selector ({len(p.languages)} options)")
+  if len(p.languages)<16:warnings.append(f"{name}: no integrated multilingual selector ({len(p.languages)} options)")
   if re.search(r'background(?:-color)?\s*:\s*(?:white|#fff(?:fff)?)(?:[;}]|\s*!important)',raw,re.I):
    warnings.append(f"{name}: legacy white CSS background (check theme contrast)")
   for img in p.images:
@@ -54,5 +59,5 @@ def main():
  print(f"Audited {len(pages)} pages; {len(report['errors'])} errors; {len(report['warnings'])} warnings")
  for x in report["errors"]:print("ERROR:",x)
  for x in report["warnings"]:print("WARN:",x)
- if problems:raise SystemExit(1)
+ if problems or warnings:raise SystemExit(1)
 if __name__=="__main__":main()

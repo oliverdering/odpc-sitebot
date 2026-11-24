@@ -1,9 +1,9 @@
--- D.R.O.L. V004: cross-manufacturer UAV knowledge graph (additive, review before applying).
+-- D.R.O.L. V005: cross-manufacturer UAV knowledge graph (additive, review before applying).
 -- No claims of compatibility are inferred from graph membership.
 CREATE TABLE IF NOT EXISTS drol_knowledge_entities (
  id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
  entity_key VARCHAR(190) NOT NULL UNIQUE,
- entity_type ENUM('drone','controller','flight_controller','firmware','sdk','sensor','camera','companion_computer','software','accessory','use_case') NOT NULL,
+ entity_type ENUM('drone','controller','flight_controller','firmware','flight_stack','protocol','sdk','sensor','camera','companion_computer','software','accessory','use_case') NOT NULL,
  manufacturer VARCHAR(190) NULL,
  display_name VARCHAR(250) NOT NULL,
  lifecycle ENUM('unknown','current','legacy','announced','discontinued') NOT NULL DEFAULT 'unknown',

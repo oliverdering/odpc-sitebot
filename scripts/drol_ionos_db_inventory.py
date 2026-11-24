@@ -32,6 +32,9 @@ try {
         PDO::ATTR_EMULATE_PREPARES => false,
         PDO::ATTR_TIMEOUT => 8
     ]);
+    $pdo->exec("SET SESSION TRANSACTION ISOLATION LEVEL REPEATABLE READ");
+    $pdo->exec("START TRANSACTION WITH CONSISTENT SNAPSHOT, READ ONLY");
+    $measured = $pdo->query("SELECT DATE_FORMAT(UTC_TIMESTAMP(), '%Y-%m-%dT%H:%i:%sZ')")->fetchColumn();
     $tables = $pdo->query("SHOW TABLES LIKE 'drol_%'")->fetchAll(PDO::FETCH_COLUMN);
     $inventory = [];
     foreach ($tables as $table) {
@@ -41,7 +44,18 @@ try {
         $ddl = $pdo->query("SHOW CREATE TABLE `".$escaped."`")->fetch(PDO::FETCH_NUM)[1];
         $inventory[] = ['name'=>$table, 'rows'=>$count, 'schema_sha256'=>hash('sha256',$ddl)];
     }
-    echo json_encode(['status'=>'connected','table_count'=>count($inventory),
+    $levels = array_fill_keys(['E0','E1','E2','E3'], 0);
+    foreach (['drol_model_facts','drol_capability_evidence','drol_knowledge_relations'] as $name) {
+        if (!in_array($name, $tables, true)) continue;
+        foreach ($pdo->query("SELECT evidence_level, COUNT(*) FROM `$name` GROUP BY evidence_level") as [$level,$count]) {
+            if (!array_key_exists($level, $levels)) throw new RuntimeException('invalid_level');
+            $levels[$level] += (int)$count;
+        }
+    }
+    $dated = (int)$pdo->query("SELECT COUNT(*) FROM drol_sources WHERE checked_on IS NOT NULL")->fetchColumn();
+    $linked = (int)$pdo->query("SELECT COUNT(DISTINCT source_id) FROM drol_source_snapshots")->fetchColumn();
+    $pdo->exec("COMMIT");
+    echo json_encode(['measured_at'=>$measured,'evidence'=>$levels,'sources_with_check_date'=>$dated,'sources_with_snapshot'=>$linked,'status'=>'connected','table_count'=>count($inventory),
         'inventory'=>$inventory, 'server_version'=>(string)$pdo->query('SELECT VERSION()')->fetchColumn()], JSON_THROW_ON_ERROR);
 } catch (Throwable $e) {
     http_response_code(503);
@@ -102,10 +116,9 @@ def main():
             print("DATABASE VERSION", result.get("server_version"))
             if not any(item["name"] == "drol_metadata_inbox" for item in result.get("inventory", [])):
                 raise RuntimeError("Metadata inbox missing")
-            from datetime import datetime, timezone
             from pathlib import Path
             counts = {item["name"]: item["rows"] for item in result["inventory"]}
-            public = {"measured_at": datetime.now(timezone.utc).isoformat(),
+            public = {"measured_at": result["measured_at"],
                       "metadata_inbox": counts["drol_metadata_inbox"],
                       "candidate_facts_total": counts["drol_candidate_facts"],
                       "model_facts_total": counts["drol_model_facts"],
@@ -116,6 +129,21 @@ def main():
                       "firmware_releases": counts["drol_firmware_releases"],
                       "source_snapshots": counts["drol_source_snapshots"],
                       "attribute_definitions": counts["drol_attributes"]}
+            for metric, table in {
+                "knowledge_entities": "drol_knowledge_entities",
+                "knowledge_relations": "drol_knowledge_relations",
+                "knowledge_sources": "drol_knowledge_sources",
+                "capability_evidence": "drol_capability_evidence",
+                "aliases": "drol_entity_aliases",
+                "release_batches": "drol_release_batches",
+                "change_log": "drol_change_log",
+                "source_watches": "drol_source_watch",
+            }.items():
+                if table in counts:
+                    public[metric] = counts[table]
+            public.update(table_count=result["table_count"], evidence=result["evidence"],
+                          sources_with_check_date=result["sources_with_check_date"],
+                          sources_with_snapshot=result["sources_with_snapshot"])
             Path("drol-knowledge-metrics.json").write_text(json.dumps(public, indent=2)+"\n", encoding="utf-8")
         finally:
             # Deletion is attempted regardless of HTTP success.

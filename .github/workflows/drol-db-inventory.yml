@@ -2,7 +2,7 @@ name: D.R.O.L. / Live schema inventory
 on:
   workflow_dispatch:
   workflow_run:
-    workflows: ['D.R.O.L. / Autonomous knowledge discovery']
+    workflows: ['D.R.O.L. / Autonomous knowledge discovery', 'D.R.O.L. / Reviewed knowledge import']
     types: [completed]
     branches: [main]
   schedule:
@@ -11,16 +11,17 @@ on:
     branches: [main]
     paths:
       - 'scripts/drol_ionos_db_inventory.py'
+      - 'scripts/drol_metric_history.py'
       - 'scripts/drol_publish_knowledge_metrics.py'
       - '.github/workflows/drol-db-inventory.yml'
 permissions:
   contents: read
+  actions: read
 concurrency:
   group: drol-live-schema-inventory
   cancel-in-progress: false
 jobs:
   inventory:
-    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
@@ -45,5 +46,6 @@ jobs:
 
       - name: Publish and verify public aggregate metrics
         env:
+          GH_TOKEN: ${{ github.token }}
           ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
         run: python3 scripts/drol_publish_knowledge_metrics.py
