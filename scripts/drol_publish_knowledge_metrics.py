@@ -9,7 +9,9 @@ from deploy_helpermonkey_v4 import HOST, USER, PIN
 def main():
     data = json.loads(Path("drol-knowledge-metrics.json").read_text())
     keys = {"metadata_inbox", "candidate_facts_total", "model_facts_total", "source_records"}
-    if set(data) != keys | {"measured_at"} or any(type(data[k]) is not int or data[k] < 0 for k in keys):
+    optional = {"hardware_models", "manufacturers", "hardware_source_links", "firmware_releases", "source_snapshots", "attribute_definitions"}
+    present = set(data) - {"measured_at"}
+    if not keys <= present <= keys | optional or any(type(data[k]) is not int or data[k] < 0 for k in present):
         raise ValueError("Invalid aggregate metrics")
     if datetime.fromisoformat(data["measured_at"]).tzinfo is None:
         raise ValueError("Missing timezone")
