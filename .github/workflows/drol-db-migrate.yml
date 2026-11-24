@@ -32,7 +32,7 @@ jobs:
           path: drol-db-backup.json
           if-no-files-found: error
           retention-days: 1
-      - name: Apply allowlisted additive schema extensions
+      - name: Apply allowlisted additive schema extensions (002–004)
         env:
           ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
           DROL_DB_PASSWORD: ${{ secrets.DROL_DB_PASSWORD }}
