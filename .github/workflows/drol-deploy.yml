@@ -36,6 +36,10 @@ jobs:
           assert feed['schema_version']==1 and isinstance(feed['events'],list)
           assert 'events.json' in Path('scripts/deploy_drol.py').read_text()
           PY
+      - name: Check page scripts and studio interactions before upload
+        run: |
+          node site-deploy/drol.odpc.de/tests/release.test.cjs
+          node site-deploy/drol.odpc.de/tests/studio.test.cjs
       - run: python3 -m pip install 'paramiko>=3.4,<5'
       - name: Deploy only /drol
         env:

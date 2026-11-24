@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>D.R.O.L. Live-Labor | Wachstum der Wissensplattform</title>
-<meta name="description" content="D.R.O.L. Live-Labor: automatisch entdeckte Software-Releases, offene Prüfaufträge und wachsende Drohnen-Wissensdatenbank transparent verfolgen.">
+<meta name="description" content="D.R.O.L. Live-Labor: Messwerte aus Modellkatalog und Release-Feed mit Quellen und historischen Bestandszahlen.">
 <style>
 :root{color-scheme:dark;--bg:#08131b;--surface:#101f29;--ink:#eaf5f2;--muted:#a6bec0;--line:#2b454c;--accent:#8ce6cf}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 system-ui,sans-serif}a{color:var(--accent)}
@@ -16,74 +16,56 @@ button{background:var(--accent);color:#05231e;border:0;border-radius:10px;paddin
 footer{border-top:1px solid var(--line);color:var(--muted)}@media(prefers-reduced-motion:no-preference){.pulse{animation:pulse 2.5s infinite}@keyframes pulse{50%{opacity:.5}}}
 .progress-track{height:18px;background:#253a42;border-radius:20px;overflow:hidden}.progress-fill{height:100%;width:0;background:#8ce6cf;transition:width .7s ease}</style></head><body>
 <header><strong>D.R.O.L. / LIVE LAB</strong><nav aria-label="Navigation"><a href="/">Start</a><a href="/katalog.html">Katalog</a><a href="/engineering-atlas.html">Engineering Atlas</a><a href="/drol-wissen.html">Wissen</a></nav></header>
-<main><p class="status"><span class="pulse">●</span> Automatische Forschung · öffentlich nachvollziehbar</p>
-<h1>Sieh zu, wie D.R.O.L. wächst.</h1>
-<p class="lead">Hier erscheinen neue Recherchefunde und Prüfaufträge aus der laufenden GitHub-Automatisierung. Die Liste aktualisiert sich während du auf der Seite bist. Ein entdeckter Release ist noch keine bestätigte Drohnen-Kompatibilität.</p>
-<div class="metrics" aria-label="Live-Kennzahlen">
-<div class="card"><div class="number" id="total">–</div><div>Erkannte Forschungsaufträge</div></div>
-<div class="card"><div class="number" id="open">–</div><div>Offene Prüfaufträge</div></div>
-<div class="card"><div class="number" id="release-count">–</div><div>Entdeckte Software-Releases (E0)</div><small id="release-status">Lade öffentlichen Forschungsfeed …</small></div>
-<div class="card"><div class="number" id="updated">–</div><div>Letzter Datenabruf</div></div>
-</div>
-<div style="display:flex;align-items:center;gap:15px;flex-wrap:wrap"><button id="refresh" type="button">Jetzt aktualisieren</button><span class="muted" id="state" role="status" aria-live="polite">Lade Forschungsdaten …</span></div>
-<section class="card" style="margin:24px 0"><h2 style="margin-top:0">D.R.O.L. · Katalogwachstum</h2><p class="muted">Meilenstein: 100 Modelle. Kein Prozentsatz des gesamten Drohnenwissens.</p><div id="growth-count">Katalog wird geladen …</div><div class="progress-track" role="progressbar" aria-label="Fortschritt zum 100-Modelle-Meilenstein" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="growth-bar"><div class="progress-fill" id="growth-fill"></div></div><p id="growth-status" class="muted"></p></section><h2>Neu im Forschungslabor</h2><div id="feed" class="feed" aria-live="polite"><p>Recherchedaten werden geladen.</p></div>
-<section class="card" id="datenquellen" style="margin:26px 0;border-left:4px solid var(--accent)"><h2 style="margin-top:0">Öffentliche Datenquellen & Prüfstatus</h2><p>Der Forschungsfeed basiert auf öffentlich abrufbaren GitHub-Prüfaufträgen. Er ist kein direkter Zugriff auf die private MariaDB. Die folgenden URLs können unabhängig von dieser Seite geprüft werden:</p><p><a href="https://api.github.com/repos/oliverdering/odpc-sitebot/issues?state=all&amp;per_page=100" target="_blank" rel="noopener noreferrer">Forschungsaufträge als GitHub-JSON öffnen</a> · <a href="https://drol.odpc.de/data/models-db.json" target="_blank" rel="noopener noreferrer">Exportierter Modellkatalog (JSON) prüfen</a> · <a href="https://drol.odpc.de/data/releases.json" target="_blank" rel="noopener noreferrer">Software-Releases (JSON) prüfen</a></p><p class="muted">Hinweis: Die beiden Exportdateien können fehlen oder vorübergehend nicht erreichbar sein. Ihre Verlinkung ist kein Nachweis für einen erfolgreichen Datenbankexport. Erst Inhalt, Zeitstempel und Evidenzfelder belegen den tatsächlichen Datenstand.</p><noscript><p>JavaScript ist deaktiviert. Die Datenquellen sind über die Links oben weiterhin erreichbar; die dynamische Liste wird nicht geladen.</p></noscript></section>
-<h2>Wie Wissen entsteht</h2><div class="metrics"><section class="card"><h3>1 · Entdecken</h3><p>Automatische Prüfung offizieller Open-Source-Releases.</p></section><section class="card"><h3>2 · Dokumentieren</h3><p>Neue Kandidaten erhalten eine Quellenadresse und einen nachvollziehbaren Prüfauftrag.</p></section><section class="card"><h3>3 · Verifizieren</h3><p>Technische Aussagen bleiben E0, bis die Primärquellen und konkrete Kompatibilität geprüft wurden.</p></section></div>
-<p class="muted">Transparenzhinweis: Die Live-Liste zeigt GitHub-Prüfaufträge. Sie ist kein Live-Zugriff auf die private MariaDB und enthält keine ungeprüften Aussagen als bestätigte Fakten.</p>
-</main><footer>D.R.O.L. · Drone Recon Operation Lab · <a href="https://odpc.de/">powered by ODPC</a></footer>
+<main><h1>Wissensmonitor</h1><p class="lead">Wie groß ist der Modellkatalog, und wie viele Software-Releases warten im Forschungsfeed auf Prüfung? Die Kennzahlen stammen aus zwei öffentlichen Exporten. Jeder Wert nennt seinen eigenen Datenstand.</p>
+<div class="metrics"><section class="card"><h2>Drohnenmodelle</h2><strong id="models" class="number">Nicht verfügbar</strong><p id="models-date">Katalogexport wird geprüft.</p><a href="/data/models-db.json">Katalogexport prüfen</a></section>
+<section class="card"><h2>Ungeprüfte Software-Releases</h2><strong id="releases" class="number">Nicht verfügbar</strong><p id="releases-date">Release-Export wird geprüft.</p><a href="/data/releases.json">Release-Export prüfen</a></section></div>
+<button type="button" id="refresh">Jetzt aktualisieren</button> <span id="state" role="status">Exporte werden geprüft.</span>
+<section class="card" id="datenquellen"><h2>Welche Kennzahlen fehlen?</h2><p>Für den gesamten Wissensbestand, Organisations- und Technologieprofile, Komponenten, SDKs, geprüfte Quellen und Einträge sowie sämtliche ungeprüften Kandidaten gilt derzeit <strong>Nicht verfügbar</strong>. Die Release-Zahl deckt nur den Softwarefeed ab.</p><p>Neue Datensätze in 24 Stunden oder sieben Tagen, letzte Datenbankänderung, letzter erfolgreicher Discovery-Lauf, nächster Lauf und Gesamtzustand der Pipeline: <strong>Nicht verfügbar</strong>. Ein Exportzeitpunkt belegt nur, wann die Datei erzeugt wurde.</p></section>
+<section><h2>Gemessene Entwicklung des Modellkatalogs</h2><figure class="card"><svg viewBox="0 0 300 80" role="img" aria-label="Katalogentwicklung von 39 auf 74 Modelle" style="width:100%;max-height:12rem;color:var(--ink)"><polyline points="4.0,39.1 22.2,39.1 40.5,39.1 58.8,39.1 77.0,39.1 95.2,39.1 113.5,39.1 131.8,39.1 150.0,39.1 168.2,39.1 186.5,39.1 204.8,39.1 223.0,39.1 241.2,39.1 259.5,39.1 277.8,39.1 296.0,6.0" fill="none" stroke="currentColor" stroke-width="2"/></svg><figcaption>Letzte Messung je erfasstem Tag, 2026-11-07 bis 2026-11-23. Die Linie verbindet Messpunkte. Änderungen zwischen zwei Messungen sind zeitlich nicht aufgelöst.</figcaption><details><summary>Messwerte lesen</summary><ul><li>2026-11-07 · 39 Modelle</li><li>2026-11-08 · 39 Modelle</li><li>2026-11-09 · 39 Modelle</li><li>2026-11-10 · 39 Modelle</li><li>2026-11-11 · 39 Modelle</li><li>2026-11-12 · 39 Modelle</li><li>2026-11-13 · 39 Modelle</li><li>2026-11-14 · 39 Modelle</li><li>2026-11-15 · 39 Modelle</li><li>2026-11-16 · 39 Modelle</li><li>2026-11-17 · 39 Modelle</li><li>2026-11-18 · 39 Modelle</li><li>2026-11-19 · 39 Modelle</li><li>2026-11-20 · 39 Modelle</li><li>2026-11-21 · 39 Modelle</li><li>2026-11-22 · 39 Modelle</li><li>2026-11-23 · 74 Modelle</li></ul></details></figure><a href="https://github.com/oliverdering/odpc-sitebot/blob/a309243c25187f0a3bda2041333b2e7ca85279c2/data/drol-growth-history.json">Messreihe im Repository</a></section><p><a href="wissen.html">Wissensportal</a> · <a href="compliance.html">Quellen und Nutzungsrechte</a></p></main><footer>D.R.O.L. · Drone Recon Operation Lab · <a href="https://odpc.de/">powered by ODPC</a></footer>
 <script>
-(function(){
-const api='https://api.github.com/repos/oliverdering/odpc-sitebot/issues?state=all&per_page=100';
-const feed=document.getElementById('feed'),state=document.getElementById('state');
-let busy=false;
-async function refreshReleases(){
-const count=document.getElementById('release-count'), status=document.getElementById('release-status');
-try{
-const response=await fetch('/data/releases.json?t='+Date.now(),{cache:'no-store'});
-if(!response.ok)throw new Error('HTTP '+response.status);
-const data=await response.json();
-if(!Array.isArray(data.releases)||!Number.isInteger(data.count)||data.count!==data.releases.length||!data.releases.every(x=>x.evidence_level==='E0'&&x.compatibility==='UNKNOWN'))throw new Error('Ungültiger Forschungsfeed');
-count.textContent=String(data.count);
-status.textContent='Öffentlicher Feed · E0, ungeprüft · kein Live-MariaDB-Zähler';
-}catch(error){count.textContent='–';status.textContent='Forschungsfeed nicht verfügbar';}
-}
-async function refreshGrowth(){
-const status=document.getElementById('growth-status');
-try{
-const response=await fetch('/data/models-db.json?t='+Date.now(),{cache:'no-store'});
-if(!response.ok)throw new Error('HTTP '+response.status);
-const data=await response.json();
-if(data.source!=='D.R.O.L. production MariaDB'||!Array.isArray(data.models)||!Number.isInteger(data.model_count)||data.model_count!==data.models.length)throw new Error('Ungültiger Export');
-const count=data.model_count, percent=Math.min(100,count);
-document.getElementById('growth-count').textContent=count+' Modelle · '+percent+' % des 100-Modelle-Meilensteins';
-document.getElementById('growth-fill').style.width=percent+'%';
-document.getElementById('growth-bar').setAttribute('aria-valuenow',String(percent));
-status.textContent='Export: '+(data.generated_utc?new Date(data.generated_utc).toLocaleString('de-DE'):'Zeit unbekannt')+' · Modellanzahl, keine verifizierten Fakten.';
-}catch(error){document.getElementById('growth-count').textContent='Katalogdaten nicht verfügbar';document.getElementById('growth-fill').style.width='0%';status.textContent='Kein verifizierbarer Datenbankexport.';}
-}
-function node(tag,text,cls){const el=document.createElement(tag);if(text!==undefined)el.textContent=text;if(cls)el.className=cls;return el}
-async function refresh(){
-if(busy)return;busy=true;state.textContent='Prüfe GitHub-Daten …';
-try{
-const r=await fetch(api,{headers:{Accept:'application/vnd.github+json'},cache:'no-store'});
-if(!r.ok)throw new Error('HTTP '+r.status);
-const data=await r.json();
-if(!Array.isArray(data))throw new Error('Ungültige Antwort');
-const issues=data.filter(x=>!x.pull_request&&x.title&&x.title.startsWith('[D.R.O.L. Review]')).sort((a,b)=>new Date(b.created_at)-new Date(a.created_at));
-document.getElementById('total').textContent=issues.length+(data.length===100?'+':'');
-document.getElementById('open').textContent=issues.filter(x=>x.state==='open').length;
-document.getElementById('updated').textContent=new Date().toLocaleTimeString('de-DE',{hour:'2-digit',minute:'2-digit'});
-feed.replaceChildren();
-for(const issue of issues.slice(0,30)){
-const article=node('article');const title=node('h3');const link=node('a',issue.title.replace('[D.R.O.L. Review] ',''));link.href=issue.html_url;link.target='_blank';link.rel='noopener noreferrer';title.append(link);article.append(title);
-const meta=node('div',undefined,'meta');meta.append(node('span',issue.state==='open'?'Prüfung offen':'Prüfung geschlossen'));meta.append(node('span','Erkannt: '+new Date(issue.created_at).toLocaleDateString('de-DE')));meta.append(node('span','E0 · automatisch entdeckt'));article.append(meta);feed.append(article);
-}
-if(!issues.length)feed.append(node('p','Noch keine öffentlich sichtbaren Forschungsaufträge.'));
-state.textContent='Live-Daten geladen · Aktualisierung alle 60 Sekunden';
-}catch(e){state.textContent='Live-Abruf derzeit nicht verfügbar. Bitte später erneut versuchen.';if(!feed.children.length)feed.append(node('p','GitHub-Daten konnten nicht geladen werden.'))}
-finally{busy=false}
-}
-document.getElementById('refresh').addEventListener('click',function(){refresh();refreshGrowth();refreshReleases()});
-refresh();refreshGrowth();refreshReleases();setInterval(function(){if(!document.hidden){refresh();refreshGrowth();refreshReleases()}},60000);
+(function () {
+  const button = document.getElementById('refresh');
+  const state = document.getElementById('state');
+  let timer;
+  let delay = 300000;
+  async function measure(id, path, count) {
+    const value = document.getElementById(id);
+    const date = document.getElementById(id + '-date');
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 15000);
+    try {
+      const response = await fetch(path, {cache: 'no-cache', signal: controller.signal});
+      if (!response.ok) throw Error();
+      const data = await response.json();
+      const timestamp = new Date(data.generated_utc);
+      const n = count(data);
+      if (!Number.isInteger(n) || n < 0 || !data.generated_utc || !Number.isFinite(timestamp.getTime())) throw Error();
+      value.textContent = String(n);
+      date.textContent = 'Exportstand: ' + timestamp.toLocaleString('de-DE', {timeZone:'Europe/Berlin'}) + ' (Berlin)';
+      return true;
+    } catch {
+      value.textContent = 'Nicht verfügbar';
+      date.textContent = 'Export fehlt oder konnte nicht bestätigt werden.';
+      return false;
+    } finally { clearTimeout(timeout); }
+  }
+  async function refresh() {
+    if (button.disabled) return;
+    clearTimeout(timer);
+    button.disabled = true;
+    state.textContent = 'Exporte werden geprüft.';
+    const results = await Promise.all([
+      measure('models','/data/models-db.json', d => d.schema_version === '1.1' && d.source === 'D.R.O.L. production MariaDB' && Array.isArray(d.models) && d.model_count === d.models.length ? d.model_count : null),
+      measure('releases','/data/releases.json', d => d.schema_version === 1 && Array.isArray(d.releases) && d.count === d.releases.length && d.releases.every(x => x && x.status === 'UNREVIEWED' && x.evidence_level === 'E0' && x.compatibility === 'UNKNOWN') ? d.count : null)
+    ]);
+    const ok = results.filter(Boolean).length;
+    state.textContent = ok + ' von 2 Exporten bestätigt.';
+    button.disabled = false;
+    delay = ok === 2 ? 300000 : Math.min(delay * 2, 3600000);
+    if (!document.hidden) timer = setTimeout(refresh, delay);
+  }
+  document.addEventListener('visibilitychange', () => { clearTimeout(timer); if (!document.hidden) timer = setTimeout(refresh, delay); });
+  button.addEventListener('click', refresh);
+  refresh();
 })();
 </script></body></html>
