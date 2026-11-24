@@ -85,6 +85,18 @@ def crawl(state, fetch):
         if seed not in seen and seed not in queued and seed not in quarantined:
             queue.appendleft({"url": seed, "depth": 0})
             queued.add(seed)
+    # Refresh records whose stored text fails the retrieval integrity check.
+    for url, doc in docs.items():
+        raw = doc.get("text")
+        if not isinstance(raw, str) or not allowed(url):
+            continue
+        normalized = re.sub(r"\s+", " ", raw).strip()
+        if hashlib.sha256(normalized.encode("utf-8")).hexdigest() != doc.get("sha256"):
+            if url not in quarantined:
+                seen.discard(url)
+                if url not in queued:
+                    queue.appendleft({"url": url, "depth": doc.get("depth", 0)})
+                    queued.add(url)
     attempts = 0
     failures = []
     attempted_this_batch = set()
@@ -102,7 +114,7 @@ def crawl(state, fetch):
                 raise ValueError("untrusted redirect")
             parser = Extractor()
             parser.feed(raw.decode("utf-8", errors="replace"))
-            content = re.sub(r"\s+", " ", html.unescape(" ".join(parser.parts))).strip()[:35000]
+            content = re.sub(r"\s+", " ", html.unescape(" ".join(parser.parts))).strip()[:35000].strip()
             if len(content) < 100:
                 raise ValueError("insufficient article text")
             digest = hashlib.sha256(content.encode("utf-8")).hexdigest()
