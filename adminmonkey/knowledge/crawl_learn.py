@@ -37,6 +37,14 @@ MAX_PAGES = 36
 # Prevents the original 1,500-document cap from silently stopping queued ingestion.
 MAX_DOCS = 100000
 MAX_DEPTH = 3
+MAX_RETRIES = 3
+SEEDS += [
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/overview",
+    "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview",
+    "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview",
+    "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview",
+    "https://learn.microsoft.com/en-us/windows-server/administration/overview",
+]
 
 class Extractor(HTMLParser):
     def __init__(self):
@@ -70,10 +78,13 @@ def crawl(state, fetch):
     docs = dict(state.get("documents", {}))
     queue = deque(state.get("queue") or [{"url": url, "depth": 0} for url in SEEDS])
     seen = set(state.get("seen", []))
+    retry_counts = dict(state.get("retry_counts", {}))
+    quarantined = set(state.get("quarantined", []))
     queued = {item["url"] for item in queue}
     for seed in reversed(SEEDS):
-        if seed not in seen and seed not in queued:
+        if seed not in seen and seed not in queued and seed not in quarantined:
             queue.appendleft({"url": seed, "depth": 0})
+            queued.add(seed)
     attempts = 0
     failures = []
     attempted_this_batch = set()
@@ -81,7 +92,7 @@ def crawl(state, fetch):
     while queue and attempts < MAX_PAGES and len(docs) < MAX_DOCS:
         item = queue.popleft()
         url, depth = item["url"], item["depth"]
-        if url in seen or not allowed(url) or url in attempted_this_batch:
+        if url in seen or url in quarantined or not allowed(url) or url in attempted_this_batch:
             continue
         attempts += 1
         attempted_this_batch.add(url)
@@ -96,21 +107,27 @@ def crawl(state, fetch):
                 raise ValueError("insufficient article text")
             digest = hashlib.sha256(content.encode("utf-8")).hexdigest()
             seen.add(url)
+            retry_counts.pop(url, None)
             docs[url] = {"url": url, "sha256": digest, "text": content,
                          "depth": depth, "captured_at": datetime.now(timezone.utc).isoformat(),
                          "review_status": "unreviewed"}
             if depth < MAX_DEPTH:
                 for href in parser.links:
                     link = urldefrag(urljoin(final_url, href))[0].split("?")[0]
-                    if allowed(link) and link not in seen and len(queue) < 2500:
+                    if allowed(link) and link not in seen and link not in queued and link not in quarantined and len(queue) < 2500:
                         queue.append({"url": link, "depth": depth + 1})
+                        queued.add(link)
         except (HTTPError, URLError, TimeoutError, OSError, ValueError) as exc:
             failures.append({"url": url, "error": type(exc).__name__})
-            retry_next_batch.append({"url": url, "depth": depth})
+            retry_counts[url] = retry_counts.get(url, 0) + 1
+            if retry_counts[url] >= MAX_RETRIES:
+                quarantined.add(url)
+            else:
+                retry_next_batch.append({"url": url, "depth": depth})
     queue.extend(retry_next_batch)
     return {"schema_version": 1, "documents": docs, "queue": list(queue),
-            "seen": sorted(seen), "last_batch": {"attempted": attempts,
-            "documents_total": len(docs), "queued": len(queue), "failures": failures}}
+            "seen": sorted(seen), "retry_counts": retry_counts, "quarantined": sorted(quarantined), "last_batch": {"attempted": attempts,
+            "documents_total": len(docs), "new_documents": len(docs) - len(state.get("documents", {})), "quarantined": len(quarantined), "queued": len(queue), "failures": failures}}
 
 def fetch(url):
     with urlopen(Request(url, headers={"User-Agent": "ODPC-AdminMonkey-Academy/1.0"}), timeout=12) as r:
