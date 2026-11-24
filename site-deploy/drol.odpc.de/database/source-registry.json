@@ -8,7 +8,13 @@
       "url": "https://www.dji.com/",
       "scope": "camera drones",
       "evidence": "E0",
-      "status": "monitor_only"
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
     },
     {
       "name": "DJI Developer",
@@ -16,7 +22,13 @@
       "url": "https://developer.dji.com/",
       "scope": "mobile SDK and developer documentation",
       "evidence": "E0",
-      "status": "monitor_only"
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
     },
     {
       "name": "Parrot",
@@ -24,7 +36,13 @@
       "url": "https://www.parrot.com/",
       "scope": "professional UAV",
       "evidence": "E0",
-      "status": "monitor_only"
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
     },
     {
       "name": "Parrot Developer",
@@ -32,7 +50,13 @@
       "url": "https://developer.parrot.com/",
       "scope": "open development interfaces",
       "evidence": "E0",
-      "status": "monitor_only"
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
     },
     {
       "name": "Autel Robotics",
@@ -40,7 +64,13 @@
       "url": "https://www.autelrobotics.com/",
       "scope": "camera UAV",
       "evidence": "E0",
-      "status": "monitor_only"
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
     },
     {
       "name": "Skydio",
@@ -48,7 +78,13 @@
       "url": "https://www.skydio.com/",
       "scope": "autonomous inspection UAV",
       "evidence": "E0",
-      "status": "monitor_only"
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
     },
     {
       "name": "Holybro",
@@ -56,7 +92,13 @@
       "url": "https://holybro.com/",
       "scope": "flight controllers and frames",
       "evidence": "E0",
-      "status": "monitor_only"
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
     },
     {
       "name": "CubePilot",
@@ -64,7 +106,13 @@
       "url": "https://www.cubepilot.org/",
       "scope": "autopilot hardware",
       "evidence": "E0",
-      "status": "monitor_only"
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
     },
     {
       "name": "ArduPilot",
@@ -72,7 +120,13 @@
       "url": "https://ardupilot.org/",
       "scope": "open flight stack",
       "evidence": "E0",
-      "status": "monitor_only"
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
     },
     {
       "name": "PX4",
@@ -80,7 +134,13 @@
       "url": "https://docs.px4.io/",
       "scope": "open flight stack",
       "evidence": "E0",
-      "status": "monitor_only"
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
     },
     {
       "name": "MAVLink",
@@ -88,7 +148,13 @@
       "url": "https://mavlink.io/",
       "scope": "UAV communications",
       "evidence": "E0",
-      "status": "monitor_only"
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
     },
     {
       "name": "MAVSDK",
@@ -96,7 +162,13 @@
       "url": "https://mavsdk.mavlink.io/",
       "scope": "application programming",
       "evidence": "E0",
-      "status": "monitor_only"
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
     },
     {
       "name": "QGroundControl",
@@ -104,7 +176,13 @@
       "url": "https://qgroundcontrol.com/",
       "scope": "mission planning",
       "evidence": "E0",
-      "status": "monitor_only"
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
     },
     {
       "name": "ROS 2",
@@ -112,7 +190,13 @@
       "url": "https://docs.ros.org/",
       "scope": "robotics middleware",
       "evidence": "E0",
-      "status": "monitor_only"
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
     },
     {
       "name": "OpenCV",
@@ -120,7 +204,13 @@
       "url": "https://docs.opencv.org/",
       "scope": "image processing",
       "evidence": "E0",
-      "status": "monitor_only"
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
     },
     {
       "name": "OpenDroneMap",
@@ -128,7 +218,13 @@
       "url": "https://www.opendronemap.org/",
       "scope": "mapping and reconstruction",
       "evidence": "E0",
-      "status": "monitor_only"
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
     },
     {
       "name": "COLMAP",
@@ -136,7 +232,13 @@
       "url": "https://colmap.github.io/",
       "scope": "structure from motion",
       "evidence": "E0",
-      "status": "monitor_only"
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
     },
     {
       "name": "Open3D",
@@ -144,7 +246,13 @@
       "url": "https://www.open3d.org/",
       "scope": "3D point cloud processing",
       "evidence": "E0",
-      "status": "monitor_only"
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
     },
     {
       "name": "OpenStreetMap",
@@ -152,7 +260,13 @@
       "url": "https://www.openstreetmap.org/",
       "scope": "geospatial data",
       "evidence": "E0",
-      "status": "monitor_only"
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
     },
     {
       "name": "EASA",
@@ -160,7 +274,13 @@
       "url": "https://www.easa.europa.eu/",
       "scope": "EU aviation rules",
       "evidence": "E0",
-      "status": "monitor_only"
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
     },
     {
       "name": "LBA",
@@ -168,7 +288,13 @@
       "url": "https://www.lba.de/",
       "scope": "German aviation authority",
       "evidence": "E0",
-      "status": "monitor_only"
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
     },
     {
       "name": "Dronecode",
@@ -176,7 +302,13 @@
       "url": "https://dronecode.org/",
       "scope": "open UAV ecosystem",
       "evidence": "E0",
-      "status": "monitor_only"
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
     },
     {
       "name": "Dronecode Discuss",
@@ -186,7 +318,11 @@
       "evidence": "E0",
       "status": "monitor_only",
       "collection_policy": "metadata_and_original_analysis_only",
-      "verification": "manual_or_primary_source_required"
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
     },
     {
       "name": "ArduPilot Discourse",
@@ -196,7 +332,11 @@
       "evidence": "E0",
       "status": "monitor_only",
       "collection_policy": "metadata_and_original_analysis_only",
-      "verification": "manual_or_primary_source_required"
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
     },
     {
       "name": "ROS Discourse",
@@ -206,7 +346,11 @@
       "evidence": "E0",
       "status": "monitor_only",
       "collection_policy": "metadata_and_original_analysis_only",
-      "verification": "manual_or_primary_source_required"
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
     },
     {
       "name": "OpenDroneMap Community",
@@ -216,7 +360,11 @@
       "evidence": "E0",
       "status": "monitor_only",
       "collection_policy": "metadata_and_original_analysis_only",
-      "verification": "manual_or_primary_source_required"
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
     },
     {
       "name": "DJI Developer Forum",
@@ -226,7 +374,11 @@
       "evidence": "E0",
       "status": "monitor_only",
       "collection_policy": "metadata_and_original_analysis_only",
-      "verification": "manual_or_primary_source_required"
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
     },
     {
       "name": "DroneDeploy",
@@ -236,7 +388,11 @@
       "evidence": "E0",
       "status": "monitor_only",
       "collection_policy": "metadata_and_original_analysis_only",
-      "verification": "manual_or_primary_source_required"
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
     },
     {
       "name": "Pix4D",
@@ -246,7 +402,11 @@
       "evidence": "E0",
       "status": "monitor_only",
       "collection_policy": "metadata_and_original_analysis_only",
-      "verification": "manual_or_primary_source_required"
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
     },
     {
       "name": "Agisoft",
@@ -256,7 +416,11 @@
       "evidence": "E0",
       "status": "monitor_only",
       "collection_policy": "metadata_and_original_analysis_only",
-      "verification": "manual_or_primary_source_required"
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
     },
     {
       "name": "UgCS",
@@ -266,7 +430,11 @@
       "evidence": "E0",
       "status": "monitor_only",
       "collection_policy": "metadata_and_original_analysis_only",
-      "verification": "manual_or_primary_source_required"
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
     },
     {
       "name": "Flyability",
@@ -276,7 +444,11 @@
       "evidence": "E0",
       "status": "monitor_only",
       "collection_policy": "metadata_and_original_analysis_only",
-      "verification": "manual_or_primary_source_required"
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
     },
     {
       "name": "Drone Industry Insights",
@@ -286,7 +458,11 @@
       "evidence": "E0",
       "status": "monitor_only",
       "collection_policy": "metadata_and_original_analysis_only",
-      "verification": "manual_or_primary_source_required"
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
     },
     {
       "name": "sUAS News",
@@ -296,7 +472,11 @@
       "evidence": "E0",
       "status": "monitor_only",
       "collection_policy": "metadata_and_original_analysis_only",
-      "verification": "manual_or_primary_source_required"
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
     },
     {
       "name": "DroneXL",
@@ -306,7 +486,11 @@
       "evidence": "E0",
       "status": "monitor_only",
       "collection_policy": "metadata_and_original_analysis_only",
-      "verification": "manual_or_primary_source_required"
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
     },
     {
       "name": "GitHub Dronecode",
@@ -316,7 +500,11 @@
       "evidence": "E0",
       "status": "monitor_only",
       "collection_policy": "metadata_and_original_analysis_only",
-      "verification": "manual_or_primary_source_required"
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
     },
     {
       "name": "GitHub ArduPilot",
@@ -326,7 +514,11 @@
       "evidence": "E0",
       "status": "monitor_only",
       "collection_policy": "metadata_and_original_analysis_only",
-      "verification": "manual_or_primary_source_required"
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
     },
     {
       "name": "GitHub PX4",
@@ -336,7 +528,11 @@
       "evidence": "E0",
       "status": "monitor_only",
       "collection_policy": "metadata_and_original_analysis_only",
-      "verification": "manual_or_primary_source_required"
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
     },
     {
       "name": "DJI Aircraft Specifications Index",
@@ -344,7 +540,13 @@
       "url": "https://support.dji.com/help/content?customId=en-us03400006554&lang=en&re=US&spaceId=34",
       "scope": "official aircraft specifications index",
       "evidence": "E0",
-      "status": "monitor_only"
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
     },
     {
       "name": "DJI Mavic 4 Pro Specifications",
@@ -352,7 +554,13 @@
       "url": "https://www.dji.com/mavic-4-pro/specs",
       "scope": "official aircraft and camera specifications",
       "evidence": "E0",
-      "status": "monitor_only"
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
     },
     {
       "name": "DJI Air 3S Specifications",
@@ -360,7 +568,13 @@
       "url": "https://www.dji.com/air-3s/specs",
       "scope": "official camera drone specifications",
       "evidence": "E0",
-      "status": "monitor_only"
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
     },
     {
       "name": "DJI Mavic 3 Pro Specifications",
@@ -368,7 +582,13 @@
       "url": "https://www.dji.com/mavic-3-pro/specs",
       "scope": "official camera drone specifications",
       "evidence": "E0",
-      "status": "monitor_only"
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
     },
     {
       "name": "Parrot ANAFI UKR Release Notes",
@@ -376,7 +596,13 @@
       "url": "https://www.parrot.com/en/release-notes-anafi-ukr",
       "scope": "official firmware and application release notes",
       "evidence": "E0",
-      "status": "monitor_only"
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
     },
     {
       "name": "Parrot ANAFI UKR User Guide",
@@ -384,7 +610,13 @@
       "url": "https://www.parrot.com/assets/s3fs-public/document/ANAFI%20UKR%20GOV%20user%20guide.pdf",
       "scope": "official product documentation",
       "evidence": "E0",
-      "status": "monitor_only"
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
     },
     {
       "name": "RATEFPV",
@@ -392,7 +624,13 @@
       "url": "https://ratefpv.com/collections/fpv-drones",
       "scope": "FPV drones and components",
       "evidence": "E0",
-      "status": "monitor_only"
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
     },
     {
       "name": "BETAFPV",
@@ -400,7 +638,13 @@
       "url": "https://betafpv.com/collections/all-drone",
       "scope": "FPV whoops and kits",
       "evidence": "E0",
-      "status": "monitor_only"
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
     },
     {
       "name": "FPV24",
@@ -408,7 +652,13 @@
       "url": "https://www.fpv24.com/de/race-copter-rtf",
       "scope": "multi-brand FPV drones and equipment",
       "evidence": "E0",
-      "status": "monitor_only"
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
     },
     {
       "name": "DIY Drones",
@@ -418,7 +668,11 @@
       "evidence": "E0",
       "status": "monitor_only",
       "collection_policy": "metadata_and_original_analysis_only",
-      "verification": "manual_or_primary_source_required"
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
     },
     {
       "name": "RotorBuilds",
@@ -428,7 +682,11 @@
       "evidence": "E0",
       "status": "monitor_only",
       "collection_policy": "metadata_and_original_analysis_only",
-      "verification": "manual_or_primary_source_required"
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
     },
     {
       "name": "RC Groups",
@@ -438,7 +696,11 @@
       "evidence": "E0",
       "status": "monitor_only",
       "collection_policy": "metadata_and_original_analysis_only",
-      "verification": "manual_or_primary_source_required"
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
     },
     {
       "name": "Drohnen Forum",
@@ -448,7 +710,11 @@
       "evidence": "E0",
       "status": "monitor_only",
       "collection_policy": "metadata_and_original_analysis_only",
-      "verification": "manual_or_primary_source_required"
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
     },
     {
       "name": "Drones Stack Exchange",
@@ -458,7 +724,11 @@
       "evidence": "E0",
       "status": "monitor_only",
       "collection_policy": "metadata_and_original_analysis_only",
-      "verification": "manual_or_primary_source_required"
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
     },
     {
       "name": "Bitcraze",
@@ -468,7 +738,11 @@
       "evidence": "E0",
       "status": "monitor_only",
       "collection_policy": "metadata_and_original_analysis_only",
-      "verification": "manual_or_primary_source_required"
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
     },
     {
       "name": "OpenAlex",
@@ -478,7 +752,11 @@
       "evidence": "E0",
       "status": "monitor_only",
       "collection_policy": "metadata_and_original_analysis_only",
-      "verification": "manual_or_primary_source_required"
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
     },
     {
       "name": "Zenodo",
@@ -488,7 +766,11 @@
       "evidence": "E0",
       "status": "monitor_only",
       "collection_policy": "metadata_and_original_analysis_only",
-      "verification": "manual_or_primary_source_required"
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
     },
     {
       "name": "NASA NTRS",
@@ -498,7 +780,11 @@
       "evidence": "E0",
       "status": "monitor_only",
       "collection_policy": "metadata_and_original_analysis_only",
-      "verification": "manual_or_primary_source_required"
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
     },
     {
       "name": "Hackaday",
@@ -508,7 +794,11 @@
       "evidence": "E0",
       "status": "monitor_only",
       "collection_policy": "metadata_and_original_analysis_only",
-      "verification": "manual_or_primary_source_required"
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
     },
     {
       "name": "Printables",
@@ -518,7 +808,11 @@
       "evidence": "E0",
       "status": "monitor_only",
       "collection_policy": "metadata_and_original_analysis_only",
-      "verification": "manual_or_primary_source_required"
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
     },
     {
       "name": "MakerWorld",
@@ -528,7 +822,11 @@
       "evidence": "E0",
       "status": "monitor_only",
       "collection_policy": "metadata_and_original_analysis_only",
-      "verification": "manual_or_primary_source_required"
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
     },
     {
       "name": "EASA civil drones",
@@ -538,7 +836,137 @@
       "evidence": "E0",
       "status": "monitor_only",
       "collection_policy": "metadata_and_original_analysis_only",
-      "verification": "manual_or_primary_source_required"
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
+    },
+    {
+      "name": "dipul",
+      "category": "regulation",
+      "url": "https://www.dipul.de/",
+      "scope": "civil aviation rules",
+      "evidence": "E0",
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
+    },
+    {
+      "name": "Betaflight",
+      "category": "autopilot",
+      "url": "https://betaflight.com/docs",
+      "scope": "civil model aviation documentation",
+      "evidence": "E0",
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
+    },
+    {
+      "name": "ExpressLRS",
+      "category": "protocol",
+      "url": "https://www.expresslrs.org/",
+      "scope": "civil radio documentation",
+      "evidence": "E0",
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
+    },
+    {
+      "name": "Livox SDK",
+      "category": "hardware",
+      "url": "https://github.com/Livox-SDK",
+      "scope": "civil surveying sensor documentation",
+      "evidence": "E0",
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
+    },
+    {
+      "name": "RTAB-Map",
+      "category": "robotics",
+      "url": "https://introlab.github.io/rtabmap/",
+      "scope": "civil mapping research",
+      "evidence": "E0",
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
+    },
+    {
+      "name": "CloudCompare",
+      "category": "point_cloud",
+      "url": "https://www.cloudcompare.org/",
+      "scope": "point cloud analysis",
+      "evidence": "E0",
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
+    },
+    {
+      "name": "PDAL",
+      "category": "point_cloud",
+      "url": "https://pdal.io/",
+      "scope": "point cloud formats",
+      "evidence": "E0",
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
+    },
+    {
+      "name": "JARUS",
+      "category": "regulation",
+      "url": "https://jarus-rpas.org/",
+      "scope": "civil aviation risk guidance",
+      "evidence": "E0",
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
+    },
+    {
+      "name": "Bundesnetzagentur",
+      "category": "regulation",
+      "url": "https://www.bundesnetzagentur.de/",
+      "scope": "radio regulations",
+      "evidence": "E0",
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required",
+      "license_type": "unverified",
+      "feed_type": "unverified",
+      "civil_relevance": "review_required",
+      "last_reviewed": null
     }
   ]
 }
