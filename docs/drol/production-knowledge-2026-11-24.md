@@ -27,3 +27,9 @@ Die verschlüsselte Sicherung liegt außerhalb des D.R.O.L.-Webverzeichnisses au
 ## Noch offene Quellen
 
 Historische GitHub-Datenbankartefakte wurden nicht in das öffentliche Repository übernommen. Vor der Entfernung vorhandener Altartefakte ist ihre Aufbewahrung gesondert zu klären. Ungeklärte Varianten sowie widersprüchliche Firmwaredaten bleiben von der automatischen Bestätigung ausgeschlossen. E2 und E3 erfordern Testprotokolle.
+
+## Wiedergefundene Bestandsmessungen
+
+25 ältere SQL-Bestandsmessungen aus erfolgreichen Inventur-, Seed- und Migrationsjobs wurden mit UTC-Messzeit und GitHub-Lauf-ID in data/drol-verified-inventory-history.json gesichert. Vom 7. bis 23. November enthalten alle 25 ausgewerteten Messungen jeweils null Modell-Fakten und null Firmwarestände. Der Hardwarebestand stieg von einem Modell bei der ersten Messung auf 39 sowie später auf 74. Diese Messungen bilden die historische Vergleichsbasis des Monitors.
+
+Der Quellenabgleich in f333c26 und der korrigierte Import in 89e77b2 ergänzten 31 Modell-Fakten, zwei von DJI dokumentierte Controllerbeziehungen, drei zugehörige Quellenverknüpfungen, drei Modellcodes und zwei Parrot-API-Nachweise. Die Quellenangaben kennzeichnen Modellvarianten und die Reichweite der Aussagen. Der erste Versuch des Beziehungsimports brach im Dry-Run ab. Die Live-Inventur nach der Korrektur belegte 60 Fakten, zwei Wissensbeziehungen, drei Aliasse, zwei Fähigkeitsnachweise und einen Veröffentlichungsstand. Die sonstigen Importbestände blieben erhalten.

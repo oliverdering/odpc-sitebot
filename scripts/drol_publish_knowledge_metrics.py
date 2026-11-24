@@ -24,7 +24,8 @@ def main():
                     prior = json.load(previous)
             except FileNotFoundError:
                 prior = None
-            data = assemble(data, prior, observed)
+            historical = json.loads(Path("data/drol-verified-inventory-history.json").read_text())
+            data = assemble(data, prior, observed, historical)
             raw = json.dumps(data, indent=2).encode()
             try:
                 with sf.open(tmp,"wx") as f:

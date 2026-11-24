@@ -52,10 +52,11 @@ try {
             $levels[$level] += (int)$count;
         }
     }
+    $covered = (int)$pdo->query('SELECT COUNT(DISTINCT hardware_id) FROM drol_model_facts')->fetchColumn();
     $dated = (int)$pdo->query("SELECT COUNT(*) FROM drol_sources WHERE checked_on IS NOT NULL")->fetchColumn();
     $linked = (int)$pdo->query("SELECT COUNT(DISTINCT source_id) FROM drol_source_snapshots")->fetchColumn();
     $pdo->exec("COMMIT");
-    echo json_encode(['measured_at'=>$measured,'evidence'=>$levels,'sources_with_check_date'=>$dated,'sources_with_snapshot'=>$linked,'status'=>'connected','table_count'=>count($inventory),
+    echo json_encode(['measured_at'=>$measured,'evidence'=>$levels,'models_with_facts'=>$covered,'sources_with_check_date'=>$dated,'sources_with_snapshot'=>$linked,'status'=>'connected','table_count'=>count($inventory),
         'inventory'=>$inventory, 'server_version'=>(string)$pdo->query('SELECT VERSION()')->fetchColumn()], JSON_THROW_ON_ERROR);
 } catch (Throwable $e) {
     http_response_code(503);
@@ -142,6 +143,7 @@ def main():
                 if table in counts:
                     public[metric] = counts[table]
             public.update(table_count=result["table_count"], evidence=result["evidence"],
+                          models_with_facts=result["models_with_facts"],
                           sources_with_check_date=result["sources_with_check_date"],
                           sources_with_snapshot=result["sources_with_snapshot"])
             Path("drol-knowledge-metrics.json").write_text(json.dumps(public, indent=2)+"\n", encoding="utf-8")

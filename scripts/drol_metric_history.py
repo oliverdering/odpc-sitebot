@@ -9,8 +9,8 @@ CORE = {"candidate_facts_total", "metadata_inbox", "model_facts_total", "source_
 COUNTS = CORE | set("""hardware_models manufacturers hardware_source_links firmware_releases
 source_snapshots attribute_definitions knowledge_entities knowledge_relations knowledge_sources
 capability_evidence aliases release_batches change_log source_watches table_count
-sources_with_check_date sources_with_snapshot""".split())
-TREND = {"model_facts_total", "firmware_releases", "knowledge_entities", "knowledge_relations"}
+models_with_facts sources_with_check_date sources_with_snapshot""".split())
+TREND = {"hardware_models", "model_facts_total", "firmware_releases", "knowledge_entities", "knowledge_relations"}
 STEPS = {
     "D.R.O.L. / Daily source monitoring": "Discover and ingest pending technical documentation references",
     "D.R.O.L. / Autonomous knowledge discovery": "Import newly discovered facts into MariaDB as pending E0 knowledge",
@@ -57,7 +57,7 @@ def import_observation():
     return {}
 
 
-def assemble(data, old, observation):
+def assemble(data, old, observation, historical=()):
     current = dict(data)
     levels = current.pop("evidence")
     if set(levels) != {"E0", "E1", "E2", "E3"}:
@@ -69,17 +69,19 @@ def assemble(data, old, observation):
         raise ValueError("Missing aggregates")
     now = instant(data["measured_at"])
     days = {}
+    if old and now < instant(old["measured_at"]):
+        raise ValueError("Older measurement cannot replace a newer snapshot")
+    samples = list(historical)
     if old:
-        if now < instant(old["measured_at"]):
-            raise ValueError("Older measurement cannot replace a newer snapshot")
-        for sample in [*old.get("history", []), measurement(old, TREND)]:
-            stamp = instant(sample["measured_at"])
-            selected = measurement(sample, TREND)
-            counts({k: v for k, v in selected.items() if k != "measured_at"}, TREND)
-            if now - timedelta(days=92) <= stamp <= now:
-                day = stamp.date()
-                if day not in days or instant(days[day]["measured_at"]) < stamp:
-                    days[day] = selected
+        samples.extend([*old.get("history", []), measurement(old, TREND)])
+    for sample in samples:
+        stamp = instant(sample["measured_at"])
+        selected = measurement(sample, TREND)
+        counts({k: v for k, v in selected.items() if k != "measured_at"}, TREND)
+        if now - timedelta(days=92) <= stamp <= now:
+            day = stamp.date()
+            if day not in days or instant(days[day]["measured_at"]) < stamp:
+                days[day] = selected
     days[now.date()] = measurement(data, TREND)
     history = [days[d] for d in sorted(days)]
     imports = {}
