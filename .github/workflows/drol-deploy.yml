@@ -79,3 +79,7 @@ jobs:
                           raise RuntimeError("Public release verification failed: "+url) from exc
                       time.sleep(10)
           PY
+      - name: Verify the monitor from both mobile menus on the live site
+        run: |
+          python3 -m pip install 'playwright>=1.55,<2'
+          python3 scripts/test_drol_mobile_monitor.py

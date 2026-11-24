@@ -1,0 +1,77 @@
+[
+  {
+    "kind": "relation",
+    "subject": "dji-mini-4-pro",
+    "object": "dji-rc-n2",
+    "url": "https://www.dji.com/mini-4-pro/faq",
+    "locator": "Remote Controller / supported remote controllers",
+    "checked_on": "2026-11-24",
+    "evidence": "E1"
+  },
+  {
+    "kind": "relation",
+    "subject": "dji-mini-4-pro",
+    "object": "dji-rc-2",
+    "url": "https://www.dji.com/mini-4-pro/faq",
+    "locator": "Remote Controller / supported remote controllers",
+    "checked_on": "2026-11-24",
+    "evidence": "E1"
+  },
+  {
+    "kind": "alias",
+    "manufacturer": "DJI",
+    "subject": "Air 3",
+    "code": "EB3WBC",
+    "title": "DJI / Modellcodes und Handelsnamen",
+    "url": "https://enterprise-insights.dji.com/hubfs/German%20Webinar%20ppt/Drohnenverordnungen%202024%20Vorschriften%2C%20Genehmigungen%20und%20Vorgaben%281%29.pdf?hsLang=de",
+    "locator": "Model / Commercial Name",
+    "checked_on": "2026-11-24",
+    "evidence": "E1"
+  },
+  {
+    "kind": "alias",
+    "manufacturer": "DJI",
+    "subject": "Mini 2 SE",
+    "code": "MT2SD",
+    "title": "DJI / Modellcodes und Handelsnamen",
+    "url": "https://enterprise-insights.dji.com/hubfs/German%20Webinar%20ppt/Drohnenverordnungen%202024%20Vorschriften%2C%20Genehmigungen%20und%20Vorgaben%281%29.pdf?hsLang=de",
+    "locator": "Model / Commercial Name",
+    "checked_on": "2026-11-24",
+    "evidence": "E1"
+  },
+  {
+    "kind": "alias",
+    "manufacturer": "DJI",
+    "subject": "Mini 2 SE",
+    "code": "MT2SDCE",
+    "title": "DJI / Modellcodes und Handelsnamen",
+    "url": "https://enterprise-insights.dji.com/hubfs/German%20Webinar%20ppt/Drohnenverordnungen%202024%20Vorschriften%2C%20Genehmigungen%20und%20Vorgaben%281%29.pdf?hsLang=de",
+    "locator": "Model / Commercial Name",
+    "checked_on": "2026-11-24",
+    "evidence": "E1"
+  },
+  {
+    "kind": "capability",
+    "manufacturer": "Parrot",
+    "subject": "ANAFI",
+    "title": "Parrot Developers / Drone REST API overview",
+    "url": "https://developer.parrot.com/docs/webserver-api/overview.html",
+    "locator": "Supported modules by drone type / ANAFI",
+    "function": "Media module",
+    "notes": "Parrot documents the media endpoints for this aircraft. Access via the aircraft Wi-Fi connection.",
+    "checked_on": "2026-11-24",
+    "evidence": "E1"
+  },
+  {
+    "kind": "capability",
+    "manufacturer": "Parrot",
+    "subject": "ANAFI Ai",
+    "title": "Parrot Developers / Drone REST API overview",
+    "url": "https://developer.parrot.com/docs/webserver-api/overview.html",
+    "locator": "Supported modules by drone type / ANAFI Ai",
+    "function": "Media module",
+    "notes": "Parrot documents the media endpoints for this aircraft. Direct Wi-Fi access requires enabling Direct connection in FreeFlight 7.",
+    "checked_on": "2026-11-24",
+    "evidence": "E1"
+  }
+]

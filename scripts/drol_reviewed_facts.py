@@ -6,7 +6,8 @@ import re
 from urllib.parse import urlsplit
 
 DATABASE = Path(__file__).resolve().parents[1] / "site-deploy/drol.odpc.de/database"
-PRIMARY_HOSTS = {"DJI": {"www.dji.com", "enterprise.dji.com"}}
+PRIMARY_HOSTS = {"DJI": {"www.dji.com", "enterprise.dji.com"}, "BETAFPV": {"betafpv.com"},
+                 "Holybro": {"holybro.com"}, "Parrot": {"www.parrot.com"}}
 LIMITS = {"fact_key": 100, "value_text": 500, "source_locator": 500,
           "source_url": 1000, "checked_by": 150, "notes": 2000}
 
@@ -37,7 +38,8 @@ def load_facts(database=DATABASE):
             url = urlsplit(row["source_url"])
             if (row["source_url"] not in model["sources"] or url.scheme != "https"
                     or url.netloc not in PRIMARY_HOSTS.get(model["manufacturer"], set())
-                    or not url.path.rstrip("/").endswith("/specs") or url.query or url.fragment):
+                    or not (url.path.rstrip("/").endswith(("/specs", "/technical-specifications"))
+                            or re.fullmatch(r"/products/[a-z0-9-]+", url.path)) or url.query or url.fragment):
                 raise ValueError(f"Unreviewed source for {model['id']}")
             checked = date.fromisoformat(row["checked_on"])
             if row["evidence_level"] != "E1" or checked > date.today():

@@ -15,7 +15,9 @@ on:
       - 'scripts/drol_ionos_candidate_ingest.py'
 permissions:
   contents: read
-  issues: read
+concurrency:
+  group: drol-release-discovery
+  cancel-in-progress: false
 jobs:
   discover:
     runs-on: ubuntu-latest

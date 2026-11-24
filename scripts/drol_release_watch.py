@@ -81,6 +81,24 @@ def main():
             out.append(item)
         except (urllib.error.URLError,ValueError,KeyError,TimeoutError) as exc:
             print("WARN: upstream unavailable",repo,type(exc).__name__)
+    # Rotate through official civilian mapping projects and bounded release history.
+    projects = [('GDAL','OSGeo/gdal','library'), ('PDAL','PDAL/PDAL','library'),
+                ('CloudCompare','CloudCompare/CloudCompare','application'),
+                ('OpenMVG','openMVG/openMVG','library'), ('Meshroom','alicevision/Meshroom','application')]
+    slot = int(datetime.now(timezone.utc).timestamp() // (3 * 3600))
+    product, repo, software_class = projects[slot % len(projects)]
+    page = 1 + (slot // len(projects)) % 4
+    try:
+        releases = request(f"{API}/repos/{repo}/releases?per_page=4&page={page}")
+        for release in releases:
+            tag, url = release.get('tag_name'), release.get('html_url')
+            if release.get('draft') or release.get('prerelease') or not tag or url != f"https://github.com/{repo}/releases/tag/{tag}":
+                continue
+            out.append(dict(product=product,repository=repo,tag=tag,url=url,software_class=software_class,
+                release_notes=summarize_release_notes(None),published_at=release.get('published_at'),
+                status='UNREVIEWED',evidence_level='E0',model_compatibility='UNKNOWN'))
+    except (urllib.error.URLError, ValueError, TimeoutError) as exc:
+        print("WARN: rotating source unavailable", repo, type(exc).__name__)
     report={"checked_utc":datetime.now(timezone.utc).isoformat(),
             "candidates":out,"policy":"All releases are E0 until reviewed; no automatic compatibility assertions."}
     Path("drol-release-candidates.json").write_text(json.dumps(report,indent=2,ensure_ascii=False)+"\n",encoding="utf-8")

@@ -15,11 +15,11 @@ $facts = json_decode(stream_get_contents(STDIN), true, 32, JSON_THROW_ON_ERROR);
 function check(bool $ok, string $test): void {
     if (!$ok) throw new RuntimeException($test);
 }
-$pdo->exec("INSERT INTO drol_manufacturers(name) VALUES ('DJI')");
-$add = $pdo->prepare("INSERT INTO drol_hardware(manufacturer_id,model,category) VALUES (?,?,'camera_drone')");
-$maker = (int)$pdo->lastInsertId();
-foreach (array_unique(array_column($facts,'name')) as $name) {
-    $add->execute([$maker,$name]);
+$maker = $pdo->prepare("INSERT INTO drol_manufacturers(name) VALUES (?) ON DUPLICATE KEY UPDATE id=LAST_INSERT_ID(id)");
+$add = $pdo->prepare("INSERT INTO drol_hardware(manufacturer_id,model,category) VALUES (?,?,'camera_drone') ON DUPLICATE KEY UPDATE id=id");
+foreach ($facts as $row) {
+    $maker->execute([$row['manufacturer']]);
+    $add->execute([(int)$pdo->lastInsertId(),$row['name']]);
 }
 $dry = drol_reviewed_facts($pdo,$facts,false);
 check($dry['planned']===count($facts) && $dry['after']===0, 'dry run');

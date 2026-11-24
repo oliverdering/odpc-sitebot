@@ -2,7 +2,7 @@ name: D.R.O.L. / Live schema inventory
 on:
   workflow_dispatch:
   workflow_run:
-    workflows: ['D.R.O.L. / Autonomous knowledge discovery', 'D.R.O.L. / Reviewed knowledge import']
+    workflows: ['D.R.O.L. / Autonomous knowledge discovery', 'D.R.O.L. / Reviewed knowledge import', 'D.R.O.L. / Daily source monitoring']
     types: [completed]
     branches: [main]
   schedule:

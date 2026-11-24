@@ -5,10 +5,10 @@ from pathlib import Path
 
 from drol_firmware import load_documents
 from drol_graph_payload import load_graph_payload
-from drol_reviewed_facts import load_facts
+from drol_reviewed_facts import DATABASE, load_facts
 
 SCRIPTS = Path(__file__).resolve().parent
-MODULES = ("drol_graph_import.php", "drol_reviewed_facts.php", "drol_firmware_import.php")
+MODULES = ("drol_graph_import.php", "drol_reviewed_facts.php", "drol_firmware_import.php", "drol_reviewed_links.php")
 HEADER = """<?php
 declare(strict_types=1);
 header('Cache-Control: no-store');
@@ -39,6 +39,7 @@ try {
         $result['graph'] = drol_import_graph($pdo, $graph['entities'], $apply);
         $pdo->beginTransaction();
         $result['firmware'] = importFirmware($pdo, $in['firmware']);
+        $result['reviewed_links'] = drol_reviewed_links($pdo, $in['links'], $in['revision']);
         if ($apply) {
             $pdo->commit();
         } else {
@@ -70,6 +71,12 @@ def main():
     parser.add_argument("--check", action="store_true")
     args = parser.parse_args()
     payload = dict(facts=load_facts(), graph=load_graph_payload(), firmware=load_documents())
+    import subprocess
+    payload["revision"] = subprocess.check_output(["git","rev-parse","HEAD"], text=True).strip()
+    payload["links"] = json.loads((DATABASE / "reviewed-links.json").read_text())
+    for item in payload["links"]:
+        if item.get("evidence") != "E1" or not item.get("locator") or not item["url"].startswith("https://"):
+            raise ValueError("Missing primary-source review")
     php = endpoint()
     if args.check:
         import subprocess
@@ -88,7 +95,7 @@ def main():
         totals = result["result"]
         print(mode, json.dumps(totals), flush=True)
         if mode == "repeat-preview" and (totals["facts"]["planned"] or totals["graph"]["planned"]
-                or totals["firmware"]["inserted"] or totals["firmware"]["corroborated"]):
+                or totals["firmware"]["inserted"] or totals["firmware"]["corroborated"] or totals["reviewed_links"]):
             raise RuntimeError("Repeat preview found outstanding changes")
 
 

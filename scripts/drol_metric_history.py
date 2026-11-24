@@ -12,6 +12,7 @@ capability_evidence aliases release_batches change_log source_watches table_coun
 sources_with_check_date sources_with_snapshot""".split())
 TREND = {"model_facts_total", "firmware_releases", "knowledge_entities", "knowledge_relations"}
 STEPS = {
+    "D.R.O.L. / Daily source monitoring": "Discover and ingest pending technical documentation references",
     "D.R.O.L. / Autonomous knowledge discovery": "Import newly discovered facts into MariaDB as pending E0 knowledge",
     "D.R.O.L. / Reviewed knowledge import": "Import verified knowledge",
 }
