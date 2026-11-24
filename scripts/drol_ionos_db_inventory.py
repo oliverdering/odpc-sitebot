@@ -42,7 +42,7 @@ try {
         $inventory[] = ['name'=>$table, 'rows'=>$count, 'schema_sha256'=>hash('sha256',$ddl)];
     }
     echo json_encode(['status'=>'connected','table_count'=>count($inventory),
-        'inventory'=>$inventory], JSON_THROW_ON_ERROR);
+        'inventory'=>$inventory, 'server_version'=>(string)$pdo->query('SELECT VERSION()')->fetchColumn()], JSON_THROW_ON_ERROR);
 } catch (Throwable $e) {
     http_response_code(503);
     echo json_encode(['status'=>'unavailable','reason'=>'connection_or_query_failed']);
@@ -99,6 +99,9 @@ def main():
             for item in result.get("inventory", []):
                 print("TABLE", item["name"], "ROWS", item["rows"], "SCHEMA_SHA256", item["schema_sha256"])
             print("TOTAL TABLES", result.get("table_count"))
+            print("DATABASE VERSION", result.get("server_version"))
+            if not any(item["name"] == "drol_metadata_inbox" for item in result.get("inventory", [])):
+                raise RuntimeError("Metadata inbox missing")
         finally:
             # Deletion is attempted regardless of HTTP success.
             pass
