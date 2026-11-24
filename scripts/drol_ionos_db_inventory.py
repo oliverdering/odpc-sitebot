@@ -109,7 +109,13 @@ def main():
                       "metadata_inbox": counts["drol_metadata_inbox"],
                       "candidate_facts_total": counts["drol_candidate_facts"],
                       "model_facts_total": counts["drol_model_facts"],
-                      "source_records": counts["drol_sources"]}
+                      "source_records": counts["drol_sources"],
+                      "hardware_models": counts["drol_hardware"],
+                      "manufacturers": counts["drol_manufacturers"],
+                      "hardware_source_links": counts["drol_hardware_sources"],
+                      "firmware_releases": counts["drol_firmware_releases"],
+                      "source_snapshots": counts["drol_source_snapshots"],
+                      "attribute_definitions": counts["drol_attributes"]}
             Path("drol-knowledge-metrics.json").write_text(json.dumps(public, indent=2)+"\n", encoding="utf-8")
         finally:
             # Deletion is attempted regardless of HTTP success.
