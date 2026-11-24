@@ -40,6 +40,7 @@ jobs:
           done
           export DROL_FACT_TEST_DSN='mysql:host=127.0.0.1;port=43372;dbname=drol_test;charset=utf8mb4'
           PYTHONPATH=scripts python3 -c 'import json;from drol_reviewed_facts import load_facts;print(json.dumps(load_facts()))' | php scripts/test_drol_reviewed_facts.php
+          PYTHONPATH=scripts python3 -c 'import json;from drol_graph_payload import load_graph_payload;print(json.dumps(load_graph_payload()))' | php scripts/test_drol_reviewed_links.php
       - name: Measure live inventory before import
         env:
           ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}

@@ -1,6 +1,6 @@
 <?php
 /** Import individually reviewed cross-references in a transaction owned by the caller. */
-function drol_reviewed_links(PDO $pdo, array $items, string $revision): array
+function drol_reviewed_links(PDO $pdo, array $items, string $revision): int
 {
     if (!$pdo->inTransaction() || !preg_match('/^[a-f0-9]{40}$/D', $revision)) {
         throw new RuntimeException('Invalid review transaction');
