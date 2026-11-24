@@ -10,10 +10,12 @@ root=Path("site-deploy/drol.odpc.de/database/model-schema.json")
 data=json.loads(root.read_text(encoding="utf-8"))
 registry_path=Path("site-deploy/drol.odpc.de/database/source-registry.json")
 registry=json.loads(registry_path.read_text(encoding="utf-8"))
-urls=sorted(
+# Exclude sources explicitly outside the civilian editorial scope, including catalog references.
+blocked_urls={source["url"] for source in registry["sources"] if source.get("status")=="excluded" and isinstance(source.get("url"),str)}
+urls=sorted((
     {url for model in data["models"] for url in model.get("sources",[]) if isinstance(url,str) and url.startswith("https://")}
     | {source["url"] for source in registry["sources"] if source.get("status")=="monitor_only" and isinstance(source.get("url"),str) and source["url"].startswith("https://")}
-)
+) - blocked_urls)
 results=[]
 for url in urls:
     parsed=urlparse(url)
