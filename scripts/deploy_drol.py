@@ -48,7 +48,9 @@ def with_drol_seo(payload: bytes, filename: str) -> bytes:
     if not re.search(r'<meta[^>]+property=[\x22\x27]og:title[\x22\x27]', head, re.I):
         additions.append('<meta property="og:type" content="website"><meta property="og:title" content="' + html.escape(title, quote=True) + '"><meta property="og:description" content="' + html.escape(description, quote=True) + '"><meta property="og:url" content="' + html.escape(canonical, quote=True) + '">')
     if not re.search(r'<meta[^>]+name=[\x22\x27]twitter:card[\x22\x27]', head, re.I):
-        additions.append('<meta name="twitter:card" content="summary">')
+        additions.append('<meta name="twitter:card" content="summary_large_image">')
+    if 'property="og:image"' not in head and "property='og:image'" not in head:
+        additions.append('<meta property="og:image" content="https://drol.odpc.de/drol-logo-army.png"><meta property="og:image:alt" content="D.R.O.L. – Drone Recon Operation Lab">')
     if not additions:
         return payload
     return source.replace("</head>", "\n".join(additions) + "</head>", 1).encode("utf-8")
@@ -203,7 +205,7 @@ SOURCE=Path("site-deploy/drol.odpc.de")
 def main():
     if not (SOURCE/"index.html").is_file():raise RuntimeError("Missing D.R.O.L. homepage")
     payload=(SOURCE/"index.html").read_bytes()
-    if b"Wir machen Ihre Drohnendaten nutzbar." not in payload:raise RuntimeError("Invalid release")
+    if b"Wissen erkunden" not in payload:raise RuntimeError("Invalid release")
     transport=paramiko.Transport((HOST,22));transport.start_client(timeout=25)
     try:
         actual="SHA256:"+base64.b64encode(hashlib.sha256(transport.get_remote_server_key().asbytes()).digest()).decode().rstrip("=")
