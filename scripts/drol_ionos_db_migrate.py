@@ -33,14 +33,14 @@ try {
         PDO::ATTR_TIMEOUT => 8
     ]);
     $statements = $cfg['statements'] ?? null;
-    if (!is_array($statements) || count($statements) !== 10) throw new RuntimeException('statement_count_invalid');
+    if (!is_array($statements) || count($statements) !== 11) throw new RuntimeException('statement_count_invalid');
     $before = $pdo->query("SHOW TABLES LIKE 'drol_%'")->fetchAll(PDO::FETCH_COLUMN);
     $required = ['drol_hardware','drol_hardware_sources','drol_manufacturers','drol_sources'];
     foreach ($required as $table) if (!in_array($table,$before,true)) throw new RuntimeException('baseline_missing');
     $expected = [
         'drol_model_facts','drol_capability_evidence','drol_attributes',
         'drol_entity_aliases','drol_source_snapshots','drol_candidate_facts',
-        'drol_firmware_releases','drol_source_watch','drol_release_batches','drol_change_log'
+        'drol_firmware_releases','drol_source_watch','drol_release_batches','drol_change_log','drol_metadata_inbox'
     ];
     foreach ($statements as $i => $sql) {
         if (!is_string($sql) || !preg_match('/^CREATE\\s+TABLE\\s+IF\\s+NOT\\s+EXISTS\\s+(drol_[a-z0-9_]+)\\s*\\(/i',$sql,$match)
@@ -97,11 +97,11 @@ def main():
             from pathlib import Path
             import re
             statements = []
-            for filename in ("002_evidence_model.sql", "003_knowledge_core.sql"):
+            for filename in ("002_evidence_model.sql", "003_knowledge_core.sql", "004_metadata_inbox.sql"):
                 sql = (Path("site-deploy/drol.odpc.de/database") / filename).read_text(encoding="utf-8")
                 sql = "\n".join(line for line in sql.splitlines() if not line.lstrip().startswith("--"))
                 statements.extend(s.strip() for s in sql.split(";") if s.strip())
-            if len(statements) != 10:
+            if len(statements) != 11:
                 raise RuntimeError("Unexpected migration statement count")
             payload["statements"] = statements
             req = Request(URL + "/" + name,
@@ -114,9 +114,9 @@ def main():
                 raise RuntimeError("IONOS-local database probe rejected (HTTP %s)" % exc.code) from None
             if result.get("status") != "migrated":
                 raise RuntimeError("IONOS-local database probe did not connect")
-            if result.get("status") != "migrated" or result.get("table_count") != 14:
+            if result.get("status") != "migrated" or result.get("table_count", 0) < 15:
                 raise RuntimeError("Migration verification failed")
-            print("PASS: additive D.R.O.L. migrations 002 and 003 applied; tables:", result["table_count"])
+            print("PASS: additive D.R.O.L. migrations 002 through 004 applied; tables:", result["table_count"])
             print("Verified new tables:", ", ".join(result["new_tables"]))
         finally:
             # Deletion is attempted regardless of HTTP success.
