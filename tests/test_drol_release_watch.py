@@ -4,7 +4,7 @@ import unittest
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
-from drol_release_watch import no_notifications, release_markers, summarize_release_notes
+from drol_release_watch import no_notifications, release_markers, summarize_release_notes, request
 
 
 class ReleaseNotesTests(unittest.TestCase):
@@ -54,6 +54,12 @@ class NoNotificationsTests(unittest.TestCase):
         url = "https://github.com/paparazzi/paparazzi/pull/3273"
         self.assertEqual(no_notifications(url), url)
 
+
+class ReadOnlyTests(unittest.TestCase):
+    def test_reject_write_methods_without_network(self):
+        for method in ("POST", "PATCH", "PUT", "DELETE"):
+            with self.subTest(method=method), self.assertRaises(ValueError):
+                request("https://example.invalid", method, {})
 
 if __name__ == "__main__":
     unittest.main()
