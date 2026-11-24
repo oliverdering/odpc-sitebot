@@ -9,6 +9,12 @@ add_action('template_redirect', static function () {
     if (!in_array($_SERVER['REQUEST_METHOD'] ?? '', ['GET', 'HEAD'], true)) {
         return;
     }
+    // Clear only the old cached Alpha document during the routing migration.
+    if (is_callable(['WPO_Page_Cache', 'delete_cache_by_url'])
+        && !get_option('odpc_alpha_route_cache_v1')
+        && WPO_Page_Cache::delete_cache_by_url(home_url('/d-r-o-l'))) {
+        add_option('odpc_alpha_route_cache_v1', '1', '', false);
+    }
     nocache_headers();
     wp_redirect('https://drol.odpc.de/alpha-eigenbau.html', 302, 'ODPC DROL');
     exit;

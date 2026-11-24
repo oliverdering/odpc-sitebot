@@ -34,9 +34,12 @@ def site_has_marker():
         return False
     alpha = Request("https://odpc.de/d-r-o-l?drol_qa=" + str(int(time.time())),
                     headers={"Cache-Control": "no-cache"})
-    with urlopen(alpha, timeout=30) as response:
-        return (response.geturl() == "https://drol.odpc.de/alpha-eigenbau.html"
-                and b"alpha-eigenbau" in response.read())
+    for target in (alpha, "https://odpc.de/d-r-o-l"):
+        with urlopen(target, timeout=30) as response:
+            if (response.geturl() != "https://drol.odpc.de/alpha-eigenbau.html"
+                    or b"alpha-eigenbau" not in response.read()):
+                return False
+    return True
 
 
 def main():
