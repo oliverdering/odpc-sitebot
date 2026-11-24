@@ -6,6 +6,7 @@ on:
     paths:
       - 'scripts/drol_ionos_db_backup.py'
       - 'scripts/drol_backup_restore.py'
+      - 'scripts/drol_backup_inventory.py'
       - '.github/workflows/drol-db-backup.yml'
 permissions:
   contents: read
@@ -24,9 +25,7 @@ jobs:
         run: python3 -m pip install 'paramiko>=3.4,<5'
       - name: Back up D.R.O.L. database via IONOS-local PHP
         env:
+          DROL_INVENTORY_ARCHIVES: '1'
           ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
           DROL_DB_PASSWORD: ${{ secrets.DROL_DB_PASSWORD }}
         run: python3 scripts/drol_ionos_db_backup.py
-
-
-# Pre-migration backup checkpoint for metadata inbox.

@@ -146,6 +146,9 @@ def main():
                 raise RuntimeError("IONOS-local database probe did not connect")
             from drol_backup_restore import protect_and_verify
             protect_and_verify(sf, result, password, sftp_password)
+            if os.environ.get("DROL_INVENTORY_ARCHIVES") == "1":
+                from drol_backup_inventory import inspect
+                inspect(sf)
         finally:
             # Deletion is attempted regardless of HTTP success.
             pass
