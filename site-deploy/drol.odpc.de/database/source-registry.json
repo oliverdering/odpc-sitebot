@@ -409,6 +409,136 @@
       "scope": "multi-brand FPV drones and equipment",
       "evidence": "E0",
       "status": "monitor_only"
+    },
+    {
+      "name": "DIY Drones",
+      "category": "community",
+      "url": "https://diydrones.com/",
+      "scope": "civilian hobby and education community",
+      "evidence": "E0",
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required"
+    },
+    {
+      "name": "RotorBuilds",
+      "category": "community",
+      "url": "https://rotorbuilds.com/",
+      "scope": "hobby project index",
+      "evidence": "E0",
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required"
+    },
+    {
+      "name": "RC Groups",
+      "category": "community",
+      "url": "https://www.rcgroups.com/",
+      "scope": "model aviation community",
+      "evidence": "E0",
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required"
+    },
+    {
+      "name": "Drohnen Forum",
+      "category": "community",
+      "url": "https://www.drohnen-forum.de/",
+      "scope": "German civilian model aviation community",
+      "evidence": "E0",
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required"
+    },
+    {
+      "name": "Drones Stack Exchange",
+      "category": "community",
+      "url": "https://drones.stackexchange.com/",
+      "scope": "technical questions index",
+      "evidence": "E0",
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required"
+    },
+    {
+      "name": "Bitcraze",
+      "category": "research",
+      "url": "https://www.bitcraze.io/",
+      "scope": "educational robotics research",
+      "evidence": "E0",
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required"
+    },
+    {
+      "name": "OpenAlex",
+      "category": "research",
+      "url": "https://openalex.org/",
+      "scope": "scholarly metadata",
+      "evidence": "E0",
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required"
+    },
+    {
+      "name": "Zenodo",
+      "category": "research",
+      "url": "https://zenodo.org/",
+      "scope": "research metadata and license records",
+      "evidence": "E0",
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required"
+    },
+    {
+      "name": "NASA NTRS",
+      "category": "research",
+      "url": "https://ntrs.nasa.gov/",
+      "scope": "civil aviation research metadata",
+      "evidence": "E0",
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required"
+    },
+    {
+      "name": "Hackaday",
+      "category": "community",
+      "url": "https://hackaday.io/",
+      "scope": "maker project index",
+      "evidence": "E0",
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required"
+    },
+    {
+      "name": "Printables",
+      "category": "community",
+      "url": "https://www.printables.com/",
+      "scope": "maker model metadata and license records",
+      "evidence": "E0",
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required"
+    },
+    {
+      "name": "MakerWorld",
+      "category": "community",
+      "url": "https://makerworld.com/",
+      "scope": "maker model metadata and license records",
+      "evidence": "E0",
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required"
+    },
+    {
+      "name": "EASA civil drones",
+      "category": "regulation",
+      "url": "https://www.easa.europa.eu/en/domains/civil-drones",
+      "scope": "civil drone safety and regulation",
+      "evidence": "E0",
+      "status": "monitor_only",
+      "collection_policy": "metadata_and_original_analysis_only",
+      "verification": "manual_or_primary_source_required"
     }
   ]
 }
