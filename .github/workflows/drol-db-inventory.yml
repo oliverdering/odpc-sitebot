@@ -1,6 +1,10 @@
 name: D.R.O.L. / Live schema inventory
 on:
   workflow_dispatch:
+  workflow_run:
+    workflows: ['D.R.O.L. / Autonomous knowledge discovery']
+    types: [completed]
+    branches: [main]
   schedule:
     - cron: '41 */3 * * *'
   push:
@@ -16,6 +20,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   inventory:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
