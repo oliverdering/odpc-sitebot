@@ -1,6 +1,6 @@
 """One-shot IONOS-local MariaDB backup. No credentials written to server or Git."""
 import base64, hashlib, hmac, json, os, secrets, sys
-from urllib.request import Request, urlopen
+from urllib.request import Request, build_opener, HTTPRedirectHandler
 from urllib.error import HTTPError
 import paramiko
 from deploy_helpermonkey_v4 import HOST, USER, PIN
@@ -32,23 +32,72 @@ try {
         PDO::ATTR_EMULATE_PREPARES => false,
         PDO::ATTR_TIMEOUT => 8
     ]);
-    $tables = $pdo->query("SHOW TABLES LIKE 'drol_%'")->fetchAll(PDO::FETCH_COLUMN);
-    $backup = [];
-    foreach ($tables as $table) {
-        if (!preg_match('/^drol_[a-z0-9_]+$/', $table)) throw new RuntimeException('table_invalid');
-        $escaped = str_replace('`', '``', $table);
-        $ddl = $pdo->query("SHOW CREATE TABLE `".$escaped."`")->fetch(PDO::FETCH_NUM)[1];
-        $rows = $pdo->query("SELECT * FROM `".$escaped."`")->fetchAll(PDO::FETCH_ASSOC);
-        $backup[] = ['name'=>$table, 'ddl'=>$ddl, 'rows'=>$rows];
+    $db = $cfg['database'];
+    $privileges = [];
+    foreach ($pdo->query("SHOW GRANTS")->fetchAll(PDO::FETCH_COLUMN) as $grant) {
+        if (preg_match('/^GRANT (.+?) ON (.+?) TO /i', $grant, $matches)
+            && in_array(str_replace('\\_', '_', $matches[2]), ['*.*', '`'.$db.'`.*'], true))
+            $privileges = array_merge($privileges, explode(', ', strtoupper($matches[1])));
     }
-    echo json_encode(['status'=>'connected','backup'=>$backup], JSON_THROW_ON_ERROR | JSON_INVALID_UTF8_SUBSTITUTE);
+    if (!in_array('ALL PRIVILEGES', $privileges, true) &&
+        array_diff(['SELECT','SHOW VIEW','TRIGGER','EVENT','ALTER ROUTINE'], $privileges))
+        throw new RuntimeException('cannot_attest_object_visibility');
+    $pdo->exec("SET SESSION time_zone='+00:00'");
+    $pdo->exec("SET TRANSACTION ISOLATION LEVEL REPEATABLE READ");
+    $pdo->exec("START TRANSACTION WITH CONSISTENT SNAPSHOT, READ ONLY");
+    $inventory = static function () use ($pdo): array {
+        foreach (['TRIGGERS'=>'TRIGGER_SCHEMA','ROUTINES'=>'ROUTINE_SCHEMA','EVENTS'=>'EVENT_SCHEMA'] as $name=>$column) {
+            if ((int)$pdo->query("SELECT COUNT(*) FROM information_schema.$name WHERE $column=DATABASE()")->fetchColumn())
+                throw new RuntimeException('unsupported_database_object');
+        }
+        $items = $pdo->query("SELECT TABLE_NAME, TABLE_TYPE, ENGINE FROM information_schema.TABLES
+            WHERE TABLE_SCHEMA=DATABASE() ORDER BY TABLE_NAME")->fetchAll();
+        foreach ($items as [$name,$type,$engine]) {
+            if ($type !== 'BASE TABLE' || $engine !== 'InnoDB' || !preg_match('/^[a-zA-Z0-9_]+$/D',$name))
+                throw new RuntimeException('unsupported_table');
+        }
+        return $items;
+    };
+    $tables = $inventory();
+    // Metadata locks survive until commit and fence concurrent ALTER or DROP operations.
+    foreach ($tables as [$name]) $pdo->query("SELECT * FROM `$name` LIMIT 0")->closeCursor();
+    $backup = [];
+    foreach ($tables as [$name]) {
+        $ddl = $pdo->query("SHOW CREATE TABLE `$name`")->fetch()[1];
+        $cols = $pdo->query("SHOW FULL COLUMNS FROM `$name`")->fetchAll(PDO::FETCH_ASSOC);
+        $columns = [];
+        $projection = [];
+        foreach ($cols as $col) {
+            $c = $col['Field'];
+            if (!preg_match('/^[a-zA-Z0-9_]+$/D',$c) || stripos($col['Extra'],'GENERATED') !== false ||
+                stripos($col['Extra'],'INVISIBLE') !== false)
+                throw new RuntimeException('unsupported_column');
+            $columns[] = $c;
+            $projection[] = "HEX(CAST(`$c` AS BINARY))";
+        }
+        $rows = $pdo->query("SELECT ".implode(',', $projection)." FROM `$name`")->fetchAll();
+        $backup[] = ['name'=>$name,'ddl'=>$ddl,'columns'=>$columns,'rows'=>$rows];
+    }
+    if ($inventory() !== $tables) throw new RuntimeException('database_object_set_changed');
+    $version = $pdo->query("SELECT VERSION()")->fetchColumn();
+    $schema = $pdo->query("SHOW CREATE DATABASE `".$db."`")->fetch()[1];
+    $pdo->exec("COMMIT");
+    echo json_encode(['status'=>'connected','version'=>$version,'database'=>$db,'database_ddl'=>$schema,
+        'backup'=>$backup], JSON_THROW_ON_ERROR);
 } catch (Throwable $e) {
     http_response_code(503);
-    echo json_encode(['status'=>'unavailable','reason'=>'connection_or_query_failed']);
+    $known = ['cannot_attest_object_visibility','unsupported_database_object','unsupported_table','unsupported_column','database_object_set_changed'];
+    echo json_encode(['status'=>'unavailable','reason'=>in_array($e->getMessage(), $known, true) ? $e->getMessage() : 'connection_or_query_failed']);
 }
 """
 
+class NoRedirect(HTTPRedirectHandler):
+    def redirect_request(self, *args):
+        return None
+
+
 def main():
+    urlopen = build_opener(NoRedirect()).open
     password = os.environ.get("DROL_DB_PASSWORD")
     sftp_password = os.environ.get("ODPC_SFTP_PASSWORD")
     if not password or not sftp_password:
@@ -88,34 +137,15 @@ def main():
                 data=json.dumps(payload).encode("utf-8"), method="POST",
                 headers={"Content-Type":"application/json", "X-DROL-Probe":token})
             try:
-                with urlopen(req, timeout=30) as response:
+                with urlopen(req, timeout=120) as response:
                     result = json.load(response)
             except HTTPError as exc:
-                raise RuntimeError("IONOS-local database probe rejected (HTTP %s)" % exc.code) from None
+                reason = json.loads(exc.read(1024)).get("reason") if exc.code == 503 else None
+                raise RuntimeError(f"Snapshot rejected (HTTP {exc.code}): {reason if reason in ('cannot_attest_object_visibility', 'unsupported_database_object', 'unsupported_table', 'unsupported_column', 'database_object_set_changed') else 'connection_or_query_failed'}") from None
             if result.get("status") != "connected":
                 raise RuntimeError("IONOS-local database probe did not connect")
-            from pathlib import Path
-            import datetime
-            backup = result.get("backup")
-            required = {"drol_attributes","drol_candidate_facts","drol_capability_evidence",
-                        "drol_change_log","drol_entity_aliases","drol_firmware_releases",
-                        "drol_hardware","drol_hardware_sources","drol_manufacturers",
-                        "drol_model_facts","drol_release_batches","drol_source_snapshots",
-                        "drol_source_watch","drol_sources","drol_metadata_inbox"}
-            if not isinstance(backup, list) or not required.issubset(
-                    {entry.get("name") for entry in backup if isinstance(entry, dict)
-                     and isinstance(entry.get("rows"), list) and entry.get("ddl")}):
-                raise RuntimeError("Required production tables missing; refusing incomplete backup")
-            out = Path("drol-db-backup.json")
-            if out.exists():
-                raise RuntimeError("Refusing to overwrite existing backup")
-            out.write_text(json.dumps({
-                "created_utc": datetime.datetime.now(datetime.timezone.utc).isoformat(),
-                "tables": backup
-            }, ensure_ascii=False, indent=2), encoding="utf-8")
-            out.chmod(0o600)
-            print("PASS: D.R.O.L. read-only backup written locally; tables:", len(backup))
-            print("Row counts:", ", ".join(x["name"] + "=" + str(len(x["rows"])) for x in backup))
+            from drol_backup_restore import protect_and_verify
+            protect_and_verify(sf, result, password, sftp_password)
         finally:
             # Deletion is attempted regardless of HTTP success.
             pass
