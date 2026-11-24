@@ -596,12 +596,12 @@
       "url": "https://www.parrot.com/en/release-notes-anafi-ukr",
       "scope": "official firmware and application release notes",
       "evidence": "E0",
-      "status": "monitor_only",
+      "status": "excluded",
       "collection_policy": "metadata_and_original_analysis_only",
       "verification": "manual_or_primary_source_required",
       "license_type": "unverified",
       "feed_type": "unverified",
-      "civil_relevance": "review_required",
+      "civil_relevance": "outside_editorial_scope",
       "last_reviewed": null
     },
     {
@@ -610,12 +610,12 @@
       "url": "https://www.parrot.com/assets/s3fs-public/document/ANAFI%20UKR%20GOV%20user%20guide.pdf",
       "scope": "official product documentation",
       "evidence": "E0",
-      "status": "monitor_only",
+      "status": "excluded",
       "collection_policy": "metadata_and_original_analysis_only",
       "verification": "manual_or_primary_source_required",
       "license_type": "unverified",
       "feed_type": "unverified",
-      "civil_relevance": "review_required",
+      "civil_relevance": "outside_editorial_scope",
       "last_reviewed": null
     },
     {
