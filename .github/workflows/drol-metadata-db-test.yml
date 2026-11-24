@@ -1,0 +1,51 @@
+name: DROL Metadata MariaDB Integration
+on:
+  push:
+    paths:
+      - 'site-deploy/drol.odpc.de/database/004_metadata_inbox.sql'
+      - 'scripts/drol_metadata_db_plan.py'
+      - 'scripts/drol_metadata_staging.py'
+      - '.github/workflows/drol-metadata-db-test.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  integration:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    services:
+      mariadb:
+        image: mariadb:10.11
+        env:
+          MARIADB_ROOT_PASSWORD: ci-only-password
+          MARIADB_DATABASE: drol_test
+        ports:
+          - 3306:3306
+        options: --health-cmd="healthcheck.sh --connect --innodb_initialized" --health-interval=10s --health-timeout=5s --health-retries=10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test migration and transaction semantics
+        shell: bash
+        run: |
+          set -euo pipefail
+          cid="${{ job.services.mariadb.id }}"
+          db() { docker exec -i "$cid" mariadb -uroot -pci-only-password drol_test "$@"; }
+          migration=site-deploy/drol.odpc.de/database/004_metadata_inbox.sql
+          db < "$migration"
+          db < "$migration"
+          db <<'SQL'
+          START TRANSACTION;
+          INSERT INTO drol_metadata_inbox(candidate_key,source_url,title,metadata_json)
+          VALUES (REPEAT('a',64),'https://example.org/','Fixture','{"evidence":"E0"}');
+          COMMIT;
+          INSERT INTO drol_metadata_inbox(candidate_key,source_url,title,metadata_json)
+          VALUES (REPEAT('a',64),'https://example.org/','Fixture','{"evidence":"E0"}')
+          ON DUPLICATE KEY UPDATE candidate_key=candidate_key;
+          START TRANSACTION;
+          INSERT INTO drol_metadata_inbox(candidate_key,source_url,title,metadata_json)
+          VALUES (REPEAT('b',64),'https://example.org/','Rollback fixture','{"evidence":"E0"}');
+          ROLLBACK;
+          SQL
+          test "$(db -Nse 'SELECT COUNT(*) FROM drol_metadata_inbox')" = 1
+          test "$(db -Nse "SELECT COUNT(*) FROM drol_metadata_inbox WHERE candidate_key=REPEAT('b',64)")" = 0
+          echo "PASS: repeatable migration, committed insert, duplicate suppression, rollback"
