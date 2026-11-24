@@ -84,9 +84,31 @@ try {
             substr($excerpt!==''?$excerpt:($item['product'].' release '.$item['tag']),0,500),$url]);
         $created++;
     }
+    // Explicit manufacturer-published aircraft firmware history; never infer from SDK tags.
+    $firmwareCreated=0;
+    $fwModel=$pdo->prepare("SELECT h.id FROM drol_hardware h JOIN drol_manufacturers m ON m.id=h.manufacturer_id WHERE m.name='DJI' AND h.model IN ('Mini 4 Pro','DJI Mini 4 Pro')");
+    $fwModel->execute();$fwIds=$fwModel->fetchAll(PDO::FETCH_COLUMN);
+    if(count($fwIds)===1){
+        $fwUrl='https://bbs.dji.com/thread-355708-1-1.html';
+        $sourceFind->execute([$fwUrl]);$fwSource=$sourceFind->fetchColumn();
+        if(!$fwSource){$sourceAdd->execute(['DJI support team: Mini 4 Pro aircraft firmware history',$fwUrl]);$fwSource=$pdo->lastInsertId();}
+        $fwFind=$pdo->prepare("SELECT id FROM drol_firmware_releases WHERE hardware_id=? AND version=? AND region='' AND channel='aircraft'");
+        $fwAdd=$pdo->prepare("INSERT INTO drol_firmware_releases(hardware_id,version,region,channel,released_on,source_id) VALUES (?,?,'','aircraft',?,?) ON DUPLICATE KEY UPDATE id=id");
+        $fwAudit=$pdo->prepare("INSERT INTO drol_change_log(actor,action,object_type,object_id,after_json) VALUES ('ODPC source review','insert','firmware_release',?,?)");
+        foreach(['v01.00.0210'=>'2023-11-08','v01.00.1000'=>'2025-05-13','v01.00.1100'=>'2025-11-05'] as $version=>$date){
+            $fwFind->execute([(int)$fwIds[0],$version]);
+            if($fwFind->fetchColumn())continue;
+            $fwAdd->execute([(int)$fwIds[0],$version,$date,(int)$fwSource]);
+            if($fwAdd->rowCount()===1){
+                $fwId=(int)$pdo->lastInsertId();
+                $fwAudit->execute([$fwId,json_encode(['version'=>$version,'released_on'=>$date,'source'=>$fwUrl,'scope'=>'aircraft'],JSON_THROW_ON_ERROR)]);
+                $firmwareCreated++;
+            }
+        }
+    }
     $pdo->commit();
     $total=(int)$pdo->query("SELECT COUNT(*) FROM drol_candidate_facts WHERE status='pending'")->fetchColumn();
-    echo json_encode(['status'=>'ok','created'=>$created,'existing'=>$known,'pending_total'=>$total],JSON_THROW_ON_ERROR);
+    echo json_encode(['status'=>'ok','created'=>$created,'existing'=>$known,'pending_total'=>$total,'firmware_created'=>$firmwareCreated,'firmware_model_matches'=>count($fwIds)],JSON_THROW_ON_ERROR);
 } catch(Throwable $e) {
     if(isset($pdo)&&$pdo->inTransaction())$pdo->rollBack();
     http_response_code(503);echo json_encode(['status'=>'unavailable']);
@@ -130,6 +152,8 @@ def main():
             print("PASS: MariaDB candidate facts created:",result["created"])
             print("Existing deduplicated:",result["existing"])
             print("Total pending candidates:",result["pending_total"])
+            print("Firmware versions created:",result.get("firmware_created"))
+            print("Firmware model matches:",result.get("firmware_model_matches"))
         finally:pass
     finally:
         if sf:
