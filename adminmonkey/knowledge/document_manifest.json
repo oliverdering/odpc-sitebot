@@ -29708,6 +29708,364 @@
       "mapped_tracks": [
         "AZ-104"
       ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/n-tier/windows-vm",
+      "sha256": "e525077546d4f0f6c3d3a3e55e2ca7dbecf2efe853d5dc827b41721454a28016",
+      "captured_at": "2026-11-25T01:33:51.327950+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/trusted-launch-existing-vm-gen-1",
+      "sha256": "fa8df3e07c62f93db45117a469151076bf1ad8813885ddfaec33966a8f70c194",
+      "captured_at": "2026-11-25T01:33:51.468198+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/plan/should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v",
+      "sha256": "48f7a9e64bcf6a7f2db72255d37152d0bfe55c838a692d7179b23a22a235b36e",
+      "captured_at": "2026-11-25T01:33:51.660540+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/general-purpose/b-family",
+      "sha256": "c4b6433b7ca62f0bab9c056f4ba84a66216606b7cbe318626a5ce49b03f214dc",
+      "captured_at": "2026-11-25T01:33:51.853591+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/general-purpose/d-family",
+      "sha256": "c2d5b6f8db644789b8485be8cc0cee0113e55a4fd28e31d6ea5c0431a811bf56",
+      "captured_at": "2026-11-25T01:33:52.060576+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/general-purpose/a-family",
+      "sha256": "3ce1b9ba72544d78e30a7f198fc68d970abdc98f80ffea3737269b34cb10fc00",
+      "captured_at": "2026-11-25T01:33:52.249158+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/compute-optimized/f-family",
+      "sha256": "60cc91fb24c3417dbfdcba6e838e2e384e9c8668d958ca5907cb2197f24e4f9b",
+      "captured_at": "2026-11-25T01:33:52.529174+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/compute-optimized/fx-family",
+      "sha256": "d4c9d32fd775c1e8b23ed442eb5b36b0f76045eb566c8a79126ed504bc75edf7",
+      "captured_at": "2026-11-25T01:33:52.881393+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/memory-optimized/e-family",
+      "sha256": "29706c68666d68ef5bab9123d07ef2cbe5b5c652b5bda1cff8a62f31e2d28c62",
+      "captured_at": "2026-11-25T01:33:53.118746+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/memory-optimized/eb-family",
+      "sha256": "3ac84688cf8dd80969acf39cdefba6c7e3a93fd7897cb4468d4f5536a51f8130",
+      "captured_at": "2026-11-25T01:33:53.337590+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/memory-optimized/m-family",
+      "sha256": "63c3789574dff89a71fa307383b5d184289714e3ce5e0bef96d483740c7a435a",
+      "captured_at": "2026-11-25T01:33:53.496434+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/storage-optimized/l-family",
+      "sha256": "bf4e32579a28c4a83a767f800a9359da2ed1acea13e8e16a5f1b87bf217b0c51",
+      "captured_at": "2026-11-25T01:33:53.814370+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/gpu-accelerated/nc-family",
+      "sha256": "e91a85a57783e7f1f80cf4ab3099323bf4df0926bd4150d30d90b5c51db318b0",
+      "captured_at": "2026-11-25T01:33:53.935279+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/gpu-accelerated/nv-family",
+      "sha256": "4af0d238e437f09b5eb65e86afb60a2a1e161c1b61ce603d499a763a9704bd64",
+      "captured_at": "2026-11-25T01:33:54.263044+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/nc-series",
+      "sha256": "3b273f0658a580cb7427b01440b145915896ced79d8317a3b169a7aebda396dc",
+      "captured_at": "2026-11-25T01:33:54.967746+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/nv-series",
+      "sha256": "b8d27acb6b4059ccedaa29f7507690a9e410c95c50cc1f908281ebd253cc56b8",
+      "captured_at": "2026-11-25T01:33:55.379090+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/high-performance-compute/hbv2-series-overview",
+      "sha256": "b039dd67c4080b8e5e73de00ac962a58b0ae66841c46c41d97fc317b3dad1c3a",
+      "captured_at": "2026-11-25T01:33:55.944921+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/high-performance-compute/hbv3-series-overview",
+      "sha256": "dd87004f4f7ca3a3cc8a801cf7fea1018bc262b984fc6dff4ccedff2dc111a2d",
+      "captured_at": "2026-11-25T01:33:56.148553+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/high-performance-compute/hbv4-series-overview",
+      "sha256": "4f75068e05530bf8071cd481c44391a48067b213c47962ed6b963796a43a2a5e",
+      "captured_at": "2026-11-25T01:33:56.345021+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/high-performance-compute/hc-series-overview",
+      "sha256": "3a9bb7ef1a5bd5904ef4305ef4549af62ee83ca2b668b21ce000118930773100",
+      "captured_at": "2026-11-25T01:33:56.814851+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/high-performance-compute/hx-series-overview",
+      "sha256": "4c18a00a7a1907d32b01a32d2c77166c6cfa9c83726fe5f8e6598fa16c3c0eb5",
+      "captured_at": "2026-11-25T01:33:57.189762+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/mv2-series",
+      "sha256": "59172c7fab84019cf7f6bf8b6ee58bd735b4af5e25395c3ba185c1f6b4931087",
+      "captured_at": "2026-11-25T01:33:57.796076+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/nda100-v4-series",
+      "sha256": "45cf570b8a55c472ef601e95a5d24e2d9beb8265cd817ec8a684d6988b202cc5",
+      "captured_at": "2026-11-25T01:33:58.159068+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/ndv2-series",
+      "sha256": "2a19a6e6ba3064680f19e764fad4aed663dc3eaf543243875b85284df21212d8",
+      "captured_at": "2026-11-25T01:33:58.459336+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/msv2-mdsv2-series",
+      "sha256": "20f7df031a346a4fc05fc340b9524bba59dca09644549137ac6fdeab16674733",
+      "captured_at": "2026-11-25T01:33:58.943565+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/disk-encryption-overview",
+      "sha256": "364e6d675c8dd45c43f7e2ca1f4fa9b1950b2474a40b9115232976f3688a87d3",
+      "captured_at": "2026-11-25T01:33:59.098089+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/ps-template",
+      "sha256": "839ec55aaa0e1e42f3920c047e38ef04eaadf4e4658b3adf5e6439ffeef377f0",
+      "captured_at": "2026-11-25T01:33:59.372782+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/create-ssh-secured-vm-from-template",
+      "sha256": "2c86bef4db0a09d53b3287b7f58f1dbd15af0f97a89a4ed743bd66a0380becba",
+      "captured_at": "2026-11-25T01:33:59.625299+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/expand-os-disk",
+      "sha256": "50aa11499b24214328b552a1c7e88e8f1000249bffd890df1d7cbdb28dc06cb6",
+      "captured_at": "2026-11-25T01:33:59.913532+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/resize-os-disk-gpt-partition",
+      "sha256": "b8a6e521e0664b6298bb9d99bd6885a8ed0d45508389662a5f0e8cedaedcc3b0",
+      "captured_at": "2026-11-25T01:34:00.321507+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-network/create-vm-accelerated-networking-cli",
+      "sha256": "7257cb57fed1605010beb672ed8941cfcfca811594dd8e1abd48331dad356468",
+      "captured_at": "2026-11-25T01:34:00.781920+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/trusted-launch-portal",
+      "sha256": "efad10cd5f23235240557797d137bd42c39e6fa7e2e2fa5cdc292b8e277c409a",
+      "captured_at": "2026-11-25T01:34:00.941488+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/trusted-launch-faq",
+      "sha256": "e5284bbf89864cb24f67dcc0b39d53a97fd6179231bc24ec9199ccbf337185e4",
+      "captured_at": "2026-11-25T01:34:01.154563+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/trusted-launch-existing-vm",
+      "sha256": "9a342f702d6bc9f7a4b8fbe2efcc0bab923bc07bfb34017e1b8703dffdcfc19e",
+      "captured_at": "2026-11-25T01:34:01.278333+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/trusted-launch-existing-vmss",
+      "sha256": "f676e1cfa258b6754a9f39b2c7767ef76d88f2dc4e372924837540a908dd68d3",
+      "captured_at": "2026-11-25T01:34:01.423863+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/general-purpose/dpsv6-series",
+      "sha256": "14384d0ff02aa2156b26489c9d11556f95c598edee44ba56fa6a83be9d9f442e",
+      "captured_at": "2026-11-25T01:34:01.508326+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
     }
   ],
   "seen": [
@@ -29853,6 +30211,7 @@
     "https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/containers/aks-multi-region/aks-multi-cluster",
     "https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/identity/azure-ad",
     "https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/n-tier/linux-vm",
+    "https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/n-tier/windows-vm",
     "https://learn.microsoft.com/en-us/azure/architecture/reliability/disaster-recovery",
     "https://learn.microsoft.com/en-us/azure/architecture/solution-ideas/articles/presence-microsoft-365-power-platform",
     "https://learn.microsoft.com/en-us/azure/architecture/solutions/microsoft-365-scenarios",
@@ -30080,6 +30439,7 @@
     "https://learn.microsoft.com/en-us/azure/virtual-machines/create-fqdn",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/dedicated-hosts/overview",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/disk-encryption",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/disk-encryption-overview",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/disks-types",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/enable-nvme-temp-faqs",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/ephemeral-os-disks",
@@ -30089,6 +30449,7 @@
     "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/cli-ps-findimage",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/cloudinit-configure-swapfile",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/convert-unmanaged-to-managed-disks",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/create-ssh-secured-vm-from-template",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/disks-enable-host-based-encryption-cli",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/endorsed-distros",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/mac-create-ssh-keys",
@@ -30097,19 +30458,51 @@
     "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/quick-create-cli",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/quick-create-portal",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/quick-create-powershell",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/resize-os-disk-gpt-partition",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/tutorial-manage-vm",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/using-cloud-init",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/maintenance-and-updates",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/msv2-mdsv2-series",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/mv2-series",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/nc-series",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/nda100-v4-series",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/ndv2-series",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/nv-series",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/overview",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/compute-optimized/f-family",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/compute-optimized/fx-family",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/general-purpose/a-family",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/general-purpose/b-family",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/general-purpose/d-family",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/general-purpose/dpsv6-series",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/gpu-accelerated/nc-family",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/gpu-accelerated/nv-family",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/high-performance-compute/hbv2-series-overview",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/high-performance-compute/hbv3-series-overview",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/high-performance-compute/hbv4-series-overview",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/high-performance-compute/hc-series-overview",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/high-performance-compute/hx-series-overview",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/memory-optimized/e-family",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/memory-optimized/eb-family",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/memory-optimized/m-family",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/overview",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/storage-optimized/l-family",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/spot-vms",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/trusted-launch",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/trusted-launch-existing-vm",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/trusted-launch-existing-vm-gen-1",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/trusted-launch-existing-vmss",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/trusted-launch-faq",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/trusted-launch-portal",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/expand-os-disk",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/ps-template",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/workloads/oracle/oracle-overview",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/zone-resilience",
     "https://learn.microsoft.com/en-us/azure/virtual-network/application-security-groups",
     "https://learn.microsoft.com/en-us/azure/virtual-network/concepts-and-best-practices",
+    "https://learn.microsoft.com/en-us/azure/virtual-network/create-vm-accelerated-networking-cli",
     "https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/default-outbound-access",
     "https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/public-ip-addresses",
     "https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/virtual-network-public-ip-address",
@@ -32998,6 +33391,7 @@
     "https://learn.microsoft.com/en-us/windows-server/manage/windows-admin-center/understand/what-is",
     "https://learn.microsoft.com/en-us/windows-server/manage/windows-admin-center/use/get-started",
     "https://learn.microsoft.com/en-us/windows-server/remote/remote-server-administration-tools",
+    "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/plan/should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v",
     "https://learn.microsoft.com/en-us/windows/client-management/mdm/configuration-service-provider-reference",
     "https://learn.microsoft.com/en-us/windows/deployment/update/check-release-health",
     "https://learn.microsoft.com/en-us/windows/deployment/windows-autopatch/overview/windows-autopatch-overview",
@@ -33011,150 +33405,6 @@
     "https://learn.microsoft.com/en-us/windows/win32/wer/windows-error-reporting"
   ],
   "queue": [
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/n-tier/windows-vm",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/trusted-launch-existing-vm-gen-1",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/plan/should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/general-purpose/b-family",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/general-purpose/d-family",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/general-purpose/a-family",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/compute-optimized/f-family",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/compute-optimized/fx-family",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/memory-optimized/e-family",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/memory-optimized/eb-family",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/memory-optimized/m-family",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/storage-optimized/l-family",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/gpu-accelerated/nc-family",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/gpu-accelerated/nv-family",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/nc-series",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/nv-series",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/high-performance-compute/hbv2-series-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/high-performance-compute/hbv3-series-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/high-performance-compute/hbv4-series-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/high-performance-compute/hc-series-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/high-performance-compute/hx-series-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/mv2-series",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/nda100-v4-series",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/ndv2-series",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/msv2-mdsv2-series",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/disk-encryption-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/ps-template",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/create-ssh-secured-vm-from-template",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/expand-os-disk",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/resize-os-disk-gpt-partition",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-network/create-vm-accelerated-networking-cli",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/trusted-launch-portal",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/trusted-launch-faq",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/trusted-launch-existing-vm",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/trusted-launch-existing-vmss",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/general-purpose/dpsv6-series",
-      "depth": 2
-    },
     {
       "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/general-purpose/dplsv6-series",
       "depth": 2
@@ -43010,11 +43260,155 @@
     {
       "url": "https://learn.microsoft.com/en-us/rest/api/compute/virtualmachines/listall",
       "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/cli-ps-findimage",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-enhanced-policy",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/boot-to-uefi-mode-or-legacy-bios-mode",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/b-series-cpu-credit-model/b-series-cpu-credit-model",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/vm-processor-mode",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/av2-series",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/compute-optimized/fasv7-series",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/compute-optimized/fx-series",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/memory-optimized/epsv7-series",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/memory-optimized/ebsv6-series",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/memory-optimized/mpsv4-series",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/storage-optimized/lsv2-series",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/gpu-accelerated/ncadsh100v5-series",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/lifecycle/retirement/nv-series-retirement",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/azure/virtual-machines/sizes/gpu-accelerated/nc-series",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/gpu-accelerated/nv-series",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/cost-management-billing/reservations/exchange-and-refund-azure-reservations",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/lifecycle/retirement/hc-series-retirement",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/supported-windows-guest-operating-systems-for-hyper-v-on-windows",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/memory-optimized/mv2-series",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/constrained-vcpu",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/quotas",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/gpu-accelerated/ndasra100v4-series",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/gpu-accelerated/ndv2-series",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/memory-optimized/msv2-mm-series",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/disk-encryption-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/templates/microsoft.compute/allversions",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/expand-disks",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/expand-disks",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-network/create-virtual-machine-accelerated-networking",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/boot-integrity-monitoring-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows-server/security/guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vm-migrate-enhanced-policy",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-attached-disks",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/general-purpose/dpdsv6-series",
+      "depth": 3
     }
   ],
   "last_batch": {
     "attempted": 36,
-    "documents_total": 3298,
+    "documents_total": 3334,
     "new_documents": 36,
     "quarantined": 0,
     "queued": 2500,
