@@ -31362,6 +31362,314 @@
       "mapped_tracks": [
         "AZ-104"
       ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/cli/azure/azure-cli-extensions-overview",
+      "sha256": "850d6541ff4e6fd534aa77c9a9cc8db8f95091a1565be777ebb0748541a6b994",
+      "captured_at": "2026-11-26T20:23:21.753028+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/cli/azure/vm/aem",
+      "sha256": "07db1d432e8a9a39cdf228b45faf32179873cfb7a1d1433f02be6bdf34580eca",
+      "captured_at": "2026-11-26T20:23:22.236194+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/cli/azure/vm/application",
+      "sha256": "76408ea70eb8fd45f7a576bb44aa0ce37fa76778ecbebc5d4c1264646c5e6349",
+      "captured_at": "2026-11-26T20:23:22.529396+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/cli/azure/vm/boot-diagnostics",
+      "sha256": "941e616acb471ad7c406ae342ae05cfcc71bb1b52755c97cbcc4756f877c658e",
+      "captured_at": "2026-11-26T20:23:22.735802+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/cli/azure/vm/diagnostics",
+      "sha256": "a3ed7484ae7170e21abb654bba0541f8c9d8cab7b27ffea90eb7b6458d2df3ab",
+      "captured_at": "2026-11-26T20:23:23.029232+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/cli/azure/vm/disk",
+      "sha256": "5f3e84a0bb3de1f26a21435779bab0a5f00d45ebdb3922411c8b7eb281bb4512",
+      "captured_at": "2026-11-26T20:23:23.530268+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/cli/azure/vm/encryption",
+      "sha256": "b828895cb59f4cdf0fa8928bd06e3fa8995262e88af331d64eb1ce6323bb7d44",
+      "captured_at": "2026-11-26T20:23:23.776855+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/cli/azure/vm/extension",
+      "sha256": "7e20939133e537394bf76a83aee71e0b17d854d9b4f33320913b10733da64393",
+      "captured_at": "2026-11-26T20:23:24.259361+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/cli/azure/vm/extension/image",
+      "sha256": "ebbb6b4ce323107a65f6714a538dd1d3b6d9d6eed46a6dbee4df47d9cf854790",
+      "captured_at": "2026-11-26T20:23:24.564137+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/cli/azure/vm/host",
+      "sha256": "90b5def97d4ab2c3ca9ce18404eb7f0aa60546c4fa83a5888da80fb4c36a381a",
+      "captured_at": "2026-11-26T20:23:24.924040+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/cli/azure/vm/host/group",
+      "sha256": "1ca70a628a8da6be13c303e93426d564c70107ddcd80220bcd4198c1ba22b4c7",
+      "captured_at": "2026-11-26T20:23:25.294271+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/cli/azure/vm/identity",
+      "sha256": "a9d0dc8b8522ba11d14857107cb71ab7fd9445e122c8ba0b477fd595fba6b145",
+      "captured_at": "2026-11-26T20:23:25.969969+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/cli/azure/vm/monitor",
+      "sha256": "7dd319ee55cd46485d94dc91d36152993a336323abe4685ecebbafe3a34e3811",
+      "captured_at": "2026-11-26T20:23:26.276305+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/cli/azure/vm/monitor/log",
+      "sha256": "c6afd30d37b23bc05c07fbb80cee9587acc74e9d3393427439d6f22719c38c52",
+      "captured_at": "2026-11-26T20:23:26.474482+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/cli/azure/vm/monitor/metrics",
+      "sha256": "9d0aa5b6ee0aa87b9c4c0b1b8c53aa7eda6263845ad117d8122300ac3c9562a3",
+      "captured_at": "2026-11-26T20:23:26.756979+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/cli/azure/vm/nic",
+      "sha256": "ca8e2a918211add14b4632d0d2571084287a791c2c8c2f568520741c10381e17",
+      "captured_at": "2026-11-26T20:23:27.017571+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/cli/azure/vm/repair",
+      "sha256": "ca2c57882f2db764811b8c2de1738de081b6a8dd1f9555316bdc5714b288c8d5",
+      "captured_at": "2026-11-26T20:23:27.631730+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/troubleshoot/azure/virtual-machines/reset-network-interface",
+      "sha256": "ef5daf832c3367ca1cdcb73073b7af923d4b5935bd29679d0a073466e16a0c71",
+      "captured_at": "2026-11-26T20:23:28.035319+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/cli/azure/vm/run-command",
+      "sha256": "e645154e6e66f5543ef6f282fa0b988815174d636b5cfcea63a2ce4e7f854c5d",
+      "captured_at": "2026-11-26T20:23:28.406947+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/cli/azure/vm/secret",
+      "sha256": "b815c2fca66526cbfaa3725bc0020b6e5a50ae3e01762f46d741e647bf39bedc",
+      "captured_at": "2026-11-26T20:23:28.742266+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/cli/azure/vm/unmanaged-disk",
+      "sha256": "91880d5844927f53ba16f552b8898df04c17183d9a5e641aef6bdba4dc0b8427",
+      "captured_at": "2026-11-26T20:23:29.284787+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/cli/azure/vm/user",
+      "sha256": "38dd5a7c63606f8280bd82c45eb9eb05a3b9e2ed98dd3c0bfb52312c15a582a7",
+      "captured_at": "2026-11-26T20:23:29.673985+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/capture-image",
+      "sha256": "60f4f0820ab28710c9b61212a8d00f0f390a1712091f3e5ea883de38d16df5e3",
+      "captured_at": "2026-11-26T20:23:30.288191+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/rest/api/compute/virtualmachines/createorupdate",
+      "sha256": "ef145e3902432d20ac21adcbe080feb075bcf03eb9c660f0deacc00c6722033e",
+      "captured_at": "2026-11-26T20:23:32.421282+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/cli/azure/query-az-cli2",
+      "sha256": "db3a6b10cc3b286e650d1c0a5b3a0c04625fbf2f921e43222da7d8390d628bfc",
+      "captured_at": "2026-11-26T20:23:32.900350+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/extensions/agent-linux",
+      "sha256": "214ae5d7360efdb26259c8857e16441e75775fefd792995535d729092de8ddad",
+      "captured_at": "2026-11-26T20:23:33.083428+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/extensions/features-linux",
+      "sha256": "bb0e9774d82e96a95e30496f22351212730c307928a6324697553fd5fdf1f183",
+      "captured_at": "2026-11-26T20:23:33.231438+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/user-data",
+      "sha256": "8b524f79745f104959526dff7a113360075d2b5cdd7d0238248ada77fa2b95af",
+      "captured_at": "2026-11-26T20:23:33.471134+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-cli",
+      "sha256": "89cda5d2d0ad3179b9bb87462b09b185576d0181a99da02bfee9df5b5c175f43",
+      "captured_at": "2026-11-26T20:23:33.650214+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/cloud-init-troubleshooting",
+      "sha256": "9fb783c5cc93468a3df3484569984bade39522e70d63b5543e12fc6cef7cd5b8",
+      "captured_at": "2026-11-26T20:23:33.805396+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/cloudinit-add-user",
+      "sha256": "c75e151450035c8a962097d269d79f4513e8d310f22d40664800451dd05b6e7c",
+      "captured_at": "2026-11-26T20:23:33.872194+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
     }
   ],
   "seen": [
@@ -31565,6 +31873,7 @@
     "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/resources-without-resource-group-limit",
     "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources",
     "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tls-support",
+    "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-cli",
     "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-to-management-group",
     "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-to-subscription",
     "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-to-tenant",
@@ -31771,12 +32080,17 @@
     "https://learn.microsoft.com/en-us/azure/virtual-machines/disks-understand-billing",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/enable-nvme-temp-faqs",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/ephemeral-os-disks",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/extensions/agent-linux",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/extensions/features-linux",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/faq-for-disks",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/flexible-virtual-machine-scale-sets",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/generation-2",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/add-disk",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/attach-disk-portal",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/capture-image",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/cli-ps-findimage",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/cloud-init-troubleshooting",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/cloudinit-add-user",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/cloudinit-configure-swapfile",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/compute-benchmark-scores",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/convert-unmanaged-to-managed-disks",
@@ -31886,6 +32200,7 @@
     "https://learn.microsoft.com/en-us/azure/virtual-machines/trusted-launch-faq",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/trusted-launch-portal",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/understand-vm-reboots",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/user-data",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/vm-naming-conventions",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/capture-image-resource",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/compute-benchmark-scores",
@@ -31924,14 +32239,36 @@
     "https://learn.microsoft.com/en-us/bing/search-apis/bing-web-search/overview",
     "https://learn.microsoft.com/en-us/cli/azure/account",
     "https://learn.microsoft.com/en-us/cli/azure/account/tenant",
+    "https://learn.microsoft.com/en-us/cli/azure/azure-cli-extensions-overview",
     "https://learn.microsoft.com/en-us/cli/azure/group",
     "https://learn.microsoft.com/en-us/cli/azure/install-azure-cli",
+    "https://learn.microsoft.com/en-us/cli/azure/query-az-cli2",
     "https://learn.microsoft.com/en-us/cli/azure/reference-index",
     "https://learn.microsoft.com/en-us/cli/azure/release-notes-azure-cli",
     "https://learn.microsoft.com/en-us/cli/azure/vm",
+    "https://learn.microsoft.com/en-us/cli/azure/vm/aem",
+    "https://learn.microsoft.com/en-us/cli/azure/vm/application",
     "https://learn.microsoft.com/en-us/cli/azure/vm/availability-set",
+    "https://learn.microsoft.com/en-us/cli/azure/vm/boot-diagnostics",
+    "https://learn.microsoft.com/en-us/cli/azure/vm/diagnostics",
+    "https://learn.microsoft.com/en-us/cli/azure/vm/disk",
+    "https://learn.microsoft.com/en-us/cli/azure/vm/encryption",
+    "https://learn.microsoft.com/en-us/cli/azure/vm/extension",
+    "https://learn.microsoft.com/en-us/cli/azure/vm/extension/image",
+    "https://learn.microsoft.com/en-us/cli/azure/vm/host",
+    "https://learn.microsoft.com/en-us/cli/azure/vm/host/group",
+    "https://learn.microsoft.com/en-us/cli/azure/vm/identity",
     "https://learn.microsoft.com/en-us/cli/azure/vm/image",
     "https://learn.microsoft.com/en-us/cli/azure/vm/image/terms",
+    "https://learn.microsoft.com/en-us/cli/azure/vm/monitor",
+    "https://learn.microsoft.com/en-us/cli/azure/vm/monitor/log",
+    "https://learn.microsoft.com/en-us/cli/azure/vm/monitor/metrics",
+    "https://learn.microsoft.com/en-us/cli/azure/vm/nic",
+    "https://learn.microsoft.com/en-us/cli/azure/vm/repair",
+    "https://learn.microsoft.com/en-us/cli/azure/vm/run-command",
+    "https://learn.microsoft.com/en-us/cli/azure/vm/secret",
+    "https://learn.microsoft.com/en-us/cli/azure/vm/unmanaged-disk",
+    "https://learn.microsoft.com/en-us/cli/azure/vm/user",
     "https://learn.microsoft.com/en-us/cloud-app-security/what-is-cloud-app-security",
     "https://learn.microsoft.com/en-us/compliance/assurance/assurance-encryption-for-microsoft-365-services",
     "https://learn.microsoft.com/en-us/compliance/assurance/assurance-encryption-in-transit",
@@ -34589,6 +34926,7 @@
     "https://learn.microsoft.com/en-us/rest/api/compute/virtual-machine-images/list-offers",
     "https://learn.microsoft.com/en-us/rest/api/compute/virtual-machine-images/list-publishers",
     "https://learn.microsoft.com/en-us/rest/api/compute/virtual-machine-images/list-skus",
+    "https://learn.microsoft.com/en-us/rest/api/compute/virtualmachines/createorupdate",
     "https://learn.microsoft.com/en-us/rest/api/compute/virtualmachines/listavailablesizes",
     "https://learn.microsoft.com/en-us/rest/api/keyvault/",
     "https://learn.microsoft.com/en-us/rest/api/keyvault/keyvault/vaults/check-name-availability",
@@ -34743,6 +35081,7 @@
     "https://learn.microsoft.com/en-us/troubleshoot/azure/active-directory/enable-support-tls-environment",
     "https://learn.microsoft.com/en-us/troubleshoot/azure/general/dependency-availability-by-country",
     "https://learn.microsoft.com/en-us/troubleshoot/azure/virtual-machines/redeploy-to-new-node-windows",
+    "https://learn.microsoft.com/en-us/troubleshoot/azure/virtual-machines/reset-network-interface",
     "https://learn.microsoft.com/en-us/troubleshoot/entra/entra-id/ad-dmn-services/enable-support-tls-environment",
     "https://learn.microsoft.com/en-us/troubleshoot/exchange/administration/endpoint-connection-405-error",
     "https://learn.microsoft.com/en-us/troubleshoot/exchange/administration/term-new-mailbox-not-recognized-error",
@@ -34837,150 +35176,6 @@
     "https://learn.microsoft.com/en-us/windows/win32/wer/windows-error-reporting"
   ],
   "queue": [
-    {
-      "url": "https://learn.microsoft.com/en-us/office365/smallbusiness/build-your-small-business/build-your-small-business",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/users/na/",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/collections/xkggupt7qm714q",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/powershell/installation",
-      "depth": 1
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/graph/powershell/get-started",
-      "depth": 1
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/cli/azure/azure-cli-extensions-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/cli/azure/vm/aem",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/cli/azure/vm/application",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/cli/azure/vm/boot-diagnostics",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/cli/azure/vm/diagnostics",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/cli/azure/vm/disk",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/cli/azure/vm/encryption",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/cli/azure/vm/extension",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/cli/azure/vm/extension/image",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/cli/azure/vm/host",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/cli/azure/vm/host/group",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/cli/azure/vm/identity",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/cli/azure/vm/monitor",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/cli/azure/vm/monitor/log",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/cli/azure/vm/monitor/metrics",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/cli/azure/vm/nic",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/cli/azure/vm/repair",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/troubleshoot/azure/virtual-machines/reset-network-interface",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/cli/azure/vm/run-command",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/cli/azure/vm/secret",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/cli/azure/vm/unmanaged-disk",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/cli/azure/vm/user",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/capture-image",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/rest/api/compute/virtualmachines/createorupdate",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/cli/azure/query-az-cli2",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/extensions/agent-linux",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/extensions/features-linux",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/user-data",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-cli",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/cloud-init-troubleshooting",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/cloudinit-add-user",
-      "depth": 2
-    },
     {
       "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/cloudinit-update-vm",
       "depth": 2
@@ -44820,46 +45015,210 @@
     {
       "url": "https://learn.microsoft.com/en-us/admin/setup/add-or-replace-your-onmicrosoftcom-domain",
       "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/cli/azure/extension",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/cli/azure/azure-cli-extensions-list",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/security/fundamentals/azure-disk-encryption-vms-vmss",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/rest/api/monitor/metrics/list",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-network-interface-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/troubleshoot/azure/virtual-machines/windows/reset-network-interface",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/powershell/azure/",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/run-command",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/run-command",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/extensions/key-vault-linux",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/extensions/key-vault-windows",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/generalize",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/cli/azure/image",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/rest/api/compute/virtual-machines/create-or-update",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/hybrid-use-benefit-licensing",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/azure-hybrid-benefit-linux",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/cli/azure/use-azure-cli-successfully-query",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/cli/azure/use-azure-cli-successfully-powershell",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/cli/azure/format-output-azure-cli",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/cli/azure/use-azure-cli-successfully-tips",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/cli/azure/use-azure-cli-successfully-bash",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/tutorial-automate-vm-deployment",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/azure/virtual-machines/linux/tutorial-monitor",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/extensions/custom-script-linux",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/powershell/module/az.compute/get-azvmextensionimage",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/powershell/module/az.compute/set-azvmextension",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/template-description",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/extensions/update-linux-agent",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/powershell/module/az.compute/remove-azvmextension",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/extensions/overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/custom-data",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/instance-metadata-service",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-cloud-shell",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/deploy-cli",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/deploy-what-if",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/cli/azure/deployment/sub",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/cli/azure/deployment/mg",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/cli/azure/deployment/tenant",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/cloud-init-deep-dive",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/office365/smallbusiness/build-your-small-business/build-your-small-business",
+      "depth": 2
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/users/na/",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/collections/xkggupt7qm714q",
+      "depth": 2
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/powershell/installation",
+      "depth": 1
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/graph/powershell/get-started",
+      "depth": 1
     }
   ],
   "last_batch": {
     "attempted": 36,
-    "documents_total": 3470,
-    "new_documents": 28,
+    "documents_total": 3501,
+    "new_documents": 31,
     "quarantined": 0,
-    "queued": 2496,
+    "queued": 2504,
     "failures": [
       {
-        "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/resource-group-using-tags.md",
+        "url": "https://learn.microsoft.com/en-us/office365/smallbusiness/build-your-small-business/build-your-small-business",
+        "error": "ValueError"
+      },
+      {
+        "url": "https://learn.microsoft.com/en-us/users/na/",
+        "error": "ValueError"
+      },
+      {
+        "url": "https://learn.microsoft.com/en-us/collections/xkggupt7qm714q",
+        "error": "ValueError"
+      },
+      {
+        "url": "https://learn.microsoft.com/en-us/graph/powershell/installation",
         "error": "HTTPError"
       },
       {
-        "url": "https://learn.microsoft.com/en-us/Briefing/be-overview",
-        "error": "ValueError"
-      },
-      {
-        "url": "https://learn.microsoft.com/en-us/viva/engage/overview-native-mode",
+        "url": "https://learn.microsoft.com/en-us/graph/powershell/get-started",
         "error": "HTTPError"
-      },
-      {
-        "url": "https://learn.microsoft.com/en-us/entra/identity/domain-services/sam-account-name/sam-account-name",
-        "error": "HTTPError"
-      },
-      {
-        "url": "https://learn.microsoft.com/en-us/microsoft-365/business-video/",
-        "error": "ValueError"
-      },
-      {
-        "url": "https://learn.microsoft.com/en-us/admin/add-users/about-admin-roles",
-        "error": "ValueError"
-      },
-      {
-        "url": "https://learn.microsoft.com/en-us/admin",
-        "error": "ValueError"
-      },
-      {
-        "url": "https://learn.microsoft.com/en-us/admin/setup/add-or-replace-your-onmicrosoftcom-domain",
-        "error": "ValueError"
       }
     ]
   }
