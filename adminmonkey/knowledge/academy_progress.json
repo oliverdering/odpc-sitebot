@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-26T02:41:12.217107+00:00",
+  "generated_at": "2026-11-26T11:28:53.436503+00:00",
   "product": "AdminMonkey Academy",
   "certification_expansion": {
     "candidate_exam_codes": 42,
@@ -45,25 +45,58 @@
   "certification_issuer": "ODPC",
   "official_microsoft_certification": false,
   "knowledge": {
-    "documents_collected": 3442,
-    "manufacturer_verified": 3442,
+    "documents_collected": 3470,
+    "manufacturer_verified": 3470,
     "review": {
       "unreviewed": 0,
-      "approved": 3442,
+      "approved": 3470,
       "rejected": 0
     },
     "last_batch": {
       "attempted": 36,
-      "documents_total": 3442,
-      "new_documents": 36,
+      "documents_total": 3470,
+      "new_documents": 28,
       "quarantined": 0,
-      "queued": 2500,
-      "failures": []
+      "queued": 2496,
+      "failures": [
+        {
+          "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/resource-group-using-tags.md",
+          "error": "HTTPError"
+        },
+        {
+          "url": "https://learn.microsoft.com/en-us/Briefing/be-overview",
+          "error": "ValueError"
+        },
+        {
+          "url": "https://learn.microsoft.com/en-us/viva/engage/overview-native-mode",
+          "error": "HTTPError"
+        },
+        {
+          "url": "https://learn.microsoft.com/en-us/entra/identity/domain-services/sam-account-name/sam-account-name",
+          "error": "HTTPError"
+        },
+        {
+          "url": "https://learn.microsoft.com/en-us/microsoft-365/business-video/",
+          "error": "ValueError"
+        },
+        {
+          "url": "https://learn.microsoft.com/en-us/admin/add-users/about-admin-roles",
+          "error": "ValueError"
+        },
+        {
+          "url": "https://learn.microsoft.com/en-us/admin",
+          "error": "ValueError"
+        },
+        {
+          "url": "https://learn.microsoft.com/en-us/admin/setup/add-or-replace-your-onmicrosoftcom-domain",
+          "error": "ValueError"
+        }
+      ]
     }
   },
   "retrieval_staging": {
-    "chunked_documents": 3442,
-    "chunks_prepared": 18550,
+    "chunked_documents": 3470,
+    "chunks_prepared": 18715,
     "retrieval_quality_verified": false,
     "agent_answers_verified": 0,
     "note": "Ephemeral, provenance-checked chunk preparation; no searchable production index yet."
@@ -87,7 +120,7 @@
     },
     {
       "track": "AZ-104",
-      "manufacturer_verified_sources": 520,
+      "manufacturer_verified_sources": 536,
       "knowledge_coverage": "source_count_only_not_learning_objective_coverage",
       "practice_scenarios_available": 4,
       "agent_answers_evaluated": 0,

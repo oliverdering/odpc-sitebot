@@ -31106,6 +31106,262 @@
       "mapped_tracks": [
         "AZ-104"
       ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/snapshot-copy-managed-disk",
+      "sha256": "1c95259af239bb839a5360d8657952b27292bb9cad7211cf6faa7378f4f3c2f3",
+      "captured_at": "2026-11-26T11:28:36.755276+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/capture-image-resource",
+      "sha256": "60f4f0820ab28710c9b61212a8d00f0f390a1712091f3e5ea883de38d16df5e3",
+      "captured_at": "2026-11-26T11:28:36.907180+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/disks-upload-vhd-to-managed-disk-cli",
+      "sha256": "7ab0cb2a38278c29f6e2a10f18980dfc0454a7270a3c8aa4b810dd958dbad18c",
+      "captured_at": "2026-11-26T11:28:36.975635+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/disks-upload-vhd-to-managed-disk-powershell",
+      "sha256": "08d6040e315fffc37031dd8aceb99fef14048017bbc2605d02d5f3644a138808",
+      "captured_at": "2026-11-26T11:28:37.043780+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/disks-restrict-import-export-overview",
+      "sha256": "fc0b46f8b431133011437110fea7808eea0437e6bfae94b6e51ec9d6e3ecb8d5",
+      "captured_at": "2026-11-26T11:28:37.162004+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/disks-shared",
+      "sha256": "63d5520ce15af173f46d0320ed50537d9ee967ce75531a3409439ea339a3b356",
+      "captured_at": "2026-11-26T11:28:37.227637+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/disks-performance",
+      "sha256": "a6814449cbd9c5fc4d127345a6c89a6859c5406c61d9b7629a3b77f64e0696d3",
+      "captured_at": "2026-11-26T11:28:37.324878+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/disks-hdd-os-retirement",
+      "sha256": "9c54e4c9bf2c9c64c65ffe0c61a0efc2a9d68f68d84addb90a745c6f7984cdad",
+      "captured_at": "2026-11-26T11:28:37.414880+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows/win32/fileio/basic-and-dynamic-disks",
+      "sha256": "c678e854b5925823872bb7471ccf2874d05eacc63b99b104ed8b62eb455d9eac",
+      "captured_at": "2026-11-26T11:28:37.491392+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows-server/storage/disk-management/change-an-mbr-disk-into-a-gpt-disk",
+      "sha256": "90badcd3a61a3735c9f624605ec3dd2aba4b8841da939b73cda4b74dc91175bd",
+      "captured_at": "2026-11-26T11:28:37.609360+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/windows-and-gpt-faq",
+      "sha256": "30a34699b4d14f417d03738bac9cc24b15e68834e069b68fc2538369735f69e3",
+      "captured_at": "2026-11-26T11:28:37.775267+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/understand-vm-reboots",
+      "sha256": "1f1cd19708be308b3f59a81207b8d6f4bedfec925ea48df6c425a06cef3c8968",
+      "captured_at": "2026-11-26T11:28:37.837069+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/troubleshoot/azure/virtual-machines/redeploy-to-new-node-windows",
+      "sha256": "55e6c39421d28ea34a309b7a7df7672faf2df8bd485e6d8310fa5aa2405755d8",
+      "captured_at": "2026-11-26T11:28:38.046586+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/azure-vms-no-temp-disk",
+      "sha256": "19bffc23da42aa3ef29cac89520da4b04e240b1f1eee1b40b8bc958ac1f40469",
+      "captured_at": "2026-11-26T11:28:38.355168+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/disk-encryption-windows",
+      "sha256": "f75002523330e2ae699adf6ed612283872eb86c9aea223f4d3934cd5b9d7143c",
+      "captured_at": "2026-11-26T11:28:38.427310+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/disk-encryption-linux",
+      "sha256": "56c5359d8d5dec2560dd96cddd52bff649dd0a8fc82f5517d868fbb301be0cb4",
+      "captured_at": "2026-11-26T11:28:38.564431+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/disks-high-availability",
+      "sha256": "097b1b61e236847ad6ec4cd9df289d05bcc9969bf4fe5639989b8e2e4753fe59",
+      "captured_at": "2026-11-26T11:28:38.656537+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/disks-understand-billing",
+      "sha256": "2ba69c8e0c85bd770eb928b086ef26ce6283cfc648f1f207b3eba7c363378434",
+      "captured_at": "2026-11-26T11:28:38.769595+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/powershell/module/az.compute/",
+      "sha256": "8661402a0b72ccf126841817dc709e2f8cd7b077c25fa7ea6e2cc3d23f227fb3",
+      "captured_at": "2026-11-26T11:28:38.920373+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/dotnet/api/microsoft.azure.commands.compute.models.psvirtualmachineimagepublisher",
+      "sha256": "64bf1850b1654cbf52eaba2e7bc79dcc00b5de5a0b524af24b19299a78569a23",
+      "captured_at": "2026-11-26T11:28:39.046574+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/powershell/module/az.compute/get-azvmimage",
+      "sha256": "4ee9097a8896be19d4a08ab55168664f5dee6a526ec82d9fb2665a2578f6bf53",
+      "captured_at": "2026-11-26T11:28:39.243048+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/powershell/module/az.compute/save-azvmimage",
+      "sha256": "2c2a9eba188aaeca1b63475e30f20f597524c3557e63901e844be6915a13ff17",
+      "captured_at": "2026-11-26T11:28:39.410992+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/dotnet/api/microsoft.azure.commands.compute.models.psvirtualmachineimageoffer",
+      "sha256": "92e5c5117044d441af5cc2b10561849e2a36c793f4f96b7f5327fd33b768e8d7",
+      "captured_at": "2026-11-26T11:28:39.556824+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/dotnet/api/microsoft.azure.commands.compute.models.psvirtualmachineimagesku",
+      "sha256": "834837ec49b92f10e636cb8dfe9a37dcc0e2ee192f914f27b4c84cbcb164fcfd",
+      "captured_at": "2026-11-26T11:28:39.671022+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/rest/api/compute/virtual-machine-images/list-publishers",
+      "sha256": "73e25caa69b60b159c3af9d882858e778a07530fac269c1324b961870d806254",
+      "captured_at": "2026-11-26T11:28:41.469362+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/rest/api/compute/virtual-machine-images/list-offers",
+      "sha256": "0216d222739c230ec1a7523a30f176a3ea9f08bd54e1026adf96dbe2ff88b164",
+      "captured_at": "2026-11-26T11:28:43.334598+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/rest/api/compute/virtual-machine-images/list-skus",
+      "sha256": "5f2228b4a691f8658e77d86b4bb1f89eff1daf81fe0bc67d00b6b89c4ab176fd",
+      "captured_at": "2026-11-26T11:28:44.601472+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/cli/azure/vm/image/terms",
+      "sha256": "6a07a4f8bba68e8f7ba908f2dbd7b5593c0a34245c7e0d408cead5b48a750e98",
+      "captured_at": "2026-11-26T11:28:44.744018+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
     }
   ],
   "seen": [
@@ -31496,6 +31752,7 @@
     "https://learn.microsoft.com/en-us/azure/virtual-machines/",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/availability",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/availability-set-overview",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/azure-vms-no-temp-disk",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/backup-and-disaster-recovery-for-azure-iaas-disks",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/capture-image-resource",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/co-location",
@@ -31504,8 +31761,14 @@
     "https://learn.microsoft.com/en-us/azure/virtual-machines/dedicated-hosts/overview",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/disk-encryption",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/disk-encryption-overview",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/disks-hdd-os-retirement",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/disks-high-availability",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/disks-performance",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/disks-performance-options",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/disks-restrict-import-export-overview",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/disks-shared",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/disks-types",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/disks-understand-billing",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/enable-nvme-temp-faqs",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/ephemeral-os-disks",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/faq-for-disks",
@@ -31519,7 +31782,9 @@
     "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/convert-unmanaged-to-managed-disks",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/create-cli-availability-zone",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/create-ssh-secured-vm-from-template",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/disk-encryption-linux",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/disks-enable-host-based-encryption-cli",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/disks-upload-vhd-to-managed-disk-cli",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/endorsed-distros",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/find-unattached-disks",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/hibernate-resume-linux",
@@ -31612,6 +31877,7 @@
     "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/storage-optimized/lasv5-series",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/storage-optimized/lpsv5-series",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/storage-optimized/lsv4-series",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/snapshot-copy-managed-disk",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/spot-vms",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/trusted-launch",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/trusted-launch-existing-vm",
@@ -31619,8 +31885,12 @@
     "https://learn.microsoft.com/en-us/azure/virtual-machines/trusted-launch-existing-vmss",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/trusted-launch-faq",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/trusted-launch-portal",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/understand-vm-reboots",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/vm-naming-conventions",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/capture-image-resource",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/compute-benchmark-scores",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/disk-encryption-windows",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/disks-upload-vhd-to-managed-disk-powershell",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/expand-os-disk",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/ps-template",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/quotas",
@@ -31661,6 +31931,7 @@
     "https://learn.microsoft.com/en-us/cli/azure/vm",
     "https://learn.microsoft.com/en-us/cli/azure/vm/availability-set",
     "https://learn.microsoft.com/en-us/cli/azure/vm/image",
+    "https://learn.microsoft.com/en-us/cli/azure/vm/image/terms",
     "https://learn.microsoft.com/en-us/cloud-app-security/what-is-cloud-app-security",
     "https://learn.microsoft.com/en-us/compliance/assurance/assurance-encryption-for-microsoft-365-services",
     "https://learn.microsoft.com/en-us/compliance/assurance/assurance-encryption-in-transit",
@@ -31762,6 +32033,9 @@
     "https://learn.microsoft.com/en-us/devops/deliver/what-is-infrastructure-as-code",
     "https://learn.microsoft.com/en-us/devops/devsecops/capability-model",
     "https://learn.microsoft.com/en-us/dotnet/api/microsoft.azure.commands.common.authentication.abstractions.core.iazurecontextcontainer",
+    "https://learn.microsoft.com/en-us/dotnet/api/microsoft.azure.commands.compute.models.psvirtualmachineimageoffer",
+    "https://learn.microsoft.com/en-us/dotnet/api/microsoft.azure.commands.compute.models.psvirtualmachineimagepublisher",
+    "https://learn.microsoft.com/en-us/dotnet/api/microsoft.azure.commands.compute.models.psvirtualmachineimagesku",
     "https://learn.microsoft.com/en-us/dotnet/api/microsoft.azure.commands.resourcemanager.cmdlets.sdkmodels.psresourceproviderlocation",
     "https://learn.microsoft.com/en-us/dotnet/api/overview/azure/",
     "https://learn.microsoft.com/en-us/dotnet/api/system.boolean",
@@ -34136,9 +34410,12 @@
     "https://learn.microsoft.com/en-us/powershell/microsoftgraph/migration-steps",
     "https://learn.microsoft.com/en-us/powershell/microsoftgraph/overview",
     "https://learn.microsoft.com/en-us/powershell/module/az.accounts/get-aztenant",
+    "https://learn.microsoft.com/en-us/powershell/module/az.compute/",
+    "https://learn.microsoft.com/en-us/powershell/module/az.compute/get-azvmimage",
     "https://learn.microsoft.com/en-us/powershell/module/az.compute/get-azvmimageoffer",
     "https://learn.microsoft.com/en-us/powershell/module/az.compute/get-azvmimagepublisher",
     "https://learn.microsoft.com/en-us/powershell/module/az.compute/get-azvmimagesku",
+    "https://learn.microsoft.com/en-us/powershell/module/az.compute/save-azvmimage",
     "https://learn.microsoft.com/en-us/powershell/module/az.resources/",
     "https://learn.microsoft.com/en-us/powershell/module/az.resources/get-azlocation",
     "https://learn.microsoft.com/en-us/powershell/module/exchange/search-unifiedauditlog",
@@ -34309,6 +34586,9 @@
     "https://learn.microsoft.com/en-us/rest/api/compute/platformimages/platformimages-list-publisher-offers",
     "https://learn.microsoft.com/en-us/rest/api/compute/platformimages/platformimages-list-publishers",
     "https://learn.microsoft.com/en-us/rest/api/compute/resourceskus/list",
+    "https://learn.microsoft.com/en-us/rest/api/compute/virtual-machine-images/list-offers",
+    "https://learn.microsoft.com/en-us/rest/api/compute/virtual-machine-images/list-publishers",
+    "https://learn.microsoft.com/en-us/rest/api/compute/virtual-machine-images/list-skus",
     "https://learn.microsoft.com/en-us/rest/api/compute/virtualmachines/listavailablesizes",
     "https://learn.microsoft.com/en-us/rest/api/keyvault/",
     "https://learn.microsoft.com/en-us/rest/api/keyvault/keyvault/vaults/check-name-availability",
@@ -34462,6 +34742,7 @@
     "https://learn.microsoft.com/en-us/training/support/plans-create-manage",
     "https://learn.microsoft.com/en-us/troubleshoot/azure/active-directory/enable-support-tls-environment",
     "https://learn.microsoft.com/en-us/troubleshoot/azure/general/dependency-availability-by-country",
+    "https://learn.microsoft.com/en-us/troubleshoot/azure/virtual-machines/redeploy-to-new-node-windows",
     "https://learn.microsoft.com/en-us/troubleshoot/entra/entra-id/ad-dmn-services/enable-support-tls-environment",
     "https://learn.microsoft.com/en-us/troubleshoot/exchange/administration/endpoint-connection-405-error",
     "https://learn.microsoft.com/en-us/troubleshoot/exchange/administration/term-new-mailbox-not-recognized-error",
@@ -34519,6 +34800,7 @@
     "https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/oem-secure-boot",
     "https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/oem-vbs",
     "https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/default-time-zones",
+    "https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/windows-and-gpt-faq",
     "https://learn.microsoft.com/en-us/windows-server/administration/overview",
     "https://learn.microsoft.com/en-us/windows-server/administration/server-manager/server-manager",
     "https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/windows-commands",
@@ -34536,6 +34818,7 @@
     "https://learn.microsoft.com/en-us/windows-server/manage/windows-admin-center/understand/what-is",
     "https://learn.microsoft.com/en-us/windows-server/manage/windows-admin-center/use/get-started",
     "https://learn.microsoft.com/en-us/windows-server/remote/remote-server-administration-tools",
+    "https://learn.microsoft.com/en-us/windows-server/storage/disk-management/change-an-mbr-disk-into-a-gpt-disk",
     "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/plan/should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v",
     "https://learn.microsoft.com/en-us/windows/client-management/mdm/configuration-service-provider-reference",
     "https://learn.microsoft.com/en-us/windows/deployment/update/check-release-health",
@@ -34550,153 +34833,10 @@
     "https://learn.microsoft.com/en-us/windows/security/operating-system-security/device-management/windows-security-configuration-framework/security-compliance-toolkit-10",
     "https://learn.microsoft.com/en-us/windows/whats-new/extended-security-updates",
     "https://learn.microsoft.com/en-us/windows/win32/appxpkg/windows-desktop-application-program",
+    "https://learn.microsoft.com/en-us/windows/win32/fileio/basic-and-dynamic-disks",
     "https://learn.microsoft.com/en-us/windows/win32/wer/windows-error-reporting"
   ],
   "queue": [
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/snapshot-copy-managed-disk",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/capture-image-resource",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/disks-upload-vhd-to-managed-disk-cli",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/disks-upload-vhd-to-managed-disk-powershell",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/disks-restrict-import-export-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/disks-shared",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/disks-performance",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/disks-hdd-os-retirement",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/windows/win32/fileio/basic-and-dynamic-disks",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/windows-server/storage/disk-management/change-an-mbr-disk-into-a-gpt-disk",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/windows-and-gpt-faq",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/understand-vm-reboots",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/troubleshoot/azure/virtual-machines/redeploy-to-new-node-windows",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/azure-vms-no-temp-disk",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/disk-encryption-windows",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/disk-encryption-linux",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/disks-high-availability",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/disks-understand-billing",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/powershell/module/az.compute/",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/dotnet/api/microsoft.azure.commands.compute.models.psvirtualmachineimagepublisher",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/powershell/module/az.compute/get-azvmimage",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/powershell/module/az.compute/save-azvmimage",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/dotnet/api/microsoft.azure.commands.compute.models.psvirtualmachineimageoffer",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/dotnet/api/microsoft.azure.commands.compute.models.psvirtualmachineimagesku",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/rest/api/compute/virtual-machine-images/list-publishers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/resource-group-using-tags.md",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/rest/api/compute/virtual-machine-images/list-offers",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/rest/api/compute/virtual-machine-images/list-skus",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/cli/azure/vm/image/terms",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/Briefing/be-overview",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/viva/engage/overview-native-mode",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/entra/identity/domain-services/sam-account-name/sam-account-name",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/business-video/",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/admin/add-users/about-admin-roles",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/admin",
-      "depth": 3
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/admin/setup/add-or-replace-your-onmicrosoftcom-domain",
-      "depth": 3
-    },
     {
       "url": "https://learn.microsoft.com/en-us/office365/smallbusiness/build-your-small-business/build-your-small-business",
       "depth": 2
@@ -44552,14 +44692,175 @@
     {
       "url": "https://learn.microsoft.com/en-us/azure/well-architected/resiliency/backup-and-recovery",
       "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/cost-management-billing/understand/review-individual-bill",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/image-version",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/disks-secure-upload-download",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/powershell/module/az.compute/add-azvhd",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/custom-roles-powershell",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows-server/failover-clustering/clustering-requirements",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/disks-metrics",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/disks-convert-types",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows/win32/api/FileAPI/nf-fileapi-findfirstvolumew",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows-server/storage/disk-management/change-disk-partition-scheme",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/windows/hardware/design/dn640535(v=vs.85)",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/regions",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/troubleshoot/azure/virtual-machines/windows/redeploy-to-new-node-windows",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/dasv5-dadsv5-series",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/disk-encryption-migrate",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/snapshot-copy-managed-disk",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/rest/api/compute/virtual-machines/attach-detach-data-disks",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/disks-enable-bursting",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/powershell/module/az.compute/add-azgalleryinvmaccesscontrolprofileversionrulesidentity",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/dotnet/api/microsoft.azure.commands.compute.models",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/dotnet/api/system.int32",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/dotnet/api/microsoft.azure.commands.compute.models.pscomputelongrunningoperation",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/dotnet/api/microsoft.azure.commands.compute.models.psoperation",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/dotnet/api/microsoft.azure.commands.compute.models.psvirtualmachineimagebase",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/resource-group-using-tags.md",
+      "depth": 2
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/Briefing/be-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/viva/engage/overview-native-mode",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/domain-services/sam-account-name/sam-account-name",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/business-video/",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/admin/add-users/about-admin-roles",
+      "depth": 2
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/admin",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/admin/setup/add-or-replace-your-onmicrosoftcom-domain",
+      "depth": 3
     }
   ],
   "last_batch": {
     "attempted": 36,
-    "documents_total": 3442,
-    "new_documents": 36,
+    "documents_total": 3470,
+    "new_documents": 28,
     "quarantined": 0,
-    "queued": 2500,
-    "failures": []
+    "queued": 2496,
+    "failures": [
+      {
+        "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/resource-group-using-tags.md",
+        "error": "HTTPError"
+      },
+      {
+        "url": "https://learn.microsoft.com/en-us/Briefing/be-overview",
+        "error": "ValueError"
+      },
+      {
+        "url": "https://learn.microsoft.com/en-us/viva/engage/overview-native-mode",
+        "error": "HTTPError"
+      },
+      {
+        "url": "https://learn.microsoft.com/en-us/entra/identity/domain-services/sam-account-name/sam-account-name",
+        "error": "HTTPError"
+      },
+      {
+        "url": "https://learn.microsoft.com/en-us/microsoft-365/business-video/",
+        "error": "ValueError"
+      },
+      {
+        "url": "https://learn.microsoft.com/en-us/admin/add-users/about-admin-roles",
+        "error": "ValueError"
+      },
+      {
+        "url": "https://learn.microsoft.com/en-us/admin",
+        "error": "ValueError"
+      },
+      {
+        "url": "https://learn.microsoft.com/en-us/admin/setup/add-or-replace-your-onmicrosoftcom-domain",
+        "error": "ValueError"
+      }
+    ]
   }
 }
