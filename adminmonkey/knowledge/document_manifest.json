@@ -31670,6 +31670,354 @@
       "mapped_tracks": [
         "AZ-104"
       ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/cloudinit-update-vm",
+      "sha256": "d7770301a8c14821885fc3c6ccbcd066afc1902dd3f7435932c32cf8c20aed28",
+      "captured_at": "2026-11-27T02:58:26.178145+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/cloudinit-update-vm-hostname",
+      "sha256": "fe41c65adaefb002984f7c4c021f4ea61a7e34c1095d23c5d1194d3f66dd03ef",
+      "captured_at": "2026-11-27T02:58:26.304432+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction",
+      "sha256": "4e3c5e963be91e30bdaf92cb237b5ffd79d111d46d3c0a585da03fb820562f0e",
+      "captured_at": "2026-11-27T02:58:26.597252+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-introduction",
+      "sha256": "7337cc4ae3e78f41ea479c44df1623bf49806f15ad6148a026f5bb9329e19169",
+      "captured_at": "2026-11-27T02:58:26.854631+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/storage/elastic-san/next-generation-introduction",
+      "sha256": "598b92df8df5f7a623bca6897f00b509efa4c9f08affdef0b4c6fb0ae2cbcee4",
+      "captured_at": "2026-11-27T02:58:27.392524+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/storage/queues/storage-queues-introduction",
+      "sha256": "aa28223d9454b9b1857481feebaa474a05421adbb7a5187528e286091fd8f6f1",
+      "captured_at": "2026-11-27T02:58:27.499637+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/storage/tables/table-storage-overview",
+      "sha256": "8355f1a3cd17374ad21598648cd9ba7943487d0c7b6cda37ff0d91a837e16e8b",
+      "captured_at": "2026-11-27T02:58:27.633117+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/storage/container-storage/container-storage-introduction",
+      "sha256": "d6e9497be4312414b93ec6f0a8217c76a5904e1e316b9d5c47b2820f4a0a2325",
+      "captured_at": "2026-11-27T02:58:27.771570+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-create",
+      "sha256": "d3a78276ce90ff5dbec10a70461cbabe90e8f94b8a21b8f2eedc18092b5c855d",
+      "captured_at": "2026-11-27T02:58:27.993119+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-introduction",
+      "sha256": "3ab7224385091994b9971549cc66ae7363495a53f703d21fd8c047849a6363b7",
+      "captured_at": "2026-11-27T02:58:28.204303+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-create-netapp-account",
+      "sha256": "7fd5da8880f71a5e32904764b4667c3679f3e664a6c9563c3799a33cca6c364c",
+      "captured_at": "2026-11-27T02:58:28.374974+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-managed-lustre/amlfs-overview",
+      "sha256": "0b4a5e3606e7fdcc86d705b4a29544bec9749dc93e36f6c4fb325de7a7b915dd",
+      "captured_at": "2026-11-27T02:58:28.523773+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/considerations/storage-options",
+      "sha256": "4ba89e3f800c9ec5aa401b2604d2b69b0a98438cfe7dd3a1c45415cbe5b46170",
+      "captured_at": "2026-11-27T02:58:29.058840+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows/win32/fileio/microsoft-smb-protocol-and-cifs-protocol-overview",
+      "sha256": "1556373a15ace3300b63f67b23fd34c681ecb76d516b92b837cbcd061c86b560",
+      "captured_at": "2026-11-27T02:58:29.203127+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/rest/api/storageservices/file-service-rest-api",
+      "sha256": "a92ffe852116104e4c0666e1f604c9b7bc3b5c6795284a709d028943ede99ccf",
+      "captured_at": "2026-11-27T02:58:29.316017+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-azure-and-service-bus-queues-compared-contrasted",
+      "sha256": "b1929203d445b9b320478625d7ebc570320e744efe9fec46be1baba4874747a1",
+      "captured_at": "2026-11-27T02:58:29.591440+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/cosmos-db/table-support",
+      "sha256": "dc2cd14979cff8a70bc3d63fb45de33a6f92318162ebc856275e2556aac245d6",
+      "captured_at": "2026-11-27T02:58:30.029505+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/rest/api/storageservices/blob-service-rest-api",
+      "sha256": "a8af60de3b8ea46f3195256cca5aa2068594d11a57afc890460531b73e3034ed",
+      "captured_at": "2026-11-27T02:58:30.210410+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/powershell/module/az.storage",
+      "sha256": "141d88ba1641b5d7544a834c3109510dcab64e25456f125f8534aa66056d0efd",
+      "captured_at": "2026-11-27T02:58:30.491770+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/cli/azure/storage",
+      "sha256": "3bc0d2f78ddfd12300cba7ede3e54d19ddbc5268c7f06e7278ea1f1957dace62",
+      "captured_at": "2026-11-27T02:58:31.013473+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/dotnet/api/overview/azure/storage",
+      "sha256": "ced4e236d0b53d5d582d77bdfbd929f202413fde8b1fa9687eccef474de65f7b",
+      "captured_at": "2026-11-27T02:58:31.337600+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/java/api/overview/azure/storage",
+      "sha256": "9fbcaf60f9230ebabd877f5f0f013805249d485bbdc1123554c2b0a6af13f476",
+      "captured_at": "2026-11-27T02:58:31.935242+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/python/api/overview/azure/storage",
+      "sha256": "5609a3d30aa5377c00674d7fd7720721efad9369591be5b9e39964c4677302d5",
+      "captured_at": "2026-11-27T02:58:32.407218+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/rest/api/storageservices/features-not-supported-by-the-azure-file-service",
+      "sha256": "e81704c01fb6bec1831bea8ef464144cc1c6be84e13c1bbc3a96740c585400d3",
+      "captured_at": "2026-11-27T02:58:32.707991+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/cosmos-db/table-introduction",
+      "sha256": "06e87d49f64da8c242684c5d2edf9fe0512a8b307b09d3c2e9e99b5056c2c0c7",
+      "captured_at": "2026-11-27T02:58:33.213890+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-netapp-comparison",
+      "sha256": "5b97c8e6895e2996c6bb958a7a2d3b6eb8d95dada359691b92545a86a4e2c5e9",
+      "captured_at": "2026-11-27T02:58:33.618775+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-managed-lustre/blob-integration",
+      "sha256": "7860fddc7902c1d64ac121c0012fb64ef5b98ee2f93a4c189d5b61d2db96a6ec",
+      "captured_at": "2026-11-27T02:58:33.794156+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-managed-lustre/use-csi-driver-kubernetes",
+      "sha256": "f475601d3b233bffbb25c99cfb7f5f546f4b850f932e70aa59a0b1e6321e0435",
+      "captured_at": "2026-11-27T02:58:33.951853+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/storage/common/authorize-data-access",
+      "sha256": "042b79626d0050cc0ad9a40d7c766fca6b3b70635d303f3376f958993473ff8f",
+      "captured_at": "2026-11-27T02:58:34.152306+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/storage/files/authorize-data-operations-portal",
+      "sha256": "445b3c706aff21bbb3d63b3d03ac8f80bca17b9e6840bf88b05bc1c7113f885a",
+      "captured_at": "2026-11-27T02:58:34.292236+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-active-directory-overview",
+      "sha256": "4f82e9850ca80e67f7c0fcb255e38d30c5faff3efbb510d4632512fcb3c7414d",
+      "captured_at": "2026-11-27T02:58:34.450310+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-planning",
+      "sha256": "03e348204c09a08707c4fbbb79055c89968daaccef42f04f961d3e366fa70f34",
+      "captured_at": "2026-11-27T02:58:34.607824+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/rest/api/storageservices/authorize-with-shared-key",
+      "sha256": "ef56d081435ba51d8343e791edb5997718222c6aa8a6c272bd08c5454cec898a",
+      "captured_at": "2026-11-27T02:58:34.733656+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview",
+      "sha256": "bcd0cd0eef90f6519d262037c4d607e735a833553a16b40848982cda0d76a66d",
+      "captured_at": "2026-11-27T02:58:34.975463+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-netapp-files/understand-guidelines-active-directory-domain-service-site",
+      "sha256": "41d17faf74c583352f5f7ed35a662da7431b8f1f361bca7b3a1681dd4e1d652f",
+      "captured_at": "2026-11-27T02:58:35.126884+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-netapp-files/configure-ldap-over-tls",
+      "sha256": "23c0b1d8cbdd08abba8565063de4d28e13c11e984d63a9f025091f476bf8b975",
+      "captured_at": "2026-11-27T02:58:35.262142+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
     }
   ],
   "seen": [
@@ -31838,6 +32186,9 @@
     "https://learn.microsoft.com/en-us/azure/azure-functions/functions-overview",
     "https://learn.microsoft.com/en-us/azure/azure-functions/functions-premium-plan",
     "https://learn.microsoft.com/en-us/azure/azure-functions/functions-scale",
+    "https://learn.microsoft.com/en-us/azure/azure-managed-lustre/amlfs-overview",
+    "https://learn.microsoft.com/en-us/azure/azure-managed-lustre/blob-integration",
+    "https://learn.microsoft.com/en-us/azure/azure-managed-lustre/use-csi-driver-kubernetes",
     "https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/activity-log",
     "https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/platform-logs-overview",
     "https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/activity-log",
@@ -31849,6 +32200,10 @@
     "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/manage-access",
     "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/quick-create-workspace",
     "https://learn.microsoft.com/en-us/azure/azure-monitor/overview",
+    "https://learn.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-create-netapp-account",
+    "https://learn.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-introduction",
+    "https://learn.microsoft.com/en-us/azure/azure-netapp-files/configure-ldap-over-tls",
+    "https://learn.microsoft.com/en-us/azure/azure-netapp-files/understand-guidelines-active-directory-domain-service-site",
     "https://learn.microsoft.com/en-us/azure/azure-portal/azure-portal-add-remove-sort-favorites",
     "https://learn.microsoft.com/en-us/azure/azure-portal/azure-portal-dashboards-create-programmatically",
     "https://learn.microsoft.com/en-us/azure/azure-portal/quickstart-portal-dashboard-azure-cli",
@@ -31901,6 +32256,7 @@
     "https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-naming",
     "https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-setup-guide/identity",
     "https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/considerations/fundamental-concepts",
+    "https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/considerations/storage-options",
     "https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/",
     "https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/scenarios/azure-vmware/dual-region-virtual-wan-global-reach",
     "https://learn.microsoft.com/en-us/azure/communication-services/concepts/chat/concepts",
@@ -31914,6 +32270,8 @@
     "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-overview",
     "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-virtual-network-concepts",
     "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-vnet",
+    "https://learn.microsoft.com/en-us/azure/cosmos-db/table-introduction",
+    "https://learn.microsoft.com/en-us/azure/cosmos-db/table-support",
     "https://learn.microsoft.com/en-us/azure/cost-management-billing/",
     "https://learn.microsoft.com/en-us/azure/cost-management-billing/cost-management-billing-overview",
     "https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/quick-acm-cost-analysis",
@@ -32038,6 +32396,7 @@
     "https://learn.microsoft.com/en-us/azure/sentinel/data-connectors/azure-active-directory-identity-protection",
     "https://learn.microsoft.com/en-us/azure/sentinel/overview",
     "https://learn.microsoft.com/en-us/azure/sentinel/quickstart-onboard",
+    "https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-azure-and-service-bus-queues-compared-contrasted",
     "https://learn.microsoft.com/en-us/azure/service-fabric/service-fabric-application-scenarios",
     "https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-how-to-enable-zone-to-zone-disaster-recovery",
     "https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-quickstart",
@@ -32047,13 +32406,26 @@
     "https://learn.microsoft.com/en-us/azure/site-recovery/site-recovery-test-failover-to-azure",
     "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction",
     "https://learn.microsoft.com/en-us/azure/storage/blobs/immutable-version-level-worm-policies",
+    "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction",
     "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-upload-process-images",
+    "https://learn.microsoft.com/en-us/azure/storage/common/authorize-data-access",
+    "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-create",
     "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview",
     "https://learn.microsoft.com/en-us/azure/storage/common/storage-introduction",
     "https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy",
+    "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview",
     "https://learn.microsoft.com/en-us/azure/storage/common/transport-layer-security-configure-client-version",
     "https://learn.microsoft.com/en-us/azure/storage/common/transport-layer-security-configure-minimum-version",
+    "https://learn.microsoft.com/en-us/azure/storage/container-storage/container-storage-introduction",
     "https://learn.microsoft.com/en-us/azure/storage/elastic-san/elastic-san-introduction",
+    "https://learn.microsoft.com/en-us/azure/storage/elastic-san/next-generation-introduction",
+    "https://learn.microsoft.com/en-us/azure/storage/files/authorize-data-operations-portal",
+    "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-active-directory-overview",
+    "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-introduction",
+    "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-netapp-comparison",
+    "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-planning",
+    "https://learn.microsoft.com/en-us/azure/storage/queues/storage-queues-introduction",
+    "https://learn.microsoft.com/en-us/azure/storage/tables/table-storage-overview",
     "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/flexible-virtual-machine-scale-sets-portal",
     "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/overview",
     "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/quick-create-portal",
@@ -32092,6 +32464,8 @@
     "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/cloud-init-troubleshooting",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/cloudinit-add-user",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/cloudinit-configure-swapfile",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/cloudinit-update-vm",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/cloudinit-update-vm-hostname",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/compute-benchmark-scores",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/convert-unmanaged-to-managed-disks",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/create-cli-availability-zone",
@@ -32245,6 +32619,7 @@
     "https://learn.microsoft.com/en-us/cli/azure/query-az-cli2",
     "https://learn.microsoft.com/en-us/cli/azure/reference-index",
     "https://learn.microsoft.com/en-us/cli/azure/release-notes-azure-cli",
+    "https://learn.microsoft.com/en-us/cli/azure/storage",
     "https://learn.microsoft.com/en-us/cli/azure/vm",
     "https://learn.microsoft.com/en-us/cli/azure/vm/aem",
     "https://learn.microsoft.com/en-us/cli/azure/vm/application",
@@ -32375,6 +32750,7 @@
     "https://learn.microsoft.com/en-us/dotnet/api/microsoft.azure.commands.compute.models.psvirtualmachineimagesku",
     "https://learn.microsoft.com/en-us/dotnet/api/microsoft.azure.commands.resourcemanager.cmdlets.sdkmodels.psresourceproviderlocation",
     "https://learn.microsoft.com/en-us/dotnet/api/overview/azure/",
+    "https://learn.microsoft.com/en-us/dotnet/api/overview/azure/storage",
     "https://learn.microsoft.com/en-us/dotnet/api/system.boolean",
     "https://learn.microsoft.com/en-us/dotnet/api/system.management.automation.switchparameter",
     "https://learn.microsoft.com/en-us/dotnet/api/system.nullable-1",
@@ -34050,6 +34426,7 @@
     "https://learn.microsoft.com/en-us/intune/solutions/windows-holographic",
     "https://learn.microsoft.com/en-us/intune/whats-new/",
     "https://learn.microsoft.com/en-us/intune/whats-new/archive",
+    "https://learn.microsoft.com/en-us/java/api/overview/azure/storage",
     "https://learn.microsoft.com/en-us/javascript/api/@azure/msal-react",
     "https://learn.microsoft.com/en-us/legal/cognitive-services/openai/transparency-note",
     "https://learn.microsoft.com/en-us/legal/microsoft-365/supplemental-terms",
@@ -34755,6 +35132,7 @@
     "https://learn.microsoft.com/en-us/powershell/module/az.compute/save-azvmimage",
     "https://learn.microsoft.com/en-us/powershell/module/az.resources/",
     "https://learn.microsoft.com/en-us/powershell/module/az.resources/get-azlocation",
+    "https://learn.microsoft.com/en-us/powershell/module/az.storage",
     "https://learn.microsoft.com/en-us/powershell/module/exchange/search-unifiedauditlog",
     "https://learn.microsoft.com/en-us/powershell/module/exchangepowershell/disable-distributiongroup",
     "https://learn.microsoft.com/en-us/powershell/module/exchangepowershell/enable-distributiongroup",
@@ -34916,6 +35294,7 @@
     "https://learn.microsoft.com/en-us/purview/unified-catalog",
     "https://learn.microsoft.com/en-us/purview/unified-catalog-regions",
     "https://learn.microsoft.com/en-us/purview/whats-new",
+    "https://learn.microsoft.com/en-us/python/api/overview/azure/storage",
     "https://learn.microsoft.com/en-us/rest/api/authorization/privileged-role-eligibility-rest-sample",
     "https://learn.microsoft.com/en-us/rest/api/azure/",
     "https://learn.microsoft.com/en-us/rest/api/compute/availabilitysets/listavailablesizes",
@@ -34943,6 +35322,10 @@
     "https://learn.microsoft.com/en-us/rest/api/resources/subscriptions/list",
     "https://learn.microsoft.com/en-us/rest/api/resources/subscriptions/list-locations",
     "https://learn.microsoft.com/en-us/rest/api/resources/tenants/list",
+    "https://learn.microsoft.com/en-us/rest/api/storageservices/authorize-with-shared-key",
+    "https://learn.microsoft.com/en-us/rest/api/storageservices/blob-service-rest-api",
+    "https://learn.microsoft.com/en-us/rest/api/storageservices/features-not-supported-by-the-azure-file-service",
+    "https://learn.microsoft.com/en-us/rest/api/storageservices/file-service-rest-api",
     "https://learn.microsoft.com/en-us/rest/api/support",
     "https://learn.microsoft.com/en-us/security-copilot/agents-overview",
     "https://learn.microsoft.com/en-us/security-copilot/authentication",
@@ -35173,153 +35556,10 @@
     "https://learn.microsoft.com/en-us/windows/whats-new/extended-security-updates",
     "https://learn.microsoft.com/en-us/windows/win32/appxpkg/windows-desktop-application-program",
     "https://learn.microsoft.com/en-us/windows/win32/fileio/basic-and-dynamic-disks",
+    "https://learn.microsoft.com/en-us/windows/win32/fileio/microsoft-smb-protocol-and-cifs-protocol-overview",
     "https://learn.microsoft.com/en-us/windows/win32/wer/windows-error-reporting"
   ],
   "queue": [
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/cloudinit-update-vm",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/cloudinit-update-vm-hostname",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-introduction",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/storage/elastic-san/next-generation-introduction",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/storage/queues/storage-queues-introduction",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/storage/tables/table-storage-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/storage/container-storage/container-storage-introduction",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-create",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-introduction",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-create-netapp-account",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/azure-managed-lustre/amlfs-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/considerations/storage-options",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/windows/win32/fileio/microsoft-smb-protocol-and-cifs-protocol-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/rest/api/storageservices/file-service-rest-api",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-azure-and-service-bus-queues-compared-contrasted",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/cosmos-db/table-support",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/rest/api/storageservices/blob-service-rest-api",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/powershell/module/az.storage",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/cli/azure/storage",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/dotnet/api/overview/azure/storage",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/java/api/overview/azure/storage",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/python/api/overview/azure/storage",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/rest/api/storageservices/features-not-supported-by-the-azure-file-service",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/cosmos-db/table-introduction",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-netapp-comparison",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/azure-managed-lustre/blob-integration",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/azure-managed-lustre/use-csi-driver-kubernetes",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/storage/common/authorize-data-access",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/storage/files/authorize-data-operations-portal",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-active-directory-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-planning",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/rest/api/storageservices/authorize-with-shared-key",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/azure-netapp-files/understand-guidelines-active-directory-domain-service-site",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/azure-netapp-files/configure-ldap-over-tls",
-      "depth": 2
-    },
     {
       "url": "https://learn.microsoft.com/en-us/azure/storage/blobs/security-recommendations",
       "depth": 2
@@ -45191,35 +45431,142 @@
     {
       "url": "https://learn.microsoft.com/en-us/graph/powershell/get-started",
       "depth": 1
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/storage/common/scalability-targets-standard-account",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/rest/api/storageservices/naming-queues-and-metadata",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/cosmos-db/serverless",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/storage/container-storage/install-container-storage-aks",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/storage/files/storage-how-to-create-file-share",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-netapp-files/object-rest-api-introduction",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-register",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-managed-lustre/amlfs-prerequisites",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/architecture/guide/technology-choices/storage-options",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-cifs/d416ff7c-c536-406e-a951-4f04b2fd1d2b",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-scale-targets",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-queues-topics-subscriptions",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/cosmos-db/table/support",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/powershell/module/az.storage/",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/cli/azure/storage/account",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/dotnet/api/azure.storage.blobs",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-java",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/python/api/overview/azure/storage-blob-readme",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/storage/files/files-smb-protocol",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/cosmos-db/table/overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/storage/files/",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-managed-lustre/restore-data",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-managed-lustre",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/dotnet/azure/sdk/authentication/azure-hosted-apps",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-keys-manage",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/storage/files/identity-kerberos-authentication-macos",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/storage/file-sync/file-sync-introduction",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/rest/api/storageservices/authorize-with-azure-active-directory",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/rest/api/storageservices/create-user-delegation-sas",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-create-volumes-smb",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows-server/networking/core-network-guide/cncg/server-certs/install-the-certification-authority",
+      "depth": 3
     }
   ],
   "last_batch": {
     "attempted": 36,
-    "documents_total": 3501,
-    "new_documents": 31,
+    "documents_total": 3537,
+    "new_documents": 36,
     "quarantined": 0,
-    "queued": 2504,
-    "failures": [
-      {
-        "url": "https://learn.microsoft.com/en-us/office365/smallbusiness/build-your-small-business/build-your-small-business",
-        "error": "ValueError"
-      },
-      {
-        "url": "https://learn.microsoft.com/en-us/users/na/",
-        "error": "ValueError"
-      },
-      {
-        "url": "https://learn.microsoft.com/en-us/collections/xkggupt7qm714q",
-        "error": "ValueError"
-      },
-      {
-        "url": "https://learn.microsoft.com/en-us/graph/powershell/installation",
-        "error": "HTTPError"
-      },
-      {
-        "url": "https://learn.microsoft.com/en-us/graph/powershell/get-started",
-        "error": "HTTPError"
-      }
-    ]
+    "queued": 2500,
+    "failures": []
   }
 }

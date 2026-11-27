@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-26T20:23:44.542349+00:00",
+  "generated_at": "2026-11-27T02:58:43.919240+00:00",
   "product": "AdminMonkey Academy",
   "certification_expansion": {
     "candidate_exam_codes": 42,
@@ -45,46 +45,25 @@
   "certification_issuer": "ODPC",
   "official_microsoft_certification": false,
   "knowledge": {
-    "documents_collected": 3501,
-    "manufacturer_verified": 3501,
+    "documents_collected": 3537,
+    "manufacturer_verified": 3537,
     "review": {
       "unreviewed": 0,
-      "approved": 3501,
+      "approved": 3537,
       "rejected": 0
     },
     "last_batch": {
       "attempted": 36,
-      "documents_total": 3501,
-      "new_documents": 31,
+      "documents_total": 3537,
+      "new_documents": 36,
       "quarantined": 0,
-      "queued": 2504,
-      "failures": [
-        {
-          "url": "https://learn.microsoft.com/en-us/office365/smallbusiness/build-your-small-business/build-your-small-business",
-          "error": "ValueError"
-        },
-        {
-          "url": "https://learn.microsoft.com/en-us/users/na/",
-          "error": "ValueError"
-        },
-        {
-          "url": "https://learn.microsoft.com/en-us/collections/xkggupt7qm714q",
-          "error": "ValueError"
-        },
-        {
-          "url": "https://learn.microsoft.com/en-us/graph/powershell/installation",
-          "error": "HTTPError"
-        },
-        {
-          "url": "https://learn.microsoft.com/en-us/graph/powershell/get-started",
-          "error": "HTTPError"
-        }
-      ]
+      "queued": 2500,
+      "failures": []
     }
   },
   "retrieval_staging": {
-    "chunked_documents": 3501,
-    "chunks_prepared": 18919,
+    "chunked_documents": 3537,
+    "chunks_prepared": 19158,
     "retrieval_quality_verified": false,
     "agent_answers_verified": 0,
     "note": "Ephemeral, provenance-checked chunk preparation; no searchable production index yet."
@@ -108,7 +87,7 @@
     },
     {
       "track": "AZ-104",
-      "manufacturer_verified_sources": 566,
+      "manufacturer_verified_sources": 596,
       "knowledge_coverage": "source_count_only_not_learning_objective_coverage",
       "practice_scenarios_available": 4,
       "agent_answers_evaluated": 0,
