@@ -32368,6 +32368,336 @@
       "mapped_tracks": [
         "AZ-104"
       ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/ephemeral-os-disks-deploy",
+      "sha256": "e7f0320dabe3ddacc310544d67a409057b3608f7b839171acfc26a59e3dd7e6f",
+      "captured_at": "2026-11-27T20:20:29.528810+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/ephemeral-os-disks-faq",
+      "sha256": "7758fc1473ba7177593279f3168f3d3bfbef6d1840f1801fb1e34005b00c0e6a",
+      "captured_at": "2026-11-27T20:20:29.643733+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/public-ip-address-prefix",
+      "sha256": "7f951f34723a620ef7e7aeef0f299d0fd82fb049fffd643df903c46e942d4a0f",
+      "captured_at": "2026-11-27T20:20:29.886854+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/public-ip-basic-upgrade-guidance",
+      "sha256": "e2ae95a65c88837f5a9a262a06c70891dc4d5671b937d7d85b98c95ca94ef581",
+      "captured_at": "2026-11-27T20:20:30.032185+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/reliability/availability-zones-region-support",
+      "sha256": "4ea33cf46f5679fab34d448f711cba15f1709a7f9c6e8d9b50f2cb8dc6e1ba72",
+      "captured_at": "2026-11-27T20:20:30.385216+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/routing-preference-overview",
+      "sha256": "ecdec293453583498459b69cd92fdfd0ba4e760959388a6cda247a166d03e9ee",
+      "captured_at": "2026-11-27T20:20:30.543201+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/load-balancer/cross-region-overview",
+      "sha256": "72643feb7c62819b23e0aaf91ecd1e0769737ab500c12682525ca21e3a464630",
+      "captured_at": "2026-11-27T20:20:30.770020+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/dns/dns-custom-domain",
+      "sha256": "0ee441665b02eb8a17f83b1e95588a4ff0d3e98e36a4ae437ffe5e614a633c8b",
+      "captured_at": "2026-11-27T20:20:30.892846+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/ipv6-overview",
+      "sha256": "59b061ea66f2523ca7f2ec44818f1438599dd68f944f2136ca62944ddc9368d5",
+      "captured_at": "2026-11-27T20:20:31.010475+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/private-ip-addresses",
+      "sha256": "85d486e313388e857842c6473b48d3a692f2e4cf56ea9c46c43f5933acf9935d",
+      "captured_at": "2026-11-27T20:20:31.155891+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/virtual-network-deploy-static-pip-arm-portal",
+      "sha256": "1156194c07918a3a9b224c2122d8bb5c1e0eddf72b5c970c731fe44cbcf2936f",
+      "captured_at": "2026-11-27T20:20:31.537694+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-network/tutorial-filter-network-traffic",
+      "sha256": "90ee8e992722176ec2732c1048041db5db89058d7f0d01a4b9ae5bee666cf744",
+      "captured_at": "2026-11-27T20:20:31.661918+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/cloud-shell/overview",
+      "sha256": "54830e631e3ce79593ed4c42e690a822e41d87fe0ff9db0d2601c82376054407",
+      "captured_at": "2026-11-27T20:20:31.934339+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/cloud-shell/quickstart",
+      "sha256": "3a804727e464b4d76894b838dde27722c529ab649c1d2e10df40cb11c1f1ba4a",
+      "captured_at": "2026-11-27T20:20:32.399360+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/cli/azure/run-azure-cli-docker",
+      "sha256": "901d41bb3b983395e7bb88d7f223062af4db8647cbfd0d3c1de23677d99cecb9",
+      "captured_at": "2026-11-27T20:20:32.622387+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/cli/azure/authenticate-azure-cli",
+      "sha256": "7956250fe070acc04f0f7597c10808af2e5e385f96277f8ab746ff2efd9f1e51",
+      "captured_at": "2026-11-27T20:20:33.005630+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/powershell/module/az.resources/new-azresourcegroup",
+      "sha256": "77c7b150365892f3ba2506f9ca2b09f1afdeeb530fe876033737215ea7ce57b2",
+      "captured_at": "2026-11-27T20:20:33.346573+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/powershell/module/az.network/new-azvirtualnetwork",
+      "sha256": "33316e85ba74f27ee219dc941ee3c773ff7486b38ea3337b610013ded1e00fb6",
+      "captured_at": "2026-11-27T20:20:33.762809+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/powershell/module/az.network/new-azvirtualnetworksubnetconfig",
+      "sha256": "ab2690c41426f58ab92c11540722db5c5ce9135168c2ebc7d9b372b5e47e666d",
+      "captured_at": "2026-11-27T20:20:33.988162+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/powershell/module/az.network/set-azvirtualnetwork",
+      "sha256": "47daa19471a3a380dcb0b4d79fd2cfb020f26fd5fc703f232c2bcadac8f84efb",
+      "captured_at": "2026-11-27T20:20:34.389743+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/cli/azure/network/vnet",
+      "sha256": "9dfa73c203fd99162bd5b33b0da57cf55809d12bc33fcc693b1d9f19badde67e",
+      "captured_at": "2026-11-27T20:20:35.052147+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/cli/azure/network/vnet/subnet",
+      "sha256": "bf6c3caa471b253cfee7ea3140123896a22d64567bfde7a113132ed27bac65a2",
+      "captured_at": "2026-11-27T20:20:35.345069+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/powershell/module/az.network/new-azapplicationsecuritygroup",
+      "sha256": "ea6c5f2ff225dc891686620938110b090ade46755c7d44050e70ca5e3bbd84e6",
+      "captured_at": "2026-11-27T20:20:36.216881+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/cli/azure/network/asg",
+      "sha256": "b2217d17caad251060468eeae93c2b9b8bbe982521af226786f73ffcb9ca3ecc",
+      "captured_at": "2026-11-27T20:20:37.276492+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/powershell/module/az.network/new-aznetworksecuritygroup",
+      "sha256": "ecea4b1c734d69832ec4066e9893fd905a8a18bddb7246b49ecceacb8df3d740",
+      "captured_at": "2026-11-27T20:20:37.633174+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/cli/azure/network/nsg",
+      "sha256": "c2f4041c4c8c90943681651764cc7f773e8b16047fe02669d3da1da8eae44db3",
+      "captured_at": "2026-11-27T20:20:38.354235+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/powershell/module/az.network/get-azvirtualnetwork",
+      "sha256": "9933a8f9ab61e0b6009fcecf90f26367fd66e5faf793f2072b9197420f498bfa",
+      "captured_at": "2026-11-27T20:20:38.778069+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/powershell/module/az.network/set-azvirtualnetworksubnetconfig",
+      "sha256": "28326831bd99d997f28f4939ea8b049dfb20957584e2495cd891f6e9626020cf",
+      "captured_at": "2026-11-27T20:20:39.355579+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/powershell/module/az.network/new-aznetworksecurityruleconfig",
+      "sha256": "39b7c1af8ac837a8a675b583d2e4b381cd418daf78d42accccb1b299d55d0bdf",
+      "captured_at": "2026-11-27T20:20:40.003242+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/powershell/module/az.network/get-aznetworksecuritygroup",
+      "sha256": "e2fee6b63bdf8f07ce62aa37908f12c41116f580c63f1ca9f7cdc8012ba40cb0",
+      "captured_at": "2026-11-27T20:20:40.602018+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/powershell/module/az.network/set-aznetworksecuritygroup",
+      "sha256": "6af92d4708cc81c8450f3908b432c747a05bebabbf857590a55a9405f90e1896",
+      "captured_at": "2026-11-27T20:20:41.148721+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/cli/azure/network/nsg/rule",
+      "sha256": "d0421d323b2a1fcfdadfe48f6ea6e7ee61221aff64df4ff976688f253c0a44d0",
+      "captured_at": "2026-11-27T20:20:41.477301+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/powershell/module/az.network/new-azpublicipaddress",
+      "sha256": "ef4c36e72ae37334f137c36535d69fb699ce76ce17affef219b23d7c48ea70ef",
+      "captured_at": "2026-11-27T20:20:42.134802+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/powershell/module/az.network/new-aznetworkinterface",
+      "sha256": "c483f533b5f5ad767c011599488c133e27afc8c5c1b1788470802e42d0ccf1a0",
+      "captured_at": "2026-11-27T20:20:43.207642+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/powershell/module/az.compute/new-azsshkey",
+      "sha256": "23b82408cba68fda2f94e6481ae291b80a356191bc0f874b20c2a5d1fe88476e",
+      "captured_at": "2026-11-27T20:20:43.627989+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/powershell/module/az.compute/new-azvmconfig",
+      "sha256": "2fc8d4f3f73c632bc0b1bced57f03f06f4958b0481e4a0a0928128a8ecd526a5",
+      "captured_at": "2026-11-27T20:20:43.949362+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
     }
   ],
   "seen": [
@@ -32614,6 +32944,8 @@
     "https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/considerations/storage-options",
     "https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/",
     "https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/scenarios/azure-vmware/dual-region-virtual-wan-global-reach",
+    "https://learn.microsoft.com/en-us/azure/cloud-shell/overview",
+    "https://learn.microsoft.com/en-us/azure/cloud-shell/quickstart",
     "https://learn.microsoft.com/en-us/azure/communication-services/concepts/chat/concepts",
     "https://learn.microsoft.com/en-us/azure/confidential-computing/confidential-vm-overview",
     "https://learn.microsoft.com/en-us/azure/confidential-computing/overview-azure-products",
@@ -32649,6 +32981,7 @@
     "https://learn.microsoft.com/en-us/azure/developer/terraform/",
     "https://learn.microsoft.com/en-us/azure/developer/terraform/overview",
     "https://learn.microsoft.com/en-us/azure/devops/mcp-server/mcp-server-overview",
+    "https://learn.microsoft.com/en-us/azure/dns/dns-custom-domain",
     "https://learn.microsoft.com/en-us/azure/dns/dns-overview",
     "https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-about",
     "https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-create",
@@ -32706,6 +33039,7 @@
     "https://learn.microsoft.com/en-us/azure/key-vault/keys/how-to-configure-key-rotation",
     "https://learn.microsoft.com/en-us/azure/lighthouse/concepts/cloud-solution-provider",
     "https://learn.microsoft.com/en-us/azure/lighthouse/overview",
+    "https://learn.microsoft.com/en-us/azure/load-balancer/cross-region-overview",
     "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-outbound-connections",
     "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-overview",
     "https://learn.microsoft.com/en-us/azure/load-balancer/quickstart-load-balancer-standard-public-cli",
@@ -32732,6 +33066,7 @@
     "https://learn.microsoft.com/en-us/azure/quotas/regional-quota-requests",
     "https://learn.microsoft.com/en-us/azure/quotas/spot-quota",
     "https://learn.microsoft.com/en-us/azure/reliability/availability-zones-overview",
+    "https://learn.microsoft.com/en-us/azure/reliability/availability-zones-region-support",
     "https://learn.microsoft.com/en-us/azure/reliability/overview-reliability-guidance",
     "https://learn.microsoft.com/en-us/azure/reliability/regions-list",
     "https://learn.microsoft.com/en-us/azure/reliability/regions-paired",
@@ -32817,6 +33152,8 @@
     "https://learn.microsoft.com/en-us/azure/virtual-machines/disks-understand-billing",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/enable-nvme-temp-faqs",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/ephemeral-os-disks",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/ephemeral-os-disks-deploy",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/ephemeral-os-disks-faq",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/extensions/agent-linux",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/extensions/features-linux",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/faq-for-disks",
@@ -32967,10 +33304,17 @@
     "https://learn.microsoft.com/en-us/azure/virtual-network/concepts-and-best-practices",
     "https://learn.microsoft.com/en-us/azure/virtual-network/create-vm-accelerated-networking-cli",
     "https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/default-outbound-access",
+    "https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/ipv6-overview",
+    "https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/private-ip-addresses",
+    "https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/public-ip-address-prefix",
     "https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/public-ip-addresses",
+    "https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/public-ip-basic-upgrade-guidance",
+    "https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/routing-preference-overview",
+    "https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/virtual-network-deploy-static-pip-arm-portal",
     "https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/virtual-network-public-ip-address",
     "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview",
     "https://learn.microsoft.com/en-us/azure/virtual-network/quick-create-portal",
+    "https://learn.microsoft.com/en-us/azure/virtual-network/tutorial-filter-network-traffic",
     "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-for-azure-services",
     "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview",
     "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-service-endpoints-overview",
@@ -32991,12 +33335,19 @@
     "https://learn.microsoft.com/en-us/bing/search-apis/bing-web-search/overview",
     "https://learn.microsoft.com/en-us/cli/azure/account",
     "https://learn.microsoft.com/en-us/cli/azure/account/tenant",
+    "https://learn.microsoft.com/en-us/cli/azure/authenticate-azure-cli",
     "https://learn.microsoft.com/en-us/cli/azure/azure-cli-extensions-overview",
     "https://learn.microsoft.com/en-us/cli/azure/group",
     "https://learn.microsoft.com/en-us/cli/azure/install-azure-cli",
+    "https://learn.microsoft.com/en-us/cli/azure/network/asg",
+    "https://learn.microsoft.com/en-us/cli/azure/network/nsg",
+    "https://learn.microsoft.com/en-us/cli/azure/network/nsg/rule",
+    "https://learn.microsoft.com/en-us/cli/azure/network/vnet",
+    "https://learn.microsoft.com/en-us/cli/azure/network/vnet/subnet",
     "https://learn.microsoft.com/en-us/cli/azure/query-az-cli2",
     "https://learn.microsoft.com/en-us/cli/azure/reference-index",
     "https://learn.microsoft.com/en-us/cli/azure/release-notes-azure-cli",
+    "https://learn.microsoft.com/en-us/cli/azure/run-azure-cli-docker",
     "https://learn.microsoft.com/en-us/cli/azure/storage",
     "https://learn.microsoft.com/en-us/cli/azure/vm",
     "https://learn.microsoft.com/en-us/cli/azure/vm/aem",
@@ -35509,9 +35860,24 @@
     "https://learn.microsoft.com/en-us/powershell/module/az.compute/get-azvmimageoffer",
     "https://learn.microsoft.com/en-us/powershell/module/az.compute/get-azvmimagepublisher",
     "https://learn.microsoft.com/en-us/powershell/module/az.compute/get-azvmimagesku",
+    "https://learn.microsoft.com/en-us/powershell/module/az.compute/new-azsshkey",
+    "https://learn.microsoft.com/en-us/powershell/module/az.compute/new-azvmconfig",
     "https://learn.microsoft.com/en-us/powershell/module/az.compute/save-azvmimage",
+    "https://learn.microsoft.com/en-us/powershell/module/az.network/get-aznetworksecuritygroup",
+    "https://learn.microsoft.com/en-us/powershell/module/az.network/get-azvirtualnetwork",
+    "https://learn.microsoft.com/en-us/powershell/module/az.network/new-azapplicationsecuritygroup",
+    "https://learn.microsoft.com/en-us/powershell/module/az.network/new-aznetworkinterface",
+    "https://learn.microsoft.com/en-us/powershell/module/az.network/new-aznetworksecuritygroup",
+    "https://learn.microsoft.com/en-us/powershell/module/az.network/new-aznetworksecurityruleconfig",
+    "https://learn.microsoft.com/en-us/powershell/module/az.network/new-azpublicipaddress",
+    "https://learn.microsoft.com/en-us/powershell/module/az.network/new-azvirtualnetwork",
+    "https://learn.microsoft.com/en-us/powershell/module/az.network/new-azvirtualnetworksubnetconfig",
+    "https://learn.microsoft.com/en-us/powershell/module/az.network/set-aznetworksecuritygroup",
+    "https://learn.microsoft.com/en-us/powershell/module/az.network/set-azvirtualnetwork",
+    "https://learn.microsoft.com/en-us/powershell/module/az.network/set-azvirtualnetworksubnetconfig",
     "https://learn.microsoft.com/en-us/powershell/module/az.resources/",
     "https://learn.microsoft.com/en-us/powershell/module/az.resources/get-azlocation",
+    "https://learn.microsoft.com/en-us/powershell/module/az.resources/new-azresourcegroup",
     "https://learn.microsoft.com/en-us/powershell/module/az.storage",
     "https://learn.microsoft.com/en-us/powershell/module/exchange/search-unifiedauditlog",
     "https://learn.microsoft.com/en-us/powershell/module/exchangepowershell/disable-distributiongroup",
@@ -35946,150 +36312,6 @@
     "https://learn.microsoft.com/en-us/windows/win32/wer/windows-error-reporting"
   ],
   "queue": [
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/ephemeral-os-disks-deploy",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/ephemeral-os-disks-faq",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/public-ip-address-prefix",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/public-ip-basic-upgrade-guidance",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/reliability/availability-zones-region-support",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/routing-preference-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/load-balancer/cross-region-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/dns/dns-custom-domain",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/ipv6-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/private-ip-addresses",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/virtual-network-deploy-static-pip-arm-portal",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-network/tutorial-filter-network-traffic",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/cloud-shell/overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/cloud-shell/quickstart",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/cli/azure/run-azure-cli-docker",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/cli/azure/authenticate-azure-cli",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/powershell/module/az.resources/new-azresourcegroup",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/powershell/module/az.network/new-azvirtualnetwork",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/powershell/module/az.network/new-azvirtualnetworksubnetconfig",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/powershell/module/az.network/set-azvirtualnetwork",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/cli/azure/network/vnet",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/cli/azure/network/vnet/subnet",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/powershell/module/az.network/new-azapplicationsecuritygroup",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/cli/azure/network/asg",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/powershell/module/az.network/new-aznetworksecuritygroup",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/cli/azure/network/nsg",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/powershell/module/az.network/get-azvirtualnetwork",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/powershell/module/az.network/set-azvirtualnetworksubnetconfig",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/powershell/module/az.network/new-aznetworksecurityruleconfig",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/powershell/module/az.network/get-aznetworksecuritygroup",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/powershell/module/az.network/set-aznetworksecuritygroup",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/cli/azure/network/nsg/rule",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/powershell/module/az.network/new-azpublicipaddress",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/powershell/module/az.network/new-aznetworkinterface",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/powershell/module/az.compute/new-azsshkey",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/powershell/module/az.compute/new-azvmconfig",
-      "depth": 2
-    },
     {
       "url": "https://learn.microsoft.com/en-us/powershell/module/az.compute/new-azvm",
       "depth": 2
@@ -45945,11 +46167,155 @@
     {
       "url": "https://learn.microsoft.com/en-us/azure/key-vault/keys/hsm-protected-keys",
       "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/powershell/module/az.compute/set-azvmosdisk",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/manage-custom-ip-address-prefix",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/manage-public-ip-address-prefix",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/public-ip-upgrade-availability-set",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/troubleshoot/azure/general/region-access-request-process",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/configure-routing-preference-virtual-machine",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-distribution-mode",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/app-service/app-service-web-tutorial-custom-domain",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-ipv6-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/virtual-network-static-public-ip",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/cli/azure",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/powershell/azure",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/cloud-shell/get-started/new-storage",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/cli/azure/azure-cli-configuration",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/cli/azure/authenticate-azure-cli-interactively",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.hashtable",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/powershell/module/az.network/",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/dotnet/api/microsoft.azure.commands.network.models.psdelegation",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/dotnet/api/microsoft.azure.commands.network.models.psvirtualnetwork",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-network",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/dotnet/api/microsoft.azure.commands.network.models.psapplicationsecuritygroup",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/powershell/module/az.network/remove-azapplicationsecuritygroup",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-network/create-network-security-group-preview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/dotnet/api/microsoft.azure.commands.network.models.pssecurityrule",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-create-nsg-arm-cli",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/powershell/module/az.network/remove-azvirtualnetwork",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/dotnet/api/microsoft.azure.commands.network.models.psnatgateway",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/powershell/module/az.network/add-aznetworksecurityruleconfig",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/dotnet/api/microsoft.azure.commands.network.models.psnetworksecuritygroup",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/powershell/module/az.network/remove-aznetworksecuritygroup",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/dotnet/api/microsoft.azure.commands.network.models.psdomainnamelabelscopetype",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/dotnet/api/microsoft.azure.commands.network.models.pspubliciptag",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/dotnet/api/microsoft.azure.commands.network.models.psapplicationgatewaybackendaddresspool",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/dotnet/api/microsoft.azure.commands.compute.automation.models.pssshpublickeyresource",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/powershell/module/az.compute/add-azvmnetworkinterface",
+      "depth": 3
     }
   ],
   "last_batch": {
     "attempted": 36,
-    "documents_total": 3573,
+    "documents_total": 3609,
     "new_documents": 36,
     "quarantined": 0,
     "queued": 2500,
