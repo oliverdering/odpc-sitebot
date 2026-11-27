@@ -32018,6 +32018,356 @@
       "mapped_tracks": [
         "AZ-104"
       ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/storage/blobs/security-recommendations",
+      "sha256": "5bfef4bd721095b7d53c0fcbc7756d34fd031783823ac6ed6572cfdf5c22d46a",
+      "captured_at": "2026-11-27T11:46:38.003613+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/storage/common/storage-service-encryption",
+      "sha256": "7771b5b06fc6242fd6ea9a125d1894b6f401c4502f9c54becbe40dc570616d97",
+      "captured_at": "2026-11-27T11:46:38.072199+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-netapp-files/faq-security",
+      "sha256": "09d3630e284ac80c2508550368657ab3eaebe9e02247e46c47cab19bb6d00b09",
+      "captured_at": "2026-11-27T11:46:38.228391+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/storage/common/storage-client-side-encryption",
+      "sha256": "54a51ca2b8eda3cdf84f21986614e4e9354e782ebc0f7f5580034d1b0e630222",
+      "captured_at": "2026-11-27T11:46:38.408765+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/storage/files/files-redundancy",
+      "sha256": "d5e06a085e93fe03b979d4f5ac205ab61143649a8acb385c32e981fb6fbca018",
+      "captured_at": "2026-11-27T11:46:38.552353+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/storage/common/storage-choose-data-transfer-solution",
+      "sha256": "4ff4b9b89364de5dfcc9560566d1eee2a3cf468357c95c8cf7056160300554d1",
+      "captured_at": "2026-11-27T11:46:38.783277+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-netapp-files/faq-data-migration-protection",
+      "sha256": "de029d99512f12b5809f6b87124f1b404b3a1f1a5851d817e3bfe93659506546",
+      "captured_at": "2026-11-27T11:46:38.901122+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-understand-storage-hierarchy",
+      "sha256": "b8ba58feb0a551d007126f56d582a67d4db04c4a0cc2c5a18140d7a22a36708f",
+      "captured_at": "2026-11-27T11:46:38.995018+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/rest/api/storageservices/",
+      "sha256": "008b7a052b51ad73408f481995b71277a76a280e5660abd61dfed92fb24bf9b8",
+      "captured_at": "2026-11-27T11:46:39.076261+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/javascript/api/overview/azure/storage",
+      "sha256": "2f73acb2b5d70ae92ca76db0eeef8609f7691254eb6668d2e99dab868e108421",
+      "captured_at": "2026-11-27T11:46:39.338851+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/rest/api/storagerp/",
+      "sha256": "4cecdd1066b33fbfcab9ef44d1f656749517257ce55ff99e897470f530120fe4",
+      "captured_at": "2026-11-27T11:46:39.441362+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/dotnet/api/overview/azure/resourcemanager.storage-readme",
+      "sha256": "0c876016dde149a2c5dc28739f71c950c8507051183846dd8a46f751c855a507",
+      "captured_at": "2026-11-27T11:46:41.850952+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/azure/reference/ee460790(v=azure.100)",
+      "sha256": "9cf380171d9e84dfb1560f2d0b6a5552c04e2b987b3ea38fafd297788bae3258",
+      "captured_at": "2026-11-27T11:46:42.173164+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-develop-with-rest-api",
+      "sha256": "6e33062bd3bcea029472e662ab2cc2e8b7e1a8a9c5d5166fb896dffa94363501",
+      "captured_at": "2026-11-27T11:46:42.325094+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/storage/common/storage-use-data-movement-library",
+      "sha256": "ed365640a84d348a7f7e32c3fff0dbbf8427e80e1fa9999c9ed98102de9e2b6e",
+      "captured_at": "2026-11-27T11:46:42.406304+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-v10",
+      "sha256": "5f76290e9ca2975a096e32d4670c81f54b546858f9c63a30c3b2bbdb016d1464",
+      "captured_at": "2026-11-27T11:46:42.487616+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/nvme-linux",
+      "sha256": "6ddf45e3c52c0c8f0e7215d15f878b3264f0e6ec58ce8074f0274dde773b9549",
+      "captured_at": "2026-11-27T11:46:42.610743+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/azure-virtual-machine-utilities",
+      "sha256": "6153a8a27a7096d29be4a2e93d127ff9d19a62366cd8a0194eb034fcbf18e98b",
+      "captured_at": "2026-11-27T11:46:42.776740+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/disks-format-mount-data-disks-linux",
+      "sha256": "e0884b83fb1a5ab4849030532a73f7e599d5d0684dcf6bd54e101e845dc97013",
+      "captured_at": "2026-11-27T11:46:42.905650+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/disks-format-mount-temp-disks-linux",
+      "sha256": "59da3c9001ca49b3c6273ea76b89b669b1a0c48763b14b60d51918375ddb5bc0",
+      "captured_at": "2026-11-27T11:46:43.000128+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/attach-managed-disk-portal",
+      "sha256": "a7c2005ca6378929df45c55ed4adbf21f2dbf5ced6bfbba2ee75ba215b2f1f27",
+      "captured_at": "2026-11-27T11:46:43.237845+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/archive/blogs/linuxonazure/cannot-ssh-to-linux-vm-after-adding-data-disk-to-etcfstab-and-rebooting",
+      "sha256": "b8edbcbf6ddd4ac9fa725a40ac71d747c61e2612968179a613cd4e8be6a2e830",
+      "captured_at": "2026-11-27T11:46:43.317237+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/troubleshoot/azure/virtual-machines/troubleshoot-device-names-problems",
+      "sha256": "5a257769e49a3946ba732892712b3d97cf4f497d0da7434901fa38a8ff20c09d",
+      "captured_at": "2026-11-27T11:46:43.522795+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/rest/api/compute/resource-skus/list",
+      "sha256": "b7a342251379a64aacbadfbd0a93835429df372788ca9a4c705bf15ded6197d6",
+      "captured_at": "2026-11-27T11:46:43.832774+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/shared-image-galleries",
+      "sha256": "444cb71312159f813f762d81a3af822da3b434ab6c4d8b5a45cc0f153c77523f",
+      "captured_at": "2026-11-27T11:46:43.906946+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes-general",
+      "sha256": "98e2884cb10557d3d79e42177cf3f49a87f3d50b23cbac27d8ac5e632de956eb",
+      "captured_at": "2026-11-27T11:46:44.133252+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes-memory",
+      "sha256": "98e2884cb10557d3d79e42177cf3f49a87f3d50b23cbac27d8ac5e632de956eb",
+      "captured_at": "2026-11-27T11:46:44.267522+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes-compute",
+      "sha256": "98e2884cb10557d3d79e42177cf3f49a87f3d50b23cbac27d8ac5e632de956eb",
+      "captured_at": "2026-11-27T11:46:44.413116+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes-previous-gen",
+      "sha256": "0ac1b63ab2252fbc5b5d5d11d8ad5efbe9681e7b0ac21a5159a4481dab8e4cde",
+      "captured_at": "2026-11-27T11:46:44.603947+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/rest/api/compute/virtualmachines/list",
+      "sha256": "7fa5de25b5fa2d5cb4152e0d82755cf08de2fb32124b609daf4b673ed985066c",
+      "captured_at": "2026-11-27T11:46:45.135151+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/general-purpose/dadsv5-series",
+      "sha256": "bcd5db943d1fa4eee4c67c0f8ba27edcce5a2c778cd544e7edb58d3a5bae9909",
+      "captured_at": "2026-11-27T11:46:45.221545+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/confidential-computing/confidential-vm-overview",
+      "sha256": "f2dfde26c487ad6cd28b688fc5e873b77e46ccc9c794a548e10cde6117c31ec0",
+      "captured_at": "2026-11-27T11:46:45.347372+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview",
+      "sha256": "a3bd9f4d8a74fedc18fc631ff9bd554ab5f43abfc7b5a5ac87d6308d0e52051b",
+      "captured_at": "2026-11-27T11:46:45.457264+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/key-vault/keys/how-to-configure-key-rotation",
+      "sha256": "0e2f67193043732094109dee1f0a77a7ffcb64055238d5bb4f8aaa5691041609",
+      "captured_at": "2026-11-27T11:46:45.556495+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/disks-enable-customer-managed-keys-powershell",
+      "sha256": "cb44e606511abc2f427ded6ff442079311ba2bc39320d3d6e7b5a96a9662206e",
+      "captured_at": "2026-11-27T11:46:45.699708+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/disks-enable-customer-managed-keys-cli",
+      "sha256": "d319864dbb9b234340bbd0d24f669074ea4f1f1b21dc0954674d15d4808f2fe7",
+      "captured_at": "2026-11-27T11:46:45.781618+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
     }
   ],
   "seen": [
@@ -32074,6 +32424,7 @@
     "https://learn.microsoft.com/en-us/answers/tags/342/office-exchange-office-exchange-server-management",
     "https://learn.microsoft.com/en-us/answers/tags/466/microsoft-copilot-microsoft-365-copilot-development-routing/",
     "https://learn.microsoft.com/en-us/answers/tags/831/m365-office",
+    "https://learn.microsoft.com/en-us/archive/blogs/linuxonazure/cannot-ssh-to-linux-vm-after-adding-data-disk-to-etcfstab-and-rebooting",
     "https://learn.microsoft.com/en-us/archive/microsoft-edge/legacy/",
     "https://learn.microsoft.com/en-us/archive/microsoft-edge/legacy/developer/dev-guide/index",
     "https://learn.microsoft.com/en-us/azure",
@@ -32201,8 +32552,12 @@
     "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/quick-create-workspace",
     "https://learn.microsoft.com/en-us/azure/azure-monitor/overview",
     "https://learn.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-create-netapp-account",
+    "https://learn.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-develop-with-rest-api",
     "https://learn.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-introduction",
+    "https://learn.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-understand-storage-hierarchy",
     "https://learn.microsoft.com/en-us/azure/azure-netapp-files/configure-ldap-over-tls",
+    "https://learn.microsoft.com/en-us/azure/azure-netapp-files/faq-data-migration-protection",
+    "https://learn.microsoft.com/en-us/azure/azure-netapp-files/faq-security",
     "https://learn.microsoft.com/en-us/azure/azure-netapp-files/understand-guidelines-active-directory-domain-service-site",
     "https://learn.microsoft.com/en-us/azure/azure-portal/azure-portal-add-remove-sort-favorites",
     "https://learn.microsoft.com/en-us/azure/azure-portal/azure-portal-dashboards-create-programmatically",
@@ -32260,6 +32615,7 @@
     "https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/",
     "https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/scenarios/azure-vmware/dual-region-virtual-wan-global-reach",
     "https://learn.microsoft.com/en-us/azure/communication-services/concepts/chat/concepts",
+    "https://learn.microsoft.com/en-us/azure/confidential-computing/confidential-vm-overview",
     "https://learn.microsoft.com/en-us/azure/confidential-computing/overview-azure-products",
     "https://learn.microsoft.com/en-us/azure/container-apps/container-debug-console",
     "https://learn.microsoft.com/en-us/azure/container-apps/gpu-serverless-overview",
@@ -32347,6 +32703,7 @@
     "https://learn.microsoft.com/en-us/azure/key-vault/general/howto-logging",
     "https://learn.microsoft.com/en-us/azure/key-vault/general/logging",
     "https://learn.microsoft.com/en-us/azure/key-vault/general/rbac-guide",
+    "https://learn.microsoft.com/en-us/azure/key-vault/keys/how-to-configure-key-rotation",
     "https://learn.microsoft.com/en-us/azure/lighthouse/concepts/cloud-solution-provider",
     "https://learn.microsoft.com/en-us/azure/lighthouse/overview",
     "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-outbound-connections",
@@ -32406,20 +32763,28 @@
     "https://learn.microsoft.com/en-us/azure/site-recovery/site-recovery-test-failover-to-azure",
     "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction",
     "https://learn.microsoft.com/en-us/azure/storage/blobs/immutable-version-level-worm-policies",
+    "https://learn.microsoft.com/en-us/azure/storage/blobs/security-recommendations",
     "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction",
     "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-upload-process-images",
     "https://learn.microsoft.com/en-us/azure/storage/common/authorize-data-access",
+    "https://learn.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview",
     "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-create",
     "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview",
+    "https://learn.microsoft.com/en-us/azure/storage/common/storage-choose-data-transfer-solution",
+    "https://learn.microsoft.com/en-us/azure/storage/common/storage-client-side-encryption",
     "https://learn.microsoft.com/en-us/azure/storage/common/storage-introduction",
     "https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy",
     "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview",
+    "https://learn.microsoft.com/en-us/azure/storage/common/storage-service-encryption",
+    "https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-v10",
+    "https://learn.microsoft.com/en-us/azure/storage/common/storage-use-data-movement-library",
     "https://learn.microsoft.com/en-us/azure/storage/common/transport-layer-security-configure-client-version",
     "https://learn.microsoft.com/en-us/azure/storage/common/transport-layer-security-configure-minimum-version",
     "https://learn.microsoft.com/en-us/azure/storage/container-storage/container-storage-introduction",
     "https://learn.microsoft.com/en-us/azure/storage/elastic-san/elastic-san-introduction",
     "https://learn.microsoft.com/en-us/azure/storage/elastic-san/next-generation-introduction",
     "https://learn.microsoft.com/en-us/azure/storage/files/authorize-data-operations-portal",
+    "https://learn.microsoft.com/en-us/azure/storage/files/files-redundancy",
     "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-active-directory-overview",
     "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-introduction",
     "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-netapp-comparison",
@@ -32459,6 +32824,7 @@
     "https://learn.microsoft.com/en-us/azure/virtual-machines/generation-2",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/add-disk",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/attach-disk-portal",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/azure-virtual-machine-utilities",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/capture-image",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/cli-ps-findimage",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/cloud-init-troubleshooting",
@@ -32471,7 +32837,10 @@
     "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/create-cli-availability-zone",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/create-ssh-secured-vm-from-template",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/disk-encryption-linux",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/disks-enable-customer-managed-keys-cli",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/disks-enable-host-based-encryption-cli",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/disks-format-mount-data-disks-linux",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/disks-format-mount-temp-disks-linux",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/disks-upload-vhd-to-managed-disk-cli",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/endorsed-distros",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/find-unattached-disks",
@@ -32499,8 +32868,14 @@
     "https://learn.microsoft.com/en-us/azure/virtual-machines/ndv2-series",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/np-series",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/nv-series",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/nvme-linux",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/overview",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/shared-image-galleries",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes-compute",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes-general",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes-memory",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes-previous-gen",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/cobalt-overview",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/compute-optimized/f-family",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/compute-optimized/fx-family",
@@ -32510,6 +32885,7 @@
     "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/general-purpose/a-family",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/general-purpose/b-family",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/general-purpose/d-family",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/general-purpose/dadsv5-series",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/general-purpose/dc-family",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/general-purpose/dcedsv6-series",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/general-purpose/dlsv6-series",
@@ -32576,9 +32952,11 @@
     "https://learn.microsoft.com/en-us/azure/virtual-machines/understand-vm-reboots",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/user-data",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/vm-naming-conventions",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/attach-managed-disk-portal",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/capture-image-resource",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/compute-benchmark-scores",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/disk-encryption-windows",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/disks-enable-customer-managed-keys-powershell",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/disks-upload-vhd-to-managed-disk-powershell",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/expand-os-disk",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/ps-template",
@@ -32750,6 +33128,7 @@
     "https://learn.microsoft.com/en-us/dotnet/api/microsoft.azure.commands.compute.models.psvirtualmachineimagesku",
     "https://learn.microsoft.com/en-us/dotnet/api/microsoft.azure.commands.resourcemanager.cmdlets.sdkmodels.psresourceproviderlocation",
     "https://learn.microsoft.com/en-us/dotnet/api/overview/azure/",
+    "https://learn.microsoft.com/en-us/dotnet/api/overview/azure/resourcemanager.storage-readme",
     "https://learn.microsoft.com/en-us/dotnet/api/overview/azure/storage",
     "https://learn.microsoft.com/en-us/dotnet/api/system.boolean",
     "https://learn.microsoft.com/en-us/dotnet/api/system.management.automation.switchparameter",
@@ -34428,6 +34807,7 @@
     "https://learn.microsoft.com/en-us/intune/whats-new/archive",
     "https://learn.microsoft.com/en-us/java/api/overview/azure/storage",
     "https://learn.microsoft.com/en-us/javascript/api/@azure/msal-react",
+    "https://learn.microsoft.com/en-us/javascript/api/overview/azure/storage",
     "https://learn.microsoft.com/en-us/legal/cognitive-services/openai/transparency-note",
     "https://learn.microsoft.com/en-us/legal/microsoft-365/supplemental-terms",
     "https://learn.microsoft.com/en-us/legal/microsoft-apis/terms-of-use",
@@ -35165,6 +35545,7 @@
     "https://learn.microsoft.com/en-us/previous-versions/azure/devops/",
     "https://learn.microsoft.com/en-us/previous-versions/azure/devops/user-guide/what-is-azure-devops",
     "https://learn.microsoft.com/en-us/previous-versions/azure/governance/resource-graph/samples/samples-by-table",
+    "https://learn.microsoft.com/en-us/previous-versions/azure/reference/ee460790(v=azure.100)",
     "https://learn.microsoft.com/en-us/previous-versions/bing/",
     "https://learn.microsoft.com/en-us/previous-versions/bing/speech/",
     "https://learn.microsoft.com/en-us/previous-versions/cc722488(v=technet.10)",
@@ -35301,11 +35682,13 @@
     "https://learn.microsoft.com/en-us/rest/api/compute/platformimages/platformimages-list-publisher-offer-skus",
     "https://learn.microsoft.com/en-us/rest/api/compute/platformimages/platformimages-list-publisher-offers",
     "https://learn.microsoft.com/en-us/rest/api/compute/platformimages/platformimages-list-publishers",
+    "https://learn.microsoft.com/en-us/rest/api/compute/resource-skus/list",
     "https://learn.microsoft.com/en-us/rest/api/compute/resourceskus/list",
     "https://learn.microsoft.com/en-us/rest/api/compute/virtual-machine-images/list-offers",
     "https://learn.microsoft.com/en-us/rest/api/compute/virtual-machine-images/list-publishers",
     "https://learn.microsoft.com/en-us/rest/api/compute/virtual-machine-images/list-skus",
     "https://learn.microsoft.com/en-us/rest/api/compute/virtualmachines/createorupdate",
+    "https://learn.microsoft.com/en-us/rest/api/compute/virtualmachines/list",
     "https://learn.microsoft.com/en-us/rest/api/compute/virtualmachines/listavailablesizes",
     "https://learn.microsoft.com/en-us/rest/api/keyvault/",
     "https://learn.microsoft.com/en-us/rest/api/keyvault/keyvault/vaults/check-name-availability",
@@ -35322,6 +35705,8 @@
     "https://learn.microsoft.com/en-us/rest/api/resources/subscriptions/list",
     "https://learn.microsoft.com/en-us/rest/api/resources/subscriptions/list-locations",
     "https://learn.microsoft.com/en-us/rest/api/resources/tenants/list",
+    "https://learn.microsoft.com/en-us/rest/api/storagerp/",
+    "https://learn.microsoft.com/en-us/rest/api/storageservices/",
     "https://learn.microsoft.com/en-us/rest/api/storageservices/authorize-with-shared-key",
     "https://learn.microsoft.com/en-us/rest/api/storageservices/blob-service-rest-api",
     "https://learn.microsoft.com/en-us/rest/api/storageservices/features-not-supported-by-the-azure-file-service",
@@ -35465,6 +35850,7 @@
     "https://learn.microsoft.com/en-us/troubleshoot/azure/general/dependency-availability-by-country",
     "https://learn.microsoft.com/en-us/troubleshoot/azure/virtual-machines/redeploy-to-new-node-windows",
     "https://learn.microsoft.com/en-us/troubleshoot/azure/virtual-machines/reset-network-interface",
+    "https://learn.microsoft.com/en-us/troubleshoot/azure/virtual-machines/troubleshoot-device-names-problems",
     "https://learn.microsoft.com/en-us/troubleshoot/entra/entra-id/ad-dmn-services/enable-support-tls-environment",
     "https://learn.microsoft.com/en-us/troubleshoot/exchange/administration/endpoint-connection-405-error",
     "https://learn.microsoft.com/en-us/troubleshoot/exchange/administration/term-new-mailbox-not-recognized-error",
@@ -35560,150 +35946,6 @@
     "https://learn.microsoft.com/en-us/windows/win32/wer/windows-error-reporting"
   ],
   "queue": [
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/storage/blobs/security-recommendations",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/storage/common/storage-service-encryption",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/azure-netapp-files/faq-security",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/storage/common/storage-client-side-encryption",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/storage/files/files-redundancy",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/storage/common/storage-choose-data-transfer-solution",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/azure-netapp-files/faq-data-migration-protection",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-understand-storage-hierarchy",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/rest/api/storageservices/",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/javascript/api/overview/azure/storage",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/rest/api/storagerp/",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/dotnet/api/overview/azure/resourcemanager.storage-readme",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/previous-versions/azure/reference/ee460790(v=azure.100)",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-develop-with-rest-api",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/storage/common/storage-use-data-movement-library",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-v10",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/nvme-linux",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/azure-virtual-machine-utilities",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/disks-format-mount-data-disks-linux",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/disks-format-mount-temp-disks-linux",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/attach-managed-disk-portal",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/archive/blogs/linuxonazure/cannot-ssh-to-linux-vm-after-adding-data-disk-to-etcfstab-and-rebooting",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/troubleshoot/azure/virtual-machines/troubleshoot-device-names-problems",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/rest/api/compute/resource-skus/list",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/shared-image-galleries",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes-general",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes-memory",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes-compute",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes-previous-gen",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/rest/api/compute/virtualmachines/list",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/general-purpose/dadsv5-series",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/confidential-computing/confidential-vm-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/key-vault/keys/how-to-configure-key-rotation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/disks-enable-customer-managed-keys-powershell",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/disks-enable-customer-managed-keys-cli",
-      "depth": 2
-    },
     {
       "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/ephemeral-os-disks-deploy",
       "depth": 2
@@ -45559,11 +45801,155 @@
     {
       "url": "https://learn.microsoft.com/en-us/windows-server/networking/core-network-guide/cncg/server-certs/install-the-certification-authority",
       "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/review-security-recommendations",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/storage/files/files-encryption-at-rest",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-netapp-files/configure-kerberos-encryption",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/storage/blobs/client-side-encryption",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/storage/files/redundancy-premium-file-shares",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/storage/common/storage-migration-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-netapp-files/migrate-volumes",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-netapp-files/cool-access-introduction",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/rest/api/storageservices/put-blob",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/storage",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/dotnet/api/overview/azure/identity-readme",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/dotnet/api/azure.identity.defaultazurecredential",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/azure/reference/jj154125(v=azure.100)",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/request-limits-and-throttling",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/dotnet/api/azure.storage.datamovement",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/storage-mover/",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/azure-boost/overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-network/accelerated-networking-mana-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/troubleshoot/azure/virtual-machines/linux-virtual-machine-cannot-start-fstab-errors",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/attach-disk-ps",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/change-drive-letter",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/troubleshoot/azure/virtual-machines/linux/troubleshoot-device-names-problems",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/troubleshoot/azure/virtual-machines/linux/serial-console-linux",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/marketplace-images",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/cli/azure/sig/image-definition",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/retirement/dcsv3-series-retirement",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/lifecycle/retirement/msv2-mdsv2-retirement",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/lifecycle/retirement/nvv3-series-retirement",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/lifecycle/retirement/nvv4-retirement",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/rest/api/compute/virtual-machines/list",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/attestation/",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/confidential-computing/confidential-vm-faq",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/key-vault/keys/about-keys-details",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/key-vault/general/about-keys-secrets-certificates",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/key-vault/keys/about-keys",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/key-vault/keys/hsm-protected-keys",
+      "depth": 3
     }
   ],
   "last_batch": {
     "attempted": 36,
-    "documents_total": 3537,
+    "documents_total": 3573,
     "new_documents": 36,
     "quarantined": 0,
     "queued": 2500,
