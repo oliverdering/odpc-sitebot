@@ -94,6 +94,9 @@ def enrich(title,show,description,sender):
  else:opening+=' Weitere inhaltliche Einzelheiten findest du beim Sender.'
  return {'summary':opening,'topics':classify(TOPICS,context) or ['KI im Alltag'],'formats':classify(FORMATS,show+' '+title+' '+description[:160])}
 
+def german_tv(title,show):
+ return not (any(re.match(r'^(?:Ö[13]\b|Radio |FM4\b)',v,re.I) for v in (title,show)) or re.search(r'\((?:englisch|französisch|italienisch)\)',title,re.I))
+
 def mv(term,now):
  query={'queries':[{'fields':['title','topic','description'],'query':term}],'sortBy':'timestamp','sortOrder':'desc','future':False,'offset':0,'size':30}
  result=read('https://mediathekviewweb.de/api/query',query)['result']['results']
@@ -103,7 +106,7 @@ def mv(term,now):
   title,desc,show=map(clean,[item.get('title'),item.get('description'),item.get('topic')])
   sender=station(clean(item.get('channel')))
   url=canonical(item.get('url_website',''))
-  if sender.startswith('ARTE.') or (sender=='ARTE' and '/de/' not in url) or re.search(r'^(?:Ö[13]|Radio |FM4)',show+' '+title,re.I) or 'Ö3-KI-Check' in desc:continue
+  if sender.startswith('ARTE.') or (sender=='ARTE' and '/de/' not in url) or not german_tv(title,show) or 'Ö3-KI-Check' in desc:continue
   if '/play/radio/' in url or urlsplit(url).hostname in {'sound.orf.at','oe1.orf.at'}:continue
   date=int(item.get('timestamp') or 0)
   if not(sender and title and url and 0<date<=now.timestamp() and relevant(title+' '+show,desc)):continue
@@ -166,7 +169,7 @@ def collect(old, now):
  if not debug:raise RuntimeError('No matching media returned. Keep previous snapshot.')
  for item in rows.values():
   item.update(config['media'].get(item['url'],{}))
- ordered=sorted(rows.values(),key=lambda i:(-i['date'],i['url']))
+ ordered=sorted((i for i in rows.values() if german_tv(i['title'],i.get('show',''))),key=lambda i:(-i['date'],i['url']))
  unique=[];seen=set()
  for item in ordered:
   keys=[('url',item['url']),('title',norm(item['sender']),norm(item['title']),item['date'])]
