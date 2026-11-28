@@ -16,11 +16,11 @@ function odpc_news_sources() {
 }
 function odpc_news_refresh() {
  include_once ABSPATH.WPINC.'/feed.php';
- $items=[];$health=[];
+ $items=[];$health=[];$successful=[];
  foreach (odpc_news_sources() as [$name,$url,$kind]) {
   $feed=fetch_feed($url);
   if (is_wp_error($feed)) {$health[$name]='Fehler';continue;}
-  $health[$name]='OK';
+  $health[$name]='OK';$successful[$name]=true;
   foreach ($feed->get_items(0,12) as $entry) {
    $link=esc_url_raw($entry->get_permalink());$title=wp_strip_all_tags($entry->get_title());
    $ts=$entry->get_date('U');
@@ -30,7 +30,12 @@ function odpc_news_refresh() {
   }
  }
  $prior=get_option(ODPC_NEWS_KEY,[]);
+ // Retain previous articles for each source whose current feed failed.
+ foreach(($prior['items']??[]) as $old) {
+  if(!isset($successful[$old['source']]) && !empty($old['url']) && !empty($old['date']))$items[]=$old;
+ }
  if (!$items && !empty($prior['items'])) {update_option('odpc_news_v2_health',$health,false);return;}
+
  $seen=[];$unique=[];
  usort($items,static fn($a,$b)=>$b['date']<=>$a['date']);
  foreach ($items as $item) {
@@ -44,6 +49,15 @@ add_action('odpc_news_daily','odpc_news_refresh');
 add_action('init',static function(){
  if(!wp_next_scheduled('odpc_news_daily'))wp_schedule_event(time()+300,'daily','odpc_news_daily');
 });
+// On busy/cached sites WP-Cron can miss a day; a real page visit triggers a bounded catch-up.
+add_action('template_redirect',static function(){
+ if(!is_page('news-signals'))return;
+ $last=get_option(ODPC_NEWS_KEY,[]);
+ if(time()-(int)($last['updated']??0)<DAY_IN_SECONDS)return;
+ if(get_transient('odpc_news_refresh_lock'))return;
+ set_transient('odpc_news_refresh_lock',1,15*MINUTE_IN_SECONDS);
+ odpc_news_refresh();
+},1);
 function odpc_news_render() {
  $data=get_option(ODPC_NEWS_KEY,[]);
  if(empty($data['items']) && !get_transient('odpc_news_bootstrap_lock')) {
@@ -63,7 +77,7 @@ function odpc_news_render() {
  <h3><?php echo esc_html($item['title']); ?></h3><p><?php echo esc_html($item['summary']); ?></p><a href="<?php echo esc_url($item['url']); ?>" rel="noopener noreferrer" target="_blank">Originalartikel lesen ↗</a></article>
  <?php endforeach; ?></div><?php endif; ?></section>
  <section id="on-sources"><h2>Quellen und Transparenz</h2><p>Herstellermeldungen sind keine unabhängige Berichterstattung. Feeds werden täglich abgerufen; bei Ausfällen bleibt der letzte erfolgreiche Datenstand erhalten.</p>
- <ul><?php foreach(odpc_news_sources() as [$name,$url,$kind]): ?><li><?php echo esc_html($name.' · '.$kind.' · '.($data['health'][$name]??'Noch nicht geprüft')); ?></li><?php endforeach; ?></ul></section>
+ <ul><?php foreach(odpc_news_sources() as [$name,$url,$kind]): ?><li><?php echo esc_html($name.' · '.$kind.' · '.(($data['health'][$name]??'Noch nicht geprüft')==='OK'?'Erreichbar':'Abruf fehlgeschlagen oder noch nicht geprüft')); ?></li><?php endforeach; ?></ul></section>
  </section><?php return ob_get_clean();
 }
 add_shortcode('odpc_news_signals','odpc_news_render');
