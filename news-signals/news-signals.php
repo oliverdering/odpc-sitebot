@@ -67,6 +67,11 @@ function odpc_news_render() {
  </section><?php return ob_get_clean();
 }
 add_shortcode('odpc_news_signals','odpc_news_render');
+// Preserve the canonical WordPress page and its SEO metadata while replacing its body.
+add_filter('the_content',static function($content){
+ if(!is_admin() && is_main_query() && in_the_loop() && is_page('news-signals'))return odpc_news_render();
+ return $content;
+},99);
 add_action('wp_enqueue_scripts',static function(){
  if(!is_page('news-signals'))return;
  wp_enqueue_style('odpc-news-v2',plugins_url('news-signals.css',__FILE__),[], '1.0.0');
