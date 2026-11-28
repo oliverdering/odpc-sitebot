@@ -451,3 +451,19 @@ add_action('wp_footer',function(){
 })();
 </script>
 <?php },120);
+
+/* ODPC navigation: link the two editorial KI portals in every rendered primary menu. */
+add_filter('wp_nav_menu_items', static function($items, $args) {
+ if (is_admin()) return $items;
+ $location = isset($args->theme_location) ? (string)$args->theme_location : '';
+ if ($location !== 'primary') return $items;
+ $links = [
+  ['/ki-mediathek/', 'KI-Mediathek', 'odpc-menu-mediathek'],
+  ['/news-signals/', 'News &amp; Signals', 'odpc-menu-signals'],
+ ];
+ foreach ($links as [$path,$label,$class]) {
+  if (strpos($items, $path) !== false) continue;
+  $items .= '<li class="menu-item menu-item-type-custom '.esc_attr($class).'"><a href="'.esc_url(home_url($path)).'">'.$label.'</a></li>';
+ }
+ return $items;
+}, 90);
