@@ -124,7 +124,7 @@ function odpc_guide_render() {
     <label>Sendedatum ab<input type="date" name="date"></label><label>Veröffentlicht ab<input type="date" name="published"></label>
     <button type="reset">Filter zurücksetzen</button><output aria-live="polite"></output></form>
     <section id="kg-jetzt"><h2>Aktuelle KI-Mediathekbeiträge</h2><p>Nach Datum der Sendung sortiert. Ein separates Veröffentlichungs- oder Ablaufdatum erscheint, wenn es belegt ist.</p>
-    <div class="kg-grid"><?php foreach($items as $item) odpc_guide_card($item); ?></div><button hidden type="button" class="kg-more">Weitere Beiträge anzeigen</button></section>
+    <div class="kg-grid"><?php foreach($items as $item) odpc_guide_card($item); ?></div><button hidden type="button" class="kg-more">Weitere Beiträge anzeigen</button> <button hidden type="button" class="kg-show-all">Alle <?= count($items) ?> Beiträge anzeigen</button></section>
     <section id="kg-programm"><h2>Demnächst im Fernsehen – KI-Programm-Vorschau</h2>
     <p>Die nächsten 14 Kalendertage. Jeder Termin führt zur Ankündigung des Senders.</p>
     <?php if (!$future) echo '<p>Derzeit liegen keine bestätigten KI-Sendetermine für diesen Zeitraum vor.</p>';
