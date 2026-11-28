@@ -118,7 +118,7 @@ function odpc_guide_render() {
     <?php if (empty($d['complete']) && !empty($d['last_complete'])) echo '<p>Letzter vollständiger Abruf · '.esc_html(odpc_guide_date('d.m.Y H:i',$d['last_complete'])).' Uhr</p>'; ?>
     </header>
     <div id="kg-banner"><?= odpc_guide_banner() ?></div>
-    <nav class="kg-nav" aria-label="In der KI-Mediathek"><a href="#kg-jetzt">Beiträge</a><a href="#kg-programm">Programmvorschau</a><a href="#kg-sender">Senderverzeichnis</a></nav>
+    <nav class="kg-nav" aria-label="In der KI-Mediathek"><a href="#kg-jetzt">Beiträge</a><a href="#kg-programm">Programmvorschau</a><a href="#kg-sender">Senderverzeichnis</a><a href="/news-signals/">KI-News &amp; Signals ↗</a></nav>
     <form class="kg-filters" hidden role="search" aria-label="Mediathek filtern"><label>Suche<input type="search" name="q" placeholder="Titel, Stichwort oder Sender"></label>
     <?php odpc_guide_select('sender','Sender',$to_options($stations)); odpc_guide_select('tag','Thema oder Format',$to_options($topics)); odpc_guide_select('kind','Angebot',['now'=>'Jetzt verfügbar','future'=>'Kommende Sendungen']); ?>
     <label>Sendedatum ab<input type="date" name="date"></label><label>Veröffentlicht ab<input type="date" name="published"></label>
