@@ -62,6 +62,7 @@ async function browse(browser, name, width, height) {
   const blue=await color();
   await switcher.click();
   assert.equal(await green(),'green');
+  await page.waitForFunction(previous => getComputedStyle(document.querySelector('#odpc-ki-guide .kg-btn')).backgroundColor !== previous, blue);
   assert.notEqual(await color(),blue);
   const overflow=await page.evaluate(()=>({page:document.documentElement.scrollWidth-document.documentElement.clientWidth,guide:document.querySelector('#odpc-ki-guide').scrollWidth-document.querySelector('#odpc-ki-guide').clientWidth}));
   console.log(name,'overflow',overflow);
