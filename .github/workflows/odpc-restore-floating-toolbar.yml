@@ -1,0 +1,69 @@
+name: ODPC restore full-domain floating toolbar
+on:
+  push:
+    paths:
+      - '.github/workflows/odpc-restore-floating-toolbar.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  restore:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 30
+      - run: python -m pip install 'paramiko>=3.4,<5'
+      - name: Restore earlier bridge version with automatic health rollback
+        env:
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+        run: |
+          python - <<'PY'
+          import sys,os,time,hashlib,hmac,base64,subprocess
+          from urllib.request import urlopen,Request
+          from urllib.error import HTTPError
+          import paramiko
+          sys.path.insert(0,'scripts')
+          from deploy_odpc_helpermonkey_v4_bridge import HOST,USER,PIN,ROOT
+          def health(path):
+            try:
+              with urlopen(Request('https://odpc.de/'+path+'?odpc_restore='+str(time.time_ns()),headers={'Cache-Control':'no-cache','User-Agent':'ODPC-toolbar-restore'}),timeout=18) as r:
+                body=r.read(400000).decode('utf8','replace')
+                return r.status,('odpc-utility-dock' in body or 'odpc-hm-v4-js' in body)
+            except HTTPError as e:return e.code,False
+            except Exception as e:print('Health error:',type(e).__name__,str(e));return 0,False
+          baseline=health('')
+          print('Baseline homepage:',baseline,flush=True)
+          # Known pre-menu-change bridge. Restore toolbar without latest menu filter.
+          source=subprocess.check_output(['git','show','d442aa3d61591af264ba94bfee8bbf5cf4a4a728^:site-deploy/odpc.de/odpc-helpermonkey-v4-bridge.php'])
+          if not source.startswith(b'<?php') or len(source)>100000:raise RuntimeError('Unexpected recovery source')
+          t=paramiko.Transport((HOST,22));t.start_client(timeout=20)
+          key='SHA256:'+base64.b64encode(hashlib.sha256(t.get_remote_server_key().asbytes()).digest()).decode().rstrip('=')
+          if not hmac.compare_digest(key,PIN):raise RuntimeError('Host fingerprint mismatch')
+          t.auth_password(USER,os.environ['ODPC_SFTP_PASSWORD'])
+          s=paramiko.SFTPClient.from_transport(t)
+          original=ROOT+'/wp-content/mu-plugins/odpc-helpermonkey-v4-bridge.php'
+          disabled=original+'.emergency-disabled'
+          tmp=original+'.restore-upload'
+          try:
+            s.stat(disabled)
+            try:s.stat(original);raise RuntimeError('Active plugin exists already; abort to avoid overwrite')
+            except FileNotFoundError:pass
+            with s.open(tmp,'wb') as f:f.write(source)
+            with s.open(tmp,'rb') as f:
+              if hashlib.sha256(f.read()).digest()!=hashlib.sha256(source).digest():raise RuntimeError('Checksum mismatch')
+            s.rename(tmp,original)
+            time.sleep(4)
+            after=[health(''),health('ki-mediathek/')]
+            print('RESTORE STATUS homepage and mediathek:',after,flush=True)
+            if any(code!=200 for code,_ in after) or not after[0][1]:
+              s.remove(original)
+              print('ROLLBACK: restored bridge disabled again, emergency backup retained',flush=True)
+              raise RuntimeError('Restored version failed health check; disabled safely')
+            print('SUCCESS: prior bridge active; homepage and mediathek HTTP 200; toolbar markup present',flush=True)
+          finally:
+            try:s.remove(tmp)
+            except OSError:pass
+            s.close();t.close()
+          PY
