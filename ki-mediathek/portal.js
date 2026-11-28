@@ -14,7 +14,8 @@
   const cards = Array.from(guide.querySelectorAll('[data-media-kind]'));
   const normalize = value => value.toLocaleLowerCase('de').normalize('NFKC');
   const texts = cards.map(card => normalize(card.textContent));
-  let limit = 12;
+  const pageSize = guide.querySelector('#kg-page-size');
+  let limit = 20;
   const showAll = guide.querySelector('.kg-show-all');
   function filter() {
     const q = normalize(form.elements.q.value.trim()).split(/\s+/).filter(Boolean);
@@ -38,12 +39,13 @@
     form.querySelector('output').textContent = total ? total + ' Treffer' : 'Keine passenden Beiträge oder Sendungen.';
   }
   form.addEventListener('submit', event => event.preventDefault());
-  form.addEventListener('input', () => { limit = 12; filter(); });
-  form.addEventListener('reset', () => { limit = 12; setTimeout(filter, 0); });
-  if (showAll) showAll.addEventListener('click', () => { limit = Infinity; filter(); guide.querySelector('#kg-jetzt').scrollIntoView({behavior:'smooth',block:'start'}); });
+  form.addEventListener('input', () => { limit = pageSize?.value === 'all' ? Infinity : Number(pageSize?.value || 20); filter(); });
+  form.addEventListener('reset', () => { limit = pageSize?.value === 'all' ? Infinity : Number(pageSize?.value || 20); setTimeout(filter, 0); });
+  if (pageSize) pageSize.addEventListener('change', () => { limit = pageSize.value === 'all' ? Infinity : Number(pageSize.value); filter(); });
+  if (showAll) showAll.addEventListener('click', () => { limit = Infinity; if(pageSize) pageSize.value = 'all'; filter(); guide.querySelector('#kg-jetzt').scrollIntoView({behavior:'smooth',block:'start'}); });
   more.addEventListener('click', () => {
     const previously = new Set(cards.filter(c => !c.hidden));
-    limit += 12; filter();
+    limit += Number(pageSize?.value === 'all' ? 20 : pageSize?.value || 20); filter();
     const first = cards.find(c => !c.hidden && !previously.has(c));
     if (first) first.querySelector('a').focus();
   });
