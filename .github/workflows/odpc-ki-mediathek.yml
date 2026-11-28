@@ -39,3 +39,23 @@ jobs:
           ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
           MODE: ${{ inputs.operation || 'refresh' }}
         run: python ki-mediathek/deploy.py "$MODE"
+  browser:
+    if: github.event_name != 'schedule' && inputs.operation != 'legacy'
+    needs: publish
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Chromium und WebKit vorbereiten
+        run: |
+          npm install --prefix "$RUNNER_TEMP/ki-qa" playwright@1.56.1 --no-audit --no-fund
+          "$RUNNER_TEMP/ki-qa/node_modules/.bin/playwright" install --with-deps webkit
+      - name: Öffentliche Seite und Startseitenbanner bedienen
+        run: NODE_PATH="$RUNNER_TEMP/ki-qa/node_modules" node ki-mediathek/acceptance.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ki-mediathek-browseransichten
+          path: ${{ runner.temp }}/ki-media-acceptance/*.png
+          if-no-files-found: ignore
+          retention-days: 7

@@ -59,6 +59,9 @@ def publish(s,mode):
     try:s.mkdir(DIR)
     except OSError:
         if not stat.S_ISDIR(s.stat(DIR).st_mode):raise
+    try:s.mkdir(DIR+'/logos')
+    except OSError:
+        if not stat.S_ISDIR(s.stat(DIR+'/logos').st_mode):raise
     if mode=='legacy':
         atomic(s,DIR+'/paused',b'Rollback requested')
         atomic(s,LOADER,None)
@@ -71,17 +74,27 @@ def publish(s,mode):
         print('Publisher paused after rollback.');return
     old=read_file(s,DIR+'/catalogue.json')
     state=json.loads(old) if old else {}
-    data,_=collect(state,datetime.now(BERLIN))
+    now=datetime.now(BERLIN)
+    # Code-only releases reuse today's verified catalogue. Explicit reruns refresh.
+    reuse=(os.getenv('GITHUB_EVENT_NAME')=='push' and os.getenv('GITHUB_RUN_ATTEMPT')=='1'
+           and state.get('complete') and datetime.fromtimestamp(state['updated'],BERLIN).date()==now.date())
+    if reuse:
+        data=state
+        print('Reusing today’s complete catalogue for the software release.')
+    else:
+        data,_=collect(state,now)
     if not data['complete'] and not old:raise RuntimeError('Initial publication requires both sources.')
     if not data['complete'] and old:
         data['last_complete']=state.get('last_complete',state['updated'] if state.get('complete') else 0)
     else:data['last_complete']=data['updated']
-    files={DIR+'/'+name:(SOURCES/name).read_bytes() for name in ['stations.tsv','portal.css','portal.js']}
+    files={DIR+'/'+name:(SOURCES/name).read_bytes() for name in ['stations.tsv','portal.css','portal.js','logos.js']}
+    for asset in sorted((SOURCES/'logos').iterdir()):
+        if asset.suffix in ('.json','.png'):files[DIR+'/logos/'+asset.name]=asset.read_bytes()
     files[DIR+'/catalogue.json']=json.dumps(data,ensure_ascii=False,separators=(',',':')).encode()
     files[LOADER]=(SOURCES/'portal.php').read_bytes()
     backup={path:read_file(s,path) for path in [*files,DIR+'/verified',DIR+'/paused']}
     # A persistent recovery copy contains only public catalogue data.
-    if old:atomic(s,DIR+'/previous.json',old)
+    if old and not reuse:atomic(s,DIR+'/previous.json',old)
     modified=[]
     try:
         for path,content in files.items():

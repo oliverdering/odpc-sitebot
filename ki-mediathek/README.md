@@ -8,7 +8,7 @@ Ein gemeinsamer GitHub-Workflow aktualisiert um 06:00 Uhr in Europe/Berlin, bei 
 
 MediathekViewWeb liefert die Beitragskandidaten. Treffer müssen einen fachlichen Bezug und einen Originallink haben. ARTE-Sendezeiten werden vom verknüpften Originalprogramm übernommen. TVmaze (CC BY-SA, Quellenhinweis auf der Seite) durchsucht deutsche Tagesprogramme. Automatische TVmaze-Termine müssen mit Titel, Sender und Sendezeit des offiziellen ARD-Programms übereinstimmen. Die Abdeckung variiert je Sender. Redaktionell bestätigte Einzeltermine und eigene Zusammenfassungen stehen in editorial.json. Ablaufdaten werden nur übernommen, wenn das Original sie ausweist. Ein rotierender Linkcheck schließt bei HTTP 404 und 410 aus. Erreichbarkeitsprobleme und Teilabrufe allein löschen keine Einträge.
 
-Der Katalog hält bis zu 160 verfügbare Einträge und archiviert weitere Datensätze im selben Snapshot. Metadaten zu fremdsprachigen ARTE-Fassungen und ausdrücklich gekennzeichneten Radioformaten werden gefiltert. Bildmaterial wird ausschließlich als eigene grafische Senderkennzeichnung ausgegeben. Fremde Pressefotos, Senderlogos oder Videos werden nicht kopiert.
+Der Katalog hält bis zu 160 verfügbare Einträge und archiviert weitere Datensätze im selben Snapshot. Metadaten zu fremdsprachigen ARTE-Fassungen und ausdrücklich gekennzeichneten Radioformaten werden gefiltert. Die Senderkennzeichen werden aus geprüften Wikimedia-Commons-Dateien lokal ausgeliefert. Quelle, Urheber und Lizenz stehen je Datei in logos/sources.json und in den Bildnachweisen auf der Seite. Die Sendernamen dienen bei fehlendem Bild als Ersatz. Pressefotos und Videos werden nicht übernommen.
 
 ## Rollback
 

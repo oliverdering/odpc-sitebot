@@ -1,6 +1,6 @@
 .page-id-3852 .entry-header:has(.entry-title){display:none}
 #odpc-ki-guide{--ink:var(--odpc-brand-dark,#172b46);--accent:var(--odpc-brand-primary,#1e3a5f);--soft:var(--odpc-brand-soft,#eaf1f8);--line:color-mix(in srgb,var(--accent) 35%,white);--panel:#fff;color:var(--ink);line-height:1.55;max-width:76rem;margin:auto;overflow-wrap:anywhere}
-html[data-odpc-appearance=green] #odpc-ki-guide{--ink:var(--odpc-reading-ink);--accent:var(--odpc-reading-green);--soft:var(--odpc-reading-paper);--panel:var(--odpc-reading-panel);--line:var(--odpc-reading-border)}
+html[data-odpc-appearance=green] #odpc-ki-guide{--ink:var(--odpc-reading-ink,#171b18);--accent:var(--odpc-reading-green,#28513d);--soft:var(--odpc-reading-paper,#f5efdf);--panel:var(--odpc-reading-panel,#fff9ec);--line:var(--odpc-reading-border,#78917b)}
 #odpc-ki-guide *,#odpc-ki-guide *::before,#odpc-ki-guide *::after{box-sizing:border-box}
 #odpc-ki-guide [hidden]{display:none!important}
 #odpc-ki-guide section[id]{margin-block:clamp(2rem,5vw,4rem);scroll-margin-top:5rem}
@@ -14,3 +14,6 @@ html[data-odpc-appearance=green] #odpc-ki-guide{--ink:var(--odpc-reading-ink);--
 #odpc-ki-guide .kg-btn,#odpc-ki-guide button:not(.odpc-media-pause){background:var(--accent);border:1px solid var(--accent);color:#fff;font:inherit;font-weight:650;border-radius:5px;padding:.6rem 1rem;min-height:44px;cursor:pointer}.kg-btn{display:flex;align-items:center;justify-content:space-between;text-decoration:none!important}.kg-btn:hover,.kg-more:hover{text-decoration:underline!important}.kg-more{margin-top:1rem}
 #odpc-ki-guide :focus-visible{outline:3px solid var(--accent);outline-offset:3px}.kg-day{margin:1.6rem 0}.kg-foot{border-top:1px solid var(--line);padding-top:1rem}
 @media(max-width:480px){.kg-filters{grid-template-columns:minmax(0,1fr)}.kg-stats{gap:.75rem}.kg-stats dt{font-size:.84rem}.kg-hero{padding:1rem}#kg-banner .odpc-media{max-width:100%;padding:12px!important}}
+.kg-art .kg-logo{display:inline-flex;width:8.6rem;height:3.3rem;align-items:center;justify-content:center;background:#fff;border:1px solid var(--line);border-radius:4px;padding:.45rem .7rem}
+#odpc-ki-guide .kg-logo img{display:block;width:auto;height:auto;max-width:100%;max-height:100%;object-fit:contain}
+.kg-foot summary{cursor:pointer;min-height:44px;display:list-item;padding:.65rem 0;font-weight:650}

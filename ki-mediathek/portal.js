@@ -37,7 +37,7 @@
   }
   form.addEventListener('submit', event => event.preventDefault());
   form.addEventListener('input', () => { limit = 12; filter(); });
-  form.addEventListener('reset', () => { limit = 12; queueMicrotask(filter); });
+  form.addEventListener('reset', () => { limit = 12; setTimeout(filter, 0); });
   more.addEventListener('click', () => {
     const previously = new Set(cards.filter(c => !c.hidden));
     limit += 12; filter();

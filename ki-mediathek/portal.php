@@ -9,7 +9,8 @@ function odpc_guide_state() {
     if (isset($state)) return $state;
     $dir = __DIR__.'/odpc-ki-mediathek/';
     $state = is_readable($dir.'catalogue.json') ? json_decode(file_get_contents($dir.'catalogue.json'), true) : [];
-    return is_array($state) && !empty($state['items']) ? $state : [];
+    if (!is_array($state) || empty($state['items'])) $state = [];
+    return $state;
 }
 
 // The existing home renderer reads this option. The WordPress snapshot remains available for rollback.
@@ -58,9 +59,27 @@ function odpc_guide_select($name, $label, $choices) {
     foreach ($choices as $value=>$text) echo '<option value="'.esc_attr($value).'">'.esc_html($text).'</option>';
     echo '</select></label>';
 }
+function odpc_guide_logos() {
+    static $logos;
+    if ($logos === null) {
+        $path = __DIR__.'/odpc-ki-mediathek/logos/sources.json';
+        $logos = is_readable($path) ? json_decode(file_get_contents($path),true) : [];
+    }
+    return $logos ?: [];
+}
+function odpc_guide_logo_url($logo) {
+    return plugins_url('odpc-ki-mediathek/logos/'.rawurlencode($logo['file']), __FILE__);
+}
 function odpc_guide_poster($station, $type) {
     $paths = ['play'=>'M9 5l11 7-11 7z','tv'=>'M3 5h18v13H3z M9 21h6','radio'=>'M3 7h18v13H3z M4 7l13-5 M6 11h12 M7 15h3'];
-    echo '<div class="kg-art" aria-hidden="true"><span>'.esc_html($station).'</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="'.esc_attr($paths[$type]).'"/></svg></div>';
+    $logo = odpc_guide_logos()[$station] ?? null;
+    echo '<div class="kg-art">';
+    if ($logo) {
+        echo '<span class="kg-logo"><img loading="lazy" decoding="async" src="'.esc_url(odpc_guide_logo_url($logo)).'" width="'.(int)$logo['width'].'" height="'.(int)$logo['height'].'" alt="'.esc_attr($station).'"></span>';
+    } else {
+        echo '<span>'.esc_html($station).'</span>';
+    }
+    echo '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="'.esc_attr($paths[$type]).'"/></svg></div>';
 }
 function odpc_guide_card($v, $future=false) {
     $topics=$v['topics'] ?? []; $formats=$v['formats'] ?? [];
@@ -117,15 +136,28 @@ function odpc_guide_render() {
       <article class="kg-station"><?php odpc_guide_poster($short,'radio'); ?><div class="kg-card-body"><h3><?= esc_html($name) ?></h3><p><?= esc_html($copy) ?></p><small><?= (int)$n ?> Beiträge · <?= $n?'Automatisch über MediathekViewWeb erfasst':'Weiterführende Quelle · aktuell ohne erfassten Beitrag' ?></small>
       <div class="kg-links"><?php foreach(['Website'=>$site,'Mediathek'=>$library,'Programm'=>$schedule] as $label=>$target) if($target) echo '<a href="'.esc_url('https://'.$target).'">'.esc_html($label).' ↗</a>'; ?></div></div></article>
     <?php } ?></div></section>
-    <footer class="kg-foot"><strong>Quellen und Bildnachweise</strong><p>Beitragsnachweise von <a href="https://mediathekviewweb.de/">MediathekViewWeb</a>. Programmrecherche mit <a href="https://www.tvmaze.com/api">TVmaze</a> (<a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a>) und den Sendeterminen auf den Originalseiten von ARTE. Hinzu kommen redaktionell geprüfte Senderankündigungen. Die grafischen Senderkennzeichen der Karten gestaltet ODPC. Videos öffnen sich bei den jeweiligen Anbietern.</p></footer></section>
+    <footer class="kg-foot"><strong>Quellen und Bildnachweise</strong><p>Beitragsnachweise von <a href="https://mediathekviewweb.de/">MediathekViewWeb</a>. Programmrecherche mit <a href="https://www.tvmaze.com/api">TVmaze</a> (<a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a>) und den Sendeterminen auf den Originalseiten von ARTE. Hinzu kommen redaktionell geprüfte Senderankündigungen. Die Senderzeichen kennzeichnen die verlinkten Angebote. Für die Anzeige wurden die Vorlagen verkleinert und in PNG umgewandelt. Videos öffnen sich bei den jeweiligen Anbietern.</p>
+    <details><summary>Senderlogos · Quellen und Lizenzen</summary><ul><?php foreach (odpc_guide_logos() as $name=>$logo) {
+        echo '<li><a href="'.esc_url($logo['source']).'">'.esc_html($name).'</a> · '.esc_html($logo['author']).' · ';
+        if (!empty($logo['licenseUrl'])) echo '<a href="'.esc_url($logo['licenseUrl']).'">'.esc_html($logo['license']).'</a>';
+        else echo esc_html($logo['license']);
+        echo '</li>';
+    } ?></ul></details></footer></section>
     <?php return ob_get_clean();
 }
 add_action('wp_loaded', function () {
     if (function_exists('odpc_media_render') && odpc_guide_state()) add_shortcode('odpc_ki_mediathek','odpc_guide_render');
 });
 add_action('wp_enqueue_scripts',function () {
-    if (!is_page(3852) || !odpc_guide_state()) return;
+    if ((!is_page(3852) && !is_front_page()) || !odpc_guide_state()) return;
     $base=plugins_url('odpc-ki-mediathek/',__FILE__);
+    $logo_urls=[];
+    foreach (odpc_guide_logos() as $name=>$logo) $logo_urls[$name]=odpc_guide_logo_url($logo);
+    if ($logo_urls) {
+        wp_enqueue_script('odpc-ki-ticker-logos',$base.'logos.js',[],filemtime(__DIR__.'/odpc-ki-mediathek/logos.js'),true);
+        wp_add_inline_script('odpc-ki-ticker-logos','window.odpcMediaStationLogos='.wp_json_encode($logo_urls).';','before');
+    }
+    if (!is_page(3852)) return;
     wp_enqueue_style('odpc-ki-guide',$base.'portal.css',[],filemtime(__DIR__.'/odpc-ki-mediathek/portal.css'));
     wp_enqueue_script('odpc-ki-guide',$base.'portal.js',[],filemtime(__DIR__.'/odpc-ki-mediathek/portal.js'),true);
 });
