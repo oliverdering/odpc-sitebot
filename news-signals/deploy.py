@@ -1,5 +1,5 @@
 """Deploy ODPC News & Signals as a standalone must-use WordPress plugin."""
-import base64,hashlib,hmac,os,sys,time
+import base64,hashlib,hmac,os,sys,time,stat
 from pathlib import Path
 from urllib.request import Request,urlopen
 import paramiko
@@ -16,6 +16,14 @@ def write(s,p,data):
  with s.open(tmp,'wb') as f:f.write(data)
  if read(s,tmp)!=data:raise RuntimeError('Staging verification failed')
  s.posix_rename(tmp,p)
+def purge_news_cache(s):
+ for base in ['all','wpfc-mobile-cache','wpo-cache/odpc.de']:
+  folder=ROOT+'/wp-content/cache/'+base+'/news-signals/'
+  try: entries=s.listdir_attr(folder)
+  except IOError:continue
+  for entry in entries:
+   if stat.S_ISREG(entry.st_mode) and entry.filename in {'index.html','index.html.gz','index-https.html','index-https.html.gz','index.gzip.html'}:
+    s.remove(folder+entry.filename)
 def check():
  req=Request('https://odpc.de/news-signals/?odpc_news_check='+str(time.time_ns()),headers={'Cache-Control':'no-cache','User-Agent':'ODPC-News-QA'})
  with urlopen(req,timeout=30) as r:html=r.read(4000000).decode('utf8')
@@ -33,10 +41,12 @@ with paramiko.Transport((HOST,22)) as t:
   try:
    for p,data in files.items():
     if previous[p]!=data:write(s,p,data);changed.append(p)
+   purge_news_cache(s)
    check()
    print('News & Signals v2 deployed and verified.')
   except Exception:
    for p in reversed(changed):
     if previous[p] is None:s.remove(p)
     else:write(s,p,previous[p])
+   purge_news_cache(s)
    raise
