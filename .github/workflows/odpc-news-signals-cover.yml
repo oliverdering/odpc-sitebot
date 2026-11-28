@@ -1,0 +1,70 @@
+name: ODPC News Signals cover deploy
+on:
+  push:
+    paths:
+      - 'site-deploy/odpc.de/odpc-news-signals-cover.php'
+      - '.github/workflows/odpc-news-signals-cover.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate PHP
+        run: php -l site-deploy/odpc.de/odpc-news-signals-cover.php
+      - name: Prepare SFTP
+        run: python -m pip install 'paramiko>=3.4,<5'
+      - name: Deploy separate MU plugin with rollback
+        env:
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+        run: |
+          python - <<'PY'
+          import sys,os,time,hashlib,hmac,base64
+          from urllib.request import urlopen,Request
+          from urllib.error import HTTPError
+          import paramiko
+          sys.path.insert(0,'scripts')
+          from deploy_odpc_helpermonkey_v4_bridge import HOST,USER,PIN,ROOT
+          src='site-deploy/odpc.de/odpc-news-signals-cover.php'
+          data=open(src,'rb').read()
+          def check(path):
+            try:
+              with urlopen(Request('https://odpc.de/'+path+'?cover_check='+str(time.time_ns()),headers={'Cache-Control':'no-cache'}),timeout=20) as r:
+                body=r.read(800000).decode('utf-8','replace')
+                return r.status,body
+            except HTTPError as e:return e.code,''
+          t=paramiko.Transport((HOST,22));t.start_client(timeout=20)
+          fp='SHA256:'+base64.b64encode(hashlib.sha256(t.get_remote_server_key().asbytes()).digest()).decode().rstrip('=')
+          if not hmac.compare_digest(fp,PIN):raise RuntimeError('Host fingerprint mismatch')
+          t.auth_password(USER,os.environ['ODPC_SFTP_PASSWORD'])
+          s=paramiko.SFTPClient.from_transport(t)
+          remote=ROOT+'/wp-content/mu-plugins/odpc-news-signals-cover.php'
+          temp=remote+'.uploading'
+          old=None
+          try:
+            try:
+              with s.open(remote,'rb') as f:old=f.read()
+            except FileNotFoundError:pass
+            with s.open(temp,'wb') as f:f.write(data)
+            with s.open(temp,'rb') as f:
+              if hashlib.sha256(f.read()).digest()!=hashlib.sha256(data).digest():raise RuntimeError('SHA mismatch')
+            s.posix_rename(temp,remote)
+            time.sleep(3)
+            home=check('');page=check('news-signals/')
+            print('Homepage HTTP:',home[0],'News page HTTP:',page[0])
+            ok=home[0]==200 and page[0]==200 and 'file_000000005720820ab456eb13014ca9a4.png' in page[1]
+            if not ok:
+              if old is None:s.remove(remote)
+              else:
+                with s.open(temp,'wb') as f:f.write(old)
+                s.posix_rename(temp,remote)
+              raise RuntimeError('Verification failed: cover change rolled back')
+            print('SUCCESS: new cover visible, homepage remains HTTP 200')
+          finally:
+            try:s.remove(temp)
+            except OSError:pass
+            s.close();t.close()
+          PY
