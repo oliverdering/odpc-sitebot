@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-28T02:48:27.698243+00:00",
+  "generated_at": "2026-11-28T10:56:06.317710+00:00",
   "product": "AdminMonkey Academy",
   "certification_expansion": {
     "candidate_exam_codes": 42,
@@ -45,16 +45,16 @@
   "certification_issuer": "ODPC",
   "official_microsoft_certification": false,
   "knowledge": {
-    "documents_collected": 3645,
-    "manufacturer_verified": 3645,
+    "documents_collected": 3681,
+    "manufacturer_verified": 3681,
     "review": {
       "unreviewed": 0,
-      "approved": 3645,
+      "approved": 3681,
       "rejected": 0
     },
     "last_batch": {
       "attempted": 36,
-      "documents_total": 3645,
+      "documents_total": 3681,
       "new_documents": 36,
       "quarantined": 0,
       "queued": 2500,
@@ -62,8 +62,8 @@
     }
   },
   "retrieval_staging": {
-    "chunked_documents": 3645,
-    "chunks_prepared": 19979,
+    "chunked_documents": 3681,
+    "chunks_prepared": 20191,
     "retrieval_quality_verified": false,
     "agent_answers_verified": 0,
     "note": "Ephemeral, provenance-checked chunk preparation; no searchable production index yet."
@@ -87,7 +87,7 @@
     },
     {
       "track": "AZ-104",
-      "manufacturer_verified_sources": 678,
+      "manufacturer_verified_sources": 710,
       "knowledge_coverage": "source_count_only_not_learning_objective_coverage",
       "practice_scenarios_available": 4,
       "agent_answers_evaluated": 0,

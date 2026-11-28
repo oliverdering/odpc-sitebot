@@ -33046,6 +33046,358 @@
       "mapped_tracks": [
         "AZ-104"
       ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-tutorial-failover-failback",
+      "sha256": "1929d2873c938a49655b8df6762c173638c81b255a53f0defeaa6685c1e55019",
+      "captured_at": "2026-11-28T10:55:52.927491+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-tutorial-failback",
+      "sha256": "99fe4d40b49a7978b3bb24674f1033d2ca651cfb7121d5d7aef47f88e2e68d9a",
+      "captured_at": "2026-11-28T10:55:53.240006+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/disks-redundancy",
+      "sha256": "c22fea9f94f7cda66e585a2bc8ff870930d706112c0158f1a0f98ee974d135fc",
+      "captured_at": "2026-11-28T10:55:53.335287+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/disks-deploy-zrs",
+      "sha256": "47c5a6ee66f26e28d890c13c9229b49efb98b7924796fab95178b725e159b20d",
+      "captured_at": "2026-11-28T10:55:53.473183+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/disks-migrate-lrs-zrs",
+      "sha256": "942fc43252e8436e8a29835cf9d1ebc88c48f024745f07a778b7caf7f0492d93",
+      "captured_at": "2026-11-28T10:55:53.563126+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/os-disk-swap",
+      "sha256": "af0372ca9e8e3931192c61634ffe8f32a37e267c65d527a786e7807df1ac6f85",
+      "captured_at": "2026-11-28T10:55:53.704064+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/powershell/module/az.compute/set-azvmzonemovement",
+      "sha256": "7aa272d69b02e74fcde319c14fce4eceb64a5c58c5fa1124f1de4df9b8e5f211",
+      "captured_at": "2026-11-28T10:55:54.089630+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/powershell/module/az.compute/get-azvm",
+      "sha256": "c0e928d905705d79363c7b0c77deadf4ffecf6e3b1ace36793ea2d7117660c20",
+      "captured_at": "2026-11-28T10:55:54.382384+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/powershell/module/az.compute/update-azvm",
+      "sha256": "c68071e0a188a9d764d1afaf84c538e51baafef373f49f17fe5026acbb1c0564",
+      "captured_at": "2026-11-28T10:55:54.757774+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/service-health/resource-health-overview",
+      "sha256": "8d7ade7332e96e07e23b30e7b14d2a539167f4327a865224558bb917a5cfbc51",
+      "captured_at": "2026-11-28T10:55:55.016742+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/service-health/overview",
+      "sha256": "00d762aecfa3db233e935b164d64fa2a8ae802c616f94ef4733315748c47e8df",
+      "captured_at": "2026-11-28T10:55:55.119772+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/reliability/reliability-virtual-machines",
+      "sha256": "12a91c160fa97bf6292610082281eaf9e18556253462eb080df16c8c10a503f8",
+      "captured_at": "2026-11-28T10:55:55.415265+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/reliability/reliability-storage-disk",
+      "sha256": "24606eb881eba8c3f14696f63ea5fd9cbeb3147399bd3fd36ed6087e280f0b1c",
+      "captured_at": "2026-11-28T10:55:55.538553+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/site-recovery/concepts-azure-to-azure-high-churn-support",
+      "sha256": "271fcbde38f573b7ddc0f7bbb3d83fbb3819af1af0bd665fc89208b1c3382496",
+      "captured_at": "2026-11-28T10:55:55.697186+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/site-recovery/recovery-plan-overview",
+      "sha256": "e0a9740917c8d97a3c3c0c93fa86c184767efb503446408d675a23a6ade2c206",
+      "captured_at": "2026-11-28T10:55:55.802630+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/site-recovery/site-recovery-runbook-automation",
+      "sha256": "075dd4aa955845bb1ea04b1156784e730dc2a72aba348a8b92d3e6d7d7558cf4",
+      "captured_at": "2026-11-28T10:55:55.904991+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/site-recovery/hyper-v-vmm-recovery-script",
+      "sha256": "ac829b5ff45f4591628899ea2d6b6c3fd67e8bb3e9a9cb9dd98943502b25ff4c",
+      "captured_at": "2026-11-28T10:55:56.121613+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/site-recovery/tutorial-dr-drill-azure",
+      "sha256": "d8d86d0293fe0acbb18f5cea2932ab273fc8791b316f5102c9e3733b679710fa",
+      "captured_at": "2026-11-28T10:55:56.253180+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/archive/blogs/srinathv/how-to-add-a-public-ip-address-to-azure-vm-for-vm-failed-over-using-asr",
+      "sha256": "f11082edc747bd7145d7fecd33999c87dba8cf10ee7ead22f844112f3f2a2981",
+      "captured_at": "2026-11-28T10:55:56.395570+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": []
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/migrate/azure-best-practices/migrate-best-practices-networking",
+      "sha256": "a8e60dbec11b48d49fccb01ee8538e4aa5475673082ee02153f9a000992ab756",
+      "captured_at": "2026-11-28T10:55:56.581441+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/site-recovery/site-recovery-active-directory",
+      "sha256": "573baacac04073515700ab61e606e758ccce6719bc31e40542f2d3938322aef6",
+      "captured_at": "2026-11-28T10:55:56.701329+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/site-recovery/site-recovery-failover-to-azure-troubleshoot",
+      "sha256": "81e63d5ca1ffb9668d4853e0df164b9ed5ad4d3280210d628dcbb47e9b5e5f2c",
+      "captured_at": "2026-11-28T10:55:56.893501+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/site-recovery/failover-failback-overview-modernized",
+      "sha256": "d0d8163ed11b035c64ec6e03921565490d3f90ab5e957f638a090dba29b4de1c",
+      "captured_at": "2026-11-28T10:55:57.053658+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/site-recovery/vmware-azure-tutorial-failover-failback-modernized",
+      "sha256": "71078089093ee0379c582030243112cdd30860cbbc11c745f55b06fe8c876ef3",
+      "captured_at": "2026-11-28T10:55:57.149785+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/site-recovery/physical-to-azure-failover-failback",
+      "sha256": "7af1cee716d07be0a655750795e87469404994d628738c9686b6bdc9327643d6",
+      "captured_at": "2026-11-28T10:55:57.581338+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/site-recovery/hyper-v-azure-failover-failback-tutorial",
+      "sha256": "b46e6b39fe274879c17f1971245c88c77d896f68151eaf80cd02d9705a3898a1",
+      "captured_at": "2026-11-28T10:55:57.668355+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/site-recovery/exclude-disks-replication",
+      "sha256": "c1b17b9e0f0a7da8536e7cdab2f57a6b68e9f6f028ac40526eab99491050fc9c",
+      "captured_at": "2026-11-28T10:55:57.773809+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/site-recovery/concepts-on-premises-to-azure-networking",
+      "sha256": "cd93810058368cfd080af6f0ce4c656bff526ef2645e91798073ecd6e537f882",
+      "captured_at": "2026-11-28T10:55:57.874015+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/site-recovery/concepts-public-ip-address-with-site-recovery",
+      "sha256": "37bf3356aea0f8d814c26dacb3883aca3c9faeb1913e734ba4adffb4910c9ee4",
+      "captured_at": "2026-11-28T10:55:58.034301+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/site-recovery/vmware-azure-reprotect",
+      "sha256": "7af1cee716d07be0a655750795e87469404994d628738c9686b6bdc9327643d6",
+      "captured_at": "2026-11-28T10:55:58.247664+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/site-recovery/hyper-v-azure-failback",
+      "sha256": "b7be58f9a40b2e01099257591d032bf82717e959230f6c5d7ecb7bc5b359e4c6",
+      "captured_at": "2026-11-28T10:55:58.359746+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/azure/data-lake-store/data-lake-store-disaster-recovery-guidance",
+      "sha256": "cc4401d74ac47dcac3457ac0c478927e0cb77ee4e0ad1ec512c587e79a627145",
+      "captured_at": "2026-11-28T10:55:58.580814+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/architecture/framework/resiliency/app-design",
+      "sha256": "8da43bb56b686ad35c2e5b1ac3edf8dd19cf82b1ecef2b54d39948e93c348a5e",
+      "captured_at": "2026-11-28T10:55:58.862566+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/azure/data-lake-store/data-lake-store-copy-data-azure-storage-blob",
+      "sha256": "4f4085a853ab3c6e55f8210e4961424930f44d85dfd76ac0b4fa390f92eaa24d",
+      "captured_at": "2026-11-28T10:55:58.998088+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/azure/data-lake-store/data-lake-store-get-started-powershell",
+      "sha256": "306ab56dc0061c58e988130c14e4857f2b51fb0c3ad520f2092a9c6f100f0796",
+      "captured_at": "2026-11-28T10:55:59.139326+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/azure/data-factory/connector-azure-data-lake-store",
+      "sha256": "d65fd7f781d867c47c7801ff16474a71a295f3de49dddad971af96a531210c53",
+      "captured_at": "2026-11-28T10:55:59.354663+00:00",
+      "depth": 2,
+      "review_status": "manufacturer_verified",
+      "mapped_tracks": [
+        "AZ-104"
+      ]
     }
   ],
   "seen": [
@@ -33103,6 +33455,7 @@
     "https://learn.microsoft.com/en-us/answers/tags/466/microsoft-copilot-microsoft-365-copilot-development-routing/",
     "https://learn.microsoft.com/en-us/answers/tags/831/m365-office",
     "https://learn.microsoft.com/en-us/archive/blogs/linuxonazure/cannot-ssh-to-linux-vm-after-adding-data-disk-to-etcfstab-and-rebooting",
+    "https://learn.microsoft.com/en-us/archive/blogs/srinathv/how-to-add-a-public-ip-address-to-azure-vm-for-vm-failed-over-using-asr",
     "https://learn.microsoft.com/en-us/archive/microsoft-edge/legacy/",
     "https://learn.microsoft.com/en-us/archive/microsoft-edge/legacy/developer/dev-guide/index",
     "https://learn.microsoft.com/en-us/azure",
@@ -33182,6 +33535,7 @@
     "https://learn.microsoft.com/en-us/azure/architecture/example-scenario/data/data-warehouse",
     "https://learn.microsoft.com/en-us/azure/architecture/example-scenario/infrastructure/multi-tier-app-disaster-recovery",
     "https://learn.microsoft.com/en-us/azure/architecture/example-scenario/mainframe/general-mainframe-refactor",
+    "https://learn.microsoft.com/en-us/azure/architecture/framework/resiliency/app-design",
     "https://learn.microsoft.com/en-us/azure/architecture/framework/resiliency/backup-and-recovery",
     "https://learn.microsoft.com/en-us/azure/architecture/guide/architecture-styles/big-compute",
     "https://learn.microsoft.com/en-us/azure/architecture/guide/architecture-styles/event-driven",
@@ -33296,6 +33650,7 @@
     "https://learn.microsoft.com/en-us/azure/bot-service/rest-api/bot-framework-rest-direct-line-3-0-authentication",
     "https://learn.microsoft.com/en-us/azure/china/",
     "https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/decision-guides/resource-tagging/",
+    "https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/migrate/azure-best-practices/migrate-best-practices-networking",
     "https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-naming",
     "https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-setup-guide/identity",
     "https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/considerations/fundamental-concepts",
@@ -33433,6 +33788,8 @@
     "https://learn.microsoft.com/en-us/azure/reliability/regions-paired",
     "https://learn.microsoft.com/en-us/azure/reliability/reliability-ai-search",
     "https://learn.microsoft.com/en-us/azure/reliability/reliability-managed-redis",
+    "https://learn.microsoft.com/en-us/azure/reliability/reliability-storage-disk",
+    "https://learn.microsoft.com/en-us/azure/reliability/reliability-virtual-machines",
     "https://learn.microsoft.com/en-us/azure/resource-mover/move-region-availability-zone",
     "https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles",
     "https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles/integration",
@@ -33453,16 +33810,36 @@
     "https://learn.microsoft.com/en-us/azure/sentinel/quickstart-onboard",
     "https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-azure-and-service-bus-queues-compared-contrasted",
     "https://learn.microsoft.com/en-us/azure/service-fabric/service-fabric-application-scenarios",
+    "https://learn.microsoft.com/en-us/azure/service-health/overview",
+    "https://learn.microsoft.com/en-us/azure/service-health/resource-health-overview",
     "https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-common-questions",
     "https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-how-to-enable-zone-to-zone-disaster-recovery",
     "https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-quickstart",
     "https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-support-matrix",
     "https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-tutorial-dr-drill",
     "https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-tutorial-enable-replication",
+    "https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-tutorial-failback",
+    "https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-tutorial-failover-failback",
+    "https://learn.microsoft.com/en-us/azure/site-recovery/concepts-azure-to-azure-high-churn-support",
+    "https://learn.microsoft.com/en-us/azure/site-recovery/concepts-on-premises-to-azure-networking",
+    "https://learn.microsoft.com/en-us/azure/site-recovery/concepts-public-ip-address-with-site-recovery",
+    "https://learn.microsoft.com/en-us/azure/site-recovery/exclude-disks-replication",
+    "https://learn.microsoft.com/en-us/azure/site-recovery/failover-failback-overview-modernized",
+    "https://learn.microsoft.com/en-us/azure/site-recovery/hyper-v-azure-failback",
+    "https://learn.microsoft.com/en-us/azure/site-recovery/hyper-v-azure-failover-failback-tutorial",
+    "https://learn.microsoft.com/en-us/azure/site-recovery/hyper-v-vmm-recovery-script",
+    "https://learn.microsoft.com/en-us/azure/site-recovery/physical-to-azure-failover-failback",
+    "https://learn.microsoft.com/en-us/azure/site-recovery/recovery-plan-overview",
+    "https://learn.microsoft.com/en-us/azure/site-recovery/site-recovery-active-directory",
     "https://learn.microsoft.com/en-us/azure/site-recovery/site-recovery-create-recovery-plans",
     "https://learn.microsoft.com/en-us/azure/site-recovery/site-recovery-failover",
+    "https://learn.microsoft.com/en-us/azure/site-recovery/site-recovery-failover-to-azure-troubleshoot",
     "https://learn.microsoft.com/en-us/azure/site-recovery/site-recovery-overview",
+    "https://learn.microsoft.com/en-us/azure/site-recovery/site-recovery-runbook-automation",
     "https://learn.microsoft.com/en-us/azure/site-recovery/site-recovery-test-failover-to-azure",
+    "https://learn.microsoft.com/en-us/azure/site-recovery/tutorial-dr-drill-azure",
+    "https://learn.microsoft.com/en-us/azure/site-recovery/vmware-azure-reprotect",
+    "https://learn.microsoft.com/en-us/azure/site-recovery/vmware-azure-tutorial-failover-failback-modernized",
     "https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction",
     "https://learn.microsoft.com/en-us/azure/storage/blobs/immutable-version-level-worm-policies",
     "https://learn.microsoft.com/en-us/azure/storage/blobs/security-recommendations",
@@ -33509,10 +33886,13 @@
     "https://learn.microsoft.com/en-us/azure/virtual-machines/dedicated-hosts/overview",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/disk-encryption",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/disk-encryption-overview",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/disks-deploy-zrs",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/disks-hdd-os-retirement",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/disks-high-availability",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/disks-migrate-lrs-zrs",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/disks-performance",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/disks-performance-options",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/disks-redundancy",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/disks-restrict-import-export-overview",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/disks-shared",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/disks-types",
@@ -33552,6 +33932,7 @@
     "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/mac-create-ssh-keys",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/n-series-driver-setup",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/nsg-quickstart",
+    "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/os-disk-swap",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/quick-create-cli",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/quick-create-portal",
     "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/quick-create-powershell",
@@ -36234,6 +36615,7 @@
     "https://learn.microsoft.com/en-us/powershell/microsoftgraph/overview",
     "https://learn.microsoft.com/en-us/powershell/module/az.accounts/get-aztenant",
     "https://learn.microsoft.com/en-us/powershell/module/az.compute/",
+    "https://learn.microsoft.com/en-us/powershell/module/az.compute/get-azvm",
     "https://learn.microsoft.com/en-us/powershell/module/az.compute/get-azvmimage",
     "https://learn.microsoft.com/en-us/powershell/module/az.compute/get-azvmimageoffer",
     "https://learn.microsoft.com/en-us/powershell/module/az.compute/get-azvmimagepublisher",
@@ -36243,6 +36625,8 @@
     "https://learn.microsoft.com/en-us/powershell/module/az.compute/new-azvm",
     "https://learn.microsoft.com/en-us/powershell/module/az.compute/new-azvmconfig",
     "https://learn.microsoft.com/en-us/powershell/module/az.compute/save-azvmimage",
+    "https://learn.microsoft.com/en-us/powershell/module/az.compute/set-azvmzonemovement",
+    "https://learn.microsoft.com/en-us/powershell/module/az.compute/update-azvm",
     "https://learn.microsoft.com/en-us/powershell/module/az.network/get-azapplicationsecuritygroup",
     "https://learn.microsoft.com/en-us/powershell/module/az.network/get-aznetworkinterface",
     "https://learn.microsoft.com/en-us/powershell/module/az.network/get-aznetworksecuritygroup",
@@ -36292,6 +36676,10 @@
     "https://learn.microsoft.com/en-us/previous-versions/azure/batch-ai/",
     "https://learn.microsoft.com/en-us/previous-versions/azure/bot-service/index-bf-sdk",
     "https://learn.microsoft.com/en-us/previous-versions/azure/bot-service/index-bf-sdk/",
+    "https://learn.microsoft.com/en-us/previous-versions/azure/data-factory/connector-azure-data-lake-store",
+    "https://learn.microsoft.com/en-us/previous-versions/azure/data-lake-store/data-lake-store-copy-data-azure-storage-blob",
+    "https://learn.microsoft.com/en-us/previous-versions/azure/data-lake-store/data-lake-store-disaster-recovery-guidance",
+    "https://learn.microsoft.com/en-us/previous-versions/azure/data-lake-store/data-lake-store-get-started-powershell",
     "https://learn.microsoft.com/en-us/previous-versions/azure/devops/",
     "https://learn.microsoft.com/en-us/previous-versions/azure/devops/user-guide/what-is-azure-devops",
     "https://learn.microsoft.com/en-us/previous-versions/azure/governance/resource-graph/samples/samples-by-table",
@@ -36696,150 +37084,6 @@
     "https://learn.microsoft.com/en-us/windows/win32/wer/windows-error-reporting"
   ],
   "queue": [
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-tutorial-failover-failback",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-tutorial-failback",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/disks-redundancy",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/disks-deploy-zrs",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/disks-migrate-lrs-zrs",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/os-disk-swap",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/powershell/module/az.compute/set-azvmzonemovement",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/powershell/module/az.compute/get-azvm",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/powershell/module/az.compute/update-azvm",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/service-health/resource-health-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/service-health/overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/reliability/reliability-virtual-machines",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/reliability/reliability-storage-disk",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/site-recovery/concepts-azure-to-azure-high-churn-support",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/site-recovery/recovery-plan-overview",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/site-recovery/site-recovery-runbook-automation",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/site-recovery/hyper-v-vmm-recovery-script",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/site-recovery/tutorial-dr-drill-azure",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/archive/blogs/srinathv/how-to-add-a-public-ip-address-to-azure-vm-for-vm-failed-over-using-asr",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/migrate/azure-best-practices/migrate-best-practices-networking",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/site-recovery/site-recovery-active-directory",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/site-recovery/site-recovery-failover-to-azure-troubleshoot",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/site-recovery/failover-failback-overview-modernized",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/site-recovery/vmware-azure-tutorial-failover-failback-modernized",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/site-recovery/physical-to-azure-failover-failback",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/site-recovery/hyper-v-azure-failover-failback-tutorial",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/site-recovery/exclude-disks-replication",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/site-recovery/concepts-on-premises-to-azure-networking",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/site-recovery/concepts-public-ip-address-with-site-recovery",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/site-recovery/vmware-azure-reprotect",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/site-recovery/hyper-v-azure-failback",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/previous-versions/azure/data-lake-store/data-lake-store-disaster-recovery-guidance",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/azure/architecture/framework/resiliency/app-design",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/previous-versions/azure/data-lake-store/data-lake-store-copy-data-azure-storage-blob",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/previous-versions/azure/data-lake-store/data-lake-store-get-started-powershell",
-      "depth": 2
-    },
-    {
-      "url": "https://learn.microsoft.com/en-us/previous-versions/azure/data-factory/connector-azure-data-lake-store",
-      "depth": 2
-    },
     {
       "url": "https://learn.microsoft.com/en-us/previous-versions/azure/azure-resource-manager/management/lock-resources",
       "depth": 2
@@ -46695,11 +46939,155 @@
     {
       "url": "https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-about-networking",
       "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-troubleshoot-errors",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/site-recovery/vmware-azure-tutorial-prepare-on-premises",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/disks-shared-enable",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/powershell/module/az.accounts/connect-azaccount",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/find-unattached-disks",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/dotnet/api/microsoft.azure.commands.compute.models.displayhinttype",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/dotnet/api/system.uri",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/dotnet/api/microsoft.azure.commands.compute.models.psvirtualmachineinstanceview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/dotnet/api/microsoft.azure.management.compute.models.resourceidentitytype",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/service-health/resource-health-checks-resource-types",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/service-health/azure-status-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/reliability/regions-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/well-architected/service-guides/azure-disk-storage",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/automation/automation-runbook-types",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/automation/shared-resources/variables",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/powershell/module/az.automation/set-azautomationvariable",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/site-recovery/hyper-v-azure-powershell-resource-manager",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/site-recovery/tutorial-prepare-azure",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/classic/setup-endpoints",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/design-area/network-topology-and-connectivity",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/site-recovery/vmware-physical-azure-support-matrix",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/troubleshoot/azure/virtual-machines/troubleshoot-rdp-connection",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/site-recovery/concepts-types-of-failback",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/site-recovery/failover-failback-overview",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/site-recovery/vmware-azure-architecture-modernized",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/site-recovery/hyper-v-prepare-on-premises-tutorial",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/site-recovery/vmware-azure-enable-replication-added-disk",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/windows/prepare-for-upload-vhd-image",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/site-recovery/concepts-traffic-manager-with-site-recovery",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/site-recovery/switch-replication-appliance-modernized",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/site-recovery/hyper-v-azure-support-matrix",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/well-architected/reliability/scaling",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/well-architected/reliability/self-preservation",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/azure/data-lake-store/data-lake-store-copy-data-wasb-distcp",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/previous-versions/azure/data-lake-store/data-lake-store-get-started-cli-2.0",
+      "depth": 3
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/data-factory/connector-azure-data-lake-store",
+      "depth": 3
     }
   ],
   "last_batch": {
     "attempted": 36,
-    "documents_total": 3645,
+    "documents_total": 3681,
     "new_documents": 36,
     "quarantined": 0,
     "queued": 2500,
