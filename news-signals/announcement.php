@@ -13,7 +13,7 @@ add_action('init', static function () {
         return;
     }
     $image = 'https://odpc.de/wp-content/uploads/2026/11/file_00000000cc508210943a8d297220327c.png';
-    $body = '<p><strong>Sendeschluss? Von wegen! Bei ODPC geht es jetzt erst richtig los.</strong></p>'
+    $body = '<figure class="wp-block-image size-full"><a href="https://odpc.de/ki-mediathek/"><img src="'.esc_url($image).'" alt="Retro-Fernseh-Testbild: ODPC KI-Mediathek – zur Mediathek" loading="eager" decoding="async" /></a></figure>' . '<p><strong>Sendeschluss? Von wegen! Bei ODPC geht es jetzt erst richtig los.</strong></p>'
       . '<p>Wer erinnert sich nicht an das klassische Fernseh-Testbild? Früher war damit das Programm vorbei. Wir drehen den Spieß um: Unser Retro-Testbild steht heute für den Einstieg in die Welt der künstlichen Intelligenz.</p>'
       . '<h2>📺 Die ODPC KI-Mediathek: KI zum Anschauen</h2>'
       . '<p>Ob Dokumentation, Reportage, Interview oder Nachrichtenbeitrag: Die <strong>ODPC KI-Mediathek</strong> bündelt interessante Fernsehinhalte zum Thema künstliche Intelligenz. Statt lange in einzelnen Mediatheken zu suchen, findest du ausgewählte Sendungen mit Senderangabe und direktem Link zum jeweiligen Originalangebot. Auch kommende KI-Sendungen können in der Programmvorschau auftauchen.</p>'
@@ -46,3 +46,28 @@ add_action('init', static function () {
     }
     update_option('odpc_portal_announcement_published_v1', (int)$id, false);
 }, 20);
+
+/**
+ * Repair the featured image on an already published article.
+ * Previous publication marker must never suppress media repair.
+ */
+add_action('init', static function () {
+    $post = get_page_by_path('ki-mediathek-news-signals-sendeschluss', OBJECT, 'post');
+    if (!$post || $post->post_status !== 'publish') return;
+    $image = 'https://odpc.de/wp-content/uploads/2026/11/file_00000000cc508210943a8d297220327c.png';
+    if (strpos($post->post_content, $image) === false) {
+        wp_update_post(['ID'=>$post->ID, 'post_content'=>'<figure class="wp-block-image size-full"><a href="https://odpc.de/ki-mediathek/"><img src="'.esc_url($image).'" alt="ODPC KI-Mediathek – Retro-Fernseh-Testbild" loading="eager" /></a></figure>'.$post->post_content]);
+    }
+    if (has_post_thumbnail($post->ID)) return;
+    $attachment = attachment_url_to_postid($image);
+    if (!$attachment) {
+        require_once ABSPATH.'wp-admin/includes/media.php';
+        require_once ABSPATH.'wp-admin/includes/file.php';
+        require_once ABSPATH.'wp-admin/includes/image.php';
+        $attachment = media_sideload_image($image, $post->ID, 'ODPC KI-Mediathek Testbild', 'id');
+    }
+    if (!is_wp_error($attachment) && $attachment) {
+        set_post_thumbnail($post->ID, (int)$attachment);
+        update_post_meta((int)$attachment, '_wp_attachment_image_alt', 'Retro-Testbild mit ODPC KI-Mediathek Schriftzug');
+    }
+}, 30);
