@@ -1,0 +1,48 @@
+name: ODPC HTTP 500 read-only diagnosis
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - run: python -m pip install 'paramiko>=3.4,<5'
+      - name: Inspect WordPress error logs safely (read-only)
+        env:
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+        run: |
+          python - <<'PY'
+          import os,sys,stat,re
+          sys.path.insert(0,'scripts')
+          from deploy_odpc_helpermonkey_v4_bridge import HOST,USER,PIN,ROOT
+          import paramiko,hashlib,base64,hmac
+          t=paramiko.Transport((HOST,22));t.start_client(timeout=20)
+          fingerprint='SHA256:'+base64.b64encode(hashlib.sha256(t.get_remote_server_key().asbytes()).digest()).decode().rstrip('=')
+          if not hmac.compare_digest(fingerprint,PIN):raise RuntimeError('Host fingerprint mismatch')
+          t.auth_password(USER,os.environ['ODPC_SFTP_PASSWORD'])
+          s=paramiko.SFTPClient.from_transport(t)
+          paths=[ROOT+'/wp-content/debug.log',ROOT+'/error.log',ROOT+'/logs/error.log',ROOT+'/wp-content/php_errors.log']
+          for path in paths:
+            try:
+              st=s.stat(path)
+              if not stat.S_ISREG(st.st_mode):continue
+              with s.open(path,'rb') as f:
+                f.seek(max(0,st.st_size-24000))
+                data=f.read(24000).decode('utf8','replace')
+              lines=[line for line in data.splitlines() if re.search('fatal error|parse error|uncaught|critical|PHP error',line,re.I)]
+              print('LOG:',path,'bytes:',st.st_size,'matching lines:',len(lines))
+              for line in lines[-12:]:
+                line=re.sub(r'(/clickandbuilds/[^ /]+)', '[WP_ROOT]',line)
+                line=re.sub(r'([\w.+-]+@[\w.-]+)', '[EMAIL]',line)
+                print(line[:700])
+            except (OSError,IOError):
+              print('LOG NOT FOUND:',path)
+          for path in [ROOT+'/wp-content/mu-plugins/odpc-helpermonkey-v4-bridge.php',ROOT+'/wp-content/mu-plugins/odpc-portal-announcement.php']:
+            try:
+              st=s.stat(path);print('MODULE:',path.rsplit('/',1)[-1], 'bytes:',st.st_size)
+            except OSError:print('MODULE MISSING:',path.rsplit('/',1)[-1])
+          s.close();t.close()
+          PY
