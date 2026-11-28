@@ -35,7 +35,7 @@ with paramiko.Transport((HOST,22)) as t:
  if not hmac.compare_digest(actual,PIN):raise RuntimeError('Host key mismatch')
  t.auth_password(USER,os.environ['ODPC_SFTP_PASSWORD'])
  with paramiko.SFTPClient.from_transport(t) as s:
-  files={DEST+'/odpc-news-signals.php':(BASE/'news-signals.php').read_bytes(),DEST+'/news-signals.css':(BASE/'news-signals.css').read_bytes()}
+  files={DEST+'/odpc-news-signals.php':(BASE/'news-signals.php').read_bytes(),DEST+'/news-signals.css':(BASE/'news-signals.css').read_bytes(),DEST+'/odpc-portal-announcement.php':(BASE/'announcement.php').read_bytes()}
   previous={p:read(s,p) for p in files}
   changed=[]
   try:
@@ -43,7 +43,10 @@ with paramiko.Transport((HOST,22)) as t:
     if previous[p]!=data:write(s,p,data);changed.append(p)
    purge_news_cache(s)
    check()
-   print('News & Signals v2 deployed and verified.')
+   req=Request('https://odpc.de/ki-mediathek-news-signals-sendeschluss/?qa='+str(time.time_ns()),headers={'Cache-Control':'no-cache','User-Agent':'ODPC-Announcement-QA'})
+   with urlopen(req,timeout=35) as response: article=response.read(3000000).decode('utf8','replace')
+   if 'Sendeschluss' not in article or 'news-signals' not in article or 'ki-mediathek' not in article:raise RuntimeError('Announcement not visible')
+   print('News & Signals and announcement deployed and verified.')
   except Exception:
    for p in reversed(changed):
     if previous[p] is None:s.remove(p)
