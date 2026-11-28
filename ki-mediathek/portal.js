@@ -15,6 +15,7 @@
   const normalize = value => value.toLocaleLowerCase('de').normalize('NFKC');
   const texts = cards.map(card => normalize(card.textContent));
   let limit = 12;
+  const showAll = guide.querySelector('.kg-show-all');
   function filter() {
     const q = normalize(form.elements.q.value.trim()).split(/\s+/).filter(Boolean);
     const fields = new FormData(form);
@@ -33,11 +34,13 @@
     });
     guide.querySelectorAll('.kg-day').forEach(day => { day.hidden = !day.querySelector('[data-media-kind]:not([hidden])'); });
     more.hidden = available <= limit;
+    if (showAll) { showAll.hidden = available <= limit; showAll.textContent = 'Alle ' + available + ' Beiträge anzeigen'; }
     form.querySelector('output').textContent = total ? total + ' Treffer' : 'Keine passenden Beiträge oder Sendungen.';
   }
   form.addEventListener('submit', event => event.preventDefault());
   form.addEventListener('input', () => { limit = 12; filter(); });
   form.addEventListener('reset', () => { limit = 12; setTimeout(filter, 0); });
+  if (showAll) showAll.addEventListener('click', () => { limit = Infinity; filter(); guide.querySelector('#kg-jetzt').scrollIntoView({behavior:'smooth',block:'start'}); });
   more.addEventListener('click', () => {
     const previously = new Set(cards.filter(c => !c.hidden));
     limit += 12; filter();
