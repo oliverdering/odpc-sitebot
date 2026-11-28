@@ -17,3 +17,12 @@ html[data-odpc-appearance=green] #odpc-ki-guide{--ink:var(--odpc-reading-ink,#17
 .kg-art .kg-logo{display:inline-flex;width:8.6rem;height:3.3rem;align-items:center;justify-content:center;background:#fff;border:1px solid var(--line);border-radius:4px;padding:.45rem .7rem}
 #odpc-ki-guide .kg-logo img{display:block;width:auto;height:auto;max-width:100%;max-height:100%;object-fit:contain}
 .kg-foot summary{cursor:pointer;min-height:44px;display:list-item;padding:.65rem 0;font-weight:650}
+
+/* Accessible catalogue paging: hidden cards must not be forced visible by display:flex. */
+#odpc-ki-guide [hidden]{display:none!important}
+#odpc-ki-guide .kg-count-controls{display:flex;flex-wrap:wrap;gap:.7rem;align-items:center;margin:1.2rem 0}
+#odpc-ki-guide .kg-count-controls label{font-weight:700}
+#odpc-ki-guide .kg-count-controls select{min-height:44px;padding:.5rem;border:1px solid var(--line);border-radius:5px;background:var(--panel);color:var(--ink);font:inherit}
+#odpc-ki-guide .kg-pagination{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;margin:1rem 0}
+#odpc-ki-guide .kg-pagination button[aria-current="page"]{background:var(--panel);color:var(--accent);outline:2px solid var(--accent)}
+#odpc-ki-guide .kg-pagination button:disabled{opacity:.45;cursor:default}
