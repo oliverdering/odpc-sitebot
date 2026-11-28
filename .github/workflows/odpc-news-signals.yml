@@ -1,0 +1,28 @@
+name: ODPC News & Signals
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'news-signals/**'
+      - '.github/workflows/odpc-news-signals.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: odpc-news-signals-production
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate source
+        run: |
+          php -l news-signals/news-signals.php
+          python -m py_compile news-signals/deploy.py
+      - run: python -m pip install 'paramiko>=3.4,<5'
+      - name: Publish and verify
+        env:
+          ODPC_SFTP_PASSWORD: ${{ secrets.ODPC_SFTP_PASSWORD }}
+        run: python news-signals/deploy.py
